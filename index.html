@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zixiao Jolene Wang</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --accent: #405bd4;
+        --accent-dark: #2a3d9a;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 3rem 1.5rem;
+        font-family: "Source Serif Pro", Georgia, "Times New Roman", serif;
+        line-height: 1.6;
+        background-color: #ffffff;
+        color: #222222;
+        display: flex;
+        justify-content: center;
+      }
+
+      main {
+        max-width: 900px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+      }
+
+      h1 {
+        font-size: 2.4rem;
+        margin-bottom: 0.35rem;
+        font-weight: 600;
+        color: #121631;
+      }
+
+      p {
+        margin: 0 0 0.85rem;
+      }
+
+      a {
+        color: var(--accent);
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .intro {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        align-items: center;
+        padding-bottom: 1.2rem;
+      }
+
+      .intro-text {
+        flex: 1 1 420px;
+        max-width: 520px;
+      }
+
+      .intro-photo {
+        flex: 0 0 220px;
+        text-align: center;
+      }
+
+      .intro-photo img {
+        max-width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+      }
+
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        align-items: center;
+      }
+
+      .links .separator {
+        color: #888888;
+      }
+
+      .link-item {
+        position: relative;
+        padding-left: 1.3rem;
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      .link-item::before {
+        content: attr(data-icon);
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 0.95rem;
+        color: var(--accent-dark);
+      }
+
+      .link-item:hover {
+        text-decoration: underline;
+      }
+
+      section {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        padding-top: 2.5rem;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      section:first-of-type {
+        border-top: none;
+        padding-top: 0;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        margin: 0;
+        color: var(--accent-dark);
+      }
+
+      ul {
+        padding-left: 1.2rem;
+        margin: 0;
+      }
+
+      li {
+        margin-bottom: 0.75rem;
+      }
+
+      .pub-list {
+        padding-left: 0;
+        list-style: none;
+      }
+
+      .pub-list li {
+        margin-bottom: 1.3rem;
+      }
+
+      .pub-title {
+        font-weight: 600;
+        text-decoration: none;
+        color: var(--accent);
+      }
+
+      .pub-title:hover {
+        text-decoration: underline;
+      }
+
+      .pub-authors {
+        margin-top: 0.35rem;
+      }
+
+      .pub-venue {
+        margin-top: 0.25rem;
+      }
+
+      .news-list {
+        margin: 0;
+        padding-left: 1.5rem;
+        border-left: 3px solid rgba(64, 91, 212, 0.25);
+      }
+
+      .news-list li {
+        margin-bottom: 0.6rem;
+      }
+
+      strong {
+        font-weight: 600;
+      }
+
+      .phonetic {
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        font-size: 0.95em;
+        color: #555555;
+      }
+
+      .featured-paper {
+        border-radius: 12px;
+        padding: 1.2rem 1.4rem;
+        background: rgba(64, 91, 212, 0.06);
+        border: 1px solid rgba(64, 91, 212, 0.18);
+      }
+
+      .featured-paper h3 {
+        margin: 0 0 0.6rem;
+        font-size: 1.2rem;
+        color: var(--accent-dark);
+      }
+
+      @media (max-width: 720px) {
+        body {
+          padding: 2.5rem 1.25rem;
+        }
+
+        main {
+          gap: 2rem;
+        }
+
+        .links {
+          justify-content: center;
+        }
+
+        .intro-text {
+          text-align: center;
+        }
+
+        .intro-photo {
+          flex: 1 1 160px;
+          display: flex;
+          justify-content: center;
+        }
+
+        .intro-photo img {
+          max-width: 170px;
+        }
+
+        section {
+          padding-top: 2rem;
+        }
+
+        .news-list {
+          border-left: none;
+          padding-left: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="intro">
+        <div class="intro-text">
+          <h1>Zixiao Jolene Wang</h1>
+          <p>
+            Welcome! My name is Zixiao
+            <span class="phonetic">[/tsʰɨ́.ɕjɑʊ̯/]</span>
+            Jolene Wang. I am a 2nd year Ph.D. student at Harvard University,
+            co-advised by
+            <a href="https://www.hsph.harvard.edu/profile/james-m-robins/"
+              >James Robins</a
+            >
+            and
+            <a href="https://hsph.harvard.edu/profile/rajarshi-mukherjee/"
+              >Rajarshi Mukherjee</a
+            >.
+          </p>
+          <p>
+            Previously, I received my M.S. in Biostatistics from Johns Hopkins
+            University advised by
+            <a href="https://www.cs.jhu.edu/~ilyas/">Ilya Shpitser</a> and
+            <a href="https://publichealth.jhu.edu/faculty/1943/hongkai-ji">Hongkai Ji</a>, and my B.S. from
+            <a href="https://en.sjtu.edu.cn/">SJTU</a>
+            advised by
+            <a href="https://linliu-stats.github.io/">Lin Liu</a> and
+            <a href="https://ysph.yale.edu/profile/hongyu-zhao/">Hongyu Zhao</a>.
+          </p>
+          <p>Email: zixiaowang [at] fas.harvard.edu</p>
+          <div class="links">
+            <a
+              class="link-item"
+              href="https://scholar.google.com/citations?user=QHao6yQAAAAJ"
+              >Google Scholar</a
+            ><span class="separator">/</span
+            ><a
+              class="link-item"
+              href="https://github.com/zixiaowang17"
+              >GitHub</a
+            ><span class="separator">/</span
+            ><a
+              class="link-item"
+              href="https://www.linkedin.com/in/zixiao-w-3a79811a5"
+              >LinkedIn</a
+            >
+          </div>
+        </div>
+        <div class="intro-photo">
+          <img
+            src="assets/img/prof_pic_color.png"
+            alt="Portrait of Zixiao Jolene Wang"
+          />
+        </div>
+      </div>
+
+      <section id="topics">
+        <h2>Research Topics</h2>
+        <p>
+          I am interested in high-dimensional statistics, causal inference, and
+          formal theorem proving. My current focus is on improving the quality
+          and structure of mathematical reasoning data, especially with Lean 4.
+          I am also exploring how to collaborate efficiently through formal
+          systems and how to provide reliable reasoning.
+        </p>
+      </section>
+
+      <section id="news">
+        <h2>News</h2>
+        <ul class="news-list">
+          <li>
+            <strong>Sep 2025:</strong>
+            NeurIPS 2025 accepted our paper "Optimal Nuisance Function Tuning
+            for Doubly Robust Functional Estimation under Proportional
+            Asymptotic" as a Spotlight.
+          </li>
+          <li>
+            <strong>Jul 2025:</strong>
+            Joined Lean for Mathematicians 2025 in NYC 
+            workflows.
+          </li>
+          <li>
+            <strong>Jul 2024:</strong>
+            Presented our paper 'Identification and Estimation for Nonignorable
+            Missing Data: A Data Fusion Approach' at ICML 2024 in Vienna,
+            Austria.
+          </li>
+        </ul>
+      </section>
+
+      <section id="publications">
+        <h2>Publications</h2>
+        <ul class="pub-list">
+          <li>
+            <a
+              href="https://arxiv.org/abs/2509.25536"
+              class="pub-title"
+              >Optimal Nuisance Function Tuning for Doubly Robust Functional
+              Estimation under Proportional Asymptotics</a
+            >
+            <div class="pub-authors">
+              Sean McGrath, Debarghya Mukherjee, Rajarshi Mukherjee,
+              <strong>Zixiao Jolene Wang</strong> (authors alphabetical)
+            </div>
+            <div class="pub-venue"><em>NeurIPS</em>, 2025 (Spotlight).</div>
+          </li>
+          <li>
+            <a
+              href="https://www.biorxiv.org/content/10.1101/2025.10.06.680180v1"
+              class="pub-title"
+              >Global Mapping of Combinatorial Chromatin Regulatory Events Using
+              Hi-Plex CUT&amp;Tag</a
+            >
+            <div class="pub-authors">
+              Yuan Liao*, Weiqiang Zhou*, Min-Zhi Jiang*, Kuai Yu*,
+              <strong>Zixiao Jolene Wang</strong>, Thomas Drummond, Meng Ding,
+              Yingming Zhao, Ignacio Pino, Sean D. Taverna, Hongkai Ji, Heng Zhu
+            </div>
+          </li>
+          <li>
+            <a href="https://arxiv.org/abs/2503.09639" class="pub-title"
+              >Can a Society of Generative Agents Simulate Human Behavior and
+              Inform Public Health Policy? A Case Study on Vaccine
+              Hesitancy</a
+            >
+            <div class="pub-authors">
+              Abe Bohan Hou, Hongru Du, Yichen Wang, Jingyu Zhang,
+              <strong>Zixiao Wang</strong>, Paul Pu Liang, Daniel Khashabi,
+              Lauren Gardner, Tianxing He
+            </div>
+            <div class="pub-venue"><em>COLM</em>, 2025.</div>
+          </li>
+          <li>
+            <a href="https://arxiv.org/abs/2311.09015" class="pub-title"
+              >Identification and Estimation for Nonignorable Missing Data: A
+              Data Fusion Approach</a
+            >
+            <div class="pub-authors">
+              <strong>Zixiao Wang</strong>, AmirEmad Ghassami, Ilya Shpitser
+            </div>
+            <div class="pub-venue">
+              Proceedings of the 41st International Conference on Machine
+              Learning (<em>ICML</em>), 2024.
+            </div>
+          </li>
+          <li>
+            <a
+              href="https://www.tandfonline.com/doi/full/10.1080/01621459.2022.2139707"
+              class="pub-title"
+              >Book Review: Semiparametric Regression with R</a
+            >
+            <div class="pub-authors">
+              <strong>Zixiao Wang</strong>, Yi Feng, Lin Liu
+            </div>
+            <div class="pub-venue">
+              <em>Journal of the American Statistical Association</em>,
+              117(540):2283-2287, 2022.
+            </div>
+          </li>
+          <li>
+            <a
+              href="https://openres.ersjournals.com/content/9/4/00291-2023"
+              class="pub-title"
+              >Shared Genetic Architecture of Blood Eosinophil Counts and Asthma
+              in UK Biobank</a
+            >
+            <div class="pub-authors">
+              Boyang Li, Yuxuan Wang, <strong>Zixiao Wang</strong>, Xinyue Li,
+              Shannon Kay, Geoffrey L. Chupp, Hongyu Zhao, Jose L. Gomez
+            </div>
+            <div class="pub-venue"><em>ERJ Open Research</em>, 9(4), 2023.</div>
+          </li>
+          <li>
+            <a
+              href="https://link.springer.com/article/10.1007/s10338-023-00456-2"
+              class="pub-title"
+              >An Asynchronous Variational Integrator for Contact Problems
+              Involving Elastoplastic Solids</a
+            >
+            <div class="pub-authors">
+              Zongwu Niu, <strong>Zixiao Wang</strong>, Yongxing Shen
+            </div>
+            <div class="pub-venue">
+              <em>Acta Mechanica Solida Sinica</em>, 2024.
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
