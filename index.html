@@ -4,280 +4,102 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Zixiao Jolene Wang</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
+    <meta name="description" content="Zixiao Jolene Wang — research in statistical inference, reinforcement learning, and automated theorem proving. Publications, news, and talks." />
     <style>
-      :root {
-        color-scheme: light;
-        --accent: #405bd4;
-        --accent-dark: #2a3d9a;
+      :root { color-scheme: light; --ink:#333333; --link:#1a6fb5; --rule:#e5e5e5; }
+      * { box-sizing:border-box; }
+      html { scroll-behavior:smooth; scroll-padding-top:44px; }
+      body { margin:0; background:#fff; color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; font-size:16px; line-height:1.6; }
+      a { color:var(--link); text-decoration:none; text-underline-offset:3px; }
+      a:visited { color:#6b5b95; }
+      a:hover { text-decoration:underline; }
+      a:focus-visible { outline:2px solid var(--link); outline-offset:5px; }
+      .site-header { position:fixed; top:70px; bottom:36px; left:max(36px,calc((100vw - 930px)/2)); width:190px; overflow-y:auto; }
+      .header-inner { display:flex; flex-direction:column; align-items:flex-start; }
+
+      nav { display:flex; flex-direction:column; align-items:flex-start; gap:12px; margin-top:22px; padding-left:0; }
+      nav a { position:relative; color:var(--ink); font:inherit; }
+      nav a[aria-current="location"] { color:var(--ink); }
+      nav a[aria-current="location"]::before { content:""; position:absolute; left:-12px; top:5px; width:2px; height:15px; background:var(--ink); }
+      .links { display:flex; flex-direction:column; align-items:flex-start; gap:6px; margin-top:32px; }
+      .links a { color:var(--link); }
+      .separator { display:none; }
+      main { width:calc(100% - 310px); max-width:650px; margin-left:max(260px,calc((100vw - 930px)/2 + 250px)); padding:67px 0 42px; }
+      h1 { color:#222; font-size:2.4rem; line-height:1.2; font-weight:600; letter-spacing:normal; margin:0 0 26px; }
+      .profile-photo { display:block; width:190px; height:245px; object-fit:cover; object-position:50% 40%; border-radius:3px; }
+      .intro-top { display:grid; grid-template-columns:minmax(0,1fr) 190px; gap:30px; align-items:start; }
+      .intro-bio p:last-child { margin-bottom:0; }
+      .about-research { margin-top:20px; }
+      p { margin:0 0 15px; }
+      .phonetic { font:inherit; }
+      .email { margin-top:20px; }
+      section { margin-top:32px; }
+      h2 { color:#222; font-size:20px; line-height:1.6; font-weight:600; margin:0 0 16px; }
+
+      h3 { font-size:inherit; line-height:inherit; font-weight:600; margin:18px 0 5px; }
+
+      ul { list-style:none; margin:0; padding:0; }
+      .news-list, .internship-list, .pub-list { list-style:disc; padding-left:22px; }
+      .news-list li { margin-bottom:12px; }
+      .news-list time { font:inherit; white-space:nowrap; }
+      .pub-list li { margin-bottom:18px; }
+      .pub-list li:last-child { margin-bottom:0; }
+      .pub-title { display:block; font:inherit; color:var(--link); }
+      .pub-title:visited, #talks .presentation-list a:visited, .links a:visited, footer a:visited { color:#6b5b95; }
+      .pub-title:hover { text-decoration:underline; }
+      .pub-authors { margin-top:2px; }
+      .pub-authors strong, .pub-venue em { font:inherit; color:inherit; }
+      .pub-venue { font:inherit; margin-top:2px; }
+      #talks .presentation-year { font-size:inherit; line-height:inherit; font-weight:600; margin:24px 0 12px; }
+      #talks .presentation-list { list-style:disc; padding-left:22px; margin:0; }
+      #talks .presentation-list li { padding-left:2px; margin:0 0 12px; line-height:1.6; }
+      #talks .presentation-list a { color:var(--link); font-weight:400; }
+      footer { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; margin-top:48px; }
+      footer a { color:var(--link); }
+      .skip-link { position:fixed; top:-90px; left:16px; z-index:30; padding:8px 12px; background:white; }
+      .skip-link:focus { top:12px; }
+      @media(min-width:1500px) { .site-header { top:88px; } main { padding-top:85px; } }
+      @media(max-width:760px) {
+        html { scroll-padding-top:82px; }
+        .site-header { position:sticky; top:0; bottom:auto; left:auto; width:100%; overflow:visible; z-index:10; background:white; border-bottom:1px solid var(--rule); }
+        .header-inner { max-width:650px; margin:auto; padding:14px 24px; }
+        .links { display:none; }
+        .intro-top { grid-template-columns:minmax(0,1fr) 140px; gap:24px; }
+        .profile-photo { width:140px; height:180px; }
+        nav { width:100%; flex-direction:row; flex-wrap:wrap; justify-content:space-between; gap:12px; margin:0; padding:0; border:0; }
+        nav a { padding:3px 0; }
+        nav a[aria-current="location"]::before { top:auto; bottom:-5px; left:0; width:100%; height:1px; }
+        main { width:auto; max-width:650px; margin:0 auto; padding:34px 24px; }
+        h1 { font-size:2.4rem; letter-spacing:normal; margin-bottom:23px; }
+              .mobile-links { display:flex; flex-direction:row; flex-wrap:wrap; gap:16px; margin-top:16px; }
+        section { margin-top:32px; }
+        h2 { font-size:20px; }
+        .news-list li { column-gap:14px; }
+        .pub-title { font-size:inherit; }
       }
-
-      * {
-        box-sizing: border-box;
+      @media(max-width:560px) {
+        .intro-top { grid-template-columns:minmax(0,1fr) 110px; gap:18px; }
+        .intro-bio { display:contents; }
+        .intro-top h1 { grid-column:1; grid-row:1; align-self:center; margin:0; font-size:2rem; }
+        .intro-top > .profile-photo { grid-column:2; grid-row:1; width:110px; height:142px; }
+        .intro-bio p { grid-column:1 / -1; margin:0; }
       }
-
-      body {
-        margin: 0;
-        padding: 3rem 1.5rem;
-        font-family: "Source Serif Pro", Georgia, "Times New Roman", serif;
-        line-height: 1.6;
-        background-color: #ffffff;
-        color: #222222;
-        display: flex;
-        justify-content: center;
-      }
-
-      main {
-        max-width: 900px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 2.5rem;
-      }
-
-      h1 {
-        font-size: 2.4rem;
-        margin-bottom: 0.35rem;
-        font-weight: 600;
-        color: #121631;
-      }
-
-      p {
-        margin: 0 0 0.85rem;
-      }
-
-      a {
-        color: var(--accent);
-      }
-
-      a:hover {
-        text-decoration: underline;
-      }
-
-      .intro {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
-        align-items: center;
-        padding-bottom: 1.2rem;
-      }
-
-      .intro-text {
-        flex: 1 1 420px;
-        max-width: 520px;
-      }
-
-      .intro-photo {
-        flex: 0 0 220px;
-        text-align: center;
-      }
-
-      .intro-photo img {
-        max-width: 100%;
-        border-radius: 12px;
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
-        border: 1px solid rgba(0, 0, 0, 0.08);
-      }
-
-      .links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-        align-items: center;
-      }
-
-      .links .separator {
-        color: #888888;
-      }
-
-      .link-item {
-        position: relative;
-        padding-left: 1.3rem;
-        color: var(--accent);
-        text-decoration: none;
-      }
-
-      .link-item::before {
-        content: attr(data-icon);
-        position: absolute;
-        left: 0;
-        top: 0;
-        font-size: 0.95rem;
-        color: var(--accent-dark);
-      }
-
-      .link-item:hover {
-        text-decoration: underline;
-      }
-
-      section {
-        display: flex;
-        flex-direction: column;
-        gap: 0.8rem;
-        padding-top: 2.5rem;
-        border-top: 1px solid rgba(0, 0, 0, 0.05);
-      }
-
-      section:first-of-type {
-        border-top: none;
-        padding-top: 0;
-      }
-
-      h2 {
-        font-size: 1.5rem;
-        margin: 0;
-        color: var(--accent-dark);
-      }
-
-      ul {
-        padding-left: 1.2rem;
-        margin: 0;
-      }
-
-      li {
-        margin-bottom: 0.75rem;
-      }
-
-      .pub-list {
-        padding-left: 0;
-        list-style: none;
-      }
-
-      .pub-list li {
-        margin-bottom: 1.3rem;
-      }
-
-      .pub-title {
-        font-weight: 600;
-        text-decoration: none;
-        color: var(--accent);
-      }
-
-      .pub-title:hover {
-        text-decoration: underline;
-      }
-
-      .pub-authors {
-        margin-top: 0.35rem;
-      }
-
-      .pub-venue {
-        margin-top: 0.25rem;
-      }
-
-      .news-list {
-        margin: 0;
-        padding-left: 1.5rem;
-        border-left: 3px solid rgba(64, 91, 212, 0.25);
-      }
-
-      .news-list li {
-        margin-bottom: 0.6rem;
-      }
-
-      strong {
-        font-weight: 600;
-      }
-
-      .phonetic {
-        font-family: "Helvetica Neue", Arial, sans-serif;
-        font-size: 0.95em;
-        color: #555555;
-      }
-
-      .featured-paper {
-        border-radius: 12px;
-        padding: 1.2rem 1.4rem;
-        background: rgba(64, 91, 212, 0.06);
-        border: 1px solid rgba(64, 91, 212, 0.18);
-      }
-
-      .featured-paper h3 {
-        margin: 0 0 0.6rem;
-        font-size: 1.2rem;
-        color: var(--accent-dark);
-      }
-
-      @media (max-width: 720px) {
-        body {
-          padding: 2.5rem 1.25rem;
-        }
-
-        main {
-          gap: 2rem;
-        }
-        
-        .intro {
-          flex-direction: column;
-        }
-
-
-        .links {
-          justify-content: center;
-        }
-
-        .intro-text {
-          text-align: center;
-        }
-
-        .intro-photo {
-          order: -1;
-          flex: 0 0 auto;
-          justify-content: center;
-        }
-
-        .intro-photo img {
-          max-width: 170px;
-        }
-
-        section {
-          padding-top: 2rem;
-        }
-
-        .news-list {
-          border-left: none;
-          padding-left: 1.2rem;
-        }
-      }
-    </style>
+      @media(min-width:761px) { .mobile-links { display:none; } }
+      @media(max-width:380px) { body { font-size:16px; } h1 { font-size:31px; } main { padding-left:20px; padding-right:20px; } .header-inner { padding-left:20px; padding-right:20px; }  }
+      @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+</style>
   </head>
   <body>
-    <main>
-      <div class="intro">
-        <div class="intro-text">
-          <h1>Zixiao Jolene Wang</h1>
-          <p>
-            Welcome! My name is Zixiao
-            <span class="phonetic">[/tsʰɨ́.ɕjɑʊ̯/]</span>
-            Jolene Wang. I am a 2nd year Ph.D. student at Harvard University,
-            co-advised by
-            <a href="https://www.hsph.harvard.edu/profile/james-m-robins/"
-              >James Robins</a
-            >,
-             <a href="https://hsph.harvard.edu/profile/rajarshi-mukherjee/"
-              >Rajarshi Mukherjee</a
-            >
-            and
-            <a href="https://en.wikipedia.org/wiki/Andrea_Rotnitzky"
-              >Andrea Rotnitzky</a
-            >.
-          </p>
-          <p>
-            Previously, I received my M.S. in Biostatistics from Johns Hopkins
-            University advised by
-            <a href="https://www.cs.jhu.edu/~ilyas/">Ilya Shpitser</a> and
-            <a href="https://publichealth.jhu.edu/faculty/1943/hongkai-ji">Hongkai Ji</a>, and my B.S. from
-            <a href="https://en.sjtu.edu.cn/">Shanghai Jiao Tong University</a>
-            advised by
-            <a href="https://linliu-stats.github.io/">Lin Liu</a> and
-            <a href="https://ysph.yale.edu/profile/hongyu-zhao/">Hongyu Zhao</a>.
-          </p>
-          <p>Email: zixiaowang [at] fas.harvard.edu</p>
+    <a class="skip-link" href="#about">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+<nav aria-label="Main navigation">
+          <a href="#about">About</a>
+          <a href="#internship">Internship</a>
+          <a href="#news">News</a>
+          <a href="#publications">Papers</a>
+          <a href="#talks">Talks</a>
+        </nav>
           <div class="links">
             <a
               class="link-item"
@@ -295,45 +117,89 @@
               >LinkedIn</a
             >
           </div>
+      </div>
+    </header>
+    <main id="about">
+      <div class="intro">
+        <div class="intro-text">
+          <div class="intro-top">
+            <div class="intro-bio">
+          <h1>Zixiao Jolene Wang</h1>
+          <p>
+            My name is Zixiao
+            <span class="phonetic">[/tsʰɨ́.ɕjɑʊ̯/]</span>
+            Jolene Wang. I am a third-year Ph.D. student at Harvard University,
+            co-advised by
+            <a href="https://www.hsph.harvard.edu/profile/james-m-robins/"
+              >James Robins</a
+            > and
+             <a href="https://hsph.harvard.edu/profile/rajarshi-mukherjee/"
+              >Rajarshi Mukherjee</a
+            >.
+          </p>
+          <p>
+            Previously, I received my M.S. in Biostatistics from Johns Hopkins
+            University advised by
+            <a href="https://www.cs.jhu.edu/~ilyas/">Ilya Shpitser</a> and
+            <a href="https://publichealth.jhu.edu/faculty/1943/hongkai-ji">Hongkai Ji</a>, and my B.S. from
+            <a href="https://en.sjtu.edu.cn/">Shanghai Jiao Tong University</a>
+            advised by
+            <a href="https://linliu-stats.github.io/">Lin Liu</a> and
+            <a href="https://ysph.yale.edu/profile/hongyu-zhao/">Hongyu Zhao</a>.
+          </p>
+            </div>
+            <img class="profile-photo" src="assets/img/prof_pic_color.png" alt="Portrait of Zixiao Jolene Wang" width="190" height="245" />
+          </div>
+          <div class="about-research">
+            <p>As LLMs write more proofs, I am interested in how mathematical communities can build trust and digest these proofs across generations. This motivates my recent work on <a href="https://stat-lib.github.io/">StatLib</a>.</p>
+            <p>I also explore how statistics can advance the discovery loop in science.</p>
+          </div>
+          <p class="email">zixiaowang [at] fas.harvard.edu</p>
+          <div class="links mobile-links">
+            <a
+              class="link-item"
+              href="https://scholar.google.com/citations?user=QHao6yQAAAAJ"
+              >Google Scholar</a
+            ><span class="separator">/</span
+            ><a
+              class="link-item"
+              href="https://github.com/zixiaowang17"
+              >GitHub</a
+            ><span class="separator">/</span
+            ><a
+              class="link-item"
+              href="https://www.linkedin.com/in/zixiao-w-3a79811a5"
+              >LinkedIn</a
+            >
+          </div>
+
         </div>
-        <div class="intro-photo">
-          <img
-            src="assets/img/prof_pic_color.png"
-            alt="Portrait of Zixiao Jolene Wang"
-          />
-        </div>
+
       </div>
 
-      <section id="topics">
-        <h2>Research Topics</h2>
-        <p>My research lies at the intersection of statistical inference, reinforcement learning, and automated theorem proving. 
-          I focus on developing frameworks for integrating formal & informal reasoning and on understanding how agents can engage in open-ended mathematical discovery.
-          </p>
+
+
+      <section id="internship">
+        <h2>Internship</h2>
+        <ul class="internship-list">
+          <li><a href="https://www.alethe-ai.com/">AletheAI</a>, Research Intern, <time datetime="2026-06">June</time>–<time datetime="2026-08">August 2026</time> — AI for mathematics and science.</li>
+        </ul>
       </section>
 
       <section id="news">
         <h2>News</h2>
         <ul class="news-list">
           <li>
-            <strong>Dec 2025:</strong>
-            Awarded the Rose Traveling Fellowship!
+            <time datetime="2025-12">Dec 2025</time> — <span>Awarded the Rose Traveling Fellowship.</span>
           </li>
           <li>
-            <strong>Sep 2025:</strong>
-            NeurIPS 2025 accepted our paper "Optimal Nuisance Function Tuning
-            for Doubly Robust Functional Estimation under Proportional
-            Asymptotic" as a Spotlight.
+            <time datetime="2025-09">Sep 2025</time> — <span>Received a Spotlight acceptance at NeurIPS 2025 for <a href="https://arxiv.org/abs/2509.25536">Optimal Nuisance Function Tuning for Doubly Robust Functional Estimation under Proportional Asymptotics</a>.</span>
           </li>
           <li>
-            <strong>Jul 2025:</strong>
-            Joined Lean for Mathematicians 2025 in NYC 
-            workshop.
+            <time datetime="2025-07">Jul 2025</time> — <span>Participated in the Lean for Mathematicians 2025 workshop in New York City.</span>
           </li>
           <li>
-            <strong>Jul 2024:</strong>
-            Presented our paper 'Identification and Estimation for Nonignorable
-            Missing Data: A Data Fusion Approach' at ICML 2024 in Vienna,
-            Austria.
+            <time datetime="2024-07">Jul 2024</time> — <span>Presented <a href="https://arxiv.org/abs/2311.09015">Identification and Estimation for Nonignorable Missing Data: A Data Fusion Approach</a> at ICML 2024 in Vienna, Austria.</span>
           </li>
         </ul>
       </section>
@@ -341,6 +207,21 @@
       <section id="publications">
         <h2>Publications</h2>
         <ul class="pub-list">
+          <li>
+            <a href="https://arxiv.org/html/2609.08783v1" class="pub-title">Improved Variance Estimation in Homoskedastic Nonparametric Random-Design Regression via a Two-Scale Approach</a>
+            <div class="pub-authors">Edgar Dobriban, Rajarshi Mukherjee, James M. Robins, Zixiao Wang</div>
+            <div class="pub-venue">Preprint, 2026.</div>
+          </li>
+          <li>
+            <a href="https://openreview.net/forum?id=lkL0qnUv3p" class="pub-title">VeriBench: An End-to-End Formal Verification Benchmark for AI Coding Agents in Lean 4</a>
+            <div class="pub-authors">Brando Miranda, Srivatsava Daruru, Ethan S. Hersch, Zhanke Zhou, Allen Nie, Daneshvar Amrollahi, Leni Aniva, Iddah Mlauzi, Kirill Acharya, Elyas Obbad, Dilara Soylu, Weston Kirk, Zixiao Jolene Wang, Kai Fronsdal, Ying Li, Donald Poindexter Jr., Rakshit Kaushik, Shurui Liu, Yegor Denisov-Blanch, Steven Dillmann, Simon Obstbaum, Santiago Cuellar, John Sarracino, Rylan Schaeffer, Mo Tiwari, Donghyun Lee, Bo Han, Sanmi Koyejo</div>
+            <div class="pub-venue">AI for Math and Deep Learning for Code Workshops at ICML, 2026.</div>
+          </li>
+          <li>
+            <a href="https://openreview.net/forum?id=gGR1gE7x3a" class="pub-title">Certifying the Judge: Falsifiable Properties for LLM-Based Evaluation of Formal Code</a>
+            <div class="pub-authors">Ethan S. Hersch, Brando Miranda, Elyas Obbad, Srivatsava Daruru, Kirill Acharya, Zixiao Jolene Wang, Steven Dillmann, Yegor Denisov-Blanch, Sanmi Koyejo</div>
+            <div class="pub-venue">Deep Learning for Code Workshop at ICML, 2026.</div>
+          </li>
           <li>
             <a
               href="https://arxiv.org/abs/2509.25536"
@@ -436,6 +317,37 @@
           </li>
         </ul>
       </section>
+      <section id="talks">
+        <h2>Talks</h2>
+        <h3 class="presentation-year">2026</h3>
+        <ul class="presentation-list">
+          <li>Optimal Nuisance Function Tuning for Doubly Robust Functional Estimation under Proportional Asymptotics, July, Guiyang, JCSDS / IMS-China</li>
+          <li><a href="assets/talks/towards-statlib-ini-2026-05.pdf" type="application/pdf" target="_blank" rel="noopener">Towards StatLib: A Tour of Formal Mathematics for Statisticians</a>, <time datetime="2026-05-28">May 28</time>, Cambridge, INI</li>
+          <li>Optimal Nuisance Function Tuning for Doubly Robust Functional Estimation under Proportional Asymptotics, May, UW reading group</li>
+        </ul>
+        <h3 class="presentation-year">2024</h3>
+        <ul class="presentation-list">
+          <li>Identification and Estimation for Nonignorable Missing Data: A Data Fusion Approach, July, Vienna, ICML</li>
+          <li>Identification and Estimation for Nonignorable Missing Data: A Data Fusion Approach, <time datetime="2024-06">June</time>, Shanghai, SJTU</li>
+        </ul>
+      </section>
+      <footer><span>Last updated September 10, 2026</span><a href="#about">Back to top</a></footer>
     </main>
+    <script>
+      const navLinks = [...document.querySelectorAll('nav a')];
+      const targets = navLinks.map(link => document.querySelector(link.getAttribute('href')));
+      let scheduled = false;
+      function updateNavigation() {
+        let active = 0;
+        targets.forEach((target, index) => { if (target.getBoundingClientRect().top <= 145) active = index; });
+        if (window.scrollY > 0 && window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 3) active = targets.length - 1;
+        navLinks.forEach((link, index) => { if (index === active) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current'); });
+        scheduled = false;
+      }
+      addEventListener('scroll', () => { if (!scheduled) { scheduled = true; requestAnimationFrame(updateNavigation); } }, {passive:true});
+      addEventListener('resize', updateNavigation);
+      addEventListener('load', updateNavigation);
+      updateNavigation();
+    </script>
   </body>
 </html>
