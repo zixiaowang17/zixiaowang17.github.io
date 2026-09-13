@@ -1,0 +1,313 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i06-p2879",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-11T05:01:46.847108+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i06-p2879/T1",
+      "aos-2024-v52-i06-p2879/T2",
+      "aos-2024-v52-i06-p2879/T3",
+      "aos-2024-v52-i06-p2879/T4",
+      "aos-2024-v52-i06-p2879/T5",
+      "aos-2024-v52-i06-p2879/T6"
+    ],
+    "printed_label_check": [
+      [
+        10,
+        "1"
+      ],
+      [
+        11,
+        "2"
+      ],
+      [
+        12,
+        "3"
+      ],
+      [
+        13,
+        "4"
+      ],
+      [
+        17,
+        "5"
+      ],
+      [
+        25,
+        "6"
+      ]
+    ],
+    "method": "Independent bold-font enumeration across main-text pages1–34 and visual comparison of all six complete statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 6,
+    "interfaces": 31,
+    "source_members": 31,
+    "direct_theorem_uses": 54,
+    "related_theorem_connections": 110,
+    "unranked_auxiliary_passages": 9
+  },
+  "source_notes": [
+    {
+      "issue_id": "source-version",
+      "evidence": [
+        {
+          "page": 1,
+          "location": "Source issue source-version"
+        },
+        {
+          "page": 34,
+          "location": "Source issue source-version"
+        }
+      ],
+      "note": "Registered arXiv2210.08571v3 is stamped19June2025, title date23June2025,86pages. It is a revision of the2024 article. Six Theorems occur in main text, including6 in the proof section. Main text ends beforeReferences on34; all appendices beginning38 are excluded."
+    },
+    {
+      "issue_id": "zero-limit-and-rank",
+      "evidence": [
+        {
+          "page": 3,
+          "location": "Source issue zero-limit-and-rank"
+        },
+        {
+          "page": 6,
+          "location": "Source issue zero-limit-and-rank"
+        },
+        {
+          "page": 12,
+          "location": "Source issue zero-limit-and-rank"
+        },
+        {
+          "page": 13,
+          "location": "Source issue zero-limit-and-rank"
+        },
+        {
+          "page": 14,
+          "location": "Source issue zero-limit-and-rank"
+        }
+      ],
+      "note": "Ridge inverse formulas are for lambda>0; ridgeless is a positive limit. In the underparameterized case the effective root tends to zero and Theorem4 conditions zero bias on rank(X)=d. Do not assume all random designs are full rank or use a singular ordinary inverse atzero. Assumption1 permits covariance zeros; d>n and sigma_n>0 do not alone force covariance rank>n, so the asserted positive lambda_star(0) and positive C_Sigma may need additional support-rank conditions."
+    },
+    {
+      "issue_id": "signal-domain-and-zero-signal",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Source issue signal-domain-and-zero-signal"
+        },
+        {
+          "page": 9,
+          "location": "Source issue signal-domain-and-zero-signal"
+        },
+        {
+          "page": 10,
+          "location": "Source issue signal-domain-and-zero-signal"
+        }
+      ],
+      "note": "The inverse-covariance norm and theta=Sigma^-1/2 beta require a domain/nullspace convention when covariance has zero eigenvalues or an unbounded inverse. The source does not fully specify that convention. The directional ratio normalizes by||theta||², undefined atzero signal absent a separate convention; preserve the limitation rather than deleting a stated signal condition."
+    },
+    {
+      "issue_id": "infinite-whitened-coordinates",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Source issue infinite-whitened-coordinates"
+        },
+        {
+          "page": 6,
+          "location": "Source issue infinite-whitened-coordinates"
+        }
+      ],
+      "note": "Trace-class covariance permits H-valued features in infinite dimensions, but their isotropic whitened coordinate sequence need not be square summable. The main text gives a finite-projection extension for concentration; do not reinterpret z as an H-valued isotropic vector with finite trace covariance."
+    },
+    {
+      "issue_id": "concentration-alternatives",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Source issue concentration-alternatives"
+        },
+        {
+          "page": 6,
+          "location": "Source issue concentration-alternatives"
+        }
+      ],
+      "note": "Assumption1II(a) allows independent non-identically distributed standardized coordinates; II(b) allows dependence with convex concentration. These are alternatives, not joint Gaussianity or concentration for every Lipschitz function. Whitening/support isotropy conventions under a singular covariance remain implicit."
+    },
+    {
+      "issue_id": "effective-rank-and-indices",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Source issue effective-rank-and-indices"
+        },
+        {
+          "page": 11,
+          "location": "Source issue effective-rank-and-indices"
+        },
+        {
+          "page": 13,
+          "location": "Source issue effective-rank-and-indices"
+        }
+      ],
+      "note": "d_Sigma(n) is an admissible envelope>=n, with tails including k, not an exact minimized quantity. Theorem2 uses sigma_2n and sigma_floor(eta*n); Theorem3 uses sigma_(C5*n) and sigma_d even for potentially infinite d. Finite-rank zero extensions, noninteger rounding and sigma_infinity conventions are not explicitly given in those statements; retain these source limitations."
+    },
+    {
+      "issue_id": "event-probability-and-bias-error",
+      "evidence": [
+        {
+          "page": 12,
+          "location": "Source issue event-probability-and-bias-error"
+        },
+        {
+          "page": 13,
+          "location": "Source issue event-probability-and-bias-error"
+        }
+      ],
+      "note": "Theorem3 uses P(A^c intersect E)<=Delta, not a conditional probability given E. Its final spectral lower bound has a separate probability statement. The bias error includes a minimum of two additive bounds, in addition to a relative B_n term; it is not wholly multiplicative."
+    },
+    {
+      "issue_id": "regularization-parameters",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Source issue regularization-parameters"
+        },
+        {
+          "page": 11,
+          "location": "Source issue regularization-parameters"
+        },
+        {
+          "page": 12,
+          "location": "Source issue regularization-parameters"
+        },
+        {
+          "page": 13,
+          "location": "Source issue regularization-parameters"
+        }
+      ],
+      "note": "Positive-ridge kappa is the interior ratio in25; ridgeless kappa is a free positive parameter constrained inTheorem3. Theorem2 nu is lambda/lambda_star while Theorem4 nu is min(d/n,1-d/n). Do not merge these merely because symbols recur. Zero-limit trace equations require a limiting interpretation."
+    },
+    {
+      "issue_id": "theorem2-and4-quantifiers",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Source issue theorem2-and4-quantifiers"
+        },
+        {
+          "page": 13,
+          "location": "Source issue theorem2-and4-quantifiers"
+        },
+        {
+          "page": 14,
+          "location": "Source issue theorem2-and4-quantifiers"
+        }
+      ],
+      "note": "Theorem2 states suppression of C,Cprime,epsilon while the optional signal bound uses Cdoubleprime; its precise dependence is not fully restated. Theorem4 uses k,D without newly quantifying them, and epsilon is only stated positive although useful rates require its exponent regime. Preserve original wording and inherited context rather than silently rewriting quantifiers."
+    },
+    {
+      "issue_id": "theorem5-spectral-scale",
+      "evidence": [
+        {
+          "page": 16,
+          "location": "Source issue theorem5-spectral-scale"
+        },
+        {
+          "page": 17,
+          "location": "Source issue theorem5-spectral-scale"
+        }
+      ],
+      "note": "Theorem5 permits an arbitrary slowly varying factor in sigma_i but evaluates lambda_star and actual risk at nu*n^(-alpha), while its proposed limit constants depend on nu as though the regularization were scaled by sigma_n. A varying slow factor changes that effective ratio. In branch2 a_i can converge to a positive constant different from1, creating a related scale issue. Preserve the printed formulas; do not silently replace their arguments by nu*sigma_n or assert the formulas are proved correct."
+    },
+    {
+      "issue_id": "theorem5-branch-measures",
+      "evidence": [
+        {
+          "page": 17,
+          "location": "Source issue theorem5-branch-measures"
+        }
+      ],
+      "note": "The two F_beta measures use floor(n*x) and floor((n/log n)*x), respectively; both depend onn. The scalar decay exponent theta is distinct from the bold inverse-covariance signal theta. c_star is defined separately in each spectral branch. The optional bias predicates remain tied to their own branches."
+    },
+    {
+      "issue_id": "resolvent-notation-and-scope",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Source issue resolvent-notation-and-scope"
+        },
+        {
+          "page": 23,
+          "location": "Source issue resolvent-notation-and-scope"
+        },
+        {
+          "page": 25,
+          "location": "Source issue resolvent-notation-and-scope"
+        }
+      ],
+      "note": "Script R_n is a covariance-resolvent trace, plain R_n is total effective prediction risk, and sans-serif R0 is a local shorthand inTheorem6. Its general mu_star parameter need not obey the positive-ridge kappa/rho conditions. Keep1+R0(I)^2 distinct from(1+R0(I))² in the error parameters. No proof-only theta normalization or ridge learner/noise requirement is added to the design-only resolvent conclusion."
+    },
+    {
+      "issue_id": "proof-versus-assumption",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Source issue proof-versus-assumption"
+        },
+        {
+          "page": 7,
+          "location": "Source issue proof-versus-assumption"
+        },
+        {
+          "page": 8,
+          "location": "Source issue proof-versus-assumption"
+        },
+        {
+          "page": 15,
+          "location": "Source issue proof-versus-assumption"
+        },
+        {
+          "page": 16,
+          "location": "Source issue proof-versus-assumption"
+        },
+        {
+          "page": 23,
+          "location": "Source issue proof-versus-assumption"
+        },
+        {
+          "page": 24,
+          "location": "Source issue proof-versus-assumption"
+        }
+      ],
+      "note": "Hanson–Wright lemmas, equivalent Gaussian sequence model, application Proposition hypotheses, finite-difference lemmas, filtrations and proof normalization are not extra requirements of every theorem. Theorem6 itself is retained because it is a labeled main-text Theorem. Source review certifies extraction fidelity and dependency scope, not proof validity."
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2210.08571v3",
+    "version": "arXiv:2210.08571v3, stamped 19 June 2025; title-page date June 23, 2025",
+    "pdf_sha256": "5fcce9d2aea751e76487104fb372647430cae702f666881efe642734e50c11df",
+    "pdf_pages": 86,
+    "main_text_last_pdf_page": 34
+  },
+  "recorded_checks": [
+    "Six original main-text Theorems1–6 independently enumerated across pages1–34. Full Theorem3 and4 continuations retained; Theorem6 in the main-text proof section included. All variance/bias subparts, event qualifications, rank statements, scalar parameter definitions and spectral formulas were visually compared. Appendix bodies excluded.",
+    "31 original source entries preserve Hilbert/covariance setting, signal domain, effective-rank envelope, alternative concentration conditions, full Assumption1, feature design and linear model, ridge/ridgeless estimators, conditional and effective bias/variance, parameter ratios, spectral projections, event-probability convention, regular variation and branch-specific coefficient predicates, and population/sample resolvents with their implicit root. Nine auxiliary source passages preserve ambient definitions and proof context separately.",
+    "Independent source-clause reconstruction gives54 direct uses and110 related-theorem connections. Theorem6 has no response-noise/ridge-risk dependency; Theorem5 does not acquire deterministic-equivalent formulas as additional statement requirements. Theorem3 uses the ridgeless free-kappa replacement and intersection-probability convention, not the positive-ridge kappa formula.",
+    "Thirteen notes preserve the2025 registered revision, zero-limit/rank and inverse-domain caveats, infinite whitened coordinates, alternative concentration assumptions, effective-rank/index conventions, additive bias errors, reused parameter symbols, theorem constant/quantifier issues, spectral scaling limitations and proof-versus-statement scope.",
+    "All31 source entries carry literal natural-language source terms, faithful source kinds/headings and matching meaningful selectors. All110 connections have valid same-paper dependency paths and specific source correspondence. Script sample quantities, plain deterministic equivalents and the sans-serif theorem-local R0 shorthand remain distinct.",
+    "All six content JSONs reproduce byte for byte in a fresh empty directory. Seven retained scripts support separate inventory review, source extraction, finalization, full-source validation and reproduction. Rebuilding alone does not perform a fresh semantic PDF review.",
+    "Source review preserves original statements and unresolved conventions rather than certifying proofs. In particular, Theorem5 regularization arguments may omit the permitted slowly varying scale, and some zero-root/index/domain conventions are implicit. No corrections or extra premises have been silently substituted."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "cc8772ea1c3b76cfad40a4c9c36aeca59222abbe45343b2ef1e73a7eb67109d1"
+}

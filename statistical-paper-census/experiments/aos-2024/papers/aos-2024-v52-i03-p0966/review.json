@@ -1,0 +1,128 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i03-p0966",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T13:04:08.633418+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i03-p0966/T1",
+      "aos-2024-v52-i03-p0966/T3",
+      "aos-2024-v52-i03-p0966/T5",
+      "aos-2024-v52-i03-p0966/T6",
+      "aos-2024-v52-i03-p0966/T10",
+      "aos-2024-v52-i03-p0966/T18",
+      "aos-2024-v52-i03-p0966/T20",
+      "aos-2024-v52-i03-p0966/T22",
+      "aos-2024-v52-i03-p0966/T24"
+    ],
+    "method": "Fresh PDF line enumeration across pages 1–28 and clipped main-text page 29; visually checked Theorem labels and statement endings. Background Theorems remain included; propositions, lemmas and corollaries remain excluded.",
+    "printed_label_check": [
+      [
+        9,
+        1
+      ],
+      [
+        10,
+        3
+      ],
+      [
+        11,
+        5
+      ],
+      [
+        12,
+        6
+      ],
+      [
+        16,
+        10
+      ],
+      [
+        21,
+        18
+      ],
+      [
+        24,
+        20
+      ],
+      [
+        26,
+        22
+      ],
+      [
+        28,
+        24
+      ]
+    ],
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 9,
+    "interfaces": 40,
+    "source_members": 40,
+    "direct_theorem_uses": 62,
+    "related_theorem_connections": 109,
+    "unranked_auxiliary_passages": 17
+  },
+  "source_notes": [
+    "The inspected source is the 99-page arXiv:2107.12364v3 artifact dated 16 June 2024, identified by its saved SHA. Equivalence of every statement to the final journal layout is not asserted.",
+    "Appendix A begins on shared page 29 at y=637.536865234375. Mathematics from that boundary onward is excluded. The later references are not part of the inspected main text.",
+    "Theorem 1 states a globally finite-valued convex potential and Lebesgue-almost-everywhere inverse identities. These assertions are retained without replacing Lebesgue measure by P or Q.",
+    "Theorem 3 uses the closure of Omega-prime inside the interior of Omega; extraction without inspecting the overbar would weaken the hypothesis.",
+    "Theorem 5 bounds the norm of a potential that is otherwise defined only up to an additive constant. No normalization is printed in that theorem. Condition C2 separately and explicitly requires a mean-zero potential.",
+    "Theorem 5 allows every alpha>1, while Theorem 3 and several later assertions exclude integer alpha. No noninteger condition is transferred between them.",
+    "The main-text notation paragraph names Hölder and Sobolev spaces but defers their actual norm definitions and conventions to Appendix A. Theorems also use Hölder notation on open interiors although the paragraph initially describes closed sets.",
+    "The norm-only Hölder ball (7) and positive Hölder ball (8) are distinct. Neither displayed set itself requires integral one; normalization comes from calling p and q densities.",
+    "The source Kantorovich dual (11) writes L1(Omega) for both potentials. The torus dual instead writes L1(P) and L1(Q); this distinction is preserved.",
+    "The torus dual display uses straight phi, but its following feasibility clause uses curly varphi. This local notation change is retained and does not identify a dual potential with a Brenier potential.",
+    "The Legendre-Fenchel definition on page 9 takes the supremum over Omega, while the torus discussion uses a convex lift on all of Rd. The main text does not separately spell out the conjugation domain for that lift.",
+    "Periodic representatives of torus probability measures have unit mass per cell and infinite total mass on Rd. They are not ordinary probability measures on all of Rd.",
+    "The torus Brenier potential is a convex lift; the quadratic correction is periodic. The risk in (33) uses Euclidean differences of selected lifted maps, not a replacement by shortest torus distances between output representatives.",
+    "Proposition 4 skips item (iv) in its printed numbering. The auxiliary transcription preserves (i),(ii),(iii),(v),(vi),(vii) without inventing a missing item.",
+    "The wavelet basis paragraph uses 2^{j0}-1 in the displayed index range even for level j. Its detailed boundary construction is deferred to Appendix A; no corrected tensor index range is substituted.",
+    "The wavelet density formula equates an empirical sum over the entire Psi-bc basis with a truncated sum through J_n. The source inconsistency remains visible in the original passage.",
+    "The main text specifies N>=2 and j0>=log2(N), but does not spell out the needed wavelet regularity relative to an arbitrary alpha in Theorem 10. No Appendix A condition is guessed.",
+    "The normalized estimated densities are clipped at zero. The general estimated transport map is stated to be unique only almost everywhere under its estimated source law; the later population loss needs the source choice of a representative. No extra global uniqueness assertion is made.",
+    "The Fourier-transform sentence names K but writes f in the integral. The printed 2pi sign convention is retained together with that variable mismatch.",
+    "Theorem 18 has log(n)/n in dimension two, whereas Theorem 10 has log(n)^2/n. Both variance terms in Theorem 18 are under one square root.",
+    "Kernel condition K1 is distinct from the kernel-estimator definition. Its evenness and Fourier-order bound do not assert that K is nonnegative.",
+    "Generic smooth-domain condition C1 replaces S1 unit-cube containment. Requiring both would incorrectly eliminate the intended generic-domain setting.",
+    "Uniform regularity condition C2 is assumed for the generic-domain two-sample result. The main text explicitly says it is only verified on the torus and conjectural on other domains; it is not treated as a proved consequence of C1.",
+    "The spectral density construction excludes the constant eigenfunction from its mean-zero basis and adds 1 separately. The constrained Hölder densities are not mean-zero functions.",
+    "The spectral weights omega_l are defined using lambda_{L_n} and then used in both the source and target series, even though the target truncates at L_m. Separate target weights are not printed.",
+    "Theorem 20 reuses the scalar rate R_K from Theorem 18. This reuse does not make the kernel estimator or Fourier kernel condition a prerequisite of the spectral estimator theorem.",
+    "Theorem 20 ends with a comma after its final display. The following prose and footnote are discussion, not part of the theorem.",
+    "The Section 4.4 sampling paragraph states iid observations but does not repeat the explicit cross-sample independence sentence used in Sections 4.3 and 5.1. The local statement is retained separately.",
+    "Theorem 22 retains both endpoint sample-size ratios and allows the zero-variance Gaussian case. The later discussion of nondegeneracy and confidence intervals is not inserted into the theorem.",
+    "Theorem 24 has barred M, gamma and u in the perturbed-density assertion. Its suprema range over finite subsets, not intervals. Both features require visual inspection.",
+    "The differentiable paths in Theorem 24 have main-text score descriptions, but their actual construction is only in Appendix L equations (115–116), which are excluded. The result is inventoried with this unresolved reference rather than silently completed from an assumed standard path."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2107.12364v3",
+    "version": "arXiv:2107.12364v3",
+    "pdf_sha256": "11f0c422e0febff18c7311b89972258221a7e0e371c3b4bf7bb9de285cc9b6aa",
+    "pdf_pages": 99,
+    "main_text_last_pdf_page": 29
+  },
+  "recorded_checks": [
+    "Pinned source title, four authors, arXiv version/date, page count and SHA checked against the PDF. Every archived main-text page equals fresh byte-preserving extraction, with page 29 clipped before the appendix.",
+    "Independent PDF line enumeration finds exactly nine actual Theorem headings, including background results. Theorem 18 continues to page 22. All original inventory fields survive the finalized handoff unchanged.",
+    "Source inspection preserves the different phi glyphs, the interior-domain closure, each regularity qualification, and Theorem 1 inverse identities without source repair.",
+    "Theorem 10 squared-logarithmic rate differs from Theorem 18 single-logarithmic rate; both variance terms in Theorem 18 are inside one radical.",
+    "Theorem 20 preserves bar versus hat maps, the L_n power and the distinct C1/C2 conditions. Reusing R_K does not import kernel prerequisites.",
+    "Theorem 22 original equation references are resolved through full (38)–(39), tuning and variance excerpts, preserving branch-specific conjugate regularity and endpoint sample-size ratios.",
+    "Theorem 24 preserves all three barred constants, finite-set suprema and both product experiments. Its appendix-only path construction remains explicitly unresolved.",
+    "Forty source passages retain original names, conditions, estimator constructions and meaningful selectors. Independent traversal verifies 62 direct uses and 109 related theorem connections.",
+    "Deterministic Theorem 6 has no sampling model; generic-domain Theorem 20 has no torus or kernel dependency; torus Theorem 24 does not inherit the unused Euclidean branch of its cost functional.",
+    "Seventeen auxiliary passages and thirty-one source notes retain notation, original ambiguities and excluded references. All quotation evidence is on pages 3–28; no appendix mathematics is used."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "74a9484375296d6f616d4bdbc47c9abf51fef494c829c0067f5cb2d110836397"
+}

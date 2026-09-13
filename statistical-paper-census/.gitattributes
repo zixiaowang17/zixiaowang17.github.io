@@ -1,0 +1,4 @@
+* text=auto
+*.html linguist-generated=true
+experiments/**/*.json linguist-generated=true
+examples/**/*.json linguist-generated=true

@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "release_complete": false,
+  "checked_at": "2026-09-11T19:26:47.728574+00:00",
+  "scope": "Checkpoint integrity and exact note provenance only; not proof of semantic resolution or final release completion.",
+  "triage_sha256": "5a56dc81cdcb4373531fd869cc78e53c49aba10218d3afe0d28dd0796aa45b4b",
+  "source_followups_sha256": "248702c1be9f3ba4002f197d48c1e2f3389790a6bbc6a7914c40c2e20950c1cf",
+  "counts": {
+    "total_items": 441,
+    "triaged_items": 441,
+    "pending_items": 0,
+    "fully_triaged_papers": 113
+  },
+  "checks": [
+    "Exact retained-note item hashes",
+    "Current audit fields match retained notes",
+    "Duplicate records have identical values within the same paper",
+    "Disjoint complete reviewed/pending partition",
+    "All note items accounted for in each fully triaged paper",
+    "Current aggregate and grouping checkpoint hashes"
+  ]
+}

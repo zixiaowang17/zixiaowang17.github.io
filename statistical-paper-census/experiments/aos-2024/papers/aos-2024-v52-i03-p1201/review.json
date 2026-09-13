@@ -1,0 +1,102 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i03-p1201",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T20:46:22.758128+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i03-p1201/T3.2",
+      "aos-2024-v52-i03-p1201/T3.7",
+      "aos-2024-v52-i03-p1201/T3.8",
+      "aos-2024-v52-i03-p1201/T4.2",
+      "aos-2024-v52-i03-p1201/T4.4",
+      "aos-2024-v52-i03-p1201/T4.6"
+    ],
+    "printed_label_check": [
+      [
+        7,
+        "3.2"
+      ],
+      [
+        10,
+        "3.7"
+      ],
+      [
+        11,
+        "3.8"
+      ],
+      [
+        14,
+        "4.2"
+      ],
+      [
+        16,
+        "4.4"
+      ],
+      [
+        17,
+        "4.6"
+      ]
+    ],
+    "method": "Independent actual-heading enumeration and visual comparison of all complete theorem bodies.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 6,
+    "interfaces": 25,
+    "source_members": 25,
+    "direct_theorem_uses": 32,
+    "related_theorem_connections": 74,
+    "unranked_auxiliary_passages": 8
+  },
+  "source_notes": [
+    "The pinned source is the 26-page final published PDF. Page 23 describes an external supplement; it is not the beginning of an appendix body inside this PDF. References end on page 26. The supplement was not opened.",
+    "All six actual main-text Theorems are preserved. Lemmas, Corollaries, Remarks and citations are not additional theorem records. Corollary 4.5 contributes hypotheses because Theorem 4.6 explicitly invokes them.",
+    "Theorem 3.2 and Theorem 4.6 both contain substantial material after their initial conclusions. All of that italic material is included; in particular Theorem 4.6 includes the total-risk and expected-distance bounds.",
+    "The unnumbered Assumption prints the conditioning index y in Omega although the conditional kernel domain uses Omega_Y. This source notation is retained.",
+    "The central class consists of all square-integrable central-field-measurable functions and can be infinite dimensional. It is not the span of the d generating coordinates and is not inherently mean-zero.",
+    "Remark 3.3 declares all functions mean-zero. The later class of neural networks with biases is not explicitly centered. Since centered losses and variance penalties are translation invariant, proportionality up to sign in Theorem 3.7 and distance to plus/minus a function require attention to that convention; no centering operation is inserted into the source estimator.",
+    "GMDD uses a Levy measure and a cndf-induced difference kernel. Full integrability, symmetry and support conditions sufficient for the displayed equivalence and zero-characterization are not provided here. The main text points to external references [4,35]. No unverified extra conditions are presented as original assumptions.",
+    "The Levy measure mu in Section 2.2 and the later scalar/vector optimization penalties reuse the same letter with different meanings. Tilde-mu is a separate cross-direction penalty.",
+    "Theorem 3.2 assumes an optimizer exists. Its upper bound m<=dimension of the full central class does not independently ensure enough nonconstant normalized directions. The theorem is not rewritten as an existence assertion.",
+    "Assumption A1 requires distinct first d+1 ordered negative GMDD values, not just the first d. It also constrains tilde-mu. Theorem 3.8 does not state A1.",
+    "The Frobenius penalty is unsquared; the successive variance and covariance penalties are squared. Theorem 3.8 is a population claim and does not refer to the separate empirical implementation.",
+    "The sample passage defines D_n from observed pairs but does not explicitly write an iid assumption there. The U-statistic analysis uses independent observations in its prose; the exact general sampling assumption and measurable argmin selections need specification in formalization.",
+    "The order-four empirical objectives require a meaningful inverse binomial(n,4), ordinarily n>=4. Theorem 4.2 states n>=V and has an n-3 denominator, while Theorem 4.4 does not explicitly restate either restriction. No extra restriction is inserted into the original bodies.",
+    "I_{n,k} contains all ordered distinct-index tuples; J_{n,k} contains only increasing tuples. The kernels use I_{4,k}, while the U-statistic average uses J_{n,4}. All printed coefficients are retained.",
+    "The empirical recursion uses previous estimated directions; the excess risk fixes previous population directions. The first-direction estimator uses no covariance kernel, so Theorems 4.2 and 4.4 do not inherit the later-step kernel merely because it occurs nearby.",
+    "A2 bounds all candidate functions and the kernel at every pair of response-space points. Its prose says bounded Y can ensure boundedness, but that does not literally bound a kernel on all R^q. A2 also requires a uniform bound on a candidate class otherwise described by architecture alone.",
+    "The Holder definition is restricted to beta in (0,1] and a function-dependent existential zeta on the unit cube. No common Holder radius, derivative-based extension or explicit support reduction of the general X law is supplied in that definition.",
+    "A4 does not specify the range of epsilon. Its right-hand side becomes negative for sufficiently large epsilon, so an unrestricted all-positive-epsilon reading is not silently imposed. V depends on the candidate class and may therefore depend on n.",
+    "The sign-invariant rho is a pseudodistance on the unquotiented function space. C1 is only specified as an appropriate positive constant satisfying (12); its detailed choice is delegated to the excluded proof of Theorem 4.4.",
+    "Theorem 4.6 retains probability 1-(4j-3)delta for each j and then a summed bound. It does not separately state the simultaneous event probability for that sum; do not silently add a union bound or uniformity in d.",
+    "The last Theorem 4.6 clause invokes a ReLU class with a stated sample-dependent depth that is not rounded to an integer. The width parameter N is arbitrary, and the sample-size condition uses the resulting S and L. The generic positive-constant convention asserts independence of n, not independence of every architecture parameter.",
+    "Section 4.2 contains proof-level notational inconsistencies: R1,n is written with an extra argument in one L1,n term and the displayed first-order sum omits the 1/n that appears in v1,n. These formulas are not theorem targets and are not substituted into the empirical estimator or rho definition.",
+    "Selection of tuning constants and the empirical Frobenius estimator are delegated to the supplement; the dimension-selection algorithm, simulation optimizer Adam and numerical examples are downstream uses, not hypotheses of these six Theorems."
+  ],
+  "source": {
+    "source_url": "https://projecteuclid.org/journals/annals-of-statistics/volume-52/issue-3/Deep-nonlinear-sufficient-dimension-reduction/10.1214/24-AOS2390.pdf",
+    "version": "Published version, The Annals of Statistics 52(3), 2024, pp. 1201-1226",
+    "pdf_sha256": "cc68ba81b23d7f19b5352aa1f2a4ef4602b9e969d0ffc5458813f2c623ca0f7c",
+    "pdf_pages": 26,
+    "main_text_last_pdf_page": 26
+  },
+  "recorded_checks": [
+    "All six complete theorem bodies visually reviewed; Theorem 4.6 includes both final consequences. Actual headings independently enumerated across all 26 pages.",
+    "All 25 source passages compared with PDF pages 4–7 and 9–16; eight additional ambient passages preserve probability spaces, norms, tuple conventions, constants and section conventions.",
+    "Independently checked all 32 direct uses and 74 related connections. No ReLU/Holder hypothesis is attached to Theorems 4.2 or 4.4, and neither uses the later-step covariance kernel. Theorem 3.8 does not inherit A1.",
+    "Every interface title comes from an original natural-language keyword or separately evidenced adjacent naming passage. Every member has a meaning-bearing source selector; source kinds distinguish assumptions, conditions, theorem excerpts and definitions.",
+    "Checked fraktur central M, script G/B/D, calligraphic candidate F and architecture sizes, plain W affine maps and bold vector f against the PDF typography. Original coefficients, penalty powers and probability levels retained.",
+    "The census preserves source claims and unresolved meanings, including A4 epsilon range, mean-zero convention, C1 and network depth. It does not certify proofs or import excluded supplement content.",
+    "Six saved content artifacts rebuilt byte-for-byte in a fresh directory; source identity and both independent schema validations passed."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "472867cecba63f9242bd9e640096f7ef1b37c544b2499fe7a9b3a43714216c65"
+}

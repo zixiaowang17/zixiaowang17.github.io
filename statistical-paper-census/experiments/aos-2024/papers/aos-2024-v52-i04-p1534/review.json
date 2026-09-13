@@ -1,0 +1,103 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i04-p1534",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T23:37:32.155658+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i04-p1534/T1",
+      "aos-2024-v52-i04-p1534/T2",
+      "aos-2024-v52-i04-p1534/T3",
+      "aos-2024-v52-i04-p1534/T4",
+      "aos-2024-v52-i04-p1534/T5",
+      "aos-2024-v52-i04-p1534/T6"
+    ],
+    "printed_label_check": [
+      [
+        6,
+        "1"
+      ],
+      [
+        14,
+        "2"
+      ],
+      [
+        15,
+        "3"
+      ],
+      [
+        15,
+        "4"
+      ],
+      [
+        16,
+        "5"
+      ],
+      [
+        19,
+        "6"
+      ]
+    ],
+    "method": "Independent bold-heading enumeration and visual comparison of all six complete statements and incorporated formulas.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 6,
+    "interfaces": 24,
+    "source_members": 24,
+    "direct_theorem_uses": 34,
+    "related_theorem_connections": 66,
+    "unranked_auxiliary_passages": 12
+  },
+  "source_notes": [
+    "The registered source is the 83-page arXiv:2303.16711v3 PDF. Its arXiv stamp says 27 September 2023 while the manuscript title page says 28 September 2023. Both dates are retained; the published DOI does not replace this inspected source version.",
+    "Main text and references end on page 30 after Zheng and Laan (2011), before Appendices at y=638.9385986328125. Only the main-text portion of that page is admitted. Appendix contents and bodies are excluded.",
+    "Exactly six main-text Theorem environments occur: 1 on page 6, 2 on page 14, 3 and 4 on page 15, 5 on pages 16-17, and 6 on page 19. Theorem 5 in prose on page 21 is a reference. Main-text Lemmas are not inventoried as Theorems.",
+    "Theorem 2 incorporates (4), originally written for hat-nu_n, while its cross-fitted estimator is bar-nu_n. The original display is archived unchanged with an explicit analytical explanation. Its drift assumption prints uppercase o_P while its remainder prints lowercase o_p; both are preserved.",
+    "Theorem 5 incorporates the entire expansion (25), including the half-sum bias and full-sample empirical mean. Both its remainder and final rate use big-O_p; no little-o or central limit assertion is substituted.",
+    "The source calls the image of the local parameter a closed subspace. A continuous linear map need not have closed image. This source assertion is preserved, not silently replaced by a closure or a new closed-range hypothesis.",
+    "Pointwise efficient influence operator evaluations use selected representatives with a common full-probability set and a separable-process convention. Boundedness as an L2-valued operator does not itself give almost-sure boundedness of the pointwise functional.",
+    "An EIF is defined as a Hilbert-valued Riesz representative on a common full-measure set. Bochner square integrability is separately imposed where required; it is not inserted into the original EIF definition.",
+    "Theorem 1 permits the local parameter space to be an RKHS even if the full action space is not. Its candidate formula is stated for each t, P-almost surely in z. Do not strengthen that formula to an unqualified simultaneous-in-t statement or add a bounded-kernel hypothesis from Example 3.",
+    "Theorem 1 gives two implications: an existing EIF has the displayed form, and finite Bochner L2 norm of the candidate suffices for existence. It does not state that square integrability is necessary for EIF existence.",
+    "Lemma 1 prints dot-nu_P without an adjoint star in the middle formula for sigma_P(beta), although its argument h_k belongs to the action space. This apparent type mismatch is retained in D17 and is not silently repaired.",
+    "The finite-dimensional convention calls a zero-padded infinite sequence an orthonormal basis. All series formulas must be read with this explicit convention, not with a requirement of infinitely many unit vectors in finite dimension.",
+    "Cross-fitting uses an even-sized iid sample and two complementary halves. P_n^j denotes an empirical measure of n/2 observations, not a j-fold product law. Bootstrap sample labels deliberately reverse the halves, and fitted EIFs are not refitted per bootstrap draw.",
+    "The conditions of Theorem 2 imported into Theorems 3 and 4 are its hypotheses. They do not import its conclusion of regularity as a further assumption. Gaussian quantile notation from its conclusion is retained as supporting context.",
+    "Theorem 3 explicitly assumes the EIF has positive L2 norm and distinguishes exact limiting coverage from a conservative lower bound. Theorem 4 does not repeat that nondegeneracy condition; it instead adds fitted EIF L2 consistency. Preserve the difference.",
+    "Standardization operators are continuous, self-adjoint and positive definite as printed. Uniform coercivity, invertibility and bounded inverse are not stated. The Wald example and its appendix construction do not add assumptions to every confidence-set theorem.",
+    "Theorem 3 admits general consistent or conservative thresholds. Theorem 4 validates the particular conditional split-bootstrap quantile. Theorem 6 requires a consistent spherical Gaussian quantile without mandating bootstrap estimation.",
+    "Theorem 5 allows a sequence beta_n in ell2-star, including zero coordinates. Section 5.2 and Theorem 6 fix beta as n grows, and Theorem 6 requires every entry to be in (0,1]. No data-adaptive confidence-set result is asserted.",
+    "The generic drift/remainder definition on page 16 prints beta in ell2, while Lemma 1 and Theorem 5 use ell2-star. This source domain difference is preserved; it does not expand the theorem hypotheses.",
+    "The regularized bar estimator uses the untransformed plug-in nu(hat-P) and targets nu(P0). The tilde estimator instead uses Gamma_beta composed with nu(hat-P) and targets nu^beta(P0). These are distinct definitions even though both use the same regularized influence correction.",
+    "Theorem 6 assumes asymptotic linearity for the transformed target. It does not import Theorem 5 rate conditions, an original EIF, lack of an original EIF, or a particular sufficient condition from Corollary S1.",
+    "The preimage in (30) is a set preimage. The pointwise inverse formula is only defined on the image of Gamma_beta. The nonshrinking ordinary-norm diameter discussion depends on infinite-dimensional directions and is not a conclusion of Theorem 6.",
+    "Theorem 6 fixes a smooth submodel with nonzero original derivative, asserts strictly greater-than-alpha local power, and separately gives the O(n^-1/2) distance of its alternatives. It does not claim uniform power over sample-size-varying directions.",
+    "The six general Theorems do not assume the causal, density, or kernel-embedding examples. Main-text example Lemmas, proof-route results, tuning algorithms, and all appendix proofs are excluded from the theorem dependency graph. Standard RKHS, Gaussian, operator and probability notions remain ambient where the source gives no general definition."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2303.16711v3",
+    "version": "arXiv:2303.16711v3, 27 September 2023; manuscript dated 28 September 2023",
+    "pdf_sha256": "1743d4d93efb6c31474b16cf5e8c92c491becdb499f0ae6afb5a8b2942603e23",
+    "pdf_pages": 83,
+    "main_text_last_pdf_page": 30
+  },
+  "recorded_checks": [
+    "Independent bold-heading enumeration across admitted pages finds six Theorems in source order. Every complete original statement was compared visually, including the page-17 continuation of Theorem 5. Theorem 4 ends on page 15. Referenced conclusions (4) and (25) are preserved separately in full.",
+    "Twenty-four original interface passages and twelve auxiliary passages were compared with the main-text PDF. They preserve the model, derivative and influence definitions, sample split, both estimators, error terms, bias, operator class, confidence sets, conditional bootstrap and fixed-regularization local alternatives.",
+    "Independent reconstruction verifies 34 direct uses and 66 related connections. Theorems 3 and 4 inherit the hypotheses of Theorem 2, not its regularity conclusion. Theorems 5 and 6 have no original-EIF dependency. Theorem 6 does not acquire Theorem 5 rate assumptions or a mandatory bootstrap threshold.",
+    "All 24 entries use original natural-language source keywords. Definition passages and Lemma excerpts retain their source kind and heading. Each member has a meaningful matching selector; every related theorem has a source-backed explanation and the verified local path.",
+    "Visual and font inspection preserves ordinary E_0, blackboard Gaussian H, calligraphic Hilbert H and error terms, script submodel collection, hats/bars/tildes, and the o_p/o_P case difference in Theorem 2. Formula (30) retains squared beta weights and the fitted adjoint. The finite-dimensional zero-padding convention is explicit.",
+    "Twenty-four notes retain the source closed-image assertion, missing adjoint star in Lemma 1, original versus transformed estimator targets, fixed versus varying beta, and inverse-on-image scope. Appendix bodies were not opened. This is a statement and dependency review, not proof certification.",
+    "All six content artifacts reproduce byte for byte from the retained per-paper scripts in an empty directory. Source identity, independent inventory, exact original-claim handoff, graph reconstruction, notation invariants, math-fragment checks and inventory/census validation passed. Reproduction alone does not renew source review."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "c376916b0bcada3b8f51d9d7efd7fdb1b4d894416e24d8afa2b7e9a160b090ba"
+}

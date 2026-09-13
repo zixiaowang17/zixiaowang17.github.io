@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bounded spectral norm</title><style>:root { color-scheme:light; --ink:#22314c; --muted:#607088; --line:#dce3ed; --paper:#fff; --wash:#f5f7fa; --accent:#2056b5; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--paper); color:var(--ink); font:15px/1.5 system-ui,-apple-system,sans-serif; }
+a { color:var(--accent); text-underline-offset:3px; }
+button,input,select { font:inherit; }
+button,a,input,select { -webkit-tap-highlight-color:transparent; }
+:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+button { cursor:pointer; }
+button:disabled { cursor:default; }
+.muted { color:var(--muted); }
+.shell { display:grid; grid-template-columns:minmax(0,1fr); min-height:100vh; }
+.shell.has-reader { grid-template-columns:minmax(310px,var(--catalog-width,38%)) minmax(0,1fr); }
+.catalog { container-type:inline-size; min-width:0; padding:32px clamp(20px,4vw,60px) 60px; }
+.catalog h1 { font-size:26px; line-height:1.25; margin:0 0 20px; font-weight:650; }
+.controls { display:flex; gap:8px; flex-wrap:wrap; }
+.controls input { flex:1 1 200px; min-width:0; }
+.controls input,.controls select { border:1px solid var(--line); border-radius:5px; padding:9px 11px; background:var(--paper); color:var(--ink); }
+.results-toolbar { display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:8px 18px; margin:16px 0 9px; }
+.results { font-size:13px; color:var(--muted); margin:0; }
+.ranking-note { font-size:12px; color:var(--muted); }
+.ranking-note summary { cursor:pointer; }
+.ranking-note[open] { flex-basis:100%; }
+.ranking-note p { max-width:65ch; margin:9px 0; line-height:1.6; }
+[hidden] { display:none !important; }
+.view-tabs { display:flex; gap:24px; border-bottom:1px solid var(--line); margin:0 0 22px; }
+.view-tabs button { padding:12px 1px; background:none; border:0; border-bottom:3px solid transparent; color:var(--muted); font-weight:600; }
+.view-tabs button[aria-selected=true] { color:var(--accent); border-bottom-color:var(--accent); }
+.search-results { border-top:1px solid var(--line); }
+.api-result,.paper-result-button { text-align:left; border:0; background:none; color:var(--ink); width:100%; }
+.api-result { display:grid; grid-template-columns:minmax(30px,max-content) minmax(0,1fr); gap:14px; padding:18px 8px; align-items:start; border-bottom:1px solid var(--line); }
+.api-result:hover,.paper-result-button:hover,.theorem-match:hover { background:var(--wash); }
+[aria-current=true] { background:#edf3fd; box-shadow:inset 3px 0 var(--accent); }
+.rank { font-size:18px; color:var(--muted); font-variant-numeric:tabular-nums; }
+.name { display:block; font-weight:600; line-height:1.45; }
+.count { display:block; font-size:13px; margin-top:7px; color:var(--muted); }
+.api-result .result-content { display:flex; justify-content:space-between; align-items:baseline; gap:18px; min-width:0; }
+.api-result .name { min-width:0; overflow-wrap:anywhere; }
+.theorem-count { flex-shrink:0; color:var(--muted); font-size:12px; font-variant-numeric:tabular-nums; }
+.rank-group { display:block; font-weight:400; font-size:12px; color:var(--muted); margin-top:4px; }
+@container(max-width:480px) { .api-result .result-content{display:block}.theorem-count{display:block;margin-top:4px} }
+.paper-result { border-bottom:1px solid var(--line); }
+.paper-result-button { padding:21px 8px; }
+.paper-result .name { font-size:17px; max-width:68ch; }
+.paper-needs { display:block; color:var(--muted); font-size:13px; margin-top:8px; }
+.theorem-matches { margin:0 8px 18px 20px; border-left:2px solid var(--line); }
+.theorem-match { display:flex; justify-content:space-between; gap:15px; width:100%; background:none; border:0; padding:10px 13px; text-align:left; color:var(--accent); }
+.theorem-match small { color:var(--muted); }
+.shell.has-reader .api-result { grid-template-columns:minmax(25px,max-content) minmax(0,1fr); }
+.scope { font-size:12px; color:var(--muted); margin-top:24px; }
+.reader { position:sticky; top:0; height:100vh; min-width:0; border-left:1px solid var(--line); background:var(--paper); }
+.reader[hidden] { display:none; }
+.reader-toolbar { display:flex; align-items:center; gap:18px; padding:12px 22px; height:55px; border-bottom:1px solid var(--line); font-size:13px; background:var(--wash); }
+.reader-toolbar a { margin-left:auto; }
+.close { border:0; padding:5px 8px; background:transparent; color:var(--ink); }
+iframe { display:block; width:100%; height:calc(100% - 55px); border:0; }
+.reading { max-width:850px; padding:34px clamp(22px,5vw,56px) 64px; margin:auto; }
+.reading h1 { font-size:27px; line-height:1.3; font-weight:650; margin:0 0 12px; }
+.reading .summary { margin:0 0 32px; color:var(--muted); }
+.reading h2 { font-size:19px; line-height:1.45; font-weight:600; margin:30px 0 16px; }
+.paper-title { padding-top:18px; border-top:1px solid var(--line); }
+.theorem { margin:0 0 33px; }
+.theorem h3,.theorem h4 { margin:0 0 6px; font-size:16px; font-weight:650; }
+.relation { font-size:12px; color:var(--muted); margin:0 0 13px; }
+.statement { font:18px/1.75 Georgia,"Times New Roman",serif; max-width:72ch; overflow-wrap:break-word; }
+.statement p { margin:0 0 16px; }
+.statement ol,.statement ul { padding-left:24px; }
+math[display=block] { display:block; overflow-x:auto; padding:12px 2px; margin:12px 0; max-width:100%; }
+math { font-size:1.02em; }
+math[display=inline] { display:inline-block; max-width:100%; overflow-x:auto; overflow-y:hidden; vertical-align:middle; }
+.equation { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:12px; margin:12px 0 20px; }
+.equation math { min-width:0; margin:0; }
+.equation-number { font-size:15px; color:var(--muted); white-space:nowrap; }
+.secondary { border-top:1px solid var(--line); padding-top:2px; margin-top:30px; }
+.library-links { list-style:none; padding:0; }
+.library-links li { margin-bottom:15px; }
+.library-links a { overflow-wrap:anywhere; font-size:14px; }
+.library-links small { display:block; color:var(--muted); margin-top:3px; font-size:13px; }
+p.gap { margin:20px 0 0; padding:16px 18px; background:var(--wash); border-left:3px solid #b6c8e6; line-height:1.7; }
+.empty { color:var(--muted); padding:20px 0; }
+@media(max-width:800px) { .shell.has-reader{display:block}.reader{position:fixed;inset:0;height:100dvh;z-index:2;border:0}.reading{padding:25px 22px 50px}.reading h1{font-size:23px}.statement{font-size:17px}.reader-toolbar{padding:10px 14px}.catalog{padding:25px 20px 45px} }
+
+.theorem-index { margin:24px 0 36px; border-top:1px solid var(--line); }
+.theorem-index a { display:flex; justify-content:space-between; gap:16px; padding:11px 0; border-bottom:1px solid var(--line); text-decoration:none; font-size:14px; }
+.theorem-index small { color:var(--muted); text-align:right; }
+.theorem-needs { font-size:13px; margin:7px 0 17px; }
+.requirements { margin:20px 0 45px; background:var(--wash); padding:14px 16px; scroll-margin-top:20px; }
+.requirements summary { cursor:pointer; font-size:14px; font-weight:600; }
+.requirements summary span { display:block; margin:5px 0 0 17px; font-weight:400; font-size:12px; color:var(--muted); }
+.requirements ul { list-style:none; margin:10px 0 0; padding:0; }
+.requirements li { border-top:1px solid var(--line); padding:15px 0; font-size:14px; }
+.requirements li:last-child { padding-bottom:2px; }
+.requirement-heading { display:flex; align-items:start; justify-content:space-between; gap:12px; }
+.requirements p { margin:7px 0 0; line-height:1.6; }
+.requirements .relation { margin:4px 0 8px; }
+.theorem { scroll-margin-top:22px; }
+@media(max-width:800px) { .api-result{grid-template-columns:minmax(25px,max-content) minmax(0,1fr)}.theorem-index a,.theorem-match,.requirement-heading{flex-direction:column;gap:5px}.theorem-index small{text-align:left}.controls select{max-width:100%}.paper-result .name{font-size:16px} }
+
+.dependency-note { color:var(--muted); font-size:13px; max-width:65ch; }
+
+.connection { font-size:14px; line-height:1.65; color:var(--muted); margin:0 0 16px; }
+.connection p { display:inline; margin:0; }
+.connection > a { margin-left:8px; font-size:12px; white-space:nowrap; }
+
+.original-definition { margin:0 0 32px; padding:20px 22px; background:var(--wash); border-left:3px solid var(--accent); scroll-margin-top:22px; }
+.original-definition h3 { margin:0 0 4px; font-size:16px; font-weight:650; color:var(--accent); }
+.definition-source { margin:0 0 12px; color:var(--muted); font-size:12px; }
+.definition-note { margin:10px 0 0; color:var(--muted); font-size:13px; }
+.symbol-highlight { background-color:#fff1b8; }
+
+.theorems-heading { margin:0 0 24px; padding-bottom:10px; border-bottom:1px solid var(--line); font-size:18px; font-weight:650; }
+.original-definition .statement > :last-child { margin-bottom:0; }
+@media(max-width:800px) { .original-definition{padding:16px} }
+
+mark.symbol-highlight { color:inherit; }
+
+.paper-title a { color:inherit; text-decoration-thickness:1px; text-decoration-color:var(--line); }
+.paper-title a:hover { color:var(--accent); text-decoration-color:currentColor; }
+.work-status { display:inline-block; width:fit-content; max-width:100%; padding:2px 6px; border:1px solid var(--line); border-radius:3px; color:var(--accent); background:var(--wash); font:12px/1.4 system-ui,-apple-system,sans-serif; white-space:nowrap; }
+.work-status[data-work-status=use_mathlib] { color:#166534; background:#edf8f0; border-color:#b6dec2; }
+.work-status[data-work-status=new_infrastructure],.work-status[data-work-status=needs_work] { color:#a52222; background:#fff1f0; border-color:#efc3c0; }
+.work-audit { margin:-16px 0 28px; }
+.work-audit p { margin:8px 0 0; color:var(--muted); font-size:13px; max-width:70ch; }
+.original-definition > h3 + .statement { margin-top:12px; }
+
+/* API counts and audit decisions occupy separate, aligned columns. */
+.api-columns,.api-result,.shell.has-reader .api-result {
+  display:grid; grid-template-columns:44px minmax(0,1fr) 140px 132px; gap:14px;
+}
+.api-columns { padding:11px 8px; color:var(--muted); font-size:12px; border-top:1px solid var(--line); }
+.api-columns > :nth-child(3),.api-counts { text-align:center; }
+.api-result .result-content { display:block; }
+.api-counts,.api-status { min-width:0; align-self:start; }
+.count-value { color:var(--muted); font-size:14px; font-variant-numeric:tabular-nums; }
+.column-label { display:none; }
+@container(max-width:620px) {
+  .api-columns { display:none; }
+  .api-result,.shell.has-reader .api-result { grid-template-columns:44px minmax(0,1fr) minmax(0,1fr); gap:10px 12px; }
+  .api-result .rank { grid-column:1; grid-row:1 / span 2; }
+  .api-result .result-content { grid-column:2 / span 2; }
+  .api-counts { grid-column:2; text-align:left; }
+  .api-status { grid-column:3; }
+  .column-label { display:block; color:var(--muted); font-size:11px; margin-bottom:5px; }
+  .api-status .work-status { white-space:normal; overflow-wrap:anywhere; }
+}
+
+.pane-divider { position:absolute; z-index:3; left:-6px; top:0; width:12px; height:100%; cursor:col-resize; touch-action:none; }
+.pane-divider::after { content:""; position:absolute; top:0; bottom:0; left:5px; width:2px; background:transparent; transition:background .12s; }
+.pane-divider:hover::after,.pane-divider:focus-visible::after,.resizing .pane-divider::after { background:var(--accent); }
+.pane-divider:focus-visible { outline:none; box-shadow:inset 0 0 0 2px var(--accent); }
+body.resizing { cursor:col-resize; user-select:none; }
+.resizing iframe { pointer-events:none; }
+@media(max-width:800px) { .pane-divider { display:none; } }
+
+.work-status[data-work-status=small_adaptation] { color:#854d0e; background:#fff9db; border-color:#e7cf88; }
+.work-filters { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0 18px; }
+.work-filters button { cursor:pointer; padding:6px 10px; white-space:normal; }
+.work-filters button[aria-pressed=true] { outline:2px solid currentColor; outline-offset:2px; font-weight:650; }
+.work-filters button:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+.work-legend { padding-left:20px; }
+.work-legend li { margin:8px 0; }
+</style></head>
+<body><main class="reading"><h1>Bounded spectral norm</h1><p class="summary">2 related theorem statements</p><div class="work-audit"><span class="work-status" data-work-status="small_adaptation">Small adaptation</span><p>The recorded remaining work is assessed as interface assembly or local compatibility work using the inspected components; no new core construction is identified in this comparison. Recorded obligation: Record a dimension-uniform population-correlation operator-norm bound as the Discussion&#x27;s stated requirement, retaining the unbounded-norm case as future work.</p></div><section class="paper-group" data-paper-id="aos-2024-v52-i05-p2217"><h2 class="paper-title"><a href="https://scholarsphere.psu.edu/resources/57f5e3c5-27e7-4f8a-b3e2-17e8e2e2407e/downloads/40206" target="_blank" rel="noopener">A new test for high-dimensional two-sample mean problems with consideration of correlation structure</a></h2><section class="original-definition" data-source-kind="condition" id="variant-d145bcc8052341ac"><h3>Section 4 — Stated scope of Theorems 2.3–2.4</h3><div class="statement"><p>Although Theorems 2.3–2.4 in this paper require the <mark class="symbol-highlight">bounded spectral norm</mark> of the population correlation matrix, the restrictions may be relaxed following the proof of Theorems 2.2–2.3 in Zheng et al. (2019), which removes the <mark class="symbol-highlight">bounded spectral norm</mark> restriction. Because the proof of the central limit theorem under the <mark class="symbol-highlight">bounded spectral norm</mark> is very different from the proof of the central limit theorem under the unbounded spectral norm, we place the proof under the unbounded spectral norm in future work.</p>
+</div></section><section class="theorem-group"><h3 class="theorems-heading">Theorems</h3><article class="theorem" id="theorem-1a313403749721df"><h4>Theorem 2.3</h4><div class="connection"><p>Theorem 2.3 is explicitly named in the Discussion as requiring <mark class="symbol-highlight">bounded spectral norm</mark> of R. The condition is retained as a separate original source passage because the printed theorem does not spell it out.</p>
+<a href="#variant-d145bcc8052341ac">Section 4 — Stated scope of Theorems 2.3–2.4</a></div><div class="statement"><p>Suppose that the conditions of Theorem 2.2 hold. Under <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mn>0</mn></msub><annotation encoding="application/x-tex">H_0</annotation></semantics></math>, it follows that <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>n</mi><msub><mi>T</mi><mi>n</mi></msub><mo>−</mo><mover><mi>c</mi><mo accent="true">̂</mo></mover><msub><mover><mi>μ</mi><mo accent="true">̂</mo></mover><mn>0</mn></msub></mrow><mrow><mover><mi>c</mi><mo accent="true">̂</mo></mover><msub><mover><mi>σ</mi><mo accent="true">̂</mo></mover><mn>0</mn></msub></mrow></mfrac><mo>→</mo><mi>N</mi><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+\frac{nT_n-\widehat c\widehat\mu_0}{\widehat c\widehat\sigma_0}\to N(0,1),
+</annotation></semantics></math> where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>c</mi><mo accent="true">̂</mo></mover><mo>=</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mi>p</mi><mi>/</mi><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo>−</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">\widehat c=\frac1{1+p/(n-2)}</annotation></semantics></math>, and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mover><mi>σ</mi><mo accent="true">̂</mo></mover><mn>0</mn><mn>2</mn></msubsup><annotation encoding="application/x-tex">\widehat\sigma_0^2</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mover><mi>μ</mi><mo accent="true">̂</mo></mover><mn>0</mn></msub><annotation encoding="application/x-tex">\widehat\mu_0</annotation></semantics></math> are estimates of <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>σ</mi><mn>0</mn><mn>2</mn></msubsup><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>p</mi><mo stretchy="false" form="postfix">)</mo><msup><mi>n</mi><mn>2</mn></msup><msubsup><mi>n</mi><mn>1</mn><mrow><mi>−</mi><mn>2</mn></mrow></msubsup><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mi>p</mi><mo stretchy="false" form="postfix">)</mo><msup><mi>n</mi><mn>2</mn></msup><msubsup><mi>n</mi><mn>2</mn><mrow><mi>−</mi><mn>2</mn></mrow></msubsup><mo>+</mo><mn>4</mn><msup><mi>n</mi><mn>2</mn></msup><mi>p</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>n</mi><mn>1</mn></msub><msub><mi>n</mi><mn>2</mn></msub><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>−</mi><mn>1</mn></mrow></msup><mo>+</mo><mo stretchy="false" form="prefix">(</mo><mi>n</mi><msubsup><mi>n</mi><mn>1</mn><mrow><mi>−</mi><mn>2</mn></mrow></msubsup><mo>+</mo><mi>n</mi><msubsup><mi>n</mi><mn>2</mn><mrow><mi>−</mi><mn>2</mn></mrow></msubsup><mo stretchy="false" form="postfix">)</mo><mrow><mo stretchy="true" form="prefix">[</mo><mn>4</mn><mi mathvariant="normal">tr</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>𝐑</mi><mn>2</mn></msup><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mn>2</mn><munderover><mo>∑</mo><mrow><mi>h</mi><mo>=</mo><mn>1</mn></mrow><mi>p</mi></munderover><msubsup><mi>𝐞</mi><mi>h</mi><mi>T</mi></msubsup><msup><mi>𝐑</mi><mn>2</mn></msup><msub><mi>𝐞</mi><mi>h</mi></msub><msubsup><mi>𝐞</mi><mi>h</mi><mi>T</mi></msubsup><msup><mi>𝐑</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msub><mi>𝐞</mi><mi>h</mi></msub><mo stretchy="true" form="postfix">]</mo></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">
+\sigma_0^2=(2p)n^2n_1^{-2}+(2p)n^2n_2^{-2}+4n^2p(n_1n_2)^{-1}+(nn_1^{-2}+nn_2^{-2})\left[4\operatorname{tr}(\mathbf R^2)+2\sum_{h=1}^p\mathbf e_h^T\mathbf R^2\mathbf e_h\mathbf e_h^T\mathbf R^{-1}\mathbf e_h\right],
+</annotation></semantics></math> <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>μ</mi><mn>0</mn></msub><mo>=</mo><mi>n</mi><mi>p</mi><mo stretchy="false" form="prefix">(</mo><msubsup><mi>n</mi><mn>1</mn><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mo>+</mo><msubsup><mi>n</mi><mn>2</mn><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mfrac><mrow><mi>n</mi><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><mrow><mn>4</mn><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mo>−</mo><mn>2</mn><msup><mo stretchy="false" form="postfix">)</mo><mn>2</mn></msup></mrow></mfrac><mo stretchy="false" form="prefix">(</mo><msubsup><mi>n</mi><mn>1</mn><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mo>+</mo><msubsup><mi>n</mi><mn>2</mn><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mo stretchy="false" form="postfix">)</mo><mrow><mi mathvariant="normal">tr</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><msup><mi>𝐑</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msub><mi>𝐀</mi><mn>0</mn></msub><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+\mu_0=np(n_1^{-1}+n_2^{-1})+\frac{n(n-1)}{4(n-2)^2}(n_1^{-1}+n_2^{-1})\operatorname{tr}(\mathbf R^{-1}\mathbf A_0),
+</annotation></semantics></math> respectively, where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>𝐞</mi><mi>k</mi></msub><annotation encoding="application/x-tex">\mathbf e_k</annotation></semantics></math> is the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>-column of the identity matrix <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>𝐈</mi><mi>p</mi></msub><annotation encoding="application/x-tex">\mathbf I_p</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>𝐀</mi><mn>0</mn></msub><annotation encoding="application/x-tex">\mathbf A_0</annotation></semantics></math> is a <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>×</mo><mi>p</mi></mrow><annotation encoding="application/x-tex">p\times p</annotation></semantics></math> matrix with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>h</mi><mo>,</mo><mi>ℓ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(h,\ell)</annotation></semantics></math>-element being <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mrow><mi>h</mi><mo>,</mo><mi>ℓ</mi></mrow></msub><mo>=</mo><mn>2</mn><mo stretchy="false" form="prefix">(</mo><msubsup><mi>𝐞</mi><mi>h</mi><mi>T</mi></msubsup><mi>𝐑</mi><msub><mi>𝐞</mi><mi>ℓ</mi></msub><msup><mo stretchy="false" form="postfix">)</mo><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">a_{h,\ell}=2(\mathbf e_h^T\mathbf R\mathbf e_\ell)^3</annotation></semantics></math>. The estimates <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mover><mi>σ</mi><mo accent="true">̂</mo></mover><mn>0</mn><mn>2</mn></msubsup><annotation encoding="application/x-tex">\widehat\sigma_0^2</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mover><mi>μ</mi><mo accent="true">̂</mo></mover><mn>0</mn></msub><annotation encoding="application/x-tex">\widehat\mu_0</annotation></semantics></math> are obtained by replacing <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐑</mi><annotation encoding="application/x-tex">\mathbf R</annotation></semantics></math> with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>𝐑</mi><mo accent="true">̃</mo></mover><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mrow><mi mathvariant="normal">diag</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">[</mo><msub><mover><mi>𝐑</mi><mo accent="true">̂</mo></mover><mi>L</mi></msub><mo stretchy="false" form="postfix">]</mo><msup><mo stretchy="false" form="postfix">}</mo><mrow><mi>−</mi><mn>1</mn><mi>/</mi><mn>2</mn></mrow></msup><msub><mover><mi>𝐑</mi><mo accent="true">̂</mo></mover><mi>L</mi></msub><mo stretchy="false" form="prefix">{</mo><mrow><mi mathvariant="normal">diag</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">[</mo><msub><mover><mi>𝐑</mi><mo accent="true">̂</mo></mover><mi>L</mi></msub><mo stretchy="false" form="postfix">]</mo><msup><mo stretchy="false" form="postfix">}</mo><mrow><mi>−</mi><mn>1</mn><mi>/</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\widetilde{\mathbf R}=\{\operatorname{diag}[\widehat{\mathbf R}_L]\}^{-1/2}\widehat{\mathbf R}_L\{\operatorname{diag}[\widehat{\mathbf R}_L]\}^{-1/2}</annotation></semantics></math> in <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>σ</mi><mn>0</mn><mn>2</mn></msubsup><annotation encoding="application/x-tex">\sigma_0^2</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>μ</mi><mn>0</mn></msub><annotation encoding="application/x-tex">\mu_0</annotation></semantics></math>.</p>
+</div></article><article class="theorem" id="theorem-9090aee70b79b9ae"><h4>Theorem 2.4</h4><div class="connection"><p>Theorem 2.4 is explicitly named in the Discussion as requiring <mark class="symbol-highlight">bounded spectral norm</mark> of R. The condition is retained as a separate original source passage because the printed theorem does not spell it out.</p>
+<a href="#variant-d145bcc8052341ac">Section 4 — Stated scope of Theorems 2.3–2.4</a></div><div class="statement"><p>Under the conditions of Theorem 2.3 and under the alternative hypothesis <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><msub><mi>𝛍</mi><mn>1</mn></msub><mo>≠</mo><msub><mi>𝛍</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">H_1:\boldsymbol\mu_1\ne\boldsymbol\mu_2</annotation></semantics></math>, it follows that <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>n</mi><msub><mi>T</mi><mi>n</mi></msub><mo>−</mo><mi>c</mi><msub><mi>μ</mi><mn>0</mn></msub><mo>−</mo><mi>c</mi><mi>n</mi><msub><mi>δ</mi><mi>n</mi></msub></mrow><mrow><mi>c</mi><msqrt><mrow><msubsup><mi>σ</mi><mn>0</mn><mn>2</mn></msubsup><mo>+</mo><mn>4</mn><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false" form="prefix">(</mo><msubsup><mi>n</mi><mn>1</mn><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mo>+</mo><msubsup><mi>n</mi><mn>2</mn><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mo stretchy="false" form="postfix">)</mo><msub><mi>δ</mi><mi>n</mi></msub></mrow></msqrt></mrow></mfrac><mo>→</mo><mi>N</mi><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+\frac{nT_n-c\mu_0-cn\delta_n}{c\sqrt{\sigma_0^2+4n^2(n_1^{-1}+n_2^{-1})\delta_n}}\to N(0,1),
+</annotation></semantics></math> where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>y</mi><msup><mo stretchy="false" form="postfix">)</mo><mrow><mi>−</mi><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">c=(1+y)^{-1}</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>δ</mi><mi>n</mi></msub><mo>=</mo><msubsup><mi>𝛍</mi><mi>d</mi><mi>T</mi></msubsup><msup><mi>𝚺</mi><mrow><mi>−</mi><mn>1</mn></mrow></msup><msub><mi>𝛍</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">\delta_n=\boldsymbol\mu_d^T\mathbf\Sigma^{-1}\boldsymbol\mu_d</annotation></semantics></math> with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝛍</mi><mi>d</mi></msub><mo>=</mo><msub><mi>𝛍</mi><mn>1</mn></msub><mo>−</mo><msub><mi>𝛍</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\boldsymbol\mu_d=\boldsymbol\mu_1-\boldsymbol\mu_2</annotation></semantics></math>. Furthermore, the asymptotic power function of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mi>n</mi></msub><annotation encoding="application/x-tex">T_n</annotation></semantics></math> is <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>δ</mi><mi>n</mi></msub><mo>,</mo><msub><mi>σ</mi><mn>0</mn></msub><mo>∣</mo><mi>α</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi mathvariant="normal">Φ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><mi>−</mi><msub><mi>z</mi><mi>α</mi></msub><msub><mi>σ</mi><mn>0</mn></msub></mrow><msqrt><mrow><msubsup><mi>σ</mi><mn>0</mn><mn>2</mn></msubsup><mo>+</mo><mn>4</mn><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false" form="prefix">(</mo><msubsup><mi>n</mi><mn>1</mn><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mo>+</mo><msubsup><mi>n</mi><mn>2</mn><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mo stretchy="false" form="postfix">)</mo><msub><mi>δ</mi><mi>n</mi></msub></mrow></msqrt></mfrac><mo>+</mo><mfrac><msub><mi>δ</mi><mi>n</mi></msub><msqrt><mrow><msubsup><mi>σ</mi><mn>0</mn><mn>2</mn></msubsup><mi>/</mi><msup><mi>n</mi><mn>2</mn></msup><mo>+</mo><mn>4</mn><mo stretchy="false" form="prefix">(</mo><msubsup><mi>n</mi><mn>1</mn><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mo>+</mo><msubsup><mi>n</mi><mn>2</mn><mrow><mi>−</mi><mn>1</mn></mrow></msubsup><mo stretchy="false" form="postfix">)</mo><msub><mi>δ</mi><mi>n</mi></msub></mrow></msqrt></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">
+Q(\delta_n,\sigma_0\mid\alpha)=\Phi\left(\frac{-z_\alpha\sigma_0}{\sqrt{\sigma_0^2+4n^2(n_1^{-1}+n_2^{-1})\delta_n}}+\frac{\delta_n}{\sqrt{\sigma_0^2/n^2+4(n_1^{-1}+n_2^{-1})\delta_n}}\right),
+</annotation></semantics></math> (8) where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Φ</mi><mo stretchy="false" form="prefix">(</mo><mi>⋅</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\Phi(\cdot)</annotation></semantics></math> is the cumulative distribution function of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">N(0,1)</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Φ</mi><mo stretchy="false" form="prefix">(</mo><mi>−</mi><msub><mi>z</mi><mi>α</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">\Phi(-z_\alpha)=\alpha</annotation></semantics></math>.</p>
+</div></article></section></section><section class="secondary"><h2>Related mathlib</h2><ul class="library-links"><li><a href="https://github.com/leanprover-community/mathlib4/blob/4edb0dbaa3b3cf729d86d1e2f035474d5ae2ac09/Mathlib/Analysis/CStarAlgebra/Matrix.lean#L198-L199" target="_blank" rel="noopener">Matrix.l2_opNorm_def</a><small>With Matrix.Norms.L2Operator scoped instances, the matrix norm is the operator norm of its map between Euclidean spaces, including rectangular matrices.</small></li><li><a href="https://github.com/leanprover-community/mathlib4/blob/4edb0dbaa3b3cf729d86d1e2f035474d5ae2ac09/Mathlib/Analysis/Asymptotics/Defs.lean#L85-L86" target="_blank" rel="noopener">Asymptotics.IsBigO</a><small>An eventual norm bound by a constant multiple along a specified filter; punctured behavior at zero can be expressed without a quotient at zero.</small></li></ul><p class="gap">Record a dimension-uniform population-correlation operator-norm bound as the Discussion&#x27;s stated requirement, retaining the unbounded-norm case as future work.</p></section></main><script>
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&parent!==window)parent.postMessage({action:'close-theorem-reader'},'*');});
+document.addEventListener('click',function(e){const a=e.target.closest('a');if(!a)return;if(a.dataset.route&&parent!==window&&!e.ctrlKey&&!e.metaKey&&!e.shiftKey&&!e.altKey){e.preventDefault();parent.postMessage({action:'open-census-route',route:a.dataset.route,scroll:window.scrollY,expanded:[...document.querySelectorAll('details[open][id]')].map(d=>d.id)},'*');}else if(/^#(requirements|variant)-/.test(a.getAttribute('href')||'')){const target=document.getElementById(a.hash.slice(1));if(target?.tagName==='DETAILS')target.open=true;}});
+function revealFragment(){const target=document.getElementById(location.hash.slice(1));if(target){if(target.tagName==='DETAILS')target.open=true;target.scrollIntoView();}}
+window.addEventListener('hashchange',revealFragment);revealFragment();
+window.addEventListener('message',function(e){if(e.source===parent&&e.data?.action==='restore-reader-scroll'){for(const id of e.data.expanded||[]){const d=document.getElementById(id);if(d?.tagName==='DETAILS')d.open=true;}window.scrollTo(0,Number(e.data.scroll)||0);}});
+</script></body></html>

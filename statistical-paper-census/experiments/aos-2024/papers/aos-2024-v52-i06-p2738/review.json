@@ -1,0 +1,350 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i06-p2738",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-11T03:14:51.911235+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i06-p2738/T2.7",
+      "aos-2024-v52-i06-p2738/T2.9",
+      "aos-2024-v52-i06-p2738/T2.12",
+      "aos-2024-v52-i06-p2738/T3.2",
+      "aos-2024-v52-i06-p2738/T3.5",
+      "aos-2024-v52-i06-p2738/T3.8",
+      "aos-2024-v52-i06-p2738/T3.9"
+    ],
+    "printed_label_check": [
+      [
+        9,
+        "2.7"
+      ],
+      [
+        11,
+        "2.9"
+      ],
+      [
+        12,
+        "2.12"
+      ],
+      [
+        14,
+        "3.2"
+      ],
+      [
+        16,
+        "3.5"
+      ],
+      [
+        18,
+        "3.8"
+      ],
+      [
+        19,
+        "3.9"
+      ]
+    ],
+    "method": "Independent actual small-cap heading enumeration and visual comparison of all seven complete statements, including the continuation of3.2.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 7,
+    "interfaces": 24,
+    "source_members": 24,
+    "direct_theorem_uses": 53,
+    "related_theorem_connections": 74,
+    "unranked_auxiliary_passages": 10
+  },
+  "source_notes": [
+    {
+      "issue_id": "registered-version",
+      "evidence": [
+        {
+          "page": 1,
+          "location": "Source issue registered-version"
+        },
+        {
+          "page": 23,
+          "location": "Source issue registered-version"
+        }
+      ],
+      "note": "Registered arXiv2302.05851v1 marked12Feb2023,46pages; not asserted identical to the2024 published text. Main text ends before references on23, clipped645; Appendix A starts26 and is excluded. Seven Theorems retained."
+    },
+    {
+      "issue_id": "theorem-2.7-bound-variables",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Source issue theorem-2.7-bound-variables"
+        }
+      ],
+      "note": "Infimum repeats phi_2 for both classes while integrand contains phi_1. Preserve it; correcting the first index requires a separate normalized statement. Slash-form exponents n^{1/2(2beta1+1)} and n^{1/2(beta2+1)} are retained without changing precedence."
+    },
+    {
+      "issue_id": "smoothness-definition",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Source issue smoothness-definition"
+        },
+        {
+          "page": 8,
+          "location": "Source issue smoothness-definition"
+        },
+        {
+          "page": 12,
+          "location": "Source issue smoothness-definition"
+        }
+      ],
+      "note": "Assumption2.3 gives generic beta and L, with floor(beta) derivatives and exponent beta-floor(beta), including zero at integer beta. It does not specify all lower derivative bounds, norm conventions, uniform component constants or separate Sigma notation; Sigma is identified by reference on12. Beta1/beta2 convention is in Remark2.5. Do not silently use a different standard Holder ball."
+    },
+    {
+      "issue_id": "network-architecture",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Source issue network-architecture"
+        },
+        {
+          "page": 7,
+          "location": "Source issue network-architecture"
+        },
+        {
+          "page": 10,
+          "location": "Source issue network-architecture"
+        },
+        {
+          "page": 13,
+          "location": "Source issue network-architecture"
+        }
+      ],
+      "note": "Class F_NN definition does not explicitly fix activation, exact versus at-most architecture counts, bias counting or integer rounding. ReLU appears in Lemma2.8 and main proof20. Structured aggregate classes(2.4)–(2.5), revised constant-depth classes(2.7)–(2.8), and component classes(3.2)–(3.3) are distinct. Taking L=1 in LlogL is not a literal derivation of positive constant depth."
+    },
+    {
+      "issue_id": "sampling-and-norms",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Source issue sampling-and-norms"
+        },
+        {
+          "page": 10,
+          "location": "Source issue sampling-and-norms"
+        },
+        {
+          "page": 14,
+          "location": "Source issue sampling-and-norms"
+        },
+        {
+          "page": 17,
+          "location": "Source issue sampling-and-norms"
+        },
+        {
+          "page": 19,
+          "location": "Source issue sampling-and-norms"
+        }
+      ],
+      "note": "Centered errors independent of X are stated, but independence across observations and independent test X are not explicit. Fixed-design3.2/3.5 still cite a density assumption. Population norm versus empirical norm must stay distinct;3.9 has no expectation over training data or probability qualifier."
+    },
+    {
+      "issue_id": "centering-bounds",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Source issue centering-bounds"
+        },
+        {
+          "page": 14,
+          "location": "Source issue centering-bounds"
+        }
+      ],
+      "note": "Identifiability uses Lebesgue marginals, not P_X-centering or conditional expectations. Assumption2.2 bounds the sum f0;3.6 separately bounds individual components and truncates networks. Joint density upper bound does not imply coordinate independence or a uniform positive lower bound."
+    },
+    {
+      "issue_id": "optimizer-selection",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Source issue optimizer-selection"
+        },
+        {
+          "page": 10,
+          "location": "Source issue optimizer-selection"
+        },
+        {
+          "page": 14,
+          "location": "Source issue optimizer-selection"
+        },
+        {
+          "page": 18,
+          "location": "Source issue optimizer-selection"
+        }
+      ],
+      "note": "Argmin definitions omit existence, uniqueness and measurable selection; no weight compactness is imposed. Exact global ERM is not guaranteed to be found by gradient descent. Output clipping for2.3 differs from individual-component clipping in Section3."
+    },
+    {
+      "issue_id": "lower-bound-labels",
+      "evidence": [
+        {
+          "page": 12,
+          "location": "Source issue lower-bound-labels"
+        },
+        {
+          "page": 19,
+          "location": "Source issue lower-bound-labels"
+        }
+      ],
+      "note": "Theorem2.12 uses c in the bound and C in the final sentence. Both minimax displays put X~P_X beneath a supremum without a law family;3.9 omits sampling expectation altogether. Retain both original displays rather than identifying their risks."
+    },
+    {
+      "issue_id": "sparse-indexing",
+      "evidence": [
+        {
+          "page": 13,
+          "location": "Source issue sparse-indexing"
+        },
+        {
+          "page": 15,
+          "location": "Source issue sparse-indexing"
+        },
+        {
+          "page": 18,
+          "location": "Source issue sparse-indexing"
+        },
+        {
+          "page": 19,
+          "location": "Source issue sparse-indexing"
+        }
+      ],
+      "note": "S2 is defined as a subset of[d]×[d], but later formulas require distinct ordered pairs k<l. Eq3.4 uses active approximants only, whereas RSC3.9 references inactive approximants without defining their zero extension. Empty sparsity sets and0*log(d/0) conventions are unstated."
+    },
+    {
+      "issue_id": "approximation-witness",
+      "evidence": [
+        {
+          "page": 13,
+          "location": "Source issue approximation-witness"
+        },
+        {
+          "page": 15,
+          "location": "Source issue approximation-witness"
+        },
+        {
+          "page": 16,
+          "location": "Source issue approximation-witness"
+        }
+      ],
+      "note": "Original component approximant passage mixes jk and kl indices and attributes existence to2.9. It specifies approximation bounds rather than an exact argmin, although subsequent prose calls it best approximator. RSC quantifies any decomposed function without expressly restricting component classes."
+    },
+    {
+      "issue_id": "penalty-and-curvature",
+      "evidence": [
+        {
+          "page": 14,
+          "location": "Source issue penalty-and-curvature"
+        },
+        {
+          "page": 15,
+          "location": "Source issue penalty-and-curvature"
+        },
+        {
+          "page": 16,
+          "location": "Source issue penalty-and-curvature"
+        }
+      ],
+      "note": "Both complete radicands contain their log(d)/n terms;3.2 retains linear lambda and half lambda squared terms. RSC has approximation slack and squared-penalty slack. Constants C3,C4 and kappa uniformity are not fully quantified. Theorem3.5 changes phi-hat in prose to f-hat in its formula."
+    },
+    {
+      "issue_id": "sample-split-algorithm",
+      "evidence": [
+        {
+          "page": 17,
+          "location": "Source issue sample-split-algorithm"
+        },
+        {
+          "page": 18,
+          "location": "Source issue sample-split-algorithm"
+        }
+      ],
+      "note": "Algorithm1 splits odd n explicitly, fits on D1 and by preceding prose refits on D2. Its empirical norms and sum_i/n retain full-sample notation; no index range/normalization change is printed. Threshold constants are deferred to appendix proof, which remains outside scope."
+    },
+    {
+      "issue_id": "signal-strength",
+      "evidence": [
+        {
+          "page": 18,
+          "location": "Source issue signal-strength"
+        }
+      ],
+      "note": "Assumption3.7 bounds unsquared component L2 norms by rn; its display is a square root. Following prose calls rn precisely the Corollary3.6 rate, which is a squared-error rate. Preserve the distinction; do not square the signal hypothesis or remove the radical."
+    },
+    {
+      "issue_id": "random-design-rate",
+      "evidence": [
+        {
+          "page": 17,
+          "location": "Source issue random-design-rate"
+        },
+        {
+          "page": 18,
+          "location": "Source issue random-design-rate"
+        }
+      ],
+      "note": "Theorem3.8 assumes RSC with high probability; it does not derive RSC from Assumption2.1. It gives an Op expression only upto log-factors, with no exponent. Lambda refers to3.5, but network width choices for the claimed optimized rate are not explicitly repeated. Do not strengthen this into a fully specified tuned rate."
+    },
+    {
+      "issue_id": "scope-of-standing-growth",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Source issue scope-of-standing-growth"
+        },
+        {
+          "page": 12,
+          "location": "Source issue scope-of-standing-growth"
+        },
+        {
+          "page": 13,
+          "location": "Source issue scope-of-standing-growth"
+        },
+        {
+          "page": 14,
+          "location": "Source issue scope-of-standing-growth"
+        },
+        {
+          "page": 18,
+          "location": "Source issue scope-of-standing-growth"
+        },
+        {
+          "page": 19,
+          "location": "Source issue scope-of-standing-growth"
+        }
+      ],
+      "note": "Assumption2.6 is adopted before2.7 and expressly repeated in Section2.3 before2.12. Section3 adopts3.1 before its three subsections. Retain these section conventions separately from explicit theorem hypotheses; later3.8/3.9 do not repeat3.1. This census records the paper’s stated section scope without asserting minimal necessary hypotheses."
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2302.05851v1",
+    "version": "arXiv:2302.05851v1, marked 12 Feb 2023",
+    "pdf_sha256": "e26292d82886e424c8df8739282efad1311f561b890479fe266e078cccaf4ca4",
+    "pdf_pages": 46,
+    "main_text_last_pdf_page": 23
+  },
+  "recorded_checks": [
+    "Seven original main-text Theorems2.7,2.9,2.12,3.2,3.5,3.8,3.9 independently enumerated and visually compared. Theorem3.2 includes its continuation and both complete penalty formulas on15. Main text includes Section5 through23; appendix bodies excluded.",
+    "Twenty-four original model, assumption and estimator entries plus ten auxiliary passages preserve source terminology, the complete five-step Algorithm1, source smoothness, centering, bounds, approximation witnesses and RSC conditions.",
+    "Independent source-clause reconstruction verifies53 direct uses and74 related-theorem connections. Original depth-dependent classes serve2.7; revised constant-depth classes serve2.9. Sparse lower bound3.9 has no neural-network, penalty or RSC dependency. Standing section assumptions are identified as context rather than inserted into original theorem bodies.",
+    "Fifteen notes preserve duplicated infimum variables, slash-form exponents, c/C and phi-hat/f-hat mismatches, sparse index ranges, inactive approximants, integer Holder conventions, fixed/random design tension, clipping distinctions, implicit sampling/optimization conventions, sample-split normalization and the unquantified log-factor rate. Original statements are not repaired.",
+    "All24 entries have literal source terms or numbered assumption headings, faithful source kinds and matching selectors. Every related theorem has a source-specific explanation and validated same-paper path. Definitions and assumptions remain distinct.",
+    "All six content JSONs reproduce byte for byte in a fresh empty directory. Seven retained scripts support extraction, finalization, rebuilding and separate source review. Rebuilding alone does not perform semantic source review.",
+    "The algorithm threshold constants are deferred to an excluded appendix proof and remain explicitly unresolved. The census does not certify proof validity, global optimizer existence, architecture equivalences, missing constants or sampling conventions."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "e82350a44a61bd6755953886dce8fccad31d88aabd6ade40dcc43bfc0b46e682"
+}

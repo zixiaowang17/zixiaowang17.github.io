@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "width": 1280,
+      "report": "experiments/aos-2024/report.html",
+      "interfaces": 2486,
+      "status": "passed"
+    },
+    {
+      "width": 1280,
+      "report": "examples/synthetic/report.html",
+      "interfaces": 3,
+      "status": "passed"
+    },
+    {
+      "width": 390,
+      "report": "experiments/aos-2024/report.html",
+      "interfaces": 2486,
+      "status": "passed"
+    },
+    {
+      "width": 390,
+      "report": "examples/synthetic/report.html",
+      "interfaces": 3,
+      "status": "passed"
+    }
+  ],
+  "page_errors": [],
+  "scope": "Offline local-file reading, all three filters/counts, reload, reader status, narrow divider position, shorter ranking text and overflow checks.",
+  "report_sha256": "9e1476e899c149c03d6604dc18ff76bfac778199d540ac949443e124d9efdc64",
+  "visual_inspection": {
+    "status": "passed",
+    "scope": "Desktop full-report ranking disclosure and mobile synthetic-demo controls inspected; English labels, counts and spacing are readable."
+  }
+}

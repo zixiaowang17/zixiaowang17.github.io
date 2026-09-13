@@ -1,0 +1,294 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i05-p2349",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-10T19:26:58.370387+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i05-p2349/T1",
+      "aos-2024-v52-i05-p2349/T2",
+      "aos-2024-v52-i05-p2349/T3",
+      "aos-2024-v52-i05-p2349/T4",
+      "aos-2024-v52-i05-p2349/T5",
+      "aos-2024-v52-i05-p2349/T6"
+    ],
+    "printed_label_check": [
+      [
+        6,
+        "1"
+      ],
+      [
+        13,
+        "2"
+      ],
+      [
+        14,
+        "3"
+      ],
+      [
+        18,
+        "4"
+      ],
+      [
+        19,
+        "5"
+      ],
+      [
+        19,
+        "6"
+      ]
+    ],
+    "method": "Independent small-cap heading enumeration and visual comparison of all six complete theorem statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark",
+      "Conjecture"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 6,
+    "interfaces": 32,
+    "source_members": 32,
+    "direct_theorem_uses": 41,
+    "related_theorem_connections": 98,
+    "unranked_auxiliary_passages": 8
+  },
+  "source_notes": [
+    {
+      "issue_id": "density-and-inverse-domains",
+      "evidence": [
+        {
+          "page": 3,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 4,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 7,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 19,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The source defines elliptical laws via a Lebesgue density and assumes finite mean/covariance. Population whitening requires nonsingular covariance; sample whitening requires invertible sample covariance, which in the absolutely continuous case needs n>d. No pseudoinverse or ridge correction is in the original theorem definitions."
+    },
+    {
+      "issue_id": "polar-exceptional-sets",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 5,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 7,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Arctan(0,0) is undefined and direction is undefined at radius zero. The claimed global chart bijection fails at poles, where multiple angle vectors describe the same direction, and at excluded latitude endpoints. Use the printed formulas and record the need for regular-coordinate or almost-everywhere conventions; do not invent a global inverse."
+    },
+    {
+      "issue_id": "tensor-index-and-star-conventions",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 10,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The finite tensor inner-product display uses tilde-alpha-r with tilde-f-s in its last second-sum term. Preserve this printed mismatch. Star denotes an influence derivative, asterisk an adjoint; Gamma’s outer tensor acts on the tensor RKHS rather than directly between the two base RKHSs."
+    },
+    {
+      "issue_id": "embedding-and-clt-domain",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 10,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorem1 quantifies over all probability measures without separately stating kernel measurability or embedding integrability. Theorem2 assumes Frechet differentiability and (5.11), but does not explicitly list the influence element’s square integrability, covariance trace or Hilbert-space empirical-process conditions needed for a CLT. Record the printed result; do not certify that the hypotheses suffice."
+    },
+    {
+      "issue_id": "frechet-linear-domain",
+      "evidence": [
+        {
+          "page": 10,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The source calls A:F→H linear even though F is a class of probability distributions and uses A(F−F0). The signed-measure tangent domain and exact multivariate uniform metric are implicit. The influence formula uses contamination directions; it is not an adjoint operation."
+    },
+    {
+      "issue_id": "local-alternative-and-zero-eigenvalues",
+      "evidence": [
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 14,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorem3 refers to Gamma and gives two spectral/local-shift conditions without explicitly restating Theorem2’s assumptions or specifying a triangular-array CLT under local alternatives. Its shifted-normal mean sigma_j/sqrt(lambda_j) is undefined at zero eigenvalues unless a separate convention is provided; none is printed. Do not silently require all eigenvalues positive or drop null-space shifts."
+    },
+    {
+      "issue_id": "known-parameter-centering",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 18,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Equation(7.1) prints E[kappa_Theta] while (3.1) and (3.3) use E0 under the fixed spherical angular law. Off the null these differ, so the printed known-parameter statistic may have a different population target from Sigma_UTheta in Theorem4. Preserve the discrepancy; do not silently replace E by E0 or impose the null on the theorem."
+    },
+    {
+      "issue_id": "hilbert-schmidt-versus-simple-tensors",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 8,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The trace-of-AA* definition gives the Hilbert-Schmidt norm. The claimed equivalent supremum on page8 is restricted to simple unit tensors and generally gives the operator norm instead. Retain the original norm used in the theorem statements and flag this explanatory mismatch."
+    },
+    {
+      "issue_id": "subgaussian-sphere-and-quantifiers",
+      "evidence": [
+        {
+          "page": 19,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Assumption2 prints v∈S without a dimension and leaves the quantifier on lambda unstated. Its intended meaning is every unit direction and all real lambda; preserve the printed inequality and record the missing explicit conventions. Assumption3 is c^d, not c*d."
+    },
+    {
+      "issue_id": "feature-lipschitz-versus-coordinate-smoothness",
+      "evidence": [
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 19,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Assumption4 is a bound on RKHS feature differences, with the angular feature composed with g and scaled by d^−1. It is distinct from C² bounded-Hessian condition(5.11), and can be affected by chart discontinuities. Do not infer it merely from scalar-kernel smoothness or from choosing a Gaussian kernel."
+    },
+    {
+      "issue_id": "concentration-parameters-and-constants",
+      "evidence": [
+        {
+          "page": 18,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 19,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorem4 does not explicitly quantify t; its tail-bound interpretation uses t≥0 and positive kernel bound product. Theorem5 explicitly quantifies epsilon>0 but leaves the nonnegative tail parameter u implicit. Absolute constants are independent of n,d. Reused c1,c2 in Assumption1 and (7.6) should not be assumed numerically identical without further source information."
+    },
+    {
+      "issue_id": "growing-dimension-target",
+      "evidence": [
+        {
+          "page": 19,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorem6 uses log n≺d≺n^(1/4) without a separate definition of ≺ in the inspected main text; interpret as vanishing ratios for the stated asymptotic regime and retain the original notation. The convergence compares a sequence of norms with a possibly dimension-dependent target, not necessarily a fixed limiting real number. It inherits Theorem5’s assumptions, not its rate functions as premises."
+    },
+    {
+      "issue_id": "implementation-not-theorem-definition",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 10,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 15,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 17,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 18,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 20,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The source refers to g as (2.6) on page7 although g is the inverse (2.7). Coordinate sections assume nonsingular Gram matrices; the displayed final m-hat formula uses e_j in an unsummed first term. Equation(4.5) ends its product at d−2 although (4.3) has d−1 factors. These implementation issues do not authorize changing the population/statistic definitions, and simulation ridge adjustments are not theorem assumptions."
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2306.10594v2",
+    "version": "arXiv:2306.10594v2; 27 Mar 2024",
+    "pdf_sha256": "b9a6c162c4c8845483163754773e65bb696f24444c3621a3c8b5dfdbcc113278",
+    "pdf_pages": 25,
+    "main_text_last_pdf_page": 23
+  },
+  "recorded_checks": [
+    "Six complete main-text Theorems1–6, enumerated independently by small-cap headings. Preserve T3’s two spectral/shift conditions, T4’s explicit reference(7.1), every T5 rate factor and the exact T6 dimension-growth regime. Corollaries and Lemmas are not additional theorem records.",
+    "Thirty-two source entries preserve radial/angular domains, RKHS and tensor constructions, characteristicness, moment and polar transformations, fixed reference centering, population/sample operators, Frechet and influence definitions, complete Lemma4–5 formulas, kernel conditions, covariance operator and Assumptions1–4 with the rate functions. Eight auxiliary passages preserve problem/calibration context.",
+    "Independent reconstruction confirms41 direct uses and98 related connections. T1 has only abstract kernel/measure/tensor dependencies. T4 uses the literal known-parameter statistic, without estimated moments. T5–T6 have no influence/Frechet or characteristic-kernel assumptions. T6 inherits Theorem5 assumptions without importing its bound-specific functions.",
+    "T2 is centered at the general population discrepancy, with the full influence function rather than a null-only simplification. T3 uses the Gamma definition and conditional influence-formula context; no complete Theorem2 assumption reference is printed. Its missing local-alternative regularity and zero-eigenvalue conventions remain explicit source issues.",
+    "Thirteen notes preserve whitening/polar domains, tensor indices, embedding/CLT and Frechet-domain requirements, local-alternative ambiguity, E-versus-E0 centering in(7.1), Hilbert-Schmidt versus simple-tensor supremum, implicit MGF/tail quantifiers, feature-space Lipschitz scaling, growing-dimension targets and implementation typos. Statements are not silently repaired or proof-certified.",
+    "Every source entry has natural-language source terms, original source kind and heading, literal selectors and complete same-paper theorem explanations. All98 dependency paths are independently checked; source types distinguish assumptions, conditions and contextual Lemma formulas.",
+    "All six content JSON files reproduce byte for byte. Seven retained per-paper scripts include inventory/source review with frozen hashes, formula assertions, independent graph reconstruction and schema validation."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "612e91058fbd433b1e8755ac5d31242baf4da146401f7a093d3349a6a609af46"
+}

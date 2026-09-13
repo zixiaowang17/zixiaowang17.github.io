@@ -1,0 +1,113 @@
+{
+  "scope": {
+    "paper_count": 2,
+    "theorem_scope": "main_text_only",
+    "source_policy": "synthetic_demo",
+    "normalization_policy": "Invented expressions",
+    "semantic_ranking_policy": "Direct use counts",
+    "build_order_policy": "Dependency order"
+  },
+  "papers": [
+    {
+      "paper_id": "demo-a",
+      "title": "Synthetic paper A",
+      "version": "SYNTHETIC_DEMO",
+      "source_url": "https://example.org/demo-a.pdf",
+      "pdf_pages": 1,
+      "pdf_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "main_text_last_pdf_page": 1,
+      "main_text_boundary": {
+        "location": "End of invented example",
+        "shared_page_with_appendix": false
+      },
+      "intake_review": {
+        "status": "complete",
+        "theorem_ids": [
+          "demo-a:t1",
+          "demo-a:t2",
+          "demo-a:t3"
+        ],
+        "zero_theorems_confirmed": false
+      }
+    },
+    {
+      "paper_id": "demo-b",
+      "title": "Synthetic paper B",
+      "version": "SYNTHETIC_DEMO",
+      "source_url": "https://example.org/demo-b.pdf",
+      "pdf_pages": 1,
+      "pdf_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "main_text_last_pdf_page": 1,
+      "main_text_boundary": {
+        "location": "End of invented example",
+        "shared_page_with_appendix": false
+      },
+      "intake_review": {
+        "status": "complete",
+        "theorem_ids": [
+          "demo-b:t1"
+        ],
+        "zero_theorems_confirmed": false
+      }
+    }
+  ],
+  "claims": [
+    {
+      "paper_id": "demo-a",
+      "claim_id": "demo-a:t1",
+      "claim_kind": "theorem",
+      "label": "Theorem 1",
+      "source_order": 1,
+      "statement_original": "For $x\\in\\mathbb{R}$, $f(x)\\geq 0$.",
+      "evidence": [
+        {
+          "page": 1,
+          "location": "Invented example; no source PDF exists."
+        }
+      ]
+    },
+    {
+      "paper_id": "demo-a",
+      "claim_id": "demo-a:t2",
+      "claim_kind": "theorem",
+      "label": "Theorem 2",
+      "source_order": 2,
+      "statement_original": "For $x\\in\\mathbb{R}$, $g(x)\\geq 0$.",
+      "evidence": [
+        {
+          "page": 1,
+          "location": "Invented example; no source PDF exists."
+        }
+      ]
+    },
+    {
+      "paper_id": "demo-a",
+      "claim_id": "demo-a:t3",
+      "claim_kind": "theorem",
+      "label": "Theorem 3",
+      "source_order": 3,
+      "statement_original": "For $x\\in\\mathbb{R}$, $h(x)\\geq 0$.",
+      "evidence": [
+        {
+          "page": 1,
+          "location": "Invented example; no source PDF exists."
+        }
+      ]
+    },
+    {
+      "paper_id": "demo-b",
+      "claim_id": "demo-b:t1",
+      "claim_kind": "theorem",
+      "label": "Theorem 1",
+      "source_order": 1,
+      "statement_original": "For $x\\in\\mathbb{R}$, $f(x)\\geq 0$.",
+      "evidence": [
+        {
+          "page": 1,
+          "location": "Invented example; no source PDF exists."
+        }
+      ]
+    }
+  ],
+  "schema_version": "statistical-theorem-inventory-v1"
+}

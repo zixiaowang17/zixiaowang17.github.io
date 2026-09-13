@@ -1,0 +1,234 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i05-p1978",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-10T15:57:23.285838+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i05-p1978/T2",
+      "aos-2024-v52-i05-p1978/T3",
+      "aos-2024-v52-i05-p1978/T4",
+      "aos-2024-v52-i05-p1978/T5"
+    ],
+    "printed_label_check": [
+      [
+        10,
+        "2"
+      ],
+      [
+        11,
+        "3"
+      ],
+      [
+        13,
+        "4"
+      ],
+      [
+        14,
+        "5"
+      ]
+    ],
+    "method": "Independent bold-font enumeration and visual comparison of all four complete original Theorems.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 4,
+    "interfaces": 26,
+    "source_members": 26,
+    "direct_theorem_uses": 56,
+    "related_theorem_connections": 83,
+    "unranked_auxiliary_passages": 14
+  },
+  "source_notes": [
+    {
+      "issue_id": "normal-critical-value",
+      "description": "The main text uses Phi in Gaussian approximation and z_alpha in (24), but no explicit main-text definition of z_alpha or its tail convention was located. The usual two-sided normal critical value is an interpretation, not a recovered source quotation; the interval formula retains the original symbol.",
+      "evidence": [
+        {
+          "page": 10,
+          "location": "Main-text statement or definition"
+        },
+        {
+          "page": 11,
+          "location": "Main-text statement or definition"
+        },
+        {
+          "page": 13,
+          "location": "Main-text statement or definition"
+        },
+        {
+          "page": 14,
+          "location": "Main-text statement or definition"
+        }
+      ]
+    },
+    {
+      "issue_id": "zero-variance-denominators",
+      "description": "Theorems 2,3 and 5 divide by variances that are not explicitly required to be positive under Assumptions 1-5. In particular sigma_mu can be zero under exact correction. Do not add Assumption 7 to these results or invent a zero-denominator convention.",
+      "evidence": [
+        {
+          "page": 10,
+          "location": "Main-text statement or definition"
+        },
+        {
+          "page": 11,
+          "location": "Main-text statement or definition"
+        },
+        {
+          "page": 14,
+          "location": "Main-text statement or definition"
+        }
+      ]
+    },
+    {
+      "issue_id": "variance-constant-name",
+      "description": "Assumption 7 writes sigma_epsilon, while Theorem 4 names c_epsilon in its constants. Their identification is not explicitly made in the inspected main text; both original names are preserved.",
+      "evidence": [
+        {
+          "page": 13,
+          "location": "Main-text statement or definition"
+        }
+      ]
+    },
+    {
+      "issue_id": "sequence-sign",
+      "description": "Theorem 5 says any sequence e_n without an explicit sign restriction, although e_n multiplies a nonnegative norm in a bound for absolute delta. Preserve this wording and record the missing domain qualification.",
+      "evidence": [
+        {
+          "page": 14,
+          "location": "Main-text statement or definition"
+        }
+      ]
+    },
+    {
+      "issue_id": "inherited-m",
+      "description": "Theorem 3 imports Theorem 2(i), including its m-dependent probability bound, without repeating m in its own preamble. The subpart reference is retained with that scope.",
+      "evidence": [
+        {
+          "page": 10,
+          "location": "Main-text statement or definition"
+        },
+        {
+          "page": 11,
+          "location": "Main-text statement or definition"
+        }
+      ]
+    },
+    {
+      "issue_id": "reference-scope",
+      "description": "Theorem 5 constructs the estimator as in Theorem 4 but explicitly assumes 1-5. It does not inherit Assumptions 6-7 or the confidence-interval conclusion. Theorem 3 likewise imports only setup and bias part (i), not Theorem 2(ii).",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Main-text statement or definition"
+        },
+        {
+          "page": 14,
+          "location": "Main-text statement or definition"
+        }
+      ]
+    },
+    {
+      "issue_id": "fold-sample-size",
+      "description": "Theorem 4 prints eta=c_eta*sqrt(log(p)/n), while its three main folds each contain n/3 observations. Preserve that n and the sufficiently-large-constant convention; do not silently substitute a different sample size into the theorem.",
+      "evidence": [
+        {
+          "page": 12,
+          "location": "Main-text statement or definition"
+        },
+        {
+          "page": 13,
+          "location": "Main-text statement or definition"
+        }
+      ]
+    },
+    {
+      "issue_id": "conditional-versus-marginal",
+      "description": "Theorem 3 has a conditional normal approximation for zeta_1, a marginal one for zeta_2 and zero conditional cross moment. This is not an independence statement or a guarantee that their sum is marginally normal.",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Main-text statement or definition"
+        },
+        {
+          "page": 12,
+          "location": "Main-text statement or definition"
+        }
+      ]
+    },
+    {
+      "issue_id": "marginal-residual-bound",
+      "description": "Assumption 7 lower-bounds Var(epsilon(t)) marginally. It is not a uniform conditional-variance bound over covariate values.",
+      "evidence": [
+        {
+          "page": 13,
+          "location": "Main-text statement or definition"
+        }
+      ]
+    },
+    {
+      "issue_id": "initial-fit-index",
+      "description": "The optional fitting formula on page 7 has tilde-mu(x) on the left and fitted regressions evaluated at X_i on the right. The source notation is retained in the auxiliary passage.",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Main-text statement or definition"
+        }
+      ]
+    },
+    {
+      "issue_id": "source-probability-sign",
+      "description": "A commentary sentence on page 11 bounds the probability of sigma_mu being controlled by 1-P(Omega^c)+c(p^-m+n^-m), with a printed plus sign. This is not a theorem statement and is not substituted for the actual failure bounds in the inventory.",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Main-text statement or definition"
+        }
+      ]
+    },
+    {
+      "issue_id": "source-scalar-vector",
+      "description": "Theorem 2 initially writes plain mu-hat in R^n, then uses a bold correction vector in its norm. These are the same source correction in context, with the original typeface difference retained. Tilde-mu(X) is also written as a scalar function applied to a matrix using the rowwise/foldwise conventions.",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Main-text statement or definition"
+        },
+        {
+          "page": 10,
+          "location": "Main-text statement or definition"
+        },
+        {
+          "page": 14,
+          "location": "Main-text statement or definition"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2011.08661v3",
+    "version": "arXiv:2011.08661v3; arXiv stamp 11 Apr 2024; title-page date April 12, 2024",
+    "pdf_sha256": "0194b287549417eda9cd7a75dc478785011344d4a34a2b0222bdc952ed4ccc37",
+    "pdf_pages": 67,
+    "main_text_last_pdf_page": 27
+  },
+  "recorded_checks": [
+    "Four complete main-text Theorems, 2-5. Theorem 3 continues onto page 12, and Theorem 4 onto page 14. All main-text headings through the clipped page-27 endpoint were checked. Lemma 1, Corollary 6, citations and appendix results are excluded.",
+    "Twenty-six original source entries and fourteen auxiliary passages preserve the model, targets, seven assumptions, logistic link and fitted propensity, oracle correction, auxiliary sampling, initial fit, full quadratic program, DIPW, residuals, events, local moments, cyclic folds and confidence interval. Unnamed local formulas remain explicit source context with listed prerequisites; they are not renamed or silently discarded.",
+    "Independent reconstruction confirms 56 direct uses after explicit expansion of unnamed local formulas and 83 related connections. Theorem 3 inherits Theorem 2 setup and bias part (i), not its Gaussian conclusion (ii). Theorem 5 inherits only Theorem 4 estimator construction/tuning and does not acquire Assumptions 6-7 or its interval.",
+    "The population target tau occurs in Theorems 3 and 5; the conditional observed-covariate target bar-tau occurs in Theorems 2 and 4. The regression definition does not acquire tau merely through the following contrast identity. Theorem 5 initial tilde-mu differs from the optimized concatenated mu-hat.",
+    "Source comparison retains true versus estimated propensity denominators, strict true overlap versus non-strict fitted overlap, zero fallback on infeasibility, both norms in Omega, conditional moments given auxiliary B, all logarithms under the Theorem 4 square root, and its all-alpha conditional coverage event. Three-fold roles are cyclic; independence of the estimates is not asserted.",
+    "Twelve source conventions or ambiguities are recorded separately, including undefined main-text z_alpha tail convention, zero variance denominators, c_epsilon versus sigma_epsilon, and the unrestricted e_n sequence. No appendix definition or proof correction is inserted into the original statements.",
+    "Every indexed entry uses literal natural-language source terms with original source-kind labels, verified symbol/phrase selectors and explanations of its actual same-paper connection. Local unnamed transformed outcomes and moments remain available in the auxiliary artifact rather than receiving invented titles.",
+    "Six content artifacts reproduce byte-for-byte from the retained per-paper scripts. Frozen hashes and independent source-specific checks protect the reviewed state. Re-execution alone does not perform a new semantic review or certify proofs."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "5984126ab686c9518a78eaaae479e8a34d7a80b894f2fc052ee127e9de7cb97f"
+}

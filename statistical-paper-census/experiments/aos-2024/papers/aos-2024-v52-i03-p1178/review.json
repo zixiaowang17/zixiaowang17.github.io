@@ -1,0 +1,89 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i03-p1178",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T15:28:08.077468+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i03-p1178/T1",
+      "aos-2024-v52-i03-p1178/T2"
+    ],
+    "method": "Independent small-caps THEOREM-heading enumeration on PDF1–22 and visual review of both full statements and all prerequisite passages.",
+    "printed_label_check": [
+      [
+        9,
+        "1"
+      ],
+      [
+        12,
+        "2"
+      ]
+    ],
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 2,
+    "interfaces": 30,
+    "source_members": 30,
+    "direct_theorem_uses": 25,
+    "related_theorem_connections": 57,
+    "unranked_auxiliary_passages": 6
+  },
+  "source_notes": [
+    "Pinned arXiv:2305.11672v2, 73 pages, dated 2 May 2024. Main text PDF1–22 ends in funding; Sections S1–S5 starting on PDF23 and following references are excluded. Exact final-journal equivalence is not asserted.",
+    "Two actual main-text Theorems are preserved in full. Main-text Propositions 3–6 and supplementary Lemmas/Propositions/Theorems are not added to the Theorem inventory.",
+    "Training triples are iid; only masked features, full labels and masks are observed. The test point is fully observed and has the unconditional marginal P_Q, not the conditional complete-case distribution.",
+    "The theorem expectations condition on every training mask. Positive probability is required for each specified o in O; the source does not require Q to put zero mask mass outside O.",
+    "Masking leaves vectors in R^d with zero-filled coordinates. The mask distinguishes an observed zero from an unobserved coordinate. Lower-density dimension d_omega may differ from this ambient d.",
+    "The original missingness assumption equates subvector regression probabilities at all support points and all compatible masks. It allows dependence and examples of missing not at random; it is not replaced by an MCAR assumption.",
+    "Pointwise conditional probabilities and conditional expectations are used outside an almost-everywhere formulation. The source does not explicitly fix versions everywhere on support; no version regularity is added.",
+    "The anova recursion subtracts all strict-predecessor components inside the conditional expectation, with a centered constant component. The source describes these functions as orthogonal without imposing independent feature coordinates in the general setup. The recursion and description are retained without certifying that assertion or substituting a different decomposition.",
+    "The signal sigma_omega^2 is a conditional second moment minimized over compatible masks, not a centered variance. It may be zero in the minimax theorem because c_E=0 is allowed; HAM requires c_E>0.",
+    "Minima over compatible masks occur in the signal and tail definitions even for patterns not contained in any o in O. No explicit empty-minimum convention is given in the inspected main text.",
+    "U(Omega) is the complement of Omega and its strict lower closure, so it includes incomparable patterns. It is not only the strict upper closure. The displayed braces around the removed union are preserved as printed grouping.",
+    "The unconditional masked measure mu_omega and conditional training measure mu_{omega|o} remain distinct. Definition 3 evaluates conditional lower-density events under the unconditional test measure; Definition 3+ additionally uses every conditional measure on the outside.",
+    "Lower density uses open balls and radii 0<r<1; its exponent can be less than ambient dimension. It does not require an ordinary density or a uniform positive bound.",
+    "The margin event is |eta-1/2|<t and includes exact ties; no additional 0<|eta-1/2| restriction is inserted. Bayes and HAM both choose class one at a tie.",
+    "Counts n_omega are the number of containing realized masks, not exact-pattern counts or expected counts. Script N and prescribed script O have different meanings.",
+    "Theorem 1 allows Omega_star intersect N to be empty. Then the printed definition of R and the minimum inside its logarithm have empty domains, with no explicit convention in the main text. The unavailable-pattern indicator communicates the intended constant-risk regime but does not define those empty extrema.",
+    "Theorem 1 retains its exact lower-bound-only margin and constant restrictions. Its upper bound adds the unavailable-pattern indicator outside the C times logarithmic rate product. The constants may depend on class parameters but not n or the realized mask sequence.",
+    "Theorem 2 uses C_L>=1 while the introductory domain for Q-prime-Miss in (11) states C_L>1. Definition 3 and Definition 3+ allow C_L>=1; the plus-class replacement implicitly extends that introductory domain, without changing the original text.",
+    "Algorithm 1 uses k_omega=1+floor(n_omega^a) without capping at n_omega. At n_omega=1 this requests two neighbors from one available case. Theorem 2 does not impose a lower sample size on active and lower patterns. Main-text Section 5.2 separately writes k_omega in [n_omega] for its proof quantities but does not change Algorithm 1 or supply a cap.",
+    "Algorithm 1 admits zero coordinate tail parameters. For processed patterns with gamma_omega=0 and alpha=0, its tuning exponents have zero numerator and denominator. Positivity on active patterns alone does not explicitly cover coordinates outside their union.",
+    "Algorithm 1 line 7 calls projected feature/label pairs a reordering of pairs retaining the original masks o_i. The first last-neighbor X subscript also omits the pattern index that appears in the corresponding distance expression. Both printed forms are preserved.",
+    "Algorithm 1 loops over evaluations at X_i^{o_i} and x0, but line 10 evaluates fitted components at X_i^omega. Its intended dependence only on x^omega makes those compatible conceptually; the printed finite evaluation loop does not explicitly implement that extension.",
+    "Algorithm 1 line 15 requires U({omega}) intersect hat-Omega to be empty. Because U includes incomparable patterns, this condition can suppress incomparable candidates after one is selected, unlike the prose that says only predecessors are disregarded. No corrected set condition is substituted.",
+    "Nearest-neighbor distance ties and the traversal order of equal-dimensional patterns are unspecified. Combined with the printed selection condition, different within-level orders can select different surviving incomparable patterns.",
+    "Algorithm 1 line 2 writes a bold zero subscript without d; this is retained rather than silently changing it to the population notation f_{0_d}. The reconstruction excludes the constant term if hat-Omega is empty, as printed.",
+    "Theorem 2 sample-size condition uses an ordinary logarithm with the full exponent 4[gamma_omega(2 beta_omega+d_omega)+alpha beta_omega]/(beta_omega gamma_omega). Its conclusion uses log-plus=log(max(x,e)), not log(1+x).",
+    "The HAM procedure is stored as one complete algorithmic definition; its inline temporary quantities are not split into invented population interfaces. The oracle algorithm, Assouad lemma and proof concentration events are not imported into statement dependencies."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2305.11672v2",
+    "version": "arXiv:2305.11672v2",
+    "pdf_sha256": "02ed1c44949085eadd0343d487709cdbf5883670a7158cc33ef146f1ba453096",
+    "pdf_pages": 73,
+    "main_text_last_pdf_page": 22
+  },
+  "recorded_checks": [
+    "Pinned title, all three authors, arXiv version/date, 73-page count and both PDF hashes verified. All 22 archived main-text pages match fresh PDF extraction byte for byte; page22 funding and the next-page S1 heading establish the boundary.",
+    "Independent small-caps heading enumeration confirms exactly two Theorems and excludes ordinary-font references. Both full statements remain unchanged from their separately validated inventory.",
+    "The exact parameter restrictions, conditional minimax risk, logarithmic powers, rate denominator and missing-pattern indicator were compared with the original theorem pages. The HAM theorem retains the plus class and its own weaker parameter restrictions.",
+    "All 30 source members, their naming contexts, all 21 algorithm lines and six ambient passages were checked against rendered main-text pages. Bold vectors, script classes, Bayes superscript and pattern-indexed scalar exponents were checked against source typesetting.",
+    "The experiment uses incomplete training records and a complete unconditional test point. Joint and marginal laws, prescribed masks and observed available patterns, and conditional versus unconditional projected feature measures remain distinct.",
+    "The anova recursion, signal lower bound, antichains and predecessor/complement sets, lower-density condition, smoothness and margin classes preserve their original formulas and quantifiers. No independent-coordinate or ordinary-density assumption is inserted.",
+    "Independent dependency expectations confirm 25 direct uses and 57 related connections. The minimax theorem has no HAM algorithm or Definition3+ dependency. HAM numerical steps do not consume population interaction or signal values.",
+    "Algorithm neighbor-count and pattern-selection ambiguities are checked against the literal formulas, including simple n_omega=1 and incomparable-pattern examples. Zero exponents, projection/index inconsistencies and unspecified tie/order conventions remain recorded separately.",
+    "Empty compatible-mask minima and empty extrema in Theorem1 lack an explicit main-text convention and remain unresolved. Supplementary proofs and alternative definitions were not used to silently fill gaps.",
+    "Every interface has source-backed natural-language keywords, source identity, meaningful highlight selectors and explanations for every related theorem path. Math delimiters and braces, main-text evidence bounds and artifact hashes are checked; inventory and census validators pass."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "b758f44f7308d3cb483c019551a9563a55822988484a251b9e1462fa7c8e671b"
+}

@@ -1,0 +1,136 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i03-p1076",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T14:08:59.693450+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i03-p1076/T3.1",
+      "aos-2024-v52-i03-p1076/T3.2",
+      "aos-2024-v52-i03-p1076/T4.1",
+      "aos-2024-v52-i03-p1076/T4.2",
+      "aos-2024-v52-i03-p1076/T4.3",
+      "aos-2024-v52-i03-p1076/T4.6",
+      "aos-2024-v52-i03-p1076/T4.7",
+      "aos-2024-v52-i03-p1076/T4.10",
+      "aos-2024-v52-i03-p1076/T4.11",
+      "aos-2024-v52-i03-p1076/T4.12"
+    ],
+    "method": "Independent CMBX10 Theorem-heading enumeration over pages 1–55, with the last page clipped above Appendix A. Full statement and definition images visually checked.",
+    "printed_label_check": [
+      [
+        7,
+        "3.1"
+      ],
+      [
+        8,
+        "3.2"
+      ],
+      [
+        12,
+        "4.1"
+      ],
+      [
+        13,
+        "4.2"
+      ],
+      [
+        14,
+        "4.3"
+      ],
+      [
+        17,
+        "4.6"
+      ],
+      [
+        18,
+        "4.7"
+      ],
+      [
+        20,
+        "4.10"
+      ],
+      [
+        20,
+        "4.11"
+      ],
+      [
+        22,
+        "4.12"
+      ]
+    ],
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 10,
+    "interfaces": 32,
+    "source_members": 32,
+    "direct_theorem_uses": 82,
+    "related_theorem_connections": 159,
+    "unranked_auxiliary_passages": 10
+  },
+  "source_notes": [
+    "The source is the pinned 75-page arXiv:2212.09201v3 dated 1 May 2024, not an assertion of exact equivalence to final journal typography.",
+    "Numbered Section 7, Proofs, is main text. References end above Appendix A on shared page 55; only the region above y=601.6620483398438 is admitted. Appendix mathematics is excluded.",
+    "Ten actual main-text Theorem environments are preserved, including complete continuations of 4.3, 4.11 and 4.12. Corollaries, lemmas, proof headings and the ordinary-font citation of 4.11 on page 22 are not new Theorems.",
+    "A0 says second countable with the parenthetical completely separable. It does not add completeness, metrizability, Polishness or characteristicness of K. The source uses characteristicness only when describing MMD as a metric.",
+    "The source uses distinct scripts for T, the RKHS, spectral dimensions and kernel family; blackboard-bold sample collections differ from individual observations. Fraktur inclusion I is not the identity.",
+    "The centered L2 integral operator, uncentered Upsilon operator and centered RKHS covariance have different domains and compositions. The constant functions in the expanded centered operator are plain 1.",
+    "The chosen pointwise eigenfunctions are I-star applied to the L2 class divided by lambda_i, not its square root. Their uniform sup-norm condition is version-specific; positive eigenvalues are assumed infinite in number.",
+    "Rho squared is half the triangular-discrimination integral, not literally the squared Hellinger distance. The source only asserts topological equivalence to Hellinger distance.",
+    "The original alternative class imposes range smoothness and separation but does not include a fixed uniform source radius. Uniform bounds in the theorem hypotheses are preserved separately with their original quantifiers.",
+    "The introductory MMD spectral expansion on page 3 omits the factor four present in (3.2) on page 6. The source also describes eta_lambda tending to rho squared on page 4 despite its factor-four definition. These introductory normalization inconsistencies are not silently repaired.",
+    "The source describes a spectral regularizer on the open positive half-line, but uses g_lambda(0) in (4.1) and on Gamma=[0,kappa] in A1–A4. Its initial domain does not specify that value.",
+    "Formula (4.1) says any compact self-adjoint operator although the initially stated scalar domain excludes negative arguments. The nullspace multiplier g_lambda(0) is deliberately retained; it cannot be dropped from the functional calculus.",
+    "Equation (4.3) defines a squared norm, while Remark 4.2 displays an unsquared variational supremum for eta_lambda in (4.4). The subsequent estimator prose refers to expanding (4.4). Both originals are retained without replacing one formula by a corrected version.",
+    "Binary selection Z_i=alpha_i X_i^1+(1-alpha_i)Y_i^1 is printed even though the domain need not support linear combinations. Its sampling role is selection, without adding a vector-space hypothesis.",
+    "The three sample groups are explicitly independent in Section 4.3. The regularized statistic is a U-statistic only conditional on the reserved mixture observations.",
+    "A3 is a restricted-sublevel residual condition with B3 and qualification xi, not the usual inverse-problem residual bound with 1. Tikhonov and Showalter examples do not replace the general regularizer hypotheses.",
+    "N1 is a trace and N2 is a Hilbert–Schmidt norm, not its square. Their different roles in the oracle and optional power conditions are retained.",
+    "Assumption B uses strict inequalities M<N<DM, D>=1. Theorems 3.1 and 3.2 instead print nonstrict sample comparability; B is not applied retroactively.",
+    "Theorem 3.2 writes L^{-1} for a strictly decreasing function without specifying its image, continuity or a generalized-inverse convention. The inline exponent 1/2theta is preserved without adding grouping.",
+    "Theorem 4.1 prints 1_n on both sides of the m-by-m matrix A2 in its third circled term. This apparent dimension mismatch remains in the original statement.",
+    "The divided difference in Theorem 4.1 is summed without a zero-eigenvalue exclusion or limiting-value convention, although the centering matrix is singular. No convention is supplied by the census.",
+    "The optional branch of Theorem 4.2 contains delta in a logarithm but does not quantify delta. Alpha is not substituted for it.",
+    "Theorem 4.3 prints e^{d1/272C^2} with an inline slash; Theorem 4.7 prints a stacked exponent d1/(272C). The difference is retained.",
+    "The empirical permutation CDF uses only B sampled permutations. The B+1 construction including the original statistic is a separate remark, not the construction used in the displayed Theorems.",
+    "Theorems 4.6 and 4.10 only constrain the sum w+tilde-w. Separate positivity is not implied by that condition, and no missing range is inserted.",
+    "The rejection inequalities are nonstrict at left permutation quantiles. The main text does not specify randomized tie handling or exclude atoms; possible tie-related validity issues are preserved as source issues rather than repaired.",
+    "Random permutations are described as randomly selected. Independent uniform draws are the interpretation needed for the stated empirical-distribution concentration argument, but those words are not added to the original passage.",
+    "The dyadic grid definition imposes lambda_U=2^b lambda_L. The endpoint formulas in the adaptation Theorems do not give a rounding convention guaranteeing that exact relation.",
+    "Each adaptive theorem has all four rate branches. In the exponential branches, log log(N+M) multiplies sqrt(log(N+M)) outside the square root.",
+    "Theorem 4.12 prints script A=log|K|, which is zero for a singleton kernel family, and repeats alpha<=e^{-1}. Neither a max(1,log|K|) correction nor deletion of the repeated hypothesis is made.",
+    "The kernel-adaptive theorem retains T without a K subscript in the source-norm hypothesis, while the class definition uses T_K. Kernel dependence is explained separately, not edited into the original.",
+    "The adaptive uniform source-norm assumptions quantify over all theta>0, whereas their conclusions take an infimum over theta>theta_l. Uniformity of other implicit comparison constants across kernels and parameters is not fully specified by the source.",
+    "Sample splits must have integer sizes, and the regularized U-statistic denominators require n,m,s at least two; not every statement explicitly repeats these construction requirements. No unprinted finite-sample domain conditions are added to the originals.",
+    "No appendix-only definition is needed to state the ten results after resolving the main-text constructions. Referenced appendix lemmas justify identities or prove bounds and are not imported as statement dependencies."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2212.09201v3",
+    "version": "arXiv:2212.09201v3",
+    "pdf_sha256": "9037d8bcb2e72b7ef99d19d1d78a7415d8a9be4869ee42089fa5fa10423913ee",
+    "pdf_pages": 75,
+    "main_text_last_pdf_page": 55
+  },
+  "recorded_checks": [
+    "Pinned title, author line including the middle initial K., version, date, 75-page count and PDF hashes verified. Every archived main-text page matches fresh PDF extraction byte for byte, including the clipped shared page 55.",
+    "Independent font-aware Theorem enumeration finds exactly ten environments, with three two-page statements. Numbered Section 7 remains main text; appendix heading and boundary checked without using appendix mathematics.",
+    "Every inventoried original claim field is unchanged at handoff. The MMD theorem preserves both thresholds and its liminf conclusion; the minimax theorem preserves both spectral-inverse conditions and the exact-test risk.",
+    "The full matrix theorem retains all five circled terms, Gram matrices, bold centering matrices, divided differences and printed dimension/zero-eigenvalue issues.",
+    "Oracle and permutation power statements preserve all main and optional inequalities, qualification truncation, sample and permutation budgets, and their differing exponent constants. The unbound delta in Theorem 4.2 remains literal.",
+    "Both adaptive statements preserve their uniformity scopes and all four branches. Radicals, log-log factors, endpoint exponents, kernel-family multiplier and the repeated alpha condition are checked against the page images.",
+    "Source passages for embeddings, centered operators, eigenfunction versions, separation classes, sample splitting, estimated covariance and the conditional statistic are checked against pages 1–11. The inline feature difference stays in ambient context without an invented display name.",
+    "The four regularizer assumptions are unpacked separately with their common domain/constant context. Effective dimensions, strict B, conditional permutation CDFs, dyadic grid and kernel-specific alternatives are checked against pages 12–21.",
+    "Independent direct-edge and transitive-path expectations verify 82 direct uses and 159 related connections. Level-only statements do not inherit A1–A4 or power restrictions. The adaptive theorems do not inherit effective-dimension inequalities merely used in proofs.",
+    "All source terms, kinds, highlights, explanation paths, math delimiters and evidence bounds validated. Source typography distinctions are separately checked using PDF fonts; no appendix-only formula is required to resolve the stored statements."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "955c51665a9168bf1f98f9acf2ed1625870328725ee0fb585dedbc5ab05d5eab"
+}

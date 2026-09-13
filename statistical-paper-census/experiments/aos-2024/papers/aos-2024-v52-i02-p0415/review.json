@@ -1,0 +1,112 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i02-p0415",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T07:59:43.982179+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i02-p0415/T1",
+      "aos-2024-v52-i02-p0415/T2",
+      "aos-2024-v52-i02-p0415/T3",
+      "aos-2024-v52-i02-p0415/T4",
+      "aos-2024-v52-i02-p0415/T5",
+      "aos-2024-v52-i02-p0415/T6",
+      "aos-2024-v52-i02-p0415/T7",
+      "aos-2024-v52-i02-p0415/T8",
+      "aos-2024-v52-i02-p0415/T9",
+      "aos-2024-v52-i02-p0415/T10",
+      "aos-2024-v52-i02-p0415/T11"
+    ],
+    "method": "Enumerate printed uppercase Theorem environments independently on PDF pages 1-25 and compare their source order with the saved inventory. Visually review full statements on pages 3, 10-16 and 18; include Theorem 4 continuation on page 12. Main references end on page 25 and the supplement title starts page 26.",
+    "printed_label_check": [
+      [
+        3,
+        "1"
+      ],
+      [
+        10,
+        "2"
+      ],
+      [
+        11,
+        "3"
+      ],
+      [
+        11,
+        "4"
+      ],
+      [
+        12,
+        "5"
+      ],
+      [
+        13,
+        "6"
+      ],
+      [
+        14,
+        "7"
+      ],
+      [
+        15,
+        "8"
+      ],
+      [
+        16,
+        "9"
+      ],
+      [
+        16,
+        "10"
+      ],
+      [
+        18,
+        "11"
+      ]
+    ],
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "supplementary_material_used": false
+  },
+  "counts": {
+    "theorems": 11,
+    "interfaces": 37,
+    "source_members": 37,
+    "direct_theorem_uses": 80,
+    "related_theorem_connections": 158,
+    "unranked_auxiliary_passages": 14
+  },
+  "source_notes": [
+    "The audit is source-specific to the May 2023 preprint associated with the 2024 corpus entry. Journal-version equality has not been assumed.",
+    "Theorem 4 spans two pages; its complete s1-prime and s2-prime definitions were checked. Theorem 8 preserves both finite-probability and asymptotic bounds. Theorem 9 preserves all three rate branches.",
+    "Displayed source discrepancies are archived separately without repairing the original statements. They are limitations for later formalization, not evidence that the paper census is incomplete.",
+    "The introductory supplement text exposed by an earlier boundary crop is not used or retained as statement evidence. Only the supplement title crop documents that boundary."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2110.04924v4",
+    "version": "arXiv:2110.04924v4",
+    "pdf_sha256": "ea5850b94eb3e9fbb8c8a5444fe0db7a64ba55ddb37f21e9c87b7722a5483123",
+    "pdf_pages": 85,
+    "main_text_last_pdf_page": 25
+  },
+  "recorded_checks": [
+    "All eleven original theorem records remain identical to the independently validated source inventory. The final census pins the unchanged inventory SHA-256.",
+    "Pinned source identity, title, authors, arXiv stamp, PDF page count and SHA-256 were checked. Main-text heading enumeration yields exactly Theorems 1-11; Lemma 1 and Proposition 1 are excluded from the theorem inventory.",
+    "All 37 local source passages and 14 auxiliary passages were reviewed against main-text pages. The source algorithms retain outer cross-fitting, inner split/swap where present, both treatment paths and the variance outputs.",
+    "The independent validator accepts the final census, local DAG, derived metrics, source identity, keyword names, selectors and source-backed explanations for all 158 related-theorem connections.",
+    "Algorithm 1 reaches only Theorems 2-3; Algorithm 2 reaches only Theorems 4-5. The averaged DR component fit additionally reaches Theorem 9, and the nested component fit additionally reaches Theorem 10.",
+    "General DR Theorems 6-7 do not acquire logistic/Lasso population projections or the sub-Gaussian Assumptions 2-3. Assumption 5 imports the residual definitions with general working models, not the full parametric tail hypothesis.",
+    "Theorem 8 depends only on its separate generic imputed-Lasso setup and the shared Orlicz norm. Theorem 11 depends only on its multi-stage model, nuisance definitions and Assumption 6.",
+    "Theorems 4-5 retain the explicit nested-model replacement in Assumption 2 via separate local application records. Theorem 10 lacks that instruction, so its literal reference and resulting ambiguity remain visible.",
+    "Theorem 2 retains s2 versus s2-prime and the NR indicator. Theorems 9-10 retain the signed r-th powers, and the parametric score retains its delta_c subscript. Magnified source crops corroborate these details.",
+    "Theorem 10 imports the rate expression of Theorem 9(c), without importing the correctness condition, Assumption 4 or the DR component-fit algorithm.",
+    "Every interface has a natural-language source keyword and a meaning-bearing source selector, plus an explanation following its exact same-paper dependency path. All transcribed mathematical fragments have balanced braces."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "620756a69120b52509b4b90179f21f80b768d2dfc563e31ab643cc6fa43a43d9"
+}

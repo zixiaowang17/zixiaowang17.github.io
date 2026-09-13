@@ -1,0 +1,308 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i05-p1927",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-10T03:48:23.271661+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i05-p1927/T1",
+      "aos-2024-v52-i05-p1927/T2"
+    ],
+    "printed_label_check": [
+      [
+        10,
+        "1"
+      ],
+      [
+        17,
+        "2"
+      ]
+    ],
+    "method": "Independent bold-font enumeration and visual comparison of both full original theorem statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 2,
+    "interfaces": 30,
+    "source_members": 30,
+    "direct_theorem_uses": 20,
+    "related_theorem_connections": 40,
+    "unranked_auxiliary_passages": 12
+  },
+  "source_notes": [
+    {
+      "issue_id": "transition-kernel-signature",
+      "description": "The source writes a real-valued transition kernel on X times X while allowing general state spaces and conditional sampling. It does not specify a reference measure for a density representation; preserve its notation rather than silently replacing the signature.",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Original main-text definition or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "rkhs-projection-closedness",
+      "description": "The generic projection (5) requires a class closed in L2(mu), and page 7 then sets G=H. An RKHS need not be L2-closed merely because it is complete in its own norm. Preserve the source assumptions and do not assert unconditional existence of that projection for every kernel.",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Original main-text definition or scope"
+        },
+        {
+          "page": 7,
+          "location": "Original main-text definition or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "reward-membership",
+      "description": "Footnote 3 assumes r in H for the operator equation, otherwise proposing Pi(r). The main statements and estimator continue to write r. The extraction records this convention separately without rewriting any original formula.",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Original main-text definition or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "projected-versus-true-target",
+      "description": "Theta-star is a projected fixed point in the general setup, while the realizable lower-bound construction calls theta-star the optimal value function. The upper estimation bound does not alone control approximation error to V-star.",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Original main-text definition or scope"
+        },
+        {
+          "page": 7,
+          "location": "Original main-text definition or scope"
+        },
+        {
+          "page": 16,
+          "location": "Original main-text definition or scope"
+        },
+        {
+          "page": 22,
+          "location": "Original main-text definition or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "uncentered-residual-variance",
+      "description": "Equation (16) is an uncentered second moment, although the source calls it a variance. Zero mean is not inserted as an additional assumption in the extracted definition.",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Original main-text definition or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "zero-noise-critical-radius",
+      "description": "CI(zeta) is defined for positive zeta, but the fast-rate substitution kappa*sigma(theta-star) can be zero in degenerate models. The source does not state a limiting convention for that case.",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Original main-text definition or scope"
+        },
+        {
+          "page": 10,
+          "location": "Original main-text definition or scope"
+        },
+        {
+          "page": 11,
+          "location": "Original main-text definition or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "degenerate-spectrum",
+      "description": "A unique smallest positive critical solution and expressions involving 1/sqrt(mu_1) require nondegenerate parameters. The nonnegative eigenvalue statement does not explicitly list all exclusions such as an identically zero kernel.",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Original main-text definition or scope"
+        },
+        {
+          "page": 9,
+          "location": "Original main-text definition or scope"
+        },
+        {
+          "page": 17,
+          "location": "Original main-text definition or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "mercer-domain",
+      "description": "The source assumes relatively mild conditions for Mercer expansion without enumerating all topological and measure-theoretic hypotheses. Preserve the actual expansion and its stated orthonormality; do not invent a fully specified compact-domain setting.",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Original main-text definition or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "empirical-fixed-point",
+      "description": "Equation (10) defines the estimate by a potentially infinite-dimensional, nonsymmetric operator equation. Positive lambda_n alone is not separately stated as a universal existence/uniqueness certificate; retain the theorem parameter regime and original definition.",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Original main-text definition or scope"
+        },
+        {
+          "page": 10,
+          "location": "Original main-text definition or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "statistical-dimension-order",
+      "description": "The source defines d_n as the largest index with mu_j>=delta_n^2, and describes a nonnegative sequence without explicitly stating a global sorting convention. Do not replace the definition by a count or a trace formula.",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Original main-text definition or scope"
+        },
+        {
+          "page": 17,
+          "location": "Original main-text definition or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "small-dimension-eigengap",
+      "description": "The minimum over 3<=j<=d_n in Theorem 2(b) can have an empty index set when d_n<3. No empty-minimum convention is expressly supplied; preserve the printed condition and flag the endpoint.",
+      "evidence": [
+        {
+          "page": 18,
+          "location": "Original main-text definition or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "lower-spectrum-versus-envelope",
+      "description": "Section 4.2.1 distinguishes prescribed mu_j from actual mu_j(P). Regime A fixes equality; Regime B imposes only mu_j(P)<=mu_j for j>=2. Do not silently add the omitted j=1 condition or equality of spectra.",
+      "evidence": [
+        {
+          "page": 21,
+          "location": "Original main-text definition or scope"
+        },
+        {
+          "page": 22,
+          "location": "Original main-text definition or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "measure-overloading",
+      "description": "In the lower-bound construction mu denotes Lebesgue measure, but the source explicitly says the norm in LB is shorthand for the stationary measure mu(P). The two measures must remain distinguishable.",
+      "evidence": [
+        {
+          "page": 21,
+          "location": "Original main-text definition or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "regularity-quantifier",
+      "description": "Condition (31) uses a universal constant at a sample-dependent critical radius. The passage does not fully spell out whether all admissible n and parameter choices share one constant; preserve the quantifier wording.",
+      "evidence": [
+        {
+          "page": 17,
+          "location": "Original main-text definition or scope"
+        },
+        {
+          "page": 18,
+          "location": "Original main-text definition or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "universal-bound-constants",
+      "description": "Theorem 1 declares c0, while the referenced (17) introduces c1,c2 in preceding prose. Likewise LB defines its universal constants before Theorem 2. Do not omit these probability constants merely because they are outside the bold theorem environment.",
+      "evidence": [
+        {
+          "page": 10,
+          "location": "Original main-text definition or scope"
+        },
+        {
+          "page": 17,
+          "location": "Original main-text definition or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "reversed-regime-pair",
+      "description": "Theorem 2(b) prints (bar-sigma,bar-R), whereas the regime definitions and validity notation use (bar-R,bar-sigma). Preserve the original order and record the intended parameter roles separately.",
+      "evidence": [
+        {
+          "page": 17,
+          "location": "Original main-text definition or scope"
+        },
+        {
+          "page": 18,
+          "location": "Original main-text definition or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "lower-family-existence-scope",
+      "description": "Theorem 2 asserts existence of valid hard families; it does not give a lower bound for every valid family or every arbitrary RKHS with the same eigenvalue envelope. The main-text full specification fixes a reward and RKHS within each constructed family.",
+      "evidence": [
+        {
+          "page": 16,
+          "location": "Original main-text definition or scope"
+        },
+        {
+          "page": 17,
+          "location": "Original main-text definition or scope"
+        },
+        {
+          "page": 21,
+          "location": "Original main-text definition or scope"
+        },
+        {
+          "page": 22,
+          "location": "Original main-text definition or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "sample-size-log-domain",
+      "description": "Theorem 2(b) contains log n in a denominator and requests a sufficiently large sample size. No n=1 limiting convention or extra explicit cutoff is inserted into its original statement.",
+      "evidence": [
+        {
+          "page": 18,
+          "location": "Original main-text definition or scope"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2109.12002v1",
+    "version": "arXiv:2109.12002v1; arXiv stamp 24 Sep 2021; title-page date September 27, 2021",
+    "pdf_sha256": "36f90f799deee2370dbbf62af76ddfaf3c13ff043d87d528dfb0b84a5b81808a",
+    "pdf_pages": 58,
+    "main_text_last_pdf_page": 30
+  },
+  "recorded_checks": [
+    "Two complete bold Theorem environments, 1 and 2, on pages 10-11 and 17-18. Font-level enumeration covers all 30 main-text pages; the Theorem 2 citation on page 19 is not an environment. Appendix A starts on shared page 30; all evidence there is clipped at y=295 above its heading.",
+    "Thirty separate source entries preserve the MRP, iid stationary-pair experiment, RKHS and projected target, operator estimates, upper critical inequality and complete probability bound, lower validity conditions, radius, regularity, regimes and full family specifications. Twelve auxiliary passages retain the known-reward convention, stationarity footnote, reward projection alternative, approximation error, estimator scope and lower-bound clarifications.",
+    "Independent source reconstruction gives 20 direct uses and 40 related connections. The upper target is the projected fixed point; its statement does not acquire the true-value definition merely from the error decomposition. The lower result ranges over all measurable estimators and does not acquire the empirical LSTD estimator or the upper critical inequality.",
+    "The eigenfunction bound and residual noise enter the fast upper branch, not its slow branch. Regimes A and B retain separate parameter ranges and family definitions. Theorem 2 also requires regularity (31), explicitly stated in the adjacent commentary. Section 4.2.1 provides the full statement meaning, while Walsh constructions, packings and Fano bounds remain proof-only.",
+    "The critical radius (30) uses prescribed mu_j. Family A equates every actual eigenvalue with that sequence. Family B only bounds actual eigenvalues for j>=2, without imposing equality or adding a j=1 condition. Its loss uses the stationary law mu(P), although mu elsewhere in the construction denotes Lebesgue measure.",
+    "Visual comparison retains the squared-root diagonal kernel bound, uncentered Bellman-residual second moment, regularization on both sides of the estimator equation, reversed parameter-pair order in Theorem 2(b), both sample-size conditions, largest-index statistical dimension and all eigengap factors. PDF typefaces distinguish script I for instances, calligraphic I for the identity and blackboard-bold H for the RKHS.",
+    "All thirty entries retain source-extracted natural-language names, exact phrases or math selectors, original source kinds and same-paper explanations for every related theorem. Structural selector checks supplement the retained source comparison; they do not infer mathematical equivalence.",
+    "Six saved content artifacts were regenerated byte-for-byte by the retained paper scripts. The frozen content hashes and independent source-specific assertions preserve the reviewed state. Re-executing the scripts alone is not a new source review or a proof check."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "7351270740d190199cd7bad86b28a919334ad64212f7e9b606161d6dc902667d"
+}

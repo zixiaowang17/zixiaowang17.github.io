@@ -1,0 +1,93 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i02-p0679",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T10:31:46.837314+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i02-p0679/T1",
+      "aos-2024-v52-i02-p0679/T2",
+      "aos-2024-v52-i02-p0679/T3",
+      "aos-2024-v52-i02-p0679/T4",
+      "aos-2024-v52-i02-p0679/T5",
+      "aos-2024-v52-i02-p0679/T6",
+      "aos-2024-v52-i02-p0679/T7"
+    ],
+    "method": "Independent inspection of all bold CMBX10 Theorem headings across the 50-page main-paper PDF finds exactly Theorems 1-7. Ordinary-font mentions, proof citations and other result labels are excluded. Theorem 4 has a type-B continuation on page 24. A supplement notice on physical page 43 links to a separate unopened document; references and main-paper figures continue to page 50.",
+    "printed_label_check": [
+      [
+        12,
+        "1"
+      ],
+      [
+        15,
+        "2"
+      ],
+      [
+        18,
+        "3"
+      ],
+      [
+        23,
+        "4"
+      ],
+      [
+        26,
+        "5"
+      ],
+      [
+        26,
+        "6"
+      ],
+      [
+        27,
+        "7"
+      ]
+    ],
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 7,
+    "interfaces": 30,
+    "source_members": 30,
+    "direct_theorem_uses": 61,
+    "related_theorem_connections": 126,
+    "unranked_auxiliary_passages": 14
+  },
+  "source_notes": [
+    "The census uses the pinned arXiv v4 preprint; identity with the final journal wording has not been established.",
+    "No separate supplement was opened. Its proof references remain references, and unresolved assumptions or claims are not repaired using material outside the main paper.",
+    "Source fidelity and dependency validation do not certify proof correctness. The literal positivity quantifier, treatment coding, strict-concavity diagonal, strong-separation center, later value display and entropy quantifier issues remain documented.",
+    "The source calls a bracket count bracketing entropy. Its actual N and log N conditions remain distinct, with the stated norms and exponents unchanged.",
+    "All source definitions and conditions retain their original labels, with natural-language source keywords and notation kept in the detailed passages. Standard ambient primitives are resolved separately without inventing additional theorem claims."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2111.02826v4",
+    "version": "arXiv:2111.02826v4",
+    "pdf_sha256": "2b00e8abb4878ad695f61c97a5316989a63b5853482e811c95e473a899c186d7",
+    "pdf_pages": 50,
+    "main_text_last_pdf_page": 50
+  },
+  "recorded_checks": [
+    "The independent inventory and final census pass separate validator calls; the inventory hash matches its prior source review and all original claim fields survive unchanged.",
+    "The title, four authors, arXiv v4 stamp of 1 October 2023, versioned URL, 50-page count and PDF digest agree with the inspected source. Physical page 43 corrects the outline’s off-by-one supplement location; no supplement body is embedded or used.",
+    "All seven complete theorem statements were visually checked on pages 12,15,18,23,24,26,27, including both hinge-policy branches, the exact regret divisor, all type-dependent approximation rates and every finite-sample growth/probability condition.",
+    "The longitudinal record, histories, potential-outcome context, two propensity functions and separate assumptions I-IV were checked on pages 5-7. The conditional-integrability formulas retain their distinct absolute-value scopes.",
+    "The source optimal policies, measurable score class, original and surrogate values, maximizing-score rules, regrets and eta maps were checked on pages 7-9. Extended maximizer conventions and the absence of attainment requirements in Definition 1 remain explicit.",
+    "Theorem 1 depends on sequential Fisher consistency and the source closedness/strict-concavity conventions. Theorem 3 gives a regret inequality and does not acquire the Fisher-consistency predicate merely because the following prose deduces consistency.",
+    "The generic surrogate definition does not inherit Condition 2. That condition is used only by Theorems 3-7; hinge loss and its reward condition are confined to Theorem 2, and the two derivative types are confined to Theorem 4.",
+    "Outcome bound A applies to Theorems 4-7; small-noise B to Theorems 4/5; literal strong-separation C to Theorems 6/7. The graph does not treat the source C as an equivalent version of B or repair its center from zero to one half.",
+    "Empirical value, fitted product classes and optimization error are resolved for Theorems 5-7. Theorem 5 uses the coordinatewise sup-norm condition (21); Theorem 6 uses logarithmic empirical-L2 condition (23); Theorem 7 retains its inline pair-class bracketing-number bound (24).",
+    "Theorem 7 does not inherit Opt_n<1/2 or rho_n<1 from Theorem 6. The general-class theorems do not inherit neural-network, wavelet, Assumption D, derivative-type or optimizer-convergence assumptions from examples or proofs.",
+    "Fourteen auxiliary passages and twenty-four source notes resolve effective domains, norm and probability conventions, known propensities, outcome positivity, common noise exponent and source inconsistencies. Independent graph checks cover 61 direct uses and 126 related-theorem connections, with matching source selectors and explanations for every interface."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "a821f87a1aff3fc811be4ed74035b76a3b627211fc3d4784ceff7372b6c3f9a4"
+}

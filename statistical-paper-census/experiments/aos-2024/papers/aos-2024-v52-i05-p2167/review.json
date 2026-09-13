@@ -1,0 +1,344 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i05-p2167",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-10T17:22:42.826844+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i05-p2167/T4.1-overview",
+      "aos-2024-v52-i05-p2167/T5.8-overview",
+      "aos-2024-v52-i05-p2167/T5.1-overview",
+      "aos-2024-v52-i05-p2167/T3.1",
+      "aos-2024-v52-i05-p2167/T4.1",
+      "aos-2024-v52-i05-p2167/T5.1",
+      "aos-2024-v52-i05-p2167/T5.4",
+      "aos-2024-v52-i05-p2167/T5.7",
+      "aos-2024-v52-i05-p2167/T5.8"
+    ],
+    "printed_label_check": [
+      [
+        5,
+        "4.1",
+        "overview_statement"
+      ],
+      [
+        7,
+        "5.8",
+        "overview_statement"
+      ],
+      [
+        7,
+        "5.1",
+        "overview_statement"
+      ],
+      [
+        11,
+        "3.1",
+        "formal_theorem"
+      ],
+      [
+        16,
+        "4.1",
+        "formal_theorem"
+      ],
+      [
+        20,
+        "5.1",
+        "formal_theorem"
+      ],
+      [
+        23,
+        "5.4",
+        "formal_theorem"
+      ],
+      [
+        23,
+        "5.7",
+        "formal_theorem"
+      ],
+      [
+        24,
+        "5.8",
+        "formal_theorem"
+      ]
+    ],
+    "method": "Independent small-cap formal and bold overview heading enumeration, with visual comparison of all nine complete labeled statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 9,
+    "interfaces": 23,
+    "source_members": 23,
+    "direct_theorem_uses": 57,
+    "related_theorem_connections": 86,
+    "unranked_auxiliary_passages": 12
+  },
+  "source_notes": [
+    {
+      "issue_id": "overview-density-scope",
+      "description": "The overview of Theorem 5.1 imposes both regularity conditions on both maps. The formal Theorem 5.1 imposes manifold regularity on both but density regularity only on g-star. Preserve the two labeled statements separately.",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Original source convention or scope"
+        },
+        {
+          "page": 20,
+          "location": "Original source convention or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "overview-gamma-range",
+      "description": "Theorem 5.8 overview asserts simultaneous gamma in [1,beta+1]; the formal theorem prints [1,tilde-beta+1]. Subsequent prose extends the claimed conclusion when beta+1>=d/2. All versions retain their original ranges without merging.",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Original source convention or scope"
+        },
+        {
+          "page": 24,
+          "location": "Original source convention or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "delta-endpoint-and-critical-indicator",
+      "description": "Theorems 3.1 and 5.4 minimize over delta in [0,1] while using log(delta^{-1}) and possibly nonpositive powers. No endpoint convention is supplied. Theorem 5.4 also prints beta+1=d/2 in its indicator although its other terms use tilde-beta; do not silently replace it.",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Original source convention or scope"
+        },
+        {
+          "page": 23,
+          "location": "Original source convention or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "low-dimension-resolution",
+      "description": "Global d includes 1. With tilde-beta+1=min(beta+1,d/2), the resolution denominator 2 tilde-beta+d equals zero at d=1, and [1,tilde-beta+1] is empty. No lower dimension restriction repairing these formulas is added by the census.",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Original source convention or scope"
+        },
+        {
+          "page": 22,
+          "location": "Original source convention or scope"
+        },
+        {
+          "page": 24,
+          "location": "Original source convention or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "optimizer-and-cover-choice",
+      "description": "The GAN, optimal discriminators and Besov approximation use exact argmin/argmax without specifying measurable selection. The covering definition uses argmin as a selected cover and does not state centers must lie in F. Preserve these conventions rather than invent a selection algorithm or altered covering definition.",
+      "evidence": [
+        {
+          "page": 3,
+          "location": "Original source convention or scope"
+        },
+        {
+          "page": 10,
+          "location": "Original source convention or scope"
+        },
+        {
+          "page": 16,
+          "location": "Original source convention or scope"
+        },
+        {
+          "page": 22,
+          "location": "Original source convention or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "wavelet-conventions",
+      "description": "Page 12 initially calls psi the scaling function and phi the wavelet, while page 13 periodization and page 14 call phi the scaling function. The Euclidean l range ends at 2^p-1, but periodic/network sums end at 2^d or 2^p. Preserve the printed roles and ranges without correcting the basis.",
+      "evidence": [
+        {
+          "page": 12,
+          "location": "Original source convention or scope"
+        },
+        {
+          "page": 13,
+          "location": "Original source convention or scope"
+        },
+        {
+          "page": 14,
+          "location": "Original source convention or scope"
+        },
+        {
+          "page": 17,
+          "location": "Original source convention or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "network-indices-and-coarse-mode",
+      "description": "Formula (3.11) sums over z but prints coefficient alpha(j,l,w)_i, with its bound using z. Network sums do not explicitly supply the separate constant/coarse mode used in the source bases. Logarithmic and spatial summation endpoints have no explicit rounding convention. These details remain unresolved rather than repaired.",
+      "evidence": [
+        {
+          "page": 13,
+          "location": "Original source convention or scope"
+        },
+        {
+          "page": 14,
+          "location": "Original source convention or scope"
+        },
+        {
+          "page": 17,
+          "location": "Original source convention or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "appendix-network-construction",
+      "description": "The hat-wavelet constructions refer to (A.4), (A.5) and (A.10) and Lemmas A.1-A.2. Preserve main-text precision, coefficient and architecture formulas, but do not claim that the appendix-only neural implementation has been extracted.",
+      "evidence": [
+        {
+          "page": 14,
+          "location": "Original source convention or scope"
+        },
+        {
+          "page": 15,
+          "location": "Original source convention or scope"
+        },
+        {
+          "page": 17,
+          "location": "Original source convention or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "appendix-numerical-condition",
+      "description": "The chi-numerical regularity condition in (5.1) is defined in Appendix E.1. Main text gives only a description and a claimed implication to manifold regularity. Its exact formula and admissible chi are unresolved within the permitted main-text scope.",
+      "evidence": [
+        {
+          "page": 22,
+          "location": "Original source convention or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "holder-source-conventions",
+      "description": "The Hölder display places max_i before the first derivative sum and leaves the second unparenthesized. Its definition starts at eta>0, while the pushforward display invokes H^0 test functions. The finite-q Besov norm is later used at infinity and on periodic/vector spaces without all modifications written out. Preserve these conventions explicitly.",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Original source convention or scope"
+        },
+        {
+          "page": 12,
+          "location": "Original source convention or scope"
+        },
+        {
+          "page": 13,
+          "location": "Original source convention or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "gan-summation-scope",
+      "description": "The GAN display places the summation directly before D(X_i)-D(g(U_i)) without enclosing parentheses. The accompanying empirical-loss explanation indicates paired sample terms; the original display is retained rather than silently inserting grouping into its quotation.",
+      "evidence": [
+        {
+          "page": 3,
+          "location": "Original source convention or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "discriminator-latent-variable",
+      "description": "Formula (4.2) prints D(g(U))-D(g-prime(u)) inside its expectation, mixing uppercase U and lowercase u. Preserve this original typo separately from its apparent intended meaning.",
+      "evidence": [
+        {
+          "page": 16,
+          "location": "Original source convention or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "network-versus-holder",
+      "description": "The generic GAN definition requires Holder-bounded classes; the instantiated classes are expressed by approximate wavelet coefficients, with no explicit Holder-ball intersection in (4.1),(4.3),(5.1). Do not invent this intersection or infer exact Holder membership solely from approximation/Besov membership.",
+      "evidence": [
+        {
+          "page": 3,
+          "location": "Original source convention or scope"
+        },
+        {
+          "page": 14,
+          "location": "Original source convention or scope"
+        },
+        {
+          "page": 15,
+          "location": "Original source convention or scope"
+        },
+        {
+          "page": 17,
+          "location": "Original source convention or scope"
+        },
+        {
+          "page": 22,
+          "location": "Original source convention or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "endpoint-and-log-scope",
+      "description": "The class construction initially states eta in (0,beta+1) and delta in (0,1), then uses eta=beta+1. Global n>=1 also permits log(n)=0 and delta=1 in displayed rates/classes. The census preserves these source endpoints and does not add an unprinted sufficiently-large-n clause.",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Original source convention or scope"
+        },
+        {
+          "page": 14,
+          "location": "Original source convention or scope"
+        },
+        {
+          "page": 15,
+          "location": "Original source convention or scope"
+        },
+        {
+          "page": 22,
+          "location": "Original source convention or scope"
+        },
+        {
+          "page": 24,
+          "location": "Original source convention or scope"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2311.18613v2",
+    "version": "arXiv:2311.18613v2; 12 Mar 2025",
+    "pdf_sha256": "e16df8b32ca2250fd73e8e9d56aaafa49a771467015b5593da33bd35de477222",
+    "pdf_pages": 83,
+    "main_text_last_pdf_page": 25
+  },
+  "recorded_checks": [
+    "Six formal Theorems and three bold labeled overview statements are preserved separately: nine source occurrences, six distinct printed theorem numbers. Heading enumeration excludes citations, Table 1 and proofs. Main text ends with the Discussion on page 25; supplementary and appendix bodies are excluded.",
+    "Twenty-three entries and twelve supporting passages preserve Holder and Besov conventions, latent pushforwards, IPMs, GAN estimator, both model assumptions, separate manifold/density regularity, errors and coverings, wavelet formulas and all specified neural classes.",
+    "Independent reconstruction gives 57 direct uses and 86 related connections. Existential overview classes and arbitrary classes in Theorem 3.1 do not acquire later network prerequisites. Interpolation Theorem 5.1 has no GAN/network dependencies. Uniform and candidate-specific discrimination errors remain distinct.",
+    "The overview of 5.1 imposes density regularity on both maps; its formal statement imposes it only on g-star. Theorem 5.8 overview has gamma up to beta+1, while the formal statement prints tilde-beta+1. Subsequent broader-range prose is retained separately. Theorem 5.4 preserves its untilded critical indicator.",
+    "Exact hat-wavelet implementations and the chi-numerical regularity formula live in appendices. Only the main-text descriptions, bounds, formulas and references are retained. The census does not substitute manifold regularity for the numerical condition or claim a fully specified executable neural construction.",
+    "Fourteen source scope/convention issues remain explicit, including the d=1 zero denominator, delta=0 logarithms, network coefficient/index mismatches, scaling-wavelet name reversal, Holder/Besov endpoints and exact optimizer selections. Original statements are not corrected or certified as proofs.",
+    "Every entry has literal source terms, faithful model/definition/source-passage labels and source-matching selectors. All 86 theorem connections have explicit same-paper definition paths and explanations. Shared terminology does not merge distinct error or network definitions.",
+    "The six content JSON artifacts reproduce byte for byte from the retained per-paper scripts. Independent heading enumeration, source-specific formula checks, graph reconstruction, frozen artifact hashes and schema validation protect the reviewed extraction."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "2221da58d5b5e1b0aaad4088329df76ef13e5e247ab26472e41636f28d32df36"
+}

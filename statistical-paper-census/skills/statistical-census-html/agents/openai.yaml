@@ -1,0 +1,4 @@
+interface:
+  display_name: "Statistical Census HTML"
+  short_description: "Search papers and ranked mathematical APIs"
+  default_prompt: "Use $statistical-census-html to generate a searchable report with By paper and Top APIs views, audited theorem dependency gaps, and side-panel reading pages."

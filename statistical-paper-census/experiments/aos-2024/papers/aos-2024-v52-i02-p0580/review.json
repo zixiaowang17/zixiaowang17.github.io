@@ -1,0 +1,75 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i02-p0580",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T09:31:40.472669+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i02-p0580/T1",
+      "aos-2024-v52-i02-p0580/T4",
+      "aos-2024-v52-i02-p0580/T5",
+      "aos-2024-v52-i02-p0580/T6"
+    ],
+    "method": "Independent font-sensitive enumeration of all 25 main pages finds exactly CMBX10 Theorem headings 1,4,5,6. Lemma 2, Remark 3 and Proposition 7 share the numbering sequence but are excluded from the Theorem inventory. Theorem 5 continues from page 15 onto page 16. Figure 8 ends the main text on page 25; the saved heading crop establishes Appendix A on a separate page 26.",
+    "printed_label_check": [
+      [
+        8,
+        "1"
+      ],
+      [
+        10,
+        "4"
+      ],
+      [
+        15,
+        "5"
+      ],
+      [
+        17,
+        "6"
+      ]
+    ],
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 4,
+    "interfaces": 11,
+    "source_members": 11,
+    "direct_theorem_uses": 22,
+    "related_theorem_connections": 25,
+    "unranked_auxiliary_passages": 7
+  },
+  "source_notes": [
+    "This is a census of the pinned arXiv v2 preprint; equivalence to journal wording has not been established.",
+    "The original asymptotic tail assumptions and any resulting mathematical issues remain source claims. This audit preserves statements and dependencies without certifying the proofs.",
+    "Appendix bodies were excluded. All objects needed to state the inventoried theorems are available in the main text."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2207.07299v2",
+    "version": "arXiv:2207.07299v2",
+    "pdf_sha256": "7a23278ab8049da4fcaf5c425caa6844f865b85080aef2274c20a82c9e0622d6",
+    "pdf_pages": 41,
+    "main_text_last_pdf_page": 25
+  },
+  "recorded_checks": [
+    "Inventory and final census pass separate validator invocations. The independently reviewed inventory hash is unchanged, and every original theorem field survives the handoff.",
+    "The title, three authors, arXiv v2 stamp of 21 September 2023, separate title-page date of 22 September 2023, versioned URL, 41-page count and PDF hash match the inspected source.",
+    "All four theorem bodies were visually checked on pages 8,10,15,16,17. Theorem 5 retains its full page continuation, all three assumptions, both distributional limits, the additional condition (25), mean convergence and both variance limits.",
+    "Eleven interfaces preserve original model, lfdr, monotonicity, maximum criterion, support-line procedure, weighted loss, oracle, null estimate, modified rule, regret and Chernoff definitions. Their natural-language keywords and selectors are source-backed.",
+    "Theorem 1 retains its exact last-rejection identity without monotonicity; the shape condition appears only in the final max-lfdr clause. The source empty-rejection convention and reordered labels are resolved.",
+    "The constrained rule in Theorem 4 uses the specific plus-one null-proportion estimate and weak cutoff p_(k)<=lambda. Its connection to ordinary SL is conditional on the unconstrained threshold lying below lambda.",
+    "Theorems 5 and 6 do not acquire the particular estimator (12), the constrained rule (13), or the proof-only Grenander implementation. Theorem 6 quantifies an arbitrary estimator under its original one-sided error condition.",
+    "The negative m exponent in Theorem 5(25), the one-sided condition in Theorem 6(iii), and the exact regret coefficient are preserved rather than repaired. Source-domain omissions and the reversed abstract description of lfdr are recorded separately.",
+    "Seven auxiliary passages resolve sorted labels, cost-derived alpha, population threshold, fixed-threshold regret and constrained-versus-unconstrained distinctions. Nine source notes retain limitations without altering original statements.",
+    "The final graph has 22 direct uses and 25 deduplicated same-paper connections. Independent scope assertions confirm estimator-specific and regret-specific reach, and all mathematical evidence lies on main pages with balanced TeX grouping braces."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "fd5b4e5fee4b6637690372aacaaffa34f7107ef75991ae1dff878525e1032d0a"
+}

@@ -1,0 +1,97 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i01-p0364",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T07:32:18.541915+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i01-p0364/T1",
+      "aos-2024-v52-i01-p0364/T2",
+      "aos-2024-v52-i01-p0364/T4",
+      "aos-2024-v52-i01-p0364/T6",
+      "aos-2024-v52-i01-p0364/T7",
+      "aos-2024-v52-i01-p0364/T8",
+      "aos-2024-v52-i01-p0364/T9"
+    ],
+    "method": "Search all 38 main-text pages and independently enumerate printed bold Theorem headings. Visually inspect all statement pages and both continuations. Main text ends after the portfolio discussion on page 38; a heading-only crop confirms the appendix starts on page 39.",
+    "bold_label_check": [
+      [
+        10,
+        "1"
+      ],
+      [
+        13,
+        "2"
+      ],
+      [
+        15,
+        "4"
+      ],
+      [
+        20,
+        "6"
+      ],
+      [
+        21,
+        "7"
+      ],
+      [
+        23,
+        "8"
+      ],
+      [
+        24,
+        "9"
+      ]
+    ],
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "supplementary_material_used": false
+  },
+  "counts": {
+    "theorems": 7,
+    "interfaces": 25,
+    "source_members": 25,
+    "direct_theorem_uses": 78,
+    "related_theorem_connections": 103,
+    "unranked_auxiliary_passages": 10
+  },
+  "source_notes": [
+    "The audit is specific to the August 2022 preprint; identity with the 2024 journal version has not been established.",
+    "Theorem 2 prints H-double-dot-k rather than H-double-dot-k-pre inside rank; Theorem 4 prints a trailing comma in a subscript; Theorem 6 prints an unusual chained equality. All are preserved.",
+    "Theorem 7 retains both nested powers and both g_s factors in its rate. Theorem 9 ends at the consistency sentence; subsequent upright pervasive-factor rate simplifications are excluded from its statement.",
+    "The original projection algorithm uses q_k in step 2, unlike the q_-k construction in its preceding equations. Both passages are retained and the dimensional mismatch is documented.",
+    "Unindexed r and d were not explicitly defined in the inspected main text. The appendix-only tensor indexing conventions and the RE1 trace-square interpretation remain unresolved.",
+    "Theorem 6 inline rate hypotheses are archived as an unranked reference for Theorems 7 and 9, avoiding invented names for a new interface.",
+    "The fixed-direction covariance formula is not promoted to an actual conditional expectation given a data-dependent direction. No unprinted factor-noise independence is inserted.",
+    "Registered-PDF revalidation restored four missing tilde accents in D9, the summed-noise definition on page 9. Previous artifacts are preserved in review-history/before-registered-source-review.",
+    "Clarified the Theorem 9/SVD explanation to identify inherited Theorem 6 small-error assumptions, with page 20 evidence. The theorem statements and dependency counts are unchanged."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2208.04012v1",
+    "version": "arXiv:2208.04012v1",
+    "pdf_sha256": "f7eed5a573cce8d54b5ec456352bac69f25f55f2ec55841d563048da50de9fb1",
+    "pdf_pages": 80,
+    "main_text_last_pdf_page": 38
+  },
+  "recorded_checks": [
+    "The seven original statements match the separately validated and source-reviewed inventory; its hash remains unchanged at handoff.",
+    "PDF page count, SHA-256, source title, authors and pinned arXiv version were checked against the cached source.",
+    "Independent bold-font enumeration agrees with the original labels 1, 2, 4, 6, 7, 8 and 9. Theorems 2 and 8 include their page continuations.",
+    "All 25 interfaces and ten unranked auxiliary passages were checked against main-text source passages; no appendix body was used.",
+    "The finalizer derives the local graph, ranking metrics and relationship paths. A separate validator process accepts 78 direct uses and 103 related-theorem connections.",
+    "Full-sum L2 reaches only Theorems 1 and 2, with explicit sample-wise application context for Theorem 2. L2-prime, R2 and selected-scale comparability reach only Theorems 4, 6, 7 and 9.",
+    "Theorem 8 retains only E1, F1 and RE2 as explicit hypotheses. Its defined direction reaches the projection and pre-averaging procedures, without importing the assumptions used to prove their convergence.",
+    "L1-prime is attached to the final clauses of Theorems 1, 2 and 4 and retained by all-assumptions imports in Theorems 6, 7 and 9.",
+    "RE1 reaches only Theorems 6, 7 and 9; RE2 and the population-style covariance reach only Theorems 8 and 9. Sample correlation and threshold rank estimation reach only Theorem 9.",
+    "Every interface has exact source keywords, a faithful source-kind label, meaningful highlight selectors and source-backed explanations for every related theorem. Selectors match archived passages, source labels or related same-paper theorem statements.",
+    "All theorem symbols are bound inline, resolved to interfaces or recorded in ambient resolution; source ambiguities are explicitly retained rather than repaired. Mathematical fragments have balanced braces."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "9adae9a98f8e394cac34fe023a9fa0de97f598656b3ff402124a0a600ae450f9"
+}

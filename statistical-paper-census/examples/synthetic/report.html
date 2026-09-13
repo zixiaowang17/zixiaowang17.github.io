@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Search the census</title><style>:root { color-scheme:light; --ink:#22314c; --muted:#607088; --line:#dce3ed; --paper:#fff; --wash:#f5f7fa; --accent:#2056b5; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--paper); color:var(--ink); font:15px/1.5 system-ui,-apple-system,sans-serif; }
+a { color:var(--accent); text-underline-offset:3px; }
+button,input,select { font:inherit; }
+button,a,input,select { -webkit-tap-highlight-color:transparent; }
+:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+button { cursor:pointer; }
+button:disabled { cursor:default; }
+.muted { color:var(--muted); }
+.shell { display:grid; grid-template-columns:minmax(0,1fr); min-height:100vh; }
+.shell.has-reader { grid-template-columns:minmax(310px,var(--catalog-width,38%)) minmax(0,1fr); }
+.catalog { container-type:inline-size; min-width:0; padding:32px clamp(20px,4vw,60px) 60px; }
+.catalog h1 { font-size:26px; line-height:1.25; margin:0 0 20px; font-weight:650; }
+.controls { display:flex; gap:8px; flex-wrap:wrap; }
+.controls input { flex:1 1 200px; min-width:0; }
+.controls input,.controls select { border:1px solid var(--line); border-radius:5px; padding:9px 11px; background:var(--paper); color:var(--ink); }
+.results-toolbar { display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:8px 18px; margin:16px 0 9px; }
+.results { font-size:13px; color:var(--muted); margin:0; }
+.ranking-note { font-size:12px; color:var(--muted); }
+.ranking-note summary { cursor:pointer; }
+.ranking-note[open] { flex-basis:100%; }
+.ranking-note p { max-width:65ch; margin:9px 0; line-height:1.6; }
+[hidden] { display:none !important; }
+.view-tabs { display:flex; gap:24px; border-bottom:1px solid var(--line); margin:0 0 22px; }
+.view-tabs button { padding:12px 1px; background:none; border:0; border-bottom:3px solid transparent; color:var(--muted); font-weight:600; }
+.view-tabs button[aria-selected=true] { color:var(--accent); border-bottom-color:var(--accent); }
+.search-results { border-top:1px solid var(--line); }
+.api-result,.paper-result-button { text-align:left; border:0; background:none; color:var(--ink); width:100%; }
+.api-result { display:grid; grid-template-columns:minmax(30px,max-content) minmax(0,1fr); gap:14px; padding:18px 8px; align-items:start; border-bottom:1px solid var(--line); }
+.api-result:hover,.paper-result-button:hover,.theorem-match:hover { background:var(--wash); }
+[aria-current=true] { background:#edf3fd; box-shadow:inset 3px 0 var(--accent); }
+.rank { font-size:18px; color:var(--muted); font-variant-numeric:tabular-nums; }
+.name { display:block; font-weight:600; line-height:1.45; }
+.count { display:block; font-size:13px; margin-top:7px; color:var(--muted); }
+.api-result .result-content { display:flex; justify-content:space-between; align-items:baseline; gap:18px; min-width:0; }
+.api-result .name { min-width:0; overflow-wrap:anywhere; }
+.theorem-count { flex-shrink:0; color:var(--muted); font-size:12px; font-variant-numeric:tabular-nums; }
+.rank-group { display:block; font-weight:400; font-size:12px; color:var(--muted); margin-top:4px; }
+@container(max-width:480px) { .api-result .result-content{display:block}.theorem-count{display:block;margin-top:4px} }
+.paper-result { border-bottom:1px solid var(--line); }
+.paper-result-button { padding:21px 8px; }
+.paper-result .name { font-size:17px; max-width:68ch; }
+.paper-needs { display:block; color:var(--muted); font-size:13px; margin-top:8px; }
+.theorem-matches { margin:0 8px 18px 20px; border-left:2px solid var(--line); }
+.theorem-match { display:flex; justify-content:space-between; gap:15px; width:100%; background:none; border:0; padding:10px 13px; text-align:left; color:var(--accent); }
+.theorem-match small { color:var(--muted); }
+.shell.has-reader .api-result { grid-template-columns:minmax(25px,max-content) minmax(0,1fr); }
+.scope { font-size:12px; color:var(--muted); margin-top:24px; }
+.reader { position:sticky; top:0; height:100vh; min-width:0; border-left:1px solid var(--line); background:var(--paper); }
+.reader[hidden] { display:none; }
+.reader-toolbar { display:flex; align-items:center; gap:18px; padding:12px 22px; height:55px; border-bottom:1px solid var(--line); font-size:13px; background:var(--wash); }
+.reader-toolbar a { margin-left:auto; }
+.close { border:0; padding:5px 8px; background:transparent; color:var(--ink); }
+iframe { display:block; width:100%; height:calc(100% - 55px); border:0; }
+.reading { max-width:850px; padding:34px clamp(22px,5vw,56px) 64px; margin:auto; }
+.reading h1 { font-size:27px; line-height:1.3; font-weight:650; margin:0 0 12px; }
+.reading .summary { margin:0 0 32px; color:var(--muted); }
+.reading h2 { font-size:19px; line-height:1.45; font-weight:600; margin:30px 0 16px; }
+.paper-title { padding-top:18px; border-top:1px solid var(--line); }
+.theorem { margin:0 0 33px; }
+.theorem h3,.theorem h4 { margin:0 0 6px; font-size:16px; font-weight:650; }
+.relation { font-size:12px; color:var(--muted); margin:0 0 13px; }
+.statement { font:18px/1.75 Georgia,"Times New Roman",serif; max-width:72ch; overflow-wrap:break-word; }
+.statement p { margin:0 0 16px; }
+.statement ol,.statement ul { padding-left:24px; }
+math[display=block] { display:block; overflow-x:auto; padding:12px 2px; margin:12px 0; max-width:100%; }
+math { font-size:1.02em; }
+math[display=inline] { display:inline-block; max-width:100%; overflow-x:auto; overflow-y:hidden; vertical-align:middle; }
+.equation { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:12px; margin:12px 0 20px; }
+.equation math { min-width:0; margin:0; }
+.equation-number { font-size:15px; color:var(--muted); white-space:nowrap; }
+.secondary { border-top:1px solid var(--line); padding-top:2px; margin-top:30px; }
+.library-links { list-style:none; padding:0; }
+.library-links li { margin-bottom:15px; }
+.library-links a { overflow-wrap:anywhere; font-size:14px; }
+.library-links small { display:block; color:var(--muted); margin-top:3px; font-size:13px; }
+p.gap { margin:20px 0 0; padding:16px 18px; background:var(--wash); border-left:3px solid #b6c8e6; line-height:1.7; }
+.empty { color:var(--muted); padding:20px 0; }
+@media(max-width:800px) { .shell.has-reader{display:block}.reader{position:fixed;inset:0;height:100dvh;z-index:2;border:0}.reading{padding:25px 22px 50px}.reading h1{font-size:23px}.statement{font-size:17px}.reader-toolbar{padding:10px 14px}.catalog{padding:25px 20px 45px} }
+
+.theorem-index { margin:24px 0 36px; border-top:1px solid var(--line); }
+.theorem-index a { display:flex; justify-content:space-between; gap:16px; padding:11px 0; border-bottom:1px solid var(--line); text-decoration:none; font-size:14px; }
+.theorem-index small { color:var(--muted); text-align:right; }
+.theorem-needs { font-size:13px; margin:7px 0 17px; }
+.requirements { margin:20px 0 45px; background:var(--wash); padding:14px 16px; scroll-margin-top:20px; }
+.requirements summary { cursor:pointer; font-size:14px; font-weight:600; }
+.requirements summary span { display:block; margin:5px 0 0 17px; font-weight:400; font-size:12px; color:var(--muted); }
+.requirements ul { list-style:none; margin:10px 0 0; padding:0; }
+.requirements li { border-top:1px solid var(--line); padding:15px 0; font-size:14px; }
+.requirements li:last-child { padding-bottom:2px; }
+.requirement-heading { display:flex; align-items:start; justify-content:space-between; gap:12px; }
+.requirements p { margin:7px 0 0; line-height:1.6; }
+.requirements .relation { margin:4px 0 8px; }
+.theorem { scroll-margin-top:22px; }
+@media(max-width:800px) { .api-result{grid-template-columns:minmax(25px,max-content) minmax(0,1fr)}.theorem-index a,.theorem-match,.requirement-heading{flex-direction:column;gap:5px}.theorem-index small{text-align:left}.controls select{max-width:100%}.paper-result .name{font-size:16px} }
+
+.dependency-note { color:var(--muted); font-size:13px; max-width:65ch; }
+
+.connection { font-size:14px; line-height:1.65; color:var(--muted); margin:0 0 16px; }
+.connection p { display:inline; margin:0; }
+.connection > a { margin-left:8px; font-size:12px; white-space:nowrap; }
+
+.original-definition { margin:0 0 32px; padding:20px 22px; background:var(--wash); border-left:3px solid var(--accent); scroll-margin-top:22px; }
+.original-definition h3 { margin:0 0 4px; font-size:16px; font-weight:650; color:var(--accent); }
+.definition-source { margin:0 0 12px; color:var(--muted); font-size:12px; }
+.definition-note { margin:10px 0 0; color:var(--muted); font-size:13px; }
+.symbol-highlight { background-color:#fff1b8; }
+
+.theorems-heading { margin:0 0 24px; padding-bottom:10px; border-bottom:1px solid var(--line); font-size:18px; font-weight:650; }
+.original-definition .statement > :last-child { margin-bottom:0; }
+@media(max-width:800px) { .original-definition{padding:16px} }
+
+mark.symbol-highlight { color:inherit; }
+
+.paper-title a { color:inherit; text-decoration-thickness:1px; text-decoration-color:var(--line); }
+.paper-title a:hover { color:var(--accent); text-decoration-color:currentColor; }
+.work-status { display:inline-block; width:fit-content; max-width:100%; padding:2px 6px; border:1px solid var(--line); border-radius:3px; color:var(--accent); background:var(--wash); font:12px/1.4 system-ui,-apple-system,sans-serif; white-space:nowrap; }
+.work-status[data-work-status=use_mathlib] { color:#166534; background:#edf8f0; border-color:#b6dec2; }
+.work-status[data-work-status=new_infrastructure],.work-status[data-work-status=needs_work] { color:#a52222; background:#fff1f0; border-color:#efc3c0; }
+.work-audit { margin:-16px 0 28px; }
+.work-audit p { margin:8px 0 0; color:var(--muted); font-size:13px; max-width:70ch; }
+.original-definition > h3 + .statement { margin-top:12px; }
+
+/* API counts and audit decisions occupy separate, aligned columns. */
+.api-columns,.api-result,.shell.has-reader .api-result {
+  display:grid; grid-template-columns:44px minmax(0,1fr) 140px 132px; gap:14px;
+}
+.api-columns { padding:11px 8px; color:var(--muted); font-size:12px; border-top:1px solid var(--line); }
+.api-columns > :nth-child(3),.api-counts { text-align:center; }
+.api-result .result-content { display:block; }
+.api-counts,.api-status { min-width:0; align-self:start; }
+.count-value { color:var(--muted); font-size:14px; font-variant-numeric:tabular-nums; }
+.column-label { display:none; }
+@container(max-width:620px) {
+  .api-columns { display:none; }
+  .api-result,.shell.has-reader .api-result { grid-template-columns:44px minmax(0,1fr) minmax(0,1fr); gap:10px 12px; }
+  .api-result .rank { grid-column:1; grid-row:1 / span 2; }
+  .api-result .result-content { grid-column:2 / span 2; }
+  .api-counts { grid-column:2; text-align:left; }
+  .api-status { grid-column:3; }
+  .column-label { display:block; color:var(--muted); font-size:11px; margin-bottom:5px; }
+  .api-status .work-status { white-space:normal; overflow-wrap:anywhere; }
+}
+
+.pane-divider { position:absolute; z-index:3; left:-6px; top:0; width:12px; height:100%; cursor:col-resize; touch-action:none; }
+.pane-divider::after { content:""; position:absolute; top:0; bottom:0; left:5px; width:2px; background:transparent; transition:background .12s; }
+.pane-divider:hover::after,.pane-divider:focus-visible::after,.resizing .pane-divider::after { background:var(--accent); }
+.pane-divider:focus-visible { outline:none; box-shadow:inset 0 0 0 2px var(--accent); }
+body.resizing { cursor:col-resize; user-select:none; }
+.resizing iframe { pointer-events:none; }
+@media(max-width:800px) { .pane-divider { display:none; } }
+
+.work-status[data-work-status=small_adaptation] { color:#854d0e; background:#fff9db; border-color:#e7cf88; }
+.work-filters { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0 18px; }
+.work-filters button { cursor:pointer; padding:6px 10px; white-space:normal; }
+.work-filters button[aria-pressed=true] { outline:2px solid currentColor; outline-offset:2px; font-weight:650; }
+.work-filters button:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+.work-legend { padding-left:20px; }
+.work-legend li { margin:8px 0; }
+</style></head>
+<body><div class="shell" id="shell"><main class="catalog" id="catalog">
+<h1>Search the census</h1>
+<div class="view-tabs" role="tablist" aria-label="Search by">
+<button id="tab-paper" role="tab" aria-selected="true" aria-controls="search-panel" data-view="paper">By paper</button>
+<button id="tab-apis" role="tab" aria-selected="false" aria-controls="search-panel" tabindex="-1" data-view="apis">Top APIs</button></div>
+<section id="search-panel" role="tabpanel" aria-labelledby="tab-paper">
+<div class="controls"><input id="search" type="search" aria-label="Search papers and theorems" placeholder="Search papers, theorems or required APIs">
+<select id="kind" aria-label="API kind" hidden><option value="">All kinds</option></select><select id="work-status" aria-label="Work status" hidden><option value="">All work statuses</option><option value="use_mathlib">Use mathlib</option><option value="small_adaptation">Small adaptation</option><option value="new_infrastructure">New infrastructure</option><option value="needs_work">Needs more work</option></select></div>
+<div id="work-filters" class="work-filters" role="group" aria-label="Filter by work status" hidden><button type="button" class="work-status" data-work-status="use_mathlib" aria-pressed="false">Use mathlib</button><button type="button" class="work-status" data-work-status="small_adaptation" aria-pressed="false">Small adaptation</button><button type="button" class="work-status" data-work-status="new_infrastructure" aria-pressed="false">New infrastructure</button></div>
+<div class="results-toolbar"><p id="results" class="results" role="status" aria-live="polite"></p><details id="ranking-note" class="ranking-note" hidden><summary>About ranking</summary><p>Ranked by direct paper uses, then theorem uses. Filters keep the original ranks. <strong>Theorems / Papers</strong> counts unique related theorems and papers, including indirect uses.</p><ul class="work-legend"><li><strong>Green — Use mathlib:</strong> Ready to use; no new proofs.</li><li><strong>Yellow — Small adaptation:</strong> Needs a representation change or compatibility proof.</li><li><strong>Red — New infrastructure:</strong> Needs new constructions or core results.</li></ul><p>These are work estimates for each API. Click a status to filter; click again to clear.</p></details></div><div id="api-columns" class="api-columns" hidden><span>#</span><span>API</span><span>Theorems / Papers</span><span>Status</span></div><div id="list" class="search-results"></div>
+</section><p class="scope">2 papers. 4 Theorems from the main text; appendices excluded.</p></main>
+<aside id="reader" class="reader" aria-label="Reading page" hidden><div id="pane-divider" class="pane-divider" role="separator" tabindex="0" aria-label="Resize list and reading pane" aria-orientation="vertical" aria-controls="catalog reader" aria-valuemin="0" aria-valuemax="100" aria-valuenow="38" title="Drag to resize · Double-click to reset"></div><div class="reader-toolbar"><button id="back" class="close" type="button" hidden>Back</button><button id="close" class="close" type="button" aria-label="Close reading page">Close</button><a id="open-page" target="_blank" rel="noopener">Open separately</a></div><iframe id="page" title="Theorem and API details"></iframe></aside></div>
+<script id="data" type="application/json">{"interfaces":[{"route":"interface:square","name":"Synthetic square","kind":"definition","rank":1,"rank_group":"all","gap":"Synthetic display example only. This color is illustrative; no mathlib search or mathematical assessment was performed.","direct_paper_count":2,"direct_theorem_count":2,"theorem_count":2,"paper_count":2,"url":"report-pages/71f5a22ada0a436ab20a/interface-4ba3e8e3765f2970.html","search":"Synthetic square Synthetic definition 1 Synthetic definition 1 Let $f(x)=x^2$. This is the Synthetic square. Let $f(x)=x^2$. This is the Synthetic square. The invented theorem uses the function named in this synthetic definition. The invented theorem uses the function named in this synthetic definition. Theorem 1 Theorem 1 Synthetic paper A Synthetic paper B","work_status":"use_mathlib"},{"route":"interface:score","name":"Synthetic score","kind":"definition","rank":2,"rank_group":"all","gap":"Synthetic display example only. This color is illustrative; no mathlib search or mathematical assessment was performed.","direct_paper_count":1,"direct_theorem_count":1,"theorem_count":1,"paper_count":1,"url":"report-pages/71f5a22ada0a436ab20a/interface-a575b79868a2336d.html","search":"Synthetic score Synthetic definition 3 Let $h(x)=x^2$. This is the Synthetic score. The invented theorem uses the function named in this synthetic definition. Theorem 3 Synthetic paper A","work_status":"small_adaptation"},{"route":"interface:shift","name":"Synthetic shift","kind":"definition","rank":3,"rank_group":"all","gap":"Synthetic display example only. This color is illustrative; no mathlib search or mathematical assessment was performed.","direct_paper_count":1,"direct_theorem_count":1,"theorem_count":1,"paper_count":1,"url":"report-pages/71f5a22ada0a436ab20a/interface-ecd3fad7a4d35d71.html","search":"Synthetic shift Synthetic definition 2 Let $g(x)=x^2$. This is the Synthetic shift. The invented theorem uses the function named in this synthetic definition. Theorem 2 Synthetic paper A","work_status":"new_infrastructure"}],"papers":[{"route":"paper:demo-a","name":"Synthetic paper A","url":"report-pages/71f5a22ada0a436ab20a/paper-7300d2df8b84c630.html","theorem_count":3,"theorems":[{"route":"theorem:demo-a:t1","name":"Theorem 1","paper_route":"paper:demo-a","url":"report-pages/71f5a22ada0a436ab20a/paper-7300d2df8b84c630.html#theorem-cadb0a5be83e736b","requirements":[{"route":"interface:square","relation":"direct"}],"search":"Theorem 1 For $x\\in\\mathbb{R}$, $f(x)\\geq 0$. Synthetic square","api_count":1},{"route":"theorem:demo-a:t2","name":"Theorem 2","paper_route":"paper:demo-a","url":"report-pages/71f5a22ada0a436ab20a/paper-7300d2df8b84c630.html#theorem-4f79d5acf91d941e","requirements":[{"route":"interface:shift","relation":"direct"}],"search":"Theorem 2 For $x\\in\\mathbb{R}$, $g(x)\\geq 0$. Synthetic shift","api_count":1},{"route":"theorem:demo-a:t3","name":"Theorem 3","paper_route":"paper:demo-a","url":"report-pages/71f5a22ada0a436ab20a/paper-7300d2df8b84c630.html#theorem-6e874227aae150fb","requirements":[{"route":"interface:score","relation":"direct"}],"search":"Theorem 3 For $x\\in\\mathbb{R}$, $h(x)\\geq 0$. Synthetic score","api_count":1}],"search":"Synthetic paper A demo-a","api_count":3},{"route":"paper:demo-b","name":"Synthetic paper B","url":"report-pages/71f5a22ada0a436ab20a/paper-84ee2c2a2ae5148a.html","theorem_count":1,"theorems":[{"route":"theorem:demo-b:t1","name":"Theorem 1","paper_route":"paper:demo-b","url":"report-pages/71f5a22ada0a436ab20a/paper-84ee2c2a2ae5148a.html#theorem-69312b1c8f3f7c7c","requirements":[{"route":"interface:square","relation":"direct"}],"search":"Theorem 1 For $x\\in\\mathbb{R}$, $f(x)\\geq 0$. Synthetic square","api_count":1}],"search":"Synthetic paper B demo-b","api_count":1}]}</script><script>'use strict';
+const DATA=JSON.parse(document.getElementById('data').textContent);
+const $=id=>document.getElementById(id);
+const routes=new Map([...DATA.interfaces,...DATA.papers,...DATA.papers.flatMap(p=>p.theorems)].map(x=>[x.route,x]));
+const state={paper:{q:'',kind:'',work:''},apis:{q:'',kind:'',work:''}};
+const workLabels={use_mathlib:'Use mathlib',small_adaptation:'Small adaptation',new_infrastructure:'New infrastructure',needs_work:'Needs more work'};
+const hasWorkStatus=DATA.interfaces.some(x=>x.work_status);
+let view='paper',active=null,lastFocus=null,readerStack=[],pendingScroll=null;
+const buttons=new Map();
+function node(tag,text,cls){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;}
+function saveControls(){state[view]={q:$('search').value,kind:$('kind').value,work:$('work-status').value};}
+function syncWorkButtons(){document.querySelectorAll('#work-filters button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.workStatus===state[view].work)));}
+function writeURL(push=false){const u=new URL(location.href);u.searchParams.set('view',view);u.searchParams.delete('coverage');for(const key of ['q','kind','work']){const v=state[view][key];if(v)u.searchParams.set(key,v);else u.searchParams.delete(key);}u.hash=active?encodeURIComponent(active):'';history[push?'pushState':'replaceState'](null,'',u);}
+function markActive(){buttons.forEach((b,r)=>b.setAttribute('aria-current',String(r===active)));}
+function closeReader(update=true){finishResize();$('reader').hidden=true;$('shell').classList.remove('has-reader');$('page').removeAttribute('src');active=null;readerStack=[];pendingScroll=null;markActive();if(update)writeURL();if(lastFocus?.isConnected)lastFocus.focus({preventScroll:true});else if(lastFocus?.dataset?.route&&buttons.has(lastFocus.dataset.route))buttons.get(lastFocus.dataset.route).focus({preventScroll:true});else $('tab-'+view).focus({preventScroll:true});}
+function show(route,{update=true,focus=true,keepStack=false,scroll=null,expanded=[]}={}){const record=routes.get(route);if(!record)return;
+if(focus&&!keepStack)lastFocus=document.activeElement;if(!keepStack)readerStack=[];active=route;pendingScroll=scroll===null?null:{scroll,expanded};$('reader').hidden=false;$('shell').classList.add('has-reader');updateSplit();$('back').hidden=!readerStack.length;$('page').src=record.url;$('page').title=record.name;$('open-page').href=record.url;markActive();if(update)writeURL(true);if(focus)$('close').focus({preventScroll:true});}
+function needs(record){return record.api_count?`${record.api_count} required ${record.api_count===1?'API':'APIs'}`:'No linked APIs';}
+function resultButton(record,cls){const b=node('button',undefined,cls);b.type='button';b.dataset.route=record.route;b.addEventListener('click',()=>show(record.route));buttons.set(record.route,b);return b;}
+function render(){const q=state[view].q.toLocaleLowerCase().trim(),kind=state[view].kind;$('list').replaceChildren();buttons.clear();let count=0;
+if(view==='apis'){
+ const records=DATA.interfaces.filter(x=>(!kind||x.kind===kind)&&(!state[view].work||x.work_status===state[view].work)&&(!q||x.search.toLocaleLowerCase().includes(q)));
+ const grouped=new Set(DATA.interfaces.map(x=>x.rank_group)).size>1;
+ for(const x of records){
+  const b=resultButton(x,'api-result');b.append(node('span',String(x.rank),'rank'));
+  const content=node('span',undefined,'result-content');content.append(node('span',x.name,'name'));
+  if(grouped)content.querySelector('.name').append(node('small',x.rank_group,'rank-group'));
+  const counts=node('span',undefined,'api-counts');
+  counts.append(node('span','Theorems / Papers','column-label'));
+  const value=node('span',`${x.theorem_count} / ${x.paper_count}`,'count-value');
+  value.setAttribute('aria-label',`${x.theorem_count} ${x.theorem_count===1?'theorem':'theorems'} in ${x.paper_count} ${x.paper_count===1?'paper':'papers'}`);
+  counts.append(value);
+  const statusCell=node('span',undefined,'api-status');statusCell.append(node('span','Status','column-label'));
+  if(x.work_status){const status=node('span',workLabels[x.work_status],'work-status');status.dataset.workStatus=x.work_status;statusCell.append(status);}
+  else statusCell.append(node('span','Not audited','muted'));
+  b.append(content,counts,statusCell);$('list').append(b);
+ }count=records.length;
+ $('results').textContent=count===DATA.interfaces.length?`${count} APIs`:`${count} of ${DATA.interfaces.length} APIs`; 
+}else{
+ for(const p of DATA.papers){const titleMatch=p.search.toLocaleLowerCase().includes(q);const matching=p.theorems.filter(t=>(!q||titleMatch||t.search.toLocaleLowerCase().includes(q)));if((q&&!titleMatch&&!matching.length))continue;
+ const row=node('article',undefined,'paper-result');const b=resultButton(p,'paper-result-button');b.append(node('span',p.name,'name'),node('span',`${p.theorem_count} ${p.theorem_count===1?'theorem':'theorems'}`,'count'),node('span',needs(p),'paper-needs'));row.append(b);
+ if(q){const matches=node('div',undefined,'theorem-matches');for(const t of matching){const tb=resultButton(t,'theorem-match');tb.append(node('span',t.name),node('small',needs(t)));matches.append(tb);}if(!matching.length)matches.append(node('p','No matching theorems.','muted'));row.append(matches);}
+ $('list').append(row);count++;}
+ $('results').textContent=`${count} of ${DATA.papers.length} papers`;
+}
+if(!count)$('list').append(node('p','No matches. Try a different search or API kind.','empty'));markActive();}
+function selectView(next,{update=true,focus=false,save=true}={}){if(save)saveControls();view=next;for(const v of ['paper','apis']){const b=$('tab-'+v);b.setAttribute('aria-selected',String(v===view));b.tabIndex=v===view?0:-1;}$('search-panel').setAttribute('aria-labelledby','tab-'+view);$('search').value=state[view].q;$('kind').value=state[view].kind;$('kind').hidden=view!=='apis';$('work-status').value=state[view].work;$('work-status').hidden=true;$('work-filters').hidden=view!=='apis'||!hasWorkStatus;syncWorkButtons();$('search').placeholder=view==='paper'?'Search papers, theorems or required APIs':'Search APIs, theorem labels or papers';$('search').setAttribute('aria-label',view==='paper'?'Search papers and theorems':'Search APIs');$('ranking-note').hidden=view!=='apis';$('api-columns').hidden=view!=='apis';render();if(update)writeURL();if(focus)$('tab-'+view).focus();}
+[...new Set(DATA.interfaces.map(x=>x.kind))].sort().forEach(k=>{const o=node('option',k);o.value=k;$('kind').append(o);});
+for(const v of ['paper','apis'])$('tab-'+v).addEventListener('click',()=>selectView(v));
+document.querySelector('.view-tabs').addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();selectView(e.key==='Home'?'paper':e.key==='End'?'apis':view==='paper'?'apis':'paper',{focus:true});}});
+for(const id of ['search','kind','work-status'])$(id).addEventListener(id==='search'?'input':'change',()=>{saveControls();syncWorkButtons();render();writeURL();});
+for(const button of document.querySelectorAll('#work-filters button'))button.addEventListener('click',()=>{$('work-status').value=state[view].work===button.dataset.workStatus?'':button.dataset.workStatus;saveControls();syncWorkButtons();render();writeURL();});
+$('close').addEventListener('click',()=>closeReader());$('back').addEventListener('click',()=>{const previous=readerStack.pop();if(previous)show(previous.route,{keepStack:true,scroll:previous.scroll,expanded:previous.expanded});});
+$('page').addEventListener('load',()=>{if(pendingScroll!==null){$('page').contentWindow.postMessage({action:'restore-reader-scroll',...pendingScroll},'*');pendingScroll=null;}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&active)closeReader();});
+window.addEventListener('message',e=>{if(e.source!==$('page').contentWindow)return;if(e.data?.action==='close-theorem-reader')closeReader();if(e.data?.action==='open-census-route'&&routes.has(e.data.route)){readerStack.push({route:active,scroll:Number(e.data.scroll)||0,expanded:Array.isArray(e.data.expanded)?e.data.expanded:[]});show(e.data.route,{keepStack:true});}});
+function restoreURL(){const u=new URL(location.href);let route='';try{route=decodeURIComponent(u.hash.slice(1));}catch{}const mode=u.searchParams.get('view');const next=['paper','apis'].includes(mode)?mode:route.startsWith('interface:')?'apis':'paper';saveControls();const work=u.searchParams.get('work');state[next]={q:u.searchParams.get('q')||'',kind:u.searchParams.get('kind')||'',work:hasWorkStatus&&workLabels[work]?work:''};selectView(next,{update:false,save:false});if(routes.has(route))show(route,{update:false,focus:false});else closeReader(false);}
+// Keep the split independent of search/navigation state and tolerate blocked storage.
+const splitStorageKey='statistical-census-pane-ratio';
+let splitRatio=.38,resizePointer=null;
+try{const saved=Number(localStorage.getItem(splitStorageKey));if(saved>0&&saved<1)splitRatio=saved;}catch{}
+function splitBounds(){const width=$('shell').getBoundingClientRect().width;return {width,min:310,max:Math.max(310,width-360)};}
+function updateSplit(pixels){
+ if(innerWidth<=800)return;
+ const {width,min,max}=splitBounds();
+ const left=Math.max(min,Math.min(max,pixels??width*splitRatio));
+ if(pixels!==undefined)splitRatio=left/width;
+ $('shell').style.setProperty('--catalog-width',`${left}px`);
+ const divider=$('pane-divider');
+ for(const [key,value] of Object.entries({min:min/width*100,max:max/width*100,now:left/width*100}))divider.setAttribute('aria-value'+key,String(Math.round(value)));
+ divider.setAttribute('aria-valuetext',`${Math.round(left/width*100)}% list, ${Math.round((width-left)/width*100)}% reading pane`);
+}
+function saveSplit(){try{localStorage.setItem(splitStorageKey,String(splitRatio));}catch{}}
+function finishResize(){
+ if(resizePointer===null)return;
+ const pointer=resizePointer;resizePointer=null;
+ document.body.classList.remove('resizing');
+ if($('pane-divider').hasPointerCapture(pointer))$('pane-divider').releasePointerCapture(pointer);
+ saveSplit();
+}
+$('pane-divider').addEventListener('pointerdown',e=>{
+ if(e.button!==0||innerWidth<=800||!active)return;
+ e.preventDefault();resizePointer=e.pointerId;$('pane-divider').setPointerCapture(e.pointerId);
+ $('pane-divider').focus({preventScroll:true});document.body.classList.add('resizing');
+});
+$('pane-divider').addEventListener('pointermove',e=>{
+ if(e.pointerId===resizePointer)updateSplit(e.clientX-$('shell').getBoundingClientRect().left);
+});
+for(const event of ['pointerup','pointercancel','lostpointercapture'])$('pane-divider').addEventListener(event,finishResize);
+$('pane-divider').addEventListener('dblclick',()=>{splitRatio=.38;updateSplit();saveSplit();});
+$('pane-divider').addEventListener('keydown',e=>{
+ if(!['ArrowLeft','ArrowRight','Home','End'].includes(e.key)||innerWidth<=800)return;
+ e.preventDefault();const {min,max}=splitBounds();
+ const current=$('reader').getBoundingClientRect().left-$('shell').getBoundingClientRect().left;
+ updateSplit(e.key==='Home'?min:e.key==='End'?max:current+(e.key==='ArrowLeft'?-1:1)*(e.shiftKey?64:24));saveSplit();
+});
+window.addEventListener('resize',()=>{if(innerWidth<=800)finishResize();updateSplit();});
+window.addEventListener('blur',finishResize);
+window.addEventListener('popstate',restoreURL);window.addEventListener('hashchange',restoreURL);restoreURL();
+</script></body></html>

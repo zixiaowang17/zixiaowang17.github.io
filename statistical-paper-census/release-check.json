@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "files_checked": 2790,
+  "bytes_checked": 191218577,
+  "local_html_links_checked": 16379,
+  "counts": {
+    "papers": 113,
+    "theorems": 637,
+    "interfaces": 2486
+  },
+  "findings": [],
+  "limits": "Pattern-based file scan and consistency checks, not a guarantee that every possible secret or mathematical error has been detected. No Git history is scanned."
+}

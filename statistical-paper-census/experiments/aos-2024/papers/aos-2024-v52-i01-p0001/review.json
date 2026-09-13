@@ -1,0 +1,50 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i01-p0001",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T05:16:51.585161+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i01-p0001/T1",
+      "aos-2024-v52-i01-p0001/T2"
+    ],
+    "method": "Enumerated all uncommented theorem environments recursively in main-text TeX inputs, stopping at the appendix command. Matched both environments to printed Theorem headings on PDF pages12 and22. Inspected the end of the Discussion above AppendixA on page37.",
+    "excluded_result_types": [
+      "Proposition",
+      "Corollary",
+      "Lemma"
+    ],
+    "appendices_read": false
+  },
+  "counts": {
+    "theorems": 2,
+    "interfaces": 12,
+    "source_members": 12,
+    "direct_theorem_uses": 10,
+    "related_theorem_connections": 17
+  },
+  "source_notes": [
+    "The inspected source is arXiv1806.05756v3 (September2020), not an assertion that its numbering is identical to the2024 publisher version.",
+    "Definition2 prints the history domain as z_{1:i-1} in Z. The original statement is preserved and the sequential history convention is separately available in equation(1).",
+    "Theorem2 uses the scalar C1 functional and loss specified immediately before its statement. These conditions are stored separately, without expanding the original theorem text.",
+    "Theorem2 prints a quotient by E0[|g(X)|] without a separately printed nonzero-score condition. The scan preserves this expression; it does not add a new assumption or certify the theorem proof.",
+    "L1-differentiability does not acquire a quadratic-mean-differentiability assumption merely because the source compares them.",
+    "Theorem2 does not depend on the variation modulus merely because its proof is described as building on Theorem1. Only statement dependencies were linked."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/1806.05756v3",
+    "version": "arXiv:1806.05756v3",
+    "pdf_sha256": "926e16ab023dd9ce26883d259ac8c32065d63410824cb6246716a3564a50ec68",
+    "pdf_pages": 50,
+    "main_text_last_pdf_page": 37
+  },
+  "recorded_checks": [
+    "Inventory validated independently before interface extraction.",
+    "Finalizer derived graph, counts, ranks and same-paper related-theorem paths.",
+    "Separate validator process accepted the final census against its pinned inventory.",
+    "Compared both theorem statements and each archived source passage with the rendered PDF and matching TeX; preserved the surrounding assumptions separately."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "9c7d03129bfdd0afa28880279cc058373c2029124ce0aed62a8f3d4d62cb3f4a"
+}

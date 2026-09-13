@@ -1,0 +1,90 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i04-p1384",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T22:12:49.118592+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i04-p1384/T2.1",
+      "aos-2024-v52-i04-p1384/T2.2",
+      "aos-2024-v52-i04-p1384/T3.1",
+      "aos-2024-v52-i04-p1384/T4.1"
+    ],
+    "printed_label_check": [
+      [
+        7,
+        "2.1"
+      ],
+      [
+        8,
+        "2.2"
+      ],
+      [
+        14,
+        "3.1"
+      ],
+      [
+        16,
+        "4.1"
+      ]
+    ],
+    "method": "Independent actual-heading enumeration and visual comparison of all complete theorem bodies.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 4,
+    "interfaces": 20,
+    "source_members": 20,
+    "direct_theorem_uses": 29,
+    "related_theorem_connections": 51,
+    "unranked_auxiliary_passages": 8
+  },
+  "source_notes": [
+    "The registered 49-page source is arXiv:2301.02168v2. The arXiv stamp is dated 7 January 2024 and the title page 9 January 2024; both are preserved. The filename and export URL in the register refer to the same pinned bytes.",
+    "Main text ends after Acknowledgments on page 22, before the appendix notation prelude at y=297.2278137207031. That prelude and all appendix bodies are excluded. Theorem 4.1 is within main text and is included despite appearing in a proof section.",
+    "The Gaussian approximation is redefined in Section 2 as the canonical solution of the first order equations in R_V. Global KL minimization is not required by these theorem statements; (1.1) is retained only as historical context.",
+    "Assumption 1 and the displayed growth conditions use a superscript star m^*, whereas the region and Lemma 2.1 use m_*; their source role is the same unique minimizer. The quotes keep their printed forms.",
+    "Assumption 2 prints q,a3,a4>0. The logistic specialization explicitly uses q=0 in Section 3.2 and Corollary 3.1. This boundary-value inconsistency is retained rather than changing the assumption to q>=0.",
+    "The weighted tensor supremum in (1.11) has no absolute value. For even tensor order this is not generally the usual norm. Preserve the formula and its stated equality to the multi-vector expression; do not silently insert absolute values or certify the cited assertion.",
+    "The region uses the norm of H_V^(1/2) S^(1/2), which need not be a symmetric matrix. The paper also uses standard matrix operator norms; do not restrict that product to the symmetric-tensor domain of (1.11).",
+    "Condition (2.7) involves the centered expectation and controls only the exterior of an ellipsoid. No explicit local measurability or integrability condition is stated there. Treat ordinary existence of expectations and variance as analytic well-formedness requirements rather than silently adding hypotheses to the original theorem.",
+    "The constants a3,a4,q,c0 and the potential v may depend on n and d in the general results. The suppressed constants have the dependencies named in each theorem; no unmentioned uniform asymptotic regime is inserted.",
+    "Theorem 3.1 inherits the logistic model, Gaussian design, bounded true coefficient and bounded prior precision from the paragraph immediately before it. Those assumptions are not present in the four-line opening alone and must remain attached to the theorem.",
+    "The final display for labels in Section 3 omits a conditioning bar, but preceding prose and (3.1) define the conditional Bernoulli law. The quoted display is not edited to add conditioning. The joint iid sampling interpretation is corroborated in Lemma 3.2.",
+    "Sigma denotes prior covariance in (3.2) and the local setup, but posterior covariance in the final part of Theorem 3.1. In the flat-prior case the source formally uses Sigma inverse equal to zero; this is not an ordinary finite covariance Gaussian prior.",
+    "The source writes b_i(theta)=E_{theta~hat pi}[psi-triple-prime(theta^T X_i)]. The external-looking argument is also bound by the expectation, so the resulting coefficient is constant in the argument used by Q. Preserve this notation collision rather than inventing a new source expression.",
+    "Theorem 3.1 defines bar-theta as the posterior mean but then uses bar-m in (3.12). Bar-m was introduced for the same role earlier in the paper. The original theorem is retained unchanged.",
+    "Theorem 3.1 uses B_{s,hat m} for symmetric Borel sets, while page 8 names the class S_{hat m}. The correspondence follows the symmetric-set bound being specialized; the original source symbols remain distinct in quotes.",
+    "Theorem 4.1 uses f_0 before its explicit definition in the following main-text proof outline. The saved ambient passages resolve f_0 and the Gaussian L2 norm without an invented named interface.",
+    "Theorems use linear while the proof explicitly considers f(x)=a^T x+b. This includes affine functions in the source convention; do not silently narrow the branch to zero-intercept linear maps.",
+    "The defining p3 formula on page 15 contains 1/6 and bold A3,H3. The informal page-18 heuristic omits 1/6. The census preserves the defining formula and does not substitute the heuristic expression.",
+    "The main text gives Hermite tensor indexing and the Rodrigues representation (4.13), so the third-order polynomial class can be identified without reading Appendix E. Theorem 4.1 includes orthogonality to the entire third-order class, not just even functions.",
+    "Theorem 3.1 makes its conclusions on a single stated high-probability event. The model is random, while the general potential results are conditional analytic bounds. No proof event construction is substituted for the original assertion.",
+    "The full census preserves source statements and resolves their dependencies. It does not certify proofs, correct every source formula or establish availability in mathlib."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2301.02168v2",
+    "version": "arXiv:2301.02168v2, 7 January 2024; title-page date 9 January 2024",
+    "pdf_sha256": "d86f8493430c8c07106847a073666a82c9aa765fc33cd8f20a9dc25c8615aeae",
+    "pdf_pages": 49,
+    "main_text_last_pdf_page": 22
+  },
+  "recorded_checks": [
+    "Four full original Theorems 2.1, 2.2, 3.1 and 4.1 were visually compared on pages 7-8, 14 and 16. Independent font-aware heading enumeration includes all admitted main-text pages and excludes citations. Theorem 2.1 continuation and every formula, branch and constant-dependence clause are retained.",
+    "Twenty supporting passages and eight auxiliary passages were compared with pages 1-17. All three numbered assumptions, canonical pair and region, logistic posterior and local sampling assumptions, corrections Q and p3, tensor norms and Hermite conventions are preserved. Epsilon, Gaussian L2 norm and centering f0 remain explicit ambient passages.",
+    "Independent source-based graph specification and reach reconstruction verify 29 direct uses and 51 related connections. The logistic model is confined to Theorem 3.1. Derived Assumptions 2-3 are not imposed as extra logistic hypotheses, and proof-only remainders or contraction constructions are excluded.",
+    "Every interface uses an original natural-language keyword, with separately archived naming context where necessary, and a source-backed highlight. Assumptions retain their labels. All related theorems have source-specific explanations and paper-local paths.",
+    "Visual comparison preserves the m-star placement switch, the missing absolute value in the tensor supremum, q>0 versus q=0, prior versus posterior Sigma, the bound variable in b_i(theta), bar-theta versus bar-m and the symmetric Borel class alias. The defining p3 retains its one-sixth factor and bold tensor notation.",
+    "Twenty-one source notes separate original statements from interpretation. The canonical solution is not assumed to be a global KL minimizer. Ordinary well-definedness of expectations is recorded without editing hypotheses. Appendix notation and all appendix bodies are excluded; no proof or library availability is certified.",
+    "All six content artifacts reproduced byte-for-byte in an empty directory. Independent schema, inventory identity, source hash, source boundary, graph and mathematical-fragment checks passed. Reproduction does not renew source review."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "a786318117a077c9f37c96f8dfe9b127622a6411f10bf9fc4460061c4e9aee43"
+}

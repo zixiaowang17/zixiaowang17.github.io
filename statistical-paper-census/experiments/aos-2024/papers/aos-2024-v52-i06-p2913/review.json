@@ -1,0 +1,252 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i06-p2913",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-11T05:22:01.928001+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i06-p2913/T3.1",
+      "aos-2024-v52-i06-p2913/T3.2",
+      "aos-2024-v52-i06-p2913/T3.3"
+    ],
+    "printed_label_check": [
+      [
+        7,
+        "3.1"
+      ],
+      [
+        8,
+        "3.2"
+      ],
+      [
+        8,
+        "3.3"
+      ]
+    ],
+    "method": "Independent uppercase small-cap heading enumeration across main-text pages 1–16 and visual comparison of all three complete statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 3,
+    "interfaces": 26,
+    "source_members": 26,
+    "direct_theorem_uses": 19,
+    "related_theorem_connections": 45,
+    "unranked_auxiliary_passages": 9
+  },
+  "source_notes": [
+    {
+      "issue_id": "registered-source",
+      "evidence": [
+        {
+          "page": 1,
+          "location": "Source issue registered-source"
+        },
+        {
+          "page": 16,
+          "location": "Source issue registered-source"
+        }
+      ],
+      "note": "Registered arXiv2409.08863v1, stamped13September2024,39pages. Main text ends after acknowledgments/funding on16. Supplementary availability listings and references occupy17–18; appendix bodies start19 and are excluded. Exactly three main-text Theorems3.1–3.3; Corollary3.1 is not inventoried."
+    },
+    {
+      "issue_id": "change-index-and-gap",
+      "evidence": [
+        {
+          "page": 3,
+          "location": "Source issue change-index-and-gap"
+        },
+        {
+          "page": 6,
+          "location": "Source issue change-index-and-gap"
+        },
+        {
+          "page": 8,
+          "location": "Source issue change-index-and-gap"
+        },
+        {
+          "page": 9,
+          "location": "Source issue change-index-and-gap"
+        }
+      ],
+      "note": "Tau denotes the first changed observation, so pre-change means stop at tau-1 and the final argmin sums through j-1. d is a positive lower bound for all post-change gaps, not necessarily the attained minimum. d_star averages the signal over sliding blocks; d_hat estimates that averaged quantity. Preserve the strict d>K*d_star inequality with K>rho; feasibility with d_star>=d implies K<1 rather than an arbitrary large constant."
+    },
+    {
+      "issue_id": "true-block-index-boundary",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Source issue true-block-index-boundary"
+        },
+        {
+          "page": 8,
+          "location": "Source issue true-block-index-boundary"
+        }
+      ],
+      "note": "The source defines eta=floor(tau/k) and also calls it the last fully pre-change block, writing eta*k+1<=tau<=(eta+1)*k. At tau exactly divisible byk, that interval is inconsistent and the eta-th block includes the first changed observation. Retain the literal floor definition and the contradictory prose; do not silently substitute floor((tau-1)/k)."
+    },
+    {
+      "issue_id": "generic-versus-specific-variance",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Source issue generic-versus-specific-variance"
+        },
+        {
+          "page": 5,
+          "location": "Source issue generic-versus-specific-variance"
+        },
+        {
+          "page": 7,
+          "location": "Source issue generic-versus-specific-variance"
+        },
+        {
+          "page": 8,
+          "location": "Source issue generic-versus-specific-variance"
+        },
+        {
+          "page": 9,
+          "location": "Source issue generic-versus-specific-variance"
+        }
+      ],
+      "note": "Definitions(5) and(9) permit any consistent long-run-variance estimator; estimator(8) is a suggested canonical choice. Theorem3.2 supplies a rate for(8) under its own stronger moment/block/gap conditions. These do not become mandatory premises ofTheorem3.1, and Theorem3.3 does not require that its user-chosen variance estimate be(8). The mean muhat0 from(8) is still a required preliminary mean for(9)."
+    },
+    {
+      "issue_id": "overlapping-window-normalization",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Source issue overlapping-window-normalization"
+        },
+        {
+          "page": 5,
+          "location": "Source issue overlapping-window-normalization"
+        }
+      ],
+      "note": "R_(s/k) extends nonoverlapping R_j to sliding windows even for noninteger s/k. The variance estimate uses k/(ellhat-k+1), all endpoints s=k..ellhat and centering by the entire selected-prefix mean. It is not an average over only the original disjoint block means."
+    },
+    {
+      "issue_id": "ties-and-empty-minima",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Source issue ties-and-empty-minima"
+        },
+        {
+          "page": 5,
+          "location": "Source issue ties-and-empty-minima"
+        },
+        {
+          "page": 6,
+          "location": "Source issue ties-and-empty-minima"
+        }
+      ],
+      "note": "Argmin tie-breaking for L_hat, eta_hat and tau_hat is not stated. The optional fixed-J max-index selection is not a general tie convention. For finite data, eta_hat=m-1 is allowed by(10) but makes the sliding-window range in d_hat empty; no fallback is supplied. High-probability asymptotics do not by themselves define these bad finite-sample outputs."
+    },
+    {
+      "issue_id": "finite-sample-denominators",
+      "evidence": [
+        {
+          "page": 3,
+          "location": "Source issue finite-sample-denominators"
+        },
+        {
+          "page": 4,
+          "location": "Source issue finite-sample-denominators"
+        },
+        {
+          "page": 5,
+          "location": "Source issue finite-sample-denominators"
+        }
+      ],
+      "note": "Population long-run variance is explicitly positive and finite. Generic consistent estimates can still be zero or negative on finite-sample events; estimator(8) is nonnegative but can be zero. The source does not fully specify square-root/sign/zero-division conventions. m>=2 is needed for the interior normal quantile and step-fit range, and follows eventually from the stated growth regime."
+    },
+    {
+      "issue_id": "dependence-parameters",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Source issue dependence-parameters"
+        },
+        {
+          "page": 7,
+          "location": "Source issue dependence-parameters"
+        },
+        {
+          "page": 8,
+          "location": "Source issue dependence-parameters"
+        }
+      ],
+      "note": "Functional dependence replaces only innovation0 by an independent copy. Cumulative dependence sums over future indices, while long-run covariance sums over all integer lags. Condition3.1 retains both theta regimes and the exact gamma_theta radical/log threshold; gamma_theta is not the autocovariance gamma(k). The same theta must satisfy all moment, signal and block-rate conditions."
+    },
+    {
+      "issue_id": "rates-and-optional-defaults",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Source issue rates-and-optional-defaults"
+        },
+        {
+          "page": 7,
+          "location": "Source issue rates-and-optional-defaults"
+        },
+        {
+          "page": 8,
+          "location": "Source issue rates-and-optional-defaults"
+        },
+        {
+          "page": 9,
+          "location": "Source issue rates-and-optional-defaults"
+        }
+      ],
+      "note": "Theorem3.2 has separate deterministic and probabilistic error terms. Theorem3.3 uses d_star with negative exponent theta/(theta-1). Rho=1/2, block length ceil(n^(1/3)) and geometric moment contraction are optional examples, not universal hypotheses. Early and late changes are allowed; tau need not be proportional ton."
+    },
+    {
+      "issue_id": "proof-and-application-scope",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Source issue proof-and-application-scope"
+        },
+        {
+          "page": 8,
+          "location": "Source issue proof-and-application-scope"
+        },
+        {
+          "page": 9,
+          "location": "Source issue proof-and-application-scope"
+        },
+        {
+          "page": 16,
+          "location": "Source issue proof-and-application-scope"
+        }
+      ],
+      "note": "Brownian-bridge limits and KMT coupling interpret or prove the statistical results, not extra assumptions on observed noise. Oracle true-gap estimator(21) is not the actual estimator(12). Appendix proofs are excluded. The empirical interpretation of a search-index change as an epidemic starting date is application context and is not certified by this theorem census."
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2409.08863v1",
+    "version": "arXiv:2409.08863v1, stamped 13 September 2024; submitted manuscript",
+    "pdf_sha256": "d44c9f40b3fdf103b0df5e0946ef90afc874ebc6b16cb8d87a41057895b4a72a",
+    "pdf_pages": 39,
+    "main_text_last_pdf_page": 16
+  },
+  "recorded_checks": [
+    "Three original main-text Theorems 3.1–3.3 independently enumerated across pages 1–16. Both branches of 3.1, both variance error terms of 3.2, and the full continuation of 3.3 on page 9 were visually compared. Corollary 3.1, narrative citations and all appendix bodies are excluded.",
+    "26 original source entries preserve the one-sided signal model and hypotheses, positive finite long-run variance, minimum CUSUM test, block means and selection, preliminary means and overlapping estimator, normal quantiles and decisions, binary step fit and refined localization, causal noise and functional dependence, complete Condition 3.1, true block index and averaged gap. Nine auxiliary passages preserve original optional choices and limiting interpretations separately.",
+    "Independent source-clause reconstruction gives 19 direct uses and 45 related-theorem connections. Theorem 3.1 does not inherit the stronger locating condition or block-estimator rates. Theorem 3.2 studies the specific overlapping variance estimator. Theorem 3.3 permits any consistent variance estimate and uses the full estimated-gap localization procedure, including its preliminary mean but not the optional variance formula.",
+    "Ten notes preserve the registered manuscript version, first-change indexing, the contradictory exact-block-boundary convention, arbitrary versus specific variance estimation, overlapping-window normalization, ties and empty minima, finite-sample division problems, distinct dependence parameters and rates, optional defaults and proof/application scope.",
+    "All 26 entries preserve literal natural-language source terms and original passage kinds/headings. All selectors match the source entry or a related theorem, and all 45 connections have explicit source correspondence along valid same-paper paths. True and estimated block indices, pointwise gap bounds and averaged gaps remain distinct.",
+    "All six content JSONs reproduce byte for byte in a fresh empty directory. Seven retained scripts support separate inventory review, extraction, finalization, full-source validation and reproduction. Rebuilding alone is not a new semantic PDF review.",
+    "The census records original statements and source-definition limitations without certifying proofs or silently choosing missing tie, empty-window, denominator or exact-block-boundary conventions. Application interpretations are not additional mathematical conclusions."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "4712ae1addd7c4021e54a607e83f95ae5b46a7c097c0fbac5cc42ffee5dd6deb"
+}

@@ -1,0 +1,230 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i06-p2483",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-10T20:56:11.566086+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i06-p2483/T1",
+      "aos-2024-v52-i06-p2483/T2"
+    ],
+    "printed_label_check": [
+      [
+        6,
+        "1"
+      ],
+      [
+        7,
+        "2"
+      ]
+    ],
+    "method": "Independent bold-font heading enumeration and visual comparison of both complete theorem statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark",
+      "Conjecture"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 2,
+    "interfaces": 14,
+    "source_members": 14,
+    "direct_theorem_uses": 8,
+    "related_theorem_connections": 23,
+    "unranked_auxiliary_passages": 8
+  },
+  "source_notes": [
+    {
+      "issue_id": "registered-version-and-main-boundary",
+      "evidence": [
+        {
+          "page": 1,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 2,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 22,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The source is arXiv:2110.11816v2, marked2 Apr2022, with cover dated April5,2022. The repository entry belongs to the 2024 journal corpus but this is the pinned inspected version. Acknowledgment and numerical discussion end on shared page22, clipped at y565 before AppendixA at y574.126."
+    },
+    {
+      "issue_id": "latent-mixture-and-correlation-domain",
+      "evidence": [
+        {
+          "page": 2,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 3,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The alternative observation law averages a uniform latent permutation. Aligned edge pairs are iid only conditional on that permutation; the two observed graphs are not independent under the alternative. Negative correlation is allowed only within the Bernoulli feasibility interval, despite the squared correlation threshold."
+    },
+    {
+      "issue_id": "signed-counts-and-copy-multiplicity",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 5,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 6,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 8,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "W_H multiplies centered edge weights within each edge-set copy. This differs from subtracting the expectation of a raw unsigned subgraph count. The sum uses one copy per subgraph, the outer sum uses one unrooted isomorphism class, and aut(H) supplies an explicit separate weight. Edge-induced subgraphs have no isolated vertices; do not replace them by vertex-induced copies or labeled injections."
+    },
+    {
+      "issue_id": "parameter-and-tree-size-scope",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 6,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 7,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "q is strictly between0 and1 and the tree size K is an integer with K+1 vertices. Condition(7) requires K→infinity but at most a logarithmic bound with a maximum in its denominator. The sparsity condition is symmetric under q↔1−q. The source states rho²>alpha but does not formulate uniformity for an n-dependent gap shrinking to zero; no boundary-equality claim is inferred."
+    },
+    {
+      "issue_id": "threshold-and-inequality-conventions",
+      "evidence": [
+        {
+          "page": 3,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 6,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 7,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Definition(1) uses P(f<tau); the two theorem displays use P(f≤tau) while retaining Q(f≥tau). Their bound includes ties on both sides and is sufficient for the strict-event detection definition. Theorem2 inherits tau=C*rho^(2K)*|T| from Theorem1, with fixed0<C<1; it does not use the approximate statistic’s empirical mean or a bootstrap threshold."
+    },
+    {
+      "issue_id": "algorithmic-randomness-in-laws",
+      "evidence": [
+        {
+          "page": 3,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 7,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 15,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 16,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "P and Q initially name graph-pair laws, but tilde-f also depends on2t independent random colorings. Theorem2 suppresses this extra randomness in its arguments and probability notation. Its natural interpretation extends each data law by the same independent coloring distribution, not a guarantee conditional on every fixed coloring or a data-adaptive coloring scheme."
+    },
+    {
+      "issue_id": "independent-coloring-averages",
+      "evidence": [
+        {
+          "page": 15,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 16,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The approximation uses t=ceil(1/r), two independent arrays of t colorings, and the product of the two sample averages. Arrays are shared across tree classes. Replacing this by the average of t paired products, sharing one coloring array across graphs, omitting a factor r, or resampling edges changes the statistic."
+    },
+    {
+      "issue_id": "scaling-and-algorithm-output",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 6,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 15,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 16,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Algorithm1 outputs Y_T, while Theorem2 tests tilde-f_T=beta*Y_T/r². Beta has sign rho^K and the expected exact statistic has rho^(2K); this distinction matters for negative rho. The centered inputs require q, while the normalization/threshold require the stated model parameters; estimating unknown parameters is not covered by these statements."
+    },
+    {
+      "issue_id": "computational-and-proof-scope",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 8,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 15,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 16,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorem2 asserts existence of an n^(2+o(1)) computation with exponential-in-K color coding. Main-text equations(29)–(32) fully define the approximation; the forward reference to appendix equation(54) is not followed. The likelihood-ratio representation, low-degree hardness discussion and Propositions3/4 explain the method or its proof; neither theorem assumes a computational hardness conjecture. The source does not specify a finite-precision bit-complexity model."
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2110.11816v2",
+    "version": "arXiv:2110.11816v2, marked 2 Apr 2022; cover dated April 5, 2022",
+    "pdf_sha256": "0ab1dbbb8e6dfac13438b613e53a1f216dd2dc2973079864f2cb4549c4438b0e",
+    "pdf_pages": 40,
+    "main_text_last_pdf_page": 22
+  },
+  "recorded_checks": [
+    "Two complete main-text Theorems1 and2, independently enumerated by bold headings. Citations, proof headings, propositions and lemmas are excluded. Main text includes numerical results and acknowledgment through the clipped shared PDF page22; AppendixA begins afterward.",
+    "Fourteen original entries preserve the correlated graph model, null/alternative laws, graph isomorphism and automorphisms, centered matrices, unlabeled tree family, weighted subgraph count, scaling beta, exact statistic, Otter constant, condition(7), threshold, uniform colorings and colorful counts, and the normalized randomized approximation. Eight auxiliary passages retain source conventions and computation provenance.",
+    "Independent reconstruction verifies8 direct uses and23 related connections. Theorem1 defines condition(7) and its threshold inline; Theorem2 imports those specific excerpts. Both use the original observation laws. Exact f_T is indirectly needed by Theorem2 through its threshold, but no proof-only likelihood-ratio, low-degree conjecture or approximation-proposition dependency is added.",
+    "Preserve conditional aligned-edge independence under the latent permutation, the Bernoulli feasibility range for negative rho, K edges versus K+1 vertices, unrooted isomorphism classes, explicit aut(H) weights and signed centered edge products. The approximation uses2t independent colorings, shared across trees, and the product of two sample averages with beta/r² normalization.",
+    "Nine notes record the pinned arXiv date, latent-mixture and negative-correlation domain, copy multiplicity and signed-count semantics, exact K/sparsity and nonuniform threshold scope, strict versus non-strict error events, implicit algorithmic randomness in P/Q, independent coloring arrays, output/normalization and supplied-parameter requirements, and proof/computation limits including the excluded appendix(54) reference.",
+    "All14 entries retain source natural-language terms, original source kinds/headings and literal meaningful selectors. Condition(7) and tau are explicitly Theorem1 excerpts. Every related theorem has a checked source explanation and exact same-paper path.",
+    "All six content JSON artifacts reproduce byte for byte in a fresh directory. Seven retained scripts preserve extraction, inventory review, definitions, context, finalization, reproduction and independent frozen-hash source review."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "d890e9e4e0c07fc434f93019fd2dc8185b800b9f033dcf081bfc453cb85130a8"
+}

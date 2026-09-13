@@ -1,0 +1,70 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i02-p0466",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T08:21:57.933184+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i02-p0466/T1",
+      "aos-2024-v52-i02-p0466/T4",
+      "aos-2024-v52-i02-p0466/T5"
+    ],
+    "method": "Main pages 1-17 and the portion of page 18 above Appendix A were searched. Independent bold-font heading enumeration confirms Theorems 1, 4 and 5; Theorem 4 continues onto page 16. Numbers 2 and 3 label Corollaries. The main-text page-18 image is clipped above Appendix A, and a separate heading-only crop records the boundary.",
+    "printed_label_check": [
+      [
+        12,
+        "1"
+      ],
+      [
+        15,
+        "4"
+      ],
+      [
+        17,
+        "5"
+      ]
+    ],
+    "excluded_result_types": [
+      "Lemma",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 3,
+    "interfaces": 13,
+    "source_members": 13,
+    "direct_theorem_uses": 21,
+    "related_theorem_connections": 32,
+    "unranked_auxiliary_passages": 12
+  },
+  "source_notes": [
+    "This is a census of the pinned arXiv v2 source, not an assertion that its wording or numbering matches the journal typesetting.",
+    "No proof validation or correction of the source is claimed. A source discrepancy can be faithfully recorded while the census passes source and data-contract validation.",
+    "The main-text notices of more general finite-dictionary fits do not supply a separate fully specified theorem version. The concrete node-average output (2) is retained, and no appendix body is read.",
+    "The paper-wide internal-node notation is accompanied by a formal empty-node extension in the orthogonal-expansion discussion. Its applicability to split-success probabilities is recorded as unresolved rather than silently choosing a convention."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2210.14429v2",
+    "version": "arXiv:2210.14429v2",
+    "pdf_sha256": "f181fed44b89ff76e53bfdaccff54d908541d44d53ad60170c0f432d9a05fc85",
+    "pdf_pages": 36,
+    "main_text_last_pdf_page": 18
+  },
+  "recorded_checks": [
+    "The original source-reviewed theorem inventory passes a separate validator invocation and its bytes match the inventory-review hash. The final census preserves all three complete theorem records and their source order.",
+    "The pinned PDF hash, version stamp, cover date, authors and 36-page count were checked. Appendix A begins on page 18; all extracted statement evidence is above the documented main-text endpoint.",
+    "Theorem 1 includes both bounds, the positive-constant declaration, the penalty condition and the additional depth infimum in (11). Theorem 4 includes its full continuation and penalty rate. Theorem 5 retains its printed grammar and N-based complexity term.",
+    "Thirteen source interface passages were reviewed against the pinned main-text pages, including the conditional mean, split objective, candidate success probability, recursive tree and node output, finite ridge variation/library, relaxed local norm, pruning, Assumptions 2-4 and the forest.",
+    "Twelve auxiliary passages preserve empirical versus population norms, expectation scope, the uniform q convention, sample-size dependent A/V, finite-dictionary notices and the formal empty-node convention.",
+    "The separate census validator accepts all local and canonical edges, source keywords, original highlights and every same-paper theorem explanation. Independently specified scope checks confirm 21 direct uses and 32 deduplicated related-theorem connections.",
+    "Pruning reaches only Theorems 1 and 4, Assumptions 3/4 reach only Theorem 4, and forest construction reaches only Theorem 5. The general oracle bounds do not acquire Assumption 1, a mu-in-F condition, or consistency corollary regimes.",
+    "The finite ridge-expansion sum precedes G and its L2 closure/relaxed norm in the local graph. The source ambiguity between those norm notations is recorded without rewriting the original definitions.",
+    "The forest uses without-replacement subsamples of size N and independent randomization copies sharing the original data. Its RHS success probabilities are interpreted using the subsampled-data convention explicitly stated after Theorem 5.",
+    "Source ambiguities are kept in a separate analysis artifact, including the finite norm notation, partition indexing, projection endpoints, pruning wording, depth-uniform node-count condition and degenerate split/probability conventions. Mathematical fragments have balanced braces."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "731ef2c2acc8573a79ad13fdeb625d38a88f6915840e55e02c6089c866ed6e64"
+}

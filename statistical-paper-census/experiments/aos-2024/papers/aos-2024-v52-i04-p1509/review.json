@@ -1,0 +1,72 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i04-p1509",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T23:21:17.318695+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i04-p1509/T1"
+    ],
+    "printed_label_check": [
+      [
+        9,
+        "1"
+      ]
+    ],
+    "method": "Independent actual-heading enumeration and visual comparison of the complete theorem and incorporated formulas.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 1,
+    "interfaces": 14,
+    "source_members": 14,
+    "direct_theorem_uses": 10,
+    "related_theorem_connections": 14,
+    "unranked_auxiliary_passages": 8
+  },
+  "source_notes": [
+    "The source is the registered 66-page arXiv:2303.13598v3 PDF dated 4 July 2024. Main text ends with the simulation discussion on page 20, above APPENDIX A at y=671.2371826171875. The appendix, subsequent references and supplement remain outside the admitted main-text span.",
+    "Exactly one main-text Theorem environment occurs, Theorem 1 on page 9. Citations to Theorem A.1 in the main text do not add an appendix theorem to the inventory. Main-text Lemmas and Corollaries, including implementation results, are also excluded from the theorem inventory.",
+    "Theorem 1 consists of the sentence invoking A,B,C and asserting (2),(7), followed by (8). Both referenced formulas are saved in full as auxiliary source passages. Their operators, rate, drift and Gaussian law are included in the statement dependencies. The original theorem is not rewritten to inline them.",
+    "The source fixed evaluation point is sans-serif x, while running arguments are italic x. The characteristic exponent q and smoothness order s are Fraktur. The Gaussian limit, monomial drift, covariance function and high-probability events are calligraphic; localized estimated processes and drifts use ordinary italic letters with accents. These distinctions survive transcription.",
+    "The generalized inverse has the source convention inf(empty set)=sup I. It is not automatically an ordinary inverse, and neither the estimated transformation nor its generalized inverse is assumed continuous. The primitive representation Gamma0=Psi0 composed with Phi0 is preserved separately from any density or regression example.",
+    "The characteristic exponent is the first positive-order nonzero derivative. A finite exponent is implicit in Assumption A with s>=q; the fully flat case with no such derivative is not assigned an exponent. Oddness follows under the stated monotonicity and smoothness; the census records the original wording without silently adding a q=1 restriction.",
+    "Assumption A requires different smoothness orders for theta0 and Phi0, the same Holder exponent, a nonzero derivative of Phi0 at the evaluation point, and a closed local interval. Its displayed Holder suprema do not explicitly exclude x=x-prime, leaving diagonal quotient conventions unprinted. No altered supremum or extra convention is inserted.",
+    "The rate r_n=n^(q/(1+2q)) and localization a_n=n^(1/(1+2q)) are distinct. Empirical increments and the rescaled drift use sqrt(n a_n), not sqrt(n) times a_n. The drift coefficient contains (q+1)! and the derivative of Phi0.",
+    "The proposed primitive correction uses theta-hat_n at the fixed point multiplied by the unstarred Phi-hat_n at the running argument. It does not use Phi-hat-star in that term. The estimator asserted valid by Theorem 1 is theta-tilde-star, not the ordinary theta-hat-star whose bootstrap can fail.",
+    "Assumption B has seven clauses spanning pages 8-9. B2 uses one exponent beta<q+1 and high-probability events A_n for both original and bootstrap unconditional expectation bounds. It does not require beta>0 in the printed statement. B3-B4 distinguish global consistency and the faster local a_n-scaled consistency.",
+    "B5 gives lower endpoint bounds with o_P(1), not consistency equalities. B6 requires nonnegative monotone right-continuous transformations, both range endpoints, and closed truncated image sets. B7 controls their left jumps at scale sqrt(n a_n). These conditions are retained without being reduced to generic regularity.",
+    "The Gaussian process in B1 is centered with covariance C min(|s|,|t|) times the same-sign indicator, for C>0. The covariance vanishes across opposite signs. No iid sampling assumption or specific nonparametric/bootstrap-weight distribution is part of A-C; those are later implementation choices.",
+    "Assumption C has conditional weak convergence of the scaled drift and a high-probability lower bound on the unscaled drift for every fixed K>0 outside |v|>K^-1. The positive c is common to all K, but no event uniform over all K simultaneously is stated. The limit is liminf_n equal to one, as printed.",
+    "Exact localized domains and auxiliary switch-relation definitions are deferred to Appendix A.4. Main text gives the process increment formulas and scaling but does not give all extension conventions needed to treat them on R. This is a retained source-scope limitation; appendix bodies were not opened to fill it.",
+    "Conditions D,E,BW,MRC and the numerical-derivative, generalized-jackknife, weighted-bootstrap and example constructions are sufficient ways to implement the procedure, not extra assumptions in Theorem 1. Likewise appendix switch-relation and continuity lemmas are proof dependencies, not added theorem-statement interfaces.",
+    "The supremum in (8) is over the threshold t at one fixed evaluation point. Its rate omission is intentional; it does not assert uniform validity over evaluation points or over a class of unknown characteristic exponents. The prose confidence-interval implication is separate from the theorem body.",
+    "Natural-language titles use exact source terms or the original assumption labels. The unnamed bootstrap-process formula is saved as auxiliary context to avoid applying a neighboring label that actually refers to other objects. No source statement is rewritten to introduce a convenient name.",
+    "This review checks original statements, supporting passages and their dependencies against the registered PDF; it does not certify proofs, correct source conventions, audit mathlib, or import external results. Standard probability, Gaussian laws, derivatives and convexity are ambient prerequisites where the main text gives only notation."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2303.13598v3",
+    "version": "arXiv:2303.13598v3, 4 July 2024",
+    "pdf_sha256": "41ad2b881f250cc5e8ef27156d744623d49c3461ab82e6a8733ab84734e1a476",
+    "pdf_pages": 66,
+    "main_text_last_pdf_page": 20
+  },
+  "recorded_checks": [
+    "Independent small-cap heading enumeration across all admitted main-text pages finds only Theorem 1 on page 9. Its original body ends with (8); both incorporated equations (2),(7) are saved separately in full. The following confidence-interval discussion is not appended to the theorem. The Appendix A heading shares page 20 and its body is excluded.",
+    "Fourteen original interface passages and eight auxiliary passages were compared visually with pages 3-9. Assumptions A,B,C are complete, including all three and seven numbered clauses. The population/estimator definitions, corrected primitive, localized increments, drift, Brownian covariance, original rate and conditional limit are preserved.",
+    "Independent reconstruction verifies 10 direct uses and 14 related connections. The theorem incorporates the operators and law in (2),(7), not only the symbols in (8). Its dependencies include all A-C conditions and generic bootstrap inputs, with the unnamed bootstrap-process formula resolved through auxiliary context. Later implementation assumptions, specific examples and appendix proof results are excluded.",
+    "All interface names come from original natural-language terms or original assumption labels. Every member has a meaningful matching source selector and a source-backed theorem explanation. The unnamed bootstrap empirical process is preserved without assigning it a neighboring term that refers to other objects.",
+    "Visual and font checks distinguish sans-serif fixed x from italic running x, Fraktur q/s, calligraphic Gaussian/drift/covariance/events, estimated processes, hats and tildes. The correction uses unstarred Phi-hat, and the process/drift scale is sqrt(n a_n). The closed image conditions, jump controls, conditional probability and unscaled cdf comparison are retained.",
+    "Eighteen notes record scope and source conventions. Exact localized domains and extension rules deferred to Appendix A.4 remain unresolved; appendix bodies were not read. The Holder diagonal convention, finite characteristic exponent and pointwise evaluation scope are retained without added hypotheses. This review does not certify proofs.",
+    "All six content artifacts reproduce byte for byte from the retained per-paper scripts in an empty directory. Source identity, independent inventory, original claim identity, manually reconstructed graph, source-specific invariants, math fragments and inventory/census schema checks passed. Rebuilding does not itself renew source review."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "ac23bee6d009b1456232ec54960fc8f85e68fd6c8fb1a63abcad9fae4ee5af6a"
+}

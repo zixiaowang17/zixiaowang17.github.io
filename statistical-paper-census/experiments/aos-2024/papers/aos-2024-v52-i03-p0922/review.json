@@ -1,0 +1,97 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i03-p0922",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T12:18:05.292365+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i03-p0922/T3.1",
+      "aos-2024-v52-i03-p0922/T3.3",
+      "aos-2024-v52-i03-p0922/T3.4",
+      "aos-2024-v52-i03-p0922/T4.1",
+      "aos-2024-v52-i03-p0922/T4.2",
+      "aos-2024-v52-i03-p0922/T4.3",
+      "aos-2024-v52-i03-p0922/T5.1",
+      "aos-2024-v52-i03-p0922/T5.2"
+    ],
+    "method": "Independent font-aware enumeration of CMBX10 Theorem headings on all main-text pages 1–40; eight statements, including continuations on pages 27,29,30. Proposition 3.2, Corollary 3.5, ordinary-font mentions and appendix mathematics are excluded.",
+    "printed_label_check": [
+      [
+        16,
+        "3.1"
+      ],
+      [
+        19,
+        "3.3"
+      ],
+      [
+        20,
+        "3.4"
+      ],
+      [
+        24,
+        "4.1"
+      ],
+      [
+        24,
+        "4.2"
+      ],
+      [
+        25,
+        "4.3"
+      ],
+      [
+        28,
+        "5.1"
+      ],
+      [
+        29,
+        "5.2"
+      ]
+    ],
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 8,
+    "interfaces": 25,
+    "source_members": 25,
+    "direct_theorem_uses": 66,
+    "related_theorem_connections": 89,
+    "unranked_auxiliary_passages": 12
+  },
+  "source_notes": [
+    "This is a source and statement-prerequisite audit of arXiv:2210.08393v4, not certification of its proofs or equality to the final journal wording.",
+    "The source ambiguities in weighted matrices, unsuffixed local size, inherited coefficient-shift assumptions and sparse tuning are retained explicitly.",
+    "Original Theorem and Assumption labels remain separate from proposed computational interfaces."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2210.08393v4",
+    "version": "arXiv:2210.08393v4",
+    "pdf_sha256": "2a9174faf0cf534dc4c4ce87bef4d970c416e09bed9a37067d9c1609d5d682e5",
+    "pdf_pages": 102,
+    "main_text_last_pdf_page": 40
+  },
+  "recorded_checks": [
+    "Pinned v4 title, author names, margin date, page count and hash agree with the inspected PDF. All forty saved text pages match fresh byte-preserving extraction.",
+    "Independent main-text enumeration finds eight Theorems and nine Assumptions, with the exact printed labels and source order. The inventory was validated before interface extraction.",
+    "Every original theorem field survives the finalizer unchanged. Theorem 4.3 is continued after the intervening Algorithm 2 page; Theorems 5.1 and 5.2 retain both pages.",
+    "Visual review checks all eight statements, including double-exponential exponents, negative bandwidth exponent, weighted inverse transpose, sample-size factors, and the distinct logarithms in Theorem 5.1.",
+    "All Assumptions 1–9 are checked against pages 14,15,22,23; source kinds, strict bounds, kernel conditions and machine-indexed distributions are preserved.",
+    "Main-text standing identification conditions, normalization, sampling, data partitions and section changes are checked on pages 2,9–12,21–22,25,27.",
+    "Empirical objectives, local derivatives and algorithms are checked on pages 12–14,23,26,28. Sparse iterations use a single-machine Hessian and do not inherit a dense matrix inverse update.",
+    "Independent graph traversal verifies 66 direct uses and 89 related connections. The weighted Newton method does not inherit the local-minimizer functional; coefficient shift does not inherit global identical distribution.",
+    "Every one of the 25 source interfaces has original natural-language keywords, meaningful source selectors, and source-specific explanations covering all derived paths.",
+    "Twelve auxiliary source excerpts preserve notation, unnamed constants, inherited assumption clauses and explicit appendix-only references without inventing API names.",
+    "Theorem 5.2 remains the complete abbreviated main-text statement; its appendix-only tuning and r_m definition are explicitly unresolved and no appendix mathematics is used.",
+    "Reference-page ending and the Appendix A heading establish the boundary between pages 40 and 41; all extracted mathematical evidence is on pages 1–40."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "fc74767dae7c1813b7f1bf946f1e9e214f71b7edbf5774f043c0bb5bb74e019d"
+}

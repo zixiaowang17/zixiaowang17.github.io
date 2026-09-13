@@ -1,0 +1,5 @@
+interface:
+  display_name: Statistical Paper Census
+  short_description: Collect theorems and their definition relationships
+  default_prompt: Use $statistical-paper-census to collect all main-text Theorems
+    and connect definitions and variants to their full original statements.

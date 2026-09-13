@@ -1,0 +1,255 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i05-p2431",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-10T20:22:44.809282+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i05-p2431/T2.2",
+      "aos-2024-v52-i05-p2431/T3.1",
+      "aos-2024-v52-i05-p2431/T3.3",
+      "aos-2024-v52-i05-p2431/T4.1",
+      "aos-2024-v52-i05-p2431/T4.2"
+    ],
+    "printed_label_check": [
+      [
+        6,
+        "2.2"
+      ],
+      [
+        7,
+        "3.1"
+      ],
+      [
+        8,
+        "3.3"
+      ],
+      [
+        10,
+        "4.1"
+      ],
+      [
+        11,
+        "4.2"
+      ]
+    ],
+    "method": "Independent bold-font heading enumeration and visual comparison of all five complete theorem statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark",
+      "Conjecture"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 5,
+    "interfaces": 14,
+    "source_members": 14,
+    "direct_theorem_uses": 27,
+    "related_theorem_connections": 45,
+    "unranked_auxiliary_passages": 8
+  },
+  "source_notes": [
+    {
+      "issue_id": "joint-versus-observation-marginals",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 5,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 10,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "P1,n is explicitly called the joint law of (A,sigma,tau), and P1,tau,n the conditional joint law of (A,sigma). Testing and chi-square formulas instead use their A marginals, as the explicit sum over A demonstrates. The null law is on A only. Preserve the original notation while keeping the sample spaces separate."
+    },
+    {
+      "issue_id": "balanced-priors-and-conditional-independence",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 5,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Uniform priors are on exactly balanced node and layer assignments, not iid Bernoulli labels. The generative list gives separate prior draws without explicitly writing their independence; the natural product-prior interpretation is recorded as such. Edge independence holds conditional on latent assignments, not under their marginal mixture."
+    },
+    {
+      "issue_id": "binary-labels-and-observation-domain",
+      "evidence": [
+        {
+          "page": 3,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 4,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 5,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The general model uses labels in [K], then the K=2 specialization uses {0,1}. Edges are observed only for i<j, with symmetric matrices and no modeled self-loops. The MLE parity sum inherits those index ranges. Recovery is invariant to the global node-label complement."
+    },
+    {
+      "issue_id": "asymptotic-integer-and-boundary-regimes",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 6,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Both n and T must be even, while Theorem2.2 writes T_n=n^a for arbitrary a>0. Appropriate subsequences or rounding are implicit. Its inequalities are strict and make no claim on 1+a−b=0 or1+a/2−b=0. Assumption1 is stronger than just rho_n→0, and threshold limits nT rho and n sqrt(T) rho must remain distinct."
+    },
+    {
+      "issue_id": "conditional-computational-hardness",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 7,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 8,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The computational impossibility statements depend on the specialized low-degree polynomial conjecture. The conjecture tests uniform boundedness over all centered null-L2-normalized polynomials of degree at most log^1.01(n); boundedness for a single polynomial is insufficient. It is not a proved impossibility theorem or P-versus-NP result."
+    },
+    {
+      "issue_id": "recovery-and-detection-strength",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 6,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 10,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Recoverability means vanishing normalized Hamming fraction in probability under the mixture prior, not exact recovery or a uniform fixed-label minimax guarantee. Distinguishability means vanishing total testing error. Failure of that property alone does not imply failure of every weak test; Theorem4.1 separately establishes the stronger vanishing chi-square result."
+    },
+    {
+      "issue_id": "recovery-detection-lemma-caption",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 6,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Lemma2.1 is captioned Detection implies recovery, but its actual statement is recovery implies detection with T_n+2 layers and polynomial extra work. The source says the two-layer change is negligible for its threshold regimes. No reversed reduction or same-finite-T identity is inserted."
+    },
+    {
+      "issue_id": "chi-square-pmf-naming",
+      "evidence": [
+        {
+          "page": 10,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The prose assigns q,p to P,Q respectively, while the displayed d_chi2(Q,P)=E_P[(q/p−1)^2] requires q for Q and p for P. Preserve the printed mismatch and use the theorem’s explicit null-denominator formula to identify the intended direction. P0 has positive mass on every observed tensor when0<rho<2/3."
+    },
+    {
+      "issue_id": "conditional-layer-quantifier",
+      "evidence": [
+        {
+          "page": 10,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorem4.1 quantifies over every balanced tau in S_Tn while summing the A-marginal likelihood ratio. It keeps sigma unobserved even when tau is known. Balanced layer permutations make these cases symmetric; do not reinterpret the claim as observing both sigma and tau."
+    },
+    {
+      "issue_id": "runtime-logarithm-sign",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorem3.3 has threshold (1/2)(log n)^−1.4, but the following runtime explanation prints exponent+1.4. Its claimed T_n=O(n²) does not follow from that weaker positive-exponent condition alone; the actual negative-exponent theorem condition does support polynomial input size. Preserve both passages and the distinct optional −1.01 improvement. The n-based runtime convention is stated in the lower-bound discussion; its relation to input-size complexity for unrestricted layer growth in the upper-bound result is not fully specified locally."
+    },
+    {
+      "issue_id": "mle-domain-and-ties",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Equation(4) jointly optimizes balanced sigma and tau by counting edges on even-parity triples. A choice among ties is not specified. Theorem4.2 asserts approximate consistency for sigma only; it supplies neither a polynomial-time implementation nor a claim of consistent tau recovery."
+    },
+    {
+      "issue_id": "external-spectral-and-conjecture-details",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 8,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorem3.1 credits[28] and refers to an externally developed spectral method without defining it completely. Remark1 claims external conjecture regularity can be verified but does not list it. Retain these source limitations; neither missing implementation details nor a conjecture becomes an invented locally verified API."
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2311.07773v1",
+    "version": "arXiv:2311.07773v1; 13 Nov 2023; cover dated 15 Nov 2023",
+    "pdf_sha256": "729249562a67503fcb0c40a36bb63f3f77cf9224ca014d3b04b04e24ffcd5ae8",
+    "pdf_pages": 31,
+    "main_text_last_pdf_page": 12
+  },
+  "recorded_checks": [
+    "Five complete main-text Theorems2.2,3.1,3.3,4.1,4.2, independently enumerated by bold headings. Include the simplified summary and externally credited computational upper bound. Conjecture3.2 remains a conjecture, not a sixth Theorem. Discussion and acknowledgment end before AppendixA on shared PDF page12.",
+    "Fourteen original source entries preserve conditional Bernoulli graph generation, balanced memberships, two layer matrices, alternative and null laws, Hamming loss, recoverability, strong distinguishability, Assumption1, the full low-degree conjecture, conditional alternatives, directed chi-square divergence, the joint edge-count MLE and runtime convention. Eight auxiliary passages preserve contextual variants and source issues.",
+    "Independent reconstruction checks27 direct uses and45 related connections. Computational hardness connects to the conjecture only in the computational summary bullet and Theorem3.3. Chi-square is required by Theorem4.1, not the low-degree theorem merely because it motivates a proof. MLE is used by Theorem4.2; there is no implication-only edge from recovery to detection.",
+    "Keep latent joint laws distinct from the A marginals used for testing, conditional edge independence distinct from mixture independence, exact balanced priors distinct from iid Bernoulli labels, approximate recovery distinct from exact recovery, and strong detection distinct from weak detection. The statistical limits n*T*rho and computational n*sqrt(T)*rho remain separate.",
+    "Twelve notes retain the p/q assignment mismatch in chi-square prose, reversed Lemma2.1 caption, its two-layer change, positive-versus-negative logarithm typo in the runtime explanation, unresolved runtime scope for unrestricted layer growth, implicit prior independence, even-integer monomials, equality boundaries, MLE ties and missing external algorithm/conjecture regularity detail. Original quotations are not silently repaired.",
+    "All14 entries have natural-language source terms, literal highlights and source kinds/headings that distinguish Assumption1 and Conjecture3.2 from definitions and theorem claims. Every related theorem has a checked same-paper dependency path and specific source correspondence.",
+    "All six content JSON artifacts reproduce byte for byte in a fresh directory. Seven retained scripts preserve inventory extraction/review, definitions, context, finalization, rebuild and independent source review with frozen hashes and formula checks."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "9bee26d2a0f34aef334141528f07bc229d31e9fd8ea918290a1aaee9f498bdac"
+}

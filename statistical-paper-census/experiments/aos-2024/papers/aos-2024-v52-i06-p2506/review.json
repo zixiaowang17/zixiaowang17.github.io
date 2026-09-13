@@ -1,0 +1,266 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i06-p2506",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-10T21:10:06.256004+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i06-p2506/T5.3",
+      "aos-2024-v52-i06-p2506/T5.5",
+      "aos-2024-v52-i06-p2506/T5.10",
+      "aos-2024-v52-i06-p2506/T5.14"
+    ],
+    "printed_label_check": [
+      [
+        9,
+        "5.3"
+      ],
+      [
+        9,
+        "5.5"
+      ],
+      [
+        11,
+        "5.10"
+      ],
+      [
+        12,
+        "5.14"
+      ]
+    ],
+    "method": "Independent small-cap heading enumeration and visual comparison of all four complete theorem statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark",
+      "Conjecture"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 4,
+    "interfaces": 13,
+    "source_members": 13,
+    "direct_theorem_uses": 21,
+    "related_theorem_connections": 29,
+    "unranked_auxiliary_passages": 9
+  },
+  "source_notes": [
+    {
+      "issue_id": "registered-title-and-boundary",
+      "evidence": [
+        {
+          "page": 1,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 21,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The registered source is arXiv:2206.13668v4, marked19 Mar2024. Its title says components (plural), whereas the corpus metadata says component. Main text and acknowledgements end on PDF page21 before references at y580.205; evidence is clipped at y572. No appendix or S-prefixed supplementary passage is imported."
+    },
+    {
+      "issue_id": "orthogonal-domain-and-parameter-side",
+      "evidence": [
+        {
+          "page": 1,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 6,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 7,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 9,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The Q transformations in the algebraic conclusions range over O(d), as specified by the preceding setting and G_T definition. They are not arbitrary invertible matrices: diagonal rescalings would otherwise invalidate the conclusion. A maps Y to epsilon, and the surviving ambiguity is left multiplication by signed permutations, changing rows rather than columns."
+    },
+    {
+      "issue_id": "transformations-versus-parameter-set",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Equation(10) defines G_T(V) as a subset of O(d), but the following source sentence calls it a subset of Omega, which contains QA. Proposition4.1 gives the actual parameter set Omega_0={QA:Q in G_T(V)}. Preserve the original sentence while keeping transformations Q separate from parameter matrices QA. G_T is not generally a group or the stabilizer of T."
+    },
+    {
+      "issue_id": "algebraic-versus-statistical-scope",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 7,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 8,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 9,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 10,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorems5.3/5.10 concern arbitrary symmetric tensors, not necessarily realizable as moments/cumulants of a distribution. Theorems5.5/5.14 concern model(1) with centered unit-covariance hidden components and a chosen h_r. No observational-model premise or generating-function existence condition is imported into the algebraic theorems."
+    },
+    {
+      "issue_id": "moment-cumulant-choice",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 6,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 9,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "h_r denotes either the order-r raw moment tensor or the order-r classical cumulant tensor. Listing both definitions resolves a notation alternative, not a conjunction requiring both tensors to satisfy the restrictions. Their higher-order entries differ; zero mean makes only the third-order tensors coincide. Remark3.1’s extensions are not folded into the default definition."
+    },
+    {
+      "issue_id": "moment-and-generating-function-existence",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The source defines moments by expectations and also derivatives of the MGF, and cumulants through log-MGF derivatives. It does not specify a neighborhood where the MGF is finite or analytic. Theorems require the indicated tensors to exist, but finite moments of one order alone do not establish that analytic representation. Preserve this unresolved regularity convention; do not silently assume all moments or replace the original cumulant definition."
+    },
+    {
+      "issue_id": "different-genericity-conditions",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "For r≥3, Theorem5.3 requires at least d−1 nonzero full diagonal entries, equivalently at most one zero. Its r=2 branch needs pairwise distinct matrix diagonals. For reflectional tensors, condition(14) compares repeated-pair contractions summed over all indices, not just full diagonal entries. These conditions are neither interchangeable nor part of the entrywise zero-pattern definitions."
+    },
+    {
+      "issue_id": "even-order-and-normalized-second-order",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 10,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Definition5.8 permits only the zero tensor at odd order. Theorem5.10 takes even r and l=(r−2)/2, with the standard positive-order context; r=2 yields an empty contraction and distinct diagonal entries. Theorem5.14 does not explicitly exclude r=2, but h_2(epsilon)=I_d under its normalization, so genericity fails for d>1. No new lower bound on r is inserted into the source statement."
+    },
+    {
+      "issue_id": "reflection-pattern-versus-stabilizer",
+      "evidence": [
+        {
+          "page": 10,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Reflectionally invariant means every potentially nonzero entry has even multiplicity of each coordinate label, including off-diagonal pair patterns. It does not mean invariant under every orthogonal transformation. Theorem5.10 describes all transformations into the entire reflectional space, yielding signed permutations; Lemma5.13 describes the smaller exact stabilizer of a fixed generic tensor. The two sets are not merged."
+    },
+    {
+      "issue_id": "identification-not-estimation-or-independence",
+      "evidence": [
+        {
+          "page": 1,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 7,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 9,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The statistical conclusions determine A from the population distribution up to row sign/permutation, not exact recovery of a unique orientation, a finite-sample estimator or a convergence rate. Neither diagonal constraints at one selected order nor reflectional constraints imply independence. Corollaries for common-variance, elliptical or mean-independent models and later minimum-distance estimation results are not extra Theorems or premises of the general identification statements."
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2206.13668v4",
+    "version": "arXiv:2206.13668v4, marked 19 Mar 2024",
+    "pdf_sha256": "500239b27bec9a744424a489d3c785ccdf3d463606c209d50e010d8ce2add2b6",
+    "pdf_pages": 53,
+    "main_text_last_pdf_page": 21
+  },
+  "recorded_checks": [
+    "Four complete main-text Theorems5.3,5.5,5.10,5.14, independently enumerated by small-cap headings. Corollaries5.7/5.15, propositions, lemmas, remarks and proof headings are excluded. Preserve the r=2 branch and both original row sign/permutation identification statements. Main text ends with acknowledgements before references on PDF page21.",
+    "Thirteen original source entries preserve model(1), symmetric tensors, generating functions, separate moment and cumulant definitions and their h_r notation, multilinear action, normalized observational candidates, admissible orthogonal transformations, signed permutations, Definitions5.1/5.8 and condition(14). Nine auxiliary passages retain context and proof/application distinctions.",
+    "Independent reconstruction verifies21 direct uses and29 related connections. Algebraic Theorems5.3/5.10 do not inherit a random-vector model, moment realizability or generating-function assumptions. Statistical Theorems5.5/5.14 keep moment and cumulant interpretations as alternatives and do not import proof-only polynomial or stabilizer constructions. Condition(14) is inline in5.10 and explicitly referenced by5.14.",
+    "Preserve orthogonal rather than general invertible Q, left multiplication of the unmixing matrix and row ambiguity, transformation sets versus parameter matrices, all-equal versus even-multiplicity index patterns, and distinct full diagonals versus repeated-pair contraction genericity. Population identification is distinct from estimation or independent-component recovery.",
+    "Ten notes retain the registered title spelling, orthogonal domain, G_T-versus-Omega wording, algebraic/statistical scope, alternative h_r choices, implicit tensor/MGF existence regularity, separate genericity conditions, the normalized r=2 applicability limit, reflectional target versus exact stabilizer, and the absence of independence or estimator premises.",
+    "All13 entries have source-derived natural-language terms and literal meaningful highlights. Definitions5.1/5.8 retain original labels; condition(14) is a Theorem5.10 excerpt. Every related theorem has an independently checked local path and source-specific explanation, including the moment/cumulant alternatives.",
+    "All six content JSON artifacts reproduce byte for byte in a fresh directory. Seven retained scripts preserve inventory extraction/review, original passages, context, finalization, reproducible rebuild and independent source review with frozen hashes and source-specific checks."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "59f346fe15b61055774bd59b866e4f688e953a7dde7604c22b7fcb3a93ca0302"
+}

@@ -1,0 +1,116 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i04-p1460",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T22:57:28.502968+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i04-p1460/T3.1",
+      "aos-2024-v52-i04-p1460/T3.2",
+      "aos-2024-v52-i04-p1460/T3.3",
+      "aos-2024-v52-i04-p1460/T4.1",
+      "aos-2024-v52-i04-p1460/T4.2",
+      "aos-2024-v52-i04-p1460/T4.3",
+      "aos-2024-v52-i04-p1460/T4.4",
+      "aos-2024-v52-i04-p1460/T4.5",
+      "aos-2024-v52-i04-p1460/T5.1"
+    ],
+    "printed_label_check": [
+      [
+        7,
+        "3.1"
+      ],
+      [
+        8,
+        "3.2"
+      ],
+      [
+        8,
+        "3.3"
+      ],
+      [
+        9,
+        "4.1"
+      ],
+      [
+        9,
+        "4.2"
+      ],
+      [
+        10,
+        "4.3"
+      ],
+      [
+        11,
+        "4.4"
+      ],
+      [
+        12,
+        "4.5"
+      ],
+      [
+        14,
+        "5.1"
+      ]
+    ],
+    "method": "Independent bold-heading enumeration and visual comparison of all complete theorem bodies.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 9,
+    "interfaces": 25,
+    "source_members": 25,
+    "direct_theorem_uses": 41,
+    "related_theorem_connections": 70,
+    "unranked_auxiliary_passages": 9
+  },
+  "source_notes": [
+    "The registered source is the 74-page arXiv:2211.00488v1 PDF dated 1 November 2022. Main text and references end after [ZSF22] on page 28. The separately inspected Appendix A heading is on page 29; no appendix bodies were read.",
+    "Nine main-text Theorems are stored in source order: 3.1-3.3, 4.1-4.5 and 5.1. Theorem 4.1 remains included despite its citation to [LM19]. Proposition 5.1, Corollary 4.1 and numbered remarks remain outside this inventory.",
+    "Theorem 4.2 continues onto page 10 and ends with its null-estimator attainment sentence. Theorem 5.1 continues onto page 15; the threshold table inserted before its two clauses is not part of its statement.",
+    "The general model has fixed known factor-row distributions and fixed rank, independent across rows and between factors and noise. Priors depending on n,d, proportional-aspect-ratio results and swapped-factor analogies are not silently substituted for this scope.",
+    "The exact scales are n^(-1/2) in (4) and (nd)^(-1/4) in (9). Symmetric model (10) uses q_Theta/n times the Gram matrix and a GOE with diagonal variance 2/n and off-diagonal variance 1/n.",
+    "Q_Lambda and Q_Theta are uncentered second moments, not general covariance matrices. The full Remark 3.1 conditions and the explicit Theta normalization selected in Theorem 4.3 are recorded separately. The symmetric comparison model itself requires no Theta prior or Assumption 4.1.",
+    "Before equation (5), the source writes that the column-space projection matrices P and P-hat lie in O(n), although O(n) is defined as the orthogonal group. Nontrivial projections are not orthogonal matrices. Preserve this apparent source error, not a repaired definition.",
+    "The source calls alpha the principal angle, while the operator-norm formula corresponds to the largest relevant angle for equal-dimensional subspaces. Finite-sample rank degeneracy of Lambda and repeated-eigenvalue choices are not explicitly addressed. The projector formula and spectral normalization are preserved.",
+    "Claim 2 of Theorem 3.1 explicitly adds a 4+epsilon moment of Lambda_0 for Gram-matrix consistency. Claim 3 separately states an orthogonal distributional-identifiability condition. The word further leaves some scope ambiguity; extraction treats the separately numbered claims as additions to the common opening hypotheses and records, rather than invents, any cumulative moment requirement.",
+    "Theorem 3.3 cites Theorem 3.1 claim 3. It does not itself print the additional fourth moment of Theta_0 used in Theorem 3.2's matrix-risk lower bound. Do not import that fourth moment merely by comparing the two conclusions; all literal assumptions remain available for later formalization.",
+    "Theorem 4.1 prints Q-star(s) in a formula otherwise parameterized by q_Theta, without binding s. The adjacent functional suggests s=q_Theta^2, but the original statement is retained and the substitution is not silently performed.",
+    "Equation (13) is introduced for s>0, while Theorem 4.1 and threshold definition (26) also use q_Theta=0. A zero-s extension is not separately defined there. The source argmax is not asserted unique, and the countable exception in Theorem 4.1 applies only to its MMSE conclusion.",
+    "Theorem 4.2 has no zero-mean or sub-Gaussian requirement from Assumption 4.1, which is introduced later for the Lambda-estimation section. Its two bounds allow a nonzero Theta mean and require a fourth moment only for the second bound.",
+    "Assumption 4.1 requires zero first and full third tensor moments of Theta_0, but not of Lambda_0. Both priors are sub-Gaussian. The main text does not give a precise vector sub-Gaussian norm convention, and appendix definitions are not imported.",
+    "Theorems 4.4 and 4.5 refer to conditions of Theorem 4.3; they do not need its mutual-information objects merely because those objects occur in its conclusion. Likewise Theorem 4.5 does not depend on the perturbation model solely because its proof uses Theorem 4.4.",
+    "Theorem 4.4 first gives a liminf lower bound for the unperturbed risk, then a vanishing-side-channel limsup upper bound. Epsilon tends to zero after the n,d limit. The independent extra observation is available together with A, not in place of A. Generic equality without extra assumptions is not claimed.",
+    "Theorem 4.5 requires at least one of alternatives (a), (b) and (c), not all three. Bounded support and the final countable-exception qualification belong to (b). The rank-one scalar-channel condition belongs only to (c). Logarithmic powers and the two aspect-ratio inequalities are retained exactly.",
+    "Theorem 4.5(c) prints global maximum for Psi(gamma,s)=s^2/4+gamma^2/(4s)-gamma/2+I(gamma) over gamma>0. If I is the stated Gaussian-channel mutual information, it is nonnegative, so for fixed s>0 this displayed expression is unbounded above. The maximum requirement is therefore an apparent source inconsistency. Do not replace maximum with minimum, change the signs or certify this alternative as meaningful.",
+    "Theorem 5.1 uses uniform one-hot labels and iid random center rows with vanishing first/third moments and covariance q_Theta I_k. The signed two-cluster encoding and its threshold from Proposition 5.1 are different and are not imported.",
+    "The threshold baseline Q0 is the outer product of the one-hot prior mean, 1_k 1_k^T/k^2; it is not the second moment I_k/k. Definition (26) uses strict free-energy improvement. Theorem 5.1 says nothing at equality q_Theta=q_info_Theta(k).",
+    "Theorem 5.1(a) asserts convergence in probability to chance overlap 1/k for every measurable estimator. Part (b) asserts existence with liminf expected overlap above 1/k and adds either of two growth conditions. These two modes of convergence and quantifiers are not homogenized.",
+    "Norms, expectations, conditional means, Gaussian channels specified inline, matrix square roots, tensor products, sub-Gaussianity and measurable estimators remain ambient or local binders where appropriate. All required main-text conventions are retained; source review does not certify proofs or the correctness of cited results."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2211.00488v1",
+    "version": "arXiv:2211.00488v1, 1 November 2022",
+    "pdf_sha256": "7d26b0fb80a5a46f7044f5223d98da7b1a1a6eec64c520380562f10cd66a628d",
+    "pdf_pages": 74,
+    "main_text_last_pdf_page": 28
+  },
+  "recorded_checks": [
+    "Nine complete original Theorems 3.1-3.3, 4.1-4.5 and 5.1 were visually checked on pages 7-12 and 14-15. Bold-heading enumeration covers all main-text pages 1-28. Continued statements, the attributed Theorem 4.1 and every conditional or alternative clause are retained.",
+    "Twenty-five supporting passages and nine auxiliary passages were compared against pages 3, 5-14. They preserve fixed independent factor laws, exact strong/weak scales, moment conventions, estimator and subspace loss, GOE, the symmetric experiment, information and risk functionals, free energy, Assumption 4.1, perturbation and clustering definitions.",
+    "Independent reconstruction verifies 41 direct uses and 70 related connections. The symmetric background theorem does not acquire a Theta prior or Assumption 4.1. Theorem 4.2 allows a nonzero prior mean. Theorems 4.4-4.5 inherit conditions from Theorem 4.3 without importing its mutual-information conclusion. Theorem 4.5 does not acquire the side channel merely from its proof.",
+    "Each interface retains source-derived natural-language terms and meaningful source expression selectors. Assumption and theorem-excerpt identities are preserved, and every related-theorem explanation follows its exact local path.",
+    "Visual and font checks retain bold matrix/vector variables, upright mutual-information notation, the scalar-channel sans-serif information symbol, normalized GOE variances, Fraktur permutation group, strict threshold improvement and the distinct error normalizations. The source statements retain the unbound s, the projection-group assignment and the printed maximum condition.",
+    "Twenty-two notes record source inconsistencies and ambiguities, including Theorem 3.1 moment scope, absent extra hypotheses in Theorem 3.3, Theorem 4.1 parameter binding, Theorem 4.5(c) unbounded objective, and the non-interchangeable limit/exception/branch qualifiers. Appendix bodies and external proofs are excluded; this is not proof certification.",
+    "All six content files reproduced byte-for-byte from the retained per-paper scripts in an empty directory. Source hash, independent inventory, full claim identity, semantic invariants, graph, math-fragment and schema checks passed. A rebuild alone does not renew source review."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "77dff4ce5c5bb011968eca6b088f16733fdd6b6d0a5b03d939f34fa954c5921c"
+}

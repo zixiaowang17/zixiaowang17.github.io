@@ -1,0 +1,99 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i04-p1671",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-10T00:34:23.304346+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i04-p1671/T1",
+      "aos-2024-v52-i04-p1671/T2",
+      "aos-2024-v52-i04-p1671/T3",
+      "aos-2024-v52-i04-p1671/T4"
+    ],
+    "printed_label_check": [
+      [
+        12,
+        "1"
+      ],
+      [
+        12,
+        "2"
+      ],
+      [
+        15,
+        "3"
+      ],
+      [
+        17,
+        "4"
+      ]
+    ],
+    "method": "Independent source heading enumeration and visual comparison of all complete theorem statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 4,
+    "interfaces": 16,
+    "source_members": 16,
+    "direct_theorem_uses": 12,
+    "related_theorem_connections": 37,
+    "unranked_auxiliary_passages": 8
+  },
+  "source_notes": [
+    "The registered source is arXiv:2209.04419v2 dated 4 June 2024, with 41 pages. The main paper and references end on page 28; Section 7 Appendix begins on page 29. No appendix body or separate source version was reviewed.",
+    "All four main-text Theorems are retained, including Theorem 4(c) and its conclusion on page 18. Lemmas 1–4 quote external theorem numbers but are not Theorem environments. Appendix Propositions 1 and 2 are neither read nor inventoried.",
+    "Theorem 1 asserts a privacy property for arbitrary sign matrices; Theorem 2 controls agreement with the realized non-private majority vector. Theorems 3 and 4 assert population sign consistency in distinct models. These targets must not be merged.",
+    "Distributed group adjacency replaces the entire dataset of a fixed local machine. It is not record-level adjacency, arbitrary groups of a given size, or privacy from the trusted server. The trusted-curator setup is stated in Section 2 and discussed again on page 22.",
+    "The introductory equal-size description uses n=N/m, whereas the two model-specific theorems allow unequal n_j of comparable order. Their sample mean and loss denominators are n_j, not a substituted common n. The distributed partition gives N=sum_j n_j.",
+    "Section 1.2 prints a_n asymp b_n as simultaneous O(b_n) and Theta(b_n). This redundant/nonstandard presentation is retained, rather than replaced by another asymptotic convention. Generic constants are independent of m,n,p as printed.",
+    "Theorem 2 uses s-bar=|S-bar| for the majority-vector support, whereas Theorems 3 and 4 use s=|supp(theta*)|. Selection count s-tilde is a third quantity. Do not replace any one of them with another.",
+    "Majority Vote requires more than half of all votes for a nonzero sign; ties and any remaining case return zero. The vote counts (1) are auxiliary definitions shared by the majority, stability and utility passages.",
+    "The stability prose describes a minimal flip count, but (4) is a signed vote-margin formula. For example three positive votes give score 3, although flipping two entries suffices to change the majority. Preserve the formula and prose separately from this issue; do not repair the definition.",
+    "The opening of Section 2.3 repeats N_l^+ twice in its list, where (1) has positive, negative and null counts. The duplicate is retained in the original passage.",
+    "The peeling score f^S has a negative minimum for the zero-majority branch. The utility f_l(.,0) in (5) has the positive minimum. Theorem 2 calls its f_l quantity a stability function, but its formula refers to (5), not f^S in (4).",
+    "Algorithm 1 selects without replacement by fresh noisy maximization. Its displayed sampling line does not explicitly say independent or specify tie breaking. An eventual implementation needs these conventions; they are not inserted into the original algorithm.",
+    "Algorithm 2 calls Peeling with epsilon/2 and delta/2, then draws signs using epsilon-prime=epsilon/(4 sqrt(2 s-tilde log(2/delta))) and a further divisor 4 in every utility exponent. These distinct factors and logarithms are preserved.",
+    "Algorithm 2 returns a support and a set of nonzero signs, while later algorithms and theorems use a full indexed sign vector. Zero extension and coordinate association are implicit; plain unordered sets alone do not encode the vector. The graph preserves the algorithm and flags this output convention.",
+    "The prose on page 11 says the algorithm always outputs a non-empty set of signs, but its printed output may be empty if all selected draws are zero. This claim is not added to the theorem statements or algorithm definition.",
+    "The algorithm formulas require positive epsilon, a suitable delta strictly between zero and one, and an integer selection count at most p. Their theorem statements do not enumerate these domains; s-tilde=0 also makes the displayed scales degenerate. Domain conventions remain explicit interpretation issues.",
+    "Theorem 3 prints the distribution family as blackboard P(theta*,C), whereas (10) defines calligraphic P(theta*,C). The association is source-context based; the original theorem typography remains unchanged.",
+    "Theorem 3 contains an otherwise unused gamma_1>0 before its conclusion. The symbol is retained and its role remains unspecified within the main text.",
+    "Theorem 3 imposes only a lower bound on lambda_N in (11), and (12) does not compare the signal with the chosen lambda_N. Arbitrarily large thresholds are not ruled out by the printed hypotheses. An intended upper bound or calibrated choice is unresolved; no hidden condition is added.",
+    "The mean distribution family bounds third absolute centered moments coordinatewise. It does not impose coordinate independence, bounded observations, or an explicit positive lower bound on coordinate variances.",
+    "Theorem 4 uses equality in (18), unlike the inequality in Theorem 3(11). Its signal condition includes the random maximum over lambda_j and holds with probability tending to one, as confirmed by commentary on page 18.",
+    "The local Lasso argmin in (14) is written as an estimator without a selection rule for nonunique minimizers. The rule (15) takes a minimum over penalties; the nearby assertion that its feasible set is nonempty does not by itself establish attainment. Both are retained as definition-scope issues.",
+    "Algorithm 4 consumes s-tilde in (16), although it is omitted from its printed input line. Its lambda_N is externally supplied by (18); treating the forward reference as a dependency on the whole theorem would create a false recursive definition.",
+    "Theorem 4 calls Sigma=E[XX^T] the covariance matrix, without an explicit centering assumption in (13), (17) or the theorem. Equation (17) likewise does not explicitly require zero-mean noise. Do not replace Sigma by a centered covariance or silently impose means zero.",
+    "Theorem 4 introduces columns omega_1,...,omega_p but prints omega_-l in (20). Section 1.2 defines deletion for a generic vector; the intended deletion of the diagonal coordinate from column/row l is suggested by the commentary, but the missing parent-column index remains a notation issue.",
+    "Delta_0 in (20) has no explicit value, range or quantifier elsewhere in the admitted main text. Its intended positive gap is not silently inferred from the formula.",
+    "The minimum over a possibly empty population support and maximum over an empty complement are not assigned conventions in the source. Sign recovery of the zero vector or full-support cases need these conventions if included.",
+    "Global sensitivity and the exponential-mechanism/composition lemmas motivate the privacy proof. The numbered algorithms give their sampling probabilities explicitly. Proof tools are not automatically theorem-statement dependencies; Definition 2 is retained as auxiliary source context.",
+    "Theorem 2 explicitly takes probability only over the mechanism given signs. Model-specific limiting probabilities combine data and mechanism randomness under the usual algorithm construction; randomness and conditional versus joint law are not conflated.",
+    "Source hypotheses about rates concern sequences as N grows; p,m,n,n_j and the selection count may vary. The source does not fully quantify dependence of epsilon and delta or uniformity in changing privacy parameters. No stronger uniform theorem is claimed."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2209.04419v2",
+    "version": "arXiv:2209.04419v2, 4 June 2024",
+    "pdf_sha256": "98f01d3c2ca9245356a1395a25fb45d6a8f77aae94d3612f7b45fa3489778a4d",
+    "pdf_pages": 41,
+    "main_text_last_pdf_page": 28
+  },
+  "recorded_checks": [
+    "Four original main-text Theorems were independently enumerated and visually reviewed, including the complete Theorem 4 continuation. External theorem citations in Lemma titles and prose were excluded. Main text and references end on page 28; no appendix body was read.",
+    "Sixteen original source interfaces preserve machine-level privacy, the ternary sign matrix, strict majority and its support, distinct stability and utility formulas, Laplace noise, both general algorithms, quantization, the two model-specific algorithms, the local Lasso rule and two distinct distribution spaces. Eight auxiliary passages preserve vote counts, notation, model context and explanatory scope.",
+    "Independent reconstruction checks 12 direct theorem uses and 37 related connections. Only Theorem 1 asserts the DGDP predicate. Theorem 2 targets the realized majority vector and s-bar; the later theorems target population signs. Algorithm bodies link through their actual local calls, without importing proof-only composition or sensitivity results.",
+    "Every interface uses source natural-language keywords, a faithful source heading and a meaningful source selector. The two distribution spaces retain distinct source definitions and keyword titles. Every related theorem has a source-backed direct explanation or a traced local dependency path.",
+    "Visual comparison preserved strict majority ties, the opposite zero-sign score conventions, half-budget peeling and all exponential factors, unequal local sample sizes, third centered moments, the mean threshold inequality versus regression equality, random maximum penalty and its probability qualifier, and the continued diagonal condition.",
+    "The printed threshold scope, unused gamma_1, unquantified Delta_0, omega_-l indexing, uncentered covariance notation, algorithm output representation, minimizer/penalty selection and parameter domains remain explicit source issues. No original claim was repaired and no proof correctness is certified.",
+    "Six JSON content artifacts reproduce byte for byte from retained per-paper scripts. Registered source identity, independent inventory, exact claim handoff, source-specific invariants, local graph and reach, names/highlights, mathematical fragments and both structural validators passed."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "24d1246d3c3739e1952788b1effbcd16c696dbe844e85ca9ef74b367d2be3e0b"
+}

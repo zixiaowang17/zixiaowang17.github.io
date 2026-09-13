@@ -1,0 +1,104 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i03-p1227",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T20:55:47.071814+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i03-p1227/T1",
+      "aos-2024-v52-i03-p1227/T2",
+      "aos-2024-v52-i03-p1227/T3",
+      "aos-2024-v52-i03-p1227/T4",
+      "aos-2024-v52-i03-p1227/T5",
+      "aos-2024-v52-i03-p1227/T6"
+    ],
+    "printed_label_check": [
+      [
+        9,
+        "1"
+      ],
+      [
+        10,
+        "2"
+      ],
+      [
+        11,
+        "3"
+      ],
+      [
+        13,
+        "4"
+      ],
+      [
+        16,
+        "5"
+      ],
+      [
+        17,
+        "6"
+      ]
+    ],
+    "method": "Independent bold-heading enumeration and visual comparison of all six original theorem bodies.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Example"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 6,
+    "interfaces": 33,
+    "source_members": 33,
+    "direct_theorem_uses": 29,
+    "related_theorem_connections": 40,
+    "unranked_auxiliary_passages": 8
+  },
+  "source_notes": [
+    "The registered source is arXiv:2212.09009v6, 36 pages, with arXiv date 2 May 2024 and title-page date 05.03.24. The register labels the same bytes as 2212.09009v6.pdf and stores an unversioned export URL. The original inventory retains its precise versioned URL and description; no source substitution or assertion of final-published equivalence is made.",
+    "Main text ends with acknowledgments on page 25; references continue through page 27. Only the Appendix A heading on page 28 was inspected. Appendix bodies, including Algorithms 2 and 3, were not read.",
+    "Six actual bold Theorem headings are included; Theorem 3 spans pages 11 and 12. Both bullets of Theorems 3 and 4 remain complete. Lemmas 1-3 and Corollary 1 are not additional theorem records.",
+    "Theorems 1 and 2 allow general model families and possibly infinite target universes. The main text does not formalize measurability of unions, selected sets or uncountable simultaneous coverage events; these are not replaced by a finite-target restriction.",
+    "Simultaneous coverage for each fixed target subset is different from coverage for a random subset. Assumption 1 supplies pathwise inclusion monotonicity; it is not a probability-monotonicity statement.",
+    "Acceptance sets satisfy probability at least 1-nu, while the prose calls the test level 1-nu. Both the wording and mathematical inequality are preserved.",
+    "Gamma_nu(P) is fixed once P is fixed, B_nu(y) is a random set of distributions, and Gamma-hat-plus is the random augmented target set. Their unions and different roles are not merged.",
+    "Theorem 2 requires the particular acceptance set based on full-family centered intervals and the minimum with the global alpha correction. It is not stated for arbitrary acceptance regions.",
+    "Assumption 2 prints a lowercase gamma-prime family index where the surrounding notation uses a subset Gamma-prime. This typographical inconsistency is retained. Nonnegative widths and zero-standard-error conventions are not explicitly given.",
+    "Interval notation (center plus/minus width) does not separately specify open or closed endpoints. Exact/discrete quantile statements and boundary coverage should not be silently changed by adopting open endpoints.",
+    "The location errors in Theorem 3 share symmetric zero-mean marginals but may be dependent. The fixed-design error law in Section 4 only states mean zero, so the stronger marginal restrictions are not imported into Theorem 5.",
+    "Winner selection is written as a single argmax without a tie-breaking convention. Threshold selection includes equality, even though the surrounding prose says exceeds.",
+    "The file-drawer branch can have no selected targets. Its plausible set may also be empty; the maximum over an empty index set in q and the division by an empty plausible-set cardinality in Theorem 4 have no explicit convention. Vacuous coverage does not by itself define those formulas.",
+    "Theorem 4 requires iid vector observations across sample index, not independent coordinates. Its deviation bound is arbitrary subject to validity, and its final marginal confidence regions may have another construction.",
+    "The q^alpha(index-set) of Section 3.1 is the maximum of coordinate errors, whereas q^alpha(contrast-set) in Section 4 is a supremum of linear contrasts. They remain separate source objects.",
+    "The LASSO neighborhood constrains X^T(y-y-prime). It is a box in transformed-statistic coordinates but can be an unbounded polyhedron in outcome space. The closed inequality is retained.",
+    "The LASSO is written as a selected argmin without a uniqueness/tie-breaking rule, and the main display does not explicitly require positive lambda. Its polyhedral formulas divide by lambda and use Gram inverses, requiring conditions not spelled out at that point.",
+    "The model-sign selection event is represented by strict inequalities in the source. Boundaries of these open regions and models that occur only on local-neighborhood boundaries may require additional conventions for the exact enumeration claim. No almost-sure exception is inserted into Theorem 5.",
+    "The affine formula beta_(M,s) has |M| coordinates but is equated to the full LASSO beta notation. It is evaluated even outside its own region for screening. Zero-extension and noninvertible Gram conventions are not supplied.",
+    "The prose defines B(M,s) as all face-sharing model-sign neighbors, whereas ExactScreening prunes constraints after intersection with the local neighborhood. Lemmas 2 and 3 describe the safe criteria using the former notation. The intended restricted-neighbor interpretation is recorded without silently rewriting the definition.",
+    "Algorithm 1 calls SafeScreening and ExactScreening without explicitly passing the radius or penalty. They are contextual quantities; the omitted appendix implementations are not reconstructed from guessed arguments. The return value drops signs and retains each visited support once.",
+    "Theorem 5 concerns the returned plausible model set. The PoSI projection coefficients, standard errors, Corollary 1 coverage and the following inferential application do not become dependencies of that exact-set statement.",
+    "Theorem 6 assumes absolute loss at most one, not loss in [0,1]. The loss example in the source reverses the argument order. The empirical minimizer existence and measurable selection are not established by the definition alone.",
+    "Gap_n is any bound on the expected supremum, not necessarily that supremum or twice Rademacher complexity. Applying it to a random subclass needs a defined bound functional; its monotonicity, possible law-dependence and measurability are not explicitly stated. The source theorem is preserved without supplying an unprinted condition.",
+    "Theorems 3-6 are applications proved using the general principle; proof provenance alone does not add the generic confidence-region APIs as prerequisites of every specialized statement. All dependency connections in the census follow their own original definitions."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2212.09009v6",
+    "version": "arXiv:2212.09009v6, 2 May 2024",
+    "pdf_sha256": "ea45ffa0b45eaf01a2f6bc84b6758bd5363e3fb2d6478610f1e17d132b95a0e7",
+    "pdf_pages": 36,
+    "main_text_last_pdf_page": 27
+  },
+  "recorded_checks": [
+    "Re-enumerated six bold Theorem headings across all 27 main-text/reference pages and excluded the ordinary-font Theorem 5 reference. Visually compared all complete bodies; the original independently reviewed inventory remains byte-identical.",
+    "Compared 33 original passages with main-text PDF pages 7-17 and preserved eight auxiliary passages. Algorithm 1 is complete; appendix Algorithms 2 and 3 remain unresolved beyond main-text descriptions.",
+    "Independently checked 29 direct uses and 40 related connections. Generic, location-family, bounded-vector, fixed-design LASSO and risk settings remain separate. PoSI coefficient coverage is not a dependency of the exact model-enumeration theorem.",
+    "All interface names are original natural-language source terms, with adjacent naming excerpts where needed. Every member has matching mathematical selectors and the correct source kind; separate quantile and selection definitions are not merged.",
+    "Preserved both branches and factors 4/2, alpha-nu/global minima in Theorem 3, the different random-cardinality correction in Theorem 4, the closed LASSO neighborhood and strict polyhedral inequalities, all queue steps, and signed bounded loss with an arbitrary expected-gap bound in Theorem 6.",
+    "The fixed local PDF is exactly the previously inventoried arXiv v6 source. Version-label and URL aliases in the register are documented; no PDF substitution occurred. The rebuild now resolves the fixed local source directly.",
+    "All six content artifacts rebuilt byte-for-byte in an empty directory. Independent inventory and census validation passed. This source review does not certify proofs or repair source ambiguities."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "32c07babb22a3bdc15a3fc04a9864f86e2c3de2c12a2ecb1f4e20b6f3a47d01b"
+}

@@ -1,0 +1,73 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i03-p0895",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T12:05:31.228120+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i03-p0895/T1",
+      "aos-2024-v52-i03-p0895/T2",
+      "aos-2024-v52-i03-p0895/T3"
+    ],
+    "method": "Independent font-aware enumeration of CMBX12 Theorem headings on pages 1-33 and only the main-text part of page 34. Exactly Theorems 1,2,3 occur, starting on pages 8,12,16. The first two continue onto pages 9 and 13. Two regular-font references on page 18 and all appendix results are excluded.",
+    "printed_label_check": [
+      [
+        8,
+        "1"
+      ],
+      [
+        12,
+        "2"
+      ],
+      [
+        16,
+        "3"
+      ]
+    ],
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 3,
+    "interfaces": 21,
+    "source_members": 21,
+    "direct_theorem_uses": 25,
+    "related_theorem_connections": 37,
+    "unranked_auxiliary_passages": 7
+  },
+  "source_notes": [
+    "Audited arXiv:2211.14698v2. Equality to the final published journal text is not established.",
+    "GCM is represented as a functional of fitted means and empirical variance; its source connection to the residual-product statistic does not import a predictor-resampling kernel.",
+    "SP1 and SP1-prime, true and learned variance weights, and both Lyapunov conditions remain distinct.",
+    "Theorem 3 preserves the original level-control quantifiers and directional assumptions without repairing possible uniformity ambiguities."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2211.14698v2",
+    "version": "arXiv:2211.14698v2",
+    "pdf_sha256": "3ff5392125e3a9af824c39e4d0f70fe16b83fbceaaf981a33896a6fed16741b2",
+    "pdf_pages": 75,
+    "main_text_last_pdf_page": 34
+  },
+  "recorded_checks": [
+    "Title, all four authors, arXiv v2 identifier, both source dates, 75-page count and pinned hash checked. Cached main-text pages match fresh byte-preserving extraction, including the clipped shared page.",
+    "Both independent inventory and final census pass validation, and every original claim field is preserved unchanged.",
+    "Theorem 1 checked across pages 8-9, including NDG1, NDG2, Lyap-1, conditional normal convergence and the blackboard-Q quantile conclusion.",
+    "Theorem 2 checked across pages 12-13, including SP1-prime, SP2, NDG2, variance consistency, Lyap-2, the variance ratio and exact decision-equality event.",
+    "Theorem 3 checked on page 16, preserving every condition (35)-(38), its OR branches, exact nuisance-space membership, directionwise eventual inclusion and power formula.",
+    "Sampling, bold population notation, script null classes, learned-kernel fitting and frozen resampling statistics checked on pages 2,5,6.",
+    "GCM and resampling normalizations, regression-error quantities, SP1/SP2, conditional quantiles and Definition 1 checked on pages 7-8; the additional weighted error and SP1-prime checked on page 12.",
+    "The GPLM family, local paths, Definition 2, uniform null-level requirement and original scalar definition (34) checked on pages 5 and 15.",
+    "Independent graph traversal confirms 25 direct uses and 37 related connections. Theorem 1 acquires no null-class premise, and Theorem 3 acquires no learned resampling kernel or SP1-prime assumption.",
+    "All 21 source members have original natural-language keywords, accurate source kinds, meaningful matching highlight selectors and an explanation for each related theorem path.",
+    "Seven auxiliary passages and twenty-three source-convention notes retain finite-versus-infinite resampling, zero-variance conventions, signed variance consistency and pointwise-versus-uniform distinctions.",
+    "References finish above y=288.68743896484375 on page 34. The evidence image includes only the appendix heading after that boundary; no appendix mathematical statements or proofs are used."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "8ad1a7b154b3834ecb302b47123c9cd0e5ca65c4886a1ecae1315a2be7a75f5f"
+}

@@ -1,0 +1,82 @@
+{
+  "scope": "Public export of the full experiment. Core census and audit files are copied byte-for-byte; per-paper review summaries remove local execution details. PDFs, screenshots, private logs, old HTML generations and Git history are excluded.",
+  "preserved_artifacts": [
+    {
+      "path": "experiments/aos-2024/theorem-inventory.json",
+      "source_sha256": "5af2cc2de6087860fd5a670e9c425ae4c1fdc630c2d346e36951f272c7d2cbb1",
+      "export_sha256": "5af2cc2de6087860fd5a670e9c425ae4c1fdc630c2d346e36951f272c7d2cbb1",
+      "transformation": "none"
+    },
+    {
+      "path": "experiments/aos-2024/ranked-interfaces.json",
+      "source_sha256": "056be068fc87b5aa1cda5af17abed6dfb7e2c006751246ab7571ce9a4fc5596f",
+      "export_sha256": "056be068fc87b5aa1cda5af17abed6dfb7e2c006751246ab7571ce9a4fc5596f",
+      "transformation": "none"
+    },
+    {
+      "path": "experiments/aos-2024/audited.json",
+      "source_sha256": "fc9e73119d1e44059037216fb4fe8a127dd14fa5d02c69382d0d4b4b8d8d6580",
+      "export_sha256": "fc9e73119d1e44059037216fb4fe8a127dd14fa5d02c69382d0d4b4b8d8d6580",
+      "transformation": "none"
+    },
+    {
+      "path": "experiments/aos-2024/mathlib-search-progress.json",
+      "source_sha256": "2fc3316c78f0a6968ae32968240b4c8142b93a5b69f7f47f0b48e78c08d2ccf8",
+      "export_sha256": "2fc3316c78f0a6968ae32968240b4c8142b93a5b69f7f47f0b48e78c08d2ccf8",
+      "transformation": "none"
+    },
+    {
+      "path": "experiments/aos-2024/work-status-audit.json",
+      "source_sha256": "3cd58df0949b96758ee3ca0819e0157082cb49b15d13168bcc30c781c8c6ba27",
+      "export_sha256": "3cd58df0949b96758ee3ca0819e0157082cb49b15d13168bcc30c781c8c6ba27",
+      "transformation": "none"
+    },
+    {
+      "path": "experiments/aos-2024/work-status-validation.json",
+      "source_sha256": "46c5ab2749fc299039223646b8a2c35d307fd749710d9751cb34a869ffd02f8e",
+      "export_sha256": "46c5ab2749fc299039223646b8a2c35d307fd749710d9751cb34a869ffd02f8e",
+      "transformation": "none"
+    },
+    {
+      "path": "experiments/aos-2024/source-followups.json",
+      "source_sha256": "248702c1be9f3ba4002f197d48c1e2f3389790a6bbc6a7914c40c2e20950c1cf",
+      "export_sha256": "248702c1be9f3ba4002f197d48c1e2f3389790a6bbc6a7914c40c2e20950c1cf",
+      "transformation": "none"
+    },
+    {
+      "path": "experiments/aos-2024/source-note-triage.json",
+      "source_sha256": "5a56dc81cdcb4373531fd869cc78e53c49aba10218d3afe0d28dd0796aa45b4b",
+      "export_sha256": "5a56dc81cdcb4373531fd869cc78e53c49aba10218d3afe0d28dd0796aa45b4b",
+      "transformation": "none"
+    },
+    {
+      "path": "experiments/aos-2024/source-note-triage-validation.json",
+      "source_sha256": "0d6e419cd2dde34c3598c58fc658811a1fe3865cfbfb6e584a66d23f8354aab5",
+      "export_sha256": "0d6e419cd2dde34c3598c58fc658811a1fe3865cfbfb6e584a66d23f8354aab5",
+      "transformation": "none"
+    },
+    {
+      "path": "experiments/aos-2024/three-status-review-notes.md",
+      "source_sha256": "78c12930a2512fe63e6f333dcf73adf16af99dbe65963c1e52f9a27925909eb5",
+      "export_sha256": "78c12930a2512fe63e6f333dcf73adf16af99dbe65963c1e52f9a27925909eb5",
+      "transformation": "none"
+    },
+    {
+      "path": "experiments/aos-2024/mathlib-evidence/declarations.json",
+      "source_sha256": "96f9fc1b9e8b7d3af9fb3b298cce2c685e9d79dc2e9f48185ea4158b8395e5f9",
+      "export_sha256": "96f9fc1b9e8b7d3af9fb3b298cce2c685e9d79dc2e9f48185ea4158b8395e5f9",
+      "transformation": "none"
+    },
+    {
+      "path": "experiments/aos-2024/mathlib-evidence/links.json",
+      "source_sha256": "bd65384fd813d5e9ad97de223d6a525d14cf8961b5f00d5ecf4e20bb9e0f4796",
+      "export_sha256": "bd65384fd813d5e9ad97de223d6a525d14cf8961b5f00d5ecf4e20bb9e0f4796",
+      "transformation": "none"
+    }
+  ],
+  "counts": {
+    "papers": 113,
+    "theorems": 637,
+    "interfaces": 2486
+  }
+}

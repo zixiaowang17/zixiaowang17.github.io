@@ -1,0 +1,118 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i04-p1691",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-10T00:51:21.870791+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i04-p1691:theorem-3.1",
+      "aos-2024-v52-i04-p1691:theorem-4.1",
+      "aos-2024-v52-i04-p1691:theorem-4.2",
+      "aos-2024-v52-i04-p1691:theorem-4.3",
+      "aos-2024-v52-i04-p1691:theorem-4.4",
+      "aos-2024-v52-i04-p1691:theorem-4.5",
+      "aos-2024-v52-i04-p1691:theorem-5.1",
+      "aos-2024-v52-i04-p1691:theorem-5.2"
+    ],
+    "printed_label_check": [
+      [
+        10,
+        "3.1"
+      ],
+      [
+        13,
+        "4.1"
+      ],
+      [
+        15,
+        "4.2"
+      ],
+      [
+        16,
+        "4.3"
+      ],
+      [
+        17,
+        "4.4"
+      ],
+      [
+        18,
+        "4.5"
+      ],
+      [
+        20,
+        "5.1"
+      ],
+      [
+        21,
+        "5.2"
+      ]
+    ],
+    "method": "Independent source heading enumeration and visual comparison of all complete theorem statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 8,
+    "interfaces": 30,
+    "source_members": 31,
+    "direct_theorem_uses": 62,
+    "related_theorem_connections": 108,
+    "unranked_auxiliary_passages": 8
+  },
+  "source_notes": [
+    "The source is the registered 67-page arXiv:2309.15300v1 PDF dated 26 September 2023. Main text ends on page 29; the separate supplement beginning on page 30 and its references were not read.",
+    "All eight Theorems are preserved with their stable IDs and complete original statements. Theorems 3.1 and 4.1 include both their basic and additional-regularity branches. Main-text Lemmas, Corollaries and Remarks are not inventoried as Theorems.",
+    "The old D13 joined posterior-contraction prose with a different theorem conclusion. It is retired, with the page-5 context preserved as A3 and Theorem 5.2 retained in the inventory. Ordinary convergence-in-probability and O_P notation remain ambient, not an invented definition.",
+    "Underlying probability measures, absolutely continuous laws and Borel sets are preserved separately in A1. A moment-class dependency requires an actual use of a finite or bounded moment class; it is not inferred from merely being a probability measure.",
+    "The general Wasserstein definition is D3. The quantile/CDF formulas (2.1)–(2.2) in A2 require dimension one, and their quantile infimum uses a strict >s. They are not a general multivariate CDF formula.",
+    "The source max-sliced W_p definition ends with a maximum of W_1 even for general p. A4 preserves this index mismatch. The stated strong equivalence in (2.4) is archived as source content, not independently established or certified here.",
+    "Theorem 3.1 places its projected-density L1 norm on a continuation line after the maximized parentheses in (3.5). The intended product depends on the same direction v and is naturally included in the maximization; original placement is preserved and no normalized scope is silently substituted.",
+    "The active-coordinate set I_h^*(v), h, T and the extra bias inequality are locally bound in Theorem 3.1. Assumption 3.2 and kernel (a) concern only its additional-regularity branch, as in Theorem 4.1.",
+    "The bias definition accepts a supplied kernel. It does not itself assert condition (a); the two relevant theorem branches require that condition separately. The source kernel and its projected version may be signed, so their pushforward notation extends beyond the probability-law definition in D2.",
+    "The Fourier convention uses a positive imaginary exponent and inverse transform with negative exponent and the printed 2pi factor. Complex fractional powers need a branch convention not explicitly supplied in the main text.",
+    "Assumption 3.1 bounds reciprocal Fourier derivatives of orders zero and one and requires first moments and no Fourier zeros. Theorem 5.1 instead bounds derivatives of the Fourier transform itself through order two. These are distinct hypotheses; no proof-based edge identifies them.",
+    "Theorem 4.1 uses an observation-law moment sieve M_(4+delta)(mu_Y), not a signal-law sieve. It also requires entropy, outside-prior mass and a KL small-ball probability. The KL neighborhood bounds the raw second log-ratio moment, not its variance.",
+    "Packing is defined with separation at least epsilon, and its metric can be Hellinger or L1. Hellinger has no 1/sqrt(2) factor. The metric name d in (4.1) is overloaded with the dimension d and is resolved by context.",
+    "The posterior formula needs finite positive normalizing likelihood and measurable sets. Later Pi(mu_Y:...) denotes the induced posterior under convolution, while the prior is specified through the signal law or its mixing parameters. The source identifies observation probability laws with their densities when applying metrics and entropy.",
+    "The source names the Dirichlet process with finite positive base measure but does not construct its finite-dimensional distributions. That named prior is an external mathematical prerequisite, not an invented source definition. The product prior in A7 specifies independence of mixing law and scale.",
+    "The Gaussian shorthand phi_sigma denotes the centered location-scale density. A positive scale is implicit. Assumptions 4.1 and 4.2 impose separate base and scale-tail restrictions; their iota and varpi bounds are strengthened only in Theorems 4.3 and 4.5.",
+    "Theorems 4.2 and 4.4 assert that the conditions in (4.1) are satisfied, in addition to density posterior contraction. Their statements do not rebind every sieve constant or delta from Theorem 4.1; these are inherited conditions whose exact scope is retained.",
+    "Theorem 4.5 inherits the sampling-density assumptions and the prior of Theorem 4.4, with iota,varpi>1. It does not inherit the conclusion (4.1) as a new hypothesis, nor Assumption 3.2 merely because a proof uses the general contraction theorem.",
+    "Assumption 4.3 is a global univariate density bound with exponent 1+C0>1. Theorem 5.2 requires only an arbitrary positive multivariate exponential rate outside a compact set. Their common keyword does not make the conditions equivalent.",
+    "Assumption 4.4 controls both exponential tilts b=minus/plus one half in a Fourier Sobolev norm. It is not the unweighted Sobolev ball in Theorem 5.1, nor the projected L1 regularity in Assumption 3.2.",
+    "Assumption 4.5 preserves its envelope ratio, exponential weight and the smallest integer m at least max(2,(alpha+2)/2). The source does not state a convention for L0/f0X at zeros of f0X; this remains an interpretation issue rather than a rewritten assumption.",
+    "The cutoff tau is only partially specified in the main text; the external construction in reference [6] is not imported. Its Fourier bound is (16^2/15) exp(-sqrt(|x|/15)), with the divisor inside the square root. Do not invent a unique transition on 1<=|u|<=17/15.",
+    "The raw deconvolution integral in D23 is retained as printed without adding a real-part operation. It need not be nonnegative; the associated signed measure and projected CDF notation require the signed interpretation implicit in the source.",
+    "The approximate minimizer D24 is probability-valued and has O(n^-1/2) slack against every candidate first-moment law. Its measurable selection and existence are not constructed in the main-text definition; the raw estimator is not substituted for it.",
+    "Theorem 5.2 uses the standing iid convolution model and standard Laplace noise, so beta=2 in its preceding bandwidth. Its stated rate is n^(-1/(4d+1)); the following extension paragraph prints a different rate and assumption reference and is not used to alter the theorem.",
+    "Theorem 5.1 is a liminf lower bound with strict >C, a supremum over the intersection of a bounded first-moment probability class and a Sobolev ball, and every estimator. A fixed alpha is not a new adaptive procedure, and proof-only constructions are not extracted as dependencies.",
+    "Empirical measure P_n in the characteristic function, product sampling expectation, CDFs and density notation, Euclidean norms, Lebesgue integrals and probabilistic order are ambient standard notation. Where the source only uses these symbols, no invented verbatim definition is provided.",
+    "Constants in lesssim are described on page 7 as universal or dependent only on the true sampling law. Uniformity over directions and sieve elements is preserved where the theorem explicitly demands it; parameter-uniform results not stated in the source are not claimed.",
+    "Source statements, source identities and local dependencies have been reviewed. This census does not certify the correctness of proofs or external cited results, and no excluded supplementary assumptions are silently supplied."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2309.15300v1",
+    "version": "arXiv:2309.15300v1, 26 September 2023",
+    "pdf_sha256": "d8a846505214e608346b123e55283166647fd710618859935405b3d6c1f2b8dc",
+    "pdf_pages": 67,
+    "main_text_last_pdf_page": 29
+  },
+  "recorded_checks": [
+    "Eight original main-text Theorems were independently enumerated and visually compared with the registered PDF, including both regularity branches in Theorems 3.1 and 4.1. Stable IDs and all original theorem statements are unchanged. Main text ends at the acknowledgements on page 29; the separate supplement beginning on page 30 is excluded.",
+    "Thirty interfaces retain 31 original source passages. Moment classes, Wasserstein distance, the two Fourier conditions, projected smoothness and bias, convolution/posterior/prior objects, source assumptions and the deconvolution estimators remain distinct. Gaussian and Fourier definitions are explicit. Eight auxiliary passages preserve ambient probability spaces, one-dimensional identities, convergence and sampling context without creating artificial ranked demand.",
+    "Independent graph reconstruction verifies 62 direct uses and 108 related connections. The bias definition does not impose kernel condition (a). Theorems 4.2 and 4.4 assert condition (4.1); Theorems 4.3 and 4.5 do not acquire that conclusion as a hypothesis. Theorem 4.5 inherits the assumptions of 4.4 with stronger prior tails. No proof-only dependency is imported.",
+    "Every interface has natural-language source keywords, a faithful source heading, original passages and matching selectors. Related-theorem explanations follow actual local paths. The shared exponential-tail keyword group preserves its two noninterchangeable source conditions and member-specific links.",
+    "The moment sieve is for mu_Y, the lower bound uses Fourier derivatives of orders 0,1,2 and a strict liminf inequality, and the upper bound uses the probability-valued approximate minimizer. The cutoff Fourier bound has the entire ratio |x|/15 under its square root. The signed raw estimator has no invented real-part operation.",
+    "Twenty-nine source issues retain implicit model conventions, distinct tail and regularity conditions, the max-sliced index mismatch, projected signed kernels, fractional-power conventions and approximate-minimizer selection. The external cutoff construction and excluded supplement references remain unresolved. Original source claims are not repaired and proofs are not certified.",
+    "Six JSON content artifacts reproduce byte for byte from retained per-paper scripts. Registered source identity, independent inventory, exact claim handoff, source-specific formula checks, graph and reach, keywords/highlights, mathematical fragments and both structural validators passed."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "5e405e7d3c8903618705b906668bf1646349381678f7921835cadb6a70b25694"
+}

@@ -1,0 +1,292 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i06-p2641",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-11T01:45:38.754081+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i06-p2641/T3.1",
+      "aos-2024-v52-i06-p2641/T3.2",
+      "aos-2024-v52-i06-p2641/T3.3",
+      "aos-2024-v52-i06-p2641/T3.4",
+      "aos-2024-v52-i06-p2641/T3.5"
+    ],
+    "printed_label_check": [
+      [
+        11,
+        "3.1"
+      ],
+      [
+        13,
+        "3.2"
+      ],
+      [
+        13,
+        "3.3"
+      ],
+      [
+        22,
+        "3.4"
+      ],
+      [
+        23,
+        "3.5"
+      ]
+    ],
+    "method": "Independent actual small-cap heading enumeration and visual comparison of all five complete statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 5,
+    "interfaces": 37,
+    "source_members": 37,
+    "direct_theorem_uses": 35,
+    "related_theorem_connections": 80,
+    "unranked_auxiliary_passages": 14
+  },
+  "source_notes": [
+    {
+      "issue_id": "source-scope",
+      "evidence": [
+        {
+          "page": 1,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 23,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 24,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Registered arXiv v3 has 58 pages. Main text ends on page 24 before REFERENCES at y650.489; page text clipped at644. Exactly Theorems3.1–3.5. Lemma4.1, propositions and corollaries are not added to the inventory; supplementary bodies starting28 are excluded."
+    },
+    {
+      "issue_id": "radical-scopes",
+      "evidence": [
+        {
+          "page": 10,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Enlarged PDF formula crops confirm R0 includes sigma*sqrt(dk)*d_-k, Rcal_k2 begins sqrt(rk)*r_-k and ends sigma*sqrt(dk)*r*T^(-1/2), and Rcal_k1 contains sqrt(dk)*r_-k both in its first and third terms. Those factors outside radicals must not be moved underneath them. The first R0 radical does cover dk*d_-k*r_-k."
+    },
+    {
+      "issue_id": "noise-and-conditioning",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 9,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 10,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The model prose says the core and noise processes are independent. Assumption1 separately states conditionally independent Gaussian noise tensors and a second-moment bound. Its conditioning names the full factor process over integers, whereas bar-E is defined using F1,...,FT. The displayed assumption does not explicitly state conditional mean zero; no such clause is silently added to the original statement."
+    },
+    {
+      "issue_id": "conditional-and-unconditional-claims",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "T3.1/T3.2 print bar-E for the terminal risk but unqualified probability for the joint event, while rate quantities themselves depend on the factor realization. Preserve this distinction; whether the event probability is intended conditionally is not clarified by rewriting it. No proof from supplementary material is consulted."
+    },
+    {
+      "issue_id": "algorithm-stopping-and-iteration-domain",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 14,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Algorithm1 stops at tolerance or maximum J, but T3.1–T3.3 assert bounds for all m>=0. The source does not explicitly define how iterates are extended after stopping for that universal statement. Keep the recurrence and stopping rule intact; do not manufacture a constant continuation. T3.1/T3.2 use floor, not ceiling, for the displayed terminal J."
+    },
+    {
+      "issue_id": "three-three-rate-import",
+      "evidence": [
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 14,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "T3.3 explicitly names unstarred R0 even though its displayed assumption/conclusion instead use starred R0; retain the named object. It imports rate definitions from T3.1/T3.2, not both full theorem assumption sets. In particular h0<=T/4 is not repeated in T3.3; applicability may rely on surrounding shared conventions, but the missing clause is not inserted into its original statement."
+    },
+    {
+      "issue_id": "rate-domains",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 10,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The rates contain inverse lambda or lambda-star and sqrt signal quantities, requiring positive nonzero strengths for finite real evaluation. The displayed general theorems do not add separate rank/ergodicity/mixing assumptions on the factors. Record the formula-domain requirement without importing stronger sufficient hypotheses from subsequent corollaries."
+    },
+    {
+      "issue_id": "operator-selection",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 8,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "LSVD_m specifies leading singular vectors but no tie-breaking or measurable selection. Algorithm1 prints INIT_k and ITER_k in addition to the operator’s existing k notation. Preserve the formulas and leave selection conventions explicit as ambient requirements for a formal implementation."
+    },
+    {
+      "issue_id": "distinct-procedures",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 8,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "iTOPUP uses TOPUP for both steps; iTIPUP uses TIPUP for both; TIPUP-iTOPUP uses TIPUP only for initialization. T3.3 does not supply a theorem for the reverse mixed branch. HOOI appears in comparison and proof motivation, not as the definition of all three procedures."
+    },
+    {
+      "issue_id": "hypothesis-quantifiers",
+      "evidence": [
+        {
+          "page": 21,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 22,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "HypothesisI prints any delta>0 and a limsup of testing risk >1/2; T3.4 invokes it for some delta in(0,1/2). Preserve the wording rather than normalize quantifiers or replace limsup by liminf. Its formal test line says polynomial-time, while preceding prose mentions randomized polynomial time. T3.4 explicitly quantifies randomized estimators."
+    },
+    {
+      "issue_id": "lower-model-independence",
+      "evidence": [
+        {
+          "page": 22,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The lower-bound class has independent factor component series and positive average lag-one moments. It does not say the factor sequence is independent across time; that would conflict with mean zero and positive lag-one moments. Gaussian iid noise entries are explicit in this class, stronger than general Assumption1."
+    },
+    {
+      "issue_id": "lower-model-and-minimax-notation",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 22,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 23,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The paper calls a class of tensor data-generating distributions a probability space and writes sample tuples as its members inside the supremum. Preserve the source notation. Sigma_min is globally smallest nontrivial singular value; whether the covariance restriction additionally means full rank is not made explicit by that convention. Estimator orthonormality in the lower-bound quantifiers is inferred from the loading-space estimation task, not restated in the theorem."
+    },
+    {
+      "issue_id": "proof-only-and-corollary-imports",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 14,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 23,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Proposition3.1 supplies definitions Rcal_k2/R_TOPUP and a separate guarantee; T3.1 does not import its maxR0=o(1) condition merely by using those definitions. Lemma4.1 is proof-only. Assumption2 and later conditions specialize corollaries; no such assumptions are added to the five Theorems without a statement-level reference."
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2006.02611v3",
+    "version": "arXiv:2006.02611v3, marked 18 Jul 2024",
+    "pdf_sha256": "75c32f603a25c35f73c4d498d58a074623bae8b97104a17fd2c99e293659d987",
+    "pdf_pages": 58,
+    "main_text_last_pdf_page": 24
+  },
+  "recorded_checks": [
+    "Exactly five complete main-text Theorems3.1–3.5, independently enumerated from actual small-cap headings and compared visually, including T3.3 across pages13–14. Main text ends on24 before references; supplements are excluded.",
+    "Thirty-seven original entries and fourteen auxiliary passages preserve tensor operations, the general model and loading projection, TOPUP/TIPUP constructions, full Algorithm1 and its three branches, conditional noise assumption and expectation, signal moment tensors, distinct strengths/rates, HPC testing/HypothesisI and the separate lower-bound distribution class.",
+    "Independent source-clause graph reconstruction verifies35 direct uses and80 related-theorem connections. The three algorithm branches stay distinct. T3.3 imports rate definitions, not complete theorem hypotheses. Rcal_k2 is separate from the R_TOPUP formula. Starred rate definitions do not inherit the risk assertion surrounding equation3.16.",
+    "Thirteen notes preserve conditional-versus-unconditional notation, missing post-stop iterate conventions, T3.3 lag-bound wording, positive signal-strength domains, singular-vector selection, computational-hypothesis quantifiers and the lower-class covariance/independence notation. Enlarged crops verify all ambiguous radical extents in3.7–3.10. No appendix proof is used to repair the source.",
+    "T3.4 assumes HypothesisI and uses a minimum over modes of squared spectral error. T3.5 has unsquared spectral loss and no computational restriction. Both use their own orthonormal-loading, serial-factor, iid-noise class(3.34)–(3.35), without importing general Assumption1 by implication.",
+    "All37 entries have literal author terminology, preserved source kind/heading and matching source selectors. All80 related links have valid same-paper paths and source-specific explanations. Publication-layout rendering and mathlib availability are outside this stage.",
+    "All six content JSON files reproduce byte for byte in a fresh empty directory. Seven saved scripts support inventory, extraction, ambient context, finalization, rebuilding and independent source review. Reproduction does not claim a new semantic PDF review."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "a6b6dc54405ba788fa0981c590e0936490cea87e78b7206424e887ed84f24a3e"
+}

@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "scope": "Release skill package",
+  "checks": [
+    "All three skill frontmatters validated",
+    "Installer tested in an empty directory and refused a conflicting installation without changing files",
+    "Synthetic demo inventory/census/audit handoff and full HTML reproduction passed",
+    "Complete synthetic renderer/workflow regression suite passed"
+  ],
+  "versions": {
+    "python": "3.9.6",
+    "pandoc": "3.8.2.1"
+  },
+  "limits": "Software checks; not a new source review or mathematical audit."
+}

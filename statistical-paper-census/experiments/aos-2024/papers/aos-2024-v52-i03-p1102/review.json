@@ -1,0 +1,111 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i03-p1102",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T14:25:50.228815+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i03-p1102/T3.1",
+      "aos-2024-v52-i03-p1102/T3.2",
+      "aos-2024-v52-i03-p1102/T3.4",
+      "aos-2024-v52-i03-p1102/T3.5",
+      "aos-2024-v52-i03-p1102/T3.6",
+      "aos-2024-v52-i03-p1102/T3.8",
+      "aos-2024-v52-i03-p1102/T3.9"
+    ],
+    "method": "Independent uppercase THEOREM-heading enumeration on pages 1–25, followed by visual review of all original statements and required definition passages.",
+    "printed_label_check": [
+      [
+        9,
+        "3.1"
+      ],
+      [
+        10,
+        "3.2"
+      ],
+      [
+        11,
+        "3.4"
+      ],
+      [
+        12,
+        "3.5"
+      ],
+      [
+        12,
+        "3.6"
+      ],
+      [
+        12,
+        "3.8"
+      ],
+      [
+        13,
+        "3.9"
+      ]
+    ],
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 7,
+    "interfaces": 22,
+    "source_members": 22,
+    "direct_theorem_uses": 32,
+    "related_theorem_connections": 62,
+    "unranked_auxiliary_passages": 7
+  },
+  "source_notes": [
+    "Pinned source is arXiv:2111.11694v5 dated 13 October 2024, 108 pages, with a Published in the Annals of Statistics header. Exact final-journal equivalence is not asserted.",
+    "All seven actual Theorems are in pages 9–13 and are individually complete on their listed pages. Ordinary-case references and results labeled Proposition, Lemma or Remark are not extra Theorems.",
+    "Main text and references end on page 25. The appendix roadmap and Appendix A heading on page 26 were inspected only for the boundary; all appendix mathematics is excluded.",
+    "The original MARS basis permits both orientations of the hinge, while the infinite-dimensional class uses only positive hinges with knots in [0,1). The source explains the linear-span reduction; no original formula is rewritten to include the other orientation.",
+    "The source describes an integer interaction cutoff s<=d and uses |alpha|<=s in all class/optimization formulas. Its informal phrase smaller than a pre-chosen integer is not substituted as a strict cutoff.",
+    "The class F_{infinity-mars}^{d,s} uses finite signed Borel measures, not probability measures or nonnegative mixtures. Their total variation and all-zero atoms have different roles in the complexity.",
+    "V_mars excludes the all-zero knot vector in every interaction measure. The intercept and all multilinear products of coordinates remain unpenalized; the constraint is not an l1 bound on every coefficient.",
+    "The source proves uniqueness of the signed-measure representation in Appendix E.1, but its complete definition and the complexity formula are in the main text. The appendix proof is unnecessary for statement resolution and is not read.",
+    "The exact estimator is any argmin solution of (7); Proposition 2.2 states that fitted values agree even when the function solution is not unique. The source does not specify a measurable tie-selection rule or uniqueness away from observed points.",
+    "The coefficient objective (13) and reconstruction (14) are explicitly reused for the approximate estimator with a different grid, J and M. The observed-data knot instantiation is retained separately, not imported into approximate-estimator requirements.",
+    "The grid sets include the right endpoint 1, while the half-open measure domain and coefficient indices omit that endpoint. A hinge at the right endpoint vanishes on the domain.",
+    "The observed-data grid count n_k in Section 2 gives n_k+1 points and an obligatory endpoint 1. Section 3.1 reuses n_k for the fixed lattice with n_k points and no obligatory right endpoint. The approximate method uses separately chosen positive integers N_k.",
+    "The fixed lattice only requires a positive lower spacing bound and a zero left endpoint; it need not be equally spaced. Its displayed equality is an equality of sets, without separately specifying a no-repeated-observations convention.",
+    "Fixed-design errors are independent and sub-Gaussian with a shared mgf bound, but not explicitly identically distributed. Random-design errors are iid and independent of iid design variables, with finite Lorentz L^{5,1} norm.",
+    "The tail-integral condition (21) is not merely a finite fifth moment. The source states the distinction in the main text; it is preserved in the noise assumption.",
+    "Theorems 3.1 and 3.4 bound expected empirical loss. Theorems 3.5 and 3.8 bound random population loss in probability. Theorem 3.9 instead bounds an expected minimax population risk.",
+    "D_m uses a closed knot cube and total variation at most one on the entire cube, including the zero atom. It has no free intercept or unpenalized multilinear part. It is not identified with the original MARS complexity ball.",
+    "The main text names metric entropy and bracketing numbers but does not fully define covering centers, open/closed radii, bracket versions or almost-everywhere versus pointwise order. These remain explicitly noted conventional ambient meanings.",
+    "Theorem 3.2 includes the m=1 removal of the logarithmic factor. Theorem 3.6 is stated for every epsilon>0 with an absolute logarithm, and both analytic statements are retained without regression assumptions.",
+    "The approximate-grid condition in Theorem 3.8 is Omega(n^{4/15}); the fixed-design discussion uses a different n^{2/5} sufficient scale. They are not conflated.",
+    "The paragraph preceding Theorem 3.9 says p0 is bounded below by b but prints ||p0||_infinity>=b. A sup-norm lower bound does not establish a density lower bound; neither prose nor formula is silently corrected.",
+    "Fraktur M denotes the minimax risk. Script R denotes fixed-design risk, script F,D the function classes, and script U the knot sets. Bold zero/one vectors and the bold indicator in the interaction order are preserved.",
+    "V is positive in the estimator definition. Rate formulas also divide by sigma or V and use logarithms, without all theorem statements restating positive nondegenerate parameter ranges. No additional hypotheses are inserted into the originals.",
+    "The minimax lower bound has a logarithm without an added 2; its unspecified sufficiently-large sample constant must make the displayed fractional-power expression meaningful. The source bound is retained as written.",
+    "Hardy–Krause variation occurs in alternative smoothness characterizations, and integrated Brownian sheets occur in entropy proofs. Neither is a statement dependency of these seven Theorems under their original main-text definitions."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2111.11694v5",
+    "version": "arXiv:2111.11694v5",
+    "pdf_sha256": "e246c0178b3d485bf01f7927298d72eac7c3ca2c32a3294fb650936a373b826a",
+    "pdf_pages": 108,
+    "main_text_last_pdf_page": 25
+  },
+  "recorded_checks": [
+    "Pinned title, all three authors, version/date, page count and PDF hashes verified. All 25 archived main-text pages match fresh extraction byte for byte; the reference endpoint and following appendix heading were visually checked.",
+    "Independent uppercase-heading enumeration confirms all seven main-text Theorems and excludes four ordinary-case mentions. Complete original bodies on pages 9–13 are preserved unchanged at handoff.",
+    "Both fixed-design risk bounds retain their logarithmic powers, variance remainder and the approximate 8V^2/N^2 term. The two entropy results retain distinct epsilon ranges and the m=1 clause.",
+    "Random-design rates remain statements in probability for squared population error. The approximate-grid exponent 4/15 and all dependencies of its constant are preserved. The minimax bound retains fraktur M and its original logarithm/sample threshold.",
+    "The original signed-measure class, all-zero atom exclusion, exact optimization, coefficient objective and fixed-grid approximation/reconstruction are checked against pages 1–9. Observed grids are kept separate from approximate grids.",
+    "The lattice and sub-Gaussian fixed-design model are distinct from iid bounded-density random design with L^{5,1} errors. The Gaussian/lower-density minimax restriction and its prose/formula mismatch are retained.",
+    "D_m has a closed-cube total-variation bound including zero, distinct from the MARS complexity ball. Metric and bracketing numbers use the named source quantities with explicitly noted conventional definitions.",
+    "Independent mathematical graph expectations verify 32 direct uses and 62 related connections. Entropy statements do not inherit sampling assumptions; risk statements do not inherit proof entropy. The minimax infimum does not depend on either proposed estimator.",
+    "The approximate construction depends on the original feasible class and complexity plus the reused coefficient formula, not a chosen exact-estimator solution. Every original source kind, keyword, selector and path explanation is checked.",
+    "All evidence remains in main text and all original passages have balanced math and English prose. PDF fonts separately confirm fraktur minimax M, script classes/risks/grids, and bold zero/one notation. Appendix definitions and proofs are not used."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "66b3a8c408253ae9dcb74bd8b2a14fad436361f204508ccf908a14158890521d"
+}

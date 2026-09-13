@@ -1,0 +1,85 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i04-p1410",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T22:20:59.469783+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i04-p1410/T1",
+      "aos-2024-v52-i04-p1410/T2",
+      "aos-2024-v52-i04-p1410/T4"
+    ],
+    "printed_label_check": [
+      [
+        7,
+        "1"
+      ],
+      [
+        10,
+        "2"
+      ],
+      [
+        10,
+        "4"
+      ]
+    ],
+    "method": "Independent actual-heading enumeration and visual comparison of all complete theorem bodies.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 3,
+    "interfaces": 16,
+    "source_members": 16,
+    "direct_theorem_uses": 21,
+    "related_theorem_connections": 29,
+    "unranked_auxiliary_passages": 9
+  },
+  "source_notes": [
+    "The registered source is the 31-page arXiv:2208.07610v2 PDF, dated 17 October 2023. The precise versioned URL is saved along with the register filename and export-URL aliases.",
+    "Exactly Theorems 1, 2 and 4 occur in main text. Number 3 belongs to a Corollary. References end on page 23 and Appendix A begins separately on page 24; no appendix body was read.",
+    "Theorem 1 requires equality between a full-data KL infimum and an attained reduced-data minimum. It does not assert existence of a full-data minimizing pair, and V_n is any measurable statistic rather than a required invariant.",
+    "Theorem 1 has two potentially different probability priors on G. The optimum is a ratio of mixtures of reduced densities, not a mixture of likelihood ratios or an assumed Haar-prior Bayes factor.",
+    "Theorem 2 requires all three parts of Assumption 1 and amenability. Both log likelihood ratios have 1+epsilon moments, one under Q_1 and one under Q^{M_n}; the identity subscript is not a sample index.",
+    "Theorem 4 invokes only Part 3 of Assumption 1. For every g it requires some h with finite KL(Q_g,P_h); it does not require a single h to work for all g or finiteness for every pair.",
+    "Theorem 4 proves a constant oracle value and then equivalence of the sets of optimizers for the absolute and relative criteria. These definitions remain separate, and existence of an optimizer is not added to the theorem.",
+    "The source defines e-statistics as nonnegative real statistics, allowing zero. Logarithmic objectives therefore need the usual extended-value convention at zero; this and expectation well-definedness are not explicitly spelled out in the displayed definition.",
+    "The KL definition uses the Radon-Nikodym derivative dQ/dP but does not explicitly define the non-absolutely-continuous case. Finite KL requirements and common-support statements are preserved without fabricating a complete source convention.",
+    "Theorem 1 uses reduced densities without a separately printed dominating-measure specification in that theorem. Density existence and measurability are part of interpreting its formula; no extra Assumption 1 clauses are inserted into it.",
+    "Assumption 1 Part 1 says Polish followed by a dash and separable, completely metrizable and locally compact. All listed properties are retained; the wording is not taken to make local compactness part of the standard definition of Polish.",
+    "The main-text description of a topological group specifies continuity of the group operation but does not explicitly mention continuity of inversion. Preserve the description; a formalization must resolve this usual ambient convention.",
+    "Part 3 requires a common relatively left-invariant dominating measure and a single common support for all densities. It is not silently replaced by the left-invariant measure used in the subsequent proof.",
+    "The amenability definition on page 5 is a sequence with convergence separately for each measurable B and each g. No supremum over sets or uniform convergence on compact sets is written there; the source quantifiers are preserved.",
+    "Page 18 gives a second amenability formulation using increasing symmetric compact sets and a right-Haar ratio. The source calls it equivalent; this is retained as auxiliary context, without certifying equivalence or filling in unspecified positivity and empty-set conventions.",
+    "The componentwise action notation on page 4 switches from input x^n to capital gX^n. This typographical mismatch remains in the original passage.",
+    "Section 2.1 introduces independent copies and overloads P,Q between one-observation and sample laws. Pi^g is a mixture binding the group index; it is not group exponentiation. Q^{M_n} is instead an image law.",
+    "The reduced laws do not carry a group subscript because invariance removes that nuisance index within each of the two fixed invariant-parameter hypotheses. This does not identify null and alternative reduced laws with each other.",
+    "The reparameterization discussion uses free action on the parameter space to identify each orbit with G. The extracted testing problem is the resulting group-indexed model; no reparameterization proof or extra free-action clause is appended to Theorem 4.",
+    "Anytime-validity, martingales, optional stopping, composite-invariant-parameter extensions and example-specific formulas occur as propositions, corollaries or discussion. They are not additional Theorems and do not become dependencies of these three statements solely because they occur in the same paper.",
+    "The census checks original statements, source meanings and dependency paths. It does not certify the proofs or the paper's external group-theoretic equivalence claims, and it does not audit mathlib availability."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2208.07610v2",
+    "version": "arXiv:2208.07610v2, 17 October 2023",
+    "pdf_sha256": "e9e5fd4e0096e3be7e7b07d083fd73818791feafd69a65676c289c0f63db6223",
+    "pdf_pages": 31,
+    "main_text_last_pdf_page": 23
+  },
+  "recorded_checks": [
+    "Three full original Theorems 1, 2 and 4 were compared visually on pages 7 and 10. Independent enumeration covers all main-text pages 1-23 and excludes Corollary 3, citations and proof headings. Every optimization formula, moment condition and conclusion is retained.",
+    "Sixteen supporting passages and nine auxiliary passages were compared with pages 1-10 and 18. They preserve image and mixture laws, ordered KL, group actions and invariance, all separate assumption parts, amenability, e-statistics and both GROW criteria.",
+    "Independent graph reconstruction verifies 21 direct uses and 29 related connections. Theorem 1 does not acquire a maximal-invariance or amenability requirement. Theorem 4 includes only Part 3 of Assumption 1, not Parts 1-2. Theorem 2 concerns KL equality and does not acquire downstream e-statistic or martingale conclusions.",
+    "Each interface has a source-derived natural-language keyword and a meaning-bearing source highlight. Named assumption parts retain source identity. All related-theorem explanations follow their actual paper-local paths.",
+    "Visual checks preserve the full-data infimum versus reduced-data minimum, two separate starred priors, both 1+epsilon moments with their distinct laws, and the for-every-g there-exists-h quantifiers. Original pointwise amenability and the later compact-set formulation are kept separately.",
+    "Twenty-one source notes record the density and logarithm conventions, topological-group and Polish wording, relative left invariance and common support, and the source reparameterization context. Appendix bodies and external proof details remain excluded. No group-theoretic equivalence or proof is certified.",
+    "All six content artifacts reproduced byte-for-byte in an empty directory. Independent source hash, inventory identity, theorem enumeration, graph, mathematical-fragment and schema checks passed. Rebuild does not renew source review."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "cfa94f07b2e1f7d15ead83faf8de8d41809725e846c8ae9ea251d394fa66e895"
+}

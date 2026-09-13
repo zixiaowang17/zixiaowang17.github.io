@@ -1,0 +1,114 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i04-p1360",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T22:00:09.170439+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i04-p1360/T1",
+      "aos-2024-v52-i04-p1360/T2",
+      "aos-2024-v52-i04-p1360/T3",
+      "aos-2024-v52-i04-p1360/T4",
+      "aos-2024-v52-i04-p1360/T5",
+      "aos-2024-v52-i04-p1360/T6",
+      "aos-2024-v52-i04-p1360/T7"
+    ],
+    "printed_label_check": [
+      [
+        6,
+        "1"
+      ],
+      [
+        7,
+        "2"
+      ],
+      [
+        9,
+        "3"
+      ],
+      [
+        10,
+        "4"
+      ],
+      [
+        11,
+        "5"
+      ],
+      [
+        12,
+        "6"
+      ],
+      [
+        14,
+        "7"
+      ]
+    ],
+    "method": "Independent actual-heading enumeration and visual comparison of all complete theorem bodies.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 7,
+    "interfaces": 29,
+    "source_members": 29,
+    "direct_theorem_uses": 58,
+    "related_theorem_connections": 94,
+    "unranked_auxiliary_passages": 9
+  },
+  "source_notes": [
+    "The pinned source is arXiv:2111.06859v1 dated 12 November 2021, 46 pages. Precise versioned URL and hash are retained; the register filename and unversioned export URL are aliases for the same bytes.",
+    "Seven original Theorems occur in main text. Theorem 2 continues on page 8 and Theorem 4 on page 11. Main text and references end above Appendix A on page 22; no appendix body is admitted.",
+    "The baseline consists of iid raw observations. Theorems 3-4 instead use retained stationary observations with gaps; Theorem 5 uses cycle reward-duration pairs. Reuse of the statistic formulas does not import iid raw observations into those settings.",
+    "The source defines the target as psi=psi(P), then prints psi_0 in W_SJ. The original target alias is preserved and explained rather than replaced in the formula.",
+    "The sample variance for batching centers at the average batch estimate; sectioning centers at the full empirical estimate. Their denominators and the SB hybrid are not interchangeable.",
+    "The sample variance formulas require K>1 and may vanish on finite samples. The source gives no totalized statistic value on a zero denominator; no convention is fabricated.",
+    "Theorem 1 assumes a uniform scalar Edgeworth expansion with alternating parity. The p_j here are not automatically the same objects as the density-weighted p_1,p_2 later defined for Algorithm 1.",
+    "Theorem 2 has separate K>=r+3 and K>=4 conclusions. The source comment about potentially relaxing K with a Peano remainder is not inserted into the original theorem.",
+    "Definition 1 uses sigma instead of alpha in its final alpha(n) expression. The two-field mixing formula is otherwise explicit. Both printed symbols are retained.",
+    "Definition 2 says there exists a measure mu, without nonzero or sigma-finite qualifications. These normally relevant requirements are not silently added to the quotation.",
+    "Theorem 3 prints the mixing limit as n->0, despite the surrounding large-batch-size setting. It is retained as printed.",
+    "Theorem 3 uses r derivatives of f whereas Theorem 2 uses r+1. Its uniform Cramer expression involves iuX_1 with vector u; the pairing convention and the role of g are not clarified by silently rewriting it.",
+    "Theorem 3 requires a recurrent atom but does not define one in the main text. It makes no symmetric-coverage O(n^-1) claim, as the following paragraph explicitly confirms.",
+    "Theorem 4 states only positive lambda while its split transition and residual kernel require probability-kernel constraints, including a meaningful inverse of 1-lambda. The binary-state range for delta is implicit, and delta is also used for the gap exponent.",
+    "Theorem 4 uses alpha for an initial distribution as well as alpha(n) for mixing, and P for both stationary law and transition kernel. The local roles are preserved and disambiguated in analysis.",
+    "Theorem 4 does not explicitly repeat a differentiability requirement on f. The general Section 5 regularity discussion is recorded without choosing and inserting an unstated derivative order into the theorem.",
+    "Theorem 4 uses G as a centered cycle sum, while Theorem 3 uses G as an absolute reward sum. The different definitions and starting laws in the moment conditions remain separate.",
+    "The regenerative construction starts at T_1 and excludes the initial incomplete cycle. Its target is a ratio of expectations, not an expectation of cycle ratios. No fixed calendar-time gap scheme is imposed on these pairs.",
+    "Theorem 6 inherits Theorem 2 with r=2 and targets the symmetric n^(-1) coefficient. Main-text discussion corroborates K>=5; the separate batching-only algorithm in Appendix C is excluded.",
+    "Algorithm 1 reuses X_i for freshly simulated Gaussian draws after taking original-law covariance and cumulants as inputs. This simulation step is not a Gaussian original-data assumption.",
+    "Equation (7) calls p_1,p_2 polynomials but includes the Gaussian density factor, and p_1 includes a leading 1. These exact source expressions are retained, not replaced by conventional Edgeworth density polynomials.",
+    "Algorithm 1 Step 3 divides a term in F_xx by an unexplained c. F_+ and F_- contain no division by the first gradient coordinate, although the stated hypotheses only require a nonzero gradient, not a normalized first coordinate.",
+    "Algorithm 1 Step 4 uses y_x, rather than y_x^(-), in the printed y_xx^(-) formula. It is not silently corrected.",
+    "Algorithm 1 Step 5 has no printed plus sign between the first bracketed term and the following parenthesis. It also uses p_1(x(A)) without specifying a scalar-versus-joint convention and has phi-prime only in the last negative-side term. All these expressions remain as printed.",
+    "The sectioning example alternates A_i and X_i and uses m and f_0 without a local definition. It prints b_2 as a contraction of the second-derivative tensor v with three vectors. No correction to w is inserted.",
+    "The sectioning prose names coefficients d,d-prime but its formulas and Algorithm 1 use lambda,lambda-prime. The inline factor 2 in the lambda-prime display is multiplication, not a superscript square; visual comparison resolved that typography.",
+    "Explicit Taylor coefficients for batching, SB and SJ are relegated to excluded Section B. The generic Taylor instructions in Algorithm 1 are preserved, but unavailable original formulas are not reconstructed and presented as quotations.",
+    "Theorem 7 fixes n and lets K grow, and gives no SB limit. Its spelling differantiable is retained. The source defines no full influence-function formula or tangent topology for its Gateaux assumption.",
+    "Theorem 7 places division by sigma outside the square root in both sectioning CDF arguments. A high-resolution crop confirms this; it is not a source error to be repaired.",
+    "This census checks original statements and their dependencies. It does not certify the paper proofs, the validity of every source formula or executable unbiasedness of the printed simulation algorithm."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2111.06859v1",
+    "version": "arXiv:2111.06859v1, 12 November 2021",
+    "pdf_sha256": "af1faf7d9821a3f94ea242503fa4d26d7c6adb6c4ec6b0ff34719b8a740c89fc",
+    "pdf_pages": 46,
+    "main_text_last_pdf_page": 22
+  },
+  "recorded_checks": [
+    "Seven complete original theorem statements compared with PDF pages 6-12 and 14, including the page continuations of Theorems 2 and 4. Independent bold-heading enumeration covers all admitted main-text pages. References end above Appendix A on page 22.",
+    "All 29 supporting passages and nine auxiliary passages compared with pages 4-14. The four statistic formulas, empirical substitutions, named mixing and Harris definitions, complete split-process construction, regenerative ratios, full Algorithm 1, equation (7) and main-text sectioning coefficients are preserved.",
+    "Independent graph reconstruction checks all 58 direct uses and 94 related connections. Raw iid observations do not propagate into Theorems 3-5. Theorem 5 uses cycle pairs rather than gaps; Theorem 6 inherits Theorem 2 at r=2 and all algorithm inputs. Theorem 7 has no SB or Student-law dependency through the extracted statistic definitions.",
+    "Each interface has an original natural-language term or separately evidenced naming context and source-backed highlights. Original Definition 1 and Definition 2 labels are retained. Every related theorem has a same-paper explanation with the correct sampling substitution or changed asymptotic regime.",
+    "Visual checks preserve the two variance centers, psi_0 in W_SJ, scalar versus multivariate Cramer conditions, barred coefficient families, different cycle rewards and moment orders, full cumulant contractions and every step of Algorithm 1. A high-resolution crop verifies sigma outside the square roots in Theorem 7; the inline 2 in lambda-prime is multiplication.",
+    "Thirty source notes preserve the n-to-zero limit, sigma/alpha alias, unspecified measure/kernel conventions, unexplained algorithm c, negative-side formulas, absent plus sign, density-weighted polynomial terminology and cubic v contraction. Appendix-only formulas remain unresolved. The census does not certify proofs or executable unbiasedness.",
+    "All six content artifacts regenerated byte-for-byte in an empty directory. Independent source hash, graph, math-fragment and schema checks passed. A rebuild does not perform or renew source review."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "6dcd612a9de1201eaa0131b339eee643913aa105232cba20d47c88addb636258"
+}

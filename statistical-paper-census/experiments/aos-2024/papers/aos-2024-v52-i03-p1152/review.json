@@ -1,0 +1,95 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i03-p1152",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T20:26:18.447935+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i03-p1152/T1",
+      "aos-2024-v52-i03-p1152/T2",
+      "aos-2024-v52-i03-p1152/T3",
+      "aos-2024-v52-i03-p1152/T4"
+    ],
+    "method": "Independent published-heading enumeration over pages 1-22, clipped before Appendix A on page 22, followed by visual review of all four full theorem statements.",
+    "printed_label_check": [
+      [
+        9,
+        "1"
+      ],
+      [
+        10,
+        "2"
+      ],
+      [
+        13,
+        "3"
+      ],
+      [
+        20,
+        "4"
+      ]
+    ],
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 4,
+    "interfaces": 26,
+    "source_members": 26,
+    "direct_theorem_uses": 30,
+    "related_theorem_connections": 70,
+    "unranked_auxiliary_passages": 6
+  },
+  "source_notes": [
+    "The registered source is the published article in The Annals of Statistics 52(3), 2024, pp. 1152-1177, DOI 10.1214/24-AOS2388. It replaces the separately preserved dissertation chapter as the active source.",
+    "The complete 26-page published PDF is pinned by SHA-256. Only main-text pages 1-22, clipped above Appendix A at y=241.31422424316406 on page 22, supply mathematical evidence. Appendix bodies and later material are excluded.",
+    "All four published main-text Theorems are retained with printed labels 1-4. Corollary 1 and external theorem citations are not counted as Theorems.",
+    "The spectral moment vector is script M and need not vanish or equal theta. The equality in (2) is imposed at theta0, not as an identity at every candidate theta.",
+    "The common setup is weak stationarity with absolutely summable autocovariances; Assumption 1 strengthens this to fourth-order stationarity and mixing/moment conditions. Strict stationarity, linearity, Gaussianity, mean zero and eighth moments are not silently imposed.",
+    "All full-data and block spectral averages omit zero frequency and include both positive and negative frequencies. The printed summation includes both endpoints for even n or b; no endpoint half-weight or deduplication is introduced.",
+    "The NOL blocks number floor(n/b); leftover observations need not form another block. The OL collection has n-b+1 indexed windows with the same block length. They have different roles in SEL and its bootstrap.",
+    "PDF 12 prints the OL periodogram with prefactor 2π/b, whereas the NOL periodogram on PDF 6 has 1/(2πb). The factor differs by 4π². Both original formulas remain unchanged; bootstrap validity under the printed mismatch is not certified.",
+    "SEL profiles probability weights on subsample spectral averages. Its zero value for an empty feasible set is explicit. The extended-real log-ratio convention at zero follows ordinary interpretation but is not supplied as a new quoted definition.",
+    "Positive definiteness is required only of V_theta0=V_theta0,1+V_theta0,2. The cumulant-spectrum contribution is not removed or separately required to be positive definite.",
+    "The full-data M-estimator solves T_n(theta)=script M_theta. Theorem 2 establishes existence of a consistent solution sequence, not uniqueness or consistency for every root.",
+    "Theorem 2 retains second derivatives and Riemann-integrable envelopes; the norm on derivative tensors is unspecified. V, D and Sigma are plain matrix symbols; script N is the normal distribution.",
+    "The fitted-parameter bootstrap resamples N iid elements of the indexed OL collection, retaining multiplicities. The source does not explicitly spell out a uniform index law; the empirical-resampling interpretation is recorded as such.",
+    "Bootstrap probability P_* uses a subscript star. Bootstrap likelihood and log-ratio L_n^*, ell_n^* use superscript stars. Script C_OL denotes the empirical collection, not a constant or parameter class.",
+    "The published text calls the bootstrap calibration a percentile without the exact CDF equality found in the dissertation. The old-only percentile equation is excluded from this source census.",
+    "Smooth-function SEL uses a maximum over the h-fiber, not a supremum. Attainment/feasibility conventions are not fully stated in the main text; no compactness hypothesis is inserted.",
+    "The published Section 7 introduction has vartheta in R^s, h:R^p to R^s, s<=p and theta in R^p. These dimensions agree with Theorem 4; the inconsistent dissertation dimensions are not carried over.",
+    "The smooth-function bootstrap resamples entire theta-indexed block-statistic functions. Shared resampling indices across theta are necessary for the likelihood process described in the source; independent redraws at each theta would change that construction.",
+    "Theorem 4 literally requires b/n+n/b^2→infinity while importing assumptions of Theorem 3, which require the same expression to approach zero. The contradiction is explicitly retained and not repaired.",
+    "Theorem 4 gives u as the Jacobian rank at theta0 and assumes C1 near theta0, without explicitly requiring a constant rank in a neighborhood. No stronger rank condition is added to the original claim.",
+    "The named statistics L_n and ell_n are overloaded for the baseline and smooth-function parameter. Their definitions and dependency paths are separated without renaming the original mathematical notation.",
+    "Whittle-specific Corollary 1, application models and computational Lagrange-multiplier formulas are not prerequisites of the four general theorem statements. No appendix proof results are imported."
+  ],
+  "source": {
+    "source_url": "https://projecteuclid.org/journals/annals-of-statistics/volume-52/issue-3/A-blockwise-empirical-likelihood-method-for-time-series-in-frequency/10.1214/24-AOS2388.pdf",
+    "version": "Published version, The Annals of Statistics 52(3), 2024, pp. 1152-1177",
+    "pdf_sha256": "040bf11f4fea87c491051c19fc2b5a4e5398d46dac450a12a39814bf583c1a5e",
+    "pdf_pages": 26,
+    "main_text_last_pdf_page": 22
+  },
+  "recorded_checks": [
+    "Reviewed the registered published 26-page article, DOI 10.1214/24-AOS2388, against its title, authors, journal header and SHA-256. Main text ends on page 22 above Appendix A at y=241.31422424316406. Only a heading crop was used for the appendix boundary; no appendix body was used. The prior 295-page dissertation is preserved under local-pdfs/aos/2024/source-history with its original hash.",
+    "Independent enumeration over all 22 main-text pages finds four Theorems: 1 on page 9, 2 on page 10, 3 on page 13 and 4 on page 20. All full statements were read on rendered pages and retained. Corollary 1 on page 11 and ordinary citations are excluded. The numbered transition mapping preserves the old chapter IDs separately.",
+    "Theorem 1 retains all three assumptions, the spectral moment condition, b/n+n/b^2 tending to zero and the p-degree chi-square limit. Theorem 2 retains all four neighborhood conditions, derivatives through order two, Riemann integrability, envelope, nonsingular moment Jacobian and existence of a consistent asymptotically normal solution sequence with full covariance formula. Theorem 3 retains the supremum over real CDF arguments and convergence in sampling probability. Theorem 4 retains both conclusions, h:R^p to R^s, its Jacobian rank at theta0 and the printed infinite block-size limit despite importing a zero limit.",
+    "All 26 source entries and six auxiliary passages were checked against pages 5-10,12-13,18-20. The real weakly stationary process, general nonzero moment vector, estimating functions and true-parameter moment condition are distinct. Full-data and disjoint-block periodograms retain normalization 1/(2*pi*length), while the printed overlapping formula retains 2*pi/b. All signed nonzero Fourier frequencies and even-length endpoints remain as printed. The SEL supremum, empty-feasible-set value zero, N^N log-ratio, full-data M-estimating equation and smooth profile maxima match the source.",
+    "Assumption 1 is fourth-order stationarity with a uniform 4+delta moment and the weighted alpha-mixing sum, using the same delta. Assumption 2 requires componentwise bounded variation only at theta0. Assumption 3 requires positive definiteness of the sum of the two full spectral covariance terms; the fourth-order cumulant contribution is neither discarded nor separately made positive definite. Derivative regularity in Theorem 2 is additional. Strict stationarity, zero mean, linearity and Gaussianity are not added.",
+    "The fitted-parameter bootstrap samples N independent elements from the indexed overlapping collection at hat-theta_n, preserving multiplicity and the common block length. The smooth-function bootstrap instead resamples entire theta-indexed block-statistic functions, using shared sampled indices across theta before profile maximization. The induced probability P_* is a subscript-star symbol, while likelihood/statistic stars are superscripts. Neither procedure constructs a resampled time series.",
+    "All 30 direct theorem uses, 70 related connections and 26 local prerequisite lists were checked. The basic SEL limit has no full-data M-estimator, derivative regularity or overlapping bootstrap. The M-estimator theorem has no block-size restriction or block likelihood. The smooth profile does not inherit the pointwise fitted collection or fixed-fit bootstrap objective. Whittle-specific Corollary 1, simulation models, sunspot application, computational dual formulas and proof results are not general theorem prerequisites.",
+    "Every source entry retains its own original label and source kind. Natural-language names are extracted from the published wording, including nonoverlapping and i.i.d. spelling. All highlight selectors identify the original source passage or label and occur in that source or a related same-paper theorem. Explanations follow actual local paths. Font checks confirm script M and N and the transpose symbol.",
+    "The published labels 1,2,3,4 correspond to dissertation labels 3.5.1,3.6.1,3.6.2,3.8.1 after reviewing all four full statements. Published Section 7 fixes the earlier introductory dimension inconsistencies. The published bootstrap text omits the dissertation exact percentile-CDF equality; the new auxiliary passage records only the probability definition. Updated wording, references, equation numbers and page evidence all use the published source. The old source and audit remain separate.",
+    "The printed OL normalization mismatch and infinite block-size limit remain explicit source issues. The source does not state a particular derivative tensor norm, uniqueness of the M-estimator root, exact uniform empirical index law, profile-max attainment/feasibility convention or neighborhood constant-rank assumption. These are not invented. No required definition is deferred exclusively to the excluded appendices. This is a census and source review, not proof certification.",
+    "Independent inventory and census validators pass. Six content artifacts rebuild byte for byte in a new empty directory. Checks cover all fresh main-text text pages, theorem enumeration, complete inventory handoff, source types and bounds, original mathematical delimiters, control characters, direct/local/recursive dependencies, names, selectors, font distinctions, current source hash and preserved previous source hash."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "97a56221a639feb9c6491bef3b9b02beb2d2485cac8276c0cb6455cf6e1938bf"
+}

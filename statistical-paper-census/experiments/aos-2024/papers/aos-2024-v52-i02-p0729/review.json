@@ -1,0 +1,83 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i02-p0729",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T10:56:34.760380+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i02-p0729/T1",
+      "aos-2024-v52-i02-p0729/T2",
+      "aos-2024-v52-i02-p0729/T3",
+      "aos-2024-v52-i02-p0729/T4",
+      "aos-2024-v52-i02-p0729/T5"
+    ],
+    "method": "Independent inspection of printed THEOREM headings over all 28 journal pages finds exactly Theorems 1-5, with Theorem 5 continuing on PDF page 22. The supplement notice on page 25 links to a separate document and is followed by references through page 28. Citations to later-numbered supplement theorems and other result types are excluded.",
+    "printed_label_check": [
+      [
+        7,
+        "1"
+      ],
+      [
+        9,
+        "2"
+      ],
+      [
+        11,
+        "3"
+      ],
+      [
+        12,
+        "4"
+      ],
+      [
+        21,
+        "5"
+      ]
+    ],
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 5,
+    "interfaces": 18,
+    "source_members": 18,
+    "direct_theorem_uses": 35,
+    "related_theorem_connections": 48,
+    "unranked_auxiliary_passages": 10
+  },
+  "source_notes": [
+    "The source is the published journal paper, not a preprint. Main-text source fidelity does not certify correctness of its proofs or resolve its apparent typographical errors.",
+    "Algorithm 4’s population S-star_jj, Assumption 3’s var(E_ij squared), the rectangular noise-index mismatch and Theorem 5’s starred iteration parameter are preserved and explained separately.",
+    "The Gaussian signal statement is retained. Footnote 1’s unrestricted sub-Gaussian extension is archived without asserting unchanged fourth-moment-sensitive covariance-entry variance formulas.",
+    "Definition 1 and Assumption 2 remain distinct, as do the two noise models, condition numbers and HeteroPCA scalings. No conditions are transferred through proof-only use of Theorem 5.",
+    "No appendix or supplement was opened. Generalized supplement Theorems 11-14, external proof references and comparison results are excluded from the main-text inventory."
+  ],
+  "source": {
+    "source_url": "https://projecteuclid.org/journals/annals-of-statistics/volume-52/issue-2/Inference-for-heteroskedastic-PCA-with-missing-data/10.1214/24-AOS2366.pdf",
+    "version": "Published version: The Annals of Statistics 52(2), 2024, pp. 729-756; DOI 10.1214/24-AOS2366",
+    "pdf_sha256": "1bac2c2780467d496262c698eeb684dfb14d962388374679ced15896cd44203c",
+    "pdf_pages": 28,
+    "main_text_last_pdf_page": 28
+  },
+  "recorded_checks": [
+    "Inventory and final census pass validation; inventory hash agrees with its source review, and all original claim fields survive unchanged.",
+    "Published title, three authors, volume/issue/page range, DOI, source URL, 28-page count and PDF digest were checked. No appendix or supplement body is embedded or used.",
+    "Five complete statements were checked visually on pages 7,9,11,12,21,22, including the full Theorem 1 covariance, its exact iteration bound, both confidence statements and all Theorem 5 residual bounds.",
+    "The PCA signal, random sampling and row-specific sub-Gaussian noise model were checked on pages 1-2; zero-filled matrix, projections and matrix-sign convention on pages 3-4; population spectral scales, Definition 1 and Assumption 1 on pages 5-6.",
+    "Algorithm 2 was checked against its source scaling, inclusive update loop and t_0 output. Algorithms 3/4 were checked in full, preserving the unknown S-star_jj term in Algorithm 4 and missing finite-sample failure conventions.",
+    "The two cases of the population entry variance in (3.10)-(3.11) were checked on page 10. Theorem 3’s log^7 and Theorem 4’s log^8 sampling conditions are not replaced by Theorem 1’s log^9 condition.",
+    "The general rectangular model, n=max(n_1,n_2), singular-value condition number, all three incoherence inequalities and complete bounded-noise Assumption 3 were checked on page 20. Its var(E_ij squared) expression and square index-range mismatch remain literal.",
+    "Algorithm 5, R_U and both zeta quantities were checked on page 21. Theorem 5’s star/natural mismatch in the iteration count remains unresolved rather than importing the PCA spectral model.",
+    "Independent local graph traversal confirms that Theorems 1-4 have no general-model assumptions and Theorem 5 has no PCA data/noise or variance-ratio assumptions. Only generic projection primitives are shared across the model branches.",
+    "The row confidence procedure belongs only to Theorem 2, and the entry confidence procedure only to Theorem 4. Theorem 2 gives uniform marginal coverage error, not a joint simultaneous coverage event.",
+    "Ten auxiliary source passages and twenty-two source-convention notes preserve the unusual constant-factor meaning of <<, norm conventions, signal footnote, iteration reference, rate abbreviations, optional sampling estimate and unresolved source formulas. All 35 direct uses and 48 related connections have source-backed explanations and selectors."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "4f6b15ac8527da747415599bd6abbca38dafc7ae9e417aa363150fc7475281cf"
+}

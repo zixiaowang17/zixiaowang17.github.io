@@ -1,0 +1,58 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i01-p0103",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T05:48:56.278775+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i01-p0103/T1",
+      "aos-2024-v52-i01-p0103/T2",
+      "aos-2024-v52-i01-p0103/T3"
+    ],
+    "method": "Enumerated all three uncommented mythm environments in the matching-version main source; scanned PDF pages 1-25 up to the Supplementary Material heading and visually checked pages 16 and 20 and the endpoint crop.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary"
+    ],
+    "supplementary_material_used": false
+  },
+  "counts": {
+    "theorems": 3,
+    "interfaces": 22,
+    "source_members": 23,
+    "direct_theorem_uses": 18,
+    "related_theorem_connections": 49
+  },
+  "source_notes": [
+    "Source version is arXiv:2112.08417v2, dated 5 October 2023; no identity with publisher numbering is assumed.",
+    "Theorems 1 and 2 print the time-index bound 0 <= t <= p, while Definitions 3.6/4.13 and Section 4.2 use the bound on tau. The printed theorem statements are preserved.",
+    "Definition 3.4 does not impose a finite maximum edge lag; that restriction is not imported from the structural-process motivation.",
+    "Section 3.3 explicitly separates causal interpretation from the graphical results. Stationary stochastic solutions, causal Markov and causal faithfulness are not added as theorem-statement dependencies.",
+    "The directed mixed graph in Theorem 2 is not assumed ancestral or maximal. DMAG enters its dependency closure through the target ts-DMAG and projection definitions, not as an extra input hypothesis.",
+    "Definition 4.13 provides its own complete construction. Standard canonical DAGs in Definition 4.11 are motivation and are not added as a dependency of that construction.",
+    "Definition 4.13 retains both distinct latent-parent time shifts exactly as printed. It uses stationarified edges, not all edges of the input graph.",
+    "Stationarification is defined for all four edge types, including circles, which is needed when Theorem 3 applies it to DPAGs.",
+    "Repeating orientations requires agreement only when the shifted adjacency exists. Repeating ancestral relationships is a separate condition, not merged with it.",
+    "All four background knowledges in Definition 5.4 remain distinct cases in their original source statement; no equivalence between them is inferred.",
+    "Definition 5.3 comparisons, time series DPAGs from Definition 5.7, and Algorithm 1 are not needed to state these three Theorems. Lemmas and proof-only machinery are excluded from the theorem inventory.",
+    "The source paragraph on projection switches from DAG G to D; this printed notation is preserved."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2112.08417v2",
+    "version": "arXiv:2112.08417v2",
+    "pdf_sha256": "d455852177d78183664ed5a1b6f93701cfbe5d650be1a03569bac2d5cf913a1f",
+    "pdf_pages": 67,
+    "main_text_last_pdf_page": 25
+  },
+  "recorded_checks": [
+    "The complete three-Theorem inventory was checked against PDF wording and formulas, then validated independently before extraction.",
+    "All 23 extracted local source passages and five ambient passages were checked against the main-text PDF, including all subparts of Definitions 4.13, 5.2 and 5.4.",
+    "A separate validator process checked the finalized census against its hash-pinned inventory and derived graph.",
+    "All highlight selectors have exact source matches and each local member has a visible source-body or label selector.",
+    "The 18 direct uses and 49 related-theorem paths were reviewed. Definition 4.2 parts 3 and 4 only enter Theorem 3 through its background knowledge; their consequences for ts-DMAGs are not turned into extra hypotheses of Theorems 1 and 2."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "ac5b6fdfd780947013667ed30dbb609dfc7bef1eeda52d4f2c1380d365a1f604"
+}

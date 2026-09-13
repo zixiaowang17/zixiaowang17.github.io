@@ -1,0 +1,179 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i05-p2112",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-10T16:56:12.491451+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i05-p2112/T1",
+      "aos-2024-v52-i05-p2112/T2",
+      "aos-2024-v52-i05-p2112/T3",
+      "aos-2024-v52-i05-p2112/T4"
+    ],
+    "printed_label_check": [
+      [
+        2,
+        "1"
+      ],
+      [
+        5,
+        "2"
+      ],
+      [
+        9,
+        "3"
+      ],
+      [
+        12,
+        "4"
+      ]
+    ],
+    "method": "Independent bold-heading enumeration and visual comparison of all four complete Theorems.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 4,
+    "interfaces": 9,
+    "source_members": 9,
+    "direct_theorem_uses": 12,
+    "related_theorem_connections": 18,
+    "unranked_auxiliary_passages": 12
+  },
+  "source_notes": [
+    {
+      "issue_id": "unit-circle-variable",
+      "description": "The source definition C1={x in C:|z|=1} binds x but uses z in the constraint. The accompanying description says unit complex numbers. Both the printed definition and this contextual interpretation remain separate.",
+      "evidence": [
+        {
+          "page": 1,
+          "location": "Original main-text source convention"
+        }
+      ]
+    },
+    {
+      "issue_id": "orthogonal-loss-missing-sum",
+      "description": "The printed orthogonal loss contains (1/n)||Zhat_j-Z*_j O||_F^2 with a free j and no summation. The text calls it analogous to the summed phase loss and describes stacked matrices, but does not supply a corrected display. The original is preserved and the ambiguity remains explicit.",
+      "evidence": [
+        {
+          "page": 2,
+          "location": "Original main-text source convention"
+        },
+        {
+          "page": 4,
+          "location": "Original main-text source convention"
+        },
+        {
+          "page": 11,
+          "location": "Original main-text source convention"
+        }
+      ]
+    },
+    {
+      "issue_id": "zero-noise-ratios",
+      "description": "Theorems 1 and 2 explicitly include sigma=0 consequences, while their preambles and Theorems 3-4 contain np/sigma^2. The author also says the finite-sample result covers no additive noise. No unprinted extended-real division convention is added to the original statements.",
+      "evidence": [
+        {
+          "page": 2,
+          "location": "Original main-text source convention"
+        },
+        {
+          "page": 5,
+          "location": "Original main-text source convention"
+        },
+        {
+          "page": 9,
+          "location": "Original main-text source convention"
+        },
+        {
+          "page": 12,
+          "location": "Original main-text source convention"
+        }
+      ]
+    },
+    {
+      "issue_id": "polar-domain-and-fallback",
+      "description": "The mapping P is displayed on all square matrices but its defining polar formula assumes full rank. Estimator (13) explicitly outputs I_d for singular blocks. That fallback is retained rather than extending the polar factor arbitrarily.",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Original main-text source convention"
+        },
+        {
+          "page": 10,
+          "location": "Original main-text source convention"
+        }
+      ]
+    },
+    {
+      "issue_id": "spectral-choice",
+      "description": "The estimator definitions specify leading eigenvectors/eigenspaces without an explicit tie-selection rule. Main-text unit-vector and orthonormal-column conventions are retained. No deterministic eigensolver or measurable tie-breaking procedure is invented.",
+      "evidence": [
+        {
+          "page": 2,
+          "location": "Original main-text source convention"
+        },
+        {
+          "page": 4,
+          "location": "Original main-text source convention"
+        },
+        {
+          "page": 6,
+          "location": "Original main-text source convention"
+        }
+      ]
+    },
+    {
+      "issue_id": "complex-real-ambient",
+      "description": "The orthogonal-model W is written in a complex ambient matrix space despite real matrix-Gaussian blocks; the Hadamard-product definition also declares a real result for complex inputs. Preserve these source type inconsistencies without discarding imaginary parts or changing the model.",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Original main-text source convention"
+        },
+        {
+          "page": 10,
+          "location": "Original main-text source convention"
+        }
+      ]
+    },
+    {
+      "issue_id": "finite-sample-constant-scope",
+      "description": "Theorem 3 writes C1,C2,C3>0. Theorem 4 writes C1,C2,C3 without >0 and assumes 2<=d<=C0. The text does not separately spell out every dependence on C0. Original scopes are retained; the bounded-d result is not advertised as uniform over growing d.",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Original main-text source convention"
+        },
+        {
+          "page": 12,
+          "location": "Original main-text source convention"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2209.04962v2",
+    "version": "arXiv:2209.04962v2; stamp 6 Jan 2024; cover 9 Jan 2024",
+    "pdf_sha256": "9eadba2195953e9ed76c35785d3f7da46c8c7f739b093d3ebde0f9c3d4227759",
+    "pdf_pages": 41,
+    "main_text_last_pdf_page": 29
+  },
+  "recorded_checks": [
+    "All four main-text Theorems are preserved: asymptotic phase and orthogonal results, followed by their finite-sample counterparts. Theorem environments were independently enumerated through the main-text prefix of page 29. The italic no-noise consequences in Theorems 1-2 belong to their original statements.",
+    "Nine original entries and twelve supporting passages retain unit-complex and orthogonal parameter spaces, both masked Gaussian models, matrix completions, both spectral estimators, full-rank polar normalization and both source loss definitions.",
+    "Independent reconstruction gives 12 direct uses and 18 related connections. Each theorem depends on its own model, estimator and loss. Population eigenvectors/eigenspaces and first-order approximations are proof-only. The phase and orthogonal dependency sets remain disjoint.",
+    "The phase estimator returns 1 for zero eigenvector coordinates. The orthogonal estimator returns the identity for singular blocks and invokes the polar map only on full-rank blocks. No invented tie-breaking rule or extension of the polar map is added.",
+    "The orthogonal loss display contains a free j and omits the sum suggested by the prose; it is preserved exactly. Other issues include the unit-circle variable typo, zero-noise division convention, complex/real ambient declarations and finite-sample constant scope. Exact theorem remainders and probability constants are retained.",
+    "All entries use literal source terms and faithful source-passage/definition headings. Source selectors and explanations are checked for every related theorem. Models and the distinct losses are not merged merely because their roles are analogous.",
+    "All six JSON content artifacts reproduce byte for byte from retained per-paper scripts. Source-specific checks and frozen hashes protect the reviewed content; this source census does not certify proofs or silently repair the loss definition."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "eacf0efe5a9cc4517f93b49455ec8463bf1bd3a5fcc48d30bd766888f9933db1"
+}

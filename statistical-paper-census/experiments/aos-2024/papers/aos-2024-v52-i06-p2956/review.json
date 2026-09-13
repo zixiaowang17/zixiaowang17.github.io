@@ -1,0 +1,227 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i06-p2956",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-11T06:24:45.360736+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i06-p2956/T1",
+      "aos-2024-v52-i06-p2956/T3"
+    ],
+    "printed_label_check": [
+      [
+        7,
+        "1"
+      ],
+      [
+        9,
+        "3"
+      ]
+    ],
+    "method": "Independent actual-Theorem enumeration across main-text pages 1–21 and visual comparison of both complete statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 2,
+    "interfaces": 20,
+    "source_members": 20,
+    "direct_theorem_uses": 22,
+    "related_theorem_connections": 38,
+    "unranked_auxiliary_passages": 4
+  },
+  "source_notes": [
+    {
+      "issue_id": "source-01",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 7,
+          "location": "Original main-text convention"
+        }
+      ],
+      "note": "Condition A4 omits h^{-1} before the column-covariate sum in its mean limit, although the row mean is normalized and page 3 defines sample means. Preserve the printed expression; do not silently insert the missing normalization."
+    },
+    {
+      "issue_id": "source-02",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Original main-text convention"
+        }
+      ],
+      "note": "Theorem 1 prints a zero block of dimension [p_b:1] in the second row of F_{1(a),(b)}, alongside a [p_a:p_b] block. The row dimensions appear inconsistent when p_a differs from p_b. The quoted theorem retains this dimension."
+    },
+    {
+      "issue_id": "source-03",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Original main-text convention"
+        }
+      ],
+      "note": "The eta=infinity reordering prints sigma_a^2 with a Latin a and calls the covariance an asymptotic coavriate matrix. These original tokens are retained without correcting the source statement."
+    },
+    {
+      "issue_id": "source-04",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Original main-text convention"
+        }
+      ],
+      "note": "All four printed variance derivatives of the adjusted likelihood have minus one-half trace corrections. Differentiating the preceding minus log-determinant expression instead yields plus corrections. The objective and printed score are both preserved; which formulation was intended requires clarification."
+    },
+    {
+      "issue_id": "source-05",
+      "evidence": [
+        {
+          "page": 19,
+          "location": "Original main-text convention"
+        }
+      ],
+      "note": "The lower-right entry of B3 in equation (13) is printed 1(2*dot_sigma_e^4), without a division slash. Preserve that exact entry, separately from the definition of B as a normalized expected derivative."
+    },
+    {
+      "issue_id": "source-06",
+      "evidence": [
+        {
+          "page": 3,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 4,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 7,
+          "location": "Original main-text convention"
+        }
+      ],
+      "note": "The main-text centering prose explicitly defines row and marginal centering and says similarly for cell/within quantities; the hierarchy on page 3 distinguishes interaction residualization and within-cell residualization. The precise formulas for every c-subscripted cell quantity are not spelled out there. The comprehensive notation reference is Appendix A, whose body is excluded. Do not replace the abbreviated source convention with an uninspected appendix formula."
+    },
+    {
+      "issue_id": "source-07",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Original main-text convention"
+        }
+      ],
+      "note": "Condition A1 requires the true parameter inside Omega but does not enumerate the parameter space in the inspected main-text definition. Variance positivity, rank and allowed absent covariate blocks must not be silently added as a replacement source condition."
+    },
+    {
+      "issue_id": "source-08",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 7,
+          "location": "Original main-text convention"
+        }
+      ],
+      "note": "Condition A4 uses enlarged capital-X Gram matrices for the row, column and interaction limits, whereas D1-D4 are the indicated diagonal blocks. Preserve this distinction and the separate lowercase-x moment conditions."
+    },
+    {
+      "issue_id": "source-09",
+      "evidence": [
+        {
+          "page": 2,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 7,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 8,
+          "location": "Original main-text convention"
+        }
+      ],
+      "note": "The model does not assume Gaussian truth: Condition A3 supplies independent families with finite 4+delta moments. The covariance includes third moments and excess fourth moments; an information-equality Gaussian covariance is not an equivalent replacement."
+    },
+    {
+      "issue_id": "source-10",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 7,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 8,
+          "location": "Original main-text convention"
+        }
+      ],
+      "note": "The symbol eta is first g/h and later labels its finite or infinite asymptotic regime. Theorem 1 includes eta=0 and an eta=infinity reordering; keep the original limiting convention instead of requiring a fixed positive finite ratio."
+    },
+    {
+      "issue_id": "source-11",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 9,
+          "location": "Original main-text convention"
+        }
+      ],
+      "note": "Theorem conclusions assert existence of a root with local stochastic rates. The surrounding likelihood prose calls the estimators maximizers, but no uniqueness or global-maximizer conclusion is stated in Theorems 1 or 3."
+    },
+    {
+      "issue_id": "source-12",
+      "evidence": [
+        {
+          "page": 3,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 7,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 19,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 21,
+          "location": "Original main-text convention"
+        }
+      ],
+      "note": "Theorem 1 explicitly refers to matrix B in (13), available in main-text Lemma 4 on page 19. Retain that definition without adding the lemma or appendix results to the theorem inventory; all appendix bodies and supplementary derivations are excluded."
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2401.06446v2",
+    "version": "arXiv:2401.06446v2, stamped 13 March 2024; submitted manuscript",
+    "pdf_sha256": "e420717c6358810eb3b7c93be605b04cae37bc69c06e635263ff90d11c02884d",
+    "pdf_pages": 25,
+    "main_text_last_pdf_page": 21
+  },
+  "recorded_checks": [
+    "The main text contains exactly Theorems 1 and 3. The complete Theorem 1 continuation, all covariance blocks and the final eta=infinity clause were visually compared. Corollary 2 is excluded without renumbering. The main-text endpoint is page 21 before Appendix A.",
+    "Twenty original source entries preserve the balanced non-Gaussian crossed model, all covariate levels and main-text centering examples, Gram blocks, likelihood and score, full Condition A, rate/influence/covariance matrices, B from main-text equation (13), and the REML objective and adjusted score. Four auxiliary passages preserve observation order, working-normality scope, rate context and the exact final reordering.",
+    "Independent source-clause reconstruction yields 22 direct uses and 38 related connections. Theorem 3 explicitly applies Theorem 1; its asymptotic representation and covariance definitions therefore remain related. Theorem 1 does not acquire the REML objective or adjusted score. Proof-only lemmas and Corollary 2 are excluded from the theorem inventory.",
+    "Twelve notes retain the missing column-mean normalization, a mismatched covariance zero-block dimension, sigma_a and coavriate tokens, the missing division slash in B3, and the four printed REML-score minus signs. Abbreviated centering, unspecified Omega and these formula discrepancies remain three explicit source-ambiguity records.",
+    "Every entry has original source terminology, an original passage type/heading, and visible source-backed selectors. All 38 connections retain exact same-paper paths and source-specific explanations. Both theorems and all 20 source annotations pass the strict HTML renderer checks.",
+    "All six content JSON files reproduce byte for byte in a fresh empty directory using the retained per-paper scripts. This checks extraction reproducibility and schema consistency, separately from the visual source comparison.",
+    "This is a completed extraction-fidelity review, not proof certification or a corrected formal specification. No appendix body or external supplementary derivation was used to fill a definition. The original source ambiguities are explicit and must remain visible to later semantic/library review."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "5a4932e0edf6e9a65305a3280000908a064f2d9edcfc9c8f99ccc2383e5d0f59"
+}

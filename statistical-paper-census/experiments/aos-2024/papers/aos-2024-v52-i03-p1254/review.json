@@ -1,0 +1,89 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i03-p1254",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T21:07:34.576391+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i03-p1254/T2.1",
+      "aos-2024-v52-i03-p1254/T2.2",
+      "aos-2024-v52-i03-p1254/T2.3",
+      "aos-2024-v52-i03-p1254/T3.1"
+    ],
+    "printed_label_check": [
+      [
+        6,
+        "2.1"
+      ],
+      [
+        7,
+        "2.2"
+      ],
+      [
+        10,
+        "2.3"
+      ],
+      [
+        13,
+        "3.1"
+      ]
+    ],
+    "method": "Independent actual-heading enumeration and visual comparison of all complete theorem bodies.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 4,
+    "interfaces": 24,
+    "source_members": 24,
+    "direct_theorem_uses": 35,
+    "related_theorem_connections": 64,
+    "unranked_auxiliary_passages": 5
+  },
+  "source_notes": [
+    "The registered source is the final 22-page published PDF. It has no appendix body; page 21 contains only an external supplement notice and page 22 ends references. The supplement was not opened.",
+    "Four actual Theorems are inventoried. Definitions 2.1-2.4, Lemmas and Corollary 2.1 are not extra theorem records. Theorem 2.3 continues onto page 11, including all contour conditions.",
+    "The source calls the mechanism missing at random but its model explicitly uses independent Bernoulli indicators and Assumption B independence of the full mask and data matrices. No general conditional MAR model is substituted.",
+    "The p_j are probabilities of being observed, despite wording missing probability. They may vary with coordinate and dimension. No explicit uniform positive lower bound is stated in the copied assumptions.",
+    "S_n is divided by n, not pairwise observed counts N_jk. The sample is population-centered, with no empirical mean subtraction. Theorem 3.1 additionally assumes known observation probabilities through Section 3.1.",
+    "High probability means failure o(n^-ell) for every ell>0. Definition 2.2 requires Kolmogorov distance convergence in this strong sense, not merely weak ESD convergence.",
+    "Theorem 2.2 and the centralized LSS definition use c and c_n for parameters elsewhere called y and y_n. Equation (2.3) prints y with finite H_n while (2.2) uses y_n. All originals retain these discrepancies.",
+    "The companion transform is underlined, not overlined. The finite relation is explicit on page 7, but the unindexed underline m(z) in Theorem 2.3 is used without a separate limiting definition there. The usual limiting relation is an interpretation, not a replacement original quotation.",
+    "Theorem 2.3 states a CLT for L^c defined as an unscaled difference of ESD integrals; no p multiplier occurs in that definition or statement. This apparent scaling issue is preserved and not repaired.",
+    "Assumption D uses a square root of auxiliary Theta_n, but B only explicitly requires it to be nonrandom. Positive semidefiniteness or another square-root convention, and real spectral ordering of S_n Theta_n, require clarification if not supplied by an intended ambient matrix class.",
+    "Assumption D bounds the sequence Sigma_n Theta_n, not the separate norms of Sigma_n and Theta_n. The law H is the spectral limit of Psi_n, not of Sigma_n alone.",
+    "Theorem 2.3 assumes analytic functions on an open interval containing its printed endpoints. Complex extensions and contour domains are not separately specified. The final paragraph requires positive closed contours enclosing the support and nonoverlapping in the covariance expression.",
+    "Theorem 2.3 defines a(z) and d_2 through limits involving eigenvectors and masks. Existence, uniqueness along the sequence and sufficient convergence conditions for these limits are not separately enumerated in A-D. No extra assumptions are silently added.",
+    "P^(5) is the fourth-cumulant expression P^(4)-3(P^(2))^2, not a fifth moment. I_2 and II are separate functionals; the factor nu_4-3 is outside II. Every term, including the continuation of II onto page 6, is retained.",
+    "The original domain in Lemma 2.1 allows a general nonrandom A and symmetric B. Its displayed product of centered quadratic forms has no complex conjugation. Application to complex resolvent matrices needs that convention retained.",
+    "The renormalized scalar a_P,Sigma uses p^-1 and inverse T_n; it is not the general analytic a(z), which uses n^-1. The first a subscript in Theorem 3.1 prints bold Sigma and subsequent ones plain Sigma; both source forms are retained.",
+    "Theorem 3.1 prints only Under H_0. Its A-D conditions are linked as inherited context via the model adopted in Section 3.1 and the renormalized corollary explicitly introduced as the source of the test application; these are not falsely described as literal theorem phrases.",
+    "T_0 inverse, logarithm domain and positive nonzero variance scales are needed for the test statistics. No source assumption in the copied passages separately guarantees every such condition. The displayed trace notation is conventionally read as trace of a squared matrix; the original placement of the exponent is preserved.",
+    "Theorem 2.2 uses for all large n both for support exclusion and the no-eigenvalue conclusion, together with high probability. The precise event sequence versus eventual-event quantification is retained as written, without replacing it by an almost-sure statement.",
+    "Epsilon-nets, covering numbers, Lemma 2.3 norm-bound proof tools, resolvent proof decompositions and Section 5 martingale inequalities do not enter the theorem-definition closure merely because they are used in proofs. Simulation designs and rejection thresholds after Theorem 3.1 are not theorem assumptions."
+  ],
+  "source": {
+    "source_url": "https://projecteuclid.org/journals/annals-of-statistics/volume-52/issue-3/Spectral-analysis-of-gram-matrices-with-missing-at-random-observations/10.1214/24-AOS2392.pdf",
+    "version": "Published version, The Annals of Statistics 52(3), 2024, pp. 1254-1275",
+    "pdf_sha256": "feb88302a3a7ca3efb79aab2c89bc712f3609ee7e705c2d5ec3a9d0c714d0901",
+    "pdf_pages": 22,
+    "main_text_last_pdf_page": 22
+  },
+  "recorded_checks": [
+    "All four full theorem statements visually compared with the published PDF. Independent enumeration covers all 22 pages; the continuation of Theorem 2.3 onto page 11 is retained.",
+    "All 24 source passages visually compared on pages 3-7 and 10-13; five ambient passages checked on pages 2,3,5,12. I_2 contains eight trace terms and II contains six across the page-5/6 boundary. Lemma domain conditions are separately archived.",
+    "All 35 direct and 64 related theorem connections reviewed, with independent local-graph and reach checks. A-D links inherited by Theorems 2.2 and 3.1 are explicitly described as section context. No epsilon-net, proof resolvent decomposition, simulation design or external supplement is imported.",
+    "Every title is a source natural-language term or acronym; naming contexts are separately archived with source pages. Every one of the 24 members has a source-matching selector. Original assumptions and lemma/corollary definitions retain their source headings.",
+    "Font and visual checks distinguish underlined companion m, kappa, calligraphic I/II and T, blackboard P/T, and bold/plain Sigma/Theta. All source scale, parameter-name and domain issues remain separate from original statements.",
+    "Twenty source notes preserve unresolved normalization, c/y aliases, auxiliary matrix domain, existence of analytic-parameter limits and test-statistic domains. This is source and dependency review, not proof certification.",
+    "All six content artifacts rebuilt byte-for-byte in an empty directory, independently schema-validated and pinned to the fixed registered PDF hash."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "1988252716c3efaecccb0fd32b88bcbead5dad5653f44a30bdecc9f5e9e3bccd"
+}

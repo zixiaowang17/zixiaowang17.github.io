@@ -1,0 +1,72 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i02-p0491",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T08:32:03.702232+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i02-p0491/T1.2",
+      "aos-2024-v52-i02-p0491/T1.8",
+      "aos-2024-v52-i02-p0491/T5.1"
+    ],
+    "method": "Main pages 1-24 searched and independently enumerated by bold CMBX10 Theorem heading spans. Only Theorems 1.2, 1.8 and 5.1 occur. Each complete statement fits on its recorded page. The main references end on page 24; a heading-only crop from page 25 establishes the Appendix A boundary.",
+    "printed_label_check": [
+      [
+        5,
+        "1.2"
+      ],
+      [
+        9,
+        "1.8"
+      ],
+      [
+        23,
+        "5.1"
+      ]
+    ],
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Example",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 3,
+    "interfaces": 17,
+    "source_members": 17,
+    "direct_theorem_uses": 30,
+    "related_theorem_connections": 37,
+    "unranked_auxiliary_passages": 12
+  },
+  "source_notes": [
+    "This is a census of the pinned 2022 arXiv v1 paper, not a claim of textual equivalence with the journal publication.",
+    "The source geometric empirical projection is retained despite the dimensionally inconsistent matrix formula (1.26). The malformed population-bias assignment and strict-versus-weak covariance restatement are archived without repair.",
+    "Other unresolved source conventions include zero-column normalization, argmin ties, conditional-noise scope, population extension of rank-deficient fits, and empty-support/zeroth-power endpoints. These are source-fidelity notes rather than modifications to the theorems.",
+    "The source's conditional-expectation interpretation of covariance regression and its claimed OMP greedy-decrease equivalence are recorded separately from the actual defining formulas."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2210.07850v1",
+    "version": "arXiv:2210.07850v1",
+    "pdf_sha256": "15996787a07db24f10b36d5ab632a1cbdf0b72cf4881d7ed9337b130e3ae1252",
+    "pdf_pages": 43,
+    "main_text_last_pdf_page": 24
+  },
+  "recorded_checks": [
+    "The original inventory passes an independent validator invocation and its hash matches the source review. The final census preserves all complete theorem records without renumbering or changes to their bodies.",
+    "PDF title, author, arXiv v1 stamp, 43-page count and SHA-256 match the pinned source. Main text and references end before Appendix A on page 25; no appendix body is used.",
+    "Theorem 1.2 preserves its chained oracle bound, minimum over nonnegative iterations, overbarred noise parameter and C_tau>=8 bar-sigma squared.",
+    "Theorem 1.8 preserves the two-sided empirical-noise estimation condition and c>0; Theorem 5.1 preserves the one-sided condition, c>=0, sufficiently large AIC coefficient, lower bound on tau_two-step itself, and the risk conclusion on the corresponding event.",
+    "All seventeen interface records were checked against the source. Algorithm 1 uses raw-column normalized correlations, and (1.8) uses the empirical noise estimate with an additive linear iteration threshold.",
+    "Both (Sparse) branches retain all their conditions. The support bound, beta-min and little-o condition are distinct from gamma-sparsity and its subset inequality. Rate (1.20) and threshold iteration (3.2) preserve the matching branch.",
+    "The local graph resolves empirical and population projections separately. Theorem 1.2 does not acquire (Sparse), (SubGD), (CovB), target rates, or population bias; Theorem 1.8 uses the population L2 norm without an artificial projector dependency.",
+    "The lower-bound iteration (3.2) brings the population projector into Theorem 5.1. It depends on the OMP path and bias, not on the noise estimator mentioned in its introductory comparison. Additive AIC and prefix selection remain separate defining steps.",
+    "Twelve auxiliary source passages preserve empirical/population norm conventions, coordinate notation, constant dependencies, common high-probability event scope, and source discrepancies. No proof-only balanced oracle or Scaled Lasso requirement is imported.",
+    "The final census independently validates 30 direct theorem uses and 37 related-theorem connections. Source keywords and highlight selectors cover every record, and all theorem explanations trace explicit same-paper paths. Mathematical fragments have balanced braces."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "67c0ba19dc67d0b10d1084b967ae4ddd0a7a93735de9510802336014b2078837"
+}

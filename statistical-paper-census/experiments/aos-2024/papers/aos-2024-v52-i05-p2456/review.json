@@ -1,0 +1,247 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i05-p2456",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-10T20:43:53.761595+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i05-p2456/T4.1",
+      "aos-2024-v52-i05-p2456/T4.3",
+      "aos-2024-v52-i05-p2456/T4.4"
+    ],
+    "printed_label_check": [
+      [
+        11,
+        "4.1"
+      ],
+      [
+        12,
+        "4.3"
+      ],
+      [
+        13,
+        "4.4"
+      ]
+    ],
+    "method": "Independent exact small-cap heading enumeration and visual comparison of all three complete theorem statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark",
+      "Conjecture"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 3,
+    "interfaces": 23,
+    "source_members": 23,
+    "direct_theorem_uses": 15,
+    "related_theorem_connections": 40,
+    "unranked_auxiliary_passages": 9
+  },
+  "source_notes": [
+    {
+      "issue_id": "registered-version-and-scope",
+      "evidence": [
+        {
+          "page": 1,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 20,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The registered source is the IMS manuscript AOS2401-003R2A0.pdf, marked Submitted to the Annals of Statistics. The source has no publication date on the inspected cover. The main-text discussion ends on shared page20 before the mathematical appendix; only the clipped main text is used."
+    },
+    {
+      "issue_id": "two-hilbert-space-spectra",
+      "evidence": [
+        {
+          "page": 10,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorem4.1 uses the covariance operator on H_K, H_K-orthonormal eigenvectors and sqrt(mu_j). Theorem4.3 uses the Kperp integral operator on L2(mu), eigenvectors orthonormal there, and lambda_j multiplying a Kperp-RKHS inner product. Different normalization means the lambda_j coefficient must not be silently changed to sqrt(lambda_j). RKHS representatives for zero eigenvalues and projection membership are implicit in the source."
+    },
+    {
+      "issue_id": "bootstrap-null-scope",
+      "evidence": [
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorem4.3 explicitly assumes H0; Theorem4.4 prints only AssumptionB while referring to the same R_infinity. Proposition4.2 shows an additional parameter-estimation term under alternatives. Preserve the bootstrap statement exactly and flag its intended non-null scope as unresolved; do not add H0 to the original or infer unconditional validity under arbitrary alternatives."
+    },
+    {
+      "issue_id": "bootstrap-almost-sure-strength",
+      "evidence": [
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "B(iv) requires only a root-n O_P estimator rate, whereas Theorem4.4 asserts almost-sure bootstrap consistency and cites the formal convergence concept externally. The main text does not supply a detailed conditional metric definition or additional pathwise estimator assumptions. This census records the stated strength and does not certify its proof or silently weaken a.s. to in probability."
+    },
+    {
+      "issue_id": "gram-matrix-scaling",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Algorithm1 defines the raw mathbb K entries as K(X_i,X_j)/n. B(ii) then prints lambda_max(mathbb K)=O_P(n^−1), not O_P(1) and not the projected Gram matrix. Retain the exact condition; for standard fixed nonzero kernels this is substantially restrictive and should be checked before assuming the theorem applies to an example."
+    },
+    {
+      "issue_id": "lemma34-normalization",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 9,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "For the Algorithm1 Gram scaling, the squared norm of n^−1 sum_i c_i K(.,x_i) equals c-prime mathbb K c/n. Lemma3.4 instead prints sqrt(c-prime mathbb K c) for that norm. This mismatch is confined to the auxiliary original lemma passage; the empirical process uses1/sqrt(n), so the statistic norm identity(14) has the compatible scaling."
+    },
+    {
+      "issue_id": "matrix-valued-score-measure",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The source defines sigma_s² as E[s*s-prime|X], which is a p-by-p matrix for p>1, then calls sigma_s² dF_X a measure and writes kappa_s<infinity without an explicit trace, norm or componentwise convention. Preserve the matrix-valued expression and leave its scalarization unresolved."
+    },
+    {
+      "issue_id": "projection-domain-and-inverses",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 9,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Population Gamma is assumed nonsingular and empirical Gamma_n is asserted nonsingular for sufficiently large n. The source gives no convention for singular finite samples. Pi is initially an L2(P_X) projection, the empirical process is indexed by H_K, and the spectral expansion uses L2(mu); these three domains are distinct. No generalized inverse or universal RKHS/L2 isometry is inserted."
+    },
+    {
+      "issue_id": "boundary-and-neighborhood",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theta is compact and theta0 may be on its boundary, while Theta0 is introduced as a small neighborhood in R^p and differentiability is stated in Theta. The extension/relative-domain convention for derivatives and suprema near a boundary is implicit. Preserve the printed domains without strengthening to an interior parameter or a globally extended function."
+    },
+    {
+      "issue_id": "later-assumptions-and-proof-only-results",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 14,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "B(v) is introduced after Theorem4.4 for local-power Proposition4.5. Section5 separately treats estimated nonparametric conditional scores under AssumptionC. Neither is retroactively added to Theorems4.3/4.4. Proposition4.2 and the application of Theorem4.1 are proof steps, not new assumptions of the applied process definitions."
+    },
+    {
+      "issue_id": "sampling-and-residual-second-moment",
+      "evidence": [
+        {
+          "page": 1,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 3,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 9,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "W_i are iid joint observations, without independence of Z_i and X_i. The weighted measure uses E[epsilon²|X], which equals conditional variance only under conditional mean zero. The multipliers are independent of all original observations, centered, unit variance and bounded; Gaussian multipliers do not satisfy that printed bounded-support assumption."
+    }
+  ],
+  "source": {
+    "source_url": "https://www.e-publications.org/ims/submission/AOS/user/submissionFile/63223?confirm=1e325b16",
+    "version": "IMS manuscript AOS2401-003R2A0.pdf; marked Submitted to the Annals of Statistics",
+    "pdf_sha256": "0b228ac43be500b5f08a806750371daddeedccc07b2e8fd00d170782cc0d5144",
+    "pdf_pages": 25,
+    "main_text_last_pdf_page": 20
+  },
+  "recorded_checks": [
+    "Three complete main-text Theorems4.1,4.3,4.4 independently enumerated by exact small-cap headings. Proposition4.2 and Proposition4.5 are excluded. The main text ends at manuscript line639 on shared PDF page20 before the mathematical appendix.",
+    "Twenty-three original entries preserve the positive definite kernel, RKHS and dual, AssumptionA and covariance Gaussian limit, data and CMR hypotheses, scores, population/sample projections, Gram matrix, feasible statistic, two weighted measures and the projected spectrum, AssumptionB(i)–(iv), fitted residuals, multiplier bootstrap and its cited almost-sure convergence convention. Nine auxiliary passages preserve relevant context and non-Theorem results.",
+    "Independent reconstruction verifies15 direct uses and40 related connections. Theorem4.1 reaches only the abstract kernel/Hilbert/covariance objects. The applied theorems do not inherit AssumptionA through its proof application. Theorem4.4 references the limit formula of Theorem4.3 without silently inheriting H0, and B(v) and AssumptionC are not imported.",
+    "Distinguish H_K, L2(P_X) and L2(mu), population Pi and empirical Pi-hat, raw and projected Gram matrices, fitted and true-parameter residual processes, conditional second moments and variances, and abstract versus projected spectral normalizations. Bootstrap holds estimates fixed and resamples bounded iid independent multipliers.",
+    "Eleven notes preserve the registered manuscript identity, eigenbasis normalization and implicit zero-mode conventions, missing explicit H0 in Theorem4.4, its conditional almost-sure strength, the raw-Gram eigenvalue order, Lemma3.4 scaling mismatch, matrix-valued score measure, empirical inverse/domain conventions, boundary-neighborhood ambiguity, later/proof-only hypotheses and joint sampling conventions.",
+    "All23 entries carry original natural-language terms, source labels/kinds and literal meaning-bearing selectors. Every related theorem has a verified same-paper path and a specific correspondence explanation. Assumption passages remain labeled Assumption; the R_infinity formula is explicitly a Theorem4.3 excerpt.",
+    "All six content JSON artifacts reproduce byte for byte in a fresh directory. Seven retained paper-specific scripts preserve inventory extraction/review, original passages, ambient context, finalization, reproducible rebuilding and independent review with frozen hashes and source-specific checks."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "2500d3ddafa784a15ba42d1f4bca11487a5c353d27ade3cf8b7ab86ac0cae51a"
+}

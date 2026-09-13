@@ -1,0 +1,495 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i04-p1716",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-10T01:02:09.034401+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i04-p1716/T1",
+      "aos-2024-v52-i04-p1716/T2",
+      "aos-2024-v52-i04-p1716/T3",
+      "aos-2024-v52-i04-p1716/T4"
+    ],
+    "printed_label_check": [
+      [
+        8,
+        "1"
+      ],
+      [
+        10,
+        "2"
+      ],
+      [
+        12,
+        "3"
+      ],
+      [
+        12,
+        "4"
+      ]
+    ],
+    "method": "Independent source heading enumeration and visual comparison of all complete theorem statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 4,
+    "interfaces": 24,
+    "source_members": 24,
+    "direct_theorem_uses": 30,
+    "related_theorem_connections": 56,
+    "unranked_auxiliary_passages": 7
+  },
+  "source_notes": [
+    {
+      "issue_id": "source-dates",
+      "description": "The registered v1 PDF has an arXiv stamp of 14 April 2023 and a title-page version date of April 17, 2023. Both identify the inspected bytes; neither is silently corrected.",
+      "evidence": [
+        {
+          "page": 1,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "hilbert-quotient",
+      "description": "The source calls the set of square-integrable measurable functions a Hilbert space but does not state the almost-everywhere quotient or underlying measure-space assumptions needed for a definite L2 norm.",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "domain-symbol",
+      "description": "The bounded function domain is printed as blackboard C. It is a domain of integration in this real function-space model, not an asserted complex scalar field.",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "lp-finiteness",
+      "description": "The general Lp expression is defined for p>=1, but membership in L2 on a bounded domain alone does not ensure finite Lp norm for p>2. No such implication is inserted.",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "operator-wording",
+      "description": "The source says operation norm when defining the continuous-operator norm; the original wording is retained.",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "iid-scope",
+      "description": "Assumption 1(i) calls eta_it iid, while the adjacent discussion permits cross-subject correlation and varying distributions. It is interpreted temporally for each subject; Theorem 4 separately adds independence over i.",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Original source notation or scope"
+        },
+        {
+          "page": 12,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "eta-index",
+      "description": "Assumption 1(ii) defines eta-tilde_Nt using eta_is on the right with no bound s. The source subscript mismatch is preserved rather than replacing s by t.",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "random-element-operator-norm",
+      "description": "The left side of (2.6) uses an O-subscript norm on a sum of random Hilbert-space elements, although O was defined for operators. The printed expression is retained; its intended norm remains unresolved.",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Original source notation or scope"
+        },
+        {
+          "page": 5,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "lag-zero",
+      "description": "The coefficient condition sums j times max_i ||A_ij||_O starting at j=0. This gives no uniform bound on A_i0 by itself. No unprinted lag-zero bound is added.",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "linear-process-convergence",
+      "description": "Convergence mode of the infinite random-element series and coefficient-operator sum is not separately stated. The source assumes these objects exist under its standing setup; the census does not prove convergence.",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "moment-uniformity",
+      "description": "Exponential integrability is stated for any i with positive bounded c_eta. A uniform numerical upper bound on these expectations and on all asymptotic constants is not explicitly supplied.",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "operator-moment-quantifier",
+      "description": "The cross-sectional moment restriction quantifies over any sequence B_i and 0<=iota<=1. Dependence of the hidden big-O constant on that sequence is not spelled out.",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "spectral-domain",
+      "description": "The covariance-kernel limit is pointwise as written. Compactness, trace summability, eigenfunction normalization and a topology for operator convergence are not explicitly established by the eigenpair passage.",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Original source notation or scope"
+        },
+        {
+          "page": 6,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "bridge-series",
+      "description": "Theorem 1 uses an infinite eigenvalue-weighted Brownian-bridge series and a supremum; convergence and measurability conditions are not stated separately. These are source well-definedness obligations, not extra extracted assumptions.",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "quantile-convention",
+      "description": "Theorem 1 names an upper alpha-quantile without specifying alpha in (0,1) or a generalized-inverse/tie convention. No unique critical value is invented.",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "limit-regimes",
+      "description": "Theorem 1 distinguishes joint N,T limits from its T-only PE statement. The kappa=0 growth case permits bounded N and is compatible with the latter, but not a joint N->infinity branch.",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "threshold-domains",
+      "description": "The prescribed log-log threshold may be nonpositive or undefined for small N vee T. The asymptotic setup implicitly uses sufficiently large indices; no finite-sample truncation is inserted.",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "threshold-equality",
+      "description": "The PE component uses strict >xi_NT, whereas the detected-subject set uses >=xi_NT and its complement <xi_NT. The difference at equality is preserved.",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Original source notation or scope"
+        },
+        {
+          "page": 9,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "centering-difference",
+      "description": "The deterministic mean process (3.9) is centered with x, while the data CUSUMs use floor(Tx)/T. Its normalization is 1/sqrt(T), without an added sqrt(N). Both printed differences are preserved.",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Original source notation or scope"
+        },
+        {
+          "page": 7,
+          "location": "Original source notation or scope"
+        },
+        {
+          "page": 8,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "break-domain",
+      "description": "Break locations are treated as integer sample indices in estimator maximizations, but the initial model does not explicitly state their integer or interior domain.",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Original source notation or scope"
+        },
+        {
+          "page": 9,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "argmax-ties",
+      "description": "The individual and pooled argmax formulas do not specify tie-breaking or measurable selection. The census preserves argmax rather than choosing a minimizer/maximizer convention.",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Original source notation or scope"
+        },
+        {
+          "page": 12,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "missed-subjects",
+      "description": "The individual estimator is defined only on the detected set, while Theorem 2 takes a maximum over the true broken set. Extension on missed-subject events is not specified; the first conclusion establishes correct detection asymptotically.",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Original source notation or scope"
+        },
+        {
+          "page": 10,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "empty-true-set",
+      "description": "The minimum over true broken subjects and the latent partition require nonempty groups in the estimation regime. Empty-set conventions are not stated in the theorem hypotheses.",
+      "evidence": [
+        {
+          "page": 10,
+          "location": "Original source notation or scope"
+        },
+        {
+          "page": 11,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "common-break-wording",
+      "description": "The paragraph after (4.6) equates all b_k although the structure orders them strictly. The common-break case is consistent with K0=1; the original sentence is preserved separately.",
+      "evidence": [
+        {
+          "page": 10,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "clustering-ties",
+      "description": "Largest-gap selection does not specify how equal gaps are ordered. Coincident selected boundaries can create empty candidate clusters; no repair is invented.",
+      "evidence": [
+        {
+          "page": 10,
+          "location": "Original source notation or scope"
+        },
+        {
+          "page": 11,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "clustering-endpoint",
+      "description": "The last cluster interval ends strictly before T, while individual argmax candidates include T. Subjects estimated at T are not assigned by the printed half-open intervals.",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Original source notation or scope"
+        },
+        {
+          "page": 11,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "candidate-feasibility",
+      "description": "The criterion minimizes over 1<=K<=K-bar without spelling out K<=number of detected subjects, nonempty candidate clusters, or K-bar>=K0. These are unresolved domain requirements.",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "average-break-integer",
+      "description": "The within-cluster average of integer break estimates can be noninteger, yet is used directly as a summation limit and denominator in (4.8). No floor, rounding or interpolation convention is stated.",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "residual-log-domain",
+      "description": "The residual average divides by the detected-set size and takes log V(K). Empty detected sets, zero residuals and zero pre/post segment lengths have no explicit conventions.",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "group-count-wording",
+      "description": "The source says the true cluster number is determined by the formula for K-hat. The formula remains the estimator, and that wording is not silently rewritten in the original passage.",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "proportional-integrality",
+      "description": "Assumption 2(i) writes exact proportional break locations and group sizes. Integer subsequences, rounding, fixed K0, and uniformity of c_k,d_k across asymptotics are implicit.",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "conditional-membership",
+      "description": "Theorem 3 states joint membership equality conditional on K-hat=K0. The conditioning event and group labels must be retained; this is not replaced with unconditional pointwise accuracy.",
+      "evidence": [
+        {
+          "page": 12,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "theorem4-construction",
+      "description": "Theorem 4 expressly assumes only Assumption 2(i), but its estimated-group construction cites the tuning restriction in 2(iii). This is recorded as an indirect construction dependency; Assumption 2(ii) and the conclusion of Theorem 3 are not imported.",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Original source notation or scope"
+        },
+        {
+          "page": 12,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "theorem4-consistency-scope",
+      "description": "Theorem 4 asserts exact recovery using estimated groups while omitting the full hypotheses of the preceding group-consistency theorem and an explicit N=O(T^kappa) condition. The source claim is preserved without claiming its proof is valid.",
+      "evidence": [
+        {
+          "page": 12,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "theorem4-exceptional-groups",
+      "description": "The pooled estimate is indexed by estimated groups, while the conclusion ranges over true K0 groups. Its definition on events with the wrong estimated group count is not specified.",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Original source notation or scope"
+        },
+        {
+          "page": 12,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "brownian-prerequisite",
+      "description": "Independent standard Brownian bridges and ordinary probabilities/expectations are named source primitives. Their constructions and probability-space choices remain ambient.",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Original source notation or scope"
+        }
+      ]
+    },
+    {
+      "issue_id": "mean-average-subscript",
+      "description": "Page 6 prints nu_i, without t, inside the average defining nu-tilde_t, despite defining nu_it immediately above. D8 previously inserted t; the source transcription amendment restores nu_i and leaves the source ambiguity unresolved.",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Cross-subject averages before equation (3.2)"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2304.07003v1",
+    "version": "arXiv:2304.07003v1; title-page version April 17, 2023; arXiv stamp 14 April 2023",
+    "pdf_sha256": "2ebdf2c6b0ed3a1bc4ffe17b29a85db7e97362a9ff4c37926dfd1703ebee7af1",
+    "pdf_pages": 42,
+    "main_text_last_pdf_page": 22
+  },
+  "recorded_checks": [
+    "Four complete main-text Theorems were independently enumerated by their actual bold headings and visually compared on pages 8, 10 and 12. Both subparts and alternative limits in Theorem 1, both branches in Theorem 2, the conditional membership event in Theorem 3 and all Theorem 4 restrictions are preserved.",
+    "Twenty-four original source entries preserve the function space and operators, model, both parts of Assumption 1, covariance eigenpairs, null/alternative regions, both CUSUM constructions, prescribed threshold, PE test, true and estimated subject sets, individual break estimates, latent partition, largest-gap clustering, the full fitted-mean/penalized-criterion construction, three separate parts of Assumption 2 and the pooled estimate. Seven auxiliary passages retain source conventions and distinct contexts.",
+    "Independent reconstruction verifies 30 direct uses and 56 related connections. Theorem 2 uses only the local omega definition from (3.8), not the alternative signal condition. Theorem 4 directly cites only Assumption 2(i); its estimator reaches 2(iii) through the explicit tuning-parameter restriction in (4.9). Assumption 2(ii) and prior theorem conclusions are not imported.",
+    "Every interface has literal natural-language source keywords, original source statements, faithful headings and matched selectors. Unnamed fitted quantities remain in the contiguous criterion construction rather than receiving an invented standalone name. Every related theorem has a source-backed explanation along its local dependency path.",
+    "Visual comparison preserved the strict PE threshold versus non-strict detected-set threshold, floor-centered data CUSUM versus x-centered deterministic alternative, square root over N vee T, eta_is on the right of eta-tilde_Nt, the printed operator-norm subscript in (2.6), half-open clusters, noninteger average break locations in sums, and estimated rather than oracle groups in the pooled estimator.",
+    "Thirty-six source issues document ambiguous domains, spectral prerequisites, moment uniformity, selection/tie conventions, empty clusters, criterion domains and Theorem 4 scope without repairing source statements or certifying proofs. The main-text endpoint is page 22 before Appendix A. An initial page-23 boundary probe exposed opening appendix lines; these were not retained or used in the census.",
+    "All six content JSON artifacts reproduce byte for byte from retained per-paper scripts. Registered PDF identity, independent theorem enumeration and statement handoff, source-specific checks, graph/path reconstruction, names/highlights, mathematical fragments and both structural validators passed."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "5e577836aeaeafe1902d1521b90c625c5d1b90c37447587162a0eadbc3c91fc1"
+}

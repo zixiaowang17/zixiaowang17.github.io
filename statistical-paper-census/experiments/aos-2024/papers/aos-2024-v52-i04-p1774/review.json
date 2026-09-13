@@ -1,0 +1,453 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i04-p1774",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-10T01:39:58.006544+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i04-p1774/T1",
+      "aos-2024-v52-i04-p1774/T2",
+      "aos-2024-v52-i04-p1774/T3",
+      "aos-2024-v52-i04-p1774/T4",
+      "aos-2024-v52-i04-p1774/T5",
+      "aos-2024-v52-i04-p1774/T6"
+    ],
+    "printed_label_check": [
+      [
+        3,
+        1
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        8,
+        4
+      ],
+      [
+        8,
+        5
+      ],
+      [
+        9,
+        6
+      ]
+    ],
+    "method": "Independent source heading enumeration and visual comparison of all six complete original statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 6,
+    "interfaces": 18,
+    "source_members": 18,
+    "direct_theorem_uses": 22,
+    "related_theorem_connections": 46,
+    "unranked_auxiliary_passages": 11
+  },
+  "source_notes": [
+    {
+      "issue_id": "source-version",
+      "description": "The inspected arXiv v1 has a January 5, 2023 title-page date and a 4 Jan 2023 arXiv stamp. It is the registered PDF, not the published AoS text; both dates and the version-specific URL are preserved.",
+      "evidence": [
+        {
+          "page": 1,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "conditional-convergence",
+      "description": "Theorems 2 and 4 assume weak convergence of the full sequence before identifying its limit. They do not establish existence of a limit or a convergence rate.",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 8,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "step-size-mismatch",
+      "description": "Iteration (3.12) uses gamma>0. Theorem 4 instead bounds eta by eta0 without explicitly identifying eta with gamma, and omits eta0>0. The original symbols and quantifiers are preserved.",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 8,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "printed-weight-index",
+      "description": "Both denominators in Theorem 3 and the denominator in Theorem 6 use omega_t^(j) inside a sum indexed by l. Theorem 5 uses omega_t^(l). The printed j indices are not changed to the mathematically expected l indices.",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 8,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 9,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "unbound-wasserstein-weight",
+      "description": "Theorem 6 has no weight dynamics or explicit definition of omega_t^(j), although its ODE uses that symbol and its measure formula uses equal weights 1/m. The preceding equal-weight initialization is retained separately, without repairing the ODE.",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "zero-weight-denominator",
+      "description": "The simplex allows zero weights. The j-indexed denominator in Theorem 3 is then zero for a zero-weight particle, so the displayed ODE is not defined literally on the entire stated initial simplex.",
+      "evidence": [
+        {
+          "page": 3,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 6,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "particle-pde-consistency",
+      "description": "With the printed j-indexed denominators, mass preservation and agreement of Theorem 3 with PDE (3.6) require clarification. Source review records the claimed equality without proving it or changing the formula.",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 6,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "empirical-uniform-law",
+      "description": "Uniform sampling from the indexed sample can mean uniform over indices or over distinct values when observations coincide. The source does not clarify this distinction.",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 9,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "time-quantifiers",
+      "description": "The ODE claims state unique solutions on any interval [0,T] without separately specifying T>=0, solution regularity, or how the assertion is quantified over the random initial locations.",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 8,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 9,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "finite-dimensions",
+      "description": "Positive finite integers N, m and d are implicit in the sample averages, simplex, and equal-weight formulas. Their domains are not repeated in every theorem.",
+      "evidence": [
+        {
+          "page": 1,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 3,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 6,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 8,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 9,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "probability-versus-p2",
+      "description": "The optimization and convergence theorems use all probability measures. The WFR flow passage uses P2. A finite-second-moment restriction must not be imported into Theorems 1, 2 or 4 merely from the flow overview.",
+      "evidence": [
+        {
+          "page": 2,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 3,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 5,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 6,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 8,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "pushforward-measurability",
+      "description": "The source defines pushforward for any mapping but does not state Borel measurability. A measurable map is needed for the usual Borel image-measure construction.",
+      "evidence": [
+        {
+          "page": 3,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "weak-pde-time",
+      "description": "The distributional-solution definition uses spatial test functions and an ordinary derivative in time. It does not specify temporal absolute continuity, pointwise versus almost-everywhere time equality, or integrability of the fields.",
+      "evidence": [
+        {
+          "page": 3,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "measure-gradient-limit",
+      "description": "The overview writes a difference quotient of measures and a limit eta->0 without specifying a topology, a one-sided positive limit, or minimizer selection. It expressly leaves existence of the limiting curve untreated.",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "metric-admissibility",
+      "description": "Dynamic distance displays omit explicit endpoint restrictions and admissible regularity of curves and fields. The prose supplies the endpoints but not a complete analytic domain.",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 5,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "fisher-rao-identity",
+      "description": "The source defines a centered probability-preserving reaction action and then states a four-times-Hellinger-squared closed form. The compatibility of these two descriptions requires separate mathematical review; neither is silently substituted for the other.",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 5,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "wasserstein-finiteness",
+      "description": "The static quadratic coupling formula is stated for all probability measures. It can have infinite value without further moment assumptions; the source does not state an extended-metric convention there.",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "first-variation-representative",
+      "description": "The explicit first variation has a fixed additive constant and mean -1. A generic first variation modulo constants cannot replace it unchanged in reaction formulas containing 1+delta ell_N.",
+      "evidence": [
+        {
+          "page": 3,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 5,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 7,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "update-nonnegativity",
+      "description": "The measure update definitions allow a positive step size without an explicit condition ensuring a nonnegative density multiplier. Theorems 2 and 4 discuss small steps, with the separate gamma/eta mismatch in Theorem 4.",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 7,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 8,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "particle-algorithm-order",
+      "description": "Algorithm 1 updates locations before weights, while (3.7) updates weights then transports the intermediate measure. Its printed denominators also use j-indexed weights. The algorithm is not substituted for the iteration in Theorem 2.",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 7,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "finite-particle-support",
+      "description": "A finite atomic initialization does not have full support on R^d. The source explicitly excludes Algorithm 1 from Theorem 2 coverage; analogous finite-support issues prevent treating Theorem 4 as a guarantee for arbitrary fixed particles.",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 7,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 8,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "theorem5-locations",
+      "description": "Theorem 5 uses arbitrary fixed real locations introduced in preceding prose. It does not assume their randomized initialization from Algorithm 2.",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 9,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "remark-domain",
+      "description": "Remark 1 uses x in R where Theorem 1 uses R^d. The remark is retained as source context without changing the theorem domain or dropping its second condition.",
+      "evidence": [
+        {
+          "page": 3,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "nonunique-estimator",
+      "description": "The source uses NPMLE to mean any minimizer. No tie-breaking rule or uniqueness assumption is inserted into the conditional-limit statements.",
+      "evidence": [
+        {
+          "page": 3,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 6,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 8,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "excluded-claims",
+      "description": "References to appendix Theorems 7 and 8 and the unnumbered continuous-time statement after Theorem 4 are not main-text Theorem environments. Appendix bodies and proof derivations are excluded.",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 8,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 9,
+          "location": "Source scope or notation"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2301.01766v1",
+    "version": "arXiv:2301.01766v1; title-page date January 5, 2023; arXiv stamp 4 Jan 2023",
+    "pdf_sha256": "776bf79a802495e8962fba69bf3da0584c4e0723efa6e9b17df8a546119afddf",
+    "pdf_pages": 51,
+    "main_text_last_pdf_page": 15
+  },
+  "recorded_checks": [
+    "Six complete main-text Theorems were independently enumerated and visually compared. Both Theorem 1 parts, weak-limit assumptions in Theorems 2/4, all particle equations and initializations, and the page-7 ending of Theorem 3 are preserved. Appendix theorem references and unnumbered claims are excluded.",
+    "Eighteen original entries preserve Gaussian convolution, likelihood/NPMLE, measure classes and notation, first variation, two explicit measure iterations, three likelihood flow PDEs, the generic metric construction and the three source distances. Eleven auxiliary passages retain simplex/Dirac notation, fixed/equal-weight initializations and source scope statements.",
+    "Independent reconstruction verifies 22 direct uses and 46 related connections. The discrete convergence theorems reach their explicit measure updates, not finite-particle algorithms or continuous-time flows. The particle theorems reach their named flow PDEs, distributional-solution convention and underlying geometries. WFR action does not depend on either component distance merely because the source calls it composite.",
+    "Every interface has literal natural-language source keywords, faithful source headings, original statements and source-backed selectors. Adjacent naming context is archived for the two flow names not spelled out in their defining sentences. Every related theorem has an explanation tied to its same-paper path.",
+    "Visual comparison preserves omega_t^(j) inside l-indexed sums in Theorems 3/6, omega_t^(l) in Theorem 5, eta versus gamma in Theorem 4/(3.12), the intermediate measure in both stages of (3.7), and the centered reaction fields in the source distance formulas. No original formula was silently repaired.",
+    "Twenty-five source issues document undefined or unexplained weights, time and measurability conventions, geometric admissibility, the claimed Fisher-Rao/Hellinger identity and version-specific statements. The census verifies source fidelity and dependency interpretation, not correctness of the printed ODEs or proofs. Appendix bodies were not read.",
+    "All six content artifacts reproduce byte for byte from seven retained per-paper scripts. Registered PDF identity, independent heading enumeration, source-specific formula checks, original-statement handoff, graph reconstruction, keywords, selectors, mathematical fragments and structural validators passed."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "1d719a704f1d67e202175929b74160cecbcaa61de377f899092379f279a46cab"
+}

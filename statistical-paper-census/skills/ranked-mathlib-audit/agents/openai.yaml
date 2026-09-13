@@ -1,0 +1,7 @@
+interface:
+  display_name: Ranked Mathlib Audit
+  short_description: Audit mathlib support and assess remaining work
+  default_prompt: Use $ranked-mathlib-audit to search the census interfaces, inspect
+    related mathlib declarations, record verified links and concrete gaps, and assess
+    each interface as Use mathlib, Small adaptation or New infrastructure using
+    mathematical-work-v2. Write all artifacts in English.

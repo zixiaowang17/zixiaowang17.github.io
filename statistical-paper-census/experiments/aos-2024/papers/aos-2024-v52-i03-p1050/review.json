@@ -1,0 +1,100 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i03-p1050",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T13:43:25.937787+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i03-p1050/T3.1",
+      "aos-2024-v52-i03-p1050/T5.1",
+      "aos-2024-v52-i03-p1050/T6.1"
+    ],
+    "method": "Independent uppercase THEOREM heading enumeration over pages 1–26, with page 26 clipped above y=137.4. Full statement images and the shared-page appendix boundary were checked.",
+    "printed_label_check": [
+      [
+        8,
+        "3.1"
+      ],
+      [
+        12,
+        "5.1"
+      ],
+      [
+        17,
+        "6.1"
+      ]
+    ],
+    "excluded_result_types": [
+      "Lemma",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 3,
+    "interfaces": 31,
+    "source_members": 31,
+    "direct_theorem_uses": 25,
+    "related_theorem_connections": 45,
+    "unranked_auxiliary_passages": 6
+  },
+  "source_notes": [
+    "The inspected 53-page source is arXiv:1710.00915v5, dated 21 June 2024. Final journal typesetting equivalence is not asserted.",
+    "Main text and references end above y=137.4 on page 26; Appendix A begins at y=137.4128 on the same page. All appendix mathematics is excluded.",
+    "Theorem 5.1 spans pages 12–13 and includes the full remainder plus the optional initial-assignment extension. Omitting page 13 would change both the bound and the scope.",
+    "The Markov sufficient statistic uses blackboard-bold S; stage endpoints use plain S; the controlled state space uses script S. The initial inventory typography was corrected before the final census handoff.",
+    "Policy-dependent change time uses a subscript script X. Individual treatment X_t is italic, while the full assignment rule is script X. Sans-serif P,E,D and script U,R are preserved.",
+    "The observed filtration does not include the latent state. The response law nevertheless conditions on the latent current state and past latent history to specify conditional independence.",
+    "Assignment rules are deterministic and predictable, with a deterministic first treatment. The source mentions randomized policies as a possible extension, but the census does not enlarge the admissible class.",
+    "The initial hazard pi_0 and subsequent functions pi_t take values below one. The source permits a zero prior and zero hazards; it does not add a universal positive lower hazard bound.",
+    "The Markovian model requires only a fixed-dimensional sufficient treatment state. Finite memory is a separate example, not an assumption of Theorem 3.1 or of the other Theorems.",
+    "The posterior-odds definition may have a zero denominator under unrestricted response densities. The controlled state space is printed as R_+=[0,infinity), without an added infinite state or a separate likelihood-support condition in Theorem 3.1.",
+    "The controlled termination indicator is 1{t>T}, whereas the stopping action is 1{T=t}. Their one-step timing difference is preserved.",
+    "The predictive density phi used in transition formula (8) is explicitly defined in Appendix B.1, equation (B.1). Its formula remains unresolved under the main-text-only scope; no inferred mixture is inserted into the original source.",
+    "The source names link/update functions without an explicit global measurability or regularity condition in (1). Such hypotheses are not silently added to the Markov model.",
+    "The action-specific conditional expectation is written using conditioning on exact state values. The main-text display does not choose a version on null conditioning events.",
+    "The optimal policy uses argmin without an explicit measurable tie-selection rule. The stopping comparison is printed with the optimal total value J_c^*, and is not replaced by a different continuation value.",
+    "The auxiliary objective minimizes c times total sample size plus false-alarm probability. It does not minimize detection delay or enforce a prescribed false-alarm equality; the latter calibration is only discussed after Theorem 3.1.",
+    "The crossing time sigma allows zero additional observations, while tau starts at one. Displayed inequalities are non-strict even where surrounding prose says exceeds or smaller than.",
+    "The proposed procedure restarts block indexing and the likelihood-ratio test at each stage. It terminates in favor of detection when the two crossing times tie.",
+    "The initial deterministic prefix in (11) applies only in the first acceleration stage and may be cut short at S_1. It is not repeated in every cycle.",
+    "The source states stopping constructions via infima without a comprehensive rule for infinite stage endpoints or all zero-duration boundary cases. The formulas are retained without inventing such conventions.",
+    "Condition (14) explicitly puts a positive lower bound on V_x^I, and only a finite upper bound on V_x^J. Both are centered log-likelihood second moments, although the block-averaging prose calls them second moments.",
+    "The uniform stability condition (16) quantifies over every starting time, prior treatment history and cyclic phase. M(Xi,epsilon) is a sufficient positive integer, not specified as the smallest possible threshold.",
+    "The adjusted information D(Xi)=I(Xi)+d(Xi) uses sans-serif D. The threshold d in the switching rule is unrelated to the block log-hazard limit d(Xi).",
+    "Theorem 5.1 is non-asymptotic and holds for arbitrary stated thresholds and blocks under its conditions. The optimized threshold formulas, later dominance convention D(Xi_2)>=D(Xi_1), and finite-memory block designs are not extra assumptions.",
+    "The initial expected-time formula lambda(Xi) includes 1-pi_0. The worst-history residual formula tilde-lambda omits it; the accompanying prose does not explicitly state conditioning on no previous change, so that interpretive detail is kept outside the original quotation.",
+    "The uniform two-block hazard bound zeta may be zero and the worst-history expected time may be infinite. Theorem 5.1 does not separately assert their positivity or finiteness, so its displayed bound can be uninformative in such cases.",
+    "Theorem 6.1 uses an alpha-indexed change model with fixed response densities. The asymptotic bound is defined through a liminf ratio, not an additive remainder or a finite-alpha inequality.",
+    "Condition (27) is uniform over time and all treatment histories, not only the two selected blocks. Its displayed t>=0 includes the prior pi_0 despite the different notation used for it in the setup.",
+    "Condition (28) requires existence of a block controlling the worst-history residual duration. It does not restrict all assignment rules in the universal lower bound to that block.",
+    "Condition (29) assumes D-star>0 and D-star=O(1), without stating a lower bound away from zero. It writes epsilon>0, although its window floor((1-epsilon)|log(alpha)|/D-star) is nonpositive for epsilon>=1; no corrected range is substituted.",
+    "The information-bound expression in (29) repeats the policy quantifier before a supremum over policies, and its summands can involve random treatment histories. A pathwise or probability interpretation of that supremum is not additionally specified in the displayed assumption.",
+    "The universal lower bound does not inherit uniform block-stability (16), the cyclic procedure, optimized blocks or the Markovian restriction. Omega is reused as a scalar definition without importing its surrounding stability hypothesis.",
+    "The density phi is the only appendix-only formula needed by the stored construction. Appendix proofs, exponential/polynomial-decay examples, posterior formulas for unknown parameters and simulation details are not used to complete these three theorem statements."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/1710.00915v5",
+    "version": "arXiv:1710.00915v5",
+    "pdf_sha256": "532c26f11f178000a1e42bb7d8c43cfc1ea646168a22a4b3f63b255536ae4815",
+    "pdf_pages": 53,
+    "main_text_last_pdf_page": 26
+  },
+  "recorded_checks": [
+    "Source title, both authors, version, date, 53-page count and PDF hash checked. Fresh source extraction matches every archived page, with page 26 clipped above the appendix boundary.",
+    "Independent uppercase-heading enumeration finds three Theorems and excludes the ordinary-case citation. Theorem 5.1 spans pages 12–13; the others are complete on pages 8 and 17.",
+    "Original inventory fields remain unchanged at census handoff. Theorem 3.1 preserves the Markovian and auxiliary-objective requirements plus the memoryless special case.",
+    "Theorem 5.1 retains every term of U and R, the exact threshold ranges, and the modified-assignment expected-time formula (21). Theorem 6.1 retains all four numbered conditions and the admissible-class infimum.",
+    "The latent-state model, observed filtration, predictable deterministic policies, response law, general hazard and Markov sufficient-state update are checked against pages 4–6.",
+    "The auxiliary cost, delayed termination flag, state/action kernel, stage cost, value function, Bellman operators and optimal procedure are source-checked. The appendix-only phi formula remains explicitly unresolved.",
+    "The block convention, posterior/likelihood hitting times, full cyclic assignment, stage recursion, tie behavior and initial-prefix modification are checked against pages 9–11.",
+    "The directional information numbers, centered variances, uniform stability quantifiers, block averages, initial and worst-history expected times, and two-block hazard bound are checked against pages 11–13.",
+    "The alpha-indexed family, uniform upper hazard bound, existence condition on residual duration and uniform information-window assumption are checked against pages 16–18. Printed epsilon and support/finite-value ambiguities are preserved separately.",
+    "Independent graph traversal verifies 25 direct uses and 45 related connections. The universal lower bound does not inherit the proposed cyclic procedure, Markovian assumptions or condition (16).",
+    "Every interface has original natural-language terminology, faithful source kind, meaningful selectors and source-specific path explanations. Blackboard-bold state S, plain endpoint S and sans-serif information symbols are independently font-checked."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "71609d84d3edb2ba5723bf627db46b4a4905a76da65c6f99d8286bfa296873e7"
+}

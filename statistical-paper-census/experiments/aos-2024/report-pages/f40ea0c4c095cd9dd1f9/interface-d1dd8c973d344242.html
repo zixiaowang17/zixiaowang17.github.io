@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kronecker total variation</title><style>:root { color-scheme:light; --ink:#22314c; --muted:#607088; --line:#dce3ed; --paper:#fff; --wash:#f5f7fa; --accent:#2056b5; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--paper); color:var(--ink); font:15px/1.5 system-ui,-apple-system,sans-serif; }
+a { color:var(--accent); text-underline-offset:3px; }
+button,input,select { font:inherit; }
+button,a,input,select { -webkit-tap-highlight-color:transparent; }
+:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+button { cursor:pointer; }
+button:disabled { cursor:default; }
+.muted { color:var(--muted); }
+.shell { display:grid; grid-template-columns:minmax(0,1fr); min-height:100vh; }
+.shell.has-reader { grid-template-columns:minmax(310px,var(--catalog-width,38%)) minmax(0,1fr); }
+.catalog { container-type:inline-size; min-width:0; padding:32px clamp(20px,4vw,60px) 60px; }
+.catalog h1 { font-size:26px; line-height:1.25; margin:0 0 20px; font-weight:650; }
+.controls { display:flex; gap:8px; flex-wrap:wrap; }
+.controls input { flex:1 1 200px; min-width:0; }
+.controls input,.controls select { border:1px solid var(--line); border-radius:5px; padding:9px 11px; background:var(--paper); color:var(--ink); }
+.results-toolbar { display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:8px 18px; margin:16px 0 9px; }
+.results { font-size:13px; color:var(--muted); margin:0; }
+.ranking-note { font-size:12px; color:var(--muted); }
+.ranking-note summary { cursor:pointer; }
+.ranking-note[open] { flex-basis:100%; }
+.ranking-note p { max-width:65ch; margin:9px 0; line-height:1.6; }
+[hidden] { display:none !important; }
+.view-tabs { display:flex; gap:24px; border-bottom:1px solid var(--line); margin:0 0 22px; }
+.view-tabs button { padding:12px 1px; background:none; border:0; border-bottom:3px solid transparent; color:var(--muted); font-weight:600; }
+.view-tabs button[aria-selected=true] { color:var(--accent); border-bottom-color:var(--accent); }
+.search-results { border-top:1px solid var(--line); }
+.api-result,.paper-result-button { text-align:left; border:0; background:none; color:var(--ink); width:100%; }
+.api-result { display:grid; grid-template-columns:minmax(30px,max-content) minmax(0,1fr); gap:14px; padding:18px 8px; align-items:start; border-bottom:1px solid var(--line); }
+.api-result:hover,.paper-result-button:hover,.theorem-match:hover { background:var(--wash); }
+[aria-current=true] { background:#edf3fd; box-shadow:inset 3px 0 var(--accent); }
+.rank { font-size:18px; color:var(--muted); font-variant-numeric:tabular-nums; }
+.name { display:block; font-weight:600; line-height:1.45; }
+.count { display:block; font-size:13px; margin-top:7px; color:var(--muted); }
+.api-result .result-content { display:flex; justify-content:space-between; align-items:baseline; gap:18px; min-width:0; }
+.api-result .name { min-width:0; overflow-wrap:anywhere; }
+.theorem-count { flex-shrink:0; color:var(--muted); font-size:12px; font-variant-numeric:tabular-nums; }
+.rank-group { display:block; font-weight:400; font-size:12px; color:var(--muted); margin-top:4px; }
+@container(max-width:480px) { .api-result .result-content{display:block}.theorem-count{display:block;margin-top:4px} }
+.paper-result { border-bottom:1px solid var(--line); }
+.paper-result-button { padding:21px 8px; }
+.paper-result .name { font-size:17px; max-width:68ch; }
+.paper-needs { display:block; color:var(--muted); font-size:13px; margin-top:8px; }
+.theorem-matches { margin:0 8px 18px 20px; border-left:2px solid var(--line); }
+.theorem-match { display:flex; justify-content:space-between; gap:15px; width:100%; background:none; border:0; padding:10px 13px; text-align:left; color:var(--accent); }
+.theorem-match small { color:var(--muted); }
+.shell.has-reader .api-result { grid-template-columns:minmax(25px,max-content) minmax(0,1fr); }
+.scope { font-size:12px; color:var(--muted); margin-top:24px; }
+.reader { position:sticky; top:0; height:100vh; min-width:0; border-left:1px solid var(--line); background:var(--paper); }
+.reader[hidden] { display:none; }
+.reader-toolbar { display:flex; align-items:center; gap:18px; padding:12px 22px; height:55px; border-bottom:1px solid var(--line); font-size:13px; background:var(--wash); }
+.reader-toolbar a { margin-left:auto; }
+.close { border:0; padding:5px 8px; background:transparent; color:var(--ink); }
+iframe { display:block; width:100%; height:calc(100% - 55px); border:0; }
+.reading { max-width:850px; padding:34px clamp(22px,5vw,56px) 64px; margin:auto; }
+.reading h1 { font-size:27px; line-height:1.3; font-weight:650; margin:0 0 12px; }
+.reading .summary { margin:0 0 32px; color:var(--muted); }
+.reading h2 { font-size:19px; line-height:1.45; font-weight:600; margin:30px 0 16px; }
+.paper-title { padding-top:18px; border-top:1px solid var(--line); }
+.theorem { margin:0 0 33px; }
+.theorem h3,.theorem h4 { margin:0 0 6px; font-size:16px; font-weight:650; }
+.relation { font-size:12px; color:var(--muted); margin:0 0 13px; }
+.statement { font:18px/1.75 Georgia,"Times New Roman",serif; max-width:72ch; overflow-wrap:break-word; }
+.statement p { margin:0 0 16px; }
+.statement ol,.statement ul { padding-left:24px; }
+math[display=block] { display:block; overflow-x:auto; padding:12px 2px; margin:12px 0; max-width:100%; }
+math { font-size:1.02em; }
+math[display=inline] { display:inline-block; max-width:100%; overflow-x:auto; overflow-y:hidden; vertical-align:middle; }
+.equation { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:12px; margin:12px 0 20px; }
+.equation math { min-width:0; margin:0; }
+.equation-number { font-size:15px; color:var(--muted); white-space:nowrap; }
+.secondary { border-top:1px solid var(--line); padding-top:2px; margin-top:30px; }
+.library-links { list-style:none; padding:0; }
+.library-links li { margin-bottom:15px; }
+.library-links a { overflow-wrap:anywhere; font-size:14px; }
+.library-links small { display:block; color:var(--muted); margin-top:3px; font-size:13px; }
+p.gap { margin:20px 0 0; padding:16px 18px; background:var(--wash); border-left:3px solid #b6c8e6; line-height:1.7; }
+.empty { color:var(--muted); padding:20px 0; }
+@media(max-width:800px) { .shell.has-reader{display:block}.reader{position:fixed;inset:0;height:100dvh;z-index:2;border:0}.reading{padding:25px 22px 50px}.reading h1{font-size:23px}.statement{font-size:17px}.reader-toolbar{padding:10px 14px}.catalog{padding:25px 20px 45px} }
+
+.theorem-index { margin:24px 0 36px; border-top:1px solid var(--line); }
+.theorem-index a { display:flex; justify-content:space-between; gap:16px; padding:11px 0; border-bottom:1px solid var(--line); text-decoration:none; font-size:14px; }
+.theorem-index small { color:var(--muted); text-align:right; }
+.theorem-needs { font-size:13px; margin:7px 0 17px; }
+.requirements { margin:20px 0 45px; background:var(--wash); padding:14px 16px; scroll-margin-top:20px; }
+.requirements summary { cursor:pointer; font-size:14px; font-weight:600; }
+.requirements summary span { display:block; margin:5px 0 0 17px; font-weight:400; font-size:12px; color:var(--muted); }
+.requirements ul { list-style:none; margin:10px 0 0; padding:0; }
+.requirements li { border-top:1px solid var(--line); padding:15px 0; font-size:14px; }
+.requirements li:last-child { padding-bottom:2px; }
+.requirement-heading { display:flex; align-items:start; justify-content:space-between; gap:12px; }
+.requirements p { margin:7px 0 0; line-height:1.6; }
+.requirements .relation { margin:4px 0 8px; }
+.theorem { scroll-margin-top:22px; }
+@media(max-width:800px) { .api-result{grid-template-columns:minmax(25px,max-content) minmax(0,1fr)}.theorem-index a,.theorem-match,.requirement-heading{flex-direction:column;gap:5px}.theorem-index small{text-align:left}.controls select{max-width:100%}.paper-result .name{font-size:16px} }
+
+.dependency-note { color:var(--muted); font-size:13px; max-width:65ch; }
+
+.connection { font-size:14px; line-height:1.65; color:var(--muted); margin:0 0 16px; }
+.connection p { display:inline; margin:0; }
+.connection > a { margin-left:8px; font-size:12px; white-space:nowrap; }
+
+.original-definition { margin:0 0 32px; padding:20px 22px; background:var(--wash); border-left:3px solid var(--accent); scroll-margin-top:22px; }
+.original-definition h3 { margin:0 0 4px; font-size:16px; font-weight:650; color:var(--accent); }
+.definition-source { margin:0 0 12px; color:var(--muted); font-size:12px; }
+.definition-note { margin:10px 0 0; color:var(--muted); font-size:13px; }
+.symbol-highlight { background-color:#fff1b8; }
+
+.theorems-heading { margin:0 0 24px; padding-bottom:10px; border-bottom:1px solid var(--line); font-size:18px; font-weight:650; }
+.original-definition .statement > :last-child { margin-bottom:0; }
+@media(max-width:800px) { .original-definition{padding:16px} }
+
+mark.symbol-highlight { color:inherit; }
+
+.paper-title a { color:inherit; text-decoration-thickness:1px; text-decoration-color:var(--line); }
+.paper-title a:hover { color:var(--accent); text-decoration-color:currentColor; }
+.work-status { display:inline-block; width:fit-content; max-width:100%; padding:2px 6px; border:1px solid var(--line); border-radius:3px; color:var(--accent); background:var(--wash); font:12px/1.4 system-ui,-apple-system,sans-serif; white-space:nowrap; }
+.work-status[data-work-status=use_mathlib] { color:#166534; background:#edf8f0; border-color:#b6dec2; }
+.work-status[data-work-status=new_infrastructure],.work-status[data-work-status=needs_work] { color:#a52222; background:#fff1f0; border-color:#efc3c0; }
+.work-audit { margin:-16px 0 28px; }
+.work-audit p { margin:8px 0 0; color:var(--muted); font-size:13px; max-width:70ch; }
+.original-definition > h3 + .statement { margin-top:12px; }
+
+/* API counts and audit decisions occupy separate, aligned columns. */
+.api-columns,.api-result,.shell.has-reader .api-result {
+  display:grid; grid-template-columns:44px minmax(0,1fr) 140px 132px; gap:14px;
+}
+.api-columns { padding:11px 8px; color:var(--muted); font-size:12px; border-top:1px solid var(--line); }
+.api-columns > :nth-child(3),.api-counts { text-align:center; }
+.api-result .result-content { display:block; }
+.api-counts,.api-status { min-width:0; align-self:start; }
+.count-value { color:var(--muted); font-size:14px; font-variant-numeric:tabular-nums; }
+.column-label { display:none; }
+@container(max-width:620px) {
+  .api-columns { display:none; }
+  .api-result,.shell.has-reader .api-result { grid-template-columns:44px minmax(0,1fr) minmax(0,1fr); gap:10px 12px; }
+  .api-result .rank { grid-column:1; grid-row:1 / span 2; }
+  .api-result .result-content { grid-column:2 / span 2; }
+  .api-counts { grid-column:2; text-align:left; }
+  .api-status { grid-column:3; }
+  .column-label { display:block; color:var(--muted); font-size:11px; margin-bottom:5px; }
+  .api-status .work-status { white-space:normal; overflow-wrap:anywhere; }
+}
+
+.pane-divider { position:absolute; z-index:3; left:-6px; top:0; width:12px; height:100%; cursor:col-resize; touch-action:none; }
+.pane-divider::after { content:""; position:absolute; top:0; bottom:0; left:5px; width:2px; background:transparent; transition:background .12s; }
+.pane-divider:hover::after,.pane-divider:focus-visible::after,.resizing .pane-divider::after { background:var(--accent); }
+.pane-divider:focus-visible { outline:none; box-shadow:inset 0 0 0 2px var(--accent); }
+body.resizing { cursor:col-resize; user-select:none; }
+.resizing iframe { pointer-events:none; }
+@media(max-width:800px) { .pane-divider { display:none; } }
+
+.work-status[data-work-status=small_adaptation] { color:#854d0e; background:#fff9db; border-color:#e7cf88; }
+.work-filters { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0 18px; }
+.work-filters button { cursor:pointer; padding:6px 10px; white-space:normal; }
+.work-filters button[aria-pressed=true] { outline:2px solid currentColor; outline-offset:2px; font-weight:650; }
+.work-filters button:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+.work-legend { padding-left:20px; }
+.work-legend li { margin:8px 0; }
+</style></head>
+<body><main class="reading"><h1>Kronecker total variation</h1><p class="summary">3 related theorem statements</p><div class="work-audit"><span class="work-status" data-work-status="use_mathlib">Use mathlib</span><p>The archived formula, supplied-map specification or quantified condition can use existing operations and Lean syntax directly; a same-name library declaration and proofs of the related statistical results are not required to state this interface.</p></div><section class="paper-group" data-paper-id="aos-2024-v52-i05-p2400"><h2 class="paper-title"><a href="https://arxiv.org/pdf/2112.14758v2" target="_blank" rel="noopener">Multivariate trend filtering for lattice data</a></h2><section class="original-definition" data-source-kind="definition" id="variant-3d92fce204b2b6cc"><h3>Section 1.2 — Kronecker total variation</h3><div class="statement"><p>we will also refer to <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow class="symbol-highlight"><mo stretchy="false" form="postfix">∥</mo><msubsup><mi>D</mi><mrow><mi>n</mi><mo>,</mo><mi>d</mi></mrow><mrow><mo stretchy="false" form="prefix">(</mo><mi>k</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow></msubsup><mi>θ</mi><msub><mo stretchy="false" form="postfix">∥</mo><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">\|D_{n,d}^{(k+1)}\theta\|_1</annotation></semantics></math> as the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>th order Kronecker total variation (KTV) of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math>.</p>
+</div></section><section class="theorem-group"><h3 class="theorems-heading">Theorems</h3><article class="theorem" id="theorem-19103b6a7d29e981"><h4>Theorem 3</h4><div class="connection"><p>Theorem3 defines C_n=||D_(n,d)^(k+1) theta_0||_1&gt;0, the source KTV seminorm of the mean vector, and uses this quantity in its tuning and error bound.</p>
+<a href="#variant-3d92fce204b2b6cc">Section 1.2 — Kronecker total variation</a></div><div class="statement"><p>Let <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>θ</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\widehat\theta</annotation></semantics></math> denote the KTF estimator in (7). Under the data model (29), denote <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>n</mi></msub><mo>=</mo><mo stretchy="false" form="postfix">∥</mo><msubsup><mi>D</mi><mrow><mi>n</mi><mo>,</mo><mi>d</mi></mrow><mrow><mo stretchy="false" form="prefix">(</mo><mi>k</mi><mo>+</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow></msubsup><msub><mi>θ</mi><mn>0</mn></msub><msub><mo stretchy="false" form="postfix">∥</mo><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">C_n=\|D_{n,d}^{(k+1)}\theta_0\|_1</annotation></semantics></math>, and assume <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>n</mi></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">C_n&gt;0</annotation></semantics></math>. Choosing <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>≍</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left"><msqrt><mrow><mrow><mi mathvariant="normal">log</mi><mo>⁡</mo></mrow><mi>n</mi></mrow></msqrt></mtd><mtd columnalign="left"><mrow><mtext mathvariant="normal">if </mtext><mspace width="0.333em"></mspace></mrow><mi>s</mi><mo>&lt;</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo></mtd></mtr><mtr><mtd columnalign="left"><mrow><mi mathvariant="normal">log</mi><mo>⁡</mo></mrow><mi>n</mi></mtd><mtd columnalign="left"><mrow><mtext mathvariant="normal">if </mtext><mspace width="0.333em"></mspace></mrow><mi>s</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo></mtd></mtr><mtr><mtd columnalign="left"><mo stretchy="false" form="prefix">(</mo><mrow><mi mathvariant="normal">log</mi><mo>⁡</mo></mrow><mi>n</mi><msup><mo stretchy="false" form="postfix">)</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mi>s</mi><mo>+</mo><mn>1</mn></mrow></mfrac></msup><mo stretchy="false" form="prefix">(</mo><mi>n</mi><mi>/</mi><msub><mi>C</mi><mi>n</mi></msub><msup><mo stretchy="false" form="postfix">)</mo><mfrac><mrow><mn>2</mn><mi>s</mi><mo>−</mo><mn>1</mn></mrow><mrow><mn>2</mn><mi>s</mi><mo>+</mo><mn>1</mn></mrow></mfrac></msup></mtd><mtd columnalign="left"><mrow><mtext mathvariant="normal">if </mtext><mspace width="0.333em"></mspace></mrow><mi>s</mi><mo>&gt;</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">
+\lambda\asymp\begin{cases}\sqrt{\log n}&amp;\text{if }s&lt;1/2,\\\log n&amp;\text{if }s=1/2,\\(\log n)^{\frac1{2s+1}}(n/C_n)^{\frac{2s-1}{2s+1}}&amp;\text{if }s&gt;1/2,\end{cases}
+</annotation></semantics></math> the KTF estimator satisfies <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mi>n</mi></mfrac><mo stretchy="false" form="postfix">∥</mo><mover><mi>θ</mi><mo accent="true">̂</mo></mover><mo>−</mo><msub><mi>θ</mi><mn>0</mn></msub><msubsup><mo stretchy="false" form="postfix">∥</mo><mn>2</mn><mn>2</mn></msubsup><mo>=</mo><msub><mi>O</mi><mi>ℙ</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><mo>+</mo><mfrac><mi>λ</mi><mi>n</mi></mfrac><msub><mi>C</mi><mi>n</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\frac1n\|\widehat\theta-\theta_0\|_2^2=O_{\mathbb P}\left(\frac1n+\frac\lambda nC_n\right).
+</annotation></semantics></math></p>
+</div></article><article class="theorem" id="theorem-7faecd7503c32cbf"><h4>Theorem 4</h4><div class="connection"><p>Theorem 4 explicitly concerns the KTV class in(23), a discrete one-norm difference ball with C_n≤n and no canonical scaling imposed. The KTV class is the positive-radius ball of the discrete KTV seminorm.</p>
+<a href="#variant-3d92fce204b2b6cc">Section 1.2 — Kronecker total variation</a></div><div class="statement"><p>The minimax risk for KTV class defined in (23) satisfies, for any sequence <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>n</mi></msub><mo>≤</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">C_n\le n</annotation></semantics></math>, <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo minsize="120%" maxsize="120%" stretchy="true" form="prefix">(</mo><msubsup><mi>𝒯</mi><mrow><mi>n</mi><mo>,</mo><mi>d</mi></mrow><mi>k</mi></msubsup><mo stretchy="false" form="prefix">(</mo><msub><mi>C</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">)</mo><mo minsize="120%" maxsize="120%" stretchy="true" form="postfix">)</mo><mo>=</mo><mi mathvariant="normal">Ω</mi><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><mo>+</mo><mfrac><msub><mi>C</mi><mi>n</mi></msub><mi>n</mi></mfrac><mo>+</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><msub><mi>C</mi><mi>n</mi></msub><mi>n</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mfrac><mn>2</mn><mrow><mn>2</mn><mi>s</mi><mo>+</mo><mn>1</mn></mrow></mfrac></msup><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+R\big(\mathcal T_{n,d}^k(C_n)\big)=\Omega\left(\frac1n+\frac{C_n}n+\left(\frac{C_n}n\right)^{\frac2{2s+1}}\right).
+</annotation></semantics></math> (33)</p>
+</div></article><article class="theorem" id="theorem-168ac414a5fe9618"><h4>Theorem 5</h4><div class="connection"><p>Theorem 5 explicitly concerns the KTV class in(23), a discrete one-norm difference ball with C_n≤sqrt(n), under the restriction to linear estimators. The KTV class is the positive-radius ball of the discrete KTV seminorm.</p>
+<a href="#variant-3d92fce204b2b6cc">Section 1.2 — Kronecker total variation</a></div><div class="statement"><p>The minimax linear risk over the KTV class in (23) satisfies, for any sequence <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>n</mi></msub><mo>≤</mo><msqrt><mi>n</mi></msqrt></mrow><annotation encoding="application/x-tex">C_n\le\sqrt n</annotation></semantics></math>, <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>R</mi><mi>L</mi></msub><mo minsize="120%" maxsize="120%" stretchy="true" form="prefix">(</mo><msubsup><mi>𝒯</mi><mrow><mi>n</mi><mo>,</mo><mi>d</mi></mrow><mi>k</mi></msubsup><mo stretchy="false" form="prefix">(</mo><msub><mi>C</mi><mi>n</mi></msub><mo stretchy="false" form="postfix">)</mo><mo minsize="120%" maxsize="120%" stretchy="true" form="postfix">)</mo><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left"><mi mathvariant="normal">Ω</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mi>n</mi><mo>+</mo><msubsup><mi>C</mi><mi>n</mi><mn>2</mn></msubsup><mi>/</mi><mi>n</mi><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="left"><mrow><mtext mathvariant="normal">if </mtext><mspace width="0.333em"></mspace></mrow><mi>s</mi><mo>&lt;</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo></mtd></mtr><mtr><mtd columnalign="left"><mi mathvariant="normal">Ω</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mi>/</mi><mi>n</mi><mo>+</mo><msubsup><mi>C</mi><mi>n</mi><mn>2</mn></msubsup><mi>/</mi><mi>n</mi><mrow><mi mathvariant="normal">log</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>n</mi><mi>/</mi><msubsup><mi>C</mi><mi>n</mi><mn>2</mn></msubsup><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mtd><mtd columnalign="left"><mrow><mtext mathvariant="normal">if </mtext><mspace width="0.333em"></mspace></mrow><mi>s</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>,</mo></mtd></mtr><mtr><mtd columnalign="left"><mi mathvariant="normal">Ω</mi><mo minsize="120%" maxsize="120%" stretchy="true" form="prefix">(</mo><mn>1</mn><mi>/</mi><mi>n</mi><mo>+</mo><mo stretchy="false" form="prefix">(</mo><msubsup><mi>C</mi><mi>n</mi><mn>2</mn></msubsup><mi>/</mi><mi>n</mi><msup><mo stretchy="false" form="postfix">)</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mi>s</mi></mrow></mfrac></msup><mo minsize="120%" maxsize="120%" stretchy="true" form="postfix">)</mo></mtd><mtd columnalign="left"><mrow><mtext mathvariant="normal">if </mtext><mspace width="0.333em"></mspace></mrow><mi>s</mi><mo>&gt;</mo><mn>1</mn><mi>/</mi><mn>2</mn><mi>.</mi></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">
+R_L\big(\mathcal T_{n,d}^k(C_n)\big)=\begin{cases}\Omega(1/n+C_n^2/n)&amp;\text{if }s&lt;1/2,\\\Omega(1/n+C_n^2/n\log(1+n/C_n^2))&amp;\text{if }s=1/2,\\\Omega\big(1/n+(C_n^2/n)^{\frac1{2s}}\big)&amp;\text{if }s&gt;1/2.\end{cases}
+</annotation></semantics></math> (35) This is achieved in rate by the projection estimator in (34), where we set <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo>=</mo><mo stretchy="false" form="prefix">[</mo><mi>τ</mi><msup><mo stretchy="false" form="postfix">]</mo><mi>d</mi></msup></mrow><annotation encoding="application/x-tex">Q=[\tau]^d</annotation></semantics></math> for <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>τ</mi><mi>d</mi></msup><mo>≍</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>C</mi><mi>n</mi></msub><msup><mi>n</mi><mrow><mi>s</mi><mo>−</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow></msup><msup><mo stretchy="false" form="postfix">)</mo><mrow><mn>1</mn><mi>/</mi><mi>s</mi></mrow></msup></mrow><annotation encoding="application/x-tex">\tau^d\asymp(C_nn^{s-1/2})^{1/s}</annotation></semantics></math>, in the case <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>&gt;</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">s&gt;1/2</annotation></semantics></math>. When <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>&lt;</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">s&lt;1/2</annotation></semantics></math>, the simple polynomial projection estimator, which projects onto all multivariate polynomials of max degree <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math> (equivalently, the estimator in (34) with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo>=</mo><mo stretchy="false" form="prefix">[</mo><mi>k</mi><mo>+</mo><mn>1</mn><msup><mo stretchy="false" form="postfix">]</mo><mi>d</mi></msup></mrow><annotation encoding="application/x-tex">Q=[k+1]^d</annotation></semantics></math>), achieves the rate in (35). When <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">s=1/2</annotation></semantics></math>, either estimator achieves the rate in (35) up to a log factor. Lastly, if <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>C</mi><mi>n</mi><mn>2</mn></msubsup><mo>=</mo><mi>O</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>n</mi><mi>α</mi></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">C_n^2=O(n^\alpha)</annotation></semantics></math> for <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\alpha&lt;1</annotation></semantics></math>, and still <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mo>=</mo><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">s=1/2</annotation></semantics></math>, then either estimator achieves the rate in (35) without the additional log factor.</p>
+</div></article></section></section><section class="secondary"><h2>Related mathlib</h2><ul class="library-links"><li><a href="https://github.com/leanprover-community/mathlib4/blob/4edb0dbaa3b3cf729d86d1e2f035474d5ae2ac09/Mathlib/Data/Matrix/Mul.lean#L698-L699" target="_blank" rel="noopener">Matrix.mulVec</a><small>Finite matrix-vector multiplication, with each output coordinate equal to the dot product of a matrix row and the input vector.</small></li><li><a href="https://github.com/leanprover-community/mathlib4/blob/4edb0dbaa3b3cf729d86d1e2f035474d5ae2ac09/Mathlib/Analysis/Normed/Lp/PiLp.lean#L759-L760" target="_blank" rel="noopener">PiLp.norm_eq_of_L1</a><small>The finite L1 product norm equals the sum of coordinate norms, giving the full sum-of-absolute-coefficients penalty for real vectors.</small></li></ul><p class="gap">Matrix multiplication and the finite L1 norm define KTV once the source&#x27;s shrinking-row Kronecker difference matrix is supplied.</p></section></main><script>
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&parent!==window)parent.postMessage({action:'close-theorem-reader'},'*');});
+document.addEventListener('click',function(e){const a=e.target.closest('a');if(!a)return;if(a.dataset.route&&parent!==window&&!e.ctrlKey&&!e.metaKey&&!e.shiftKey&&!e.altKey){e.preventDefault();parent.postMessage({action:'open-census-route',route:a.dataset.route,scroll:window.scrollY,expanded:[...document.querySelectorAll('details[open][id]')].map(d=>d.id)},'*');}else if(/^#(requirements|variant)-/.test(a.getAttribute('href')||'')){const target=document.getElementById(a.hash.slice(1));if(target?.tagName==='DETAILS')target.open=true;}});
+function revealFragment(){const target=document.getElementById(location.hash.slice(1));if(target){if(target.tagName==='DETAILS')target.open=true;target.scrollIntoView();}}
+window.addEventListener('hashchange',revealFragment);revealFragment();
+window.addEventListener('message',function(e){if(e.source===parent&&e.data?.action==='restore-reader-scroll'){for(const id of e.data.expanded||[]){const d=document.getElementById(id);if(d?.tagName==='DETAILS')d.open=true;}window.scrollTo(0,Number(e.data.scroll)||0);}});
+</script></body></html>

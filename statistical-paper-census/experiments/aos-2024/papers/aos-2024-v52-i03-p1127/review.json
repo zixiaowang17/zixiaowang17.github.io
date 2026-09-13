@@ -1,0 +1,134 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i03-p1127",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T14:56:53.850703+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i03-p1127/T3.1",
+      "aos-2024-v52-i03-p1127/T4.1",
+      "aos-2024-v52-i03-p1127/T5.1",
+      "aos-2024-v52-i03-p1127/T5.2",
+      "aos-2024-v52-i03-p1127/T5.3",
+      "aos-2024-v52-i03-p1127/T5.4",
+      "aos-2024-v52-i03-p1127/T6.1",
+      "aos-2024-v52-i03-p1127/T6.3",
+      "aos-2024-v52-i03-p1127/T6.5",
+      "aos-2024-v52-i03-p1127/T7.1"
+    ],
+    "method": "Independent small-caps font-based Theorem-heading enumeration on pages 1–31, followed by visual review of all complete statements and required definition passages.",
+    "printed_label_check": [
+      [
+        9,
+        "3.1"
+      ],
+      [
+        12,
+        "4.1"
+      ],
+      [
+        15,
+        "5.1"
+      ],
+      [
+        16,
+        "5.2"
+      ],
+      [
+        16,
+        "5.3"
+      ],
+      [
+        17,
+        "5.4"
+      ],
+      [
+        19,
+        "6.1"
+      ],
+      [
+        20,
+        "6.3"
+      ],
+      [
+        21,
+        "6.5"
+      ],
+      [
+        23,
+        "7.1"
+      ]
+    ],
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 10,
+    "interfaces": 38,
+    "source_members": 38,
+    "direct_theorem_uses": 76,
+    "related_theorem_connections": 160,
+    "unranked_auxiliary_passages": 9
+  },
+  "source_notes": [
+    "The pinned source is arXiv:2203.13776v3 dated 16 April 2024, 153 pages. Equivalence to every detail of final journal typesetting is not asserted.",
+    "Main text and references end on page 31; the separately titled supplement starts on page 32. No supplementary or appendix mathematics is used.",
+    "All ten actual main-text Theorems are preserved, including the short continuity statement and Theorem 7.1 in the main-text proof overview. Lemmas, Propositions, Remarks and citations are not extra Theorems.",
+    "Sigma imposes local Lipschitz regularity, global linear growth and inward drift outside [-A,A]. Its C>=1 parameter convention is not explicitly reconciled with C/2-eta in later tightened reference classes.",
+    "The invariant density has a normalized exponential signed integral from zero to x. The density can be used as a deterministic weight without assuming the observed process starts in that invariant law.",
+    "Sections 2–5 use stationary P_b and E_b. Section 6 fixes x0 and a common unsubscripted P,E; those laws must not be conflated. Remark 5.5 points to supplement-only details for fixed-point extensions of the earlier results.",
+    "The simple null is equality on [-A,A]. References to the simple hypothesis {b0} do not justify changing it into equality of drifts everywhere on R.",
+    "K_y,h has no 1/h amplitude prefactor. The rational index set includes only pairs whose location interval lies inside [-A,A].",
+    "Theorem 3.1 allows signed continuous bounded-variation kernels of norm at most one. Theorem 4.1 additionally requires nonnegativity. Theorem 5.2 uses norm exactly one and does not restate continuity. Section 6 adds C1 to the conditions of Theorem 4.1.",
+    "The local score has an explicit zero-denominator value zero; Lambda has a zero-over-zero rule, and Upsilon has a zero-over-zero convention for its argument. The empirical maximum scale retains the squared indicator from the source.",
+    "Upsilon at zero is given by a printed logarithm-times-indicator expression. Its intended convention must not be replaced by ordinary arithmetic on an undefined logarithm. Gaussian ratio formulas may also degenerate when K=0, permitted by the printed <=1 condition.",
+    "U1 and U2 are driven by the same W in the source; no independence is stated. Both normalizers use Lebesgue L2 and the appropriate boundary-drift density.",
+    "Finite-T null quantiles and the limiting similarity threshold are distinct. Both use minimum and a non-strict CDF inequality, while both tests reject with a strict inequality.",
+    "Delta_J depends on the alternative density q_b. Its infimum-of-norms definition is nonnegative, but the following supremum formula omits a positive part and can be negative when band violation occurs only outside J. Both formulas are preserved.",
+    "The Holder lower integer is strictly smaller than beta, even at integer beta. The printed condition quantifies over k but displays only a derivative of order floor(beta); no derivative sup-norm constraints are inserted.",
+    "The separation rate delta_T and sharp constant c_* are distinct from the arbitrary sufficient c(beta,L,K) and the later Hurst neighborhood delta(T,epsilon). The star in c_* is a subscript.",
+    "The explicit optimal recovery kernel formula is stated for beta<=1 only. General beta has compact support but not a main-text guarantee that this support is exactly [-1,1], raising a normalization issue for its use in the earlier fixed-support statistic.",
+    "Theorem 5.3 prints (b,L) in its outer infimum over the beta,L rectangle. The source index mismatch is retained, not corrected to (beta,L).",
+    "Theorem 5.3 does not explicitly restate the K=K_beta choice in its sharp-L assertion. Its context from Theorem 5.2 is recorded without inventing a new explicit hypothesis.",
+    "Theorem 5.4 follows an eta=0 paragraph but refers to b0 and epsilon_T from Theorem 5.2. Its power-one condition prints (1-epsilon_T)c_*delta_T; the minus sign is retained as an apparent conflict with the matching lower-bound interpretation.",
+    "The pathwise integral functional suppresses its y,h dependence in the symbol tilde-I_T. Its formula uses classical integrals and the fixed sigma^2/2 correction.",
+    "D_A,T requires a path to visit both -A and A. The source claim that this prevents zero denominators does not cover the zero kernel permitted by its inherited kernel condition.",
+    "The pathwise statistic defines a function of f but still prints X in its Lambda term. The original formula and the surrounding ordinary-integral explanation are preserved separately.",
+    "The exact h_min(T) threshold is deferred to Remark B.1 in Appendix B. The main-text restricted index set is saved, with that missing formula explicitly unresolved.",
+    "Fractional Brownian covariance does not determine the cross-H coupling. The common Volterra representation is given, but K_H is specified only in Appendix I equation (I.8), which is excluded.",
+    "Theorem 6.3 contains a conditional probability statement and both orders of iterated liminf for the conditioning event. They are not collapsed to a single unconditional limit.",
+    "Theorem 6.5 does not rebind epsilon_T,beta,L,J in its body; the preceding lower-bound reference supplies context but not a rewritten statement. Its displayed hypothesis classes do not repeat the global-Lipschitz restriction used to introduce the coupled solution notation.",
+    "Theorem 6.5 concerns all uniformly level tests and preserves the supremum over H followed by the supremum over tests and infimum over alternatives. The proposed pathwise test in Remark 6.4 is not imposed on that all-test class.",
+    "Theorem 7.1 defines its Gaussian objects inline and ranges uniformly over the full Sigma class. Its two-sided Brownian driver is indexed by space, distinct from the observation-time driver in (2.1).",
+    "The bounded-Lipschitz metric is named on page 24 and its unit ball is described on page 25, but the exact norm convention is deferred to Appendix F.1. No alternative normalization is supplied by assumption.",
+    "Plain italic T_T,D_A,T and H0,H1 are distinct from script index T and Holder H. Z_b,S_b,sigma_b use subscripts; X^{H,b} uses superscripts. These source roles remain distinct.",
+    "Girsanov likelihood derivations, Proposition 6.2, continuity-mapping arguments, Gaussian approximation proof processes and Proposition 7.3 are not separately extracted as theorem statement prerequisites."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2203.13776v3",
+    "version": "arXiv:2203.13776v3",
+    "pdf_sha256": "2e55f99f5185f1d0e5cf87f49dbe60dce36b7c947af9e10accdc3fc4997f9e9e",
+    "pdf_pages": 153,
+    "main_text_last_pdf_page": 31
+  },
+  "recorded_checks": [
+    "Pinned title, both authors, version/date, page count and PDF hashes checked. All 31 archived main-text pages match fresh extraction byte for byte; the reference endpoint and following supplement title are confirmed.",
+    "Fresh small-caps font-based enumeration independently confirms all ten Theorems and excludes three ordinary-font mentions. Every original statement remains unchanged from the independently validated inventory.",
+    "Full original formulas and hypotheses are checked against the rendered source: empirical scales and correction, the two Gaussian suprema, minimax lower/upper statements, both adaptivity clauses, pathwise continuity, conditional limits and full-class Gaussian convergence.",
+    "All 38 original member passages and nine ambient passages are compared with the relevant main-text definitions and prose. Script C for continuous-function spaces was corrected using the source font, with no change to inventoried Theorems.",
+    "The pointwise drift norm, localized kernel scaling, rational index set, stationary probability law and separate fixed-initial-value coupling are preserved. Nonnegative, signed, unit-norm and C1 kernel restrictions are kept distinct.",
+    "Weighted distance, strict lower integer Holder convention, recovery kernel, rate and sharp constant retain their original formulas. The distance positive-part omission, adaptivity index mismatch and Theorem 5.4 minus sign are recorded separately.",
+    "Pathwise extension formulas and domain, minimum-bandwidth restriction and common fractional coupling are preserved. The printed X/f inconsistency, zero-kernel issue and Appendix B/I/F.1 unresolved specifications remain explicit.",
+    "Independent mathematical expectations confirm all 76 direct uses and 160 related connections. Deterministic continuity has no experiment dependency; fractional theorems do not inherit stationarity; arbitrary-test lower bounds do not inherit the proposed statistic.",
+    "Theorem 7.1 retains inline Gaussian definitions and uniformity over the full drift class. The bounded-Lipschitz metric and unit-ball description are preserved without importing an appendix norm convention.",
+    "Each member retains a source-backed natural-language keyword, original source identity and meaningful selector. Unnamed source quantities retain nearby descriptive vocabulary with their mathematical correspondence explained, rather than receiving invented formal names.",
+    "All original mathematical delimiters and braces are balanced, source evidence remains main-text-only, explanations cover every derived path, and artifact/source hashes are pinned. This is a statement census, not a proof certification."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "25659c1d7bd32e2c600c1f6e11873416723d39a0523ca44f43f83d11217ecbd6"
+}

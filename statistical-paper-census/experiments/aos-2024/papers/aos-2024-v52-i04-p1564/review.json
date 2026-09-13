@@ -1,0 +1,118 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i04-p1564",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T23:49:57.040829+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i04-p1564/T1",
+      "aos-2024-v52-i04-p1564/T2",
+      "aos-2024-v52-i04-p1564/T3",
+      "aos-2024-v52-i04-p1564/T4",
+      "aos-2024-v52-i04-p1564/T5",
+      "aos-2024-v52-i04-p1564/T6",
+      "aos-2024-v52-i04-p1564/T7",
+      "aos-2024-v52-i04-p1564/T8",
+      "aos-2024-v52-i04-p1564/T9"
+    ],
+    "printed_label_check": [
+      [
+        10,
+        "1"
+      ],
+      [
+        11,
+        "2"
+      ],
+      [
+        12,
+        "3"
+      ],
+      [
+        15,
+        "4"
+      ],
+      [
+        16,
+        "5"
+      ],
+      [
+        17,
+        "6"
+      ],
+      [
+        22,
+        "7"
+      ],
+      [
+        23,
+        "8"
+      ],
+      [
+        24,
+        "9"
+      ]
+    ],
+    "method": "Independent bold-heading enumeration and visual comparison of all nine complete statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 9,
+    "interfaces": 22,
+    "source_members": 22,
+    "direct_theorem_uses": 61,
+    "related_theorem_connections": 92,
+    "unranked_auxiliary_passages": 7
+  },
+  "source_notes": [
+    "The inspected source is the registered 86-page arXiv:2109.13601v2 PDF dated 30 August 2023. The main paper, including its references, ends on page 33 after reference [48]. The supplementary material begins on page 34 with Section S-1.",
+    "Initial heading location encountered supplementary theorem labels; these labels were excluded. Subsequent extraction and mathematical review were confined to pages 1-33. Supplementary theorem bodies are not used as census content.",
+    "There are nine main-text Theorems. Theorem 4 continues from page 15 to page 16, including attainment by a strict-threshold rule. Theorem 8 continues from page 23 to page 24. Theorems 7 and 9 are complete on pages 22 and 24, respectively.",
+    "The source distinguishes Fraktur R (combined risk), ordinary R only in real-space notation through blackboard R, the density phi and testing rule varphi, upper-tail Phi-bar and CDF Phi, bold italic strength vector a and scalar threshold a. The procedure class S_A is calligraphic.",
+    "The sparse regime is n to infinity, s_n to infinity and n/s_n to infinity. Polynomial sparsity with unknown c<1 is extra. The general density model has independent coordinates and does not assume identically distributed coordinates or additive noise.",
+    "The false discovery proportion divides by the random rejection count truncated below by one. FNR divides by the deterministic true support count truncated below by one. Combined risk is their sum, while classification loss is an unnormalized error count.",
+    "The beta-min class (9) has exactly s_n nonzero entries, although ell0[s_n] allows fewer. Formula (9) permits a in R while its explanatory prose mentions a>0; the limiting negative-offset cases in the theorems are retained without imposing positivity of a_b.",
+    "Theorem 2 explicitly covers fixed b and b_n tending to positive infinity, but does not include negative infinity. The latter is discussed in Remark 1, not appended to this theorem. Theorems 1,3,7 do explicitly cover both infinite limits.",
+    "The main-text BH description does not provide the precise intersection/step-up convention in S-18. The empirical Bayes description gives null-probability thresholding and marginal maximum likelihood but defers the particular spike-and-slab prior, slab and optimization details to Section S-8 and S-29. These remain unresolved; no textbook replacement is inserted.",
+    "Theorem 2 imposes the polynomial sparsity and vanishing-level/log-level condition on its BH branch, while the empirical Bayes branch has a fixed posterior threshold t in (0,1). Theorem 7 again gives separate procedure alternatives, with the parenthetical polynomial sparsity attached to BH; the subsequent discussion confirms the negative-infinity case for the empirical Bayes rule without extra assumptions.",
+    "Sparsity preservation is a uniform o(1) probability of exceeding A_n s_n rejections, not a deterministic cap or expected-count bound. The source takes an infimum over classes of procedure sequences satisfying this asymptotic property; preserve that quantifier formulation rather than replacing it by a per-n admissibility condition.",
+    "The conditions on B_n in Theorems 3 and 6 use underlined lim, explicitly defined as liminf in Section 1.8. The squared B_n bound in Theorem 3 has exponent (log(n/s_n))^(1/4); in Theorem 6 it uses one third of (n/s_n) times the perturbed null tail.",
+    "Assumption 1 consists of common Lipschitz, positivity and sharp-tail conditions plus one of two alternatives. Branch A and branch B are not conjoined. Their respective risk expressions are Lambda_n and 2 Lambda_n-1, and the same branch choice is preserved in Theorems 4-6.",
+    "Branch A reflects both parameter and observation signs and imposes likelihood-ratio monotonicity for a>0 on the whole real line. Branch B is even in the observation and imposes monotonicity on the positive half-line. Branch B does not explicitly assert f_{-a}=f_a despite the subsequent absolute-signal convention; this difference is retained without adding a symmetry assumption.",
+    "The heterogeneous class (21) has strictly positive a_j and existentially matches them to distinct unknown signal locations. Lambda_n uses CDF F_{a_j}(a_n^*), not the tail, and its theta form averages over absolute nonzero signal magnitudes. Shared notation does not identify this class with the simpler beta-min class.",
+    "Theorem 5 retains the pointwise bound (25), the uniform bound, its concrete error expression and the branch-B replacement clause. Its theta-dependent level interval (24) must be interpreted consistently for a common uniform procedure. It does not explicitly require alpha_n to vanish, even though a vanishing alpha_n is needed to make the displayed additive error vanish in the bounded-away-from-one regime. This is recorded as a source-scope limitation.",
+    "In Theorem 5 the instruction to replace Lambda_n(.) by 2 Lambda_n(.)-1 under branch B is preserved verbatim. How this replacement is applied to the referenced level condition is not expanded into a rewritten theorem. The branch resolution records the effective FNR expression without making both branches simultaneous.",
+    "Theorem 6 inherits the settings and branch-dependent conclusions of Theorem 4 but changes the loss to FNR and restricts the infimum to sparsity-preserving procedure sequences. The combined-risk definition is not imported as an extra loss component merely because it is named in the replacement instruction.",
+    "The Subbotin location model has shape zeta>1 and normalized density proportional to exp(-|x|^zeta/zeta). Gaussian noise is zeta=2; Laplace zeta=1 is excluded. Its default critical threshold is not the larger optimized threshold t_n^* used in Theorem 8. The claim that Assumption 1A holds is a source assertion, not an extra model hypothesis for Theorem 8.",
+    "Theorem 7 uses the union over support sizes (31) and normalizes by the upper bound s_n. Its boundary a_b retains s_n while the union index s varies. All-zero vectors are included; this is distinct from the exact-support class used in Theorems 1-3.",
+    "The large-signal class uses fixed constants 0<a<b, beta in (0,1), r>beta and support sizes between a n^(1-beta) and b n^(1-beta). These a,b are unrelated to the earlier scalar separation and boundary offset. Nonzero amplitudes need not be equal.",
+    "Theorem 8 binds kappa as the unique root in (0,r/2^zeta), gives both equal formulas for t_n^*, and states rate equivalence with the logarithmic denominator. Its classification statement normalizes by n^(1-beta), not by the unknown exact support. The threshold uses >=, whereas Theorem 4 prints >.",
+    "Theorem 9 preserves its own limited summary form: full simultaneous adaptation is impossible, known exact sparsity permits adaptation to r, known r permits adaptation to beta, and simultaneous adaptation is possible when kappa(r,beta,2)<1-beta. The polynomial-in-n cost is asserted only for point (i). Detailed algorithms and parameter quantifiers deferred to S-9 remain unresolved.",
+    "This census reviews original statements and their dependencies, not proofs or library availability. Main-text Proposition 1 and Corollaries are excluded from the theorem inventory. General probability, finite sums, indicator functions, Gaussian laws, density normalizers, posterior probabilities, and asymptotic order notation are ambient where not explicitly defined."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2109.13601v2",
+    "version": "arXiv:2109.13601v2, 30 August 2023",
+    "pdf_sha256": "764e61241f4805afe2049048f37e0d748f1cbc048b08c77037438725b7ec10ba",
+    "pdf_pages": 86,
+    "main_text_last_pdf_page": 33
+  },
+  "recorded_checks": [
+    "Independent bold-heading enumeration over pages 1-33 finds exactly nine main-text Theorems. All complete original statements were visually compared, including the continued threshold attainment of Theorem 4 and both pages of Theorem 8. Theorem 9 remains the printed four-part summary.",
+    "Twenty-two source interfaces and seven auxiliary passages preserve the model, risk definitions, sparse classes, procedures, common and alternative assumptions, signal averages, classification class, large-signal class and summary context. Supporting pages and math notation were visually checked.",
+    "Independent source-role reconstruction verifies 61 direct uses and 92 related connections. Alternative noise branches retain their different risk values; FNR-only results do not acquire an additional combined loss. The classification union keeps the original upper sparsity bound in a_b. Supplemental proof results are not imported.",
+    "All interface titles are original natural-language keywords. Original Definition 1 and Assumption 1 branch labels retain their source kinds. Every member has a meaningful matching selector and each related theorem has a source-backed explanation with its local path.",
+    "The source lower-limit notation, upper tails versus CDFs, Fraktur combined risk, calligraphic procedure classes, bold italic strength vector, strict versus non-strict thresholds, and exact versus upper-bound sparsity are preserved. Theorem 8 retains its unique-root interval and logarithmic rate factor.",
+    "Exact S-18/S-29 procedure details and the precise S-9 adaptation statements remain unresolved under the main-text-only scope. Theorem 5 level/uniformity issue and the missing parameter-sign symmetry in Assumption 1B are recorded without changing the original text. Initial supplementary heading hits were excluded and no supplemental theorem body is used.",
+    "All six content artifacts reproduce byte for byte in an empty directory from retained per-paper scripts. Registered source identity, independent inventory, exact claim handoff, reconstructed graph, source-specific invariants, mathematical fragments and inventory/census schema validation passed. This does not certify proofs or renew source review merely by rebuilding."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "6ce61d9991cb5e3cb328f371791ba98cc3f16d6046dae7c486926706a86c937f"
+}

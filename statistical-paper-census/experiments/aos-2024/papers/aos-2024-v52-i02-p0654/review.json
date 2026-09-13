@@ -1,0 +1,98 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i02-p0654",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T10:15:14.845174+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i02-p0654/T2.1",
+      "aos-2024-v52-i02-p0654/T2.2",
+      "aos-2024-v52-i02-p0654/T2.3",
+      "aos-2024-v52-i02-p0654/T2.4",
+      "aos-2024-v52-i02-p0654/T3.1",
+      "aos-2024-v52-i02-p0654/T3.2",
+      "aos-2024-v52-i02-p0654/T3.3",
+      "aos-2024-v52-i02-p0654/T3.4"
+    ],
+    "method": "Independent examination of every line beginning with the small-cap THEOREM heading across all 25 main-paper pages finds exactly Theorems 2.1-2.4 and 3.1-3.4. Heading labels, complete statement continuations and the separate-supplement notice were checked against rendered source pages.",
+    "printed_label_check": [
+      [
+        6,
+        "2.1"
+      ],
+      [
+        8,
+        "2.2"
+      ],
+      [
+        9,
+        "2.3"
+      ],
+      [
+        12,
+        "2.4"
+      ],
+      [
+        12,
+        "3.1"
+      ],
+      [
+        13,
+        "3.2"
+      ],
+      [
+        14,
+        "3.3"
+      ],
+      [
+        17,
+        "3.4"
+      ]
+    ],
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 8,
+    "interfaces": 14,
+    "source_members": 14,
+    "direct_theorem_uses": 36,
+    "related_theorem_connections": 68,
+    "unranked_auxiliary_passages": 12
+  },
+  "source_notes": [
+    "The inspected artifact is the pinned arXiv v2 preprint; equality with the final journal wording has not been established.",
+    "The entire PDF is the main paper. The separate supplement was not opened, and no appendix or supplement result was used to complete a statement or its dependencies.",
+    "Source-fidelity and dependency validation do not certify proof correctness or repair the printed algorithms. In particular, empty-interval selection, the free polynomial index, positive dyadic bandwidths and the duplicate threshold assignment remain documented.",
+    "The complete original class paragraph is retained for both its full and conventional applications. The latter is interpreted through the paper’s explicit no-source setup, with that projection limitation stated separately.",
+    "The source labels R_C and R_I are local scalar rate definitions inside their respective upper-bound Theorems. They are archived and resolved for adaptive reuse without inventing new statistical functionals."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2401.12331v2",
+    "version": "arXiv:2401.12331v2",
+    "pdf_sha256": "4d89c43597cba346b959d8ef201e81cd7452a2bf2748385ac62bffd063d80371",
+    "pdf_pages": 25,
+    "main_text_last_pdf_page": 25
+  },
+  "recorded_checks": [
+    "The independent inventory and final census pass separate validator calls. Every original theorem field is unchanged, and the inventory hash matches its prior source review.",
+    "Title, all three authors, arXiv v2 stamp of 27 March 2024, versioned source URL, 25-page count and PDF digest match the pinned source. Section 6 proofs are in the main paper; the page-23 supplement notice refers to a separate unopened document.",
+    "All eight full theorem statements were visually checked on pages 6,8,9,12,13,14,17. The three page-spanning statements retain their complete continuations, hypotheses, algorithms, constants, bounds and estimator quantifiers.",
+    "The full observation and mean/difference model, bounded Hölder convention and pointwise sub-Gaussian assumption were checked against pages 2,3,5,6. They do not impose smoothness on the subject curves or order alpha_delta above alpha_m.",
+    "The conventional restriction of P is recorded with both explicit n_s=0 passages. Its graph does not require source samples, the full transfer experiment or any of the named estimation algorithms.",
+    "Common and independent design reach is disjoint by theorem family. The generic algorithm chooses a design branch; its definition does not add both design assumptions to a theorem.",
+    "The minimax lower bounds quantify arbitrary estimators and have no local-polynomial, conventional, transfer or adaptive algorithm dependencies. Their neighboring upper-bound gap/density conditions are not silently inherited.",
+    "Algorithms 1-4 were visually checked on pages 7,8,11,17, retaining every step and the distinction between spacing-weighted and unweighted empirical validation loss. Both adaptive sections explicitly change the total target count to 2n_t.",
+    "Theorem 2.4 inherits the common upper-bound assumptions and R_C definitions; Theorem 3.4 inherits the independent assumptions and R_I definitions. Their empirical selection procedures replace the earlier oracle comparisons, and both repetition averages remain intact.",
+    "Twelve auxiliary passages resolve sizes, norm/asymptotic conventions, source averaging, inheritance, sample splitting and rate definitions. Eighteen source notes retain unresolved algorithm/domain conventions and printed inconsistencies without repairing source text.",
+    "Independent graph and selector checks cover all 14 interfaces, 36 direct uses and 68 deduplicated theorem connections. Every interface has source keywords, original passages, matching highlights and source-backed explanations for all related theorems."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "aafd4d39ea8405d52fe939397addcf69f695062ca7226b1fd09ffe9ed10fffa8"
+}

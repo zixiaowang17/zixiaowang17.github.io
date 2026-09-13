@@ -1,0 +1,316 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i06-p2767",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-11T03:31:08.963418+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i06-p2767/T4.5",
+      "aos-2024-v52-i06-p2767/T4.6",
+      "aos-2024-v52-i06-p2767/T5.2",
+      "aos-2024-v52-i06-p2767/T5.5",
+      "aos-2024-v52-i06-p2767/T6.2",
+      "aos-2024-v52-i06-p2767/T6.3",
+      "aos-2024-v52-i06-p2767/T6.4",
+      "aos-2024-v52-i06-p2767/T6.5",
+      "aos-2024-v52-i06-p2767/T7.1",
+      "aos-2024-v52-i06-p2767/T7.2",
+      "aos-2024-v52-i06-p2767/T7.3"
+    ],
+    "printed_label_check": [
+      [
+        13,
+        "4.5"
+      ],
+      [
+        14,
+        "4.6"
+      ],
+      [
+        15,
+        "5.2"
+      ],
+      [
+        15,
+        "5.5"
+      ],
+      [
+        18,
+        "6.2"
+      ],
+      [
+        18,
+        "6.3"
+      ],
+      [
+        19,
+        "6.4"
+      ],
+      [
+        20,
+        "6.5"
+      ],
+      [
+        21,
+        "7.1"
+      ],
+      [
+        22,
+        "7.2"
+      ],
+      [
+        22,
+        "7.3"
+      ]
+    ],
+    "method": "Independent bold-font theorem-heading enumeration and visual comparison of all eleven complete statements, including the continuation of6.3.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 11,
+    "interfaces": 23,
+    "source_members": 23,
+    "direct_theorem_uses": 40,
+    "related_theorem_connections": 61,
+    "unranked_auxiliary_passages": 10
+  },
+  "source_notes": [
+    {
+      "issue_id": "registered-source",
+      "evidence": [
+        {
+          "page": 1,
+          "location": "Source issue registered-source"
+        },
+        {
+          "page": 22,
+          "location": "Source issue registered-source"
+        }
+      ],
+      "note": "Registered arXiv2201.04315v2: stamp18Sep2024, title-page19Sep2024,62pages. Main text ends22; Appendix A begins23. Preserve version identity rather than substituting the2024 published text."
+    },
+    {
+      "issue_id": "randomized-maps-and-conditionals",
+      "evidence": [
+        {
+          "page": 1,
+          "location": "Source issue randomized-maps-and-conditionals"
+        },
+        {
+          "page": 7,
+          "location": "Source issue randomized-maps-and-conditionals"
+        },
+        {
+          "page": 9,
+          "location": "Source issue randomized-maps-and-conditionals"
+        }
+      ],
+      "note": "The source writes randomized maps using deterministic pushforward notation and conditions on exact sufficient-statistic values. Interpret through parameter-independent Markov kernels; common regular conditional versions and existence on arbitrary spaces are not supplied. A conditional law for one chosen P0 is defined only almost surely under its own statistic law, so transplanting it requires compatible versions."
+    },
+    {
+      "issue_id": "infimum-versus-existence",
+      "evidence": [
+        {
+          "page": 1,
+          "location": "Source issue infimum-versus-existence"
+        },
+        {
+          "page": 7,
+          "location": "Source issue infimum-versus-existence"
+        },
+        {
+          "page": 8,
+          "location": "Source issue infimum-versus-existence"
+        }
+      ],
+      "note": "Definition1.1 requires an attained amplifier with error<=epsilon; Eq4 is an infimum. Eq5 equates its<=epsilon sublevel set with existence, which requires attainment or slack. The maximum in Eq5 may be empty or unbounded, e.g. a known singleton distribution permits arbitrarily many samples. No extended-value convention is supplied."
+    },
+    {
+      "issue_id": "pointwise-versus-minimax",
+      "evidence": [
+        {
+          "page": 13,
+          "location": "Source issue pointwise-versus-minimax"
+        },
+        {
+          "page": 14,
+          "location": "Source issue pointwise-versus-minimax"
+        }
+      ],
+      "note": "Theorems4.5/4.6 say for theta inTheta and put a theta-specific TV distance between epsilon-star and a uniform bound. Minimax epsilon-star is controlled by a supremum of a procedure’s errors, not automatically by every pointwise value. Retain the missing supremum in original text and do not silently fix it."
+    },
+    {
+      "issue_id": "parameter-domain",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Source issue parameter-domain"
+        },
+        {
+          "page": 12,
+          "location": "Source issue parameter-domain"
+        },
+        {
+          "page": 18,
+          "location": "Source issue parameter-domain"
+        }
+      ],
+      "note": "Theta is the full finite-log-partition domain, which can contain boundary points. Assumption1 only says nonempty interior, while Assumption2 uses gradients/Hessian inverse at every theta. Boundary differentiability, finite moments and inverse square root require additional interpretation; do not replace Theta by its interior."
+    },
+    {
+      "issue_id": "uniformity-of-moments",
+      "evidence": [
+        {
+          "page": 12,
+          "location": "Source issue uniformity-of-moments"
+        },
+        {
+          "page": 13,
+          "location": "Source issue uniformity-of-moments"
+        },
+        {
+          "page": 14,
+          "location": "Source issue uniformity-of-moments"
+        }
+      ],
+      "note": "Assumption2 is uniform over theta;4.5 allows its constant to depend on d and the moment bound. Theorem4.6 assumes finite tenth moments for each one-dimensional component and calls C independent of n,d; a common componentwise moment bound over growing d is not explicitly quantified. Preserve the distinction between stated uniformity and a possible needed strengthening."
+    },
+    {
+      "issue_id": "moment-criterion-not-required",
+      "evidence": [
+        {
+          "page": 12,
+          "location": "Source issue moment-criterion-not-required"
+        }
+      ],
+      "note": "Lemma4.4 is a sufficient self-concordance criterion for moments. It does not define Assumption2 or become a prerequisite for4.5/4.6. Its general claims of completeness/self-concordance require regularity but are not proof-checked in this census."
+    },
+    {
+      "issue_id": "zero-and-odd-sample-sizes",
+      "evidence": [
+        {
+          "page": 15,
+          "location": "Source issue zero-and-odd-sample-sizes"
+        },
+        {
+          "page": 16,
+          "location": "Source issue zero-and-odd-sample-sizes"
+        }
+      ],
+      "note": "Theorems5.2/5.5 quantify n,m>=0 but divide by n and evaluate learning at n/2. Algorithms2/3 index n/2 observations without rounding. Retain these formulas and explicitly leave n=0, odd n and0*infinity conventions unresolved."
+    },
+    {
+      "issue_id": "divergence-orientation",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Source issue divergence-orientation"
+        },
+        {
+          "page": 14,
+          "location": "Source issue divergence-orientation"
+        },
+        {
+          "page": 20,
+          "location": "Source issue divergence-orientation"
+        }
+      ],
+      "note": "Expected chi-squared risk uses chi2(estimated P, true P), with true P in the denominator. Reverse orientation is different. Hellinger has a1/2 normalization before square root; Assumption4 uses H squared, not H."
+    },
+    {
+      "issue_id": "singular-known-covariance",
+      "evidence": [
+        {
+          "page": 10,
+          "location": "Source issue singular-known-covariance"
+        },
+        {
+          "page": 18,
+          "location": "Source issue singular-known-covariance"
+        }
+      ],
+      "note": "Theorem6.2 specifies a fixed covariance matrix but no positive-definiteness condition. Its exact RHS uses dimension d and removes Sigma. For Sigma=0, one observation identifies theta and amplification error is zero, whereas the printed RHS is positive for d>0,m>0. Preserve source statement and record the missing nonsingularity/rank convention; do not conflate this model with7.2."
+    },
+    {
+      "issue_id": "linear-versus-affine-independence",
+      "evidence": [
+        {
+          "page": 18,
+          "location": "Source issue linear-versus-affine-independence"
+        }
+      ],
+      "note": "Assumption3 excludes only a^T T=0 almost everywhere, not a^T T=constant. General minimal exponential-family criteria require affine independence; the accompanying minimality assertion is stronger than that wording alone. Assumption1 supplies separate absolute continuity in6.3. Keep the original assumption without strengthening it."
+    },
+    {
+      "issue_id": "product-pairs-and-continuity",
+      "evidence": [
+        {
+          "page": 19,
+          "location": "Source issue product-pairs-and-continuity"
+        },
+        {
+          "page": 20,
+          "location": "Source issue product-pairs-and-continuity"
+        }
+      ],
+      "note": "Assumption4 requires existence of two points at a prescribed Hellinger scale for each coordinate and the given n. It does not state continuity of the entire parameter map, despite subsequent prose describing continuity. Its reference to6.4 imports product structure, not the two TV bounds. Pairs may vary with n."
+    },
+    {
+      "issue_id": "epsilon-and-ceiling",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Source issue epsilon-and-ceiling"
+        },
+        {
+          "page": 19,
+          "location": "Source issue epsilon-and-ceiling"
+        },
+        {
+          "page": 20,
+          "location": "Source issue epsilon-and-ceiling"
+        }
+      ],
+      "note": "Theorem6.5 leaves epsilon unquantified in its own first sentence; the surrounding context uses epsilon in(0,1). Preserve the ceiling on c epsilon n/sqrt(d) and the c-then-c-prime quantifier order. Do not remove integer rounding or make c-prime universal in c."
+    },
+    {
+      "issue_id": "rates-and-models",
+      "evidence": [
+        {
+          "page": 21,
+          "location": "Source issue rates-and-models"
+        },
+        {
+          "page": 22,
+          "location": "Source issue rates-and-models"
+        }
+      ],
+      "note": "Theorem7.1 uses if-and-only-if n=Omega(1/t), an asymptotic rate rather than an exact numerical threshold. Theorem7.2 has exact n>=d for projection covariance, not arbitrary low-rank PSD matrices. Theorem7.3 gives two-sided n^(5/6) only for the lower-bounded subclass and an upper bound n^(3/4) for the larger class; do not make the latter two-sided."
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2201.04315v2",
+    "version": "arXiv:2201.04315v2, stamped 18 Sep 2024; title-page date 19 Sep 2024",
+    "pdf_sha256": "cdd4ca38815c06e49f1af375f06ec2da68b5b7db6c043b718bd3fc87e46ee8e4",
+    "pdf_pages": 62,
+    "main_text_last_pdf_page": 22
+  },
+  "recorded_checks": [
+    "Eleven original main-text Theorems4.5,4.6,5.2,5.5,6.2,6.3,6.4,6.5,7.1,7.2,7.3 independently enumerated by bold font and visually compared. Theorem6.3 includes the constant-dependence continuation on19. Appendix bodies starting23 are excluded.",
+    "Twenty-three source entries preserve normalized divergences, amplification existence/error/size definitions, sufficiency and Algorithm1, natural and product exponential families, Assumptions1–4, estimator-first chi-squared risk, Gaussian procedure and the three Section7 examples. Ten auxiliary passages retain source notation and proof machinery separately.",
+    "Independent source-clause reconstruction verifies40 direct uses and61 related-theorem connections. Theorem6.3 has no moment-Assumption2 dependency. Assumption4 imports only product structure from6.4. Chi-squared upper-bound theorems do not acquire proof-only shuffling or sufficiency assumptions. Theorem7.3 does not require a learning-risk definition.",
+    "Fourteen notes preserve parameter-domain and Hessian limitations, pointwise-versus-minimax TV wording, infimum/attainment/max-size conventions, n=0 and odd-n ambiguity, divergence normalization/orientation, singular known covariance, linear versus affine independence, componentwise moment uniformity, pair existence versus continuity, ceilings and distinct model/rate scopes.",
+    "All23 entries have literal source keywords, faithful source headings/kinds and meaningful matching selectors. All61 related-theorem connections have a valid same-paper path and a source-specific explanation. The moment assumption retains the Euclidean double-bar norm.",
+    "All six content JSONs reproduce byte for byte in a fresh empty directory. Seven retained scripts support generation and separate inventory/full-source review. Rebuilding is not a new semantic review.",
+    "Source review preserves statements rather than certifying theorem truth. In particular, the exact known-covariance Gaussian formula does not expressly exclude singular Sigma; a zero-covariance witness exposes that missing convention. No source formula is silently repaired."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "edc043c6e98a4ea1e2a2c80cfc5ac516a00a3b910ae7c99451a55a7d967ee527"
+}

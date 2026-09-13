@@ -1,0 +1,78 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i03-p0869",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T11:52:13.113107+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i03-p0869/T2.4",
+      "aos-2024-v52-i03-p0869/T3.1",
+      "aos-2024-v52-i03-p0869/T4.2",
+      "aos-2024-v52-i03-p0869/T6.1"
+    ],
+    "method": "Independent font-aware enumeration of CMBX10 Theorem headings across pages 1-27, checked against source images on pages 7,9,12,22. Exactly 2.4,3.1,4.2,6.1 occur. The ordinary-font figure-caption reference on page 18 is excluded. Appendix A begins on page 28 and only its heading was inspected.",
+    "printed_label_check": [
+      [
+        7,
+        "2.4"
+      ],
+      [
+        9,
+        "3.1"
+      ],
+      [
+        12,
+        "4.2"
+      ],
+      [
+        22,
+        "6.1"
+      ]
+    ],
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 4,
+    "interfaces": 19,
+    "source_members": 19,
+    "direct_theorem_uses": 20,
+    "related_theorem_connections": 31,
+    "unranked_auxiliary_passages": 9
+  },
+  "source_notes": [
+    "Audited arXiv:2304.06993v2, not the final journal version; equality of their wording is not established.",
+    "B4-B6 remain unresolved under the explicit main-text-only scope. The audit is complete as a source census, not as a fully expanded formalization specification.",
+    "A1 says injective and measurable, while later prose says bijective. The original requirement is retained.",
+    "Theorem 6.1 has redundant liminf/arrow notation. Its feasible start differs from the worst-case warm-start initialization of Theorem 4.2."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2304.06993v2",
+    "version": "arXiv:2304.06993v2",
+    "pdf_sha256": "b3974fe0fcf4eb356e80cc84d4f37c2d08f8a3c91ebe97c46ef0c098a1b036e1",
+    "pdf_pages": 80,
+    "main_text_last_pdf_page": 27
+  },
+  "recorded_checks": [
+    "Title, both authors, arXiv v2 identifier, both source dates, 80-page count and pinned hash checked. Cached main-text pages match fresh byte-preserving extraction.",
+    "Both inventory and final census pass validation; all original claim fields remain unchanged from the independently reviewed inventory.",
+    "All four full statements checked against pages 7,9,12,22, including the restated Bernstein-von Mises result, its two testing limits, score and random Gaussian mean.",
+    "The common target space, exact ordered coordinate scan, warm-start class, A1 transformations and transformed limiting kernels were checked on pages 4-6.",
+    "The fixed-dimensional Bayesian model and randomized-test convention were checked on pages 9-10. Source spelling, calligraphic information and ordinary Gaussian N were retained.",
+    "The hierarchical model, minimal exponential-family local prior, arbitrary dominated likelihood, exact two-block order and distinct mixing-time definitions were checked on pages 10-11.",
+    "The group marginal likelihood, marginal information and B1-B3 were checked on page 12. The separate appendix references B4-B6 are preserved as unresolved rather than replaced with fabricated source statements.",
+    "The exact marginal MLE, shrinking uniform ball and conditional local-parameter draws were checked on page 22, including the fixed c and printed l in the dimension.",
+    "Independent graph traversal verifies 20 direct uses and 31 related connections. The feasible-start theorem does not acquire the warm-start supremum or a fixed M assumption, and the Bernstein-von Mises theorem acquires no sampler premise.",
+    "Every source member has exact source terms, accurate passage kind, matching selectors and a source-backed explanation for every related theorem.",
+    "Nine auxiliary passages and twenty convention notes preserve differences in time origins, transformation assumptions, source indexing and the redundant Theorem 6.1 limit syntax.",
+    "References end on page 27. No appendix mathematics was used, including the assumptions in Appendix B and all proofs in Appendix C."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "9f9c3213ef6e09e2d2f5b5e0f47664f06bf6b6da4a6a5788b28f29934db05abf"
+}

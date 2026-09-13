@@ -1,0 +1,267 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i05-p2217",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-10T17:49:27.975613+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i05-p2217/T2.1",
+      "aos-2024-v52-i05-p2217/T2.2",
+      "aos-2024-v52-i05-p2217/T2.3",
+      "aos-2024-v52-i05-p2217/T2.4"
+    ],
+    "printed_label_check": [
+      [
+        5,
+        "2.1"
+      ],
+      [
+        5,
+        "2.2"
+      ],
+      [
+        7,
+        "2.3"
+      ],
+      [
+        8,
+        "2.4"
+      ]
+    ],
+    "method": "Independent small-cap heading enumeration and visual comparison of all four complete theorem statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 4,
+    "interfaces": 19,
+    "source_members": 19,
+    "direct_theorem_uses": 33,
+    "related_theorem_connections": 49,
+    "unranked_auxiliary_passages": 10
+  },
+  "source_notes": [
+    {
+      "issue_id": "sample-versus-population-b",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 6,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The symbol B first denotes p^-1 tr(Rhat A_k Rhat A_l), then denotes the population trace matrix plus the y correction in Theorem 2.2. Local entries D6 and D10 preserve distinct meanings."
+    },
+    {
+      "issue_id": "coefficient-estimator-overloading",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 7,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theta-hat is the unpenalized B^-1 b estimator in T2.1–T2.2. The text calls its bias correction the final estimate, then reuses theta-hat for penalized estimation. T2.3 retains shrinkage c and its proof uses the raw asymptotic coefficient behavior. No unconditional extension to penalized/corrected fits is asserted by this census."
+    },
+    {
+      "issue_id": "inverse-existence",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 6,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 7,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The source uses sample and population B inverses, inverse sample diagonal square roots, and inverse/diagonal normalization of Rhat_L without explicit nondegeneracy, eigenvalue bounds or fitted positive-definiteness guarantees. Known symmetric bases alone do not guarantee these operations are defined."
+    },
+    {
+      "issue_id": "unit-aspect-ratio",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 6,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The preceding assumption only requires a finite y=p/(n-2) limit; Theorem 2.2 contains (1−y)^-2, singular at y=1. Retain the formula and record the missing explicit exclusion rather than replacing its denominator."
+    },
+    {
+      "issue_id": "zero-contrast-scale",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 6,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorem 2.2 quantifies over any constants pi_1,...,pi_K, including the zero contrast, but normalizes by sigma^-1. No sigma>0 or variance nondegeneracy is explicitly stated. Preserve the quantifier and flag this limitation."
+    },
+    {
+      "issue_id": "trace-power-placement",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 6,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 7,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The quadratic loss and variance contain trace/matrix powers whose placement matters. In particular Theorem 2.2 prints both tr[(RD1)^2] and tr(RD1)^2. Equation (5) additionally prints min rather than argmin and a trace/scalar-minus-identity expression. All are retained without repair."
+    },
+    {
+      "issue_id": "almost-sure-versus-proof",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorem 2.1 states almost sure convergence, whereas the displayed proof establishes an o_p(1) expansion. The census preserves the theorem assertion and does not claim proof verification."
+    },
+    {
+      "issue_id": "test-statistic-scaling",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 7,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Equation (2) contains n; (7) omits it despite the substitution description. T_n is retained without n, and theorem normalizations use nT_n exactly as printed."
+    },
+    {
+      "issue_id": "null-and-alternative-inheritance",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 8,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorem 2.4 invokes T2.3 conditions while explicitly replacing H0 by H1. It does not assume both. The condition inheritance does not import T2.2 contrast-specific conclusion, nu or sigma into the null/alternative tests."
+    },
+    {
+      "issue_id": "later-spectral-condition",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 8,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 22,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The Discussion explicitly says T2.3–T2.4 require bounded population-correlation spectral norm, although their printed statements do not spell it out. Record that as a separate source condition D19; do not rewrite the quoted statements."
+    },
+    {
+      "issue_id": "local-alternative-scope",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 22,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The full T2.4 prints H1 without a local-signal rate. Delta_n=o(1), sample proportion and trace conditions are introduced later for simplified power comparisons; the Discussion calls the alternative local. Preserve both the printed theorem and this scope ambiguity."
+    },
+    {
+      "issue_id": "finite-active-bases",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 22,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Known exact basis representation and finite active K are part of the theory. Growing candidate sets and selection in simulations do not establish a theorem for an arbitrary growing active K or model misspecification."
+    },
+    {
+      "issue_id": "directional-whitening",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The motivating normal approximation whitens the sample-mean difference but prints an unwhitened mean vector in its Gaussian mean. This is archived as source context, not used to alter theorem statements."
+    }
+  ],
+  "source": {
+    "source_url": "https://scholarsphere.psu.edu/resources/57f5e3c5-27e7-4f8a-b3e2-17e8e2e2407e/downloads/40206",
+    "version": "Published journal article, The Annals of Statistics 52(5), 2024, pp. 2217–2240; registered 24-AOS2433-1.pdf",
+    "pdf_sha256": "4866290bd80a1259e98bf4ce9009d84443ad2c20c9a0927e9b61ed133785bad7",
+    "pdf_pages": 24,
+    "main_text_last_pdf_page": 23
+  },
+  "recorded_checks": [
+    "Four complete main-text Theorems, numbered 2.1–2.4. Theorem 2.2 spans pages 5–6 with eleven centering terms, eight additive variance terms and full auxiliary matrix/kernel definitions. Independent small-cap heading enumeration excludes proof headings, citations and Lemma 2.5.",
+    "Nineteen entries and ten supporting passages preserve the exact linear inverse-correlation model, pooled covariance, sample correlation, unpenalized estimator, iid fourth-moment assumption, distinct sample/population B, full CLT normalizers, fitted precision and null/alternative test statistics.",
+    "Independent reconstruction confirms 33 direct uses and 49 related connections. T2.3–T2.4 inherit T2.2 assumptions without acquiring its contrast-specific nu, sigma, D0 or D1. T2.4 replaces H0 by H1 and uses population rather than estimated normalizers.",
+    "The later Discussion explicitly supplies bounded correlation spectral norm for T2.3–T2.4, finite active K and inclusion of the true basis set. Those passages are preserved separately from the original theorem wording. Conditions for simplified power comparisons are not inserted into the full theorem.",
+    "Thirteen source issues remain explicit: theta-hat reuse for raw/corrected/penalized fits, implicit inverse and scale existence, the y=1 singularity, arbitrary zero contrast, trace powers, a.s. versus proof o_p wording, n scaling and local-alternative ambiguity. No source statement is repaired or proof certified.",
+    "Every entry retains literal source terms, source kind and heading, and source-backed selectors. All 49 related theorem connections have explicit paper-local paths and explanations; reused notation does not merge distinct definitions.",
+    "All six content JSON artifacts reproduce byte for byte using the seven saved per-paper scripts. Frozen hashes, source-specific formula checks, independent heading enumeration, reconstructed dependency graph and schema validation pass."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "211bd1457ff74bde3636c58e95f3aef74a865a7a6aa1ab9aad5b31f8639e92b8"
+}

@@ -1,0 +1,93 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i02-p0757",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T11:10:25.892494+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i02-p0757/T4.1",
+      "aos-2024-v52-i02-p0757/T5.1",
+      "aos-2024-v52-i02-p0757/T5.2",
+      "aos-2024-v52-i02-p0757/T5.3",
+      "aos-2024-v52-i02-p0757/T6.1",
+      "aos-2024-v52-i02-p0757/T6.2",
+      "aos-2024-v52-i02-p0757/T6.3"
+    ],
+    "method": "Independent inspection of printed THEOREM headings on main-text pages 1-32 and the clipped top of page 33 finds exactly Theorems 4.1,5.1,5.2,5.3,6.1,6.2,6.3. The embedded Supplementary Material begins on shared page 33 at y=106.52787780761719 and is excluded. Other result types and references to results are not counted.",
+    "printed_label_check": [
+      [
+        11,
+        "4.1"
+      ],
+      [
+        12,
+        "5.1"
+      ],
+      [
+        13,
+        "5.2"
+      ],
+      [
+        14,
+        "5.3"
+      ],
+      [
+        17,
+        "6.1"
+      ],
+      [
+        17,
+        "6.2"
+      ],
+      [
+        18,
+        "6.3"
+      ]
+    ],
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 7,
+    "interfaces": 28,
+    "source_members": 28,
+    "direct_theorem_uses": 43,
+    "related_theorem_connections": 70,
+    "unranked_auxiliary_passages": 4
+  },
+  "source_notes": [
+    "The audited source is arXiv:2202.06117v4 dated 27 February 2024. Its equivalence to the final journal wording has not been established.",
+    "The unrestricted h formulation of strong negative type, median-separation formula versus prose, profile-anchor mismatch, scalar-rank extra argument, permutation split index and estimated-CDF subscript remain source issues rather than corrected quotations.",
+    "The source does not fully specify nonnegativity of weights, the covariance eigenvalue operator, global density/support continuity, probability over composite alternatives or all quantile endpoint conventions. These limitations are preserved in the source-convention record.",
+    "The census includes every main-text result labeled Theorem. Proposition 1, examples, simulation claims, discussion assertions and all embedded supplement results remain outside that inventory."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2202.06117v4",
+    "version": "arXiv:2202.06117v4",
+    "pdf_sha256": "8efd3f797d93da231a488bc8ec0094a928ee62dc68edb10d50284efa10036c14",
+    "pdf_pages": 73,
+    "main_text_last_pdf_page": 33
+  },
+  "recorded_checks": [
+    "Inventory and final census pass validation; the reviewed inventory hash matches and all original claim fields survive unchanged.",
+    "The title, three authors, arXiv v4 version stamp, 73-page count and PDF digest match the pinned source. Cached main-text evidence exactly matches fresh extraction with the shared-page cutoff.",
+    "The seven complete statements were visually checked on pages 11,12,13,14,17,18, including every branch of Theorems 4.1 and 6.3, the Gaussian process covariance and the precise random-series law.",
+    "The random-object model, fixed and random-anchor distance profiles, generalized inverse, strong-negative-type formulations, logistic signed rank, support-restricted median and transport mode were checked on pages 7-9 and 11.",
+    "The full-sample profile, leave-one-out rank, finite-sample median, Assumptions 1-3 and both directed Hausdorff distances were checked on pages 12-14. The printed median-separation formula and density support convention remain literal.",
+    "All four two-sample empirical profiles, their distinct denominators, both weighted sample averages, harmonic-size scaling and uniform estimated-weight convergence were checked on pages 14-15.",
+    "The population discrepancy, oracle critical value, uniform random permutations, empirical permutation CDF and quantile were checked on page 16. The inconsistent second entry in the permuted second group remains preserved.",
+    "Assumptions 4-6, the discrepancy-defined alternatives, oracle power, mixture reference law and permutation power were checked on pages 17-18. Nonnegative weights were not silently inserted into Assumption 4.",
+    "Independent graph traversal confirms that the transport branch does not inherit the two-sample model; the two-sample branch does not inherit ranks, medians, strong negative type, or the distinct Assumption 2. Assumption 3 reaches only Theorem 5.3.",
+    "The null critical value is separately recorded from oracle power, and oracle power remains distinct from permutation power. Theorem 6.3 uses the null and mixture quantiles without importing oracle-power conclusions as premises.",
+    "All 43 direct uses and 70 related connections have source-backed explanations. Natural-language names use source keywords; every member has matching source or theorem highlight selectors and its original source kind.",
+    "Four auxiliary source passages and twenty-two convention notes record unresolved source wording and distinguish it from mathematical interpretation. No supplement mathematics or proof expansion was used."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "96812c8f5c5a44f7f18abdc9e97063eddee802605c24d43ba368e4340e0e6507"
+}

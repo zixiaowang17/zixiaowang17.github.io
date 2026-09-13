@@ -1,0 +1,92 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i04-p1485",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T23:11:50.933536+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i04-p1485/T2.7",
+      "aos-2024-v52-i04-p1485/T3.1",
+      "aos-2024-v52-i04-p1485/T3.2",
+      "aos-2024-v52-i04-p1485/T5.1"
+    ],
+    "printed_label_check": [
+      [
+        12,
+        "2.7"
+      ],
+      [
+        13,
+        "3.1"
+      ],
+      [
+        14,
+        "3.2"
+      ],
+      [
+        20,
+        "5.1"
+      ]
+    ],
+    "method": "Independent bold-heading enumeration and visual comparison of every complete theorem statement.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 4,
+    "interfaces": 22,
+    "source_members": 22,
+    "direct_theorem_uses": 30,
+    "related_theorem_connections": 33,
+    "unranked_auxiliary_passages": 8
+  },
+  "source_notes": [
+    "The pinned source is arXiv:2301.06632v1, dated 16 January 2023, 47 PDF pages. Main text and references end after [37] on page 26, before the lettered Appendix A heading. Only the upper reference region of page 26 is retained; appendix bodies are excluded.",
+    "Exactly four main-text environments are printed as Theorem: 2.7, 3.1, 3.2 and 5.1. Numbered Propositions, Corollaries, Lemmas, examples, proof citations and introductory restatements are not extra inventoried theorems.",
+    "The complete bodies include the unique multiplier and equivalence in Theorem 2.7, both radius bounds and the random Lipschitz-Jacobian condition in Theorem 3.1, the ordered local minimax limits in Theorem 3.2, and all five assumptions plus the final pseudoinverse formula in Theorem 5.1.",
+    "Definition 2.6 locates smooth invertibility at (x-bar,v-bar) in the graph of F. Theorem 2.7 and Assumption A instead print (0,x-bar). Theorem 3.1 explicitly localizes the inverse graph, and Theorem 5.1 prints (x-bar,0). The reversed order is preserved, not silently corrected.",
+    "Theorem 2.7 assumes a regular subgradient -A(x-bar) in the Frechet subdifferential, while its set-valued map uses the limiting subdifferential. These are distinct notions, and function-value convergence is essential in the limiting definition.",
+    "Definition 2.1 localizes the sharpness condition in position and function value, not just a ball. Its tilted version names bar-v but writes v in f_v(x)=f(x)-<v,x>; that mismatch is retained.",
+    "Theorem 2.7 uses the calligraphic H built from A, the extension of f and the multiplier. This is not the arbitrary set-valued H in the Section 3 population inclusion. Each is resolved in its own scope.",
+    "The embedded-manifold definition supplies surjective Jacobians for local defining equations. The theorem does not assume its projected Sigma is invertible on the full ambient space: nonsingularity is on the tangent space and the result uses a Moore-Penrose pseudoinverse.",
+    "The covariant-Jacobian paragraph prints an extension with codomain R^d although the original map has codomain R^m. It also omits explicit Cp smoothness of the extension in that sentence and alternates nabla F and nabla_M F. The scalar extension definition preceding it is explicit; the vector wording is retained with its issues.",
+    "Theorem 3.1 inherits Assumptions A and B and additionally requires a square-integrable random Lipschitz bound on the Jacobian, a measurable solution selection, and probability tending to one of staying in the specified local ball. Solution existence and local convergence are not guaranteed by definition of SAA.",
+    "The radius bounds in Theorem 3.1 contain E L and lip(sigma)^(-1). Zero denominators or degenerate constant local inverses are not assigned extra conventions in the main text. The norm in (3.3) has no operator-norm subscript, unlike the second Jacobian moment in Assumption B.",
+    "The paragraph before Theorem 3.1 prints Cov(M(x-bar,z)) although the model and the theorem use A. No object M is introduced there. The theorem original retains A; the background typo is not promoted to an extra interface.",
+    "Theorem 3.2 assumes only A and B, not Theorem 3.1 or its Lipschitz-Jacobian condition. Its loss is any symmetric, quasiconvex, lower semicontinuous nonnegative finite function. Its estimator is unrestricted apart from the printed mapping; no SAA algorithm requirement is inserted.",
+    "The phi-divergence paragraph requires a convex C3 phi on (0,infinity) with phi(1)=0. It does not print positive second derivative, a first-derivative normalization, or conventions for zero densities and singular laws. For example, the printed class includes degenerate phi; source review preserves the stated class without certifying the lower-bound theorem for each member.",
+    "The admissible neighborhood requires existence of a perturbed solution in U, using the local neighborhood from the preceding assumptions. It does not explicitly give uniqueness or a measurable selection of these perturbed centers. This is recorded rather than resolved using the excluded proof.",
+    "Assumption C describes a local tangent reduction of an abstract inclusion. Preceding prose supplies C1 smoothness and x-bar in the manifold, while the displayed clauses do not explicitly impose Cp smoothness of F_M. The Cp inverse conclusion in Theorem 5.1 is preserved with that regularity issue, not repaired.",
+    "Assumption E1 subtracts the set-valued F(P_M(x)) before tangent projection. Assumption C1 gives a single projected value, explaining the intended tangent comparison; no norm convention for an arbitrary set is invented. E2 has a squared noise factor multiplying both its little-o term and C alpha.",
+    "Assumptions D and E use a calligraphic neighborhood U and U_F; Assumption J uses an ordinary matrix U. They are different objects despite text extraction rendering them with the same letter.",
+    "The generalized-update paragraph says noise assumptions will be given in Section 6, while the actual assumptions are in Section 5. The forward reference is retained as printed.",
+    "Assumption I prints sublabels J1-J4. It requires a strict conditional fourth-moment bound and permits gamma=1. Theorem 5.1 separately restricts gamma to (1/2,1) and assumes almost-sure convergence of the iterates; it does not prove global convergence.",
+    "Assumption J says the columns of U form an orthogonal basis, not an orthonormal basis. It defines Sigma through the Gaussian limit of sums of U-transpose nu^(1), so Sigma is in tangent coordinates. Theorem 5.1 multiplies Sigma directly by ambient Jacobians without a coordinate transformation; the displayed covariance can be dimensionally incompatible. No U factors or orthonormality assumptions are silently inserted.",
+    "Theorem 5.1 applies to the abstract generalized update. The active-manifold, subgradient, forward-backward and specific stochastic variational-inequality examples provide sufficient-condition results but are not additional hypotheses of this theorem.",
+    "Gaussian laws, conditional expectation, covariance, convergence in distribution, almost-sure convergence, independent sampling, measurable selections, operator norms, symmetric quasiconvex losses and Radon-Nikodym derivatives remain stated ambient mathematical prerequisites. Source review verifies transcription and dependencies, not the correctness of the proofs or of the recorded source assertions."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2301.06632v1",
+    "version": "arXiv:2301.06632v1, 16 January 2023",
+    "pdf_sha256": "32e48d4bfd9b0520b093cc0a28210a96c57548b0b696b2cdb5451defa86fb6a3",
+    "pdf_pages": 47,
+    "main_text_last_pdf_page": 26
+  },
+  "recorded_checks": [
+    "Independent actual-heading enumeration across main text and references finds exactly Theorems 2.7,3.1,3.2,5.1 on pages 12,13,14,20. Each complete original body was visually compared, including all hypotheses, formulas and final conclusions. The references/Appendix A boundary shares page 26; only the reference region is retained.",
+    "Twenty-two original passages and eight auxiliary conventions were compared with PDF pages 6-8,11-15,19-20. They preserve distinct regular and limiting subdifferentials, active-manifold sharpness, local inverse graphs, stochastic population/empirical inclusions, admissible law perturbations, and every referenced abstract-update assumption.",
+    "Independent local and direct graph reconstruction verifies 30 direct uses and 33 related connections. Theorem 3.2 does not inherit Theorem 3.1 SAA or extra Jacobian assumptions. Theorem 5.1 uses the abstract reduction and update, without imposing active-manifold sharpness, subdifferentials or the concrete forward-backward examples.",
+    "Every interface has original natural-language source terms and matching meaningful source expression selectors. Numbered definitions and assumptions retain their actual identities. Explanations name the explicit symbol or referenced condition and follow the stored same-paper path.",
+    "Visual comparison distinguishes calligraphic H from the set-valued H, calligraphic neighborhoods in Assumptions D/E from the basis matrix U, and the two printed Gaussian fonts. Matrix restrictions, pseudoinverses, norms, conditional moment inequalities and the strict theorem exponent are retained.",
+    "Twenty-three notes preserve source issues without modifying original statements: reversed inverse basepoints, extension codomain/regularity wording, missing explicit Cp reduction smoothness, tangent-coordinate covariance mismatch, orthogonal versus orthonormal basis, degenerate divergence and radius conventions, and original numbering/forward references. No appendix bodies or external proofs are used; correctness of proofs is not certified.",
+    "All six content artifacts reproduced byte for byte from retained per-paper scripts in an empty directory. Source identity, independent inventory, full claim preservation, manual semantic invariants, graph reach, math-fragment checks and inventory/census schema validation passed. Rebuilding alone does not perform source review."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "4179eec23c472cd9d44db490db767016562627d9c7fa0936aa50f7813a32bab6"
+}

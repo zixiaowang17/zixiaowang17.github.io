@@ -1,0 +1,95 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i04-p1334",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T21:41:22.796771+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i04-p1334/T3.3",
+      "aos-2024-v52-i04-p1334/T4.9",
+      "aos-2024-v52-i04-p1334/T5.2",
+      "aos-2024-v52-i04-p1334/T6.3"
+    ],
+    "printed_label_check": [
+      [
+        8,
+        "3.3"
+      ],
+      [
+        12,
+        "4.9"
+      ],
+      [
+        14,
+        "5.2"
+      ],
+      [
+        15,
+        "6.3"
+      ]
+    ],
+    "method": "Independent actual-heading enumeration and visual comparison of all complete theorem bodies.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 4,
+    "interfaces": 20,
+    "source_members": 20,
+    "direct_theorem_uses": 19,
+    "related_theorem_connections": 37,
+    "unranked_auxiliary_passages": 8
+  },
+  "source_notes": [
+    "The registered PDF is arXiv:2111.13551v1, dated 26 November 2021, with 67 pages. The precise version URL and hash are pinned; the manifest filename and unversioned export URL are aliases of those verified bytes.",
+    "There are four main-text results explicitly labeled Theorem. Numbered proof Sections 8 and 9 remain main text, through Lemma 9.15 on page 65; Appendix A begins at y=400.551 and its body is excluded. The earlier prose saying proofs are postponed to the appendix does not change this printed section boundary.",
+    "The introduction assumes independent standard Gaussian entries. Section 6 replaces that law with iid centered unit-variance sub-Gaussian entries. The shared estimator formula is not a reason to propagate Gaussian assumptions to Theorem 6.3.",
+    "The bold noise matrix E and the plain scalar noise variable E are distinct. Matrix Schatten norms use double bars, while entrywise vector/matrix l_s norms use single bars.",
+    "The source defines singular values in descending order and includes all q values, including zeros. No low-rank restriction is imposed in any retained theorem.",
+    "The Section 3 prose prints the 2k-Schatten norm as a sum raised to 2k rather than 1/(2k). The actual original definition (2) and theorem formulas are retained; this preceding prose error is not used to redefine the norm.",
+    "The cyclic trace product explicitly uses j_(k+1)=j_1. The following occurrence-count paragraph instead recalls i_(k+1)=i_1 despite containing j_(t+1). Both source passages are preserved; the original count clause is not silently corrected.",
+    "The Hermite definition is stated for positive degree r, but U_k uses degree zero whenever an entry does not occur. The usual H_0=1 extension is an ambient resolution, not an invented original definition.",
+    "The distributional diagonalization before Theorem 3.3 is justified by Gaussian invariance. It is not a restriction that A itself must be diagonal and cannot be reused for the sub-Gaussian theorem.",
+    "Theorem 3.3 bounds variance for k>=2, while Theorem 6.3 bounds mean squared error for k>=1. The latter statistic can have nonzero bias; these two losses are not interchangeable.",
+    "The spectral-functional definition initially assumes nonnegative-valued f. Theorem 4.9 explicitly allows continuous real-valued f and recalls the same sum; preserve the changed range.",
+    "Theorem 4.9 uses double bars for the supremum norm although the local definition uses single bars. Its approximation notation also switches the comma separator in (16) to a semicolon; these are recorded notation aliases.",
+    "Theorem 4.9 has an extra printed closing bracket immediately after E[f;I_0]. The transcription preserves it; the intended positive part is outside the subtractive expression.",
+    "Theorem 5.2 repeats suitable numerical constant M>1 after using c in K=floor(c log q). The proof instead selects a small constant c1. The original theorem is not repaired.",
+    "Theorem 5.2 displays a Wasserstein bound without expectation, followed by an expected coordinate-error bound. The proof explicitly bounds expected Wasserstein distance but later drops expectation again. No expectation is inserted into the original theorem.",
+    "Theorem 5.2 gives no lower restriction on q to make log(q) and positive K meaningful; q=1 is not silently removed or replaced by a truncated logarithm.",
+    "The empirical-measure paragraph writes where delta_x denote the associated probability measure after defining mu_sigma. Both symbols are preserved; the normalized empirical sum and each Dirac mass remain distinguishable.",
+    "The grid upper endpoint contains undefined b, while its cardinality uses M. The printed endpoint, spacing, floor/ceiling convention and cardinality are retained without setting b=M.",
+    "The moment vector hat m is normalized to the spectral scale, but the grid is written on the physical spectral interval and the quantile step rescales by that scale again. The main proof works with normalized moments. This scaling conflict is recorded, not repaired.",
+    "The program (24) fits undefined hat U although the preceding paragraph defines hat m. Its main-text proof uses hat m. The graph records this contextual link as an unresolved alias, not an equality certified from the printed algorithm.",
+    "The program requires strictly positive p rather than nonnegative p. The open simplex may not attain a minimum, and the proof uses a rounded measure that can have zero weights. No existence, tie-breaking or measurability rule for the selected optimizer is supplied.",
+    "The quantile estimator is nondecreasing in i, while the original singular values are nonincreasing. The expected coordinatewise comparison in Theorem 5.2 requires compatible ordering; reversing one sequence is not inserted into its original statement.",
+    "The sub-Gaussian norm is named but its definition and normalization are delegated to [39]. Keep it as an unresolved external convention instead of inventing an Orlicz formula.",
+    "The Section 6 prose says U_k is biased for all k>1 because only the first two moments match. Particular non-Gaussian laws can match further Gaussian moments. The theorem only needs its original squared-error bound; no universal bias claim is inferred from this prose.",
+    "For k=1 the operator-norm term in Theorem 6.3 has exponent zero, including at A=0. The ordinary zero-exponent convention is needed; it is not a new nonzero-signal assumption.",
+    "The proof-only prior constructions, Gaussian mixture distances, moment-comparison inequalities and combinatorial graph partitions are not definitions consumed by the retained theorem statements. Proof correctness and effective executable behavior of the inconsistent estimator are not certified by this source census."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2111.13551v1",
+    "version": "arXiv:2111.13551v1, 26 November 2021",
+    "pdf_sha256": "ea31f60f810e9e62cb1cea4b540e44a17e40a122a998cb1df72585ec2e818cf4",
+    "pdf_pages": 67,
+    "main_text_last_pdf_page": 65
+  },
+  "recorded_checks": [
+    "Four complete original theorem statements visually compared with pages 8,12,14,15. Independent bold-heading enumeration covers all admitted main-text pages and confirms 3.3,4.9,5.2,6.3. The main-text proof of Lemma 9.15 ends above Appendix A on page 65.",
+    "All 20 source passages and eight auxiliary passages compared with pages 1,5,7,10-15,35,42. Schatten versus entrywise norms, Hermite occurrence counts, uniform approximation, empirical measures, Wasserstein distance, moment vector, grid, fitting program, quantiles and both noise laws are preserved.",
+    "Independent graph reconstruction checks all 19 direct uses and 37 related connections. Theorem 6.3 shares the Hermite statistic but does not inherit Gaussian noise or unbiasedness. Theorem 5.2 retains the whole original estimator and flags the unresolved hat U versus hat m connection; page 42 supplies corroborating context without rewriting the displayed program.",
+    "All 20 interfaces have original natural-language keywords or separately evidenced naming context and matching source highlights. Every related theorem has a same-paper explanation. Symmetric-polynomial meaning is corroborated on main-text page 35; the external psi_2 norm passage is not presented as a supplied formula.",
+    "Visual checks preserve bold matrix versus scalar noise E, overlined m in the auxiliary proof passage, c-prime exponent, all five Gaussian variance terms, all three sub-Gaussian squared-error terms and the q-normalized empirical measure. Source typos remain in original statements and are explained separately.",
+    "Twenty-six source notes record the extra bracket in Theorem 4.9, the repeated constant and missing expectation in Theorem 5.2, grid scaling and aliases, strict-positive optimizer issue, opposite singular-value ordering, cyclic-index mismatch and external norm convention. This is a source census, not a correctness certificate or executable repair of the estimator.",
+    "All six content artifacts reproduced byte-for-byte in an empty directory. Registered source hash, independent graph invariants and both schema validations passed. Regeneration does not renew the source review."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "9aab39ab3cf3f4d6b9ebfa97353c3e8ef518bf34135fb977eb645ea21778e5b4"
+}

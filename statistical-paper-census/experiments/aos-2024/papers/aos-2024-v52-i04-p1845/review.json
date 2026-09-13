@@ -1,0 +1,530 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i04-p1845",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-10T02:41:24.430553+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i04-p1845/T3.3",
+      "aos-2024-v52-i04-p1845/T3.5",
+      "aos-2024-v52-i04-p1845/T3.6",
+      "aos-2024-v52-i04-p1845/T3.7",
+      "aos-2024-v52-i04-p1845/T4.1",
+      "aos-2024-v52-i04-p1845/T4.2",
+      "aos-2024-v52-i04-p1845/T4.3",
+      "aos-2024-v52-i04-p1845/T4.5",
+      "aos-2024-v52-i04-p1845/T4.6"
+    ],
+    "printed_label_check": [
+      [
+        11,
+        "3.3"
+      ],
+      [
+        14,
+        "3.5"
+      ],
+      [
+        15,
+        "3.6"
+      ],
+      [
+        15,
+        "3.7"
+      ],
+      [
+        18,
+        "4.1"
+      ],
+      [
+        19,
+        "4.2"
+      ],
+      [
+        20,
+        "4.3"
+      ],
+      [
+        23,
+        "4.5"
+      ],
+      [
+        24,
+        "4.6"
+      ]
+    ],
+    "method": "Independent bold-heading enumeration and visual comparison of all nine complete original statements, including continuations.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 9,
+    "interfaces": 21,
+    "source_members": 21,
+    "direct_theorem_uses": 53,
+    "related_theorem_connections": 83,
+    "unranked_auxiliary_passages": 14
+  },
+  "source_notes": [
+    {
+      "issue_id": "registered-source",
+      "description": "Registered source is the 79-page arXiv:2203.10418v2 stamped 30 Dec 2022, not assumed identical to the published 2024 article. Main text ends before References on PDF page 27.",
+      "evidence": [
+        {
+          "page": 1,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 27,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "positive-integer-notation",
+      "description": "Glyph-position reinspection confirmed superscript plus in the positive-integer notation on pages 8 and 23. The prior inventory transcription used a subscript; the corrected inventory was independently revalidated and the previous bytes are preserved in evidence.",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 23,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "conditional-moment-orders",
+      "description": "Condition 2 permits p>=1, while Theorem 3.3 explicitly assumes p>=2. Theorems 3.5 and 3.6 do not repeat p>=2 in their own statements. Preserve the standing finite-moment setting and the exact stronger restrictions actually printed; do not rewrite their hypotheses.",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 9,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 14,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 15,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "symmetry-first-moment",
+      "description": "Condition 3 asserts symmetry and bounded first absolute moment v1. Theorem 3.7 assumes Conditions 1 and 3, not Condition 2 with p=2. Surrounding prose mentioning a second moment is not an extra printed hypothesis.",
+      "evidence": [
+        {
+          "page": 10,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 15,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "symmetry-c1",
+      "description": "Theorem 3.7 uses c1 from Proposition 3.1, whose formula contains v_p and p. The symmetry condition supplies v1, and the main theorem does not explicitly state the parameter specialization. Preserve that scope issue rather than silently imposing a second moment.",
+      "evidence": [
+        {
+          "page": 10,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 15,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "loss-normalization",
+      "description": "Huber loss at tau=infinity equals half the ordinary squared loss (2.3). Source prose calls these the same squared loss. Argmin locations coincide, but the source objective tolerances remain on their own scales.",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 9,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 18,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "smoothness-derivatives",
+      "description": "Definition 2.1 bounds differences of r-th derivatives, without adding uniform bounds on the function or lower derivatives. Its prose uses partial f in the numerator, while (2.5) uses partial^r f. Preserve both source forms.",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 8,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "composition-C-scope",
+      "description": "Definition 2.2 quantifies C>0 within its class formulas. Proposition 3.4 constants depend on C. A common fixed C across the entire class is not explicitly added by this extraction.",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 13,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "component-argmin",
+      "description": "The source assumes a selected pair (beta-star,d-star)=argmin beta/t over P. It does not separately require P to be nonempty or closed, prove attainment, or select among ties. Keep this unresolved convention distinct from the ratio itself.",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "coordinate-reuse",
+      "description": "The coordinate map pi:[t]->[d] in Definition 2.2 is not required to be injective. The recursive l-1 occurrence is an internal definition, not a cyclic dependency or a new condition.",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "affine-layer-wording",
+      "description": "The source calls L_i(x)=W_i x+b_i a linear transformation, while its displayed formula is affine. Preserve the wording and the exact bias terms.",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "network-depth-output",
+      "description": "Equation (2.10) has L hidden ReLU stages and L+1 affine maps, with scalar output. Output truncation F_n(d,L,N,M) differs from the untruncated networks asserted in Theorems 4.5 and 4.6 and does not impose bounded weights.",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 13,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 24,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 25,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "estimator-sets",
+      "description": "S_n,tau(delta) and S_HN_n,tau(delta) are distinct. The first has an objective tolerance delta squared; the latter uses a min condition involving f0,tau OR an n^-100 objective tolerance. Upper bounds are uniform over the first set; lower bounds assert existence of a bad member of the second.",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 12,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 18,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 19,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "bare-S-notation",
+      "description": "Theorem 3.7 prints S(delta_n,H) without n,tau subscripts. The same section discusses the approximate Huber estimators from Theorem 3.3; that correspondence is recorded explicitly while the original omitted subscripts are retained.",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 15,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "H-argument-order",
+      "description": "Theorem 3.7 displays H(l,d,P), whereas Definition 2.2 and the other bounds use H(d,l,P). The original transposition is preserved.",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 15,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "population-minimizer",
+      "description": "The source selects f0,tau from argmin over bounded measurable Theta and calls it the global minimizer. Existence, uniqueness and versions of conditional expectations are not separately formalized; asymmetric noise can make f0,tau differ from f0.",
+      "evidence": [
+        {
+          "page": 10,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 18,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "minimax-experiment",
+      "description": "Definition 4.1 defines a risk-rate property using iid observations with standard Gaussian error and uniform design. The definition does not separately spell out noise-design independence; it refers to the standing regression setting. Do not substitute a Holder definition or import an external proof.",
+      "evidence": [
+        {
+          "page": 17,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "lower-bound-quantifiers",
+      "description": "Theorem 4.1 and 4.2 lower bounds use liminf_n inf_architecture sup_data-law P(exists bad approximate estimator)=1. This is not an infimum over all estimators or a claim that every approximate minimizer has large error.",
+      "evidence": [
+        {
+          "page": 18,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 19,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "moment-constant-limits",
+      "description": "The source does not separately expand zero-moment and tau=infinity limit conventions in formulas involving powers, ratios and logarithms. Preserve original v_p, v2, p and tau restrictions rather than selecting unstated limits.",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 12,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 14,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 15,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "conditional-versions",
+      "description": "Conditions 2 and 3 state bounds for every x in the cube, while Section 4 says almost surely. Versions of conditional distributions outside the design support are not specified. Preserve the respective source quantifiers.",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 10,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 17,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "rate-parameters",
+      "description": "The lower-bound nu-star and nu-dagger refer to the distinct algebraic parameters defined in Theorems 3.5 and 3.6. The lower-bound source does not redefine them; all logarithmic exponents are preserved.",
+      "evidence": [
+        {
+          "page": 14,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 15,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 18,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 19,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "region-index-scope",
+      "description": "Equation (4.8) lists coordinate inequalities indexed by i without explicitly writing for all i=1,...,d in the set. The source coordinate interpretation is retained without inserting quantifiers into the original passage.",
+      "evidence": [
+        {
+          "page": 23,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "binary-expansion-index",
+      "description": "Theorem 4.5 sums from i=0 but specifies only (theta_1,...,theta_r) as binary. The source does not give theta_0 in that vector. Preserve the index mismatch.",
+      "evidence": [
+        {
+          "page": 24,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "binary-architecture-reduction",
+      "description": "Theorem 4.5 has +2 in the first depth formula, +1 in the second width formula, and a dangling closing parenthesis in its final reduction term. The source exact-fitting branch is preserved without reconciling these expressions.",
+      "evidence": [
+        {
+          "page": 24,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "fitting-label-index",
+      "description": "Theorem 4.6 writes y_i in its hypothesis and y_alpha in the conclusion. Do not silently change the original symbol.",
+      "evidence": [
+        {
+          "page": 24,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 25,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "missing-width-word",
+      "description": "Theorem 4.6 describes the second network as with depth c24*L, c25*N*log2(1/Delta2), omitting the word width. The omission is retained and its intended architectural role is identified only in the separate explanation.",
+      "evidence": [
+        {
+          "page": 25,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "fitting-logarithm",
+      "description": "Theorem 4.6 permits every Delta2>0 but uses log2(1/Delta2) as a size factor. No positivity restriction or lower bound on the logarithm is added to the original statement.",
+      "evidence": [
+        {
+          "page": 24,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 25,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "proof-only-pseudodimension",
+      "description": "Pseudo-dimension is discussed after Theorem 3.3 and its definition is deferred to Appendix A.2. No appendix body was read; its proof-oriented role is not an extra dependency of the explicit V_n formula in the theorem.",
+      "evidence": [
+        {
+          "page": 12,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 17,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "source-constant-choices",
+      "description": "The architecture constants c3,c4 are supplied existentially by Proposition 3.4 and then reused in (3.15). They depend on composition parameters rather than being numerical constants computed by the census.",
+      "evidence": [
+        {
+          "page": 13,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 14,
+          "location": "Source scope or notation"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2203.10418v2",
+    "version": "arXiv:2203.10418v2; arXiv stamp 30 Dec 2022",
+    "pdf_sha256": "8f13d1bece5dac9408eb42ab31169cae838e25fef36717ef9376604dccd585d4",
+    "pdf_pages": 79,
+    "main_text_last_pdf_page": 27
+  },
+  "recorded_checks": [
+    "Nine actual main-text Theorems with complete source bodies and continuations: 3.3, 3.5, 3.6, 3.7, 4.1, 4.2, 4.3, 4.5 and 4.6. Diagram labels, citations, Propositions, Lemmas and Remarks are excluded. Main text ends on page 27 before References.",
+    "Twenty-one source entries preserve regression, boundedness, moment and symmetry conditions, smoothness/composition definitions, least component ratio, Huber loss, ReLU and truncated networks, empirical/population loss, population norm, comparison functions and minimizer, two distinct estimator sets, minimax smoothness, experiment family, regions and architecture. Fourteen auxiliary passages resolve source conventions and constants.",
+    "Independent source reconstruction verifies 53 direct uses and 83 related connections. Theorem 4.2 expressly imports definitions and hypotheses from Theorem 4.1. Figure 2 proof arrows do not define the graph. Deterministic Theorems 4.5 and 4.6 connect only to network and region definitions.",
+    "Upper bounds concern every member of S_n,tau(delta). Lower bounds assert existence of a bad member of the different S_HN set, whose two alternative branches remain intact. The population minimizer f0,tau need not be f0 and is not restricted to the network class.",
+    "General upper-bound design differs from the lower uniform-design experiment. Conditional p-th moments and conditional symmetry/first-moment assumptions remain separate. Theorem 3.7 does not acquire an invented second-moment condition, and its bare S notation and H argument swap are recorded as source ambiguities.",
+    "Natural-language names use literal source keywords with archived naming context where needed. Original source kinds/headings remain distinguishable. Every entry has source-backed selectors, and every related theorem has an explanation tracing its same-paper dependency path.",
+    "Visual comparison preserves derivative and argmin conventions, squared tolerance, distinct loss normalization, all lower-bound quantifiers and log powers, binary-expansion index and parenthesis issues, point-label mismatch and missing width wording. Positive-integer superscripts were corrected after glyph reinspection and the inventory independently revalidated.",
+    "Twenty-nine source issues record unexpanded parameter and mathematical conventions without repairing originals. The pseudo-dimension appendix was not read and is not a dependency of the explicit theorem formula. Registered arXiv v2 was not replaced with a published source. No proof certification is claimed.",
+    "All six content artifacts reproduce byte for byte with retained per-paper scripts. Source identity, main-text enumeration, complete inventory handoff, formula and scope checks, independent graphs, names, selectors, explanations and structural validation passed."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "59a7a8dbf90deb92cdb324c764882828079ecd6aab33a127c984e25e91c0972e"
+}

@@ -1,0 +1,474 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i05-p1899",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-10T03:23:27.887957+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i05-p1899/T3.1",
+      "aos-2024-v52-i05-p1899/T3.2",
+      "aos-2024-v52-i05-p1899/T4.1",
+      "aos-2024-v52-i05-p1899/T4.2",
+      "aos-2024-v52-i05-p1899/T4.3",
+      "aos-2024-v52-i05-p1899/T4.4",
+      "aos-2024-v52-i05-p1899/T4.5",
+      "aos-2024-v52-i05-p1899/T4.6",
+      "aos-2024-v52-i05-p1899/T5.1",
+      "aos-2024-v52-i05-p1899/T5.2",
+      "aos-2024-v52-i05-p1899/T5.3",
+      "aos-2024-v52-i05-p1899/T5.4",
+      "aos-2024-v52-i05-p1899/T5.5",
+      "aos-2024-v52-i05-p1899/T5.6",
+      "aos-2024-v52-i05-p1899/T6.1",
+      "aos-2024-v52-i05-p1899/T6.2",
+      "aos-2024-v52-i05-p1899/T6.3",
+      "aos-2024-v52-i05-p1899/T6.4",
+      "aos-2024-v52-i05-p1899/T6.5",
+      "aos-2024-v52-i05-p1899/T6.6"
+    ],
+    "printed_label_check": [
+      [
+        8,
+        "3.1"
+      ],
+      [
+        9,
+        "3.2"
+      ],
+      [
+        11,
+        "4.1"
+      ],
+      [
+        11,
+        "4.2"
+      ],
+      [
+        12,
+        "4.3"
+      ],
+      [
+        12,
+        "4.4"
+      ],
+      [
+        13,
+        "4.5"
+      ],
+      [
+        14,
+        "4.6"
+      ],
+      [
+        15,
+        "5.1"
+      ],
+      [
+        15,
+        "5.2"
+      ],
+      [
+        16,
+        "5.3"
+      ],
+      [
+        17,
+        "5.4"
+      ],
+      [
+        18,
+        "5.5"
+      ],
+      [
+        18,
+        "5.6"
+      ],
+      [
+        20,
+        "6.1"
+      ],
+      [
+        20,
+        "6.2"
+      ],
+      [
+        21,
+        "6.3"
+      ],
+      [
+        21,
+        "6.4"
+      ],
+      [
+        22,
+        "6.5"
+      ],
+      [
+        22,
+        "6.6"
+      ]
+    ],
+    "method": "Independent small-cap heading enumeration and visual comparison of all twenty full original statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 20,
+    "interfaces": 41,
+    "source_members": 41,
+    "direct_theorem_uses": 201,
+    "related_theorem_connections": 484,
+    "unranked_auxiliary_passages": 23
+  },
+  "source_notes": [
+    {
+      "issue_id": "disjoint-prior-self-pairs",
+      "description": "Page 4 defines Psi_dis by if e,e-prime in A then e intersection e-prime is empty, without printing e != e-prime. Preserve the original formula and record its self-pair problem; do not silently repair.",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Definition of Psi_dis"
+        }
+      ]
+    },
+    {
+      "issue_id": "global-null-family",
+      "description": "Page 4 writes H0 equivalent to P_emptyset, while Psi is a family of signal subsets and its null-only family would ordinarily be {emptyset}. Preserve the source notation and its intended context separately.",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Definition of global null distributions"
+        }
+      ]
+    },
+    {
+      "issue_id": "joint-class-domain",
+      "description": "Page 6 writes the joint class as D_Psi intersect C_(Psi minus emptyset). The latter notation is ambiguous between an error restriction on non-null distributions and a test class whose decisions exclude the empty set. Preserve the source definitions and flag the tension with the proposed empty-output rule.",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Tests and pure isolation class"
+        },
+        {
+          "page": 6,
+          "location": "Joint detection and isolation class"
+        }
+      ]
+    },
+    {
+      "issue_id": "subset-membership",
+      "description": "Theorem 6.3(i) prints e minus v0 in v_l, although the left side is a set. Inventory preserves the membership symbol rather than replacing it by subset.",
+      "evidence": [
+        {
+          "page": 21,
+          "location": "Third subsystem-containment branch"
+        }
+      ]
+    },
+    {
+      "issue_id": "standing-threshold-path",
+      "description": "Equation (9) gives log-threshold equivalences as all four tolerances vanish; several Theorems allow gamma and delta fixed. The source does not separately state uniform coordinatewise calibration along all these paths.",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Equation (9)"
+        },
+        {
+          "page": 12,
+          "location": "Theorem 4.4"
+        }
+      ]
+    },
+    {
+      "issue_id": "local-statistic-reduction",
+      "description": "Page 7 identifies local GLR statistics with projected constrained-global statistics when s_e=s-prime_e=e. For arbitrary prior restrictions this equality may require a richness/projection condition on the plausible families; preserve the assertion as A22 and retain the projected and unrestricted families as distinct source definitions.",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Equation (5) and preceding paragraph"
+        }
+      ]
+    },
+    {
+      "issue_id": "threshold-reference",
+      "description": "Theorem 3.2(iii) references Theorem 3.1 for threshold choices, even though 3.1 assumes emptyset not in Psi. Resolve numerical thresholds without importing that contradictory precondition.",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Theorem 3.1"
+        },
+        {
+          "page": 9,
+          "location": "Theorem 3.2(iii)"
+        }
+      ]
+    },
+    {
+      "issue_id": "global-isolation-family",
+      "description": "H_Psi,e excludes the global null, whereas G_Psi,e contains distributions with a signal in e. Nonemptiness for all units is not explicitly supplied by every prior. Maxima over empty hypothesis families and endpoint signal/non-signal sets require source-scope recording.",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Beginning of Section 3"
+        },
+        {
+          "page": 7,
+          "location": "GLR statistics"
+        }
+      ]
+    },
+    {
+      "issue_id": "unit-count-versus-source-count",
+      "description": "The powerset claim for Psi_0,K uses K streams although the general unit family can have more than K elements. The passage is retained verbatim; later singleton applications have |mathcal K|=K.",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Original main-text convention or statement"
+        }
+      ]
+    },
+    {
+      "issue_id": "reference-law-existence",
+      "description": "The two GLRs choose reference laws from projected H0 even when the prior excludes the empty configuration. The source calls H0 the global-null family but does not independently guarantee its nonemptiness for every allowed plausible-law family.",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Original main-text convention or statement"
+        },
+        {
+          "page": 7,
+          "location": "Original main-text convention or statement"
+        }
+      ]
+    },
+    {
+      "issue_id": "paired-threshold-calibration",
+      "description": "The shared notation in (9) simultaneously lists the familywise test with A=C,B=D and four log-equivalences tied to potentially different tolerances. Treat separately calibrated procedures as the source context, not as a newly proved simultaneous equality for all rates.",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Original main-text convention or statement"
+        },
+        {
+          "page": 9,
+          "location": "Original main-text convention or statement"
+        }
+      ]
+    },
+    {
+      "issue_id": "stopping-time-ties",
+      "description": "The joint decision uses strict T0<T_joint and T_joint<T0 branches. No tie or both-infinite convention is explicitly assigned; sufficiently separated positive thresholds may preclude some finite ties, but no convention is inserted.",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Original main-text convention or statement"
+        }
+      ]
+    },
+    {
+      "issue_id": "finite-stopping-domain",
+      "description": "The test definition states stopping and decision measurability but does not explicitly require almost-sure finite stopping. Expectations, decisions at infinity and infima of empty stopping sets retain their unstated-domain qualifications.",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Original main-text convention or statement"
+        },
+        {
+          "page": 7,
+          "location": "Original main-text convention or statement"
+        },
+        {
+          "page": 8,
+          "location": "Original main-text convention or statement"
+        }
+      ]
+    },
+    {
+      "issue_id": "ordered-statistic-ties",
+      "description": "Ordered likelihood ratios and indices are introduced without a tie-breaking convention. Do not claim unique indexed decisions from the ordering alone.",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Original main-text convention or statement"
+        },
+        {
+          "page": 15,
+          "location": "Original main-text convention or statement"
+        }
+      ]
+    },
+    {
+      "issue_id": "empty-information-extrema",
+      "description": "Signal/nonsignal maxima and minima and family infima may have empty indexing sets under endpoint priors. The main text does not state every empty-set convention; preserve the displayed branches instead of adding a positive-signal-count assumption.",
+      "evidence": [
+        {
+          "page": 10,
+          "location": "Original main-text convention or statement"
+        },
+        {
+          "page": 11,
+          "location": "Original main-text convention or statement"
+        },
+        {
+          "page": 12,
+          "location": "Original main-text convention or statement"
+        },
+        {
+          "page": 18,
+          "location": "Original main-text convention or statement"
+        },
+        {
+          "page": 22,
+          "location": "Original main-text convention or statement"
+        }
+      ]
+    },
+    {
+      "issue_id": "same-signal-alternatives",
+      "description": "The fixed-cardinality expression in Theorem 4.3 uses P_Psi minus {P}, not only laws with a different A(P). Distinct global laws can share a signal configuration in the general model; the original denominator remains unchanged.",
+      "evidence": [
+        {
+          "page": 12,
+          "location": "Original main-text convention or statement"
+        }
+      ]
+    },
+    {
+      "issue_id": "familywise-nonempty-prior-rule",
+      "description": "Theorem 5.1 names T-star_fwer also in a setting allowing l>0, whereas Subsection 3.2.4 introduces that procedure under emptyset in Psi. Equality of the two error classes for nonempty priors is stated on page 6 but does not specify an extra stopping rule. Keep the branch context explicit.",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Original main-text convention or statement"
+        },
+        {
+          "page": 8,
+          "location": "Original main-text convention or statement"
+        },
+        {
+          "page": 15,
+          "location": "Original main-text convention or statement"
+        }
+      ]
+    },
+    {
+      "issue_id": "local-hypothesis-index-alias",
+      "description": "Remark 2.1 explicitly defines the local H^k,G^k singleton alias, saved in A23. Theorems 5.5-5.6 additionally write H_Psi,k and G_Psi,k for singleton global families; that natural index abbreviation is not separately defined by Remark 3.1, which addresses likelihood statistics.",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Original main-text convention or statement"
+        },
+        {
+          "page": 18,
+          "location": "Original main-text convention or statement"
+        }
+      ]
+    },
+    {
+      "issue_id": "ell-versus-l",
+      "description": "Theorem 5.2(i) prints ell=u<K after introducing l. Preserve the printed ell and record its apparent alias rather than silently replacing it.",
+      "evidence": [
+        {
+          "page": 15,
+          "location": "Original main-text convention or statement"
+        }
+      ]
+    },
+    {
+      "issue_id": "small-stream-endpoints",
+      "description": "Some explicit rules use the second ordered statistic or the u+1 statistic. The text does not separately state every lower bound on K or admissible u needed for each index. Preserve the original case splits and record unresolved endpoint domains.",
+      "evidence": [
+        {
+          "page": 16,
+          "location": "Original main-text convention or statement"
+        },
+        {
+          "page": 17,
+          "location": "Original main-text convention or statement"
+        }
+      ]
+    },
+    {
+      "issue_id": "partition-choice",
+      "description": "The partition v0,v1,...,v_L(P) is stated to exist, but no uniqueness or minimality convention is explicitly given for dependent blocks. Do not silently identify these with a newly defined canonical graph partition.",
+      "evidence": [
+        {
+          "page": 20,
+          "location": "Original main-text convention or statement"
+        }
+      ]
+    },
+    {
+      "issue_id": "group-condition-overlap",
+      "description": "Condition (23) quantifies over source subsets and places disjointness on its left side only. If the sets overlap, singleton pairs {i,i} do not belong to the pair-unit family, so the literal right side needs care. Preserve the printed equivalence rather than imposing a new disjoint-domain restriction.",
+      "evidence": [
+        {
+          "page": 20,
+          "location": "Original main-text convention or statement"
+        }
+      ]
+    },
+    {
+      "issue_id": "theorem-local-stopping-names",
+      "description": "T1,...,T6 are separately defined within Theorems 5.2, 5.3 and 5.4. They do not name common procedures across those statements; the familywise T0 also incorporates its own paired threshold.",
+      "evidence": [
+        {
+          "page": 15,
+          "location": "Original main-text convention or statement"
+        },
+        {
+          "page": 16,
+          "location": "Original main-text convention or statement"
+        },
+        {
+          "page": 17,
+          "location": "Original main-text convention or statement"
+        }
+      ]
+    },
+    {
+      "issue_id": "scope-is-not-conjunction",
+      "description": "A related-theorem edge records use somewhere in the statement or its standing context. It does not conjoin alternative branches: in particular (23) is optional in examples in 6.2, 6.4 and 6.5, while it is explicitly assumed in 6.1 and 6.6.",
+      "evidence": [
+        {
+          "page": 20,
+          "location": "Original main-text convention or statement"
+        },
+        {
+          "page": 21,
+          "location": "Original main-text convention or statement"
+        },
+        {
+          "page": 22,
+          "location": "Original main-text convention or statement"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2207.00120v1",
+    "version": "arXiv:2207.00120v1; arXiv stamp 30 Jun 2022",
+    "pdf_sha256": "93b9db86f7125d5eb9a7d7aba007cdd9eb2802c5fcd490081016308a2cd03fe1",
+    "pdf_pages": 80,
+    "main_text_last_pdf_page": 25
+  },
+  "recorded_checks": [
+    "Twenty complete small-cap Theorem environments, 3.1-3.2, 4.1-4.6, 5.1-5.6 and 6.1-6.6, in source order. Theorems 5.2 and 6.2 continue on the next page. Corollaries are excluded. Main text ends after Conclusion and Funding on page 25; Appendix A begins on page 26.",
+    "Forty-one separate original source entries preserve data/filtrations, finite global laws, unit hypotheses, prior families, four error classes, finite-time likelihoods, detection/isolation and local statistics, stopping rules, calibrations, distributional and information conditions, ARE and the dependence partition. Twenty-three auxiliary passages resolve scope, error events, reference laws and singleton notation.",
+    "Independent local-graph and direct-use reconstruction confirms 201 direct theorem uses and 484 related connections. Theorems 3.1-3.2 do not acquire later calibrations or (11)-(12). Theorems 4.1-4.2 reach only (12); all four Section 4.4 results reach both. Independence (21) reaches only 5.1-5.4. Condition (23) reaches 6.1,6.2,6.4,6.5,6.6 with optional examples distinguished from mandatory assumptions.",
+    "References to earlier theorems are restricted to the referenced numerical thresholds or numbered conditions. Theorem 4.5 adds (15) only for its familywise conclusion. Theorem-local T1,... formulas are not merged across papers or theorem numbers. Theorem 6.6 retains familywise optimality and does not acquire the joint ARE definition.",
+    "Visual comparison confirms signal versus nonsignal extrema, min versus max in (15)-(18), full-sequence independence, projected-law cardinalities, strict likelihood tests, the conditional false-negative event, first-order lesssim, and expected-test-size divided by optimal size in ARE. Remark 2.1 supplies H^k,G^k; Remark 3.1 supplies singleton statistic aliases.",
+    "Every entry has original natural-language naming evidence and meaning-bearing highlights. Source kinds distinguish assumptions, theorem excerpts, definitions and neutral context. Every related theorem has a source-based path explanation outside its unchanged original statement.",
+    "Twenty-four source issues retain apparent notation/domain inconsistencies: empty prior shorthand, disjoint self-pairs, projected-family richness, reference-law existence, ties, empty extrema, threshold calibration paths, partition choices and printed membership/ell aliases. These are documented without silently repairing the registered preprint or consulting appendix bodies.",
+    "All six census content artifacts reproduced byte for byte in an empty directory. The retained per-paper scripts provide a standard rebuild.py entry point. Reproduction and schema validation do not replace the source comparison or certify proofs."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "584ddd00165f6e5dcdbdf67f9748e2d664fc514eaa162d4495b3e2cab345d8fe"
+}

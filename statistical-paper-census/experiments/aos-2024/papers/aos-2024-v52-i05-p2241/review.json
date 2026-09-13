@@ -1,0 +1,346 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i05-p2241",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-10T18:18:12.194768+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i05-p2241/T3.1",
+      "aos-2024-v52-i05-p2241/T3.4",
+      "aos-2024-v52-i05-p2241/T4.2",
+      "aos-2024-v52-i05-p2241/T4.4",
+      "aos-2024-v52-i05-p2241/T4.7",
+      "aos-2024-v52-i05-p2241/T4.9",
+      "aos-2024-v52-i05-p2241/T5.3",
+      "aos-2024-v52-i05-p2241/T5.5",
+      "aos-2024-v52-i05-p2241/T6.1",
+      "aos-2024-v52-i05-p2241/T6.2",
+      "aos-2024-v52-i05-p2241/T6.7"
+    ],
+    "printed_label_check": [
+      [
+        9,
+        "3.1"
+      ],
+      [
+        10,
+        "3.4"
+      ],
+      [
+        12,
+        "4.2"
+      ],
+      [
+        13,
+        "4.4"
+      ],
+      [
+        14,
+        "4.7"
+      ],
+      [
+        15,
+        "4.9"
+      ],
+      [
+        20,
+        "5.3"
+      ],
+      [
+        22,
+        "5.5"
+      ],
+      [
+        24,
+        "6.1"
+      ],
+      [
+        24,
+        "6.2"
+      ],
+      [
+        25,
+        "6.7"
+      ]
+    ],
+    "method": "Independent small-cap heading enumeration and visual comparison of all eleven complete theorem statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark",
+      "Conjecture"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 11,
+    "interfaces": 23,
+    "source_members": 23,
+    "direct_theorem_uses": 59,
+    "related_theorem_connections": 73,
+    "unranked_auxiliary_passages": 14
+  },
+  "source_notes": [
+    {
+      "issue_id": "exactness-pivotality-power",
+      "evidence": [
+        {
+          "page": 2,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 3,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 9,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 24,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 25,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Exact p-variables are pivotal because their null law is uniform. Exact e-variables merely have expectation one. Pointwise expectation nontriviality, positive log e-power and a uniform positive infimum are separate definitions; preserve each theorem clause."
+    },
+    {
+      "issue_id": "ja-exceptions",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 15,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 24,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 25,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "T3.1 and T3.4 use JA but not AC. T4.9 is a Euclidean product-measure separation result with no JA premise. T6.1(c)–(e) and T6.2(c)–(d) explicitly dispense with JA. T6.7 assumes common domination, not JA; its pivotal strengthening is Conjecture 6.8."
+    },
+    {
+      "issue_id": "ac-direction-and-refinement",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 15,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 25,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "AC means P_i≪Q, not Q≪P_i. It is needed to define gamma, and in T4.9 only the additional k≤2 refinement imposes AC and linear independence. Common dominating R in T6.7 is a different condition."
+    },
+    {
+      "issue_id": "maximal-versus-maximum",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 20,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 21,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "T4.4 and T4.7 concern a maximum dominating all feasible measures. Under N, T5.3 guarantees only a maximal limit; if a maximum exists the construction converges to it. Finite SHINE outputs need not be maximal."
+    },
+    {
+      "issue_id": "closed-complement",
+      "evidence": [
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Proposition 4.3 explicitly calls H_x^c the closed complement, so it overlaps H_x on the hyperplane. Do not substitute the ordinary open set complement defined in general notation. Under N the overlap has zero gamma mass."
+    },
+    {
+      "issue_id": "split-measure-uniqueness",
+      "evidence": [
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 20,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 21,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "N makes the split measure unique, while uniqueness of the half-space is separately asserted for strictly positive density. The algorithm prints a unique decomposition before T5.3’s N clause; the later atomic discussion explicitly requires a selection that the paper does not specify."
+    },
+    {
+      "issue_id": "zero-mass-barycenters",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 20,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The barycenter formula divides by total mass. Splitting may produce zero-mass children, and the transition formula divides by parent mass. The main text does not specify empty-child values or transitions on null states. No arbitrary conventions have been inserted."
+    },
+    {
+      "issue_id": "scalar-vector-coupling",
+      "evidence": [
+        {
+          "page": 20,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 22,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Equation (11) alternates x_k as a vector barycenter and as a scalar first coordinate. Equation (12) is the scalar SHINE martingale. T5.3 says measures converge almost surely; the preceding coupling supplies the a.s. random-variable interpretation. Preserve the printed wording and record the distinction."
+    },
+    {
+      "issue_id": "shine-rate-assumption-scope",
+      "evidence": [
+        {
+          "page": 20,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 22,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "T5.5 says same conditions as T5.3, whose conclusion has an additional N branch. The rate statement’s preceding convergent-construction context uses that branch. Preserve this contextual reading separately; do not pretend T5.5 explicitly repeats N."
+    },
+    {
+      "issue_id": "distinct-moment-indices",
+      "evidence": [
+        {
+          "page": 22,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "T5.5 requires a finite (2+epsilon)-moment for some density coordinate j and a finite inverse-square moment for some possibly different j-prime. It does not require every coordinate or one common index to satisfy both."
+    },
+    {
+      "issue_id": "reciprocal-and-log-domain",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 21,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 22,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The e-variable is a likelihood ratio dG/dF, whereas the SHINE coordinate corresponds to dF/dG and EP_k uses minus log. Main-text formulas do not explicitly settle all zero-density/infinite-objective conventions; AC alone is not mutual equivalence. Preserve directions and do not silently impose equivalence."
+    },
+    {
+      "issue_id": "infinite-hull-separation",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 24,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 25,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The final T6.2 clause removes finiteness and JA without stating common domination, which Remark 6.3 then supplies. The remark invokes Kraft’s uniform positive TV separation from pointwise expectation improvement and from disjoint convex hulls. Those implications are not justified for arbitrary infinite families by the printed hypotheses. Preserve the unclosed formula and flag the quantifier/topology issue rather than claiming a repaired theorem or proof certification."
+    },
+    {
+      "issue_id": "nested-total-variation-closures",
+      "evidence": [
+        {
+          "page": 25,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "T6.7 prints separately closed span and convex hull inside an additional outer closure of their sum. Only the tight-Q clause replaces this by disjointness of the individually closed sets. Total variation and tightness are named but not explicitly defined in the main text."
+    },
+    {
+      "issue_id": "products-and-dimensions",
+      "evidence": [
+        {
+          "page": 14,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 15,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "P^k is the finite family of pure product laws P_i^k, not all mixed products and not powers of convex mixtures. L is the null-family size; the Euclidean sample-space restriction in T4.9 is separate from L=2 in T4.7."
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2305.16539v4",
+    "version": "arXiv:2305.16539v4; 1 Dec 2024",
+    "pdf_sha256": "4ab8ada786411ce1154b0662e6821f938f1280465ef3cb5f670cebff8429b8ba",
+    "pdf_pages": 47,
+    "main_text_last_pdf_page": 29
+  },
+  "recorded_checks": [
+    "Eleven complete main-text Theorems in source order: 3.1,3.4,4.2,4.4,4.7,4.9,5.3,5.5,6.1,6.2,6.7. All equivalence clauses and exceptions retained; T6.2 spans pages 24–25. Heading enumeration excludes cited external theorems, proofs, Lemmas, Propositions, Corollaries and Conjectures.",
+    "Twenty-three source entries and fourteen supporting passages preserve original p/e-variable definitions, JA, AC, convex and setwise orders, density-ratio law, optimization domains, split measures, SHINE and uniform-power separation. Assumptions and theorem excerpts retain their actual source kinds.",
+    "Independent reconstruction confirms 59 direct uses and 73 related connections. T4.9 has no JA or e-variable premise; T6.7 has common domination and no pivotality. T5.5 inherits the convergent SHINE conditions without requiring a global maximum or importing the e-variable optimization domain.",
+    "Full-theorem relationships record use in at least one clause, not a conjunction of all clause assumptions. T4.9 adds AC only in its two-observation refinement; T5.3 adds N for maximal convergence; T6.1 and T6.2 remove JA in their specified equivalences. T5.5 keeps possibly different moment indices j and j-prime.",
+    "Fourteen explicit source issues retain zero-mass and atomic split conventions, scalar/vector and reciprocal distinctions, maximal versus maximum, implicit density/log domains, the contextual N reading in T5.5, and the infinite-hull uniform-separation limitation. Statements are transcribed, not repaired or proof-certified.",
+    "Visual crop of T6.7 confirms two inner closed operators and an outer closure of their sum in the first condition. The tight-Q clause instead asserts disjointness of the individually closed sets. Positive infimum log e-power is kept distinct from pointwise positivity.",
+    "Every source entry has literal natural-language naming evidence, original source identity and literal highlight selectors. All 73 theorem connections have source-specific explanations and checked same-paper paths.",
+    "All six content JSON artifacts reproduce byte for byte with the saved per-paper scripts. Frozen hashes, independent heading enumeration, formula checks, graph reconstruction and schema validation pass."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "74c456dee6d39d1bfd3e29c028f57d40c7e069ec0e7158885cd657d546aaa151"
+}

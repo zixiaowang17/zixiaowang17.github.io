@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Marginalization / projection</title><style>:root { color-scheme:light; --ink:#22314c; --muted:#607088; --line:#dce3ed; --paper:#fff; --wash:#f5f7fa; --accent:#2056b5; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--paper); color:var(--ink); font:15px/1.5 system-ui,-apple-system,sans-serif; }
+a { color:var(--accent); text-underline-offset:3px; }
+button,input,select { font:inherit; }
+button,a,input,select { -webkit-tap-highlight-color:transparent; }
+:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+button { cursor:pointer; }
+button:disabled { cursor:default; }
+.muted { color:var(--muted); }
+.shell { display:grid; grid-template-columns:minmax(0,1fr); min-height:100vh; }
+.shell.has-reader { grid-template-columns:minmax(310px,var(--catalog-width,38%)) minmax(0,1fr); }
+.catalog { container-type:inline-size; min-width:0; padding:32px clamp(20px,4vw,60px) 60px; }
+.catalog h1 { font-size:26px; line-height:1.25; margin:0 0 20px; font-weight:650; }
+.controls { display:flex; gap:8px; flex-wrap:wrap; }
+.controls input { flex:1 1 200px; min-width:0; }
+.controls input,.controls select { border:1px solid var(--line); border-radius:5px; padding:9px 11px; background:var(--paper); color:var(--ink); }
+.results-toolbar { display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:8px 18px; margin:16px 0 9px; }
+.results { font-size:13px; color:var(--muted); margin:0; }
+.ranking-note { font-size:12px; color:var(--muted); }
+.ranking-note summary { cursor:pointer; }
+.ranking-note[open] { flex-basis:100%; }
+.ranking-note p { max-width:65ch; margin:9px 0; line-height:1.6; }
+[hidden] { display:none !important; }
+.view-tabs { display:flex; gap:24px; border-bottom:1px solid var(--line); margin:0 0 22px; }
+.view-tabs button { padding:12px 1px; background:none; border:0; border-bottom:3px solid transparent; color:var(--muted); font-weight:600; }
+.view-tabs button[aria-selected=true] { color:var(--accent); border-bottom-color:var(--accent); }
+.search-results { border-top:1px solid var(--line); }
+.api-result,.paper-result-button { text-align:left; border:0; background:none; color:var(--ink); width:100%; }
+.api-result { display:grid; grid-template-columns:minmax(30px,max-content) minmax(0,1fr); gap:14px; padding:18px 8px; align-items:start; border-bottom:1px solid var(--line); }
+.api-result:hover,.paper-result-button:hover,.theorem-match:hover { background:var(--wash); }
+[aria-current=true] { background:#edf3fd; box-shadow:inset 3px 0 var(--accent); }
+.rank { font-size:18px; color:var(--muted); font-variant-numeric:tabular-nums; }
+.name { display:block; font-weight:600; line-height:1.45; }
+.count { display:block; font-size:13px; margin-top:7px; color:var(--muted); }
+.api-result .result-content { display:flex; justify-content:space-between; align-items:baseline; gap:18px; min-width:0; }
+.api-result .name { min-width:0; overflow-wrap:anywhere; }
+.theorem-count { flex-shrink:0; color:var(--muted); font-size:12px; font-variant-numeric:tabular-nums; }
+.rank-group { display:block; font-weight:400; font-size:12px; color:var(--muted); margin-top:4px; }
+@container(max-width:480px) { .api-result .result-content{display:block}.theorem-count{display:block;margin-top:4px} }
+.paper-result { border-bottom:1px solid var(--line); }
+.paper-result-button { padding:21px 8px; }
+.paper-result .name { font-size:17px; max-width:68ch; }
+.paper-needs { display:block; color:var(--muted); font-size:13px; margin-top:8px; }
+.theorem-matches { margin:0 8px 18px 20px; border-left:2px solid var(--line); }
+.theorem-match { display:flex; justify-content:space-between; gap:15px; width:100%; background:none; border:0; padding:10px 13px; text-align:left; color:var(--accent); }
+.theorem-match small { color:var(--muted); }
+.shell.has-reader .api-result { grid-template-columns:minmax(25px,max-content) minmax(0,1fr); }
+.scope { font-size:12px; color:var(--muted); margin-top:24px; }
+.reader { position:sticky; top:0; height:100vh; min-width:0; border-left:1px solid var(--line); background:var(--paper); }
+.reader[hidden] { display:none; }
+.reader-toolbar { display:flex; align-items:center; gap:18px; padding:12px 22px; height:55px; border-bottom:1px solid var(--line); font-size:13px; background:var(--wash); }
+.reader-toolbar a { margin-left:auto; }
+.close { border:0; padding:5px 8px; background:transparent; color:var(--ink); }
+iframe { display:block; width:100%; height:calc(100% - 55px); border:0; }
+.reading { max-width:850px; padding:34px clamp(22px,5vw,56px) 64px; margin:auto; }
+.reading h1 { font-size:27px; line-height:1.3; font-weight:650; margin:0 0 12px; }
+.reading .summary { margin:0 0 32px; color:var(--muted); }
+.reading h2 { font-size:19px; line-height:1.45; font-weight:600; margin:30px 0 16px; }
+.paper-title { padding-top:18px; border-top:1px solid var(--line); }
+.theorem { margin:0 0 33px; }
+.theorem h3,.theorem h4 { margin:0 0 6px; font-size:16px; font-weight:650; }
+.relation { font-size:12px; color:var(--muted); margin:0 0 13px; }
+.statement { font:18px/1.75 Georgia,"Times New Roman",serif; max-width:72ch; overflow-wrap:break-word; }
+.statement p { margin:0 0 16px; }
+.statement ol,.statement ul { padding-left:24px; }
+math[display=block] { display:block; overflow-x:auto; padding:12px 2px; margin:12px 0; max-width:100%; }
+math { font-size:1.02em; }
+math[display=inline] { display:inline-block; max-width:100%; overflow-x:auto; overflow-y:hidden; vertical-align:middle; }
+.equation { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:12px; margin:12px 0 20px; }
+.equation math { min-width:0; margin:0; }
+.equation-number { font-size:15px; color:var(--muted); white-space:nowrap; }
+.secondary { border-top:1px solid var(--line); padding-top:2px; margin-top:30px; }
+.library-links { list-style:none; padding:0; }
+.library-links li { margin-bottom:15px; }
+.library-links a { overflow-wrap:anywhere; font-size:14px; }
+.library-links small { display:block; color:var(--muted); margin-top:3px; font-size:13px; }
+p.gap { margin:20px 0 0; padding:16px 18px; background:var(--wash); border-left:3px solid #b6c8e6; line-height:1.7; }
+.empty { color:var(--muted); padding:20px 0; }
+@media(max-width:800px) { .shell.has-reader{display:block}.reader{position:fixed;inset:0;height:100dvh;z-index:2;border:0}.reading{padding:25px 22px 50px}.reading h1{font-size:23px}.statement{font-size:17px}.reader-toolbar{padding:10px 14px}.catalog{padding:25px 20px 45px} }
+
+.theorem-index { margin:24px 0 36px; border-top:1px solid var(--line); }
+.theorem-index a { display:flex; justify-content:space-between; gap:16px; padding:11px 0; border-bottom:1px solid var(--line); text-decoration:none; font-size:14px; }
+.theorem-index small { color:var(--muted); text-align:right; }
+.theorem-needs { font-size:13px; margin:7px 0 17px; }
+.requirements { margin:20px 0 45px; background:var(--wash); padding:14px 16px; scroll-margin-top:20px; }
+.requirements summary { cursor:pointer; font-size:14px; font-weight:600; }
+.requirements summary span { display:block; margin:5px 0 0 17px; font-weight:400; font-size:12px; color:var(--muted); }
+.requirements ul { list-style:none; margin:10px 0 0; padding:0; }
+.requirements li { border-top:1px solid var(--line); padding:15px 0; font-size:14px; }
+.requirements li:last-child { padding-bottom:2px; }
+.requirement-heading { display:flex; align-items:start; justify-content:space-between; gap:12px; }
+.requirements p { margin:7px 0 0; line-height:1.6; }
+.requirements .relation { margin:4px 0 8px; }
+.theorem { scroll-margin-top:22px; }
+@media(max-width:800px) { .api-result{grid-template-columns:minmax(25px,max-content) minmax(0,1fr)}.theorem-index a,.theorem-match,.requirement-heading{flex-direction:column;gap:5px}.theorem-index small{text-align:left}.controls select{max-width:100%}.paper-result .name{font-size:16px} }
+
+.dependency-note { color:var(--muted); font-size:13px; max-width:65ch; }
+
+.connection { font-size:14px; line-height:1.65; color:var(--muted); margin:0 0 16px; }
+.connection p { display:inline; margin:0; }
+.connection > a { margin-left:8px; font-size:12px; white-space:nowrap; }
+
+.original-definition { margin:0 0 32px; padding:20px 22px; background:var(--wash); border-left:3px solid var(--accent); scroll-margin-top:22px; }
+.original-definition h3 { margin:0 0 4px; font-size:16px; font-weight:650; color:var(--accent); }
+.definition-source { margin:0 0 12px; color:var(--muted); font-size:12px; }
+.definition-note { margin:10px 0 0; color:var(--muted); font-size:13px; }
+.symbol-highlight { background-color:#fff1b8; }
+
+.theorems-heading { margin:0 0 24px; padding-bottom:10px; border-bottom:1px solid var(--line); font-size:18px; font-weight:650; }
+.original-definition .statement > :last-child { margin-bottom:0; }
+@media(max-width:800px) { .original-definition{padding:16px} }
+
+mark.symbol-highlight { color:inherit; }
+
+.paper-title a { color:inherit; text-decoration-thickness:1px; text-decoration-color:var(--line); }
+.paper-title a:hover { color:var(--accent); text-decoration-color:currentColor; }
+.work-status { display:inline-block; width:fit-content; max-width:100%; padding:2px 6px; border:1px solid var(--line); border-radius:3px; color:var(--accent); background:var(--wash); font:12px/1.4 system-ui,-apple-system,sans-serif; white-space:nowrap; }
+.work-status[data-work-status=use_mathlib] { color:#166534; background:#edf8f0; border-color:#b6dec2; }
+.work-status[data-work-status=new_infrastructure],.work-status[data-work-status=needs_work] { color:#a52222; background:#fff1f0; border-color:#efc3c0; }
+.work-audit { margin:-16px 0 28px; }
+.work-audit p { margin:8px 0 0; color:var(--muted); font-size:13px; max-width:70ch; }
+.original-definition > h3 + .statement { margin-top:12px; }
+
+/* API counts and audit decisions occupy separate, aligned columns. */
+.api-columns,.api-result,.shell.has-reader .api-result {
+  display:grid; grid-template-columns:44px minmax(0,1fr) 140px 132px; gap:14px;
+}
+.api-columns { padding:11px 8px; color:var(--muted); font-size:12px; border-top:1px solid var(--line); }
+.api-columns > :nth-child(3),.api-counts { text-align:center; }
+.api-result .result-content { display:block; }
+.api-counts,.api-status { min-width:0; align-self:start; }
+.count-value { color:var(--muted); font-size:14px; font-variant-numeric:tabular-nums; }
+.column-label { display:none; }
+@container(max-width:620px) {
+  .api-columns { display:none; }
+  .api-result,.shell.has-reader .api-result { grid-template-columns:44px minmax(0,1fr) minmax(0,1fr); gap:10px 12px; }
+  .api-result .rank { grid-column:1; grid-row:1 / span 2; }
+  .api-result .result-content { grid-column:2 / span 2; }
+  .api-counts { grid-column:2; text-align:left; }
+  .api-status { grid-column:3; }
+  .column-label { display:block; color:var(--muted); font-size:11px; margin-bottom:5px; }
+  .api-status .work-status { white-space:normal; overflow-wrap:anywhere; }
+}
+
+.pane-divider { position:absolute; z-index:3; left:-6px; top:0; width:12px; height:100%; cursor:col-resize; touch-action:none; }
+.pane-divider::after { content:""; position:absolute; top:0; bottom:0; left:5px; width:2px; background:transparent; transition:background .12s; }
+.pane-divider:hover::after,.pane-divider:focus-visible::after,.resizing .pane-divider::after { background:var(--accent); }
+.pane-divider:focus-visible { outline:none; box-shadow:inset 0 0 0 2px var(--accent); }
+body.resizing { cursor:col-resize; user-select:none; }
+.resizing iframe { pointer-events:none; }
+@media(max-width:800px) { .pane-divider { display:none; } }
+
+.work-status[data-work-status=small_adaptation] { color:#854d0e; background:#fff9db; border-color:#e7cf88; }
+.work-filters { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0 18px; }
+.work-filters button { cursor:pointer; padding:6px 10px; white-space:normal; }
+.work-filters button[aria-pressed=true] { outline:2px solid currentColor; outline-offset:2px; font-weight:650; }
+.work-filters button:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+.work-legend { padding-left:20px; }
+.work-legend li { margin:8px 0; }
+</style></head>
+<body><main class="reading"><h1>Marginalization / projection</h1><p class="summary">3 related theorem statements</p><div class="work-audit"><span class="work-status" data-work-status="new_infrastructure">New infrastructure</span><p>The comparison identifies an essential construction or core theory that existing components do not yet supply: The cited latent-projection construction and its ancestry/separation preservation results remain to be supplied; graph restriction and reachability alone do not implement them.</p></div><section class="paper-group" data-paper-id="aos-2024-v52-i01-p0103"><h2 class="paper-title"><a href="https://arxiv.org/pdf/2112.08417v2" target="_blank" rel="noopener">Characterization of causal ancestral graphs for time series with latent confounders</a></h2><section class="original-definition" data-source-kind="source_passage" id="variant-8d4bcba5ec06522d"><h3>Section 3.4 — <mark class="symbol-highlight">marginalization / projection</mark></h3><div class="statement"><p>In most real-world scenarios, unobserved common causes cannot be excluded. As mentioned in Sec. 1 for the non-time series setting, directed maximal ancestral graphs (DMAGs) are often used for causal modeling in the presence of unobserved variables. This use of DMAGs as causal graphical models was pioneered in Richardson and Spirtes (2002), which defines a <em><mark class="symbol-highlight">marginalization / projection</mark></em> procedure that from a DAG <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝒢</mi><annotation encoding="application/x-tex">\mathcal{G}</annotation></semantics></math> over vertices <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐕</mi><annotation encoding="application/x-tex">\mathbf{V}</annotation></semantics></math>, of which only a subset <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐎</mi><mo>⊆</mo><mi>𝐕</mi></mrow><annotation encoding="application/x-tex">\mathbf{O}\subseteq \mathbf{V}</annotation></semantics></math> is observed, constructs a DMAG <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow class="symbol-highlight"><msub><mi>ℳ</mi><mi>𝐎</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>𝒟</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathcal{M}_{\mathbf{O}}(\mathcal{D})</annotation></semantics></math> over the observed variables <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐎</mi><annotation encoding="application/x-tex">\mathbf{O}</annotation></semantics></math> only (see also Zhang (2008a)). The projection of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝒟</mi><annotation encoding="application/x-tex">\mathcal{D}</annotation></semantics></math> to <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow class="symbol-highlight"><msub><mi>ℳ</mi><mi>𝐎</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>𝒟</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathcal{M}_{\mathbf{O}}(\mathcal{D})</annotation></semantics></math> has two properties: First, both graphs have the same ancestral relationships among vertices in <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐎</mi><annotation encoding="application/x-tex">\mathbf{O}</annotation></semantics></math>. Second, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>-separations in <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝒟</mi><annotation encoding="application/x-tex">\mathcal{D}</annotation></semantics></math> among vertices in <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝐎</mi><annotation encoding="application/x-tex">\mathbf{O}</annotation></semantics></math> are in one-to-one correspondence to the similar concept of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>-separation in <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow class="symbol-highlight"><msub><mi>ℳ</mi><mi>𝐎</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>𝒟</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathcal{M}_{\mathbf{O}}(\mathcal{D})</annotation></semantics></math> (also denoted by ‘<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>⟂</mo><mspace width="-0.167em"></mspace><mspace width="-0.167em"></mspace><mspace width="-0.167em"></mspace><mo>⟂</mo></mrow><annotation encoding="application/x-tex">\perp\!\!\!\perp</annotation></semantics></math>’). These two properties ensure that if <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝒟</mi><annotation encoding="application/x-tex">\mathcal{D}</annotation></semantics></math> is a causal graph then also <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow class="symbol-highlight"><msub><mi>ℳ</mi><mi>𝐎</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>𝒟</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathcal{M}_{\mathbf{O}}(\mathcal{D})</annotation></semantics></math> carries causal meaning and can be used for causal reasoning as explained in Zhang (2008a).</p>
+</div><p class="definition-note">This passage states the input, output and preservation properties, but cites the construction externally. The main text does not supply the full MAG latent-projection or m-separation rule.</p></section><section class="theorem-group"><h3 class="theorems-heading">Theorems</h3><article class="theorem" id="theorem-a253773677febf2c"><h4>Theorem 1</h4><div class="connection"><p>The ts-DMAG characterization and MAG latent projection are expressed using M^p(D), the regular-sampling notation fixed in Section 4.2. The abbreviation M^p(D) denotes the time series DMAG M_O(D). The output is obtained by the cited MAG latent projection with all other vertices latent.</p>
+<a href="#variant-8d4bcba5ec06522d">Section 3.4 — marginalization / projection</a></div><div class="statement"><p>Let <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℳ</mi><annotation encoding="application/x-tex">\mathcal{M}</annotation></semantics></math> be a DMAG with time series structure and time index set <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐓</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>t</mi><mo>−</mo><mi>τ</mi><mo>∣</mo><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mi>p</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\mathbf{T}=\{t-\tau\mid 0\leq t\leq p\}</annotation></semantics></math>. Then <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℳ</mi><annotation encoding="application/x-tex">\mathcal{M}</annotation></semantics></math> is a ts-DMAG, i.e., there is a ts-DAG <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝒟</mi><annotation encoding="application/x-tex">\mathcal{D}</annotation></semantics></math> such that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℳ</mi><mo>=</mo><msup><mi>ℳ</mi><mi>p</mi></msup><mo stretchy="false" form="prefix">(</mo><mi>𝒟</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathcal{M}=\mathcal{M}^{p}(\mathcal{D})</annotation></semantics></math> if and only if the MAG latent projection <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>ℳ</mi><mi>p</mi></msup><mo stretchy="false" form="prefix">(</mo><msub><mi>𝒟</mi><mi>c</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>ℳ</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathcal{M}^{p}(\mathcal{D}_c(\mathcal{M}))</annotation></semantics></math> of the canonical ts-DAG <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>𝒟</mi><mi>c</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>ℳ</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathcal{D}_c(\mathcal{M})</annotation></semantics></math> of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℳ</mi><annotation encoding="application/x-tex">\mathcal{M}</annotation></semantics></math> equals <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℳ</mi><annotation encoding="application/x-tex">\mathcal{M}</annotation></semantics></math>, i.e., if and only if <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℳ</mi><mo>=</mo><msup><mi>ℳ</mi><mi>p</mi></msup><mo stretchy="false" form="prefix">(</mo><msub><mi>𝒟</mi><mi>c</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>ℳ</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathcal{M}=\mathcal{M}^{p}(\mathcal{D}_c(\mathcal{M}))</annotation></semantics></math>.</p>
+</div></article><article class="theorem" id="theorem-49d3b74c2bcf697d"><h4>Theorem 2</h4><div class="connection"><p>The ts-DMAG and fixed-point assertions use M^p(D), the regular-sampling projection notation from Section 4.2. The abbreviation M^p(D) denotes the time series DMAG M_O(D). The output is obtained by the cited MAG latent projection with all other vertices latent.</p>
+<a href="#variant-8d4bcba5ec06522d">Section 3.4 — marginalization / projection</a></div><div class="statement"><p>Let <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝒢</mi><annotation encoding="application/x-tex">\mathcal{G}</annotation></semantics></math> be a directed mixed graph with time series structure and time index set <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝐓</mi><mo>=</mo><mo stretchy="false" form="prefix">{</mo><mi>t</mi><mo>−</mo><mi>τ</mi><mo>∣</mo><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mi>p</mi><mo stretchy="false" form="postfix">}</mo></mrow><annotation encoding="application/x-tex">\mathbf{T}=\{t-\tau\mid 0\leq t\leq p\}</annotation></semantics></math>. Then <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝒢</mi><annotation encoding="application/x-tex">\mathcal{G}</annotation></semantics></math> is a ts-DMAG, i.e., there is a ts-DAG <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝒟</mi><annotation encoding="application/x-tex">\mathcal{D}</annotation></semantics></math> such that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒢</mi><mo>=</mo><msup><mi>ℳ</mi><mi>p</mi></msup><mo stretchy="false" form="prefix">(</mo><mi>𝒟</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathcal{G}=\mathcal{M}^{p}(\mathcal{D})</annotation></semantics></math> if and only if <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝒢</mi><annotation encoding="application/x-tex">\mathcal{G}</annotation></semantics></math> is acyclic and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒢</mi><mo>=</mo><msup><mi>ℳ</mi><mi>p</mi></msup><mo stretchy="false" form="prefix">(</mo><msub><mi>𝒟</mi><mi>c</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>𝒢</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathcal{G}=\mathcal{M}^{p}(\mathcal{D}_c(\mathcal{G}))</annotation></semantics></math>.</p>
+</div></article><article class="theorem" id="theorem-b60a6522fdd97138"><h4>Theorem 3</h4><div class="connection"><p>The conclusions use the regularly sampled graph M^p(D). The abbreviation M^p(D) denotes the time series DMAG M_O(D). The output is obtained by the cited MAG latent projection with all other vertices latent.</p>
+<a href="#variant-8d4bcba5ec06522d">Section 3.4 — marginalization / projection</a></div><div class="statement"><p>Let <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝒟</mi><annotation encoding="application/x-tex">\mathcal{D}</annotation></semantics></math> be a ts-DAG and let <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>𝒜</mi><mo>,</mo><msup><mi>𝒜</mi><mrow><mi>s</mi><mi>t</mi><mi>a</mi><mi>t</mi></mrow></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\mathcal{A},\mathcal{A}^{stat})</annotation></semantics></math> either be <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>𝒜</mi><mrow><mi>t</mi><mi>o</mi></mrow></msub><mo>,</mo><msub><mi>𝒜</mi><mrow><mi>t</mi><mi>o</mi></mrow></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\mathcal{A}_{to},\mathcal{A}_{to})</annotation></semantics></math> or <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>𝒜</mi><mrow><mi>t</mi><mi>a</mi></mrow></msub><mo>,</mo><msub><mi>𝒜</mi><mrow><mi>t</mi><mi>a</mi></mrow></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\mathcal{A}_{ta},\mathcal{A}_{ta})</annotation></semantics></math> or <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>𝒜</mi><mi>𝒟</mi></msub><mo>,</mo><msubsup><mi>𝒜</mi><mi>𝒟</mi><mrow><mi>s</mi><mi>t</mi><mi>a</mi><mi>t</mi></mrow></msubsup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(\mathcal{A}_{\mathcal{D}},\mathcal{A}^{stat}_{\mathcal{D}})</annotation></semantics></math>. Then:</p>
+<ol type="1">
+<li>Every non-circle mark (head or tail) in <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒫</mi><mo stretchy="false" form="prefix">(</mo><msubsup><mi>ℳ</mi><mrow><mi>s</mi><mi>t</mi></mrow><mi>p</mi></msubsup><mo stretchy="false" form="prefix">(</mo><mi>𝒟</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><msup><mi>𝒜</mi><mrow><mi>s</mi><mi>t</mi><mi>a</mi><mi>t</mi></mrow></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathcal{P}(\mathcal{M}^{p}_{st}(\mathcal{D}),\mathcal{A}^{stat})</annotation></semantics></math> is also in <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mi>t</mi><mi>a</mi><mi>t</mi><mo stretchy="false" form="prefix">(</mo><mi>𝒫</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>ℳ</mi><mi>p</mi></msup><mo stretchy="false" form="prefix">(</mo><mi>𝒟</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mi>𝒜</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">stat(\mathcal{P}(\mathcal{M}^{p}(\mathcal{D}),\mathcal{A}))</annotation></semantics></math>.</li>
+<li>Every non-circle mark in <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒫</mi><mo stretchy="false" form="prefix">(</mo><msubsup><mi>ℳ</mi><mrow><mi>s</mi><mi>t</mi></mrow><mi>p</mi></msubsup><mo stretchy="false" form="prefix">(</mo><mi>𝒟</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><msup><mi>𝒜</mi><mrow><mi>s</mi><mi>t</mi><mi>a</mi><mi>t</mi></mrow></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathcal{P}(\mathcal{M}^{p}_{st}(\mathcal{D}),\mathcal{A}^{stat})</annotation></semantics></math> is also in <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒫</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>ℳ</mi><mi>p</mi></msup><mo stretchy="false" form="prefix">(</mo><mi>𝒟</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mi>𝒜</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathcal{P}(\mathcal{M}^{p}(\mathcal{D}),\mathcal{A})</annotation></semantics></math>.</li>
+<li>There are cases in which a non-circle mark that is in <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mi>t</mi><mi>a</mi><mi>t</mi><mo stretchy="false" form="prefix">(</mo><mi>𝒫</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>ℳ</mi><mi>p</mi></msup><mo stretchy="false" form="prefix">(</mo><mi>𝒟</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mi>𝒜</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">stat(\mathcal{P}(\mathcal{M}^{p}(\mathcal{D}),\mathcal{A}))</annotation></semantics></math> is not also in <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒫</mi><mo stretchy="false" form="prefix">(</mo><msubsup><mi>ℳ</mi><mrow><mi>s</mi><mi>t</mi></mrow><mi>p</mi></msubsup><mo stretchy="false" form="prefix">(</mo><mi>𝒟</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><msup><mi>𝒜</mi><mrow><mi>s</mi><mi>t</mi><mi>a</mi><mi>t</mi></mrow></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathcal{P}(\mathcal{M}^{p}_{st}(\mathcal{D}),\mathcal{A}^{stat})</annotation></semantics></math>.</li>
+<li>There are cases in which a non-circle mark that is in <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒫</mi><mo stretchy="false" form="prefix">(</mo><msup><mi>ℳ</mi><mi>p</mi></msup><mo stretchy="false" form="prefix">(</mo><mi>𝒟</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mi>𝒜</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathcal{P}(\mathcal{M}^{p}(\mathcal{D}),\mathcal{A})</annotation></semantics></math> is not also in <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒫</mi><mo stretchy="false" form="prefix">(</mo><msubsup><mi>ℳ</mi><mrow><mi>s</mi><mi>t</mi></mrow><mi>p</mi></msubsup><mo stretchy="false" form="prefix">(</mo><mi>𝒟</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><msup><mi>𝒜</mi><mrow><mi>s</mi><mi>t</mi><mi>a</mi><mi>t</mi></mrow></msup><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\mathcal{P}(\mathcal{M}^{p}_{st}(\mathcal{D}),\mathcal{A}^{stat})</annotation></semantics></math>, even regarding adjacencies that are shared by both graphs.</li>
+</ol>
+</div></article></section></section><section class="secondary"><h2>Related mathlib</h2><ul class="library-links"><li><a href="https://github.com/leanprover-community/mathlib4/blob/4edb0dbaa3b3cf729d86d1e2f035474d5ae2ac09/Mathlib/Combinatorics/Digraph/Basic.lean#L48-L50" target="_blank" rel="noopener">Digraph</a><small>A directed graph represented by a binary adjacency relation; self-loops are allowed and edge-mark or acyclicity restrictions must be added separately.</small></li><li><a href="https://github.com/leanprover-community/mathlib4/blob/4edb0dbaa3b3cf729d86d1e2f035474d5ae2ac09/Mathlib/Logic/Relation.lean#L319-L321" target="_blank" rel="noopener">Relation.ReflTransGen</a><small>Reflexive transitive closure of a relation, expressing a finite chain of directed edges including the zero-edge self-relation.</small></li><li><a href="https://github.com/leanprover-community/mathlib4/blob/4edb0dbaa3b3cf729d86d1e2f035474d5ae2ac09/Mathlib/Combinatorics/SimpleGraph/Paths.lean#L74-L75" target="_blank" rel="noopener">SimpleGraph.Walk.IsPath</a><small>An undirected skeleton walk has no repeated vertices, with the inherited no-repeated-edge property; orientation and collider conditions are additional.</small></li></ul><p class="gap">The cited latent-projection construction and its ancestry/separation preservation results remain to be supplied; graph restriction and reachability alone do not implement them.</p></section></main><script>
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&parent!==window)parent.postMessage({action:'close-theorem-reader'},'*');});
+document.addEventListener('click',function(e){const a=e.target.closest('a');if(!a)return;if(a.dataset.route&&parent!==window&&!e.ctrlKey&&!e.metaKey&&!e.shiftKey&&!e.altKey){e.preventDefault();parent.postMessage({action:'open-census-route',route:a.dataset.route,scroll:window.scrollY,expanded:[...document.querySelectorAll('details[open][id]')].map(d=>d.id)},'*');}else if(/^#(requirements|variant)-/.test(a.getAttribute('href')||'')){const target=document.getElementById(a.hash.slice(1));if(target?.tagName==='DETAILS')target.open=true;}});
+function revealFragment(){const target=document.getElementById(location.hash.slice(1));if(target){if(target.tagName==='DETAILS')target.open=true;target.scrollIntoView();}}
+window.addEventListener('hashchange',revealFragment);revealFragment();
+window.addEventListener('message',function(e){if(e.source===parent&&e.data?.action==='restore-reader-scroll'){for(const id of e.data.expanded||[]){const d=document.getElementById(id);if(d?.tagName==='DETAILS')d.open=true;}window.scrollTo(0,Number(e.data.scroll)||0);}});
+</script></body></html>

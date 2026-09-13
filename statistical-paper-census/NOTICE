@@ -1,0 +1,14 @@
+Statistical paper census
+
+This release packages the project's paper-census, mathlib-audit and HTML-report skills.
+Release changes include portable packaging, public review summaries, the clarified work
+assessment guidance, shorter ranking text, and narrow-column status wrapping.
+
+The code, skill instructions and templates retain the source project's Apache-2.0 license.
+Paper passages in experiments/aos-2024 remain attributed to the source papers identified
+by their titles, versioned URLs and hashes; the repository license does not relicense them.
+
+Saved mathlib declaration excerpts originate from leanprover-community/mathlib4 at the
+commit recorded in the experiment. Their original source locations are retained in
+mathlib-evidence/links.json. Mathlib is distributed under Apache-2.0; see the accompanying
+LICENSE and the linked upstream source for its authorship notices.

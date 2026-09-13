@@ -1,0 +1,88 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i04-p1616",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-10T00:12:27.576158+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i04-p1616:theorem-1",
+      "aos-2024-v52-i04-p1616:theorem-2",
+      "aos-2024-v52-i04-p1616:theorem-3"
+    ],
+    "printed_label_check": [
+      [
+        9,
+        "1"
+      ],
+      [
+        9,
+        "2"
+      ],
+      [
+        11,
+        "3"
+      ]
+    ],
+    "method": "Independent bold-heading enumeration and visual comparison of all three complete statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 3,
+    "interfaces": 11,
+    "source_members": 11,
+    "direct_theorem_uses": 9,
+    "related_theorem_connections": 20,
+    "unranked_auxiliary_passages": 8
+  },
+  "source_notes": [
+    "The source is the verified 47-page arXiv:2212.12848v3 PDF with the printed stamp 28 September 2023. The original versioned URL and existing stable theorem/interface IDs are retained. The prior migration audit did not perform fresh PDF review; those four artifacts are preserved under prior-review.",
+    "The main paper includes references through page 28, ending with [ZMGS22]. Appendix A starts on page 29. Bookmarks and the appendix heading locate the boundary without reading appendix bodies.",
+    "Three and only three bold main-text Theorem environments occur: Theorems 1 and 2 on page 9 and Theorem 3 on page 11. Main-text Propositions, Lemmas, Corollary 1 and regular-font citations to external Theorems are not inventoried as Theorems.",
+    "All original theorem bodies match the PDF and are retained. Theorem 3 includes both upper bounds, the strictly positive GW separation clause and both sharpness lower bounds. None of these statements continues onto the next page.",
+    "Theorem 1 uses the second component S_epsilon^2 of the EGW decomposition. Its superscript 2 is a component label, while D(mu,nu)^2 in Theorem 3 is an actual square. The component can have a negative value and should not be treated as a nonnegative squared distance.",
+    "Section 3.2 centers both marginals before deriving (8). The new D12 source condition records this convention and the D6 dependency. Theorem 1 itself opens with fourth-moment membership without restating centering; the original statement is not rewritten or strengthened.",
+    "The full EGW functional is invariant to translations, but its displayed moment formulas and decomposition must be interpreted with the stated centering convention. In particular, recentering does not leave raw second and fourth moments unchanged. The empirical error theorems do not acquire a zero-sample-mean assumption from this argument.",
+    "D6 now also resolves its left side S_epsilon to the original entropic functional D5. D7 resolves its named OT_A,epsilon problem to the EOT definition D3. These links complete source dependencies omitted from the earlier graph without importing proof-only regularity classes.",
+    "Theorem 1 explicitly assumes fourth absolute moments but defines M_mu,nu with second absolute moments. Its matrix optimization is over all real d_x-by-d_y matrices, and it separately asserts attainment in the closed coordinatewise box [-M_mu,nu/2,M_mu,nu/2]^(d_x times d_y). This is not a Frobenius-norm ball.",
+    "The EOT cost is -4 times the product of squared norms minus 32 x-transpose A y. Negative costs are allowed by the preceding Section 2.1 setup. The regularization is strictly positive and the reference measure is the product of the two marginals.",
+    "Couplings have specified first and second marginals. GW distortion uses the product of the same coupling with itself, not two independently optimized couplings. The quadratic Euclidean distance D takes the square root after integration and minimization; S_epsilon has no square root.",
+    "The original definitions retain the Euclidean fourth-moment domain, absolute moments and the product-measure KL penalty. KL is plus infinity when absolute continuity fails. No centered/debiased Sinkhorn divergence or symmetrized entropy is substituted.",
+    "The sub-Weibull definition uses the exponential of norm-to-beta divided by 2 sigma squared and allows sigma>=0. The sigma=0 endpoint has no explicit division-by-zero convention in this passage. Theorem 2 avoids that endpoint by requiring sigma squared>0 and beta=4 for both populations.",
+    "Theorem 2 exponents are 9 ceil(d_x/2)+11 and 9 ceil((d_x vee d_y)/2)+11. A magnified PDF review confirmed the placement of the ceiling and the addition of eleven. The numerator outside the entropy term is 1+sigma^4, and the regularization multiplier is epsilon.",
+    "Theorem 2 has one- and two-sample expected absolute-error bounds for the full S_epsilon functional. The populations need not be compactly supported. The two-sample bound uses the larger dimension inside a constant exponent, while both sample-size rates are n^(-1/2).",
+    "The empirical measures use equal sample size n and the source wording independently and identically distributed samples from mu and nu, respectively. No paired-sample dependence model or unequal sample-size extension is inferred.",
+    "Theorem 3 concerns compact subsets of potentially different Euclidean spaces and uses R as the maximum of their diameters. Its one-sample exponent is 2/(d_x vee 4); its two-sample exponent is 2/((d_x wedge d_y) vee 4). Logarithmic factors occur exactly at the corresponding dimension-four threshold.",
+    "Theorem 3 lower bounds omit the upper-bound logarithmic factor and take a supremum over the populations for the empirical estimator. They are not minimax lower bounds over all estimators. The printed lower-bound scope only names compact supports; no full-dimensionality or nondegeneracy assumption is stated.",
+    "The asserted lower bounds require care for degenerate or finite compact supports, where an ambient-dimension rate need not be sharp. This source-scope issue is retained separately; no unstated geometric hypothesis is inserted into the original theorem or graph.",
+    "The separated-population clause requires D(mu,nu)>0. It concerns estimation of D without the square, not an additional lower-bound claim valid uniformly at zero separation. Any resulting dependence on inverse separation should not be suppressed when interpreting the rate.",
+    "The sum defining S_epsilon^2 on page 8 prints d_1 and d_2, while the surrounding spaces use d_x and d_y. This source index mismatch is preserved, rather than silently changing a quoted formula.",
+    "Euclidean and Frobenius norms, Borel probabilities, product measures, Lp integral norms, ordinary expectation, dimension min/max, indicator functions, ceiling and diameter are resolved by source context or ambient conventions. The theorem-local matrix box, radius R, parameters and rate quantities are not invented APIs.",
+    "OT/EOT dual potentials, Schrodinger equations, regularity classes, covering estimates, Wasserstein-Procrustes reductions and auxiliary lemmas are used in the proofs. They do not become statement dependencies merely because the proof uses them, and no appendix detail is imported.",
+    "The new census retains all ten previous interface IDs and adds only the source centering condition. Source wording is preserved with harmless TeX spacing normalization. All source kinds, keywords, highlights, local paths and explanations are rebuilt and source-checked rather than accepted solely from the prior migration audit."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2212.12848v3",
+    "version": "arXiv:2212.12848v3",
+    "pdf_sha256": "731c61d7acc3441626d44ba8cd53359493441b91be5e30774b595f93aafe42fb",
+    "pdf_pages": 47,
+    "main_text_last_pdf_page": 28
+  },
+  "recorded_checks": [
+    "Fresh PDF review independently enumerates the three bold Theorems and visually checks their complete statements on pages 9 and 11. All existing theorem IDs and original bodies are retained, including both lower bounds and the unsquared-distance clause in Theorem 3.",
+    "Eleven source interfaces and eight auxiliary passages preserve the main-text probability, norm, transport, moment, entropy, empirical and tail conventions. The added centered-marginal condition captures Section 3.2 without editing Theorem 1. All ten prior interface IDs are retained.",
+    "Independent source-role reconstruction verifies nine direct uses and twenty related connections. The decomposition now resolves the full EGW functional and its centering convention; the theorem cost resolves its EOT problem. Empirical theorems acquire neither sample centering nor proof-only regularity assumptions.",
+    "All interface names use literal natural-language source terms; the EOT heading is separately preserved as naming context. The centering passage is a condition, the cost passage is a theorem excerpt, and all definitions have meaningful matching selectors and source-backed related-theorem explanations.",
+    "Visual review distinguishes the decomposition label S_epsilon^2 from D squared, the Frobenius norm from the operator norm, matrix boxes from norm balls, fourth-moment classes from second-moment products, convolution-free quadratic distortion, and the one/two-sample dimension and logarithmic exponents.",
+    "The source centering scope, d1/d2 index mismatch, zero-parameter endpoint of the tail definition, and lower-bound support-geometry scope remain explicit. Appendix bodies and proof-only constructions are excluded. This revalidation is not a proof of the paper results.",
+    "Seven retained per-paper scripts reproduce six content JSON artifacts exactly in an empty directory. The source identity, independent inventory, unchanged original claim bodies, reconstructed graph and reach, source-specific invariants, mathematical fragments, keywords/highlights and schema checks passed."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "a3d429d845d0d4d167ea48d05c0bd0dd34795f1da9c5f47f9708fb1603ea2186"
+}

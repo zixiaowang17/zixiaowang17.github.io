@@ -1,0 +1,222 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i06-p2692",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-11T02:30:35.072139+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i06-p2692/T2.1",
+      "aos-2024-v52-i06-p2692/T2.2",
+      "aos-2024-v52-i06-p2692/T4.1",
+      "aos-2024-v52-i06-p2692/T5.1",
+      "aos-2024-v52-i06-p2692/T5.2"
+    ],
+    "printed_label_check": [
+      [
+        7,
+        "2.1"
+      ],
+      [
+        9,
+        "2.2"
+      ],
+      [
+        14,
+        "4.1"
+      ],
+      [
+        19,
+        "5.1"
+      ],
+      [
+        20,
+        "5.2"
+      ]
+    ],
+    "method": "Independent actual small-cap heading enumeration and visual comparison of all five complete statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 5,
+    "interfaces": 14,
+    "source_members": 14,
+    "direct_theorem_uses": 19,
+    "related_theorem_connections": 25,
+    "unranked_auxiliary_passages": 10
+  },
+  "source_notes": [
+    {
+      "issue_id": "registered-source-scope",
+      "evidence": [
+        {
+          "page": 1,
+          "location": "Version stamp"
+        },
+        {
+          "page": 24,
+          "location": "Acknowledgement and main-text endpoint"
+        }
+      ],
+      "note": "Registered arXiv2205.12112v2, marked21Feb2024,80pages. Main text ends on24; supplementary proofs starting25 and simulations starting62 are excluded. Five Theorems are retained."
+    },
+    {
+      "issue_id": "source-issue-1",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "SBPS velocity space"
+        }
+      ],
+      "note": "Prose says v is uniform on S^d independently of x; Algorithm2 constrains v perpendicular to z and uniform on the unit tangent sphere. Preserve algorithm and archive conflicting prose separately; do not identify those laws."
+    },
+    {
+      "issue_id": "source-issue-2",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Refreshment rate and state space"
+        }
+      ],
+      "note": "Theorem2.2 does not explicitly repeat Proposition2.2 positivity of lambda_refresh. Algorithm2 samples Exponential(lambda_refresh); record its positive-rate domain as an algorithm convention, not an unprinted theorem clause. Uniform ergodicity may refer to augmented process versus projected x; preserve source ambiguity."
+    },
+    {
+      "issue_id": "source-issue-3",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "SBPS initialization and evaluation conventions"
+        }
+      ],
+      "note": "Algorithm2 initializes on all S^d, whereas SP and pi_S omit north pole. Reflection has zero denominator if tangent gradient is zero, normally zero bounce intensity. The stopping instruction exits at the first event beyond T without explicit interpolation back to T. Preserve source; do not repair via supplementary proof."
+    },
+    {
+      "issue_id": "source-issue-4",
+      "evidence": [
+        {
+          "page": 14,
+          "location": "Gaussian mismatch bound"
+        }
+      ],
+      "note": "Theorem4.1 has denominator sqrt(max(mean absolute eigenvalue deviations, mean squared means)) and an additional minimum with d^{-(1/2 vee alpha)}. Exact standard Gaussian makes the denominator zero; note limiting convention is unstated. No generalized-projection algorithm is required to state this theorem."
+    },
+    {
+      "issue_id": "source-issue-5",
+      "evidence": [
+        {
+          "page": 15,
+          "location": "Surrounding Gaussian examples"
+        }
+      ],
+      "note": "Example4.3 prints lambda_i=0 although Theorem4.1 assumes positive eigenvalues. The final paragraph twice says acceptance goes to zero under an o stepsize condition, contradicting the theorem convergence to1. These are surrounding examples, not theorem repairs or additional assumptions."
+    },
+    {
+      "issue_id": "source-issue-6",
+      "evidence": [
+        {
+          "page": 16,
+          "location": "Section5.1 scope"
+        }
+      ],
+      "note": "Second moment equals1; mean zero is not assumed. Sixth-moment finiteness is substantive despite without-loss-of-generality wording. Full support is stated after Remark5.1. The ratios f-prime/f and f-double-prime/f require pointwise/domain conventions beyond a bare topological support statement."
+    },
+    {
+      "issue_id": "source-issue-7",
+      "evidence": [
+        {
+          "page": 17,
+          "location": "Scaling branch"
+        }
+      ],
+      "note": "Equation15 requires d>1 and an admissible radicand. Its displayed implication assumes 1-(ell^2/2d)*4lambda/(1+lambda)^2 positive, since the square root otherwise produces an absolute value. Fixed ell and positive lambda meet this eventually. Archive the R=sqrt(lambda*d) convention from page16 separately."
+    },
+    {
+      "issue_id": "source-issue-8",
+      "evidence": [
+        {
+          "page": 19,
+          "location": "ESJD versus approximation"
+        }
+      ],
+      "note": "Definition5.1 is the joint expectation of squared proposal displacement times acceptance. Equation16 is a product-of-expectations approximation, not its definition. Only the former belongs to Theorem5.1. The 0.234 optimum is a corollary and must not be merged into the theorem."
+    },
+    {
+      "issue_id": "source-issue-9",
+      "evidence": [
+        {
+          "page": 20,
+          "location": "RSPS printed increments"
+        }
+      ],
+      "note": "Algorithm4 prints unprimed d-tilde-z as the leading term in both primed tangent increments. The preceding prose says two independent SPS proposals, with coordinate splice (X-prime_1,X-double-prime_2:d). Preserve literal formula and archive intended independence prose separately."
+    },
+    {
+      "issue_id": "source-issue-10",
+      "evidence": [
+        {
+          "page": 20,
+          "location": "RSPS stationary law and proposal ratio"
+        }
+      ],
+      "note": "Do not certify that the coordinate-spliced proposal has the same Hastings ratio as original SPS merely because that acceptance ratio is printed. Source theorem assumes stationarity. Proof is outside scope; preserve algorithm and record this as an unresolved mathematical verification question, not a claimed disproof."
+    },
+    {
+      "issue_id": "source-issue-11",
+      "evidence": [
+        {
+          "page": 20,
+          "location": "Diffusion scope and bindings"
+        }
+      ],
+      "note": "Theorem5.2 is RSPS only; original SPS analogue is conjectured in Remark5.6. It uses ell without repeating Eq15; retain the continuing section scaling as context. U initial law f follows stated stationary initial marginal; Brownian driver and Skorokhod path-space conventions should be recorded as ambient, not invented source quotations. Preserve original cumulative density function wording for Phi."
+    },
+    {
+      "issue_id": "source-issue-12",
+      "evidence": [
+        {
+          "page": 16,
+          "location": "Ancillary Fisher-information examples"
+        }
+      ],
+      "note": "Remark5.1 and Table1 concern a rescaled Student-t example, not required for the five theorem statements. Do not import its C_nu formula, truncated-Gaussian equality example or table into the theorem dependency graph. In particular finite sixth moment excludes many example degrees of freedom."
+    },
+    {
+      "issue_id": "nondegenerate-sps-scale",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Algorithm1 Gaussian proposal"
+        },
+        {
+          "page": 7,
+          "location": "Theorem2.1"
+        }
+      ],
+      "note": "Theorem2.1 does not print a scale restriction. Algorithm1 must use a positive finite h for the intended nondegenerate sampler; at h=0 it is an identity chain. Record that domain convention separately, not as an added original theorem clause."
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2205.12112v2",
+    "version": "arXiv:2205.12112v2, marked 21 Feb 2024",
+    "pdf_sha256": "7244d5d4a662bc47b902b98a29ba176ffc566951f35346982a8009c0514c4934",
+    "pdf_pages": 80,
+    "main_text_last_pdf_page": 24
+  },
+  "recorded_checks": [
+    "Five complete main-text Theorems2.1,2.2,4.1,5.1,5.2 independently enumerated from small-cap headings and visually compared. Main text ends on24 after Acknowledgement; supplementary proofs starting25 are excluded.",
+    "Fourteen original entries and ten auxiliary passages preserve the radius-indexed stereographic map and inverse, transformed target, complete SPS/SBPS/RSPS algorithms, both uniform-ergodicity definitions, Gaussian target, all Section5.1 assumptions, Eq15 scaling and exact ESJD.",
+    "Independent source-clause reconstruction verifies19 direct uses and25 related-theorem connections. SPS has no imported SBPS gradient or transformed-density definition when its acceptance ratio is printed directly. T4.1 does not import GSPS or Section5.1 assumptions. T5.2 uses RSPS and does not inherit original SPS or ESJD as statement dependencies.",
+    "Fourteen source notes preserve refreshment and velocity-space ambiguities, north-pole/zero-gradient/stopping conventions, nondegenerate SPS scale, Gaussian-bound denominator conventions, conflicting surrounding examples, score domains, scaling branch restrictions and unprimed RSPS increments. Source assertions are not certified as correct algorithms.",
+    "T5.1 proves an exact ESJD limit for SPS, distinct from the earlier product-of-expectations approximation. T5.2 states a diffusion limit for RSPS; the original SPS analogue remains a conjecture. The original Phi wording and the implicit continuing ell scaling are preserved and explained separately.",
+    "All14 entries have literal natural-language source terms, original kinds/headings and matching selectors. Every one of25 related links has a valid same-paper path and a source-specific explanation.",
+    "All six content JSON files reproduce byte for byte in an empty directory. Seven retained scripts support inventory, extraction, ambient context, finalization, rebuilding and independent source review. Rebuilding is not a new semantic source review."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "e52df5eace8547b044371f05765a1425c400cd94c0c8ef841f78b52e2d92920f"
+}

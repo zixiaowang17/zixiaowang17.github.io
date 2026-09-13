@@ -1,0 +1,280 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i05-p2400",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-10T20:05:16.946220+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i05-p2400/T1",
+      "aos-2024-v52-i05-p2400/T2",
+      "aos-2024-v52-i05-p2400/T3",
+      "aos-2024-v52-i05-p2400/T4",
+      "aos-2024-v52-i05-p2400/T5",
+      "aos-2024-v52-i05-p2400/T6"
+    ],
+    "printed_label_check": [
+      [
+        12,
+        "1"
+      ],
+      [
+        15,
+        "2"
+      ],
+      [
+        16,
+        "3"
+      ],
+      [
+        16,
+        "4"
+      ],
+      [
+        18,
+        "5"
+      ],
+      [
+        18,
+        "6"
+      ]
+    ],
+    "method": "Independent bold-font heading enumeration and visual comparison of all six complete theorem statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark",
+      "Conjecture"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 6,
+    "interfaces": 21,
+    "source_members": 21,
+    "direct_theorem_uses": 25,
+    "related_theorem_connections": 42,
+    "unranked_auxiliary_passages": 11
+  },
+  "source_notes": [
+    {
+      "issue_id": "anisotropic-essential-variation",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorem1 uses the infinity-norm test-field constraint in(17) and essential variation(19), not isotropic TV or pointwise unrestricted variation. Approximate continuity is only described and externally cited; the formal definition is unresolved locally. BV representatives and exceptional slices are understood modulo Lebesgue-null sets."
+    },
+    {
+      "issue_id": "slice-endpoints-and-dimension",
+      "evidence": [
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorem1 takes open bounded convex U but writes closed endpoint intervals for fibers. The essential-variation supremum uses strict interior points, so no endpoint value is selected by it. For d=1 the projected space is R^0 with its usual singleton measure convention, implicit in the source; no special case is printed."
+    },
+    {
+      "issue_id": "difference-boundary-discrepancy",
+      "evidence": [
+        {
+          "page": 2,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 3,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 4,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The fixed-length Delta operator sets the final entry to zero and is then iterated literally. For order2 its penultimate entry is minus the last first difference, whereas the shrinking-row matrix D^(2) omits that boundary term. The source calls(6) and(7) equivalent; retain the discrepancy and pin theorem definitions to the explicitly referenced matrix formulation(7)."
+    },
+    {
+      "issue_id": "lattice-order-and-seminorm-domains",
+      "evidence": [
+        {
+          "page": 1,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 2,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 4,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 9,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 14,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "N=n^(1/d) must be integral and sufficiently large relative to k+1 for the displayed difference matrices. KTV and discrete Sobolev balls constrain seminorms, leaving the max-degree polynomial null space unbounded. The 1/n risk terms represent finite-dimensional components and must be retained."
+    },
+    {
+      "issue_id": "generalized-lasso-incoherence",
+      "evidence": [
+        {
+          "page": 15,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 16,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorem2 bounds left singular vectors in R^r by mu/sqrt(n), exactly as printed, with an arbitrary exceptional set I. Its rate constants hide fixed noise scale. Theorem3 uses Theorem2 in its proof; this is not a new explicit incoherence premise on the KTF signal or an import of generic D into its statement."
+    },
+    {
+      "issue_id": "risk-versus-probability-bounds",
+      "evidence": [
+        {
+          "page": 15,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 16,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 18,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorems2–3 state OP bounds on squared estimation error, whereas Theorems4–6 concern expected minimax risk. A pointwise in-probability bound alone does not certify a uniform expectation-risk upper bound. Preserve the paper’s stated attainment conclusions without claiming an independent proof of those transitions."
+    },
+    {
+      "issue_id": "radii-and-truncation-orders",
+      "evidence": [
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 14,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 18,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The classes are defined for positive radii. Theorem5’s expression C_n^2*log(1+n/C_n^2)/n needs a limiting convention at zero, and its tau scaling can fall below1 for sufficiently small radii. Q must be an integer-index subset of [N]^d, retain the polynomial null space, and have feasible truncation; rounding/clipping conventions are implicit rather than printed."
+    },
+    {
+      "issue_id": "canonical-rate-floor",
+      "evidence": [
+        {
+          "page": 14,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 18,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorem6 first includes 1/n, then reports the canonical rate L_n^(2/(2s+1))*n^(−2s/(2s+1)) without that term or an explicit lower restriction on L_n. This simplification requires the displayed nonparametric term to dominate 1/n; for very small L_n, retain the earlier full rate. Do not repair its final original sentence."
+    },
+    {
+      "issue_id": "critical-logarithm-and-linear-rates",
+      "evidence": [
+        {
+          "page": 18,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "In Theorem5 the critical term is (C_n^2/n)*log(1+n/C_n^2), with multiplication by the logarithm. It is not division by a logarithm. Preserve the three regimes, the explicit log-factor attainment qualification, and the additional C_n^2=O(n^alpha), alpha<1, statement."
+    },
+    {
+      "issue_id": "singular-basis-and-polynomial-space",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 17,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 18,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The projection uses right singular vectors indexed coordinatewise by [N]^d, including zero modes, rather than Theorem2’s left singular vectors. The tensor-product basis and choices in repeated eigenspaces are implicit. Max degree k means each coordinate exponent≤k, not total degree≤k."
+    },
+    {
+      "issue_id": "holder-embedding-norm-typo",
+      "evidence": [
+        {
+          "page": 14,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The explanatory inequality before the discrete Sobolev-to-KTV embedding prints ||v||_2≤sqrt(p)||theta||_1. The embedding requires the other one-to-two norm inequality with a consistent vector. Preserve this typo separately from the correct class definitions and Proposition3’s printed inclusion."
+    },
+    {
+      "issue_id": "proof-context-not-assumptions",
+      "evidence": [
+        {
+          "page": 14,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 16,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 18,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorem6’s complete italic statement mentions Holder embedding as the reason for its lower bound. Preserve the original Holder classes and Proposition3 as unranked proof context. Neither that inclusion nor Theorem3’s application of Theorem2 creates a theorem-statement dependency on a smaller parameter class or additional assumption."
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2112.14758v2",
+    "version": "arXiv:2112.14758v2; 5 Apr 2024",
+    "pdf_sha256": "24e6b64a3c70e5ec5e17e9bf317258d16e6d37805c0d2f783ca69a5565f251d0",
+    "pdf_pages": 56,
+    "main_text_last_pdf_page": 29
+  },
+  "recorded_checks": [
+    "Six complete main-text Theorems1–6, independently enumerated by bold headings. Include credited Theorem2, the entire essential-variation slicing statement, every tuning/minimax regime, and all italic attainment paragraphs after Theorems5–6 displays. Acknowledgements end before References on page29.",
+    "Twenty-one original entries preserve anisotropic BV and essential variation, coordinate slices, lattice and shrinking-row difference matrices, Kronecker penalty, KTV seminorm/estimator/ball, discrete Sobolev ball, Gaussian experiment, two risks, general lasso/incoherence/nullity, effective smoothness, spectral projection, max-degree polynomials and canonical radius sequences. Eleven auxiliary passages preserve proof context and alternative conventions.",
+    "Independent reconstruction checks25 direct uses and42 related connections. Analytic Theorem1 has no statistical or lattice dependencies. General-matrix Theorem2 has no KTF assumptions. Theorem3 does not import its proof application of Theorem2 as a statement dependency. Minimax theorems need their parameter classes and named projection witnesses, not the KTF estimator itself.",
+    "Maintain essential versus unrestricted variation, anisotropic versus isotropic TV, coordinatewise discrete Sobolev versus mixed-derivative continuum spaces, OP estimation error versus expected minimax risk, and linear versus unrestricted estimators. All rate terms and positive-radius regimes are preserved, including the critical multiplying logarithm and fixed k,d convention.",
+    "Twelve source notes retain the fixed-length Delta versus shrinking-row boundary mismatch, approximate-continuity external reference, fiber conventions, seminorm/radius domains, left-versus-right singular-vector conventions, projection rounding and null-space retention, canonical-rate floor omission, critical log qualifications and the explanatory norm-inequality typo. Original statements are not silently repaired.",
+    "All21 entries use natural-language source terms, source kinds/headings and literal highlight selectors. Every related theorem has a source-backed same-paper path and explanation. Holder classes and Proposition3 remain original unranked proof context, with no implication-only subset edge.",
+    "All six content JSON artifacts reproduce byte for byte in a fresh directory. Seven saved per-paper scripts retain inventory enumeration, extraction, context, finalization, rebuild and independent source review with frozen hashes and formula checks."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "3bbf4ac2b8f305a2f64406a137d728e0eae2c7ed6a740864f9c07e8600e2c4f3"
+}

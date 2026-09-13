@@ -1,0 +1,60 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i01-p0261",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T06:44:51.078620+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i01-p0261/T2.1",
+      "aos-2024-v52-i01-p0261/T2.2",
+      "aos-2024-v52-i01-p0261/T4.1",
+      "aos-2024-v52-i01-p0261/T5.2"
+    ],
+    "method": "Enumerate all printed THEOREM starts across the published article and visually check the complete four statements on PDF pages 6, 8 and 15. Section 6 ends on page 22 before acknowledgments, funding, the separate-supplement notice and references. No embedded appendix is present.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "supplementary_material_used": false
+  },
+  "counts": {
+    "theorems": 4,
+    "interfaces": 13,
+    "source_members": 13,
+    "direct_theorem_uses": 15,
+    "related_theorem_connections": 27,
+    "unranked_auxiliary_passages": 4
+  },
+  "source_notes": [
+    "The source is the published article, volume 52 issue 1 pages 261-284, DOI 10.1214/23-AOS2346. The PDF metadata, title/authors, page count and SHA-256 agree with the external cache provenance.",
+    "Statements were transcribed from the published PDF; no separate supplement or arXiv version was substituted.",
+    "The risk aligns the signal with a single circular rotation across all Fourier frequencies. It does not align each frequency independently.",
+    "The generic parameter class imposes upper and lower magnitude bounds at every frequency. Assumption 5.1 instead controls energy in every subset containing at least half the frequencies.",
+    "The full method-of-moments procedure retains magnitude estimation, conjugated empirical bispectrum, choice of argument versions, real least-squares phase estimation and real coefficient reconstruction.",
+    "The oracle uses true phases. The observable optimization procedure uses a circular maximum-discrepancy pilot followed by a real argument lift. The proof-only frequency-marching alternative is not substituted.",
+    "The likelihood integrates over uniform latent rotations and minimizes over all real coefficient vectors. The signal-aligned representative used later in the proof is not part of the estimator definition.",
+    "Zero-argument conventions, minimizer selection, constant-ordering details and the zero-signal denominator in Theorem 5.2 are recorded as source ambiguities rather than silently repaired."
+  ],
+  "source": {
+    "source_url": "https://projecteuclid.org/journals/annals-of-statistics/volume-52/issue-1/Rates-of-estimation-for-high-dimensional-multireference-alignment/10.1214/23-AOS2346.pdf",
+    "version": "Published version: The Annals of Statistics 52(1), 2024, pp. 261-284; DOI 10.1214/23-AOS2346",
+    "pdf_sha256": "5c9496bc2c45f9538e22a05064c3988a3f80f29fd33caced41a34087c4a18f6c",
+    "pdf_pages": 24,
+    "main_text_last_pdf_page": 22
+  },
+  "recorded_checks": [
+    "The four complete original Theorem records, including titles and all constant/sample-size conditions, remain identical to the independently reviewed inventory.",
+    "All 13 original interface passages and four source auxiliaries were visually checked against the published PDF; original mathematical content, labels and source terminology are preserved.",
+    "The finalizer derived 15 direct uses and 27 related-theorem paths. A separate validator process accepted the finalized census and pinned inventory.",
+    "The all-estimator minimax conventions and power-law class reach Theorems 2.1 and 2.2 only. No constructive estimator or proof lemma is imported into their statement dependencies.",
+    "The oracle and optimization procedures remain distinct definitions and both reach Theorem 4.1. The circular pilot distance is not substituted for the real least-squares objective.",
+    "The likelihood estimator and Assumption 5.1 reach Theorem 5.2 only; the stronger power-law class is not an added prerequisite of that theorem.",
+    "Every source member has a source-body or source-label highlight. All selectors match the source or a related same-paper Theorem. All extracted mathematical fragments have balanced braces.",
+    "The complex Gaussian normalization, positive known noise, K>=2, bispectrum index set including k=l, and expectation abbreviation are preserved in the auxiliary source passages."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "658821ac71dc7bb771bb34ed94a1d4d34791156afc8f3a1473e23333f6d20004"
+}

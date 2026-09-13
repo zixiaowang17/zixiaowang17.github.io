@@ -1,0 +1,906 @@
+[
+  {
+    "paper_id": "aos-2024-v52-i01-p0001",
+    "title": "The right complexity measure in locally private estimation: It is not the Fisher information",
+    "source_url": "https://arxiv.org/pdf/1806.05756v3",
+    "pdf_sha256": "926e16ab023dd9ce26883d259ac8c32065d63410824cb6246716a3564a50ec68",
+    "review": "papers/aos-2024-v52-i01-p0001/review.json",
+    "theorem_count": 2
+  },
+  {
+    "paper_id": "aos-2024-v52-i01-p0052",
+    "title": "Maximum likelihood for high-noise group orbit estimation and single-particle cryo-EM",
+    "source_url": "https://projecteuclid.org/journals/annals-of-statistics/volume-52/issue-1/Maximum-likelihood-for-high-noise-group-orbit-estimation-and-single/10.1214/23-AOS2292.pdf",
+    "pdf_sha256": "0e2a08097d0f62a375bcfe5821507276e09d86b68d9e720a0087887d3a574786",
+    "review": "papers/aos-2024-v52-i01-p0052/review.json",
+    "theorem_count": 12
+  },
+  {
+    "paper_id": "aos-2024-v52-i01-p0078",
+    "title": "StarTrek: Combinatorial variable selection with false discovery rate control",
+    "source_url": "https://arxiv.org/pdf/2108.09904v2",
+    "pdf_sha256": "50dc1b6cd36db1bc1b015e6722efb096eca9f3b5658405e7e9edc4604b1ae923",
+    "review": "papers/aos-2024-v52-i01-p0078/review.json",
+    "theorem_count": 5
+  },
+  {
+    "paper_id": "aos-2024-v52-i01-p0103",
+    "title": "Characterization of causal ancestral graphs for time series with latent confounders",
+    "source_url": "https://arxiv.org/pdf/2112.08417v2",
+    "pdf_sha256": "d455852177d78183664ed5a1b6f93701cfbe5d650be1a03569bac2d5cf913a1f",
+    "review": "papers/aos-2024-v52-i01-p0103/review.json",
+    "theorem_count": 3
+  },
+  {
+    "paper_id": "aos-2024-v52-i01-p0131",
+    "title": "Statistical-computational trade-offs in tensor PCA and related problems via communication complexity",
+    "source_url": "https://arxiv.org/pdf/2204.07526v2",
+    "pdf_sha256": "9f5ac87cf7baade850642cc6d947f457466296ede93e3d53840fb97f6432c434",
+    "review": "papers/aos-2024-v52-i01-p0131/review.json",
+    "theorem_count": 4
+  },
+  {
+    "paper_id": "aos-2024-v52-i01-p0157",
+    "title": "Adaptive novelty detection with false discovery rate guarantee",
+    "source_url": "https://arxiv.org/pdf/2208.06685v3",
+    "pdf_sha256": "1f2c3e1419251a520ad3479f27419f2bd810afcb2d4b9f2c9e80e098b28e8619",
+    "review": "papers/aos-2024-v52-i01-p0157/review.json",
+    "theorem_count": 6
+  },
+  {
+    "paper_id": "aos-2024-v52-i01-p0184",
+    "title": "Rank-based indices for testing independence between two high-dimensional vectors",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11064990/pdf/",
+    "pdf_sha256": "7ec9d3f7bef00582b4790863c99d76c3d61f56d92373dfb64620a1793a5e7f7c",
+    "review": "papers/aos-2024-v52-i01-p0184/review.json",
+    "theorem_count": 5
+  },
+  {
+    "paper_id": "aos-2024-v52-i01-p0207",
+    "title": "Transfer learning for contextual multi-armed bandits",
+    "source_url": "https://arxiv.org/pdf/2211.12612v2",
+    "pdf_sha256": "a4f4af9a32f0d0d733cc8230f9ee11507196c8bb2284e5532ba8f27e9b37c49f",
+    "review": "papers/aos-2024-v52-i01-p0207/review.json",
+    "theorem_count": 4
+  },
+  {
+    "paper_id": "aos-2024-v52-i01-p0233",
+    "title": "Settling the sample complexity of model-based offline reinforcement learning",
+    "source_url": "https://projecteuclid.org/journals/annals-of-statistics/volume-52/issue-1/Settling-the-sample-complexity-of-model-based-offline-reinforcement-learning/10.1214/23-AOS2342.pdf",
+    "pdf_sha256": "b8117f2ba646465337f222538705d6960cb994d64c152b25a6b1799e80472363",
+    "review": "papers/aos-2024-v52-i01-p0233/review.json",
+    "theorem_count": 4
+  },
+  {
+    "paper_id": "aos-2024-v52-i01-p0261",
+    "title": "Rates of estimation for high-dimensional multireference alignment",
+    "source_url": "https://projecteuclid.org/journals/annals-of-statistics/volume-52/issue-1/Rates-of-estimation-for-high-dimensional-multireference-alignment/10.1214/23-AOS2346.pdf",
+    "pdf_sha256": "5c9496bc2c45f9538e22a05064c3988a3f80f29fd33caced41a34087c4a18f6c",
+    "review": "papers/aos-2024-v52-i01-p0261/review.json",
+    "theorem_count": 4
+  },
+  {
+    "paper_id": "aos-2024-v52-i01-p0285",
+    "title": "Supervised homogeneity fusion: A combinatorial approach",
+    "source_url": "https://arxiv.org/pdf/2201.01036v1",
+    "pdf_sha256": "86f5c1d84076a2f712856aca7b818569180f3701b882efa75eb4ca865a3eff5e",
+    "review": "papers/aos-2024-v52-i01-p0285/review.json",
+    "theorem_count": 3
+  },
+  {
+    "paper_id": "aos-2024-v52-i01-p0311",
+    "title": "Testing for independence in high dimensions based on empirical copulas",
+    "source_url": "https://arxiv.org/pdf/2204.01803v1",
+    "pdf_sha256": "349496d29be69819df89de9cc87ff4f226c0cb48c1e917a0d4c6514c3784a28a",
+    "review": "papers/aos-2024-v52-i01-p0311/review.json",
+    "theorem_count": 2
+  },
+  {
+    "paper_id": "aos-2024-v52-i01-p0335",
+    "title": "Adaptive variational Bayes: Optimality, computation and applications",
+    "source_url": "https://arxiv.org/pdf/2109.03204v4",
+    "pdf_sha256": "9485f32a3fe57433913bc7dc02d7a2ed126c977738472fceb3cbe57b33dad3c0",
+    "review": "papers/aos-2024-v52-i01-p0335/review.json",
+    "theorem_count": 14
+  },
+  {
+    "paper_id": "aos-2024-v52-i01-p0364",
+    "title": "Rank and factor loadings estimation in time series tensor factor model by pre-averaging",
+    "source_url": "https://arxiv.org/pdf/2208.04012v1",
+    "pdf_sha256": "f7eed5a573cce8d54b5ec456352bac69f25f55f2ec55841d563048da50de9fb1",
+    "review": "papers/aos-2024-v52-i01-p0364/review.json",
+    "theorem_count": 7
+  },
+  {
+    "paper_id": "aos-2024-v52-i01-p0392",
+    "title": "Estimation and inference for minimizer and minimum of convex functions: Optimality, adaptivity and uncertainty principles",
+    "source_url": "https://arxiv.org/pdf/2305.00164v2",
+    "pdf_sha256": "38d889e7127d0a91f4cd268fc84157a395dea6d75fecdfbd9b12ef11f07d9f7c",
+    "review": "papers/aos-2024-v52-i01-p0392/review.json",
+    "theorem_count": 11
+  },
+  {
+    "paper_id": "aos-2024-v52-i02-p0415",
+    "title": "High-dimensional inference for dynamic treatment effects",
+    "source_url": "https://arxiv.org/pdf/2110.04924v4",
+    "pdf_sha256": "ea5850b94eb3e9fbb8c8a5444fe0db7a64ba55ddb37f21e9c87b7722a5483123",
+    "review": "papers/aos-2024-v52-i02-p0415/review.json",
+    "theorem_count": 11
+  },
+  {
+    "paper_id": "aos-2024-v52-i02-p0441",
+    "title": "The curse of overparametrization in adversarial training: Precise analysis of robust generalization for random features regression",
+    "source_url": "https://arxiv.org/pdf/2201.05149v2",
+    "pdf_sha256": "fa31844f7066492184b72a2ce37b41161361efde9ae529442527b0abf7961654",
+    "review": "papers/aos-2024-v52-i02-p0441/review.json",
+    "theorem_count": 2
+  },
+  {
+    "paper_id": "aos-2024-v52-i02-p0466",
+    "title": "Convergence rates of oblique regression trees for flexible function libraries",
+    "source_url": "https://arxiv.org/pdf/2210.14429v2",
+    "pdf_sha256": "f181fed44b89ff76e53bfdaccff54d908541d44d53ad60170c0f432d9a05fc85",
+    "review": "papers/aos-2024-v52-i02-p0466/review.json",
+    "theorem_count": 3
+  },
+  {
+    "paper_id": "aos-2024-v52-i02-p0491",
+    "title": "Early stopping for L2-boosting in high-dimensional linear models",
+    "source_url": "https://arxiv.org/pdf/2210.07850v1",
+    "pdf_sha256": "15996787a07db24f10b36d5ab632a1cbdf0b72cf4881d7ed9337b130e3ae1252",
+    "review": "papers/aos-2024-v52-i02-p0491/review.json",
+    "theorem_count": 3
+  },
+  {
+    "paper_id": "aos-2024-v52-i02-p0519",
+    "title": "Consistent inference for diffusions from low frequency measurements",
+    "source_url": "https://arxiv.org/pdf/2210.13008v3",
+    "pdf_sha256": "2fac61e70c2fa85e1da196dc4b3bc1d96c50114dba0000536b8d06a3d947c47a",
+    "review": "papers/aos-2024-v52-i02-p0519/review.json",
+    "theorem_count": 12
+  },
+  {
+    "paper_id": "aos-2024-v52-i02-p0550",
+    "title": "A general framework to quantify deviations from structural assumptions in the analysis of nonstationary function-valued processes",
+    "source_url": "https://arxiv.org/pdf/2208.10158v3",
+    "pdf_sha256": "697650c95aaf3025e8e5e76e36053a24c58bf8593272221f7aeb4dc16f652638",
+    "review": "papers/aos-2024-v52-i02-p0550/review.json",
+    "theorem_count": 11
+  },
+  {
+    "paper_id": "aos-2024-v52-i02-p0580",
+    "title": "The edge of discovery: Controlling the local false discovery rate at the margin",
+    "source_url": "https://arxiv.org/pdf/2207.07299v2",
+    "pdf_sha256": "7a23278ab8049da4fcaf5c425caa6844f865b85080aef2274c20a82c9e0622d6",
+    "review": "papers/aos-2024-v52-i02-p0580/review.json",
+    "theorem_count": 4
+  },
+  {
+    "paper_id": "aos-2024-v52-i02-p0602",
+    "title": "ℓ2 inference for change points in high-dimensional time series via a Two-Way MOSUM",
+    "source_url": "https://arxiv.org/pdf/2208.13074v2",
+    "pdf_sha256": "89fb385ab11591581e148581484b7750a3180088059c9efcda953eaa612eac0a",
+    "review": "papers/aos-2024-v52-i02-p0602/review.json",
+    "theorem_count": 4
+  },
+  {
+    "paper_id": "aos-2024-v52-i02-p0628",
+    "title": "Testing for practically significant dependencies in high dimensions via bootstrapping maxima of U-statistics",
+    "source_url": "https://arxiv.org/pdf/2210.17439v2",
+    "pdf_sha256": "6985f30f69767e8e75d30899bfe10303542404a0e3720f8f55ae1367c3aee7cc",
+    "review": "papers/aos-2024-v52-i02-p0628/review.json",
+    "theorem_count": 5
+  },
+  {
+    "paper_id": "aos-2024-v52-i02-p0654",
+    "title": "Transfer learning for functional mean estimation: Phase transition and adaptive algorithms",
+    "source_url": "https://arxiv.org/pdf/2401.12331v2",
+    "pdf_sha256": "4d89c43597cba346b959d8ef201e81cd7452a2bf2748385ac62bffd063d80371",
+    "review": "papers/aos-2024-v52-i02-p0654/review.json",
+    "theorem_count": 8
+  },
+  {
+    "paper_id": "aos-2024-v52-i02-p0679",
+    "title": "Finding the optimal dynamic treatment regimes using smooth Fisher consistent surrogate loss",
+    "source_url": "https://arxiv.org/pdf/2111.02826v4",
+    "pdf_sha256": "2b00e8abb4878ad695f61c97a5316989a63b5853482e811c95e473a899c186d7",
+    "review": "papers/aos-2024-v52-i02-p0679/review.json",
+    "theorem_count": 7
+  },
+  {
+    "paper_id": "aos-2024-v52-i02-p0708",
+    "title": "Edge differentially private estimation in the β-model via jittering and method of moments",
+    "source_url": "https://arxiv.org/pdf/2112.10151v2",
+    "pdf_sha256": "612f5176eaea7e74f44be9d35dca9a9f567d07294108220ddb014ce31f038908",
+    "review": "papers/aos-2024-v52-i02-p0708/review.json",
+    "theorem_count": 4
+  },
+  {
+    "paper_id": "aos-2024-v52-i02-p0729",
+    "title": "Inference for heteroskedastic PCA with missing data",
+    "source_url": "https://projecteuclid.org/journals/annals-of-statistics/volume-52/issue-2/Inference-for-heteroskedastic-PCA-with-missing-data/10.1214/24-AOS2366.pdf",
+    "pdf_sha256": "1bac2c2780467d496262c698eeb684dfb14d962388374679ced15896cd44203c",
+    "review": "papers/aos-2024-v52-i02-p0729/review.json",
+    "theorem_count": 5
+  },
+  {
+    "paper_id": "aos-2024-v52-i02-p0757",
+    "title": "Metric statistics: Exploration and inference for random objects with distance profiles",
+    "source_url": "https://arxiv.org/pdf/2202.06117v4",
+    "pdf_sha256": "8efd3f797d93da231a488bc8ec0094a928ee62dc68edb10d50284efa10036c14",
+    "review": "papers/aos-2024-v52-i02-p0757/review.json",
+    "theorem_count": 7
+  },
+  {
+    "paper_id": "aos-2024-v52-i02-p0793",
+    "title": "Minimax rates for heterogeneous causal effect estimation",
+    "source_url": "https://arxiv.org/pdf/2203.00837v4",
+    "pdf_sha256": "289bc44c78f84f2e70d98a343140bd354318b7788d63408c6921b08092f0249f",
+    "review": "papers/aos-2024-v52-i02-p0793/review.json",
+    "theorem_count": 2
+  },
+  {
+    "paper_id": "aos-2024-v52-i02-p0817",
+    "title": "The online closure principle",
+    "source_url": "https://arxiv.org/pdf/2211.11400v3",
+    "pdf_sha256": "48a80ff70f762df42f933aa06b58278e6d061eaba9fb26c2f26eb77af5d1b316",
+    "review": "papers/aos-2024-v52-i02-p0817/review.json",
+    "theorem_count": 4
+  },
+  {
+    "paper_id": "aos-2024-v52-i02-p0842",
+    "title": "Parameter estimation in nonlinear multivariate stochastic differential equations based on splitting schemes",
+    "source_url": "https://projecteuclid.org/journals/annals-of-statistics/volume-52/issue-2/Parameter-estimation-in-nonlinear-multivariate-stochastic-differential-equations-based-on/10.1214/24-AOS2371.pdf",
+    "pdf_sha256": "49c5753d857e40e11dc1e4a105ac4e3b30520c8b8ba7aac46ae9bf3ac7dc800d",
+    "review": "papers/aos-2024-v52-i02-p0842/review.json",
+    "theorem_count": 5
+  },
+  {
+    "paper_id": "aos-2024-v52-i03-p0869",
+    "title": "Dimension-free mixing times of Gibbs samplers for Bayesian hierarchical models",
+    "source_url": "https://arxiv.org/pdf/2304.06993v2",
+    "pdf_sha256": "b3974fe0fcf4eb356e80cc84d4f37c2d08f8a3c91ebe97c46ef0c098a1b036e1",
+    "review": "papers/aos-2024-v52-i03-p0869/review.json",
+    "theorem_count": 4
+  },
+  {
+    "paper_id": "aos-2024-v52-i03-p0895",
+    "title": "Reconciling model-X and doubly robust approaches to conditional independence testing",
+    "source_url": "https://arxiv.org/pdf/2211.14698v2",
+    "pdf_sha256": "3ff5392125e3a9af824c39e4d0f70fe16b83fbceaaf981a33896a6fed16741b2",
+    "review": "papers/aos-2024-v52-i03-p0895/review.json",
+    "theorem_count": 3
+  },
+  {
+    "paper_id": "aos-2024-v52-i03-p0922",
+    "title": "Distributed estimation and inference for semiparametric binary response models",
+    "source_url": "https://arxiv.org/pdf/2210.08393v4",
+    "pdf_sha256": "2a9174faf0cf534dc4c4ce87bef4d970c416e09bed9a37067d9c1609d5d682e5",
+    "review": "papers/aos-2024-v52-i03-p0922/review.json",
+    "theorem_count": 8
+  },
+  {
+    "paper_id": "aos-2024-v52-i03-p0948",
+    "title": "On blockwise and reference panel-based estimators for genetic data prediction in high dimensions",
+    "source_url": "https://arxiv.org/pdf/2203.12003v1",
+    "pdf_sha256": "a6bfe1bcf5a885bcc6c101ba8d90c51ab03c402f47efc0791609f9a9262cfcd8",
+    "review": "papers/aos-2024-v52-i03-p0948/review.json",
+    "theorem_count": 4
+  },
+  {
+    "paper_id": "aos-2024-v52-i03-p0966",
+    "title": "Plugin estimation of smooth optimal transport maps",
+    "source_url": "https://arxiv.org/pdf/2107.12364v3",
+    "pdf_sha256": "11f0c422e0febff18c7311b89972258221a7e0e371c3b4bf7bb9de285cc9b6aa",
+    "review": "papers/aos-2024-v52-i03-p0966/review.json",
+    "theorem_count": 9
+  },
+  {
+    "paper_id": "aos-2024-v52-i03-p0999",
+    "title": "Change-point inference in high-dimensional regression models under temporal dependence",
+    "source_url": "https://arxiv.org/pdf/2207.12453v3",
+    "pdf_sha256": "457111b1384cd1d8b4453c78924dd6c54c4a87886f574c6c58804a5ae751b83a",
+    "review": "papers/aos-2024-v52-i03-p0999/review.json",
+    "theorem_count": 4
+  },
+  {
+    "paper_id": "aos-2024-v52-i03-p1027",
+    "title": "High-dimensional covariance matrices under dynamic volatility models: Asymptotics and shrinkage estimation",
+    "source_url": "https://arxiv.org/pdf/2211.10203v2",
+    "pdf_sha256": "dd4e1b59134c24ecec0c5ab2e4adfa80e1388296f732747ba2c4a4977d67982f",
+    "review": "papers/aos-2024-v52-i03-p1027/review.json",
+    "theorem_count": 5
+  },
+  {
+    "paper_id": "aos-2024-v52-i03-p1050",
+    "title": "Change acceleration and detection",
+    "source_url": "https://arxiv.org/pdf/1710.00915v5",
+    "pdf_sha256": "532c26f11f178000a1e42bb7d8c43cfc1ea646168a22a4b3f63b255536ae4815",
+    "review": "papers/aos-2024-v52-i03-p1050/review.json",
+    "theorem_count": 3
+  },
+  {
+    "paper_id": "aos-2024-v52-i03-p1076",
+    "title": "Spectral regularized kernel two-sample tests",
+    "source_url": "https://arxiv.org/pdf/2212.09201v3",
+    "pdf_sha256": "9037d8bcb2e72b7ef99d19d1d78a7415d8a9be4869ee42089fa5fa10423913ee",
+    "review": "papers/aos-2024-v52-i03-p1076/review.json",
+    "theorem_count": 10
+  },
+  {
+    "paper_id": "aos-2024-v52-i03-p1102",
+    "title": "MARS via LASSO",
+    "source_url": "https://arxiv.org/pdf/2111.11694v5",
+    "pdf_sha256": "e246c0178b3d485bf01f7927298d72eac7c3ca2c32a3294fb650936a373b826a",
+    "review": "papers/aos-2024-v52-i03-p1102/review.json",
+    "theorem_count": 7
+  },
+  {
+    "paper_id": "aos-2024-v52-i03-p1127",
+    "title": "Sharp adaptive and pathwise stable similarity testing for scalar ergodic diffusions",
+    "source_url": "https://arxiv.org/pdf/2203.13776v3",
+    "pdf_sha256": "2e55f99f5185f1d0e5cf87f49dbe60dce36b7c947af9e10accdc3fc4997f9e9e",
+    "review": "papers/aos-2024-v52-i03-p1127/review.json",
+    "theorem_count": 10
+  },
+  {
+    "paper_id": "aos-2024-v52-i03-p1152",
+    "title": "A blockwise empirical likelihood method for time series in frequency domain inference",
+    "source_url": "https://projecteuclid.org/journals/annals-of-statistics/volume-52/issue-3/A-blockwise-empirical-likelihood-method-for-time-series-in-frequency/10.1214/24-AOS2388.pdf",
+    "pdf_sha256": "040bf11f4fea87c491051c19fc2b5a4e5398d46dac450a12a39814bf583c1a5e",
+    "review": "papers/aos-2024-v52-i03-p1152/review.json",
+    "theorem_count": 4
+  },
+  {
+    "paper_id": "aos-2024-v52-i03-p1178",
+    "title": "Nonparametric classification with missing data",
+    "source_url": "https://arxiv.org/pdf/2305.11672v2",
+    "pdf_sha256": "02ed1c44949085eadd0343d487709cdbf5883670a7158cc33ef146f1ba453096",
+    "review": "papers/aos-2024-v52-i03-p1178/review.json",
+    "theorem_count": 2
+  },
+  {
+    "paper_id": "aos-2024-v52-i03-p1201",
+    "title": "Deep nonlinear sufficient dimension reduction",
+    "source_url": "https://projecteuclid.org/journals/annals-of-statistics/volume-52/issue-3/Deep-nonlinear-sufficient-dimension-reduction/10.1214/24-AOS2390.pdf",
+    "pdf_sha256": "cc68ba81b23d7f19b5352aa1f2a4ef4602b9e969d0ffc5458813f2c623ca0f7c",
+    "review": "papers/aos-2024-v52-i03-p1201/review.json",
+    "theorem_count": 6
+  },
+  {
+    "paper_id": "aos-2024-v52-i03-p1227",
+    "title": "Locally simultaneous inference",
+    "source_url": "https://arxiv.org/pdf/2212.09009v6",
+    "pdf_sha256": "ea45ffa0b45eaf01a2f6bc84b6758bd5363e3fb2d6478610f1e17d132b95a0e7",
+    "review": "papers/aos-2024-v52-i03-p1227/review.json",
+    "theorem_count": 6
+  },
+  {
+    "paper_id": "aos-2024-v52-i03-p1254",
+    "title": "Spectral analysis of gram matrices with missing at random observations: Convergence, central limit theorems, and applications in statistical inference",
+    "source_url": "https://projecteuclid.org/journals/annals-of-statistics/volume-52/issue-3/Spectral-analysis-of-gram-matrices-with-missing-at-random-observations/10.1214/24-AOS2392.pdf",
+    "pdf_sha256": "feb88302a3a7ca3efb79aab2c89bc712f3609ee7e705c2d5ec3a9d0c714d0901",
+    "review": "papers/aos-2024-v52-i03-p1254/review.json",
+    "theorem_count": 4
+  },
+  {
+    "paper_id": "aos-2024-v52-i04-p1277",
+    "title": "Statistical inference for rough volatility: Minimax theory",
+    "source_url": "https://arxiv.org/pdf/2210.01214v2",
+    "pdf_sha256": "f6029bf56e0c7d9e0ddb7fd6c856e2d364833f16d7530ff9ce81e6eb5f53e25c",
+    "review": "papers/aos-2024-v52-i04-p1277/review.json",
+    "theorem_count": 4
+  },
+  {
+    "paper_id": "aos-2024-v52-i04-p1307",
+    "title": "Optimal parameter estimation for linear SPDEs from multiple measurements",
+    "source_url": "https://arxiv.org/pdf/2211.02496v2",
+    "pdf_sha256": "b0b01164cab1ebda27f9a4698b232a5557671feb0b1d940fe49cbcc70901247d",
+    "review": "papers/aos-2024-v52-i04-p1307/review.json",
+    "theorem_count": 5
+  },
+  {
+    "paper_id": "aos-2024-v52-i04-p1334",
+    "title": "Optimal estimation of Schatten norms of a rectangular matrix",
+    "source_url": "https://arxiv.org/pdf/2111.13551v1",
+    "pdf_sha256": "ea31f60f810e9e62cb1cea4b540e44a17e40a122a998cb1df72585ec2e818cf4",
+    "review": "papers/aos-2024-v52-i04-p1334/review.json",
+    "theorem_count": 4
+  },
+  {
+    "paper_id": "aos-2024-v52-i04-p1360",
+    "title": "Higher-order coverage errors of batching methods via Edgeworth expansions on t-statistics",
+    "source_url": "https://arxiv.org/pdf/2111.06859v1",
+    "pdf_sha256": "af1faf7d9821a3f94ea242503fa4d26d7c6adb6c4ec6b0ff34719b8a740c89fc",
+    "review": "papers/aos-2024-v52-i04-p1360/review.json",
+    "theorem_count": 7
+  },
+  {
+    "paper_id": "aos-2024-v52-i04-p1384",
+    "title": "On the approximation accuracy of Gaussian variational inference",
+    "source_url": "https://arxiv.org/pdf/2301.02168v2",
+    "pdf_sha256": "d86f8493430c8c07106847a073666a82c9aa765fc33cd8f20a9dc25c8615aeae",
+    "review": "papers/aos-2024-v52-i04-p1384/review.json",
+    "theorem_count": 4
+  },
+  {
+    "paper_id": "aos-2024-v52-i04-p1410",
+    "title": "E-statistics, group invariance and anytime-valid testing",
+    "source_url": "https://arxiv.org/pdf/2208.07610v2",
+    "pdf_sha256": "e9e5fd4e0096e3be7e7b07d083fd73818791feafd69a65676c289c0f63db6223",
+    "review": "papers/aos-2024-v52-i04-p1410/review.json",
+    "theorem_count": 3
+  },
+  {
+    "paper_id": "aos-2024-v52-i04-p1433",
+    "title": "Heavy-tailed Bayesian nonparametric adaptation",
+    "source_url": "https://arxiv.org/pdf/2308.04916v3",
+    "pdf_sha256": "36a56438156e943f34cd8fd429857a5707dac77a4cd2606c8533def916aca2cb",
+    "review": "papers/aos-2024-v52-i04-p1433/review.json",
+    "theorem_count": 10
+  },
+  {
+    "paper_id": "aos-2024-v52-i04-p1460",
+    "title": "Fundamental Limits of Low-Rank Matrix Estimation with Diverging Aspect Ratios",
+    "source_url": "https://arxiv.org/pdf/2211.00488v1",
+    "pdf_sha256": "7d26b0fb80a5a46f7044f5223d98da7b1a1a6eec64c520380562f10cd66a628d",
+    "review": "papers/aos-2024-v52-i04-p1460/review.json",
+    "theorem_count": 9
+  },
+  {
+    "paper_id": "aos-2024-v52-i04-p1485",
+    "title": "Asymptotic normality and optimality in nonsmooth stochastic approximation",
+    "source_url": "https://arxiv.org/pdf/2301.06632v1",
+    "pdf_sha256": "32e48d4bfd9b0520b093cc0a28210a96c57548b0b696b2cdb5451defa86fb6a3",
+    "review": "papers/aos-2024-v52-i04-p1485/review.json",
+    "theorem_count": 4
+  },
+  {
+    "paper_id": "aos-2024-v52-i04-p1509",
+    "title": "Bootstrap-assisted inference for generalized Grenander-type estimators",
+    "source_url": "https://arxiv.org/pdf/2303.13598v3",
+    "pdf_sha256": "41ad2b881f250cc5e8ef27156d744623d49c3461ab82e6a8733ab84734e1a476",
+    "review": "papers/aos-2024-v52-i04-p1509/review.json",
+    "theorem_count": 1
+  },
+  {
+    "paper_id": "aos-2024-v52-i04-p1534",
+    "title": "One-Step Estimation of Differentiable Hilbert-Valued Parameters",
+    "source_url": "https://arxiv.org/pdf/2303.16711v3",
+    "pdf_sha256": "1743d4d93efb6c31474b16cf5e8c92c491becdb499f0ae6afb5a8b2942603e23",
+    "review": "papers/aos-2024-v52-i04-p1534/review.json",
+    "theorem_count": 6
+  },
+  {
+    "paper_id": "aos-2024-v52-i04-p1564",
+    "title": "Sharp multiple testing boundary for sparse sequences",
+    "source_url": "https://arxiv.org/pdf/2109.13601v2",
+    "pdf_sha256": "764e61241f4805afe2049048f37e0d748f1cbc048b08c77037438725b7ec10ba",
+    "review": "papers/aos-2024-v52-i04-p1564/review.json",
+    "theorem_count": 9
+  },
+  {
+    "paper_id": "aos-2024-v52-i04-p1592",
+    "title": "A nonparametric doubly robust test for a continuous treatment effect",
+    "source_url": "https://arxiv.org/pdf/2202.03369v2",
+    "pdf_sha256": "16810a1dcbde7957e273977a06255d6b5e043016acb7976583b2b1b86dc17ad4",
+    "review": "papers/aos-2024-v52-i04-p1592/review.json",
+    "theorem_count": 4
+  },
+  {
+    "paper_id": "aos-2024-v52-i04-p1616",
+    "title": "Gromov-Wasserstein distances: Entropic regularization, duality and sample complexity",
+    "source_url": "https://arxiv.org/pdf/2212.12848v3",
+    "pdf_sha256": "731c61d7acc3441626d44ba8cd53359493441b91be5e30774b595f93aafe42fb",
+    "review": "papers/aos-2024-v52-i04-p1616/review.json",
+    "theorem_count": 3
+  },
+  {
+    "paper_id": "aos-2024-v52-i04-p1646",
+    "title": "Online Change-point Detection for Matrix-valued Time Series with Latent Two-way Factor Structure",
+    "source_url": "https://arxiv.org/pdf/2112.13479v1",
+    "pdf_sha256": "051b72df6278997ad32edd271531e68b529cb1b1bc3f4e958806d9e7a91325bc",
+    "review": "papers/aos-2024-v52-i04-p1646/review.json",
+    "theorem_count": 3
+  },
+  {
+    "paper_id": "aos-2024-v52-i04-p1671",
+    "title": "Majority Vote for Distributed Differentially Private Sign Selection",
+    "source_url": "https://arxiv.org/pdf/2209.04419v2",
+    "pdf_sha256": "98f01d3c2ca9245356a1395a25fb45d6a8f77aae94d3612f7b45fa3489778a4d",
+    "review": "papers/aos-2024-v52-i04-p1671/review.json",
+    "theorem_count": 4
+  },
+  {
+    "paper_id": "aos-2024-v52-i04-p1691",
+    "title": "Wasserstein convergence in Bayesian and frequentist deconvolution models",
+    "source_url": "https://arxiv.org/pdf/2309.15300v1",
+    "pdf_sha256": "d8a846505214e608346b123e55283166647fd710618859935405b3d6c1f2b8dc",
+    "review": "papers/aos-2024-v52-i04-p1691/review.json",
+    "theorem_count": 8
+  },
+  {
+    "paper_id": "aos-2024-v52-i04-p1716",
+    "title": "Detection and Estimation of Structural Breaks in High-Dimensional Functional Time Series",
+    "source_url": "https://arxiv.org/pdf/2304.07003v1",
+    "pdf_sha256": "2ebdf2c6b0ed3a1bc4ffe17b29a85db7e97362a9ff4c37926dfd1703ebee7af1",
+    "review": "papers/aos-2024-v52-i04-p1716/review.json",
+    "theorem_count": 4
+  },
+  {
+    "paper_id": "aos-2024-v52-i04-p1741",
+    "title": "Efficient functional Lasso kernel smoothing for high-dimensional additive regression",
+    "source_url": "https://projecteuclid.org/journals/annals-of-statistics/volume-52/issue-4/Efficient-functional-Lasso-kernel-smoothing-for-high-dimensional-additive-regression/10.1214/24-AOS2415.pdf",
+    "pdf_sha256": "4610424fb82ecdd4bb95f29d0e675272d01dc3a33fae493aa47959a85c9a7a2c",
+    "review": "papers/aos-2024-v52-i04-p1741/review.json",
+    "theorem_count": 7
+  },
+  {
+    "paper_id": "aos-2024-v52-i04-p1774",
+    "title": "Learning Gaussian Mixtures Using the Wasserstein-Fisher-Rao Gradient Flow",
+    "source_url": "https://arxiv.org/pdf/2301.01766v1",
+    "pdf_sha256": "776bf79a802495e8962fba69bf3da0584c4e0723efa6e9b17df8a546119afddf",
+    "review": "papers/aos-2024-v52-i04-p1774/review.json",
+    "theorem_count": 6
+  },
+  {
+    "paper_id": "aos-2024-v52-i04-p1796",
+    "title": "Efficient and Multiply Robust Risk Estimation under General Forms of Dataset Shift",
+    "source_url": "https://arxiv.org/pdf/2306.16406v4",
+    "pdf_sha256": "45ff9682a415f4d28e0ed8ed4017b0b71f5b6972296a3e6115c0d52b696fdf49",
+    "review": "papers/aos-2024-v52-i04-p1796/review.json",
+    "theorem_count": 2
+  },
+  {
+    "paper_id": "aos-2024-v52-i04-p1825",
+    "title": "On posterior consistency of data assimilation with Gaussian process priors: The 2D-Navier–Stokes equations",
+    "source_url": "https://arxiv.org/pdf/2307.08136v3",
+    "pdf_sha256": "d071d53c213c786036c850189964d704b290290b23a810e54b0b3c64bfa3f1e4",
+    "review": "papers/aos-2024-v52-i04-p1825/review.json",
+    "theorem_count": 5
+  },
+  {
+    "paper_id": "aos-2024-v52-i04-p1845",
+    "title": "How do noise tails impact on deep ReLU networks?",
+    "source_url": "https://arxiv.org/pdf/2203.10418v2",
+    "pdf_sha256": "8f13d1bece5dac9408eb42ab31169cae838e25fef36717ef9376604dccd585d4",
+    "review": "papers/aos-2024-v52-i04-p1845/review.json",
+    "theorem_count": 9
+  },
+  {
+    "paper_id": "aos-2024-v52-i05-p1873",
+    "title": "Spectral statistics of sample block correlation matrices",
+    "source_url": "https://arxiv.org/pdf/2207.06107v2",
+    "pdf_sha256": "07b147d0cefdb1058c0f2d94e9ba1b98f5fd65cddc6dfde6667d9a80194bb1a5",
+    "review": "papers/aos-2024-v52-i05-p1873/review.json",
+    "theorem_count": 6
+  },
+  {
+    "paper_id": "aos-2024-v52-i05-p1899",
+    "title": "Joint sequential detection and isolation for dependent data streams",
+    "source_url": "https://arxiv.org/pdf/2207.00120v1",
+    "pdf_sha256": "93b9db86f7125d5eb9a7d7aba007cdd9eb2802c5fcd490081016308a2cd03fe1",
+    "review": "papers/aos-2024-v52-i05-p1899/review.json",
+    "theorem_count": 20
+  },
+  {
+    "paper_id": "aos-2024-v52-i05-p1927",
+    "title": "Optimal policy evaluation using kernel-based temporal difference methods",
+    "source_url": "https://arxiv.org/pdf/2109.12002v1",
+    "pdf_sha256": "36f90f799deee2370dbbf62af76ddfaf3c13ff043d87d528dfb0b84a5b81808a",
+    "review": "papers/aos-2024-v52-i05-p1927/review.json",
+    "theorem_count": 2
+  },
+  {
+    "paper_id": "aos-2024-v52-i05-p1953",
+    "title": "Improved covariance estimation: optimal robustness and sub-Gaussian guarantees under heavy tails",
+    "source_url": "https://arxiv.org/pdf/2209.13485v2",
+    "pdf_sha256": "c202c41ab1db9c6fc2e0ce713d96dabe773f2fd0a56a792a385538373b3a29cf",
+    "review": "papers/aos-2024-v52-i05-p1953/review.json",
+    "theorem_count": 1
+  },
+  {
+    "paper_id": "aos-2024-v52-i05-p1978",
+    "title": "Debiased inverse propensity score weighting for estimation of average treatment effects with high-dimensional confounders",
+    "source_url": "https://arxiv.org/pdf/2011.08661v3",
+    "pdf_sha256": "0194b287549417eda9cd7a75dc478785011344d4a34a2b0222bdc952ed4ccc37",
+    "review": "papers/aos-2024-v52-i05-p1978/review.json",
+    "theorem_count": 4
+  },
+  {
+    "paper_id": "aos-2024-v52-i05-p2004",
+    "title": "Leave-one-out singular subspace perturbation analysis for spectral clustering",
+    "source_url": "https://arxiv.org/pdf/2205.14855v2",
+    "pdf_sha256": "da7501754279852947b00ef181c4a65367e96957aa65be6fccb91a99d48e228b",
+    "review": "papers/aos-2024-v52-i05-p2004/review.json",
+    "theorem_count": 9
+  },
+  {
+    "paper_id": "aos-2024-v52-i05-p2034",
+    "title": "Testing high-dimensional regression coefficients in linear models",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12981489/pdf/nihms-2151735.pdf",
+    "pdf_sha256": "0e844805fb9411bbcb3d451a08fd5656e065780fdfb5aea0f1d4339781dd00c9",
+    "review": "papers/aos-2024-v52-i05-p2034/review.json",
+    "theorem_count": 2
+  },
+  {
+    "paper_id": "aos-2024-v52-i05-p2059",
+    "title": "A conformal test of linear models via permutation-augmented regressions",
+    "source_url": "https://arxiv.org/pdf/2309.05482v3",
+    "pdf_sha256": "dcfc8fb8000dbbaf89536ce13c4ce35739ef253fa73e5aed1baef4bd6cc5dcbf",
+    "review": "papers/aos-2024-v52-i05-p2059/review.json",
+    "theorem_count": 2
+  },
+  {
+    "paper_id": "aos-2024-v52-i05-p2081",
+    "title": "Estimating a density near an unknown manifold: A Bayesian nonparametric approach",
+    "source_url": "https://arxiv.org/pdf/2205.15717v3",
+    "pdf_sha256": "c0a3de713b451e40884d7bca8d77f7b7056c825a92297c372685e992ff6363eb",
+    "review": "papers/aos-2024-v52-i05-p2081/review.json",
+    "theorem_count": 2
+  },
+  {
+    "paper_id": "aos-2024-v52-i05-p2112",
+    "title": "Exact minimax optimality of spectral methods in phase synchronization and orthogonal group synchronization",
+    "source_url": "https://arxiv.org/pdf/2209.04962v2",
+    "pdf_sha256": "9eadba2195953e9ed76c35785d3f7da46c8c7f739b093d3ebde0f9c3d4227759",
+    "review": "papers/aos-2024-v52-i05-p2112/review.json",
+    "theorem_count": 4
+  },
+  {
+    "paper_id": "aos-2024-v52-i05-p2139",
+    "title": "Efficiency in local differential privacy",
+    "source_url": "https://arxiv.org/pdf/2301.10600v3",
+    "pdf_sha256": "e76bf0281de05dc5366deaa7a98f870d843e92ad9b9cd69565a0e75006e818d2",
+    "review": "papers/aos-2024-v52-i05-p2139/review.json",
+    "theorem_count": 7
+  },
+  {
+    "paper_id": "aos-2024-v52-i05-p2167",
+    "title": "Wasserstein generative adversarial networks are minimax optimal distribution estimators",
+    "source_url": "https://arxiv.org/pdf/2311.18613v2",
+    "pdf_sha256": "e16df8b32ca2250fd73e8e9d56aaafa49a771467015b5593da33bd35de477222",
+    "review": "papers/aos-2024-v52-i05-p2167/review.json",
+    "theorem_count": 9
+  },
+  {
+    "paper_id": "aos-2024-v52-i05-p2194",
+    "title": "Quantile processes and their applications in finite populations",
+    "source_url": "https://arxiv.org/pdf/2407.21238v2",
+    "pdf_sha256": "c6a7f1af69047f6993261caff6f851a5596b55ab10385c037788ee76afafa3e7",
+    "review": "papers/aos-2024-v52-i05-p2194/review.json",
+    "theorem_count": 10
+  },
+  {
+    "paper_id": "aos-2024-v52-i05-p2217",
+    "title": "A new test for high-dimensional two-sample mean problems with consideration of correlation structure",
+    "source_url": "https://scholarsphere.psu.edu/resources/57f5e3c5-27e7-4f8a-b3e2-17e8e2e2407e/downloads/40206",
+    "pdf_sha256": "4866290bd80a1259e98bf4ce9009d84443ad2c20c9a0927e9b61ed133785bad7",
+    "review": "papers/aos-2024-v52-i05-p2217/review.json",
+    "theorem_count": 4
+  },
+  {
+    "paper_id": "aos-2024-v52-i05-p2241",
+    "title": "On the existence of powerful p-values and e-values for composite hypotheses",
+    "source_url": "https://arxiv.org/pdf/2305.16539v4",
+    "pdf_sha256": "4ab8ada786411ce1154b0662e6821f938f1280465ef3cb5f670cebff8429b8ba",
+    "review": "papers/aos-2024-v52-i05-p2241/review.json",
+    "theorem_count": 11
+  },
+  {
+    "paper_id": "aos-2024-v52-i05-p2268",
+    "title": "Environment invariant linear least squares",
+    "source_url": "https://arxiv.org/pdf/2303.03092v3",
+    "pdf_sha256": "41f8bc8d4dd5ddd961858aa2de3b28f08f5f0be294675a557a47cb7c64fa2a19",
+    "review": "papers/aos-2024-v52-i05-p2268/review.json",
+    "theorem_count": 4
+  },
+  {
+    "paper_id": "aos-2024-v52-i05-p2293",
+    "title": "Gaussian approximation for nonstationary time series with optimal rate and explicit construction",
+    "source_url": "https://arxiv.org/pdf/2408.02913v2",
+    "pdf_sha256": "504e0a5bbb366e23bc01b4264674f851a547786f4601c4101495940434e53293",
+    "review": "papers/aos-2024-v52-i05-p2293/review.json",
+    "theorem_count": 8
+  },
+  {
+    "paper_id": "aos-2024-v52-i05-p2318",
+    "title": "Computational lower bounds for graphon estimation via low-degree polynomials",
+    "source_url": "https://arxiv.org/pdf/2308.15728v4",
+    "pdf_sha256": "7bcc38eb8b952de996d7b08259295d5e2a91f94a7081aab2c7dedec225a52275",
+    "review": "papers/aos-2024-v52-i05-p2318/review.json",
+    "theorem_count": 7
+  },
+  {
+    "paper_id": "aos-2024-v52-i05-p2349",
+    "title": "A nonparametric test for elliptical distribution based on kernel embedding of probabilities",
+    "source_url": "https://arxiv.org/pdf/2306.10594v2",
+    "pdf_sha256": "b9a6c162c4c8845483163754773e65bb696f24444c3621a3c8b5dfdbcc113278",
+    "review": "papers/aos-2024-v52-i05-p2349/review.json",
+    "theorem_count": 6
+  },
+  {
+    "paper_id": "aos-2024-v52-i05-p2375",
+    "title": "Simultaneous statistical inference for second order parameters of time series under weak conditions",
+    "source_url": "https://arxiv.org/pdf/2110.14067v2",
+    "pdf_sha256": "fe207a49e1348050da5b83e03fbacb2ad8f1beb676ca7ebf1ac395393d57c579",
+    "review": "papers/aos-2024-v52-i05-p2375/review.json",
+    "theorem_count": 4
+  },
+  {
+    "paper_id": "aos-2024-v52-i05-p2400",
+    "title": "Multivariate trend filtering for lattice data",
+    "source_url": "https://arxiv.org/pdf/2112.14758v2",
+    "pdf_sha256": "24e6b64a3c70e5ec5e17e9bf317258d16e6d37805c0d2f783ca69a5565f251d0",
+    "review": "papers/aos-2024-v52-i05-p2400/review.json",
+    "theorem_count": 6
+  },
+  {
+    "paper_id": "aos-2024-v52-i05-p2431",
+    "title": "Computational and statistical thresholds in multi-layer stochastic block models",
+    "source_url": "https://arxiv.org/pdf/2311.07773v1",
+    "pdf_sha256": "729249562a67503fcb0c40a36bb63f3f77cf9224ca014d3b04b04e24ffcd5ae8",
+    "review": "papers/aos-2024-v52-i05-p2431/review.json",
+    "theorem_count": 5
+  },
+  {
+    "paper_id": "aos-2024-v52-i05-p2456",
+    "title": "A Gaussian process approach to model checks",
+    "source_url": "https://www.e-publications.org/ims/submission/AOS/user/submissionFile/63223?confirm=1e325b16",
+    "pdf_sha256": "0b228ac43be500b5f08a806750371daddeedccc07b2e8fd00d170782cc0d5144",
+    "review": "papers/aos-2024-v52-i05-p2456/review.json",
+    "theorem_count": 3
+  },
+  {
+    "paper_id": "aos-2024-v52-i06-p2483",
+    "title": "Testing network correlation efficiently via counting trees",
+    "source_url": "https://arxiv.org/pdf/2110.11816v2",
+    "pdf_sha256": "0ab1dbbb8e6dfac13438b613e53a1f216dd2dc2973079864f2cb4549c4438b0e",
+    "review": "papers/aos-2024-v52-i06-p2483/review.json",
+    "theorem_count": 2
+  },
+  {
+    "paper_id": "aos-2024-v52-i06-p2506",
+    "title": "Non-independent components analysis",
+    "source_url": "https://arxiv.org/pdf/2206.13668v4",
+    "pdf_sha256": "500239b27bec9a744424a489d3c785ccdf3d463606c209d50e010d8ce2add2b6",
+    "review": "papers/aos-2024-v52-i06-p2506/review.json",
+    "theorem_count": 4
+  },
+  {
+    "paper_id": "aos-2024-v52-i06-p2529",
+    "title": "Estimation of the spectral measure from convex combinations of regularly varying random vectors",
+    "source_url": "https://arxiv.org/pdf/2010.03832v2",
+    "pdf_sha256": "6e36d59f35a5f480032c8aa11696cceb10caf17a7d2483519f14b3721bfd245a",
+    "review": "papers/aos-2024-v52-i06-p2529/review.json",
+    "theorem_count": 3
+  },
+  {
+    "paper_id": "aos-2024-v52-i06-p2557",
+    "title": "Statistical Complexity and Optimal Algorithms for Non-linear Ridge Bandits",
+    "source_url": "https://arxiv.org/pdf/2302.06025v3",
+    "pdf_sha256": "e3655b1b7191064691ba36bf048e6d681c8b82fbb39ff47419e9a3cbdb9f9365",
+    "review": "papers/aos-2024-v52-i06-p2557/review.json",
+    "theorem_count": 14
+  },
+  {
+    "paper_id": "aos-2024-v52-i06-p2583",
+    "title": "Tensor-on-tensor regression: Riemannian optimization, over-parameterization, statistical-computational gap, and their interplay",
+    "source_url": "https://arxiv.org/pdf/2206.08756v3",
+    "pdf_sha256": "f7ad5bf237dfb0bf3c414bd18c4d225166a881c6c8c780164369f13a50ef5baa",
+    "review": "papers/aos-2024-v52-i06-p2583/review.json",
+    "theorem_count": 10
+  },
+  {
+    "paper_id": "aos-2024-v52-i06-p2613",
+    "title": "Time-uniform central limit theory and asymptotic confidence sequences",
+    "source_url": "https://arxiv.org/pdf/2103.06476v9",
+    "pdf_sha256": "849a1093c30a5bbbf5a48b96910096a35d30ae37c622b8fe2e5ddf3cacee9318",
+    "review": "papers/aos-2024-v52-i06-p2613/review.json",
+    "theorem_count": 6
+  },
+  {
+    "paper_id": "aos-2024-v52-i06-p2641",
+    "title": "Tensor factor model estimation by iterative projection",
+    "source_url": "https://arxiv.org/pdf/2006.02611v3",
+    "pdf_sha256": "75c32f603a25c35f73c4d498d58a074623bae8b97104a17fd2c99e293659d987",
+    "review": "papers/aos-2024-v52-i06-p2641/review.json",
+    "theorem_count": 5
+  },
+  {
+    "paper_id": "aos-2024-v52-i06-p2668",
+    "title": "Statistical inference for four-regime segmented regression models",
+    "source_url": "https://arxiv.org/pdf/2410.04384v1",
+    "pdf_sha256": "a19bdc1387f0ca02c7e8ec6ebe846db9e39bd5404fda10b5b04641a4e430a7ac",
+    "review": "papers/aos-2024-v52-i06-p2668/review.json",
+    "theorem_count": 7
+  },
+  {
+    "paper_id": "aos-2024-v52-i06-p2692",
+    "title": "Stereographic Markov chain Monte Carlo",
+    "source_url": "https://arxiv.org/pdf/2205.12112v2",
+    "pdf_sha256": "7244d5d4a662bc47b902b98a29ba176ffc566951f35346982a8009c0514c4934",
+    "review": "papers/aos-2024-v52-i06-p2692/review.json",
+    "theorem_count": 5
+  },
+  {
+    "paper_id": "aos-2024-v52-i06-p2714",
+    "title": "Skewed Bernstein–von Mises theorem and skew-modal approximations",
+    "source_url": "https://arxiv.org/pdf/2301.03038v3",
+    "pdf_sha256": "d9415db3f063bab2fad33909ef2e4c13027032c29660f9b505a4a6340b3479ea",
+    "review": "papers/aos-2024-v52-i06-p2714/review.json",
+    "theorem_count": 3
+  },
+  {
+    "paper_id": "aos-2024-v52-i06-p2738",
+    "title": "Deep neural networks for nonparametric interaction models with diverging dimension",
+    "source_url": "https://arxiv.org/pdf/2302.05851v1",
+    "pdf_sha256": "e26292d82886e424c8df8739282efad1311f561b890479fe266e078cccaf4ca4",
+    "review": "papers/aos-2024-v52-i06-p2738/review.json",
+    "theorem_count": 7
+  },
+  {
+    "paper_id": "aos-2024-v52-i06-p2767",
+    "title": "On the statistical complexity of sample amplification",
+    "source_url": "https://arxiv.org/pdf/2201.04315v2",
+    "pdf_sha256": "cdd4ca38815c06e49f1af375f06ec2da68b5b7db6c043b718bd3fc87e46ee8e4",
+    "review": "papers/aos-2024-v52-i06-p2767/review.json",
+    "theorem_count": 11
+  },
+  {
+    "paper_id": "aos-2024-v52-i06-p2791",
+    "title": "Convex regression in multidimensions: Suboptimality of least squares estimators",
+    "source_url": "https://arxiv.org/pdf/2006.02044v2",
+    "pdf_sha256": "f513008a3eea20d3a7e2818b1e1fc38d354cf7b023de1c2f95ff5d36e38b9423",
+    "review": "papers/aos-2024-v52-i06-p2791/review.json",
+    "theorem_count": 8
+  },
+  {
+    "paper_id": "aos-2024-v52-i06-p2816",
+    "title": "Noisy recovery from random linear observations: Sharp minimax rates under elliptical constraints",
+    "source_url": "https://arxiv.org/pdf/2303.12613v1",
+    "pdf_sha256": "5a2d2dd02ebd28b8db0afa09bcca352dc259d4281354abf8ac16f68111291cd2",
+    "review": "papers/aos-2024-v52-i06-p2816/review.json",
+    "theorem_count": 2
+  },
+  {
+    "paper_id": "aos-2024-v52-i06-p2851",
+    "title": "The projected covariance measure for assumption-lean variable significance testing",
+    "source_url": "https://arxiv.org/pdf/2211.02039v4",
+    "pdf_sha256": "4bda627723eeb56867d4300b59258645798e8b9fab2d3d4d3fef067b5de8474e",
+    "review": "papers/aos-2024-v52-i06-p2851/review.json",
+    "theorem_count": 4
+  },
+  {
+    "paper_id": "aos-2024-v52-i06-p2879",
+    "title": "Dimension free ridge regression",
+    "source_url": "https://arxiv.org/pdf/2210.08571v3",
+    "pdf_sha256": "5fcce9d2aea751e76487104fb372647430cae702f666881efe642734e50c11df",
+    "review": "papers/aos-2024-v52-i06-p2879/review.json",
+    "theorem_count": 6
+  },
+  {
+    "paper_id": "aos-2024-v52-i06-p2913",
+    "title": "Change-point analysis with irregular signals",
+    "source_url": "https://arxiv.org/pdf/2409.08863v1",
+    "pdf_sha256": "d44c9f40b3fdf103b0df5e0946ef90afc874ebc6b16cb8d87a41057895b4a72a",
+    "review": "papers/aos-2024-v52-i06-p2913/review.json",
+    "theorem_count": 3
+  },
+  {
+    "paper_id": "aos-2024-v52-i06-p2931",
+    "title": "Statistical inference for decentralized federated learning",
+    "source_url": "https://www.songxichen.com/Uploads/Files/Publication/AOS2452.pdf",
+    "pdf_sha256": "1e445bc7a71779b979cd5423ce02150734fc113f22583068f7564734bf080130",
+    "review": "papers/aos-2024-v52-i06-p2931/review.json",
+    "theorem_count": 6
+  },
+  {
+    "paper_id": "aos-2024-v52-i06-p2956",
+    "title": "Increasing dimension asymptotics for two-way crossed mixed effect models",
+    "source_url": "https://arxiv.org/pdf/2401.06446v2",
+    "pdf_sha256": "e420717c6358810eb3b7c93be605b04cae37bc69c06e635263ff90d11c02884d",
+    "review": "papers/aos-2024-v52-i06-p2956/review.json",
+    "theorem_count": 2
+  }
+]

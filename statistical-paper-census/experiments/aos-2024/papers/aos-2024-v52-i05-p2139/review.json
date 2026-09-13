@@ -1,0 +1,173 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i05-p2139",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-10T17:09:56.192966+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i05-p2139/T3.3",
+      "aos-2024-v52-i05-p2139/T3.5",
+      "aos-2024-v52-i05-p2139/T4.1",
+      "aos-2024-v52-i05-p2139/T4.2",
+      "aos-2024-v52-i05-p2139/T4.3",
+      "aos-2024-v52-i05-p2139/T4.11",
+      "aos-2024-v52-i05-p2139/T4.12"
+    ],
+    "printed_label_check": [
+      [
+        11,
+        "3.3"
+      ],
+      [
+        12,
+        "3.5"
+      ],
+      [
+        14,
+        "4.1"
+      ],
+      [
+        15,
+        "4.2"
+      ],
+      [
+        15,
+        "4.3"
+      ],
+      [
+        21,
+        "4.11"
+      ],
+      [
+        22,
+        "4.12"
+      ]
+    ],
+    "method": "Independent small-cap-heading enumeration and visual comparison of all seven complete Theorems.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 7,
+    "interfaces": 15,
+    "source_members": 15,
+    "direct_theorem_uses": 31,
+    "related_theorem_connections": 41,
+    "unranked_auxiliary_passages": 14
+  },
+  "source_notes": [
+    {
+      "issue_id": "empty-product",
+      "description": "The author writes Z^(0)=emptyset=G^(0) and A times emptyset=A as a formal convention. This is not literal Cartesian-product set theory; preserve the printed convention and flag it for later formalization.",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Original source scope or convention"
+        },
+        {
+          "page": 5,
+          "location": "Original source scope or convention"
+        }
+      ]
+    },
+    {
+      "issue_id": "unrestricted-output-class",
+      "description": "Q_alpha(X) is a union over all measurable output spaces. Footnote 1 explicitly replaces scalar Fisher supremum notation by a supremum over attainable real numbers; the census retains that explanation.",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Original source scope or convention"
+        }
+      ]
+    },
+    {
+      "issue_id": "moment-inverse-domain",
+      "description": "Theorem 4.3 applies f^{-1}:G->Theta to the noisy mean of Z_i, but no extension or fallback outside G is given. The noisy mean need not belong to G. Preserve the theorem as printed; its domain issue is not solved by the census.",
+      "evidence": [
+        {
+          "page": 15,
+          "location": "Original source scope or convention"
+        }
+      ]
+    },
+    {
+      "issue_id": "cross-parameter-lower-bound",
+      "description": "Theorem 4.11 prints 0 <= sup_Q I_theta(QP)-I_theta_n1(Qhat That P) for arbitrary theta and theta_n1. Comparing information at different parameters does not by itself justify nonnegativity. Preserve the printed bound and flag its scope; the census does not certify or correct the claim.",
+      "evidence": [
+        {
+          "page": 21,
+          "location": "Original source scope or convention"
+        }
+      ]
+    },
+    {
+      "issue_id": "bounded-cone",
+      "description": "Lemma 4.5 calls C_alpha(k) a convex cone while imposing 0<=v_j<=1. The upper bound prevents closure under arbitrary positive scaling. Preserve the set and original wording, without dropping its upper bound.",
+      "evidence": [
+        {
+          "page": 19,
+          "location": "Original source scope or convention"
+        }
+      ]
+    },
+    {
+      "issue_id": "appendix-density-reference",
+      "description": "The fixed-channel MLE definition invokes q(z|x) from Lemma D.2. Its main-text integrated density and bounds are retained; the appendix lemma is not inspected or imported.",
+      "evidence": [
+        {
+          "page": 14,
+          "location": "Original source scope or convention"
+        }
+      ]
+    },
+    {
+      "issue_id": "compact-consistency",
+      "description": "Theorems 4.1 and 4.2 retain the event estimator in compact K in their convergence statements. They do not by themselves assert unrestricted consistency without an additional tightness or compact-parameter argument.",
+      "evidence": [
+        {
+          "page": 14,
+          "location": "Original source scope or convention"
+        },
+        {
+          "page": 15,
+          "location": "Original source scope or convention"
+        }
+      ]
+    },
+    {
+      "issue_id": "conditional-efficiency",
+      "description": "Theorem 4.12 explicitly assumes consistency of the second-stage MLE. The procedure allows an arbitrary value when no maximizer exists. Neither consistency nor universal attainment is inferred from the efficiency conclusion.",
+      "evidence": [
+        {
+          "page": 22,
+          "location": "Original source scope or convention"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2301.10600v3",
+    "version": "arXiv:2301.10600v3; 7 Mar 2024",
+    "pdf_sha256": "e76bf0281de05dc5366deaa7a98f870d843e92ad9b9cd69565a0e75006e818d2",
+    "pdf_pages": 52,
+    "main_text_last_pdf_page": 29
+  },
+  "recorded_checks": [
+    "Seven printed Theorems in the main text are retained in full, including the classical Theorem 4.1. Small-cap theorem headings were independently enumerated on pages 1 through the main-text prefix of page 29; appendix bodies are excluded.",
+    "Fifteen entries and fourteen supporting passages preserve the author kernel/privacy conventions, DQM and Fisher information, LAMN, fixed-channel MLE, hard truncation, separate C1-C3, full consistent quantizer, finite channel matrix domain and the complete six-step estimator.",
+    "Independent reconstruction gives 31 direct uses and 41 related connections. Theorem 4.1 retains no ranked direct dependencies because its raw-model and likelihood quantities are ambient or locally bound. Theorem 3.5 imports only the information definition from Theorem 3.3, not its LAMN conclusion. Theorem 4.3 has no DQM assumption.",
+    "Theorem 3.3 uses weak convergence and allows singular limiting information; Theorem 3.5 requires positivity at finite n and at every weak accumulation point. C1-C3 remain distinct. The quantizer error vanishes along every convergent parameter sequence, not only pointwise.",
+    "Private MLEs preserve their exact likelihood and measurable-maximizer requirements. Hard truncation is zero outside the l1 ball. The two-step estimator retains all six steps, conditional pmfs, n2 normalization and arbitrary fallback; Theorem 4.12 assumes consistency and uses sqrt(n) local-alternative scaling.",
+    "Eight scope/convention issues are recorded separately. The noisy moment mean need not lie in the stated inverse domain; Theorem 4.11 prints a nonnegative difference at different parameters; the bounded set in Lemma 4.5 is called a cone. Source statements are preserved without correction or proof certification.",
+    "Every entry has literal author terminology, faithful source-kind labels and meaningful matching selectors. DQM is the source acronym for C1; the original Definition 1 and assumptions are retained separately. All 41 theorem relations have source-specific paths and explanations.",
+    "All six content JSON files reproduce byte for byte from the retained per-paper scripts. Independent source-specific checks, graph reconstruction, inventory validation and frozen hashes protect the reviewed extraction; rebuilding alone is not a new source review."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "7fb9a04a727aeddb9e6147e820fa983e666fae1a5e48b135b3b38a69400ea11f"
+}

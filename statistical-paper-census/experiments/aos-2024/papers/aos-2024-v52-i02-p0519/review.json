@@ -1,0 +1,117 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i02-p0519",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T08:51:31.756727+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i02-p0519/T1",
+      "aos-2024-v52-i02-p0519/T2",
+      "aos-2024-v52-i02-p0519/T3",
+      "aos-2024-v52-i02-p0519/T4",
+      "aos-2024-v52-i02-p0519/T5",
+      "aos-2024-v52-i02-p0519/T6",
+      "aos-2024-v52-i02-p0519/T7",
+      "aos-2024-v52-i02-p0519/T8",
+      "aos-2024-v52-i02-p0519/T9",
+      "aos-2024-v52-i02-p0519/T10",
+      "aos-2024-v52-i02-p0519/T11",
+      "aos-2024-v52-i02-p0519/T12"
+    ],
+    "method": "All 34 PDF pages independently searched for complete numbered Theorem heading lines by joining the small-cap spans. Exactly Theorems 1-12 occur. The external citation beginning Theorem 4.3.3 on page 31 is not an environment. Section 3 Proofs is numbered main text, so its Theorems 11 and 12 are included. No attached appendices occur; references end on page 34.",
+    "printed_label_check": [
+      [
+        3,
+        "1"
+      ],
+      [
+        4,
+        "2"
+      ],
+      [
+        6,
+        "3"
+      ],
+      [
+        6,
+        "4"
+      ],
+      [
+        7,
+        "5"
+      ],
+      [
+        7,
+        "6"
+      ],
+      [
+        8,
+        "7"
+      ],
+      [
+        9,
+        "8"
+      ],
+      [
+        12,
+        "9"
+      ],
+      [
+        12,
+        "10"
+      ],
+      [
+        17,
+        "11"
+      ],
+      [
+        25,
+        "12"
+      ]
+    ],
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 12,
+    "interfaces": 16,
+    "source_members": 16,
+    "direct_theorem_uses": 45,
+    "related_theorem_connections": 85,
+    "unranked_auxiliary_passages": 19
+  },
+  "source_notes": [
+    "The audit concerns the pinned arXiv v3 source; equivalence to journal wording has not been established.",
+    "The KL-neighborhood variance ratio, the claimed smoothness of enlarged rectangles, and the one-sided projection description of a two-sided estimator compression are retained as source discrepancies rather than repaired.",
+    "Other recorded scope issues include the general-prior reset, theta-versus-f prior coordinates, Theorem 4 parameter and operator domains, the exponent reference, volume normalization, spectral indexing, Theorem 11 regularity, and posterior-mean proof shorthand."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2210.13008v3",
+    "version": "arXiv:2210.13008v3",
+    "pdf_sha256": "2fac61e70c2fa85e1da196dc4b3bc1d96c50114dba0000536b8d06a3d947c47a",
+    "pdf_pages": 34,
+    "main_text_last_pdf_page": 34
+  },
+  "recorded_checks": [
+    "The inventory and final census pass separate validator invocations. The original inventory hash matches its source review, and every original theorem field is preserved in the final census.",
+    "Title, author, arXiv v3 stamp dated 27 January 2024, 34-page count, versioned URL and PDF SHA-256 match the inspected source. The source outline and final page establish a main text with no attached appendices.",
+    "The twelve complete theorem statements were reviewed on pages 3,4,6,7,8,9,12,17,25. All fit on their cited page. All subparts, inherited-hypothesis references, inequalities, rates and constant dependencies are retained.",
+    "All sixteen interface passages and their source kinds, natural-language keywords and selectors were checked against the pinned PDF. The model, operator, eigen-pairs, Gaussian prior, projection estimator, first-eigenspace condition, geometric domain and KL neighborhood remain distinct source objects.",
+    "Theorem 2 retains the nonlinear link applied to the posterior mean of theta. Its source instruction to consult Theorems 9/10 is archived together with their precise prior and regularity setting. This is not changed to the posterior mean of f or to an arbitrary Gaussian prior.",
+    "Theorem 4 retains its existential domain and all-estimator infimum in H2 operator loss. It does not acquire the explicit estimator (63), its truncation or the particular domain used by its proof.",
+    "The nested hypotheses of Theorems 6 and 7 are expanded through original source excerpts. The eigenfunction condition (10) is independent of the pairwise coefficient bounds; Theorem 8 uses it as a conclusion, and Theorem 10 only in the faster-rate branch at the truth.",
+    "The Gaussian field has the printed N rescaling and indices 0 through K. The cutoff sets O00 and O0 retain their nesting and different roles for the truth and prior. The estimator uses its different indices 0 through J-1 and its original zero extension.",
+    "Theorem 11 resolves Proposition 2 branch B, with individual C1 positivity and Hs bounds, and the compact-support Sobolev dual. The source C2 parameter-class ambiguity is recorded rather than silently strengthening the hypotheses.",
+    "Theorem 12 retains arbitrary N-dependent priors, two distinct radius sequences, prior mass, sieve tail, test-error bounds and the posterior sieve intersection. Its neighborhood retains the repeated density ratio as printed, with the contrasting proof formula archived separately.",
+    "Nineteen auxiliary passages preserve the required main-text conventions and inherited source clauses. Sixteen source notes record material ambiguities independently of original statements. No external or appendix proof content is required by the saved census.",
+    "The final graph has 45 direct theorem uses and 85 deduplicated same-paper connections, all with source-backed path explanations and selectors. The separate validation checks the key scope distinctions and balanced mathematical fragments."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "6abac424c641a86c51fac0547519140f54c8a9d51449d16baf2c77f601259213"
+}

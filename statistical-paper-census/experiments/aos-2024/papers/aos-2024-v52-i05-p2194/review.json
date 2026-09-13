@@ -1,0 +1,370 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i05-p2194",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-10T17:39:51.916220+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i05-p2194/T3.1",
+      "aos-2024-v52-i05-p2194/T3.2",
+      "aos-2024-v52-i05-p2194/T4.1",
+      "aos-2024-v52-i05-p2194/T5.1",
+      "aos-2024-v52-i05-p2194/T5.2",
+      "aos-2024-v52-i05-p2194/T5.3",
+      "aos-2024-v52-i05-p2194/T5.4",
+      "aos-2024-v52-i05-p2194/T6.1",
+      "aos-2024-v52-i05-p2194/T6.2",
+      "aos-2024-v52-i05-p2194/T6.3"
+    ],
+    "printed_label_check": [
+      [
+        10,
+        "3.1"
+      ],
+      [
+        12,
+        "3.2"
+      ],
+      [
+        16,
+        "4.1"
+      ],
+      [
+        19,
+        "5.1"
+      ],
+      [
+        20,
+        "5.2"
+      ],
+      [
+        21,
+        "5.3"
+      ],
+      [
+        22,
+        "5.4"
+      ],
+      [
+        23,
+        "6.1"
+      ],
+      [
+        23,
+        "6.2"
+      ],
+      [
+        26,
+        "6.3"
+      ]
+    ],
+    "method": "Independent bold-heading enumeration and visual comparison of all ten theorem statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 10,
+    "interfaces": 37,
+    "source_members": 37,
+    "direct_theorem_uses": 122,
+    "related_theorem_connections": 171,
+    "unranked_auxiliary_passages": 14
+  },
+  "source_notes": [
+    {
+      "issue_id": "conclusion-versus-assumptions",
+      "evidence": [
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 16,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 19,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 20,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 21,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 22,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "T3.2 and T4.1 import the conclusion of T3.1 with design/kernel replacements, not its high-entropy assumptions. T5.1(i) assumes the conclusion of T3.1; T5.1(ii) and T5.3 import T3.2 assumptions. T5.2 imports (9) only; T5.4 imports T4.1 assumptions and (14) only. Preserve these distinctions."
+    },
+    {
+      "issue_id": "fixed-versus-growing-strata",
+      "evidence": [
+        {
+          "page": 14,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 15,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 16,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 17,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 20,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Fixed-H uses Assumptions 1,6–8; growing-H uses 1,8–11. The union in a theorem dependency inventory denotes use in different branches, not simultaneous hypotheses. Theta references in growing-H Table 3 do not impose Assumption 10 on fixed-H formulas."
+    },
+    {
+      "issue_id": "left-continuous-paths",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 7,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 9,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Quantile paths D are left continuous with right limits and ball sigma-field. Right-continuous tilde-D is a proof empirical-process space, not the inventoried quantile-process state space."
+    },
+    {
+      "issue_id": "positive-definiteness-quantifiers",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 15,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Assumptions 2 and 10 quantify over arbitrary p1,...,pk without saying distinct. Repeated indices duplicate coordinates and conflict with strict positive definiteness. Preserve the printed quantifiers; no inferred distinctness is inserted."
+    },
+    {
+      "issue_id": "expectation-parentheses",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 15,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 16,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 21,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Equation (8), Gamma_h and Table 2 visually place expectation immediately on the first centered factor, without explicit outer parentheses enclosing the product. The intended covariance grouping is an inference. Original formulas retain the printed placement."
+    },
+    {
+      "issue_id": "moment-power-typography",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 17,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 23,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "E_P(X_i)^2 in Table 1, Table 2 and Table 3 can be misread as squared mean rather than second moment. The regression estimator slope suggests the latter interpretation. E_P(X_i)^(-1) similarly uses a trailing power in inverse-moment assumptions. Preserve typography rather than silently reparenthesize."
+    },
+    {
+      "issue_id": "undefined-bar-x",
+      "evidence": [
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 21,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Bar-X occurs in (7) and (13), but no explicit main-text defining equation was found. Interpreting it as the known finite-population auxiliary mean is plausible, not a quoted definition."
+    },
+    {
+      "issue_id": "supplement-plug-in-definitions",
+      "evidence": [
+        {
+          "page": 20,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 21,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 22,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Zeta-hat and stratified zeta-hat substitute estimators from supplement Tables 5 and 6. Exact density/moment substitutions are not supplied in the main text. The references remain unresolved; no supplement or appendix body was read."
+    },
+    {
+      "issue_id": "external-sampling-definitions",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 10,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Rejective sampling and piPS are named with external references; main text provides the KL characterization of high entropy and the full RHC grouping procedure, but not full rejective/piPS construction formulas. Do not invent them."
+    },
+    {
+      "issue_id": "external-greg-definition",
+      "evidence": [
+        {
+          "page": 25,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 26,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Section 6.2 names and cites the GREG mean estimator without specifying its formula. This is not automatically the uncentered quantile regression coefficient in (2). Main-text census keeps it unresolved."
+    },
+    {
+      "issue_id": "comparison-kernel-existence",
+      "evidence": [
+        {
+          "page": 22,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 23,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 24,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "T6.1 and T6.2 refer to asymptotic covariance kernels in preceding prose but omit Assumption 3 and the W second-moment hypothesis in their printed opening conditions. Record that existence/regularity gap without adding those hypotheses to the quotation or dependency graph."
+    },
+    {
+      "issue_id": "median-comparison-scope",
+      "evidence": [
+        {
+          "page": 25,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 26,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "T6.3 comparisons are separately paired by respectively. The surrounding paragraph centers at superpopulation mean/median, not finite-population targets. Variance/correlation existence is implicit rather than explicitly guaranteed by printed Assumptions 1 and 3."
+    },
+    {
+      "issue_id": "slash-division",
+      "evidence": [
+        {
+          "page": 26,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Equations (23) and (24) print 1/4 f_y^2 and 1/4 sigma_y^2 f_y^2 in slash notation. Interpreting the full products as denominators is inferred from context; original statement preserves the slash form."
+    },
+    {
+      "issue_id": "table-footnotes",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 17,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Table 2 superscript 1 and Table 3 superscript 2 are footnote marks; in Table 3 the repeated mark preceding Theta is neither exponent nor multiplication by 2."
+    },
+    {
+      "issue_id": "smoothness-and-gradient",
+      "evidence": [
+        {
+          "page": 18,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 19,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 21,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "J and f are described as smooth, without a numeric order. The variance estimator gradient is evaluated at Qhat_y, not an arbitrary adjusted G, as printed. Theorem 5.1 uses a limiting finite-population gradient; comparison theorems write the superpopulation gradient directly."
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2407.21238v2",
+    "version": "arXiv:2407.21238v2; 29 Nov 2024",
+    "pdf_sha256": "c6a7f1af69047f6993261caff6f851a5596b55ab10385c037788ee76afafa3e7",
+    "pdf_pages": 106,
+    "main_text_last_pdf_page": 29
+  },
+  "recorded_checks": [
+    "Ten complete main-text Theorems, numbered 3.1,3.2,4.1,5.1–5.4,6.1–6.3; Theorem 6.2 continues across pages 23–24. All bold headings enumerated independently through the clipped main-text endpoint on page 29.",
+    "Thirty-seven source entries and fourteen supporting passages preserve four estimators, design and probability conventions, all eleven assumptions, both Table 3 regimes, all covariance/plug-in formulas and the externally named GREG mean estimator.",
+    "Independent graph reconstruction confirms 122 direct uses and 171 related connections. Conclusion references do not import sufficient hypotheses. Fixed-H and growing-H alternatives are explicitly described separately. Comparison kernels do not acquire an unprinted Assumption 3 through notation.",
+    "Normalized sample CDF and uncentered regression slope are preserved. Quantile paths are left continuous. Table 3 footnote marks remain distinct from powers. Table 2 and equation (8) retain expectation placement, and Theorem 6.3 preserves slash division and separate respectively comparisons.",
+    "The exact plug-in substitutions are referred to supplement Tables 5 and 6; rejective/piPS constructions and GREG are externally cited; bar-X lacks an explicit main-text defining equation. These are recorded as unresolved, without reading appendices or supplying standard replacements.",
+    "Fifteen source scope/convention issues explicitly document branch scope, repeated-index positive definiteness, expectation/moment typography, missing comparison regularity premises, superpopulation centering and implicit correlation existence. No source statement is silently repaired.",
+    "Every entry uses literal source terms, appropriate source kind and heading, and source-backed selectors. All 171 relationships have paper-local explanation paths with the relevant subpart/design scope.",
+    "All six content JSON artifacts regenerate byte for byte using the retained per-paper scripts. Frozen content hashes, independent PDF heading enumeration, source-specific checks, dependency reconstruction and schema validation pass."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "99e1ec3a3b7747092b10edee01fec75e7f51d346d2c5688e4867722aa8854954"
+}

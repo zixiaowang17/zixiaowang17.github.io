@@ -1,0 +1,406 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i06-p2557",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-10T23:17:42.573309+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i06-p2557/T1",
+      "aos-2024-v52-i06-p2557/T2",
+      "aos-2024-v52-i06-p2557/T3",
+      "aos-2024-v52-i06-p2557/T4",
+      "aos-2024-v52-i06-p2557/T5",
+      "aos-2024-v52-i06-p2557/T6",
+      "aos-2024-v52-i06-p2557/T7",
+      "aos-2024-v52-i06-p2557/T8",
+      "aos-2024-v52-i06-p2557/T9",
+      "aos-2024-v52-i06-p2557/T10",
+      "aos-2024-v52-i06-p2557/T11",
+      "aos-2024-v52-i06-p2557/T12",
+      "aos-2024-v52-i06-p2557/T13",
+      "aos-2024-v52-i06-p2557/T14"
+    ],
+    "printed_label_check": [
+      [
+        6,
+        "1"
+      ],
+      [
+        7,
+        "2"
+      ],
+      [
+        8,
+        "3"
+      ],
+      [
+        10,
+        "4"
+      ],
+      [
+        11,
+        "5"
+      ],
+      [
+        11,
+        "6"
+      ],
+      [
+        12,
+        "7"
+      ],
+      [
+        15,
+        "8"
+      ],
+      [
+        22,
+        "9"
+      ],
+      [
+        24,
+        "10"
+      ],
+      [
+        27,
+        "11"
+      ],
+      [
+        28,
+        "12"
+      ],
+      [
+        28,
+        "13"
+      ],
+      [
+        29,
+        "14"
+      ]
+    ],
+    "method": "Independent SFBX heading enumeration and visual comparison of all fourteen complete theorem statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Corollary",
+      "Example",
+      "Definition",
+      "Assumption"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 14,
+    "interfaces": 25,
+    "source_members": 25,
+    "direct_theorem_uses": 58,
+    "related_theorem_connections": 76,
+    "unranked_auxiliary_passages": 6
+  },
+  "source_notes": [
+    {
+      "issue_id": "registered-source-and-boundary",
+      "evidence": [
+        {
+          "page": 1,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 29,
+          "location": "Source scope or notation issue",
+          "before_main_text_end": true
+        }
+      ],
+      "note": "The source is arXiv:2302.06025v3 marked10Jan2024, title-page date11Jan2024,55PDFpages. Its title spells Non-linear. Main text ends on29 before AppendixA at y654.115; evidence is clipped at y648. Exactly Theorems1–14 are retained, including weaker versions1/2. No appendix body is used."
+    },
+    {
+      "issue_id": "even-link-signed-identifiability",
+      "evidence": [
+        {
+          "page": 3,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 6,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 7,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 8,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 20,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The default sphere parameter space contains theta and minus theta. For even f their reward distributions are identical under every adaptive policy, but Definition1 uses expected signed correlation. Thus a uniform signed-correlation guarantee above zero cannot distinguish the two orientations without extra information. No main-text sign-equivalence convention was found. Preserve both the even branch and original loss rather than replacing it with absolute correlation. The source’s appendix-only even-link modifications do not resolve this within the inspected scope."
+    },
+    {
+      "issue_id": "accuracy-domain-extension",
+      "evidence": [
+        {
+          "page": 3,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 8,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Definition1 specifies epsilon∈(0,1/2], whereas Definition4 calls Tstar(f,d,1-epsilon) for epsilon∈(0,1/2]. Except at1/2, that argument exceeds the stated Definition1 domain. Preserve this apparent implicit extension. Expected-correlation complexity is distinct from a high-probability path or fixed-prior guarantee."
+    },
+    {
+      "issue_id": "derivative-form-versus-monotonicity",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 8,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 22,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorems1/3 use f-prime although Assumption1 requires only monotonicity. The source explicitly says the general theorem need not assume differentiability and points to finite differences in9. Preserve both forms and flag the derivative interpretation. Flat intervals may make denominators vanish; do not silently assume strict increase or finite complexity."
+    },
+    {
+      "issue_id": "gaussian-noise-and-oracle-information",
+      "evidence": [
+        {
+          "page": 3,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 10,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 21,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 24,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 26,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The introductory model states standard normal noise and history-adapted actions; the sampling algorithms use repeated Gaussian oracle queries, with fresh independent noise understood operationally. Theorem5 instead gives the learner only oracle outputs; online and offline models are alternatives. Theorem10 explicitly removes knowledge of f, overriding the default known-link convention without changing the ridge observation formula."
+    },
+    {
+      "issue_id": "oracle-quantifiers-and-domains",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 10,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorem4 asserts existence of a bad action tie-breaking rule, not a bound for every tie rule. Theorem5 asserts existence of improper online or proper offline oracle choices that defeat every learner under the corresponding transcript model; it does not quantify over every possible oracle. The main text does not give a complete separate success-probability/minimax definition of Tstar_UCB or Tstar_RO. Improper outputs need not lie on the sphere, leaving f(inner product) outside[-1,1] potentially unresolved."
+    },
+    {
+      "issue_id": "learning-assumptions-and-constants",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Assumption2 states differentiability and local derivative bounds near1 but does not explicitly quantify positive c_f,C_f or the range of gamma. Theorems use inverse c_f and positive local intervals, so those conventions are required for nonvacuous rates. Theorem6 adds Assumption1 only for regret; Theorem7 names Assumptions2/3, not1. Do not propagate the scale/even branches into all learning claims."
+    },
+    {
+      "issue_id": "algorithm-four-initialization-and-budget",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 25,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 26,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Algorithm4 lists input correlation≥1-gamma, while Theorem6 supplies the stronger≥1-3gamma/4 used to keep exploration in the local interval. Preserve both. Its budget min(T,d sqrt(T)/c_f) need not be integral and the cyclic design need not complete full coordinate cycles; rounding and small-budget conventions are not specified. The theorem’s ordinary O and proof’s tilde-O notation remain distinct, with no proof-correctness certification."
+    },
+    {
+      "issue_id": "theorem-nine-parameters-and-ranges",
+      "evidence": [
+        {
+          "page": 21,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 22,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorem9 declares epsilon_i for i≥0 but gives formulas only for1≤i≤m. Algorithm1 runs the firstd0 epochs even ifm<d0; candidate sampling may then have an empty orthogonal sphere in small dimensions. Finite differences may vanish for monotone f. Preserve the original pseudocode, positive-epsilon premise and parameter ranges instead of truncating loops, redefining positivity or inserting unstated large-d conditions."
+    },
+    {
+      "issue_id": "appendix-only-constant-and-algorithms",
+      "evidence": [
+        {
+          "page": 20,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 21,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 22,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 25,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The function c(.) in Theorem9’s c0 is referenced to Lemma6, which is outside the main text in AppendixA. Its meaning remains unresolved. Algorithm1 uses c0 but its parameter definition can still be archived verbatim. Theorem10’s detailed unknown-link algorithm and the even-link modifications to Algorithm1 are also deferred to excluded appendices. These are recorded limitations, not permission to read appendix bodies."
+    },
+    {
+      "issue_id": "recursion-and-link-domain",
+      "evidence": [
+        {
+          "page": 10,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 15,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 27,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorem8 defines epsilon_t for all t and everydelta∈(0,1), but the default f and g are defined only up to absolute argument1; epsilon1 or later values can exceed1. Theorem11 also maximizes over allK≥1, allowing sqrt(logK/d)>1. No main-text clipping or extension convention was identified. Preserve these formulas and the potentially vacuous1-t delta probability bound without silently extending f."
+    },
+    {
+      "issue_id": "bayes-minimax-and-action-space",
+      "evidence": [
+        {
+          "page": 15,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 27,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 28,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorem8 is a uniform-sphere-prior path bound for any adaptive learner. Theorem11 is a nonadaptive Bayes expected-correlation bound. Theorem12 asserts existence of a hard finite action set at each subexponential K and uses a worst-parameter expectation target≥4/5. Theorem13 instead takes a worst parameter in the unit ball. These scopes and quantifier orders must not be merged into the default Definition1/2 sphere minimax problem."
+    },
+    {
+      "issue_id": "unit-ball-endpoints-and-scale",
+      "evidence": [
+        {
+          "page": 28,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorem13 includes r=0 in a maximum containing f(r)/r^4 or f(r)/r^2 and integrals with zero endpoints. It also uses derivative ratios without stating all positivity/nonzero-domain conventions. Only the monotonicity part of Assumption1 is explicit; the normalized-scale item is not. The displayed bound involving Tf(r) is sensitive to additive shifts of f, unlike regret. Preserve this missing-normalization/endpoint issue rather than adding scale assumptions."
+    },
+    {
+      "issue_id": "soft-order-versus-ordinary-order",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 5,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 22,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 24,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The source defines lesssim/gtrsim/asymp to ignore constant and polylogarithmic factors. Ordinary O is separate. Preserve the source-specific hidden-constant dependencies and distinguish log-squared cost in9 from log-cubed cost in10. Integrals in d(x^2) are not ordinary dx integrals; retain the measure notation."
+    },
+    {
+      "issue_id": "regret-notation-binding",
+      "evidence": [
+        {
+          "page": 3,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 4,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The general regret display uses max over a-star but evaluates f_theta(a), leaving a free a; Definition2 correctly evaluates the comparator at a-star. Theorem6 describes an achieved algorithm regret using the minimax symbol Rstar. Preserve both original displays and explain the intended comparator/upper-bound roles without rewriting source text."
+    },
+    {
+      "issue_id": "unknown-link-cdf-explanation",
+      "evidence": [
+        {
+          "page": 25,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The explanatory p,q formulas print F inverse applied to f-values while equating the results to CDF probabilities. This appears to be an inverse/CDF typo. The passage is archived as auxiliary source context, not a Theorem10 assumption or an invented prerequisite."
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2302.06025v3",
+    "version": "arXiv:2302.06025v3, marked 10 Jan 2024; title-page date January 11, 2024",
+    "pdf_sha256": "e3655b1b7191064691ba36bf048e6d681c8b82fbb39ff47419e9a3cbdb9f9365",
+    "pdf_pages": 55,
+    "main_text_last_pdf_page": 29
+  },
+  "recorded_checks": [
+    "Exactly fourteen original main-text Theorems1–14, independently enumerated by bold headings and visually compared. Weaker-version Theorems1/2 remain separate. All branches, integrals, recursion, query-cost formulas, quantifiers and parameter domains are retained. The final theorem precedes the appendix boundary on page29.",
+    "Twenty-five entries preserve the sequential ridge experiment, complete Definitions1–4, Assumptions1–3, least-squares/confidence/Eluder-UCB definitions, online/offline oracle models and propriety conventions, complete Algorithms1–4, Theorem9 parameter block, nonadaptive and finite-action domains, unit-ball parameter variant and the isolated monotonicity item. Six auxiliary passages preserve source conventions and limitations.",
+    "Independent reconstruction verifies58 direct uses and76 related connections. Conditional Assumption1 use in Theorem6 is restricted to regret; Theorem7 does not import it. Theorem13 imports only its monotonicity item and the ball-parameter regret variant. Theorem10 imports Theorem9 parameters but not Algorithm1 or knowledge of f. Oracle alternatives are not combined as simultaneous guarantees.",
+    "Bayes path bounds, nonadaptive Bayes risk, finite-action minimax existence and sphere/ball minimax regret remain distinct. Algorithm1 depends on the numerical block of Theorem9, avoiding a conclusion cycle. Chi-square informativity, Brascamp–Lieb and infinite-armed-bandit constructions remain proof context.",
+    "Sixteen explicit notes preserve even-link signed identifiability, the Definition4 accuracy-domain extension, derivative and finite-difference distinctions, oracle conventions, local slope domains, algorithm initialization/integer-budget issues, sequence and radius endpoints, comparator notation and a CDF/inverse typo. No source expression is silently repaired.",
+    "Theorem9’s c(.) points to appendix-only Lemma6 and remains unresolved. Even-link algorithm modifications and the detailed unknown-link algorithm are also outside scope. Main-text original statements and references are preserved; source validation does not certify unavailable definitions or prove the theorems.",
+    "All25 entries have original natural-language source terms, literal meaningful selectors and evidence. Numbered definitions/assumptions retain labels, algorithms are source passages, and the numerical block is a theorem excerpt. Every related theorem has a checked local path and source-specific explanation.",
+    "All six contentJSON files reproduce byte for byte in a fresh empty directory. Seven retained scripts cover inventory extraction/review, source passages, context, finalization, rebuilding and frozen full-source checks. Rebuilding reproduces saved decisions rather than performing a new semantic source review."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "12ef14e532d17e98665d427b99e2bb60e109e450bd367e59c32cbdd545e5e11b"
+}

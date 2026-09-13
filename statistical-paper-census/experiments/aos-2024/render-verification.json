@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "checked_at": "2026-09-13T01:51:48.353941+00:00",
+  "command": [
+    "python3",
+    "skills/statistical-census-html/scripts/build_report.py",
+    "experiments/aos-2024/audited.json",
+    "experiments/aos-2024/report.html",
+    "--census",
+    "experiments/aos-2024/ranked-interfaces.json",
+    "--check"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 91.09,
+  "mode": "Eight independent workers prepare source fragments through the maintained render_statement function. The maintained generator main() and complete --check then run sequentially in one interpreter using that standard in-memory cache; every output is regenerated and compared.",
+  "report_sha256": "9e1476e899c149c03d6604dc18ff76bfac778199d540ac949443e124d9efdc64",
+  "generator_sha256": "225fd7bda2aadba7057406ecb385be7f68eb7bc1d4c605cb015ccae892b65815"
+}

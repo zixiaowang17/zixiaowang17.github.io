@@ -1,0 +1,232 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i06-p2714",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-11T02:54:15.229769+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i06-p2714/T2.1",
+      "aos-2024-v52-i06-p2714/T4.1",
+      "aos-2024-v52-i06-p2714/T4.5"
+    ],
+    "printed_label_check": [
+      [
+        11,
+        "2.1"
+      ],
+      [
+        22,
+        "4.1"
+      ],
+      [
+        25,
+        "4.5"
+      ]
+    ],
+    "method": "Independent actual small-cap heading enumeration and visual comparison of all three complete statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 3,
+    "interfaces": 29,
+    "source_members": 29,
+    "direct_theorem_uses": 27,
+    "related_theorem_connections": 51,
+    "unranked_auxiliary_passages": 11
+  },
+  "source_notes": [
+    {
+      "issue_id": "registered-source-scope",
+      "evidence": [
+        {
+          "page": 1,
+          "location": "Version stamp"
+        },
+        {
+          "page": 29,
+          "location": "Final discussion before references"
+        }
+      ],
+      "note": "Registered arXiv2301.03038v3 marked8Apr2024,54pages. Main text ends on29 before REFERENCES y248.679; evidence clipped242. Supplementary bodies starting32 are excluded. Exactly three main-text Theorems are retained."
+    },
+    {
+      "issue_id": "source-issue-1",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Statistical experiment and projection"
+        }
+      ],
+      "note": "The common dominating measure covers both true and model distributions; non-i.i.d. and misspecified models are allowed. The KL projection is indexed through P_theta^n but theta_* is not given an n index. Preserve the source notation and its unique-projection Assumption1; do not assume iid samples or substitute a correctly specified true parameter."
+    },
+    {
+      "issue_id": "source-issue-2",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Local-neighborhood coordinates"
+        }
+      ],
+      "note": "Assumption2 defines K_n using theta distance <=M_n delta_n, but immediately takes a supremum over h in K_n. The proof later uses h-space balls. Preserve original definition and record coordinate mismatch, rather than silently replacing K_n in the assumption."
+    },
+    {
+      "issue_id": "source-issue-3",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Prior log-ratio notation"
+        }
+      ],
+      "note": "Assumption3 literally prints log pi(theta_*+delta_n h)/pi(theta_*) without parentheses around the ratio, unlike the explicit ratio in the earlier univariate expansion. Archive exactly and note intended log-ratio scope is ambiguous under literal operator precedence."
+    },
+    {
+      "issue_id": "source-issue-4",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Skewing slope and covariance domain"
+        }
+      ],
+      "note": "F is allowed with eta in R, but the skew polynomial divides by eta. A CDF derivative is nonnegative and eta=0 is possible under the stated conditions. Do not insert eta>0 into original text. The approximating covariance is guaranteed only on a high-probability event; no fallback on its complement is supplied in the theorem. Assumption2 does not explicitly state symmetry of V or the third-order array."
+    },
+    {
+      "issue_id": "source-issue-5",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Skewing weights and distribution notation"
+        }
+      ],
+      "note": "The text says w lies in (0,1), although a general allowed CDF can reach0 or1. It uses cdf notation P(S)=integral_S p for generic sets, and overloads Pi_n/pi_n under rescaling. Preserve text and identify measures/densities in analysis without changing quotations."
+    },
+    {
+      "issue_id": "source-issue-6",
+      "evidence": [
+        {
+          "page": 21,
+          "location": "MAP and first-order stationarity"
+        }
+      ],
+      "note": "MAP is a global argmax; the source states its score plus prior score is zero by definition. That requires an interior differentiable maximizer, which is not automatic on constrained Theta. Theorem4.1 does not explicitly repeat Theorem2.1 interior-point hypothesis. Record the issue; do not add a new hypothesis or replace the MAP with the MLE."
+    },
+    {
+      "issue_id": "source-issue-7",
+      "evidence": [
+        {
+          "page": 21,
+          "location": "Likelihood Hessian versus posterior Hessian"
+        }
+      ],
+      "note": "Skew-modal covariance uses J_hat_theta from negative log-likelihood Hessian divided by n, not the negative full log-posterior Hessian. Prior second derivatives appear in Assumption10 bounds. Preserve their separate roles and probability events."
+    },
+    {
+      "issue_id": "source-issue-8",
+      "evidence": [
+        {
+          "page": 21,
+          "location": "Spectral tensor norm and probability bounds"
+        }
+      ],
+      "note": "Assumption10 calls its norm spectral for matrices and higher-order arrays without supplying an explicit tensor convention. It has separate high-probability eigenvalue and joint local-derivative events, with a fixed-radius neighborhood centered at the random MAP. Preserve constants, all suprema and all epsilon sequences."
+    },
+    {
+      "issue_id": "source-issue-9",
+      "evidence": [
+        {
+          "page": 22,
+          "location": "Functional bound"
+        }
+      ],
+      "note": "Theorem4.1 prints integral G(hat h)*|pi_n-hat p|, not integral |G|*|pi_n-hat p|. Keep the signed G and its separate prior r-moment condition, whose r range is not expressly quantified in the theorem. Do not drop the second part or strengthen its original statement."
+    },
+    {
+      "issue_id": "source-issue-10",
+      "evidence": [
+        {
+          "page": 24,
+          "location": "Marginal approximation is not exact marginalization"
+        }
+      ],
+      "note": "Equation31 applies F to the conditional expectation of the joint cubic skewing polynomial. It is a separate approximation, generally different from integrating F of that polynomial in the joint SKS density. Preserve F(E alpha) versus E(F alpha); no generic TV-contraction argument alone identifies these two densities."
+    },
+    {
+      "issue_id": "source-issue-11",
+      "evidence": [
+        {
+          "page": 24,
+          "location": "Third Gaussian moment and index contraction"
+        }
+      ],
+      "note": "The printed raw third non-central Gaussian moment is 3*barOmega_rv*Lambda_ks*h_s plus the cubic means, rather than all three differently indexed covariance-mean terms. The factor3 is appropriate after contraction with a symmetric likelihood third derivative, but not generally as an uncontracted componentwise equality. Preserve the printed statement and the original nu_1,nu_3 coefficients."
+    },
+    {
+      "issue_id": "source-issue-12",
+      "evidence": [
+        {
+          "page": 25,
+          "location": "Theorem4.5 assumption inheritance"
+        }
+      ],
+      "note": "The marginal TV theorem inherits the base assumptions of Theorem4.1 and its MAP/rate setup. Its statement contains no function G; do not invent a dependence on the optional polynomial-functional conclusion or its integrability restriction. Record this reading explicitly."
+    },
+    {
+      "issue_id": "source-issue-13",
+      "evidence": [
+        {
+          "page": 22,
+          "location": "Main-text versus supplementary rates"
+        }
+      ],
+      "note": "Remarks4.2/4.3 discuss Theorems C.1 and C.6 and dimension-dependent bounds. These are supplemental theorem references, not additional main-text Theorem environments. Preserve relevant notes without reading supplementary bodies or importing their assumptions."
+    },
+    {
+      "issue_id": "source-issue-14",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Logarithmic radius and scaling"
+        }
+      ],
+      "note": "The general theorem uses delta_n and M_n=sqrt(c0 log delta_n^-1). MAP theorems use M_n=sqrt(c0 log n). The source only prints c0>0 in the statements; inspect any main-text large-c0 conventions and keep them as context. Do not identify arbitrary general delta_n with n^-1/2. The main-text proof on13 explicitly chooses sufficiently large c0 for the Gaussian tail bound. Lemma2.9 on18 also says sufficiently large c0, with an unusually strong subsequent for-every-D clause. These are context/lemma statements; do not add them as extra inventoried theorems or read their supplementary proofs."
+    },
+    {
+      "issue_id": "marginal-subset-boundaries",
+      "evidence": [
+        {
+          "page": 23,
+          "location": "Definition of C and covariance blocks"
+        },
+        {
+          "page": 24,
+          "location": "Conditional Gaussian and marginal construction"
+        }
+      ],
+      "note": "C is allowed to be any subset, with no explicit nonempty/proper-subset restriction. Empty and full cases invoke zero-dimensional Gaussian or empty-block inverse/integration conventions; none are stated. Preserve the original subset quantifier."
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2301.03038v3",
+    "version": "arXiv:2301.03038v3, marked 8 Apr 2024",
+    "pdf_sha256": "d9415db3f063bab2fad33909ef2e4c13027032c29660f9b505a4a6340b3479ea",
+    "pdf_pages": 54,
+    "main_text_last_pdf_page": 29
+  },
+  "recorded_checks": [
+    "Three complete main-text Theorems2.1,4.1,4.5 independently enumerated from small-cap headings and visually compared, including both conclusions of4.1. Main text continues onto29 before references; supplementary bodies starting32 are excluded.",
+    "Twenty-nine original entries and eleven auxiliary passages preserve the statistical experiment and KL projection, prior/posterior and derivative notation, generic SKS family and its abstract Assumptions1–4, MAP/joint approximation with Assumptions7–10, and the separate marginal construction including all conditional-Gaussian blocks and nu coefficients.",
+    "Independent source-clause reconstruction verifies27 direct uses and51 related-theorem connections. Abstract general-theorem arrays are not identified with likelihood derivatives. Assumptions3/4 use a separately archived local set rather than inheriting Assumption2. MAP covariance is separate from Assumption10 regularity. Sufficient Assumptions5–6 are not imported backwards.",
+    "Theorem4.5 concerns Eq31, which applies F to the conditional mean skewing polynomial. It is not merely exact marginalization of Eq22. The true posterior marginal has no Gaussian-covariance dependency. The marginal TV theorem inherits base assumptions of4.1, not its optional function-G conclusion.",
+    "Sixteen notes preserve source-coordinate and log-ratio ambiguities, eta=0 and covariance-event domains, MAP boundary stationarity, likelihood versus posterior Hessians, tensor norm conventions, signed-G integrals, c0 quantifiers, componentwise Gaussian third-moment notation and empty/full coordinate subsets. No original formula is silently repaired and no supplementary theorem is counted.",
+    "All29 entries have original natural-language terms or original numbered assumption headings, preserved source kinds and literal matching selectors. All51 connections have a valid paper-local path and specific source explanation. The dominating measure retains the printed superscript mu^n.",
+    "All six content JSON files reproduce byte for byte in a fresh empty directory. Seven retained scripts support extraction, finalization, rebuilding and independent source review. Reproduction is not a new semantic review of the PDF."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "309203534db10c249fc93e6504be23ba4fd1934403023af6c2c03e534efad8be"
+}

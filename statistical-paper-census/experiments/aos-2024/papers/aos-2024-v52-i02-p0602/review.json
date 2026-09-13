@@ -1,0 +1,76 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i02-p0602",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T09:50:10.703318+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i02-p0602/T1",
+      "aos-2024-v52-i02-p0602/T2",
+      "aos-2024-v52-i02-p0602/T3",
+      "aos-2024-v52-i02-p0602/T4"
+    ],
+    "method": "Independent font-sensitive enumeration of all 37 main pages finds exactly CMBX10 Theorem headings 1,2,3,4. Theorem 1 continues from page 10 onto page 11. Main references end on page 37; the saved heading crop establishes Appendix A on a separate page 38.",
+    "printed_label_check": [
+      [
+        10,
+        "1"
+      ],
+      [
+        15,
+        "2"
+      ],
+      [
+        21,
+        "3"
+      ],
+      [
+        30,
+        "4"
+      ]
+    ],
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 4,
+    "interfaces": 39,
+    "source_members": 39,
+    "direct_theorem_uses": 34,
+    "related_theorem_connections": 59,
+    "unranked_auxiliary_passages": 10
+  },
+  "source_notes": [
+    "This is a census of the pinned arXiv v2 preprint; identity with journal wording has not been established.",
+    "Complete means source-fidelity and statement-dependency review is complete. It does not certify the paper’s proof correctness or silently resolve ambiguous source formulas.",
+    "Appendix bodies are excluded. References to appendix-only variance estimation or detailed covariance calculations are recorded, without importing those constructions."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2208.13074v2",
+    "version": "arXiv:2208.13074v2",
+    "pdf_sha256": "89fb385ab11591581e148581484b7750a3180088059c9efcda953eaa612eac0a",
+    "pdf_pages": 111,
+    "main_text_last_pdf_page": 37
+  },
+  "recorded_checks": [
+    "Inventory and final census pass separate validator invocations. The independent inventory hash is unchanged and all original theorem fields survive the handoff.",
+    "The four authors, arXiv v2 stamp of 4 July 2023, versioned URL, 111-page count, source hash and main-text endpoint match the pinned source.",
+    "All theorem bodies were visually checked on pages 10,11,15,21,30. The full continuation of Theorem 1 and all three parts and optional stronger localization clause of Theorem 2 are retained.",
+    "The 39 source passages were inspected against rendered main pages. Numbered Assumptions keep their source type, and natural-language names, naming contexts and all highlight selectors are source-backed.",
+    "Theorem 2 imports condition (15) but not the separate log-bandwidth condition of Theorem 1. Its algorithm threshold is an input rather than a mandatory Gaussian critical quantile.",
+    "Theorem 3 uses Assumptions 1-3 and 5, the localized null, neighborhood sizes, normalized statistic and its own printed Gaussian covariance. Assumptions 4,6,7 and the spatial consistency Proposition are not added.",
+    "Theorem 4 reaches exactly the 16 general-model interfaces D25-D40. Independent assertions exclude all VMA, diagonal-filter and earlier Gaussian-law interfaces from its reach.",
+    "The general and linear moment, temporal-dependence and scale conditions remain separate. The covariance free index, missing zero-lag case, coupling domains, random lattice design and variance-versus-standard-deviation conflict are documented without rewriting formulas.",
+    "Ten auxiliary source passages resolve norms, asymptotics, section conventions, condition (15), optional calibration, temporal locations, signal sign, product index and bandwidth. Fifteen source notes record remaining interpretation limits.",
+    "The final graph has 34 direct theorem uses and 59 deduplicated same-paper connections. Every interface has a source-backed explanation for every related theorem, and all statement evidence stays in the main text with balanced mathematical grouping.",
+    "Registered-source revalidation corrected the D5 source wording from long-run covariance matrix to long-run variance matrix, including its name, keyword and highlight phrase; all formulas and theorem statements are unchanged."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "ed2f3819cd90ed159cc716588401f855a29fd7cdf66ff7a91230b000e40b9745"
+}

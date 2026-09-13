@@ -1,0 +1,80 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i03-p0948",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T12:45:48.772783+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i03-p0948/T1",
+      "aos-2024-v52-i03-p0948/T2",
+      "aos-2024-v52-i03-p0948/T3",
+      "aos-2024-v52-i03-p0948/T4"
+    ],
+    "method": "Independent font-aware enumeration across main-text pages 1–27 finds four bold Theorem headings and excludes three regular-font mentions. Theorem 1 continues onto page 9, Theorem 2 onto page 10, and Theorem 4 onto page 13. Six numbered Conditions are independently located; Condition 6 belongs to the excluded Proposition 1, while the four Theorems require only Conditions 1–5.",
+    "printed_label_check": [
+      [
+        8,
+        "1"
+      ],
+      [
+        9,
+        "2"
+      ],
+      [
+        12,
+        "3"
+      ],
+      [
+        12,
+        "4"
+      ]
+    ],
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 4,
+    "interfaces": 23,
+    "source_members": 23,
+    "direct_theorem_uses": 38,
+    "related_theorem_connections": 53,
+    "unranked_auxiliary_passages": 8
+  },
+  "source_notes": [
+    "The pinned file is identified by its hash and printed arXiv stamp. Its title-page date differs from its margin date; final journal equivalence is not established.",
+    "Original normalizations, derivative signs, optimality assertion and sample-size conventions are retained, with their ambiguities documented.",
+    "Source review verifies transcription and statement relationships, not proofs or the truth of every printed assertion.",
+    "Main-text Proposition 1 and its Condition 6 on page 16 concern BLPC estimators. They are not Theorems or prerequisites of the four inventoried Theorems, so they are not added to this census."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2203.12003v1",
+    "version": "arXiv:2203.12003v1",
+    "pdf_sha256": "a6bfe1bcf5a885bcc6c101ba8d90c51ab03c402f47efc0791609f9a9262cfcd8",
+    "pdf_pages": 60,
+    "main_text_last_pdf_page": 27
+  },
+  "recorded_checks": [
+    "Title, three authors, arXiv v1 stamp, two different source dates, 60-page count and SHA-256 are checked; every archived main-text page equals fresh byte-preserving extraction.",
+    "Independent theorem inventory was validated before extraction; every original claim field remains unchanged in the finalized census.",
+    "Theorem 1 is checked on pages 8–9, retaining both zero-limit traces, quadratic off-block trace, stochastic remainder and Marchenko–Pastur equation.",
+    "Theorem 2 is checked on pages 9–10, retaining all three R functions, the fixed-point root, printed derivative formula and complete optimal-tuning assertion.",
+    "Theorem 3 is checked on page 12, retaining both approximations and the expectation/companion-transform definition of K_l with its printed n^{-1} factors.",
+    "Theorem 4 is checked on pages 12–13, retaining both prediction targets, all seven Q functions, both positive roots, Sigma powers and the derivative denominator.",
+    "Dataset declarations and model (1) are checked on pages 4–5; all four parts of Condition 1 and Conditions 2–3 are checked on pages 5–6, including nested ratio indices and bold noise-vector notation.",
+    "Training, reference and testing covariances and ridge constructions are checked on page 7; their different sample-size factors remain intact.",
+    "Realized heritability, uncentered squared-cosine accuracy, Stieltjes convention, population versus sample spectral laws, and the companion reference transform are checked on pages 6,8,12.",
+    "Conditions 4–5 are checked on pages 9 and 12; their shared causal-submatrix notation is separate from their different lists of trace-ratio assumptions.",
+    "Independent graph traversal verifies 38 direct uses and 53 related connections. Trace-only Theorems 1 and 3 acquire no response, effect, heritability or regression-estimator prerequisites.",
+    "All 23 interfaces preserve source keywords, kinds and statements, match meaningful highlight selectors and have explanations for each derived theorem path.",
+    "Eight auxiliary excerpts and twenty-eight source notes preserve local bindings and ambiguities without importing supplementary variants or certifying the source claims.",
+    "References end on page 27 and the attached supplement begins on page 28; only its heading is inspected and all extracted mathematics stays within the main text."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "8ee724d8735590a9c344c4ee8c3d7f61c7bcb370d7aab1dc52787e39bbe4325b"
+}

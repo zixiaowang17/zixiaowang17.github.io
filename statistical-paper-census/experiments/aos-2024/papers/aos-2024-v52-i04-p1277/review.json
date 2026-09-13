@@ -1,0 +1,91 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i04-p1277",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T21:20:30.645940+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i04-p1277/T2",
+      "aos-2024-v52-i04-p1277/T3",
+      "aos-2024-v52-i04-p1277/T4",
+      "aos-2024-v52-i04-p1277/T11"
+    ],
+    "printed_label_check": [
+      [
+        6,
+        "2"
+      ],
+      [
+        8,
+        "3"
+      ],
+      [
+        9,
+        "4"
+      ],
+      [
+        12,
+        "11"
+      ]
+    ],
+    "method": "Independent actual-heading enumeration and visual comparison of all complete theorem bodies.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 4,
+    "interfaces": 24,
+    "source_members": 24,
+    "direct_theorem_uses": 11,
+    "related_theorem_connections": 32,
+    "unranked_auxiliary_passages": 5
+  },
+  "source_notes": [
+    "The verified source is arXiv:2210.01214v2 dated 15 February 2024, 61 pages. Register version/URL strings are aliases for these same bytes. Original versioned source identity is preserved.",
+    "Main-text references finish above the Appendix A heading on page 56. Appendix bodies and their theorem statements are excluded. Four actual main-text Theorems are 2,3,4,11; numbering gaps are other result types.",
+    "Experiments in Sections 2 and 3 have the same observable grid but different volatility laws and parameter domains. The general-model H<3/4 restriction is not replaced with the broader extension discussed in Section 4.",
+    "The source normalizes sigma_0^2=1 in Section 2 and sigma_0=1 in Section 3. Driver independence rules out a leverage effect; the companion paper is outside scope.",
+    "The minimax criterion is a liminf of infimum over all data-measurable estimators followed by supremum over parameters. It is not a pointwise lower bound or an expected-loss definition. Rate dependence on H is preserved.",
+    "Delta appears as delta_n in the block observations and as delta in the model and rates. The source permits a sequence but does not separately spell out every limiting regime in the theorem bodies.",
+    "Page 5 defines n=2^N and m=n delta integer. Page 7 indexes block observations below delta_n^-1, but its empirical coefficient indices use 2^(N-j). Their compatibility for arbitrary m is unresolved; no automatic redefinition of N is made.",
+    "The coarse estimator on page 8 uses log, whereas the general estimator uses log_2. The coarse original is preserved; its intended logarithm base and the claimed consistency need clarification rather than silent correction.",
+    "Equation (5), not needed to evaluate the retained coarse estimator, contains an extra 2^-j in its middle noise subscript. It is not used to repair or redefine the empirical coefficient formula.",
+    "Coarse scale selection explicitly ranges from 2 to N-1 and returns 2 on an empty set. The general selections omit both the range and the empty-set fallback; these are not transferred without evidence.",
+    "Both constructions can encounter nonpositive noise-corrected energy estimates. The source does not fully define off-event logarithm, ratio, square-root and empty-maximum conventions. Clamping the eventual value does not itself define these intermediate operations.",
+    "The general latent definition states k<2^p but its Q sum uses k<2^(j-1). General empirical expressions also permute j,p,k in d and e, and the estimated Q sum leaves the k range implicit. Exact originals and auxiliary target context are retained.",
+    "The noise correction is 6 Var(bar epsilon_m)2^(-j-p) in the coarse model versus 2^(-j-p+1) Var(log xi^2) in the general model. Hat d^2 denotes an estimate of a square, not a squared estimate.",
+    "The initial general estimates are projected to the bounding rectangle, which need not equal the compact D. The scale hat j_n depends on the initial H estimate and remains fixed in later eta corrections.",
+    "The iteration is sequential: the mth eta update uses H^(m) and eta^(m-1), not H^(m-1). The theorem retains the extra intermediate m in m_opt>m>1/(4H)-2H-1, although the preceding construction only states the weaker m_opt inequality.",
+    "The truncation S is an integer constrained by both S>=1/(4H_-)+1/2 and S>H_+/(2H_-)-1/2. It is not the price process S_t, and it is distinct from iteration m and block length m reused elsewhere.",
+    "The Gaussian-integral definition uses an uncentered W for total degree b=1 and increments for b>=2. Factorials and the distinction between plain fractional Brownian W and fraktur integral W are preserved.",
+    "The overlined sum on page 31 restricts multi-index entries to {1,...,S}, whereas the preceding W and g definitions use {1,...,2S}. Equation (36) retains the stated overlined-sum convention; its truncation dependence is not simplified.",
+    "Kappa_{p,a} is available in main-text equation (36), even though it is inside a proof section. Its W-integral and index definitions are included because the estimator consumes them. Isserlis expansion, remainder Z, H-star and surrounding proof lemmas are not extra statement dependencies.",
+    "The bias function has argument order (I,nu), with sum starting at a=2. Lemma 10 later reverses parameter names in its displayed arguments; this proof-bound formula is not used to change the estimator definition.",
+    "Theorem 11 is boundedness in probability uniformly over D, not a central limit theorem or moment-risk bound. Theorem 3 similarly asserts uniform tightness, without distributional or expected-error conclusions.",
+    "Appendix C supplies a trigamma expression and moment bound for the coarse noise, but the noise distribution itself is defined in the main text. The census uses that distribution to resolve its variance and does not import an appendix formula."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2210.01214v2",
+    "version": "arXiv:2210.01214v2, 15 February 2024",
+    "pdf_sha256": "f6029bf56e0c7d9e0ddb7fd6c856e2d364833f16d7530ff9ce81e6eb5f53e25c",
+    "pdf_pages": 61,
+    "main_text_last_pdf_page": 56
+  },
+  "recorded_checks": [
+    "Four full theorem bodies visually compared; independent enumeration of every admitted main-text page confirms labels 2,3,4,11. Main text ends above the Appendix A heading on page 56.",
+    "All 24 original passages and five auxiliary passages reviewed against pages 1,5-12,30-31. Both complete estimator constructions, both minimax criteria, kappa formula (36), fraktur Gaussian integrals and overlined index sum are preserved.",
+    "Independent checks cover all 11 direct uses and 32 related connections. General-model Theorems 4 and 11 do not inherit the piecewise-constant experiment, delta grid or coarse estimators. Kappa is an estimator dependency; Gaussian proof expansions and latent target energies are not imported into that graph.",
+    "Every interface has an original natural-language keyword or separately evidenced naming context and matching source highlights. Source headings distinguish models, conditions, original definitions inside lemmas and estimator constructions; no theorem is renamed as a Definition.",
+    "Visual and PDF-font checks preserve Euler-script A/E/D, blackboard P, fraktur W, bold multi-indices, overlined sum, estimated squared coefficients and both sequential update indices. Natural log versus log_2 and all source indexing discrepancies are retained.",
+    "Twenty-two notes record unresolved source domains, implicit ranges, log and square-root conventions, estimator index inconsistencies and excluded references. The census preserves the claimed statements and does not certify proofs.",
+    "All six census artifacts rebuilt byte-for-byte in an empty directory. Both independent schema validations and the fixed local PDF hash check passed; rebuild does not renew source review."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "2c7111482dc3b5fbb10c0adda730024b268f21c7126f21e57845187f1d58a0d7"
+}

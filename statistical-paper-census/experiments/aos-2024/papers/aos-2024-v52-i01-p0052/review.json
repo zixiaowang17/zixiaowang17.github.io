@@ -1,0 +1,67 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i01-p0052",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T16:13:39.410938+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i01-p0052/T2.2",
+      "aos-2024-v52-i01-p0052/T2.7",
+      "aos-2024-v52-i01-p0052/T2.11",
+      "aos-2024-v52-i01-p0052/T2.13",
+      "aos-2024-v52-i01-p0052/T3.1",
+      "aos-2024-v52-i01-p0052/T3.3",
+      "aos-2024-v52-i01-p0052/T3.4",
+      "aos-2024-v52-i01-p0052/T4.1",
+      "aos-2024-v52-i01-p0052/T4.4",
+      "aos-2024-v52-i01-p0052/T4.6",
+      "aos-2024-v52-i01-p0052/T4.8",
+      "aos-2024-v52-i01-p0052/T4.9"
+    ],
+    "method": "Independent printed-heading enumeration followed by visual comparison of complete statements and all continuation pages; see inventory-review.json.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Fact"
+    ],
+    "appendices_read": false
+  },
+  "counts": {
+    "theorems": 12,
+    "interfaces": 32,
+    "source_members": 37,
+    "direct_theorem_uses": 76,
+    "related_theorem_connections": 116
+  },
+  "source_notes": [
+    "The registered source is the 26-page published article (printed pages 52–77). All twelve actual Theorem environments were enumerated and their full statements visually checked, including every continuation. Conclusion ends on PDF page 24; references extend to page 26; appendices are separate and were not read.",
+    "Published 4.8 corresponds to arXiv 4.9 (unprojected cryo-EM discrepancy formulas), and published 4.9 corresponds to arXiv 4.10 (projected transcendence degrees). Original statement bodies have the same mathematical hypotheses and conclusions; labels and copy-editing differ. Every direct-use ID and derived theorem path was rebuilt using the published identity mapping.",
+    "Reviewed all 37 local source members against published PDF pages 5–12 and 14–20. Updated their evidence pages, source wording, dot notation for projected observations, and equation references (D.S11), (D.S31), (D.S57). The latter remain unresolved main-text references to excluded appendices.",
+    "Reviewed the 12 direct-dependency sets and every local prerequisite edge. Rebuilt all 76 direct uses and 116 related connections with source-specific explanations; retained projected and unprojected paths separately, ambient conventions separately, and inline theorem binders as binders.",
+    "Reviewed source keywords, naming passages and selectors for every interface. Published terminology is Continuous multireference alignment and Nondegenerate up to orbit. Corrected literal double-escaped TeX in naming contexts. All 37 members have an exact meaningful source selector match; every supplied selector matches its passage/label or a related same-paper theorem.",
+    "In Section 3 the first white-noise display is printed f_g(t) + sigma dW(t), without dt after the signal. The later Gaussian-process integral includes dt. The archived original retains the first display as printed; it is not silently repaired.",
+    "Definition 2.12 and the generic-gradient-span condition in Remark 2.9 remain distinct from a theorem conclusion. Spherical and radially indexed cryo-EM coefficient vectors remain distinct, sharing only the explicitly named Clebsch–Gordan convention.",
+    "Theorem 2.11(b) restricts its landscape conclusion to the stated ball, while 2.13(b) imposes the ball restriction on the converse. The explicit radial bounds in 4.6, 4.8 and 4.9 are respectively 2, 1 and 4. These distinctions were checked in the source."
+  ],
+  "source": {
+    "source_url": "https://projecteuclid.org/journals/annals-of-statistics/volume-52/issue-1/Maximum-likelihood-for-high-noise-group-orbit-estimation-and-single/10.1214/23-AOS2292.pdf",
+    "version": "Published version, The Annals of Statistics 52(1), 2024, pp. 52–77; DOI 10.1214/23-AOS2292",
+    "pdf_sha256": "0e2a08097d0f62a375bcfe5821507276e09d86b68d9e720a0087887d3a574786",
+    "pdf_pages": 26,
+    "main_text_last_pdf_page": 24
+  },
+  "recorded_checks": [
+    "The registered source is the 26-page published article (printed pages 52–77). All twelve actual Theorem environments were enumerated and their full statements visually checked, including every continuation. Conclusion ends on PDF page 24; references extend to page 26; appendices are separate and were not read.",
+    "Published 4.8 corresponds to arXiv 4.9 (unprojected cryo-EM discrepancy formulas), and published 4.9 corresponds to arXiv 4.10 (projected transcendence degrees). Original statement bodies have the same mathematical hypotheses and conclusions; labels and copy-editing differ. Every direct-use ID and derived theorem path was rebuilt using the published identity mapping.",
+    "Reviewed all 37 local source members against published PDF pages 5–12 and 14–20. Updated their evidence pages, source wording, dot notation for projected observations, and equation references (D.S11), (D.S31), (D.S57). The latter remain unresolved main-text references to excluded appendices.",
+    "Reviewed the 12 direct-dependency sets and every local prerequisite edge. Rebuilt all 76 direct uses and 116 related connections with source-specific explanations; retained projected and unprojected paths separately, ambient conventions separately, and inline theorem binders as binders.",
+    "Reviewed source keywords, naming passages and selectors for every interface. Published terminology is Continuous multireference alignment and Nondegenerate up to orbit. Corrected literal double-escaped TeX in naming contexts. All 37 members have an exact meaningful source selector match; every supplied selector matches its passage/label or a related same-paper theorem.",
+    "In Section 3 the first white-noise display is printed f_g(t) + sigma dW(t), without dt after the signal. The later Gaussian-process integral includes dt. The archived original retains the first display as printed; it is not silently repaired.",
+    "Definition 2.12 and the generic-gradient-span condition in Remark 2.9 remain distinct from a theorem conclusion. Spherical and radially indexed cryo-EM coefficient vectors remain distinct, sharing only the explicitly named Clebsch–Gordan convention.",
+    "Theorem 2.11(b) restricts its landscape conclusion to the stated ball, while 2.13(b) imposes the ball restriction on the converse. The explicit radial bounds in 4.6, 4.8 and 4.9 are respectively 2, 1 and 4. These distinctions were checked in the source."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "c05a33961e37730a7c0e7392a6238564cbd3aa9df44ac41c423c308091de7bf7"
+}

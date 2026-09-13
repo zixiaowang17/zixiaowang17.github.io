@@ -1,0 +1,112 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i02-p0550",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T09:22:45.906337+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i02-p0550/T3.1",
+      "aos-2024-v52-i02-p0550/T3.2",
+      "aos-2024-v52-i02-p0550/T3.3",
+      "aos-2024-v52-i02-p0550/T3.4",
+      "aos-2024-v52-i02-p0550/T3.5",
+      "aos-2024-v52-i02-p0550/T3.6",
+      "aos-2024-v52-i02-p0550/T4.1",
+      "aos-2024-v52-i02-p0550/T4.2",
+      "aos-2024-v52-i02-p0550/T4.3",
+      "aos-2024-v52-i02-p0550/T4.4",
+      "aos-2024-v52-i02-p0550/T4.5"
+    ],
+    "method": "Independent font-sensitive enumeration of the first 30 PDF pages identifies exactly the Utopia-Bold numbered Theorem headings 3.1-3.6 and 4.1-4.5. Plain-font mentions, Corollary 3.1 and other result types are excluded. References finish on page 30; the saved heading-only crop establishes a separate Appendix A on page 31. Appendix bodies were not read.",
+    "printed_label_check": [
+      [
+        16,
+        "3.1"
+      ],
+      [
+        18,
+        "3.2"
+      ],
+      [
+        20,
+        "3.3"
+      ],
+      [
+        20,
+        "3.4"
+      ],
+      [
+        21,
+        "3.5"
+      ],
+      [
+        21,
+        "3.6"
+      ],
+      [
+        22,
+        "4.1"
+      ],
+      [
+        22,
+        "4.2"
+      ],
+      [
+        24,
+        "4.3"
+      ],
+      [
+        24,
+        "4.4"
+      ],
+      [
+        25,
+        "4.5"
+      ]
+    ],
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 11,
+    "interfaces": 41,
+    "source_members": 41,
+    "direct_theorem_uses": 204,
+    "related_theorem_connections": 250,
+    "unranked_auxiliary_passages": 15
+  },
+  "source_notes": [
+    "This census audits the pinned arXiv v3 preprint; equality to journal typesetting has not been established.",
+    "Appendix-only formulas (B.11)/(B.12), the precise moment-order recipe in Theorem C.3 and details of the square-root calculus remain unresolved under the required main-text-only scope.",
+    "Source discrepancies are recorded as limitations of the original source. This is a statement-fidelity and dependency audit, not proof certification."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2208.10158v3",
+    "version": "arXiv:2208.10158v3",
+    "pdf_sha256": "697650c95aaf3025e8e5e76e36053a24c58bf8593272221f7aeb4dc16f652638",
+    "pdf_pages": 86,
+    "main_text_last_pdf_page": 30
+  },
+  "recorded_checks": [
+    "The source inventory and finalized census pass separate validator invocations. The pinned source-review inventory hash is unchanged, and all original theorem fields are preserved.",
+    "The title, two authors, arXiv v3 stamp of 16 September 2023, versioned URL, 86-page count and PDF SHA-256 match the inspected source. All mathematical evidence is on main pages 1-30.",
+    "All eleven theorem bodies were visually checked, including the full page-18-to-19 continuation of Theorem 3.2. Theorem 3.1 keeps both phi branches, all quantifiers, and unresolved appendix-only covariance references.",
+    "All 41 local passages retain source types, natural-language source keywords, evidence, selectors and dependency reasons. Generic causal, spectral, calculus and self-normalization definitions are separate from the four application measures.",
+    "All six numbered assumptions are retained in full. The nonlinear branch requires the actual consistency property (3.30), the coordinate tail (3.28) and analytic homogeneity; p=7 is not silently substituted.",
+    "Corollary 3.1 is saved as a full inherited-hypothesis passage, without becoming a Theorem record. Theorem 3.2 and Section 4 inherit the applicable base branch, Frechet maps, factorization, scaling, positive-definite sigma and limiting nonsingularity.",
+    "Both self-normalizer covariance formulas keep conjugation on the second factor. Theorem 3.2 retains ordinary transpose, squared-entry matrix notation, scalar roots, and its complete vector and scalar conclusions.",
+    "PCA, separability, coherence and restricted stationarity definitions reach only their actual Gaussian-limit theorems. The generic Section 4 results do not acquire all application-specific prerequisites. Gaussian-limit statements do not acquire self-normalization merely from the subsequent pivotal-statistic comments.",
+    "The original coherence ratio, marginal-eigenvalue chain punctuation, spectral multiplicity conventions, zero-spectrum issues and missing eta on the stationarity target remain visible as source issues.",
+    "Model-selection hypotheses and rules retain the strict threshold, lower quantile in estimator (4.8), upper quantile in (4.11), and alpha_T-to-zero assertion. The equivalence of (4.9) and (2.17) is distinguished from the contradictory equality-at-d* discussion.",
+    "Fifteen auxiliary passages resolve ambient notation and inherited source clauses; 25 separate notes record source discrepancies without modifying original statements. The graph has 204 direct uses and 250 deduplicated same-paper connections with explanations and matched selectors.",
+    "Independent scope assertions verify that the first-exceedance estimator reaches Theorems 4.3/4.4 but not 4.5; the upper-quantile accuracy rule reaches 4.5 only. All quoted mathematical fragments have balanced TeX grouping braces."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "7892e0cdbee3eada80b9641e448708cf431c87264fde83d8fde281be69ed39fa"
+}

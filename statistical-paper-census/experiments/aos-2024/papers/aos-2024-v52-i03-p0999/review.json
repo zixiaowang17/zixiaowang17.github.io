@@ -1,0 +1,104 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i03-p0999",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T13:18:06.913312+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i03-p0999/T3",
+      "aos-2024-v52-i03-p0999/T4",
+      "aos-2024-v52-i03-p0999/T8",
+      "aos-2024-v52-i03-p0999/T10"
+    ],
+    "method": "Independent font-aware scan of all main-text pages 1–33, checked against the complete statement pages and the appendix boundary. Four CMBX10 theorem headings are distinct from four prose mentions; numbered Assumptions 1–4 are separately enumerated.",
+    "printed_label_check": [
+      [
+        12,
+        3
+      ],
+      [
+        17,
+        4
+      ],
+      [
+        18,
+        8
+      ],
+      [
+        21,
+        10
+      ]
+    ],
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 4,
+    "interfaces": 33,
+    "source_members": 33,
+    "direct_theorem_uses": 62,
+    "related_theorem_connections": 87,
+    "unranked_auxiliary_passages": 13
+  },
+  "source_notes": [
+    "Pinned arXiv:2207.12453v3 has margin date 1 October 2023 and title-page date 3 October 2023. Its source title says Change point while journal metadata says Change-point; authors and remaining title agree. Final journal equivalence is not asserted.",
+    "Only main text and references through page 33 are used. The appendix heading is on page 34; all subsequent mathematics is excluded.",
+    "Assumption 1 allows covariate-noise dependence through its conditional mean-zero requirement. No independence between their innovation streams is imposed in the extracted model.",
+    "The covariate and noise causal representations separately imply strict stationarity. A jointly stationary coupling of their innovation streams is not separately specified in the main-text definitions.",
+    "The high-dimensional process, jump directions and covariance may vary with n. Theorem 3 states convergence of the paired process on all integer times without specifying a path-space topology or a construction of the limiting sequence.",
+    "The source normalizes the jump immediately before its location, beta-star_{eta_k-1}, not beta-star at the preceding indexed change point. Glyph coordinates confirm the minus one belongs outside the k subscript.",
+    "The number K is a fixed positive integer, while minimum spacing may shrink as a fraction of n. No growing-K claim is inferred.",
+    "Covariate functional dependence takes a supremum over every unit direction and fourth moments. It is not replaced by coordinatewise dependence or second moments.",
+    "The scalar nonstationary dependence measure takes a supremum over time. Its q=2 instantiation in Theorem 4 is distinct from the q=4 assumptions for X and epsilon.",
+    "Shared gamma_1 and gamma_2 in the regression assumptions are minima of covariate and noise exponents. Their combined gamma uses a factor two absent from Theorem 4 gamma(Z).",
+    "Assumption 4b includes inequality (24) and additionally requires alpha_n >> s log(pn)^{2/gamma}. It is not an alternative to the baseline condition.",
+    "The Lasso penalty is lambda times the square root of interval length times the L1 norm. Algorithm 1 divides the whole objective by interval length consistently with this scaling.",
+    "The source uses one zeta for both the partition penalty and the minimum interval length. Remark 1 distinguishes their roles but says the theory uses equal values.",
+    "The source interval loss omits the response-square sum and sets the loss to zero on short intervals. These printed choices are retained without asserting equivalence to another objective in every boundary case.",
+    "Algorithm 1 initializes a pointer vector of length n but loops through r=n+1 and may assign p_{n+1}. Its backtracking then starts at k=n. These indexing choices are not repaired.",
+    "Algorithm 1 initializes the temporary V as an element of R^p but updates it with y_l X_l transpose and multiplies it as a row vector. The printed orientation mismatch remains documented.",
+    "Algorithm 1 adds each predecessor h to its output set, potentially including the boundary 1. The surrounding model treats 1 as eta_0 rather than a change point; the algorithm does not explicitly remove that boundary.",
+    "Algorithm 1 lists all segment Lasso fits as output but does not explicitly detail how those fits are retained during backtracking. No missing storage step is invented.",
+    "Theorems 3 and 8 list coefficient estimates from k=1, whereas refinement (17) and jump estimator (30) require beta-hat_0. Section 2.2 explicitly supplies indices k=0 through K-hat, and that passage is archived.",
+    "Algorithm 2 instead uses beta-hat_k and beta-hat_{k+1}, though the surrounding jump/refinement formulas use beta-hat_{k-1} and beta-hat_k. Its input list ends at K-hat, so the final k+1 input is not supplied by the printed list.",
+    "The local endpoints in (18) can be nonintegers, while (17) and Algorithm 2 use them as summation/index bounds. No rounding rule is printed there. The exterior estimated endpoints eta-hat_0 and eta-hat_{K-hat+1} are also not explicitly defined in (18).",
+    "The source writes argmin as a single selected estimator. Ties in Lasso fits, partitions, local splits and discrete random-walk minima are not covered by a general selection or uniqueness convention in the main text.",
+    "Lemma 2 states existence and finiteness of sigma_infty squared, but does not explicitly state strict positivity. Theorem 3 divides by sigma_infty; positive marginal noise variance alone is not substituted for an explicit positive directional long-run variance assumption.",
+    "Sections 4 and 4.1 explicitly discuss vanishing jumps. Theorems 8 and 10 refer back to Theorem 3, which has both regimes; the surrounding section restriction is retained separately rather than rewriting the theorem body.",
+    "Theorem 8 requires the number R of block pairs to grow faster than the square root of interval length and slower than that length. R is not the block width S.",
+    "Algorithm 2 defines S=floor((e_k-s_k)/(2R)), while the following prose states 2R=floor((e_k-s_k)/S). These floor identities are not generally equivalent; the algorithm formula remains authoritative for its stored construction.",
+    "Algorithm 2 divides by the estimated jump squared without specifying an output when that estimate is zero. Theorem 10 has a nonzero-jump indicator but still prints a ratio with that denominator.",
+    "Assumption 2c defines varpi_k as the limit of v_k transpose Sigma v_k. Section 4.1 later writes an equality with the finite-sample quadratic form; both original passages are archived.",
+    "Theorem 10 calls the squared jump estimate the kth jump size estimator, whereas equation (30) defines the unsquared norm. No square is removed from the original theorem.",
+    "Step 1 of the simulation construction assumes finite M>0 and a finite Gaussian index range, while Theorem 10 sets M=infinity. A countable extension is implicit but not explicitly constructed there.",
+    "The simulated process in (32) is a two-sided Gaussian partial-sum step function with ceiling on the negative side and floor on the positive side. It is not replaced by an interpolated Brownian path.",
+    "Step 1 says the Gaussian variables are independent, but does not separately state their independence from the observed data or give a complete joint construction across simulation repetitions.",
+    "Theorem 4 is used repeatedly in proofs of other results but is not a prerequisite of their statement definitions. No appendix-only restricted-eigenvalue theorem, proof lemma or algorithm-complexity result is included in the inventory."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2207.12453v3",
+    "version": "arXiv:2207.12453v3",
+    "pdf_sha256": "457111b1384cd1d8b4453c78924dd6c54c4a87886f574c6c58804a5ae751b83a",
+    "pdf_pages": 112,
+    "main_text_last_pdf_page": 33
+  },
+  "recorded_checks": [
+    "Source title, four authors, version, both dates, 112-page count and SHA checked. Every archived main-text page matches fresh byte-preserving extraction; appendix material is excluded.",
+    "Independent font-aware enumeration finds four Theorems and four numbered Assumptions, excluding ordinary-font mentions. Theorem 3 spans pages 12–13; the other statements end on their starting page.",
+    "All original inventory fields remain unchanged after finalization. Theorem 3 retains its four setup bullets, two localization rates, signed random walk, extra process-limit assumption and Brownian construction.",
+    "Theorem 4 retains the nonstationary setting, second-moment dependence, uniform tail condition, its distinct combined exponent and both deviation terms.",
+    "Theorems 8 and 10 retain inherited assumptions, variance-algorithm inputs, block-count rate and simulated-minimizer scaling. The surrounding vanishing-regime restriction is archived separately.",
+    "All parts of Assumptions 1–4b are source-checked, including conditional mean zero, changing supports, fixed K, jump indices, projection-uniform tails, fourth-moment dependence, drift limits and the strengthened signal-to-noise rate.",
+    "Lasso, interval loss, penalized partition, DPDU, local refinement, jump estimate, variance algorithm, drift estimate and Gaussian simulation are checked against their complete main-text formulas and algorithm blocks.",
+    "Printed pointer bounds, backtracking start, temporary-vector orientation, missing/out-of-range coefficient indices and unrounded local endpoints are retained and explicitly documented.",
+    "Independent traversal verifies 62 direct uses and 87 related connections. The Bernstein theorem only reaches the nonstationary scalar definitions; the variance and simulation results do not depend on unused refined locations.",
+    "All 33 interface passages have original keywords, source kinds, meaningful selectors and source-specific explanations. Thirteen auxiliary excerpts and thirty-three source notes preserve local conventions and ambiguities without reading proof appendices."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "474eed1939d2217dc9462048a79c04383f02cce16766e44e1742315e93209c59"
+}

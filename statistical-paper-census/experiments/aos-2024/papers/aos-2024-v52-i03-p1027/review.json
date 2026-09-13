@@ -1,0 +1,103 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i03-p1027",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T13:30:59.475065+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i03-p1027/T1",
+      "aos-2024-v52-i03-p1027/T2",
+      "aos-2024-v52-i03-p1027/T3",
+      "aos-2024-v52-i03-p1027/T4",
+      "aos-2024-v52-i03-p1027/T5"
+    ],
+    "method": "Independent font-aware enumeration of main-text pages 1–36, visually checked on all five theorem pages. Actual headings use SFBX1200. Appendix boundary inspected by title-only clip on page 37.",
+    "printed_label_check": [
+      [
+        7,
+        1
+      ],
+      [
+        8,
+        2
+      ],
+      [
+        10,
+        3
+      ],
+      [
+        12,
+        4
+      ],
+      [
+        13,
+        5
+      ]
+    ],
+    "excluded_result_types": [
+      "Lemma",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 5,
+    "interfaces": 24,
+    "source_members": 24,
+    "direct_theorem_uses": 30,
+    "related_theorem_connections": 61,
+    "unranked_auxiliary_passages": 12
+  },
+  "source_notes": [
+    "Pinned arXiv:2211.10203v2 has a margin date of 21 November 2022 and title-page date of 18 November 2022. Equivalence to the final journal typesetting is not asserted.",
+    "Main text and references end on page 36. Numbered Section 5 is main text, while the actual attached supplement starts on page 37. Supplement mathematics is excluded.",
+    "Barred Sigma is the unconditional covariance; unbarred Sigma_t is the conditional covariance. Matrix/vector Latin symbols are bold upright. The iid reference is coupled through the same z_t, not a newly independent innovation sample.",
+    "The source defines the iid comparator for t=1,...,T but defines its sample covariance using t=1,...,n. The main-text passage does not identify T with n.",
+    "Assumption 1 requires a nonzero limiting population law and an upper spectral-norm bound. It does not impose positive definiteness of every population covariance or a positive lower eigenvalue bound.",
+    "The scalar eta uses sqrt(p(1-a-b)) inside a minimum with one. The coefficient denominator is 1-a-b, not its square root.",
+    "Theorem 2 asserts only a positive gap between expected empirical spectral second moments. The heavier-tail prose is not strengthened to a stochastic-order or Levy-distance theorem.",
+    "The QMLE is printed as argmax of the positive Gaussian contrast, without the usual negative sign. Preserve its optimization direction and objective literally.",
+    "The QMLE uses a randomly selected single coordinate. Remark 1 discusses pooling only as a practical alternative; a pooled estimator is not substituted into the theorem dependencies.",
+    "The QMLE parameter domain constrains the unconditional marginal variance by delta<=bar-sigma^2<C, while Assumption 1 allows singular population covariances. The main-text construction does not specify how the selected coordinate is guaranteed to satisfy that lower bound.",
+    "The main text does not specify the QMLE initialization, all candidate conditional variance recursions at finite sample boundaries, or a measurable tie-selection rule. The cited external algorithmic details remain unresolved.",
+    "The source calls P_t a projection matrix, but its formula is a weighted covariance matrix plus an identity term. Idempotence or orthogonality is not inferred from the name.",
+    "The projection uses M_p presample returns when t is small. The main-text definition does not detail how those observations or an initialization are supplied. M_p is an integer lag count with the displayed asymptotic growth.",
+    "The covariance estimators are uncentered outer-product averages divided by n. No estimated-mean subtraction or n-1 normalization is inserted.",
+    "Equation (2.9) uses y, while Theorem 4 equation (2.12) uses y^{-1} twice. Both source formulas are retained rather than reconciled by editing.",
+    "The generalized ESD (2.10) divides by tr(g(bar-Sigma)), but its generalized transform (2.11) divides by p. They are not silently treated as the same normalized transform.",
+    "For a merely bounded g, the generalized ESD denominator can be zero and the weights need not be nonnegative. The source does not add positivity or nonzero-trace hypotheses; equation (2.11) itself does not require this denominator.",
+    "Theorem 4 restricts g on the support interval of the limiting H but applies g to finite-dimensional population eigenvalues. It does not explicitly specify a global extension of g or require every such eigenvalue to lie in that interval.",
+    "Theorem 4 gives convergence for each z in the upper half-plane, without uniform-in-z or almost-sure quantification. Its limit is bound inline and is not separately inventoried as another Theorem.",
+    "The clipping threshold L is called a large constant without a quantitative lower bound here. Tau labels clipping, not a separate threshold value. Eigenvectors are preserved.",
+    "The Ledoit–Wolf (2015) nonlinear shrinkage algorithm is invoked by reference; its complete numerical construction is not in this main-text passage. The census records an unresolved external definition and does not substitute the oracle formula.",
+    "The oracle zero-eigenvalue branch uses the companion boundary value check-m_{underline F}(0) only when y>1. The printed otherwise branch also covers boundary cases not separately analyzed here, including zero eigenvalues with y=1.",
+    "The oracle nonzero branch uses an ordinary squared denominator without absolute-value bars. Complex boundary values can make this distinction substantive, so the source formula is not repaired.",
+    "Only the F subscript is underlined in the companion m_{underline F}. The source boundary-value definition writes check-m without an F subscript on the left, despite using indexed boundary values in (2.13).",
+    "The companion expression uses an indicator printed with braces around [0,infinity). This notation is preserved. Existence/nonvanishing of all boundary values used in the oracle is not separately stipulated in the main-text definition.",
+    "Theorem 5 inherits the assumptions of Theorem 4, including its g condition, but not its conclusion. Its metric is a dimension-normalized Frobenius difference from the oracle, not consistency to the unconditional covariance itself.",
+    "External results on QMLE rates, MP limits and oracle optimality are cited as justifications. They are not additional inventoried Theorems or proof-derived dependencies. QuEST population-spectrum consistency is Corollary 1 and is excluded from the Theorem inventory."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2211.10203v2",
+    "version": "arXiv:2211.10203v2",
+    "pdf_sha256": "dd4e1b59134c24ecec0c5ab2e4adfa80e1388296f732747ba2c4a4977d67982f",
+    "pdf_pages": 49,
+    "main_text_last_pdf_page": 36
+  },
+  "recorded_checks": [
+    "Pinned source title, both authors, 49-page count, arXiv version, two printed dates and PDF SHA checked. Fresh extraction matches every archived main-text page byte for byte.",
+    "Independent font-aware enumeration finds exactly five Theorems and one numbered Assumption. Four ordinary-font theorem mentions and the Section 5 proof heading are excluded. The actual supplement starts on page 37.",
+    "All five complete original statements remain unchanged from the independently validated inventory. Their hypotheses, endpoint quantifiers and formulas were checked on pages 7, 8, 10, 12 and 13.",
+    "All four parts of Assumption 1, the dynamic/iid return coupling, sample covariance normalization and covariance-bar typography are preserved. The extra support and function restrictions in Theorem 4 are not strengthened.",
+    "The source eta scaling, distinct regimes and expected second-moment gap are checked. Theorem 2 does not gain an unstated stochastic-order or Levy-distance conclusion.",
+    "Main-text construction review covers the marginal GARCH variance, random-coordinate QMLE and domain, full projection formula, inverse-square-root returns and adjusted covariance. The positive argmax criterion is preserved.",
+    "Stieltjes and generalized resolvent formulas, the matrix function g, clipped eigenvalues, NLS invocation and oracle branches are checked against pages 10–13, including enlarged oracle/QMLE crops.",
+    "The inverse-y discrepancy, trace normalization mismatch, ordinary squared oracle denominator, underlined companion F and unindexed boundary-value shorthand remain recorded as source issues.",
+    "Independent traversal verifies 30 direct uses and 61 related connections. Theorem 5 inherits the hypotheses of Theorem 4 but not its generalized-transform conclusion, and its oracle does not depend on the numerical NLS algorithm.",
+    "All 24 source passages have original terminology, faithful source kinds, meaningful selectors and same-paper explanations. Twelve auxiliary passages preserve unnamed/local definitions and contextual formulas; external NLS details remain explicitly unresolved."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "9a37b4386d1d3a91f569cbcc6b86020e43a6550cf11e29343e35e399d19a070d"
+}

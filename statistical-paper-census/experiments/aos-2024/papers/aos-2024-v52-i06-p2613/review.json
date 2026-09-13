@@ -1,0 +1,323 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i06-p2613",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-11T01:18:36.568450+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i06-p2613/T2.2",
+      "aos-2024-v52-i06-p2613/T2.4",
+      "aos-2024-v52-i06-p2613/T2.8",
+      "aos-2024-v52-i06-p2613/T3.1",
+      "aos-2024-v52-i06-p2613/T3.2",
+      "aos-2024-v52-i06-p2613/T3.3"
+    ],
+    "printed_label_check": [
+      [
+        8,
+        "2.2"
+      ],
+      [
+        10,
+        "2.4"
+      ],
+      [
+        13,
+        "2.8"
+      ],
+      [
+        18,
+        "3.1"
+      ],
+      [
+        19,
+        "3.2"
+      ],
+      [
+        21,
+        "3.3"
+      ]
+    ],
+    "method": "Independent bold-heading enumeration and visual comparison of all six full statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 6,
+    "interfaces": 28,
+    "source_members": 28,
+    "direct_theorem_uses": 41,
+    "related_theorem_connections": 53,
+    "unranked_auxiliary_passages": 12
+  },
+  "source_notes": [
+    {
+      "issue_id": "registered-source-and-numbering",
+      "evidence": [
+        {
+          "page": 1,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 28,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Registered source is arXiv2103.06476v9 marked14Mar2024,69pages. Actual main text ends on28 before References y638.557, clipped632. The outline has stale/displaced labels and page references; actual bold headings establish exactly six Theorems. Proposition2.5 and Corollary2.6 are not added as Theorems. Appendix bodies begin33 and remain excluded."
+    },
+    {
+      "issue_id": "asympcs-versus-coverage",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Definition2.1 is almost-sure relative-width approximation to an existing valid CS with the same center. Definition2.7 instead describes limiting all-future coverage as the starting index m increases. Neither definition is substituted for the other; T2.8 additionally proves an ordinary limit equality. Separate marginal-in-time coverage is insufficient."
+    },
+    {
+      "issue_id": "zero-width-and-degenerate-variance",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 8,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Definition2.1 requires strictly positive bounds at every time. T2.2 assumes finite variance without explicitly excluding zero population variance, and its empirical variance is zero at t=1. Rho_m also divides by the variance estimate at m. No initial padding, start-time or degenerate-case convention is printed in these statements; preserve and flag rather than silently correcting them."
+    },
+    {
+      "issue_id": "tuning-domain-and-data-dependence",
+      "evidence": [
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The numerator -2log(alpha)+log(-2log(alpha))+1 in rho_m can be negative for alpha sufficiently close to1, while the source generally allows alpha∈(0,1). A further domain restriction would be required for that displayed square root to be real. Rho_m also depends on estimated variance at the first peeking time, so it must not be replaced by arbitrary fixed rho in the sharp-coverage theorem."
+    },
+    {
+      "issue_id": "variance-divergence-wording",
+      "evidence": [
+        {
+          "page": 10,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The prose before L1 says the average variance either does not vanish or does so superlinearly. Formal L1 requires V_t=t times average variance to diverge; surrounding explanation says the average does not vanish faster than1/t, with an omega_a.s.(1/t) formula. Preserve the original wording and use the explicit formal condition, without rewriting it."
+    },
+    {
+      "issue_id": "almost-sure-rate-convention",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 18,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 19,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 20,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 21,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The source globally suppresses a.s. on little-o/big-O. Later nuisance convergence, product rates and uniform/average conditions inherit almost-sure meaning. Do not downgrade them to in-probability rates because L2(P) norms themselves resemble mean-square convergence."
+    },
+    {
+      "issue_id": "true-versus-estimated-overlap",
+      "evidence": [
+        {
+          "page": 18,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 19,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 21,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "T3.1 explicitly bounds the true propensity away from0 and1, and T3.2 inherits this common setup while estimating propensity. The main-text statements do not separately bound or clip estimated propensities, though they enter denominators. T3.3 does not explicitly import T3.1 overlap; retain named causal positivity and its own moment hypotheses without inventing a stronger uniform-overlap premise."
+    },
+    {
+      "issue_id": "identification-and-regression-source-detail",
+      "evidence": [
+        {
+          "page": 16,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 17,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 18,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 20,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Consistency, positivity and exchangeability are named and cited rather than formally expanded in the main text. Mu^a is described as a conditional mean function and used in the identified ATE/EIF formulas, but a separate explicit conditional-regression equality is not printed in these passages. Preserve this source limitation instead of synthesizing an original definition or reading an appendix."
+    },
+    {
+      "issue_id": "uncentered-and-misspecified-influence",
+      "evidence": [
+        {
+          "page": 17,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 18,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 19,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 22,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Formula24 is explicitly an uncentered EIF; subtracting psi would change the AIPW estimator25. Formula27 uses potentially misspecified regression limits with the true propensity. T3.1 allows such limits, whereas T3.2 requires consistent nuisance functions and convergence to the efficient f. Its common-setup reference does not reimpose known propensity."
+    },
+    {
+      "issue_id": "fold-size-and-variance-conventions",
+      "evidence": [
+        {
+          "page": 16,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 17,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The infinity-subscript split streams are counted at current time t by an explicit convention. Early times may leave a fold empty; the source does not define all estimator/variance values then. Variance26 averages two fold variances equally, not by random fold size, and the within-fold normalization is named sample variance rather than reprinted. Preserve these choices and ambiguities."
+    },
+    {
+      "issue_id": "theorem-three-three-variance",
+      "evidence": [
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 17,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 21,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "T3.3 prints varhat_t(bar-f), not varhat_t(hat-f). The former is not separately defined in the main text as an observable statistic; Corollary2.6 uses sample variance while26 defines a cross-fit fitted variance. Preserve the printed expression and unresolved interpretation. No fabricated equivalence or direct D22 dependency is introduced for T3.3."
+    },
+    {
+      "issue_id": "time-varying-regressions-and-effects",
+      "evidence": [
+        {
+          "page": 20,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 21,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Section3.4 permits changing data distributions and expected treatment effects but writes common functions mu^a andpi without time subscripts. Their applicability across all t is not fully spelled out beyond the displayed conditions. The term individual treatment effects denotes expected Y_t^1-Y_t^0 in the source, not realized unit-level effects. Uniformity over all i in ATE1 differs from the average-product condition ATE2."
+    },
+    {
+      "issue_id": "corollary-import-and-pointwise-shortcut",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 21,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "T3.3 imports all Corollary2.6 assumptions after substituting bar-f(Z_t): L1, positive-delta Lyapunov summability, squared-observation moments, mean growth and relative mean variation. The following informal statement that pointwise-in-i product rates imply the averaged ATE2 rate needs uniform control and is not used as a replacement for the actual average condition."
+    },
+    {
+      "issue_id": "abstract-boundary-and-ordered-time",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 9,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 10,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The abstract theorem permits general totally ordered infinite time sets. Meaning of t→infinity, existence of a cofinal sequence and simultaneous-event measurability require ordinary analytical conventions not fully specified for arbitrary ordered sets. Preserve the source generality. Hatted approximating boundaries, unadorned approximate widths and starred valid widths are distinct objects."
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2103.06476v9",
+    "version": "arXiv:2103.06476v9, marked 14 Mar 2024",
+    "pdf_sha256": "849a1093c30a5bbbf5a48b96910096a35d30ae37c622b8fe2e5ddf3cacee9318",
+    "pdf_pages": 69,
+    "main_text_last_pdf_page": 28
+  },
+  "recorded_checks": [
+    "Exactly six complete actual main-text Theorems2.2,2.4,2.8,3.1,3.2,3.3, independently enumerated by bold headings and compared visually. Stale outline theorem labels do not promote Proposition2.5 or Corollary2.6. Main text ends onpage28 before references; appendix bodies are excluded.",
+    "Twenty-eight source entries and twelve auxiliary passages preserve AsympCS and coverage definitions, four coupling conditions, conditional variance and moment conditions, later-start tuning/boundary, every imported Corollary2.6 hypothesis, causal estimands, identification assumptions, permanent sample splitting, nuisance fitting, cross-fit estimator/variance and moving-effect conditions.",
+    "Independent reconstruction verifies41 direct uses and53 related connections. T2.2 does not inherit Gaussian/sub-Gaussian or higher-moment proof premises. Abstract T2.4 remains independent of specific Gaussian boundaries. T2.8 uses conditional-moment conditions and start-specific tuning, not independent-data Corollary2.6.",
+    "T3.2 preserves common identification/overlap/cross-fitting but changes known propensity and replaces misspecified limits with consistent nuisance functions and the efficientf. T3.3 retains every Corollary2.6 assumption under substitution, all-index uniformity inATE1 and average products inATE2, and full cross-fitting. Its bar-f variance notation remains unresolved rather than equated to fitted variance26.",
+    "Fourteen notes preserve zero-width/degenerate variance, tuning square-root domain, the superlinearly wording, almost-sure rates, estimated-propensity denominators, named-only causal assumptions, uncentered influence functions, fold-size/variance conventions, oracle variance notation and time-varying function conventions. Source gaps are not silently repaired.",
+    "Every source entry has literal natural-language author terminology, original source kind and meaningful highlights. All53 related-theorem links have valid local paths and source-specific explanations. No mathlib or proof-correctness verdict is supplied.",
+    "All six contentJSON files reproduce byte for byte in a fresh empty directory. Seven retained scripts cover inventory, extraction, context, finalization, rebuilding and independent review. Rebuilding is not represented as a new semantic source review."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "d9dec6c878aa780ac3569b075b01b56ea2df09b247aa8c5b6dc06627f0c9b93f"
+}

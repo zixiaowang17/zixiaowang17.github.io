@@ -1,0 +1,67 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i02-p0441",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T08:09:00.265478+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i02-p0441/T4.2",
+      "aos-2024-v52-i02-p0441/T6.9"
+    ],
+    "method": "Search main pages 1-25 and independently enumerate bold Theorem headings from PDF font spans. The only printed environments are Theorem 4.2 on page 11 and Theorem 6.9 on page 20; neither spans a page boundary. Main references end on page 25, before the supplementary title on page 26.",
+    "printed_label_check": [
+      [
+        11,
+        "4.2"
+      ],
+      [
+        20,
+        "6.9"
+      ]
+    ],
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "supplementary_material_used": false
+  },
+  "counts": {
+    "theorems": 2,
+    "interfaces": 12,
+    "source_members": 12,
+    "direct_theorem_uses": 14,
+    "related_theorem_connections": 15,
+    "unranked_auxiliary_passages": 11
+  },
+  "source_notes": [
+    "This census is specific to the February 2024 preprint, not an assertion of equality with the journal typesetting.",
+    "The theorem in the proof-outline section is included under the all-Theorems policy. Its supporting propositions, corollaries and lemmas are not separate theorem inventory entries.",
+    "The source uses a superscript epsilon for the robust ERM coefficient vector. It uses a superscript star for the scalar root definition and a subscript star for the root in the final risk formula.",
+    "The source limitations include Phi_B missing absolute-value bars, unspecified scalar boundary extensions, root-domain notation, signal-regime scope, and independence statements not explicitly supplied in the main-text definitions.",
+    "No supplementary definitions or proof content is used in the census. The main-text notice and title crop document the supplement boundary and its differently worded title."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2201.05149v2",
+    "version": "arXiv:2201.05149v2",
+    "pdf_sha256": "fa31844f7066492184b72a2ce37b41161361efde9ae529442527b0abf7961654",
+    "pdf_pages": 86,
+    "main_text_last_pdf_page": 25
+  },
+  "recorded_checks": [
+    "Both complete original theorem statements remain unchanged from the source-reviewed inventory, with its SHA-256 pinned by the final census.",
+    "PDF title, authors, arXiv stamp, page count and SHA-256 match the pinned provenance. Bold-heading enumeration independently confirms both printed theorem labels and their main-text pages.",
+    "Theorem 4.2 retains the complete scalar objective, nested supremum, indicator, root equation, saddle-solution assertion, risk formula and probability-scope sentence. The source root-star positions and nonnegative optimization domain are preserved.",
+    "Theorem 6.9 retains both positive-penalty objectives and the iff probability-limit conclusion. Its Phi_B formula lacks the absolute residual bars, as confirmed in the source crop.",
+    "All twelve interface records and eleven auxiliary source passages were reviewed against main-text pages. The activation residual coefficient square root and J matrix formula were checked visually.",
+    "The finalizer derives fourteen direct uses and fifteen related-theorem connections. A separate validator process accepts the original-statement handoff, graph, metrics, keywords, highlights and explanations.",
+    "Only the data model, random features and shifted activation are shared between the two theorem dependency closures. Theorem 4.2 does not acquire the event E_W, J, Gaussian surrogate features or proof-specific constraint sets.",
+    "Theorem 6.9 includes its explicit weight-matrix event and its section-wide dimensional limit convention. Its signal-normalization scope is recorded as a source limitation rather than silently importing Assumption 1(b).",
+    "The nested scalar optimization variables and both Phi quantities remain inline definitions in their original theorem records; no synthetic definition or proof theorem was substituted for them.",
+    "Every interface has literal natural-language source keywords, matching meaning-bearing selectors, and a source-backed explanation for every related theorem. Mathematical fragments have balanced braces."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "724f05c2539f0ffbcc804de4a515d5a1e62fb40fb7d83bd85347057c7214f488"
+}

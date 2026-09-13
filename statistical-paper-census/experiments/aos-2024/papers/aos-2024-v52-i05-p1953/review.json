@@ -1,0 +1,144 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i05-p1953",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-10T15:36:51.917095+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i05-p1953/T1.3"
+    ],
+    "printed_label_check": [
+      [
+        4,
+        "1.3"
+      ]
+    ],
+    "method": "Independent bold-font enumeration and visual comparison of the complete original Theorem 1.3.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 1,
+    "interfaces": 4,
+    "source_members": 4,
+    "direct_theorem_uses": 4,
+    "related_theorem_connections": 4,
+    "unranked_auxiliary_passages": 4
+  },
+  "source_notes": [
+    {
+      "issue_id": "slash-cutoff",
+      "description": "The theorem prints eta<=1/C kappa_4^4 without denominator parentheses. Preserve that typography. The proof on page 26 explicitly says eta*kappa_4^4 must be small, supporting the reciprocal-of-product interpretation; this interpretation is separate from the quotation.",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Theorem 1.3 cutoff"
+        },
+        {
+          "page": 26,
+          "location": "Opening paragraph of its proof"
+        }
+      ]
+    },
+    {
+      "issue_id": "non-null-covariance",
+      "description": "Non-null means nonzero covariance, not positive definite. Singular nonzero covariance is not excluded. The moment supremum restricts to directions with v-transpose Sigma v=1, and the stable-rank denominator is nonzero.",
+      "evidence": [
+        {
+          "page": 3,
+          "location": "Assumption 1.2"
+        },
+        {
+          "page": 8,
+          "location": "Stable rank"
+        }
+      ]
+    },
+    {
+      "issue_id": "moment-constant-square",
+      "description": "The formula defines kappa_p as a p-th root of a standardized moment; the following prose calls kappa_p squared the hypercontractivity constant. These are not interchangeable numbers.",
+      "evidence": [
+        {
+          "page": 3,
+          "location": "Moment definition and adjacent prose"
+        }
+      ]
+    },
+    {
+      "issue_id": "existential-estimator",
+      "description": "Theorem 1.3 binds a measurable PSD-valued estimator depending on alpha, eta and n. The trimmed estimates and their selection rule implement the proof; they are not additional statement dependencies or assumptions about an estimator supplied to the theorem.",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Theorem 1.3"
+        },
+        {
+          "page": 26,
+          "location": "Proof of Theorem 1.3"
+        }
+      ]
+    },
+    {
+      "issue_id": "sample-size-wording",
+      "description": "The theorem states n>=C(r(Sigma)+log(2/alpha)) and says only that a constant C>0 exists. The proof later uses a sufficient threshold involving D*kappa_p^p. This census preserves the theorem exactly and does not add a moment-dependent factor or certify that the proof establishes the printed threshold.",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Printed sample-size threshold"
+        },
+        {
+          "page": 26,
+          "location": "Temporary k-star construction"
+        }
+      ]
+    },
+    {
+      "issue_id": "result-2-2-label",
+      "description": "Several main-text citations say Theorem 2.2, but the actual heading is Proposition 2.2. It is excluded by the printed-label inventory rule, and its PAC-Bayesian definitions are proof-only for Theorem 1.3.",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Citation to Theorem 2.2"
+        },
+        {
+          "page": 10,
+          "location": "Proposition 2.2 heading"
+        }
+      ]
+    },
+    {
+      "issue_id": "appendix-variant",
+      "description": "The paragraph after Theorem 1.3 mentions an Appendix D weak-moment variant. It is not a main-text Theorem environment, and the appendix body is excluded.",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Appendix D reference after the theorem"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2209.13485v2",
+    "version": "arXiv:2209.13485v2; arXiv stamp 25 Mar 2024",
+    "pdf_sha256": "c202c41ab1db9c6fc2e0ce713d96dabe773f2fd0a56a792a385538373b3a29cf",
+    "pdf_pages": 34,
+    "main_text_last_pdf_page": 26
+  },
+  "recorded_checks": [
+    "One complete main-text Theorem, 1.3, on page 4. All main-text pages 1-26 were inspected for actual result headings. Proposition 2.2 is excluded despite prose citations calling it Theorem. The main text ends on page 26; the Appendix begins on page 27 and no appendix body is used.",
+    "Four separate entries retain the population covariance, full Assumption 1.2, its embedded moment-constant definition, and the trace-to-operator-norm stable rank. The complete assumption and its separately indexed formula are both preserved; the extraction does not rewrite or combine their definitions. Four auxiliary passages supply matrix, norm, trace, finite-set and contamination context.",
+    "Independent reconstruction confirms four direct uses and four related connections. Assumption 1.2 uses the covariance and moment constant; the moment constant uses the covariance; the generic stable rank does not depend on the sampling model. The existentially bound estimator does not import its proof construction or PAC-Bayesian machinery into the statement graph.",
+    "Visual and font-span comparison confirms the sans-serif estimator with a hat and subscript star, two separate square-root terms, kappa_4 squared versus kappa_p squared, and eta exponent 1-2/p. The moment directions have unit population variance, not unit Euclidean norm. Nonzero covariance is not strengthened to positive definiteness.",
+    "The contamination mechanism replaces at most eta*n observations; no iid or independence condition is added to Y. The theorem tightens eta<1 to eta<1/2. Kappa_4 is the exponent-four instance of the same moment definition. Original slash notation and the printed sample-size threshold are preserved, with proof-text differences recorded separately rather than silently corrected.",
+    "Every entry has an original-source natural-language term, an exact source label or formula selector, and an explanation naming the corresponding object in Theorem 1.3. The moment naming context distinguishes kappa_p from the square called a hypercontractivity constant. Stable rank retains the paper-specific trace ratio.",
+    "Six content artifacts reproduce byte-for-byte from retained per-paper scripts. Independent checks preserve the reviewed content hashes and source-specific graph. A script rerun is neither a new semantic source review nor a proof certificate."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "cfe9f110f88ebdc7b6043fdbabf68291a20b125f36ee749237ac97d1fe7e1a54"
+}

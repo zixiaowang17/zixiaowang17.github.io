@@ -1,0 +1,59 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i01-p0285",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T06:52:54.233114+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i01-p0285/T2.4",
+      "aos-2024-v52-i01-p0285/T2.5",
+      "aos-2024-v52-i01-p0285/T3.2"
+    ],
+    "method": "Enumerate printed main-text Theorems on pages 1-19, using the outline and heading-only crop to bound the appendices beginning on page 20. Visually verify complete statements 2.4, 2.5 and 3.2 on pages 6, 7 and 11.",
+    "excluded_result_types": [
+      "Definition",
+      "Proposition",
+      "Corollary"
+    ],
+    "supplementary_material_used": false
+  },
+  "counts": {
+    "theorems": 3,
+    "interfaces": 14,
+    "source_members": 14,
+    "direct_theorem_uses": 12,
+    "related_theorem_connections": 21,
+    "unranked_auxiliary_passages": 4
+  },
+  "source_notes": [
+    "The inspected source is arXiv:2201.01036v1, stamped 4 January 2022. Its title and authors match the corpus entry. The census is explicitly version-specific and does not assert equality with the later 2024 publication.",
+    "The PDF and its hash are retained in the external source cache; repository evidence contains only main-text extracts, inspected images, provenance and the appendix-heading crop.",
+    "Nonzero coefficient groups exclude the zero class. Group count and support size are distinct, and the feasible problem gives upper bounds rather than exact counts.",
+    "Grouping sensitivity measures prediction separation per grouping discrepancy. The grouping distance is defined by injections and is not silently symmetrized.",
+    "The minimax ratio r is defined within Theorem 2.5. The post-theorem restricted-eigenvalue conjecture is not imposed as a hypothesis.",
+    "Algorithm 2 uses a general convex lower-bounded objective and set-valued projection. Theorem 3.2 concerns its infinite sequence and limit c, not convergence to a specified global minimizer.",
+    "Potential nonunique or unattained minima, oracle group-collapse discrepancies, arbitrary initialization, stopping-rule conventions and denominator edge cases are retained as explicit unresolved source details.",
+    "Screening, CoSaMP, MIO formulations and proof-only stationary-point results are not counted as prerequisites of these theorem statements.",
+    "Registered-source revalidation restored the omitted article in D2: Define the parameter space (PDF page 5). All theorem statements and dependencies are unchanged. The prior artifacts and scripts are archived under review-history/before-registered-source-review; the correction is recorded in source-transcription-corrections.json."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2201.01036v1",
+    "version": "arXiv:2201.01036v1",
+    "pdf_sha256": "86f5c1d84076a2f712856aca7b818569180f3701b882efa75eb4ca865a3eff5e",
+    "pdf_pages": 31,
+    "main_text_last_pdf_page": 19
+  },
+  "recorded_checks": [
+    "All three complete theorem statements remain identical to the separately validated and source-reviewed inventory.",
+    "All 14 source interfaces and four auxiliary passages were checked against the pinned main-text PDF, including grouping set operations, optimization constraints and Algorithm 2.",
+    "The finalizer derived the same-paper graph, 12 direct uses and 21 related-theorem connections. A separate validator process accepted the census and its pinned inventory.",
+    "The Gaussian regression model and grouping-risk definitions reach only the statistical Theorems 2.4 and 2.5. The general convex objective, projection and warm-start algorithm reach only Theorem 3.2.",
+    "The common feasible coefficient space reaches all three theorems; no path imports a true coefficient, Gaussian noise or grouping sensitivity into the algorithm-convergence theorem.",
+    "The global L0-Fusion and oracle least-squares estimators reach only Theorem 2.4. The separated/balanced and sensitivity-restricted subclasses reach only Theorem 2.5.",
+    "Every member has a source-body or source-label highlight, and every selector matches its source or a linked same-paper theorem. Extracted mathematical fragments have balanced braces.",
+    "The main-text projection definition is complete as a set-valued argmin. The appendix-only computational subroutine remains unexpanded."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "689bd3589b56fb700ae1f9f64331ea50f9346335b31d3da422f24d11519dca35"
+}

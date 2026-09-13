@@ -1,0 +1,62 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i01-p0184",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T06:14:35.484708+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i01-p0184/T1",
+      "aos-2024-v52-i01-p0184/T2",
+      "aos-2024-v52-i01-p0184/T3",
+      "aos-2024-v52-i01-p0184/T4",
+      "aos-2024-v52-i01-p0184/T5"
+    ],
+    "method": "Numbered Theorem paragraph starts enumerated across all 23 pages and checked against the five visual source statements. Theorem 3 spans pages 9-10 and Theorem 5 spans pages 12-13. Discussion/funding/supplement notice/references occupy pages 21-23; no appendix body is embedded.",
+    "excluded_result_types": [
+      "Proposition",
+      "Lemma",
+      "Corollary"
+    ],
+    "supplementary_material_used": false
+  },
+  "counts": {
+    "theorems": 5,
+    "interfaces": 18,
+    "source_members": 18,
+    "direct_theorem_uses": 25,
+    "related_theorem_connections": 55,
+    "unranked_auxiliary_passages": 4
+  },
+  "source_notes": [
+    "The PDF is the cached PMC11064990 author manuscript, with creation metadata dated 29 November 2023. Its bytes, page count and title/authors match the prior download manifest. It is not assumed to match the published pagination.",
+    "Theorem 3 includes its page-10 continuation stating that the constant is independent of n, p and q. Theorem 5 retains every integral and all three subparts, including its printed second-coordinate range ending at p.",
+    "The definition of the independence null concerns the two full vectors. No within-vector independence assumption is invented.",
+    "The order-five Hoeffding, order-six Blum-Kiefer-Rosenblatt and order-four Bergsma-Dassios-Yanagimoto kernels remain separate. Their adjustment factors are respectively 40, 60 and 2/3.",
+    "Where a source object has only a symbolic name, the adjacent author wording or section heading supplies the indexing term. Variance, Asymptotic analysis under the null and Normal approximation index the original auxiliary-function passages; they are not asserted as new mathematical definitions or source-given names for A, V1/V2 or V.",
+    "The original psi, omega and permutation definitions are saved as unranked local auxiliaries with explicit use mappings. These mappings preserve dependencies without inventing natural-language names for the author's symbolic helpers.",
+    "The null variance passage and the local-alternative variance scale remain distinct. No null product-of-marginal-variances identity is imposed on dependent alternatives.",
+    "Theorems 2 and 3 inherit the conditions of Theorem 1, rather than its conclusion as a premise. Theorem 4 uses (8)-(10), not the illustrative contamination model or Proposition 4.",
+    "Theorem 5 defines M_h within its statement. Those conclusions are not turned into assumed APIs, and the subsequent approximate power expression and relative-efficiency propositions are not counted as Theorems.",
+    "No supplementary proof, computational shortcut, covariance-structure sufficient condition, simulation or distance-correlation comparison is imported as an additional statement requirement.",
+    "Registered-source revalidation restored the printed repeated word in D17. See source-transcription-corrections.json; mathematical formulas, theorem statements and dependency relationships are unchanged."
+  ],
+  "source": {
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11064990/pdf/",
+    "version": "PMC11064990 author manuscript; PDF created 2023-11-29",
+    "pdf_sha256": "7ec9d3f7bef00582b4790863c99d76c3d61f56d92373dfb64620a1793a5e7f7c",
+    "pdf_pages": 23,
+    "main_text_last_pdf_page": 23
+  },
+  "recorded_checks": [
+    "The five original Theorems were checked against their complete PDF statements and validated before interface extraction. Their inventory hash remains unchanged.",
+    "All 18 source entries and four unranked auxiliary passages were checked against the main-text PDF, including source indices, signs and scaling factors.",
+    "The finalizer derived counts and local dependency paths. An independent validator process accepted the completed census and its pinned source inventory.",
+    "All 25 direct uses and 55 related-theorem paths were reviewed against the statements and their section conventions.",
+    "The independence null and Assumption 1 reach only Theorems 1-3. Conditions (8)-(10) reach only Theorem 4. Theorem 5 has the three explicit rank kernels without null or asymptotic assumptions.",
+    "Every source member has a source-body or source-label highlight. Every selector is present in that source or a linked same-paper theorem.",
+    "Four auxiliary definitions retain their exact formulas and derived related-theorem IDs; none is replaced by an external standard convention."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "cd7d9660c516155c0ba68f6bfeb392c559709c23720ba664cdd4511a5007078a"
+}

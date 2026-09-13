@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "checked_at": "2026-09-12T21:34:45.529090+00:00",
+  "counts": {
+    "small_adaptation": 1790,
+    "use_mathlib": 542,
+    "new_infrastructure": 154
+  },
+  "audit_sha256": "fc9e73119d1e44059037216fb4fe8a127dd14fa5d02c69382d0d4b4b8d8d6580",
+  "source_audit_sha256": "5117490757f3fa5734801750fd3b676100ab7c3d14e48bb044e831a8340a2667",
+  "policy": {
+    "id": "mathematical-work-v2",
+    "use_mathlib": "An inspected interface, or direct composition of existing operations, expresses the archived interface with matching meaning, domains and assumptions.",
+    "small_adaptation": "Existing mathematics supports the interface; a thin wrapper, representation conversion, bounded convention clarification or local connecting proof remains.",
+    "new_infrastructure": "A substantive construction, essential theory, or core algorithm required by the interface remains to be developed or supplied.",
+    "scope": "Assess the archived interface and its variants, not the difficulty of proving every related paper theorem. Do not add unrequested structure laws to a scalar definition.",
+    "boundary": "Classify by missing mathematical content, not code length, a missing same-name API, or legacy availability categories.",
+    "method": "Reassessment of the completed declaration, variant and gap evidence, using explicit sufficiency/expression criteria and reviewed construction exceptions. These are planning estimates, not compiled Lean implementations or fresh searches.",
+    "limits": "Retain source caveats and domain obligations. Yellow is not an absence claim; red must identify a substantive missing construction. Unsearched or indeterminate work stays pending in working data."
+  },
+  "checks": [
+    "Exactly one three-tier assessment for every interface",
+    "Original research, variants, searches, links and census preserved",
+    "Each assessment retains comparison evidence, available components, remaining work and scope",
+    "Prior-review hashes and per-variant coverage agree",
+    "Legacy research categories are not mechanically renamed"
+  ],
+  "limits": "Consistency and provenance validation only. These are planning estimates from completed pinned evidence, not fresh searches or compiled proof-cost guarantees."
+}

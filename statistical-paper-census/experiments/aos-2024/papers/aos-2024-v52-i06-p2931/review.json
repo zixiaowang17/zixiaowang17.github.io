@@ -1,0 +1,361 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i06-p2931",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-11T05:48:24.866917+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i06-p2931/T1",
+      "aos-2024-v52-i06-p2931/T2",
+      "aos-2024-v52-i06-p2931/T3",
+      "aos-2024-v52-i06-p2931/T4",
+      "aos-2024-v52-i06-p2931/T5",
+      "aos-2024-v52-i06-p2931/T6"
+    ],
+    "printed_label_check": [
+      [
+        8,
+        "1"
+      ],
+      [
+        10,
+        "2"
+      ],
+      [
+        12,
+        "3"
+      ],
+      [
+        13,
+        "4"
+      ],
+      [
+        15,
+        "5"
+      ],
+      [
+        17,
+        "6"
+      ]
+    ],
+    "method": "Independent uppercase small-cap heading enumeration across main-text pages 1–24 and visual comparison of all six complete statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 6,
+    "interfaces": 39,
+    "source_members": 39,
+    "direct_theorem_uses": 77,
+    "related_theorem_connections": 143,
+    "unranked_auxiliary_passages": 9
+  },
+  "source_notes": [
+    {
+      "issue_id": "source-01",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 6,
+          "location": "Original main-text convention"
+        }
+      ],
+      "note": "Page 4 defines J=d^{-1}*1_d*1_d^T, but the right-centering matrix in Theta_hat_t*(I-J) must act on K client columns. Page 6 explicitly uses K^{-1}*1_K*1_K^T. Preserve both source passages and record the dimension mismatch; do not silently replace d by K inside the quoted definition."
+    },
+    {
+      "issue_id": "source-02",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 8,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 9,
+          "location": "Original main-text convention"
+        }
+      ],
+      "note": "Assumption 2.1 permits rho=0, and Theorem 1 evaluates delta at rho^(1/tau) and its square, while its printed delta definition says a in (0,1). The following remark uses the natural a=0 interpretation. Preserve the open domain and document that extension separately."
+    },
+    {
+      "issue_id": "source-03",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 8,
+          "location": "Original main-text convention"
+        }
+      ],
+      "note": "Theorem 1 at t=tau invokes eta_floor((t-tau+1)/2)=eta_0 although Assumption 2.2 introduces the sequence for t>=1. An empty sum occurs for tau=1. Record these finite-index conventions rather than silently adding values."
+    },
+    {
+      "issue_id": "source-04",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 9,
+          "location": "Original main-text convention"
+        }
+      ],
+      "note": "The remark after Theorem 1 changes the order of delta arguments and calls it (14), although equation (14) is the curvature condition. Keep the theorem formula delta(t,a,tau) and distinguish the remark typo."
+    },
+    {
+      "issue_id": "source-05",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 10,
+          "location": "Original main-text convention"
+        }
+      ],
+      "note": "Assumption 3.4(ii) prints phi triple-prime at t and phi double-prime at u without a full relation or quantifier for t; it also omits an absolute value on the third derivative. Preserve the original condition and record its ambiguity rather than substituting a standard self-concordance definition."
+    },
+    {
+      "issue_id": "source-06",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 10,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 15,
+          "location": "Original main-text convention"
+        }
+      ],
+      "note": "Assumption 3.4 has alternative strong-convexity and bounded-domain generalized self-concordance cases. Do not require the bounded-domain assumptions jointly with the positive-mu case. Theorem 5 separately requires a bounded domain in all cases."
+    },
+    {
+      "issue_id": "source-07",
+      "evidence": [
+        {
+          "page": 10,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 12,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 13,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 17,
+          "location": "Original main-text convention"
+        }
+      ],
+      "note": "Theorems 3, 4 and 6 refer to assumptions of Theorem 2. Resolve the common assumptions and retain its part-(ii) conditional step-size restrictions as referenced context; inspect the source carefully before deciding their scope. Do not import its fixed-K almost-sure conclusion as a premise."
+    },
+    {
+      "issue_id": "source-08",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 11,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 15,
+          "location": "Original main-text convention"
+        }
+      ],
+      "note": "Theorem 5 explicitly uses v=2 and lists 3.3–3.4 without 3.2. It nevertheless assumes 4.1, described by the author as stronger smoothness. Preserve the printed list; do not insert an unstated numbered assumption merely to match the other theorems."
+    },
+    {
+      "issue_id": "source-09",
+      "evidence": [
+        {
+          "page": 3,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 5,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 12,
+          "location": "Original main-text convention"
+        }
+      ],
+      "note": "Page 3 specifies IID observations within each client, while the covariance aggregation on page 12 uses the no-cross-client-covariance formula. Check whether cross-client independence is explicitly stated elsewhere in the main text; record any missing joint-sampling premise rather than inventing it."
+    },
+    {
+      "issue_id": "source-10",
+      "evidence": [
+        {
+          "page": 12,
+          "location": "Original main-text convention"
+        }
+      ],
+      "note": "Assumption 4.2 mixes notation for aggregated noise epsilon(theta) and epsilon(theta;xi^k), though epsilon(theta) itself sums noises from all clients. Retain its original variables and record the binding issue."
+    },
+    {
+      "issue_id": "source-11",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 13,
+          "location": "Original main-text convention"
+        }
+      ],
+      "note": "Equation (22) uses gradients at local estimate theta_hat_t^k and data xi_t^k with t=0..T-1; the update (6) uses theta_hat_(t-1)^k and xi_t^k with t>=1. Retain the original covariance-estimator indexing and inspect the time-zero/data-reuse issue."
+    },
+    {
+      "issue_id": "source-12",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 13,
+          "location": "Original main-text convention"
+        }
+      ],
+      "note": "The trailing-window Hessian estimator (24) uses a(T) observations but only states that a is positive integer-valued and nondecreasing; a(T)<=T is not explicit. Its local temporal mean also reaches index zero when the window spans all observations. Preserve the formula and note any undefined early indices."
+    },
+    {
+      "issue_id": "source-13",
+      "evidence": [
+        {
+          "page": 15,
+          "location": "Original main-text convention"
+        }
+      ],
+      "note": "In (31), r1+r2+r3=T is imposed, but for alpha=1 the printed r1=T^(1-zeta)/C2 and r2=T/C3, r3=T/C4 with fixed constants cannot sum to T for all T. Integer rounding is also unspecified. Preserve the original formulas without silently changing constants or a segment."
+    },
+    {
+      "issue_id": "source-14",
+      "evidence": [
+        {
+          "page": 15,
+          "location": "Original main-text convention"
+        }
+      ],
+      "note": "Thresholded V clips eigenvalues to [delta,1/delta] for a small fixed delta>0. The source does not explicitly state a relation between that interval and the limiting spectrum in the theorem. Record that limitation rather than assuming clipping becomes asymptotically inactive."
+    },
+    {
+      "issue_id": "source-15",
+      "evidence": [
+        {
+          "page": 15,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 16,
+          "location": "Original main-text convention"
+        }
+      ],
+      "note": "The regression Hessian estimator Z*V^{-1} need not be symmetric at finite T. The later sandwich formula repeats its inverse without a transpose, as printed. Keep original formulas and distinguish an estimator definition from a claim of finite-sample symmetry."
+    },
+    {
+      "issue_id": "source-16",
+      "evidence": [
+        {
+          "page": 3,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 16,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 17,
+          "location": "Original main-text convention"
+        }
+      ],
+      "note": "Equation (33) uses lowercase f_k with a data argument, but Theorem 6 prints uppercase F_k(theta_K*;xi_t^k), although F_k was defined as a population risk with only a parameter argument. Preserve the printed theorem and record the apparent notation error separately."
+    },
+    {
+      "issue_id": "source-17",
+      "evidence": [
+        {
+          "page": 12,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 17,
+          "location": "Original main-text convention"
+        }
+      ],
+      "note": "Theorem 6 expansion has remainder O_p(sqrt(K/T)+1/sqrt(K)); its CLT consequence requires both K and T to diverge. Do not extend it to fixed K based on the PR theorem, which permits fixed K under a different step-size regime."
+    },
+    {
+      "issue_id": "source-18",
+      "evidence": [
+        {
+          "page": 3,
+          "location": "Original main-text convention"
+        },
+        {
+          "page": 24,
+          "location": "Original main-text convention"
+        }
+      ],
+      "note": "The external supplement contains algorithm summaries, proofs and sparse-network variants. Main-text algorithm definitions are available and should be used directly. Do not read supplement bodies or add their results to the main-text theorem inventory."
+    },
+    {
+      "issue_id": "source-19",
+      "evidence": [
+        {
+          "page": 3,
+          "location": "Constrained risk minimizer (2)"
+        },
+        {
+          "page": 12,
+          "location": "Normal approximation (21)"
+        }
+      ],
+      "note": "The target is defined by constrained minimization over closed convex Phi. The main-text definition does not separately state an interior-target or unconstrained-stationarity condition. Preserve the stated asymptotic normality and record this domain issue rather than silently assuming a zero gradient at every constrained minimizer."
+    }
+  ],
+  "source": {
+    "source_url": "https://www.songxichen.com/Uploads/Files/Publication/AOS2452.pdf",
+    "version": "Published version, The Annals of Statistics 52(6), 2024, pp. 2931–2955; DOI 10.1214/24-AOS2452",
+    "pdf_sha256": "1e445bc7a71779b979cd5423ce02150734fc113f22583068f7564734bf080130",
+    "pdf_pages": 25,
+    "main_text_last_pdf_page": 24
+  },
+  "recorded_checks": [
+    "Six original main-text Theorems 1–6 independently enumerated across pages 1–24. All formula constants, subparts, exponent regimes, fixed/growing client qualifications and the continuation of Theorem 4 were visually compared with the published PDF. Lemma 1 and Corollary 1 remain outside the theorem inventory; the external supplement is excluded.",
+    "39 original source entries preserve client/federated risks, weights and target, geometry and network, the full DFL recurrence, three averaging schemes, complete numbered assumptions, consensus/MSE constants, covariance and smooth/regression Hessian estimators, clipping and time segments, and the actual one-step correction. Nine auxiliary passages preserve required contextual bindings and original conventions.",
+    "Independent source-clause reconstruction gives 77 direct uses and 143 related-theorem connections. Theorem 5 retains v=2 and its printed assumption list; it does not acquire stochastic-Hessian Assumption 4.4 or the plug-in estimator. Theorem 6 uses the corrected alpha=1 PR estimator and the plug-in Hessian, without importing the regression estimator or downstream confidence procedure.",
+    "Nineteen source notes retain matrix-dimension conventions, endpoint and time-zero ambiguities, referenced conditional assumptions, derivative-variable and aggregate-noise bindings, cross-client sampling, window/segment and clipping conditions, scalar/matrix Hessian distinctions and the uppercase F_k notation in Theorem 6. Three unresolved source-ambiguity records remain explicit; none is represented as corrected or proven.",
+    "All 39 entries retain literal source keywords, original passage kinds/headings and source-specific selectors. All 143 connections have exact same-paper paths and explanatory source correspondence. Statements and all selectors were checked with the HTML renderer, while source quotations were preserved.",
+    "All six content JSONs reproduce byte for byte in a fresh empty directory. Seven retained scripts keep extraction and independent validation separate. Reproduction and structural checks do not replace the recorded visual source comparison.",
+    "This is a completed review of what the original main text states, not a proof certification. Explicit source ambiguities remain, including how later theorems inherit the conditional hypotheses of Theorem 2(ii). No missing joint-law, interiority, integer-segment, zero-index or inverse convention has been silently supplied."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "ade0aa4b72a3d515e6a31882dba1a9605a385e21508cbafeb0cefeff7d83a70b"
+}

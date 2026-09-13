@@ -1,0 +1,312 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i05-p2375",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-10T19:49:13.436522+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i05-p2375/T1",
+      "aos-2024-v52-i05-p2375/T2",
+      "aos-2024-v52-i05-p2375/T3",
+      "aos-2024-v52-i05-p2375/T4"
+    ],
+    "printed_label_check": [
+      [
+        10,
+        "1"
+      ],
+      [
+        14,
+        "2"
+      ],
+      [
+        18,
+        "3"
+      ],
+      [
+        23,
+        "4"
+      ]
+    ],
+    "method": "Independent bold-font heading enumeration and visual comparison of all four complete theorem statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark",
+      "Conjecture"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 4,
+    "interfaces": 25,
+    "source_members": 25,
+    "direct_theorem_uses": 32,
+    "related_theorem_connections": 51,
+    "unranked_auxiliary_passages": 15
+  },
+  "source_notes": [
+    {
+      "issue_id": "short-range-tail-summand",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Remark2 prints sum from l=k to infinity of delta_m(k), whereas Definition1 uses delta_m(l). Preserve both. The explicit beta=0 specialization identifies the intended short-range condition; the literal constant-summand display is inconsistent except in degenerate cases."
+    },
+    {
+      "issue_id": "gaussian-covariance-lag-indices",
+      "evidence": [
+        {
+          "page": 15,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 19,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorem2(i) prints unbound j in both covariance factors instead of j1 and j2. The intended two-lag covariance is shown correctly in Lemma4(i), equation(30). No repair is inserted into the original theorem statement or the CDF definition that refers to it."
+    },
+    {
+      "issue_id": "undefined-ar-centering",
+      "evidence": [
+        {
+          "page": 18,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Equation(27) prints sigma_k^(i), without a definition of this time-indexed quantity in the main text. Weak stationarity suggests E X_i X_(i−k)=sigma_k. Preserve the printed superscript and record this inferred interpretation separately; do not pretend a source definition was found."
+    },
+    {
+      "issue_id": "stationarity-and-triangular-arrays",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 7,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 14,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 18,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The causal construction allows independent nonidentically distributed innovations and functions that vary with i,j,T. Theorem1 need not be weakly stationary. Section3 assumes weak stationarity for autocovariance/autocorrelation inference, and Theorem3 explicitly assumes it; this is not strict stationarity. Parameters and Gaussian approximants may change with T."
+    },
+    {
+      "issue_id": "branchwise-lemma-four-import",
+      "evidence": [
+        {
+          "page": 19,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 20,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 23,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Read Theorem4’s Lemma4 reference branchwise: common kernel/dependence assumptions plus the corresponding (i),(ii),(iii) premise. Importing all three branches simultaneously would spuriously require an AR model/order in pure autocovariance inference and impose growing-lag constraints on the fixed-order AR result."
+    },
+    {
+      "issue_id": "definition-reference-not-whole-lemma",
+      "evidence": [
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 23,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorem4 says define v_T as in Lemma3. This imports the three-case numerical sequence and its parameter alpha=alpha_X, not Lemma3’s whole-Theorem1 assumption reference or its covariance estimator conclusion."
+    },
+    {
+      "issue_id": "ratio-and-sample-solution-domains",
+      "evidence": [
+        {
+          "page": 14,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 16,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 22,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The source gives no explicit value for sample or bootstrap correlations if their lag-zero denominator vanishes. Population autocorrelation inference assumes sigma_0>c. The original sample Yule–Walker definition specifies solving a system; only the bootstrap definition explicitly uses a Moore–Penrose inverse. Domain conventions remain separate from source transcriptions."
+    },
+    {
+      "issue_id": "ar-interpretation-and-order",
+      "evidence": [
+        {
+          "page": 16,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 17,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 18,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 23,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Definition3 concerns general-process Yule–Walker coefficients, not a linear AR data-generating restriction. Theorem3 has positive integer p=O(1); Theorem4(iii) prints positive number but inherits that integer setting. A strictly positive spectral density is a sufficient condition in prose, not an extra theorem premise."
+    },
+    {
+      "issue_id": "symbol-overloading",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 7,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 18,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 21,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 22,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "d first denotes vector dimension and later maximum lag; e_i is an innovation and later a coordinate vector; B is a growth exponent, an AR derivative matrix, and a bootstrap-replicate count. Alpha is a decay exponent or nominal error probability, depending on context. Z and xi are redefined between theorems; preserve paper-local scope."
+    },
+    {
+      "issue_id": "kernel-normalization-and-psd",
+      "evidence": [
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 21,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Definition2 imposes K(0)=1, not integral K=1. Nonnegative integrable Fourier transform yields positive-semidefinite multiplier covariance. The Gaussian example is optional. Preserve the printed unusual word di-fferentiable without altering its mathematical meaning."
+    },
+    {
+      "issue_id": "bootstrap-laws-and-rates",
+      "evidence": [
+        {
+          "page": 22,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 23,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorem4 bounds conditional Gaussian-bootstrap CDF errors with outer stochastic rates. Only branch(i) gives the explicit sum of sixth-root Op rates; branches(ii),(iii) state op(1). Finite B simulation quantile error is separate, discussed using B→infinity in prose; T4 is not an exact finite-sample coverage theorem."
+    },
+    {
+      "issue_id": "finite-lag-boundary-and-centering",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 14,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 18,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 21,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Observed lag-product sums start at j+1 and have denominator T. Gaussian covariance targets use ideal centered sums over i=1..T of the infinite process. No circular or zero-padded data, sample-mean subtraction, T−j denominator or stationary simplification is silently inserted into Theorem1."
+    },
+    {
+      "issue_id": "nondegeneracy-and-growth-scope",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 14,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 15,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 18,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 23,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Uniform positive lower bounds concern the standard deviation of each normalized centered sum, not merely the variance of X_i. The autocorrelation branch additionally requires sigma_0>c. Keep all five exponent inequalities in(12) and(17), but use(17) only for growing-lag covariance/correlation branches; AR order remains O(1)."
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2110.14067v2",
+    "version": "arXiv:2110.14067v2; 25 Feb 2023",
+    "pdf_sha256": "fe207a49e1348050da5b83e03fbacb2ad8f1beb676ca7ebf1ac395393d57c579",
+    "pdf_pages": 66,
+    "main_text_last_pdf_page": 28
+  },
+  "recorded_checks": [
+    "Four complete main-text Theorems1–4. Theorem1 heading is on page10 and body on11; Theorem2 spans14–15 with two branches; Theorem3 is on18; Theorem4 has all three branches on23. Independent bold-font enumeration excludes citations and Lemmas. Acknowledgement ends28; References start29.",
+    "Twenty-five original source entries preserve moment norms, causal/coupling/short-range definitions, stationary covariance and correlation targets and estimators, general linear combinations, AR Yule–Walker and derivative formulas, the full kernel definition, bandwidth bias sequence, conditional probability, residuals, multipliers, bootstrap statistics and Gaussian CDF targets. Fifteen auxiliary passages preserve branch-specific numerical assumptions and source context.",
+    "Independent graph reconstruction checks32 direct uses and51 related connections. T1 has no stationary covariance requirement. T2 and T3 use their own local linearizations without importing the general T1 combination through a proof relationship. T4 imports Lemma4 branchwise and only the v_T definition from Lemma3. General AR coefficients enter T4 through the sample Yule–Walker estimator.",
+    "Keep all five inequalities in(12) and(17), uniform normalized-sum nondegeneracy, sigma_0>c in the correlation branch, fixed integer p=O(1) and a positive minimum eigenvalue for AR inference. Bootstrap(i) alone has the explicit sixth-root Op rate; (ii) and(iii) give op(1). Exact conditional laws and finite-B empirical quantiles are distinct.",
+    "Thirteen source notes retain the k-versus-l summand in Remark2, repeated unbound j in T2(i) covariance, undefined sigma_k^(i) in(27), triangular-array and stationarity scope, definition-only references, estimator domains, AR interpretation, overloaded symbols, kernel normalization, conditional rates and finite-lag boundaries. These issues are not silently corrected in original statements.",
+    "All25 entries have source-extracted natural-language titles, original source kinds/headings and literal highlights. Keyword combinations keep source definitions unchanged. Every related theorem has an explicit source-backed dependency path and explanation; no generic relationship captions are used.",
+    "All six content JSON files reproduce byte for byte in a fresh directory. Seven saved per-paper scripts include inventory review, extraction, auxiliary context, finalization, rebuild and source review. Frozen hashes prevent later content changes from inheriting this review."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "23cf74976c3b8ec4472b933aeed6025bbcd1d7e660bd41e5fcf880690adc527f"
+}

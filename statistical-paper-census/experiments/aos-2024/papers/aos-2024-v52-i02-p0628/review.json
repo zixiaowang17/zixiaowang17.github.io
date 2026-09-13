@@ -1,0 +1,81 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i02-p0628",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T10:00:11.997076+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i02-p0628/T2.2",
+      "aos-2024-v52-i02-p0628/T2.4",
+      "aos-2024-v52-i02-p0628/T2.5",
+      "aos-2024-v52-i02-p0628/T2.8",
+      "aos-2024-v52-i02-p0628/T3.5"
+    ],
+    "method": "Independent enumeration joins each line’s small-cap THEOREM spans across all 25 main pages and finds exactly labels 2.2,2.4,2.5,2.8,3.5. All statements fit on their cited page. Acknowledgements end page 25; Appendix A begins on a separate page 26.",
+    "printed_label_check": [
+      [
+        8,
+        "2.2"
+      ],
+      [
+        9,
+        "2.4"
+      ],
+      [
+        10,
+        "2.5"
+      ],
+      [
+        12,
+        "2.8"
+      ],
+      [
+        18,
+        "3.5"
+      ]
+    ],
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 5,
+    "interfaces": 26,
+    "source_members": 26,
+    "direct_theorem_uses": 31,
+    "related_theorem_connections": 74,
+    "unranked_auxiliary_passages": 7
+  },
+  "source_notes": [
+    "This census uses the pinned arXiv v2 preprint; equality with journal wording has not been established.",
+    "The initial boundary preview incidentally included two introductory lines below the appendix heading. The retained crop was tightened to the heading only; no supplement mathematics, theorem statements or proofs were inspected or used.",
+    "Source-fidelity review does not certify proof correctness. In particular, the printed minimax test-class event conflicts with the lower bound, and remains explicitly documented.",
+    "Corollaries for particular dependence measures and proofs in the online supplement are outside the Theorem inventory. Their extra assumptions are not imported into the five saved statements."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2210.17439v2",
+    "version": "arXiv:2210.17439v2",
+    "pdf_sha256": "6985f30f69767e8e75d30899bfe10303542404a0e3720f8f55ae1367c3aee7cc",
+    "pdf_pages": 66,
+    "main_text_last_pdf_page": 25
+  },
+  "recorded_checks": [
+    "Inventory and final census pass separate validator invocations. The independent inventory hash is unchanged and every original theorem field survives the handoff.",
+    "The title, three authors, arXiv v2 stamp of 12 February 2024, versioned URL, 66-page count, PDF hash and main-text boundary match the pinned source.",
+    "All five full theorem bodies were checked visually on pages 8,9,10,12,18. The exact alpha range, strictness and case clauses, growth powers, bounded-kernel refinements and minimax quantifiers are retained.",
+    "Twenty-six source passages preserve the iid model, symmetric kernel, U-statistic, first projection, jackknife estimator, Gumbel law, Orlicz quantity, all four regularity assumptions, distribution classes and distinct bootstrap constructions.",
+    "The source empty-minimum convention, strict non-degeneracy cutoff, positive-side truncation for every outside value and upper-triangle vech convention are retained.",
+    "Independent graph checks confirm that Theorem 2.4 does not inherit (A2),(A3), (A1-prime) or the composite-null class. Its alternative class has only the conditions actually defined in (2.18).",
+    "Theorem 2.8 inherits the assumptions and rate (2.24) of Theorem 2.5 but has no jackknife, normalized squared-statistic or Gumbel-calibration requirements. The shared V_0 region has no assumption dependencies.",
+    "Bootstrap theorems do not inherit (A3). Their conditional resampling, V-statistic expectation, source truncation and conditional quantile are kept explicit.",
+    "The arbitrary-test lower bound uses the printed uniform-level class and covariance specialization, without acquiring any specific test statistic or bootstrap implementation. Its erroneous null nonrejection event is documented without correction.",
+    "Seven auxiliary passages and fourteen source notes resolve inherited assumptions, distribution classes, kernel specialization, scale/domain omissions and source inconsistencies. The final graph has 31 direct uses and 74 same-paper connections, with source-backed explanations and matching selectors."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "ee208b32910f778ea6a991b464396bab1504998b4390c695e3ead49c76a170bd"
+}

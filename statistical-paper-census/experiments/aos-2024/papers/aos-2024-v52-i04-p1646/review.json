@@ -1,0 +1,94 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i04-p1646",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-10T00:24:15.425278+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i04-p1646/T1",
+      "aos-2024-v52-i04-p1646/T2",
+      "aos-2024-v52-i04-p1646/T3"
+    ],
+    "printed_label_check": [
+      [
+        11,
+        "1"
+      ],
+      [
+        12,
+        "2"
+      ],
+      [
+        13,
+        "3"
+      ]
+    ],
+    "method": "Independent bold-heading enumeration and visual comparison of every complete theorem, including continuations.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 3,
+    "interfaces": 18,
+    "source_members": 18,
+    "direct_theorem_uses": 23,
+    "related_theorem_connections": 43,
+    "unranked_auxiliary_passages": 9
+  },
+  "source_notes": [
+    "The registered source is arXiv:2112.13479v1 dated 27 December 2021, with 45 PDF pages. It is the local approved source for the 2024 article; no claim of comparing a different published version is made.",
+    "The main paper includes references above Appendix A on page 31. The appendix heading begins at y=322.86700439453125; admitted evidence stops at y=321.86700439453125. Appendix heading location does not authorize reading the B1-B4 bodies or supplemental proofs.",
+    "Exactly three main-text Theorems are retained. Theorem 2 continues from page 12 to page 13; Theorem 3 continues from page 13 to page 14. All subparts, displayed formulas, branch qualifiers and almost-all-realizations clauses are included.",
+    "B1-B4 are named by every theorem but referred to the supplement before Lemma 1. Their full statements are not in the admitted extraction. Each remains an unresolved source dependency, and none is represented by an invented assumption interface.",
+    "Theorem 1(ii), equation (3.23), and Theorem 2(ii), equation (3.28), print equalities without an explicit probability limit. Their opening sentences describe asymptotics. Preserve the equals signs and flag the presentation rather than silently rewrite them as limits.",
+    "Theorem 2 lists B1-B4 and C1-C2, omitting the immediately preceding C3. C3 is preserved as auxiliary context, not silently added to its graph. Theorem 3 lists B1-B4 and C2, omitting C1; the graph retains this difference.",
+    "Theorem 2 opening mentions (3.7) and (3.9), while parts (ii) and (iii) explicitly repeat only (3.7). The two alternatives are distinct scenarios, not simultaneous regimes imposed on one observation sequence. The branch wording is not broadened during extraction.",
+    "The source no-change null is described in prose, but the page 8 reference to (1.2) points to the model degeneracy cases. That mistaken-looking reference remains recorded. C1 fixes the training loading space, whereas the null concerns the subsequent monitoring horizon.",
+    "The matrix model has positive-count, one-way and no-factor conventions. Section 2 permits k1,k2>=0, and Section 3 explicitly entertains k1=0. The one-way cases cannot be replaced by ordinary empty-matrix multiplication of (1.1).",
+    "R is the row-factor loading matrix, and its column space is the row factor space. C is the column-factor loading matrix. The main alternatives keep C fixed for presentation; Section 4 extensions are not extra theorem hypotheses.",
+    "The projection estimator is defined from an uncentered second moment. Its suggested initial C-tilde uses eigenvectors of M_r formed with all T observations in the printed expression. A causal training-only version or update rule is not substituted, and its online availability remains a source-scope issue.",
+    "The expanded formula for M_r uses X_(j dot,t) X_(j dot,t) transpose despite the source defining X_(j dot,t) as a row. The first expression X_t transpose X_t has the intended p2-by-p2 dimension; the expanded row-product order is retained as a notation issue.",
+    "The rolling eigenvalue window is t=tau+1,...,m+tau. Its index is k1+1 and eigenvalues are ordered decreasingly. The monitoring horizon is Tm=T-m, and the break time in the model is m+t*, not simply t*.",
+    "The fixed-count space-change alternative has shared loading block R0 and changed blocks R1,R2. The additional-factor alternative appends R3 and new factor block Fb,t. Rank, dependence and moment restrictions that might come from B1-B4 remain unresolved.",
+    "The rate sequence (1.3) is (1/p2+1/m+p1/sqrt(m p2)) times (ln^2 p1 ln p2 ln m)^(1+epsilon). A magnified PDF inspection verifies that the square root covers both m and p2.",
+    "The source O_a.s. and Omega_a.s. notation is defined through convergence of a ratio to a finite or positive constant, not the usual eventual bounds. The plain Omega in C2 and plain O in C3 remain distinguishable from these explicitly defined conventions.",
+    "Delta lies in [0,1), with the dichotomy in (3.13) and the sufficient piecewise rule in (3.14). Beta is ln p1 divided by ln(p2 m). The positive tuning epsilon must respect delta<1, and is not silently identified with the epsilon slack in (1.3).",
+    "The continuous transformation g tends to zero at zero and diverges at positive infinity. Its domain, monotonicity and nonnegative range are not explicitly specified. No such extra conditions are inserted into the quotation.",
+    "The transformed eigenvalue psi_tau divides by p1^(-1) times the sum of the rolling eigenvalues. This is the average eigenvalue, although the prose calls it normalization by the trace. No rule for an exactly zero trace is supplied in the main-text formula.",
+    "The randomized sequence is y_tau=z_tau+psi_tau with iid standard normal z_tau. Its drift is data-dependent and vanishes asymptotically under the null; finite-sample y_tau need not be identically distributed or mean zero. Data-independent external randomization is implicit in the conditional interpretation, not separately stated in the quoted sentence.",
+    "Condition (3.17) uses a limit in min(p1,Tm), whereas Theorems 1 and 2 use min(m,p1,p2). C2 requires Tm to diverge and satisfy Omega(m^varsigma), varsigma>=1. These distinct joint-limit conventions are preserved.",
+    "P* is conditional on all X_t for 1<=t<=T. D* and P* arrows denote conditional distribution and probability convergence. Every theorem retains its almost-all-data-realizations qualification; it is not replaced by an unconditional statement.",
+    "S_tau is an uncentered partial sum of the randomized observations. The weighted regimes are eta<1/2, eta=1/2 and eta>1/2. The Renyi regime starts at r_Tm tending to infinity with r_Tm/Tm tending to zero; its prefactor uses r_Tm, not Tm.",
+    "The alpha_Tm,beta_Tm normalization uses iterated logarithms and a minus one-half log pi term. The raw-maximum a_Tm,b_Tm normalization uses log Tm and log(4pi). These pairs are not interchangeable.",
+    "Z_Tm is the one-sided maximum of individual y_tau values, without an absolute value and without cumulative summation. Theorem 3 uses (Z-b)/a, not (Z-a)/b or alpha Z-beta.",
+    "Theorem 2(i) uses a square root of ln ln Tm in its power condition; part (ii) uses ln ln Tm without a square root; part (iii) adds the trimming ratio raised to eta-1/2. Theorem 3 power condition instead divides by sqrt(ln Tm).",
+    "Theorem 3 alternative rate condition is stated as min(p1,m) tending to infinity, while its probability limits use min(p1,p2,m). Its limiting alternative CDF is zero at every finite v, expressing divergence of the normalized maximum.",
+    "The Wiener process is named in the main-text discussion following Theorem 1. Its standard law and the usual time-zero limiting convention are ambient. The source displays suprema on [0,1] and [1,infinity) with different eta regimes.",
+    "Lemma 1 and supplementary spectral results motivate the monitoring method but are not separate theorem records. Their proof bounds do not become new assumption interfaces. The three theorems are retained even though B1-B4 remain unresolved under the main-text-only scope.",
+    "Section 4 decreasing-factor and changing-C extensions, detection-delay heuristics, simulation choices of g and k, and stopping-rule suggestions are not additional Theorems. None replaces the source definitions or adds unprinted hypotheses to the inventoried claims."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2112.13479v1",
+    "version": "arXiv:2112.13479v1, 27 December 2021",
+    "pdf_sha256": "051b72df6278997ad32edd271531e68b529cb1b1bc3f4e958806d9e7a91325bc",
+    "pdf_pages": 45,
+    "main_text_last_pdf_page": 31
+  },
+  "recorded_checks": [
+    "Independent bold-heading enumeration and visual source comparison preserve all three main-text Theorems, including Theorem 2 on pages 12-13 and Theorem 3 on pages 13-14. The printed equalities, assumption lists, power-condition denominators and almost-all-realizations clauses remain unchanged.",
+    "Eighteen source interfaces and nine auxiliary passages preserve the matrix model and zero-factor conventions, projected spectrum, rate and tuning choices, main-text assumptions, separate alternatives, transformation, randomization, conditional law, monitoring statistics and two normalizer families.",
+    "Independent source-role reconstruction verifies 23 direct uses and 43 related connections. Theorem 3 has no C1 or partial-sum dependency; Theorems 1 and 2 retain their three distinct weighted regimes. Theorem 2 alternative explanations preserve its restricted parts (ii) and (iii). B1-B4 remain unresolved supplementary references rather than invented interface nodes.",
+    "All titles are original natural-language source terms, with separate naming context where required. Main-text assumptions remain assumptions, the rate restriction remains a condition, and model passages are not relabeled as numbered definitions. Every member has a meaningful source selector and every related theorem has an explicit source-backed path explanation.",
+    "The source square-root scope in (1.3), full-T initial estimator, moving-window endpoints, mean-eigenvalue normalization, uncentered partial sums, trimmed regime, one-sided raw maximum, conditional convergence notation and iterated-log versus log normalizers were checked visually and by source-specific invariants.",
+    "Supplementary assumptions B1-B4, implicit data-independent randomization, zero-trace behavior, the initial estimator online scope and row-product notation, the null equation reference, and C3/C1 assumption-list issues remain explicit. No appendix body or Section 4 extension replaces an original theorem. This census is not proof certification.",
+    "All six content JSON artifacts reproduce byte for byte from the seven retained per-paper scripts. Registered source identity, independent inventory, exact claim handoff, local graph and reach, source-specific formula and branch checks, mathematical fragments, names/highlights and both schema validations passed."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "fe3542088190201c44724a0ced2687428e39f1c8a75d9ed43349eba27e09c400"
+}

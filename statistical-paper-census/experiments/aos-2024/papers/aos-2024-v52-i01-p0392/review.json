@@ -1,0 +1,115 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i01-p0392",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T07:44:43.039213+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i01-p0392/T2.1",
+      "aos-2024-v52-i01-p0392/T2.2",
+      "aos-2024-v52-i01-p0392/T2.3",
+      "aos-2024-v52-i01-p0392/T3.1",
+      "aos-2024-v52-i01-p0392/T3.2",
+      "aos-2024-v52-i01-p0392/T3.3",
+      "aos-2024-v52-i01-p0392/T3.4",
+      "aos-2024-v52-i01-p0392/T4.1",
+      "aos-2024-v52-i01-p0392/T4.2",
+      "aos-2024-v52-i01-p0392/T4.3",
+      "aos-2024-v52-i01-p0392/T4.4"
+    ],
+    "method": "Search all 26 main-document pages and independently enumerate small-caps Theorem labels from PDF text spans. Visually inspect all statements on pages 6, 9, 10, 16 and 23, and the supplement pointer and reference endpoint on pages 25-26. No theorem crosses a page boundary.",
+    "printed_label_check": [
+      [
+        6,
+        "2.1"
+      ],
+      [
+        9,
+        "2.2"
+      ],
+      [
+        10,
+        "2.3"
+      ],
+      [
+        16,
+        "3.1"
+      ],
+      [
+        16,
+        "3.2"
+      ],
+      [
+        16,
+        "3.3"
+      ],
+      [
+        16,
+        "3.4"
+      ],
+      [
+        23,
+        "4.1"
+      ],
+      [
+        23,
+        "4.2"
+      ],
+      [
+        23,
+        "4.3"
+      ],
+      [
+        23,
+        "4.4"
+      ]
+    ],
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "supplementary_material_used": false
+  },
+  "counts": {
+    "theorems": 11,
+    "interfaces": 37,
+    "source_members": 37,
+    "direct_theorem_uses": 45,
+    "related_theorem_connections": 100,
+    "unranked_auxiliary_passages": 4
+  },
+  "source_notes": [
+    "This audit is specific to the pinned March 2024 preprint. The separate supplementary document containing proofs and technical lemmas was excluded.",
+    "Theorem 2.1 retains all four bounds and constants; Theorem 2.2 retains 274 and 3^7; Theorem 3.2 retains (24 times 2^K_alpha minus 3) times 17.5. The exact alpha placement and constant declarations in the remaining Theorems are preserved.",
+    "Source bar-X uses the ordinary integral Y_e(t) dt, not dY_e(t). The shift defining the white-noise minimum estimator contains two un-hatted j indices. Neither is corrected.",
+    "The regression block count prints denominator 2^(J-j-1), whereas localization uses 2^(J-j). Font-level inspection confirms the complete exponent. The two formulas remain distinct.",
+    "Regression selectors use circumflex-accented typewriter letters. The transcription keeps them distinct from white-noise italic selectors and from the caron-accented no-trigger variable.",
+    "Unspecified out-of-domain minimum blocks, coarse-level block-count equality, partial regression blocks, small-n algorithm domains, argmin totality and gamma positivity are retained as explicit source notes.",
+    "Registered-source revalidation restored LaTeX alpha, rho and varepsilon in naming contexts D6, D7, D9 and D10 after Python escape processing had corrupted them. Original theorem statements, interface statements and dependency relationships are unchanged. Prior artifacts and scripts are archived; source-transcription-corrections.json and evidence/revalidation/artifact-delta.json record the repairs."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2305.00164v2",
+    "version": "arXiv:2305.00164v2",
+    "pdf_sha256": "38d889e7127d0a91f4cd268fc84157a395dea6d75fecdfbd9b12ef11f07d9f7c",
+    "pdf_pages": 26,
+    "main_text_last_pdf_page": 26
+  },
+  "recorded_checks": [
+    "The eleven original theorem statements remain identical to the independently validated and source-reviewed inventory; its handoff hash is unchanged.",
+    "PDF title, authors, arXiv stamp, SHA-256 and page count match the source provenance. Small-caps heading enumeration agrees with all eleven printed labels and their pages.",
+    "All 37 interface passages and four unranked source conventions were checked against the main-text PDF. Both full regression algorithms are preserved, including boundary and fallback branches.",
+    "The finalizer derives 45 direct uses and 100 related-theorem connections. A separate validator process accepts the inventory, graph, original statements, names, highlights, explanations and aggregate metrics.",
+    "White-noise and regression observation models have disjoint theorem reach except for the shared function-class prerequisite. White-noise procedures reach only Theorems 3.1-3.4; regression procedures reach only Theorems 4.1-4.4.",
+    "Theorem 2.3 uses arbitrary estimators and has no edge to the later adaptive procedures. The local-modulus interface reaches only Theorem 2.1; proof connections are not promoted to dependencies of Theorem 2.2.",
+    "Gaussian-maximum quantiles and tail calibration constants have no observation-model prerequisite. Their cross-model reuse does not import white-noise assumptions into regression.",
+    "Confidence benchmarks retain expected length at f alone, with coverage on the pair {f,g}; risk benchmarks retain sup_g inf_estimator max_h ordering. Discrete-design benchmarks are not replaced by white-noise approximations.",
+    "Algorithm 1 reaches only Theorem 4.2; Algorithm 2 reaches only Theorem 4.4. Conditional use remains explicit in the surrounding original interval definitions.",
+    "The minimum process integral, mixed j indexing and regression block-count exponent are preserved. A magnified crop and PDF glyph baselines distinguish the exponent J-j-1 from a subtraction outside the power.",
+    "Every interface has source keywords and meaningful selectors matching its passage, label or related same-paper theorem, plus a source-backed explanation for each related theorem. All mathematical fragments have balanced braces."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "86d62d6959755fc164176ee3e1bb0f756b541e039c9fb23524548a1911b663c7"
+}

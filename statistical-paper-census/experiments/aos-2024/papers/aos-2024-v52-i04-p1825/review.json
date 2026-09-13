@@ -1,0 +1,371 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i04-p1825",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-10T02:24:33.636579+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i04-p1825/T1",
+      "aos-2024-v52-i04-p1825/T2",
+      "aos-2024-v52-i04-p1825/T3",
+      "aos-2024-v52-i04-p1825/T4",
+      "aos-2024-v52-i04-p1825/T5"
+    ],
+    "printed_label_check": [
+      [
+        6,
+        1
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        10,
+        3
+      ],
+      [
+        10,
+        4
+      ],
+      [
+        11,
+        5
+      ]
+    ],
+    "method": "Independent small-cap heading enumeration and visual comparison of all five complete original statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 5,
+    "interfaces": 17,
+    "source_members": 17,
+    "direct_theorem_uses": 30,
+    "related_theorem_connections": 54,
+    "unranked_auxiliary_passages": 9
+  },
+  "source_notes": [
+    {
+      "issue_id": "registered-version",
+      "description": "The source is the registered 19-page arXiv v3 stamped 9 Jul 2024. It is not assumed identical to the published AoS text.",
+      "evidence": [
+        {
+          "page": 1,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "vector-space-shorthand",
+      "description": "The source permits X instead of X^2 for vector fields. L2(Omega)^2 in Theorem 3 is a vector-space subscript, whereas the squared norms in (22) and Remark 1 have an external square.",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 7,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 9,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 10,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "two-H-spaces",
+      "description": "The PDE space H of divergence-free zero-mean fields differs from the Gaussian RKHS calligraphic H. V uses the gradient norm, not the full inhomogeneous H1 norm.",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 8,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 10,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "fractional-sobolev",
+      "description": "The main-text Sobolev definition covers integer m, while Condition 1 permits real alpha>=2. Fractional periodic Sobolev and RKHS constructions are standard external notions not expanded here.",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 8,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "strong-solution-regularity",
+      "description": "The main text defines strong by equality of (10) in H rather than just V-prime, but refers to external books for complete solution-theory details. Theorem 1 expressly specifies C([0,T],V); no other theorem gains an extra regularity premise by importing a proof.",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 6,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "bochner-conventions",
+      "description": "The Lp display does not separately state strong measurability, and the L-infinity prose says time-bounded without specifying essential versus pointwise boundedness. Ordinary Bochner and function-space conventions remain external.",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "zero-difference",
+      "description": "Theorem 1 includes coincident initial conditions but writes logarithms and ratios involving solution discrepancies. It does not explicitly define the zero-denominator limiting conventions for (14) or (15).",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "inverse-poincare-square",
+      "description": "Equation (15) bounds an unsquared norm ratio and (16) contains exp(c2*cP). Remark 1 instead bounds the squared ratio by lambda_J and labels that bound c_P. The displays are preserved rather than reconciled by changing exponents.",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 7,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "theorem2-constant",
+      "description": "Theorem 2 writes c-prime=c-prime(c,t) without introducing c in the statement. Comparability constants and their time/index uniformity are not further expanded there.",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "theorem2-logarithm",
+      "description": "The lower bound in (18) uses log(1/discrepancy) for all positive times and natural-number indices without separately stating positivity or nonzero-denominator conventions.",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "posterior-argument-order",
+      "description": "The likelihood (21) writes u_theta(X_i,t_i), whereas (19) and the forward model use u_theta(t_i,X_i). The reversal is retained in the original passage.",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 9,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "prior-rescaling",
+      "description": "Condition 1 uses theta=theta-prime/N^(1/(2alpha+2)); this is not the posterior contraction rate and the RKHS is that of the base prior. Sample-size dependence is retained.",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 10,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "single-time-design",
+      "description": "The source declares the normally empty interval (T0,T] to mean {T} when T0=T>0 and uses a Dirac temporal law. This explicit exception must not be dropped.",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 10,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "observation-window-scope",
+      "description": "Theorem 3 allows T0=0, while Theorem 4 requires T0>0. Theorem 5 inherits the observation setting of the conclusions it references; no minimax lower bound is asserted at T0=0.",
+      "evidence": [
+        {
+          "page": 10,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "horizon-case",
+      "description": "Theorem 3 writes T_P in its prose but T_p in both displayed suprema. The preceding prediction convention also uses T_p. Preserve source case without silently rewriting the theorem.",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 10,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "prediction-normalization",
+      "description": "Equation (22) identifies expectation under the uniform probability law on [0,2pi]^2 with a Lebesgue L2 norm squared without showing a volume factor. Page 4 explicitly names Lebesgue measure dx; the original equality is preserved.",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 9,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "posterior-mean-versus-trajectory",
+      "description": "Theorem 3 evaluates the PDE at the posterior mean initial condition. Nonlinearity does not permit replacing this with the posterior mean of the solution field.",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 10,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "minimax-radius",
+      "description": "Theorem 4 uses a ball radius U and positive c(U,T) without locally quantifying U>0. The preceding Proposition 1 has its own U>0; it is not silently imported as a new theorem hypothesis.",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 10,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "projection-span",
+      "description": "Theorem 5 says span E_J but writes E_J={e_j:j<=J}. The intended linear-span wording and the literal set notation are both retained, rather than silently replacing the original display.",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "projection-growth",
+      "description": "Theorem 5 only states J_N=O(log log N); this upper bound alone does not ensure growth to infinity or eventual inclusion of a fixed J0. No lower growth condition is added to the source.",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "eigenbasis-real-complex",
+      "description": "Equation (20) gives complex Fourier fields only up to proportionality; adjacent prose refers to real parts. Normalization, sine/cosine selection, lattice redundancy and eigenvalue-multiplicity ordering are not fully specified there.",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "theorem-inheritance",
+      "description": "Theorem 5 expressly reuses the conclusions of Theorem 3 with a projected prior and different rate. This must resolve all three conclusions, including the mean and forecast, without importing proof-only theorem references as extra dependencies.",
+      "evidence": [
+        {
+          "page": 10,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2307.08136v3",
+    "version": "arXiv:2307.08136v3; arXiv stamp 9 Jul 2024",
+    "pdf_sha256": "d071d53c213c786036c850189964d704b290290b23a810e54b0b3c64bfa3f1e4",
+    "pdf_pages": 19,
+    "main_text_last_pdf_page": 18
+  },
+  "recorded_checks": [
+    "Exactly five main-text Theorem environments on pages 6, 7, 10, 10 and 11. Complete original statements retain both stability branches, all norm comparisons, both posterior events and the posterior mean/trajectory error, minimax quantifiers, and the projected-prior conclusion reference. No proof or other result label is counted.",
+    "Seventeen entries retain periodic domain and function spaces, divergence-free zero-mean fields, projector and Stokes operator, convection, physical and reduced PDEs, strong solutions, observation model, Gaussian prior, eigenfunctions, posterior, Bochner mean, inverse-Poincare condition and projected prior. Nine auxiliary passages preserve standing conventions and scope.",
+    "Independent source-based graph reconstruction confirms 30 direct uses and 54 related connections. Theorem 5 explicitly inherits all Theorem 3 conclusions, including posterior mean and trajectory. The proof uses of Theorems 1 and 2 are not statement edges. Theorem 4 does not depend on a Gaussian prior or posterior.",
+    "Theorem 1B adds its inverse-Poincare ratio only for the exponential stability estimate. Theorem 3 permits T0=0; Theorem 4 requires T0>0. Single-time observation is an explicit Dirac-design exception. Theorem 5 changes the prior projection and convergence rate without an invented growth lower bound.",
+    "Names use source natural-language terms and archive adjacent naming context for Gaussian prior. Source kinds distinguish Condition 1, original defining prose, models and theorem excerpts. Every member has source-backed selectors and every related theorem has an explanation following its same-paper dependency path.",
+    "Visual checks preserve the unsquared inverse-Poincare ratio versus its squared Remark 1 comparison, c-prime(c,t), PDE H versus RKHS calligraphic H, L2(Omega)^2 vector-space subscripts, likelihood argument reversal, T_P versus T_p, and the source set notation after span E_J.",
+    "Twenty-two source issues retain zero-discrepancy conventions, fractional Sobolev and Bochner details, external solution theory, uniform-risk normalization, unspecified radius and projection growth, and eigenbasis conventions. No published-source substitution, external-reference body, appendix or proof certification is used.",
+    "Six content artifacts reproduce byte for byte with retained per-paper scripts. Registered-source identity, main-text boundary, independent heading enumeration, complete inventory handoff, source-specific formulas, graph reconstruction, names, selectors, explanations and structural validation passed."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "59df91106368e4625e57ab026600deddf2f59e243c5610ad1f4c87ed1aa1338c"
+}

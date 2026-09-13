@@ -1,0 +1,83 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i02-p0842",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T11:41:48.124684+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i02-p0842/T3.3",
+      "aos-2024-v52-i02-p0842/T3.5",
+      "aos-2024-v52-i02-p0842/T3.7",
+      "aos-2024-v52-i02-p0842/T5.1",
+      "aos-2024-v52-i02-p0842/T5.2"
+    ],
+    "method": "Independent enumeration of actual small-cap THEOREM headings across all 26 published PDF pages, checked against the source images on pages 14,15,17,18. Exactly 3.3,3.5,3.7,5.1,5.2 occur. Restated external results are included; citations and other result labels are excluded. Separate supplement links on page 23 were not opened.",
+    "printed_label_check": [
+      [
+        14,
+        "3.3"
+      ],
+      [
+        14,
+        "3.5"
+      ],
+      [
+        15,
+        "3.7"
+      ],
+      [
+        17,
+        "5.1"
+      ],
+      [
+        18,
+        "5.2"
+      ]
+    ],
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 5,
+    "interfaces": 18,
+    "source_members": 18,
+    "direct_theorem_uses": 39,
+    "related_theorem_connections": 50,
+    "unranked_auxiliary_passages": 8
+  },
+  "source_notes": [
+    "The audited source is the published journal article, DOI 10.1214/24-AOS2371, rather than a preprint.",
+    "The estimation Theorems explicitly name approximate objectives (22)/(23), while practice uses full objectives (12)/(14). No equivalence of minimizers is assumed.",
+    "Inverse existence is stated asymptotically on the open drift domain. Global finite-step invertibility, inverse-growth bounds and behavior at search-boundary parameters are not supplied by that wording.",
+    "The inverse-Jacobian identity on page 10 is retained with its original argument, with the argument discrepancy recorded separately."
+  ],
+  "source": {
+    "source_url": "https://projecteuclid.org/journals/annals-of-statistics/volume-52/issue-2/Parameter-estimation-in-nonlinear-multivariate-stochastic-differential-equations-based-on/10.1214/24-AOS2371.pdf",
+    "version": "Published version: The Annals of Statistics 52(2), 842–867 (2024)",
+    "pdf_sha256": "49c5753d857e40e11dc1e4a105ac4e3b30520c8b8ba7aac46ae9bf3ac7dc800d",
+    "pdf_pages": 26,
+    "main_text_last_pdf_page": 26
+  },
+  "recorded_checks": [
+    "Published title, all authors, volume, issue, page range, DOI, 26-page count and pinned PDF hash checked. Cached page texts match fresh byte-preserving extraction.",
+    "Inventory and final census both validate; the independent inventory hash matches and every original claim field survives unchanged.",
+    "All five complete theorem statements visually checked on pages 14,15,17,18, including explicit A6, moment orders, approximate-objective references and all asymptotic conditions.",
+    "The SDE, filtered experiment, closed parameter domain and true covariance shorthand checked on pages 1 and 6; A1-A5 checked individually on page 7.",
+    "The OU integral covariance, affine mean, nonlinear flow, A6 and both exact splitting compositions checked on page 8. The unbarred flow domain and the printed R(h,x_0) covariance remainder are preserved.",
+    "Definitions 3.1 and 3.2 checked on page 13, retaining q1>=q2+1/2, conditional errors and all-p moment bounds.",
+    "Full objectives and transformed residual checked on page 9; inverse identity and argmin checked on page 10. Their differences from the approximate objectives on page 17 remain explicit.",
+    "Half-vectorization order, diagonal alternative, information blocks, true-parameter derivatives and distinct drift/covariance convergence scales checked on pages 17-18.",
+    "Independent graph traversal confirms all 39 direct and 50 related connections, with no estimation assumptions imported into generic numerical results and no information matrix imported into consistency.",
+    "Every interface has exact source terms, source-kind metadata, meaningful matching highlight selectors and an explanation for every related theorem path.",
+    "Eight auxiliary passages and nineteen convention notes preserve essential notation and unresolved source distinctions without changing quoted statements.",
+    "The publication ends in references on page 26; supplementary mathematical material and code are separate files and were excluded."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "8d70eabce61d11e04677b50bb2ab70415f6f28801446f8f412d30bc36adddadb"
+}

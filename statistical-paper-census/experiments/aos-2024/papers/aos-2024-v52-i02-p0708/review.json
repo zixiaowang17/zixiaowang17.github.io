@@ -1,0 +1,78 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i02-p0708",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T10:45:16.179443+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i02-p0708/T1",
+      "aos-2024-v52-i02-p0708/T2",
+      "aos-2024-v52-i02-p0708/T3",
+      "aos-2024-v52-i02-p0708/T4"
+    ],
+    "method": "Independent enumeration of complete printed THEOREM headings in pages 1-18 and the clipped main-text portion of page 19 finds exactly Theorems 1-4. Theorem 1 continues on page 10. The Appendix begins on the shared page 19 at y=313.6376953125; its heading is used only to establish the boundary. No appendix or embedded supplement body was used.",
+    "printed_label_check": [
+      [
+        9,
+        "1"
+      ],
+      [
+        12,
+        "2"
+      ],
+      [
+        13,
+        "3"
+      ],
+      [
+        18,
+        "4"
+      ]
+    ],
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 4,
+    "interfaces": 12,
+    "source_members": 19,
+    "direct_theorem_uses": 19,
+    "related_theorem_connections": 33,
+    "unranked_auxiliary_passages": 10
+  },
+  "source_notes": [
+    "The audited source is the pinned arXiv v2 preprint; equality to final journal wording has not been established.",
+    "Theorem 1’s extra script-I membership and Theorem 4’s unparenthesized chi_p expression/equality chain remain exactly as printed. Source fidelity is not a certification of those statements as mathematically well posed.",
+    "Appendix and supplement references remain references. Proof-only expansions, the later adaptive-delta algorithm, empirical bootstrap variance estimation and applied confidence regions do not become theorem statement requirements.",
+    "Fixed s in Theorems 1/2, dimension p in Theorem 3 and growing sparse-support size s in Theorem 4 remain distinct.",
+    "Natural-language group titles use source keywords. Shared component grouping does not rewrite any original definition or claim mathematical equivalence between moments, estimators and variance quantities."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2112.10151v2",
+    "version": "arXiv:2112.10151v2",
+    "pdf_sha256": "612f5176eaea7e74f44be9d35dca9a9f567d07294108220ddb014ce31f038908",
+    "pdf_pages": 76,
+    "main_text_last_pdf_page": 19
+  },
+  "recorded_checks": [
+    "Both the source-reviewed inventory and finalized census pass validation. The inventory hash matches its independent review, and every original claim field is preserved unchanged.",
+    "Title, five authors, arXiv v2 stamp dated 2 April 2024, versioned source URL, page count and PDF digest were checked. The heading-only crop verifies the shared-page Appendix cutoff.",
+    "All four complete Theorem statements were checked visually on pages 9,10,12,13,18: three phase branches, both bootstrap conclusions, the p-dimensional lower-orthant approximation and every sparse error term.",
+    "Simple-network conventions, independent-edge beta-model likelihood, the original jittering law, M(gamma;C_1), Condition 1, corrected edge functions and triangle moments/estimator were checked on pages 3-8.",
+    "The original lambda coefficients and the two variance components were checked on page 9, including ordered-pair sums, the factor 1/(2N), and N=(p-1)(p-2). Their combined variance was checked on pages 10-11.",
+    "The bootstrap sample law, doubly corrected edge functions, sample estimator, population moments, coefficients and combined population variance were checked on pages 11-12. The population center and variance are not replaced by conditional bootstrap or empirical versions.",
+    "Independent local-graph traversal confirms that Theorem 2 uses the bootstrap estimator but not original theta-hat, whereas Theorem 3 uses original theta-hat and population nu-dagger but not the bootstrap estimator itself.",
+    "The sparse beta-model, support, nonnegative effects, logarithmic residual reparametrization and linear sparse estimates were checked on pages 17-18. Theorem 4 has no dense Condition 1 or bootstrap dependency.",
+    "Twelve source-keyword groups retain nineteen separate original passages. Component passages are explicitly distinct rather than equivalent variants. Internal edges survive grouping; group reach was compared with independent local traversal.",
+    "Ten auxiliary passages resolve notation and population-law conventions; eighteen source notes retain the malformed membership, chi_p sign scope, error equality chain, log-domain omissions and other source ambiguities without repairing original statements.",
+    "All nineteen direct group/theorem uses and thirty-three related connections have matching paths, source explanations and selectors. Every selector matches its original passage/label or a related same-paper theorem."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "7d4a7db6d200208a278039b93c8688f428a7b31b0d9d40cf4163818fe03083b6"
+}

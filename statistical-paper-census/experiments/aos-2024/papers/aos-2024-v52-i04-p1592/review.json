@@ -1,0 +1,96 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i04-p1592",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-10T00:03:23.254443+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i04-p1592/T3.1",
+      "aos-2024-v52-i04-p1592/T3.2",
+      "aos-2024-v52-i04-p1592/T3.3",
+      "aos-2024-v52-i04-p1592/T3.4"
+    ],
+    "printed_label_check": [
+      [
+        17,
+        "3.1"
+      ],
+      [
+        20,
+        "3.2"
+      ],
+      [
+        20,
+        "3.3"
+      ],
+      [
+        21,
+        "3.4"
+      ]
+    ],
+    "method": "Independent bold-heading enumeration and visual comparison of all four complete statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 4,
+    "interfaces": 30,
+    "source_members": 30,
+    "direct_theorem_uses": 75,
+    "related_theorem_connections": 110,
+    "unranked_auxiliary_passages": 9
+  },
+  "source_notes": [
+    "Source: verified arXiv:2202.03369v2, 93 PDF pages, SHA-256 pinned by the local manifest. The arXiv stamp says 22 May 2023; the manuscript date is 23 May 2023. Neither is silently replaced by the journal publication year.",
+    "The main text ends after Acknowledgements on PDF page 28, immediately above Appendix A at y=201.71694946289062. Evidence admits page 28 only above y=200.71694946289062. Appendix bodies are excluded. Initial heading-location scans encountered appendix headings, but no appendix body supplies any theorem or dependency here.",
+    "All four printed main-text Theorems are retained: 3.1 on page 17, 3.2 and 3.3 on page 20, and 3.4 on page 21. Theorem 3.1 includes the whole mean/variance formula (3.4). Proof outlines and simulations do not add theorem records.",
+    "Visual and font review corrected vector Z to bold italic in Theorem 3.2 and all supporting passages. Covariate L and l and sample vector Z and z are bold italic; the covariate and data supports are calligraphic. The law operator is also calligraphic L, distinguishable by its argument.",
+    "The distribution P and rejection probability P are ordinary italic. Population integration and empirical integration are blackboard P and P_n. Expectations are blackboard E. The normal law N is ordinary italic, not calligraphic.",
+    "The printed Lp norm in Section 2.1 omits absolute values, and the prose calls f a function on R before integrating f over the joint support. Preserve these source expressions without claiming they define a valid norm for arbitrary signed f or arbitrary joint data.",
+    "I1 is potential-outcome consistency, I2 is uniform density positivity over all treatment/covariate values in the supports, and I3 is conditional-mean ignorability. Do not replace I3 by full conditional independence.",
+    "D1 requires compact treatment support, not necessarily an interval. D2 requires twice continuously differentiable theta_0 and varpi_0. D3 bounds true nuisance functions, not the outcome Y.",
+    "D4 defines tau and assumes it is strictly positive pointwise with a uniform upper bound. There is no explicit uniform positive lower variance bound. Its final formula prints P(S_tau union S_pi union S_mu)=1, although its set definitions have zero subscripts. Preserve union and subscript mismatch; an intersection would be a stronger condition.",
+    "E(A).1 prints c1^h n^(-1/5) <= liminf h_n <= limsup h_n <= c2^h n^(-1/5), leaving n outside unnormalized limits. The later prose describes an optimal estimation bandwidth order. The original condition remains unchanged and is flagged for formalization.",
+    "E(A).2 requires both nuisance estimators to approach their respective limits at little-o sqrt(h) in a uniform norm, with at least one correct limit. E(A).4 instead measures mixed uniform-in-treatment/L2-in-covariates errors about the truth and bounds their product. These are separate conditions.",
+    "The kernel class in E(A).3 satisfies (2.8) as printed. That covering bound claims all positive tau, which allows a right side less than one for large tau. No customary tau<=1 restriction is silently inserted.",
+    "The entropy integral J_m in (2.7) uses exponent m/2, envelope-normalized covering numbers and a supremum over all probability measures inside the epsilon integral. It is not restricted to finitely supported measures.",
+    "E(B)_m preserves the printed or between the two class choices, uniformly bounded reciprocal pi-hat, and a union of continuity sets for the barred nuisance limits. Its theorem-specific instantiation is m=3, with extra J4 explicitly present only in Theorem 3.4. Remark 2.3 fixes the function classes independently of n.",
+    "Theorem 3.2 omits E(B) from its assumptions. Its graph has no E(B) dependency, although it still has kernel entropy through E(A).3. Absence of an explicit nuisance entropy assumption is retained, not repaired using a proof.",
+    "The doubly robust mapping (2.2) integrates against the covariate law. The estimator (2.4) substitutes empirical covariate averages in both places and uses nuisance estimates from the same sample. No sample-splitting variant is imported from later discussion or Appendix J.",
+    "The local linear estimator minimizes a weighted empirical least-squares objective with regressor (1,(t-a)/h). K_ha has a 1/h factor, whereas the scaled convolution K_h^(s) is printed without that factor. K^(2) and K^(4) are convolution powers, not pointwise powers.",
+    "The main-text statistic is (2.5), the pseudo-outcome estimate is (2.4), and the null is (2.1). The theorem and algorithm references instead repeatedly print (J.1), (J.2) and (M.4). Main-text descriptions establish the correspondence recorded here, but the referenced appendix formulas were not inspected and no equality to a cross-fitted version is certified.",
+    "The Dudley metric uses the sum of supremum and Lipschitz seminorms, bounded by one. Theorem 3.1 approximates an n-dependent normal distribution; its b_0h includes h^(-1/2), so the statement is not converted into convergence to a fixed centered law.",
+    "Formula (3.2) retains its printed extra closing parenthesis in the subtracted squared term. It uses barred nuisance limits and their covariate averages; this differs from simply substituting the true nuisance functions. Its source-derived keyword is limit distribution, with the original preparatory formula preserved separately from theorem text.",
+    "Theorem 3.2 binds g, c_0 and delta_n inline. It requires g not identically zero, weighted mean zero with varpi printed without a zero subscript, delta_n tending to infinity, and n^(1/40)/delta_n tending to zero. The unsubscripted varpi is not otherwise defined in the admitted main text. These conditions do not assert delta_n times the local scale tends to zero.",
+    "The two bootstrap conclusions print b_h, while Theorem 3.1 defines b_0h. No separate b_h definition was found in the admitted main text. The census preserves the symbol and flags the target-mean mismatch rather than claiming it is verified notation for b_0h.",
+    "Theorem 3.3 uses Rademacher residuals centered at the estimated null mean. Theorem 3.4 centers residuals at the local fitted curve, while still centering bootstrap responses at the original mean. The replaced null-centered residual definition is not a dependency of the smoother-centered procedure.",
+    "Theorem 3.4 explicitly imposes J4 finiteness for both nuisance classes. Remark 2.2 and the pre-bootstrap proof discussion refer more broadly to fourth-order entropy; this tension does not authorize modifying the original Theorem 3.3 statement.",
+    "The bootstrap algorithms keep A_i fixed and resample signs of residuals. The source prescribes per-observation draws without separately stating their conditional independence. No nuisance refitting step is specified in these theorem-specific definitions. The auxiliary two-point distribution is an alternative method option, not an extra theorem branch.",
+    "User-specified w is required to be continuously differentiable on the treatment support in Theorems 3.1 and 3.2 and inherited by 3.3 and 3.4. Nonnegativity, strict positivity and normalization of w are not explicitly imposed and are not added.",
+    "No appendix-only theorem, proof, simulation model, real-data specification or presumed library availability contributes to this census. Unresolved source references and internal source issues do not mean the original statement has been omitted or proved false; they identify what a subsequent formalizer cannot silently assume."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2202.03369v2",
+    "version": "arXiv:2202.03369v2, 22 May 2023; manuscript dated 23 May 2023",
+    "pdf_sha256": "16810a1dcbde7957e273977a06255d6b5e043016acb7976583b2b1b86dc17ad4",
+    "pdf_pages": 93,
+    "main_text_last_pdf_page": 28
+  },
+  "recorded_checks": [
+    "Independent bold-heading enumeration finds four main-text Theorems, all complete on pages 17,20,20,21. Visual comparison preserves all hypotheses, distribution formulas and original reference labels. Theorem 3.2 bold observation vector was corrected after font inspection and the inventory was revalidated.",
+    "Thirty interfaces and nine auxiliary passages were checked against main-text pages 9-17 and 20-21. They preserve causal and observed quantities, estimator formulas, all separately numbered I/D/E(A) assumptions, E(B), entropy, metric, convolution, target distribution and both bootstrap procedures.",
+    "Independent source-role reconstruction verifies 75 direct uses and 110 related connections. Theorem 3.2 has no nuisance E(B) dependency; Theorem 3.3 has no explicit J4 addition; Theorem 3.4 retains its added J4 assumption and different residual centering. The replaced null-residual rule is not a prerequisite of the smoother-centered rule.",
+    "Titles use exact natural-language source keywords, with naming context retained where needed. Assumption kinds remain separate from definitions. Every original member has a matching meaningful selector, and every related theorem has a source-backed local-path explanation.",
+    "Bold observation/covariate vectors, blackboard integration versus ordinary P, calligraphic laws/supports, convolution versus pointwise powers, mixed norms, union conditions, bandwidth limits and the literal rate direction were checked against the PDF. Unbalanced source parenthesis in (3.2) remains preserved.",
+    "Appendix-labelled references, b_h versus b_0h, unsubscripted varpi, continuity-set and bandwidth/covering-range issues, and the prose/theorem entropy mismatch remain explicit. Initial appendix heading hits were excluded; no appendix body supplies census content. This is a statement/source audit, not proof certification.",
+    "All six JSON content artifacts reproduce byte for byte from the seven retained per-paper scripts. Source hash, exact inventory handoff, independently reconstructed local graph and reach, source-specific checks, mathematical fragments, names/highlights and both schema validations passed."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "6d1d0e229002e83a6a62c2b8a8d11bd0b26003bd4a25b0b2e4e162815674129f"
+}

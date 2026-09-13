@@ -1,0 +1,257 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i05-p2318",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-10T19:09:41.897668+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i05-p2318/T1",
+      "aos-2024-v52-i05-p2318/T2",
+      "aos-2024-v52-i05-p2318/T3",
+      "aos-2024-v52-i05-p2318/T4",
+      "aos-2024-v52-i05-p2318/T5",
+      "aos-2024-v52-i05-p2318/T6",
+      "aos-2024-v52-i05-p2318/T7"
+    ],
+    "printed_label_check": [
+      [
+        4,
+        "1"
+      ],
+      [
+        10,
+        "2"
+      ],
+      [
+        12,
+        "3"
+      ],
+      [
+        14,
+        "4"
+      ],
+      [
+        16,
+        "5"
+      ],
+      [
+        17,
+        "6"
+      ],
+      [
+        18,
+        "7"
+      ]
+    ],
+    "method": "Independent bold-span heading enumeration and visual comparison of all seven complete theorem statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark",
+      "Conjecture"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 7,
+    "interfaces": 21,
+    "source_members": 21,
+    "direct_theorem_uses": 29,
+    "related_theorem_connections": 43,
+    "unranked_auxiliary_passages": 8
+  },
+  "source_notes": [
+    {
+      "issue_id": "loss-normalization-and-diagonal",
+      "evidence": [
+        {
+          "page": 2,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 15,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 18,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Graphon and co-membership losses sum only i<j and divide by binomial(n,2); rectangular loss sums every entry and divides by n1*n2. The source defines Mf_ij=f(xi_i,xi_j) while the sampling model sets diagonal zero; the distinction does not affect off-diagonal loss."
+    },
+    {
+      "issue_id": "fixed-matrix-versus-prior-risk",
+      "evidence": [
+        {
+          "page": 2,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 9,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 10,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 18,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "T1,T6 take a supremum over fixed parameter matrices; T2,T5 and T7 average over their stated priors and observation noise. T4 additionally supremizes over arbitrary iid latent-position distributions. Do not introduce balanced labels or a uniform latent law into these scopes."
+    },
+    {
+      "issue_id": "snr-endpoints",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 10,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 16,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The model permits q=0 and p=1, but the finite SNR ratios use q(1−p) in the denominator. Nontrivial ratio statements require a positive denominator; the source gives no boundary division convention. T5’s target additionally requires p>q."
+    },
+    {
+      "issue_id": "unique-labels",
+      "evidence": [
+        {
+          "page": 15,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The source asserts unique zM even though simultaneous label permutations leave M unchanged. The off-diagonal co-membership matrix ZM is uniquely determined when p>q. The displayed relation for Mij is interpreted off diagonal, as required by the model’s zero diagonal."
+    },
+    {
+      "issue_id": "sketch-dimension",
+      "evidence": [
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Algorithm1 prints B∈R^(p×r), where p is a connectivity probability. Matrix multiplication by the n×n transformed adjacency requires B∈R^(n×r). Preserve the printed source and flag this dimensional typo separately."
+    },
+    {
+      "issue_id": "iteration-count-and-degree",
+      "evidence": [
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "T3 sets integer iteration counts t1=t2=C-prime log n without a rounding convention. The printed total degree bound2 t1 t2 misses terms from the displayed recurrence: the generic degree upper bound is 2(t1+1)t2+1 in A,Lambda,B and 2t1t2+1 in A alone with the auxiliary randomness fixed. Both remain O(log²n)."
+    },
+    {
+      "issue_id": "algorithm-probability-and-parameter-scope",
+      "evidence": [
+        {
+          "page": 10,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "T3 denotes probability by the signal-prior symbol PSBM although its event also involves sampled adjacency and independent Lambda,B. Record the natural joint experiment and this notation ambiguity. The surrounding prose says any p,q∈[0,1], while the referenced prior was introduced under q<p; no unproved scope extension is made."
+    },
+    {
+      "issue_id": "printed-prime-constants",
+      "evidence": [
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 17,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The PDF’s text layer misreads C-prime,C-double-prime and c-prime as C1,C2 and c1. The census follows the visually printed primes in T3 and T6, preserving the different roles of tuning constants and output constants."
+    },
+    {
+      "issue_id": "holder-integer-and-domain-convention",
+      "evidence": [
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The printed Holder norm uses floor(gamma) derivatives and exponent gamma−floor(gamma), including exponent0 when gamma is an integer. It works on the lower triangle; boundary derivative interpretation is implicit. Do not replace it with another standard Holder convention or silently assert additional boundary extensions."
+    },
+    {
+      "issue_id": "biclustering-label-notation",
+      "evidence": [
+        {
+          "page": 18,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The parameter-space displays use Q_(zi,zj) while defining separate vectors z1,z2. The prior then prints both vectors as length n, but explicitly indexes rows by n1 and columns by n2. Preserve these typographical inconsistencies and resolve the intended row/column indices separately."
+    },
+    {
+      "issue_id": "biclustering-prior-and-noise",
+      "evidence": [
+        {
+          "page": 18,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Both row and column labels in PBC are uniform over min(k1,k2), not separately over k1 and k2. The additive observation model states iid standard Gaussian noise; independence from the random signal is the usual intended model but is not separately explicit in that sentence."
+    },
+    {
+      "issue_id": "low-degree-versus-runtime",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 7,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The theorems prove lower bounds for degree-constrained polynomial estimators. Equivalence to all algorithms of a given runtime is a conjectural interpretation; the source itself discusses failures of low-degree predictions for certain other problems. No universal runtime lower bound is recorded as proved."
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2308.15728v4",
+    "version": "arXiv:2308.15728v4; 12 Aug 2024",
+    "pdf_sha256": "7bcc38eb8b952de996d7b08259295d5e2a91f94a7081aab2c7dedec225a52275",
+    "pdf_pages": 58,
+    "main_text_last_pdf_page": 27
+  },
+  "recorded_checks": [
+    "Seven complete main-text Theorems1–7, independently enumerated by bold PDF spans, including the two-page T3. All finite thresholds, correction terms, primed constants, the exact step-size maximum and T5’s in-particular clause are retained.",
+    "Twenty-one original source entries preserve Bernoulli and graphon sampling, off-diagonal loss, scalar/matrix polynomial classes, general and homogeneous SBM classes, iid-label prior, full randomized Algorithm1, the exact Holder norm/class, co-membership, sparse probability matrices and rectangular Gaussian biclustering definitions. Eight auxiliary passages preserve source context separately.",
+    "Independent reconstruction confirms29 direct uses and43 related connections. Fixed-matrix minimax risks do not import a proof prior or random latent-position distribution. T4 imports its smooth graphon class and arbitrary latent law without requiring a homogeneous SBM. Rectangular Gaussian risk has no Bernoulli or graph-loss dependency.",
+    "T3 imports the full algorithm, its independent auxiliary randomness and theorem-specific tuning, without T2’s low-SNR premise or an extra degree-D condition. T5 targets pairwise co-membership rather than numeric labels. T7 uses the shared min(k1,k2) label range and all-entry rectangular loss.",
+    "Twelve notes preserve diagonal conventions, singular SNR endpoints, label nonuniqueness, the printed sketch dimension, iteration/degree accounting, algorithm probability and parameter scope, primed-constant text-layer errors, the integer Holder convention, rectangular label typos, Gaussian-noise independence and the distinction between low-degree results and runtime conjectures.",
+    "All21 entries have natural-language source terms, original labels/kinds and literal selectors. Every one of the43 theorem connections has a source-specific explanation and an independently reconstructed same-paper path.",
+    "All six content JSON files reproduce byte for byte from retained per-paper scripts. Seven scripts include frozen-hash source review, formula checks, dependency reconstruction and schema validation; rerunning extraction does not itself perform a new source review."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "4ba5ffecf04e57ab5f3cc4f329e1773f1a22b8cb7201aa9613b95a1a82f8fd75"
+}

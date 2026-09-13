@@ -1,0 +1,122 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i04-p1433",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T22:43:44.708480+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i04-p1433/T1",
+      "aos-2024-v52-i04-p1433/T2",
+      "aos-2024-v52-i04-p1433/T3",
+      "aos-2024-v52-i04-p1433/T4",
+      "aos-2024-v52-i04-p1433/T5",
+      "aos-2024-v52-i04-p1433/T6",
+      "aos-2024-v52-i04-p1433/T7",
+      "aos-2024-v52-i04-p1433/T8",
+      "aos-2024-v52-i04-p1433/T9",
+      "aos-2024-v52-i04-p1433/T10"
+    ],
+    "printed_label_check": [
+      [
+        7,
+        "1"
+      ],
+      [
+        9,
+        "2"
+      ],
+      [
+        10,
+        "3"
+      ],
+      [
+        10,
+        "4"
+      ],
+      [
+        11,
+        "5"
+      ],
+      [
+        12,
+        "6"
+      ],
+      [
+        13,
+        "7"
+      ],
+      [
+        14,
+        "8"
+      ],
+      [
+        14,
+        "9"
+      ],
+      [
+        15,
+        "10"
+      ]
+    ],
+    "method": "Independent actual-heading enumeration and visual comparison of every original theorem body.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 10,
+    "interfaces": 26,
+    "source_members": 26,
+    "direct_theorem_uses": 82,
+    "related_theorem_connections": 87,
+    "unranked_auxiliary_passages": 10
+  },
+  "source_notes": [
+    "The inspected source is the registered 59-page arXiv:2308.04916v3 PDF, 29 May 2024. Main text ends after Funding on page 26, before the Supplementary Material heading; the supplement introduction and appendix bodies are excluded.",
+    "Exactly ten actual main-text Theorem environments occur, numbered 1-10. Theorem 6 and Theorem 7 each retain their two complete bullets in a single claim. The later application and remarks are not additional Theorems.",
+    "Generic constructions (3) and (4) share one original source passage but retain distinct single-index and wavelet branches. Basis coefficients are ambient objects usable without a prior, so smoothness balls and observation models do not depend on the prior construction.",
+    "Scale alternatives (5), (6) and (21) retain their original natural-language keyword and source labels. Identical keywords do not establish equivalent scales. Branch resolution specifies which scale, coefficient indexing and rate each theorem selects.",
+    "Conditions (7) and (8) constrain the innovation density. The logarithmic upper bound on 1/h is a lower bound on density decay, not an upper-tail condition. The constants c1>0 and kappa>=0 remain unchanged.",
+    "Moment condition (14) and tail condition (19) are different. An x^-2 survival bound need not give a finite second moment. Theorems 1, 2 and 4 require q=2; Theorem 3 allows q>=1; Theorem 5 assumes neither condition; Theorems 6-10 use (19).",
+    "Theorem 1 explicitly includes priors truncated at k=n, setting later coefficients to zero. That extra assertion is absent from Theorem 2 and is not propagated by analogy.",
+    "Theorem 3 requires alpha>=beta+1/q in the polynomial-scale branch. Theorem 5 allows any alpha>0 and has no corresponding lower bound by beta. These parameter ranges are not homogenized.",
+    "Theorem 4 prints sigma_k in its final (6) branch even though its prior is defined by the wavelet construction (4). Preserve the original symbol and record the apparent indexing inconsistency instead of silently changing it to s_l.",
+    "Sobolev (9) and Hölder (10) balls use non-strict inequalities, while Besov (11) uses a strict inequality. Coefficient definitions are primary; identifying them with classical spaces requires the source basis conditions. Equal spaces at r=2 do not make the printed strict and non-strict balls identical.",
+    "The weighted space (17) assumes w_l>=1 for l>=0, but Theorem 5 prints weights l^(1+kappa+epsilon) and l^((1+kappa+epsilon)/2), both zero at l=0. This finite-level convention is unresolved; neither the index origin nor the weights are silently repaired.",
+    "Theorem 5 compares the ordinary posterior after the data-dependent affine map tau with the law of the standard Gaussian coefficient sequence. It uses the separable vanishing-level space M0, not the whole nonseparable bounded sequence space M.",
+    "The bounded-Lipschitz metric is named but its exact test-function normalization is not supplied. The source claim about metrizing weak convergence is preserved; the theorem applies it on the separable space M0.",
+    "Theorem 6 requires alpha>1/2 in its polynomial branch and uses the general (21) scale in the other branch. Its two rate formulas differ from the two supremum-norm rates of Theorem 7. Unlike Theorem 7, its printed statement does not contain an explicit for-large-enough-n clause.",
+    "Theorem 8 refers to Theorem 7 for prior parameters and rates, not merely as a proof citation. Both branches are unpacked, including beta<=alpha in the polynomial branch. The original density-map paragraph first illustrates (4),(5), but its map itself is used with both branches by the theorem.",
+    "Theorem 9 refers to Theorem 6 for parameters and rates, whereas the preceding classification prior sentence mentions (4),(6) or (4),(5). Preserve both source passages; the theorem reference controls recorded branch parameters, with the basis discrepancy explicitly unresolved.",
+    "The classification covariate domain is [0,1]^d for d>=1, while the preceding series bases and smoothness balls are defined on [0,1]. The main-text classification paragraph does not supply a multivariate basis or dimension-dependent rate convention; no such construction is invented.",
+    "Theorem 9 prints the joint density difference p_f-p_f0 in the G,1 norm defined on X alone. The capital G is not separately defined there. Preserve this unresolved source-domain issue instead of substituting the regression difference h_f-h_f0.",
+    "The posterior power is defined for 0<rho<=1. Theorems 8-10 state rho<1 within this range, so their effective range is 0<rho<1; nonpositive powers are not included. Theorem 8 explicitly states M(rho)>0 while Theorem 9 does not print that inequality.",
+    "The normalization map for densities and logistic map for binary regression take an input function or prior. Their introductory prior examples do not impose fixed scale dependencies on every application; the theorem selects its branch explicitly.",
+    "Theorem 10 has only the wavelet scale (5), the tail bound (19), and the Besov regularity restriction. Do not add Theorem 4's polynomial branch or moment assumption merely because the discussion compares the results.",
+    "Usual L1, L2 and supremum norms, expectations, iid Gaussian distributions, coefficient inner products, measure pushforwards and asymptotic constants are ambient. The exact G,1 norm use remains unresolved as described above. Logarithmic rate multipliers are bound within the statements.",
+    "Proof-only posterior coordinate estimates, testing and sieve constructions, the displayed application to primitive functions, and simulation-specific forward operators are not required to state these ten theorems. External references and appendix proofs are not imported."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2308.04916v3",
+    "version": "arXiv:2308.04916v3, 29 May 2024",
+    "pdf_sha256": "36a56438156e943f34cd8fd429857a5707dac77a4cd2606c8533def916aca2cb",
+    "pdf_pages": 59,
+    "main_text_last_pdf_page": 26
+  },
+  "recorded_checks": [
+    "All ten complete original Theorems 1-10 were visually compared on pages 7, 9-15. Independent actual-heading enumeration covers main-text pages 1-25 and the upper portion of page 26, excluding proof headings, references, remarks and appendix content.",
+    "Twenty-six supporting passages and ten auxiliary passages were visually checked on pages 3-9 and 11-14. They preserve original prior constructions, scale alternatives, density and tail conditions, coefficient balls, Gaussian experiments, multiscale spaces, posterior transformations and classification definitions.",
+    "Independent reconstruction verifies 82 direct uses and 87 related connections. Theorems 6 and 7 are prior-mass statements without a sampling experiment. Their explicitly referenced parameters and rates are unpacked in Theorems 9 and 8 respectively. Prior examples preceding transformation formulas do not fix a branch in every use.",
+    "Every interface retains a source-derived natural-language term and meaning-bearing original notation or phrase for highlighting. Repeated source keywords do not establish equivalence of scale choices. Explanations cover all related theorems and their paper-local paths.",
+    "Visual and font checks preserve calligraphic smoothness balls and logarithmic multipliers, the barred survival function, blackboard Gaussian noise, the affine mapsto arrow, and distinct classical Hölder versus Hölder-Zygmund notation. Strict Besov and non-strict Sobolev/Hölder balls remain separate.",
+    "Twenty-three source notes record the level-zero weight discrepancy, Theorem 4 scale index, Theorem 9 prior-reference and norm-domain ambiguities, one-dimensional versus multivariate conventions, and the effective positive rho range. Original quotes remain unchanged; no mathematical repair, proof certification or appendix import is claimed.",
+    "The retained per-paper scripts reproduced all six content artifacts byte-for-byte in an empty directory. Source identity, inventory handoff, semantic invariants, graph reach, branch choices, math fragments and both schema validations passed. Reproduction itself does not renew source review."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "bf6df249408b6cfd89e3ee7ffee2fdc8ceb14ecdc739ada525430c9156607555"
+}

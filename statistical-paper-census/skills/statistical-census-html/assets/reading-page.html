@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>__TITLE__</title><style>__CSS__</style></head>
+<body><main class="reading">__CONTENT__</main><script>
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&parent!==window)parent.postMessage({action:'close-theorem-reader'},'*');});
+document.addEventListener('click',function(e){const a=e.target.closest('a');if(!a)return;if(a.dataset.route&&parent!==window&&!e.ctrlKey&&!e.metaKey&&!e.shiftKey&&!e.altKey){e.preventDefault();parent.postMessage({action:'open-census-route',route:a.dataset.route,scroll:window.scrollY,expanded:[...document.querySelectorAll('details[open][id]')].map(d=>d.id)},'*');}else if(/^#(requirements|variant)-/.test(a.getAttribute('href')||'')){const target=document.getElementById(a.hash.slice(1));if(target?.tagName==='DETAILS')target.open=true;}});
+function revealFragment(){const target=document.getElementById(location.hash.slice(1));if(target){if(target.tagName==='DETAILS')target.open=true;target.scrollIntoView();}}
+window.addEventListener('hashchange',revealFragment);revealFragment();
+window.addEventListener('message',function(e){if(e.source===parent&&e.data?.action==='restore-reader-scroll'){for(const id of e.data.expanded||[]){const d=document.getElementById(id);if(d?.tagName==='DETAILS')d.open=true;}window.scrollTo(0,Number(e.data.scroll)||0);}});
+</script></body></html>

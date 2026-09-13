@@ -1,0 +1,313 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i06-p2791",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-11T03:53:31.184342+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i06-p2791/T3.1",
+      "aos-2024-v52-i06-p2791/T3.3",
+      "aos-2024-v52-i06-p2791/T3.4",
+      "aos-2024-v52-i06-p2791/T3.5",
+      "aos-2024-v52-i06-p2791/T3.6",
+      "aos-2024-v52-i06-p2791/T4.1",
+      "aos-2024-v52-i06-p2791/T4.5",
+      "aos-2024-v52-i06-p2791/T4.11"
+    ],
+    "printed_label_check": [
+      [
+        10,
+        "3.1"
+      ],
+      [
+        11,
+        "3.3"
+      ],
+      [
+        11,
+        "3.4"
+      ],
+      [
+        12,
+        "3.5"
+      ],
+      [
+        12,
+        "3.6"
+      ],
+      [
+        13,
+        "4.1"
+      ],
+      [
+        17,
+        "4.5"
+      ],
+      [
+        20,
+        "4.11"
+      ]
+    ],
+    "method": "Independent bold-font enumeration across all24 main-text pages and visual comparison of eight complete theorem statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 8,
+    "interfaces": 24,
+    "source_members": 24,
+    "direct_theorem_uses": 56,
+    "related_theorem_connections": 64,
+    "unranked_auxiliary_passages": 11
+  },
+  "source_notes": [
+    {
+      "issue_id": "registered-source",
+      "evidence": [
+        {
+          "page": 1,
+          "location": "Source issue registered-source"
+        },
+        {
+          "page": 24,
+          "location": "Source issue registered-source"
+        }
+      ],
+      "note": "Registered arXiv2006.02044v2,67pages,stamp3Sep2024. Main text ends24; appendix begins25. Preserve this registered version and its eight theorem environments, not an abstract or replaced published source."
+    },
+    {
+      "issue_id": "notation-fidelity",
+      "evidence": [
+        {
+          "page": 2,
+          "location": "Source issue notation-fidelity"
+        },
+        {
+          "page": 6,
+          "location": "Source issue notation-fidelity"
+        },
+        {
+          "page": 11,
+          "location": "Source issue notation-fidelity"
+        }
+      ],
+      "note": "Fraktur L in9/3.3 differs from Lipschitz L; fraktur B_d denotes the Euclidean unit ball. Population law and empirical measure are blackboard P and P_n; classes and grid are calligraphic. PDF plain text conflates these fonts; checked rendered pages and font metadata."
+    },
+    {
+      "issue_id": "noise-and-selection",
+      "evidence": [
+        {
+          "page": 1,
+          "location": "Source issue noise-and-selection"
+        },
+        {
+          "page": 2,
+          "location": "Source issue noise-and-selection"
+        },
+        {
+          "page": 13,
+          "location": "Source issue noise-and-selection"
+        }
+      ],
+      "note": "Model1 gives iid Gaussian errors without explicitly stating independence from random design. This is a usual model convention needed for conditional Gaussian calculations. LSE2 chooses any minimizer; generic existence, measurable selection and off-design uniqueness are not guaranteed by that notation."
+    },
+    {
+      "issue_id": "generic-convex-class",
+      "evidence": [
+        {
+          "page": 13,
+          "location": "Source issue generic-convex-class"
+        }
+      ],
+      "note": "Theorem4.1 assumes a convex class F, not necessarily a class of convex functions. It does not explicitly impose closedness of evaluation vectors. For the open convex family of constant functions c in(0,1), minimizers can fail when the sample mean is outside this interval. Preserve source wording and record missing attainment/closure conditions; do not assert theorem truth from transcription checks."
+    },
+    {
+      "issue_id": "normalized-body-volume",
+      "evidence": [
+        {
+          "page": 2,
+          "location": "Source issue normalized-body-volume"
+        },
+        {
+          "page": 3,
+          "location": "Source issue normalized-body-volume"
+        }
+      ],
+      "note": "Containment in the Euclidean unit ball does not imply volume<=1 as stated after3. Retain the actual domain condition without adding the claimed volume consequence as a hypothesis. Theorem4.5 explicitly needs only containment, and4.1 binds an arbitrary convex body."
+    },
+    {
+      "issue_id": "slabs-and-facets",
+      "evidence": [
+        {
+          "page": 4,
+          "location": "Source issue slabs-and-facets"
+        },
+        {
+          "page": 9,
+          "location": "Source issue slabs-and-facets"
+        },
+        {
+          "page": 10,
+          "location": "Source issue slabs-and-facets"
+        },
+        {
+          "page": 11,
+          "location": "Source issue slabs-and-facets"
+        }
+      ],
+      "note": "F in14 counts slabs, while3.1 explicitly bounds facets. They are not the same literal count. Constants may depend on dimension and the stated complexity bounds; do not replace a fixed-dimensional slab condition with an unrestricted growing-polytope sequence."
+    },
+    {
+      "issue_id": "grid-and-cells",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Source issue grid-and-cells"
+        },
+        {
+          "page": 12,
+          "location": "Source issue grid-and-cells"
+        },
+        {
+          "page": 19,
+          "location": "Source issue grid-and-cells"
+        }
+      ],
+      "note": "n equals the number of grid points inOmega; delta is small enough for16 and n>=2. C_(k,h) partitions grid intersections, not necessarily every point ofOmega. Referring to slab format14 for cells does not require each cell to contain a dimensional ball. Integer k,h and cell endpoint assignment conventions remain implicit."
+    },
+    {
+      "issue_id": "affine-distance",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Source issue affine-distance"
+        },
+        {
+          "page": 11,
+          "location": "Source issue affine-distance"
+        }
+      ],
+      "note": "F^frakturL bounds the unsquared empirical distance to all affine functions. It is design-dependent and allows unbounded affine trends. Do not substitute a Lipschitz bound, uniform bound, or a squared-distance threshold. The supremum class and the unrestricted estimator class are different."
+    },
+    {
+      "issue_id": "lemma-function-choice",
+      "evidence": [
+        {
+          "page": 10,
+          "location": "Source issue lemma-function-choice"
+        },
+        {
+          "page": 11,
+          "location": "Source issue lemma-function-choice"
+        },
+        {
+          "page": 12,
+          "location": "Source issue lemma-function-choice"
+        }
+      ],
+      "note": "Lemma3.2 provides existence of a convex tilde f_k with at most C_d*k simplex pieces and approximation properties; it does not uniquely define a function. Theorem3.6 calls it the function from that lemma. Preserve the reference and existential properties; no unique constructor or all-witness assertion is supplied from the excluded appendix. Small-k meaning of(1-C_d*k^(-1/d))*Omega is also retained without correction."
+    },
+    {
+      "issue_id": "h-uniformity",
+      "evidence": [
+        {
+          "page": 12,
+          "location": "Source issue h-uniformity"
+        },
+        {
+          "page": 18,
+          "location": "Source issue h-uniformity"
+        }
+      ],
+      "note": "Theorem3.5 says C_d depends on d alone for every k,h>=1 and writes(log n)^h. The proof-sketch bounds47–48 have powers(cd log n)^h, potentially hiding h-dependent factors if h varies. Preserve the printed theorem and flag the stated constant scope rather than silently importing h-dependence."
+    },
+    {
+      "issue_id": "bracketing-scale",
+      "evidence": [
+        {
+          "page": 17,
+          "location": "Source issue bracketing-scale"
+        }
+      ],
+      "note": "Theorem4.5 states the bound for every0<epsilon<Gamma with log(Gamma/epsilon)^(d+1). For fixed t large enough to include constants -Gamma and Gamma onOmega=[-1,1] and one simplex equalOmega, their Lp distance exceedsGamma, so the bracketing entropy stays at least log2 as epsilon approachesGamma, whereas the printed RHS tends to0. A restricted epsilon range or a log convention may be intended, but none is specified in the main-text constants convention. Preserve43 and record this endpoint issue without correcting it."
+    },
+    {
+      "issue_id": "metric-distinctions",
+      "evidence": [
+        {
+          "page": 3,
+          "location": "Source issue metric-distinctions"
+        },
+        {
+          "page": 4,
+          "location": "Source issue metric-distinctions"
+        },
+        {
+          "page": 6,
+          "location": "Source issue metric-distinctions"
+        },
+        {
+          "page": 17,
+          "location": "Source issue metric-distinctions"
+        },
+        {
+          "page": 19,
+          "location": "Source issue metric-distinctions"
+        }
+      ],
+      "note": "Population squared L2, empirical squared L2, unnormalized Lebesgue Lp and normalized discrete Lp are distinct. Full-function empirical distances are pseudometrics until quotienting evaluation vectors. Covering entropy uses closed balls; bracket endpoints are pointwise ordered functions with metric width. Centers/quotient conventions are implicit; finite-dimensional metric facts are ambient, not theorem-truth checks."
+    },
+    {
+      "issue_id": "theorem4.11-scope",
+      "evidence": [
+        {
+          "page": 19,
+          "location": "Source issue theorem4.11-scope"
+        },
+        {
+          "page": 20,
+          "location": "Source issue theorem4.11-scope"
+        }
+      ],
+      "note": "The p range1<=p<infinity and small-delta grid convention precede4.11 rather than appearing in its first sentence. Keep this context without rewriting the original. Constant c_(d,p) occurs inside an F-th power, unlike4.5 where k appears linearly. No response noise belongs to this entropy theorem."
+    },
+    {
+      "issue_id": "discussion-not-extension",
+      "evidence": [
+        {
+          "page": 22,
+          "location": "Source issue discussion-not-extension"
+        },
+        {
+          "page": 23,
+          "location": "Source issue discussion-not-extension"
+        }
+      ],
+      "note": "The discussion proposes bounded-density random design with changed constants, unbounded designs, non-Gaussian errors and modified interior loss. These are not replacement hypotheses or new inventoried Theorems; Gaussian errors and original losses remain the census scope."
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2006.02044v2",
+    "version": "arXiv:2006.02044v2, stamped 3 Sep 2024",
+    "pdf_sha256": "f513008a3eea20d3a7e2818b1e1fc38d354cf7b023de1c2f95ff5d36e38b9423",
+    "pdf_pages": 67,
+    "main_text_last_pdf_page": 24
+  },
+  "recorded_checks": [
+    "Eight original main-text Theorems3.1,3.3,3.4,3.5,3.6,4.1(Chatterjee),4.5,4.11 independently enumerated by bold font and visually compared. Section2 Propositions and all Lemmas are excluded as inventory claims. Main text ends24; appendix bodies beginning25 are excluded.",
+    "Twenty-four entries preserve original convex regression classes, design/model assumptions, losses, affine-distance class, grid-partition class, referenced Lemma3.2 approximation, covering/bracketing conventions and local objective/radius. Eleven auxiliary passages retain standing constants and proof-only context. Lemma3.2 is a source passage identifying the function in3.6, not an invented definition or theorem.",
+    "Independent source-clause graph verifies56 direct uses and64 related-theorem connections. Fixed-design rates inherit2.2 explicitly via3.2. Theorem4.1 keeps its own arbitrary deterministic design and convex class;4.5 and4.11 are deterministic entropy statements. No proof-only Gaussian-supremum or entropy requirements are imposed on the rate theorems. Only3.6 requires the Lemma3.2 function.",
+    "Fourteen source notes preserve fraktur notation, model independence and LSE attainment conventions, normalized-body volume error, slab/facet and grid/cell distinctions, affine-distance interpretation, nonunique lemma function, h-uniformity, bracketing-scale endpoint and distinct metrics. Source formulas are not silently repaired.",
+    "All24 entries retain exact author keywords, source headings/kinds and matching selectors. All64 connections have a checked paper-local path and a source-specific explanation. Names are natural-language source terms; notation is preserved in statements and selectors.",
+    "All six content JSONs reproduce byte for byte in a fresh empty directory. Seven retained scripts support generation and separate inventory/full-source review. Rebuilding is not a new semantic PDF review.",
+    "The census preserves source statements and context rather than certifying theorem truth. The selected function in3.6 is identified only by the main-text existential lemma; its appendix construction remains unresolved and outside scope. Potential source defects are recorded separately."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "3ba6f4ed84947623760d792fb1e480cf2273a64d0bce7db21931151f65942ce2"
+}

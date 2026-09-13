@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "scope": "The exported report search payload is identical to the source report after normalizing only generation-directory prefixes in reader URLs. Core research JSON hashes are independently retained in export-provenance.json.",
+  "source_report_sha256": "a33f16c054688b16e30864de002ba2ae6199160fdb1d2b3980e702fd279d21ad",
+  "report_sha256": "9e1476e899c149c03d6604dc18ff76bfac778199d540ac949443e124d9efdc64",
+  "counts": {
+    "papers": 113,
+    "theorems": 637,
+    "interfaces": 2486
+  },
+  "preserved": [
+    "names",
+    "statements in search payload",
+    "ranks",
+    "counts",
+    "theorem requirements",
+    "work statuses",
+    "stable route and fragment IDs"
+  ]
+}

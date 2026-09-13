@@ -1,0 +1,60 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i01-p0207",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T06:30:06.726039+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i01-p0207/T1",
+      "aos-2024-v52-i01-p0207/T2",
+      "aos-2024-v52-i01-p0207/T3",
+      "aos-2024-v52-i01-p0207/T4"
+    ],
+    "method": "All main-text pages enumerated before interface extraction. Four printed Theorems (1-4) on PDF pages 13, 14 and 19 were checked visually and against matching-version main-text TeX. Section 5 ends on the shared page 20 above Appendix A; the boundary crop excludes the appendix body.",
+    "excluded_result_types": [
+      "Proposition",
+      "Lemma",
+      "Corollary"
+    ],
+    "supplementary_material_used": false
+  },
+  "counts": {
+    "theorems": 4,
+    "interfaces": 31,
+    "source_members": 32,
+    "direct_theorem_uses": 15,
+    "related_theorem_connections": 82,
+    "unranked_auxiliary_passages": 3
+  },
+  "source_notes": [
+    "The inspected source is arXiv:2211.12612v2, stamped 25 January 2024, with 63 PDF pages. No published pagination is assumed. Its PDF remains in the external persistent source cache.",
+    "Only main-text TeX inputs were expanded. No appendix experiment, proof or auxiliary result was opened or imported as a statement dependency.",
+    "The general and self-similar parameter classes retain all original constants, even where the paper uses shortened Pi notation. Theorem 3 retains kappa asymptotically comparable to one, uniform beta/gamma bounds and the logarithmic factor.",
+    "Theorem 4 retains its existence quantifier for b and its exact constant-dependence clause; it does not inherit an upper-bound algorithm.",
+    "Assumptions remain source-labelled assumptions. Definition 3 concerns an individual function; Assumption 4 requires one common arm self-similar under both specified measures.",
+    "The shared Procedure 1 has two local invocation records, preserving its original body and the adaptive substitutions without importing the known-parameter confidence formula into the adaptive algorithm.",
+    "The lower-bound history omission, strict floor/ceiling prose, unindexed reward in (8), grid equalities and ordinary logarithm in the adaptive radius remain explicit source-convention notes.",
+    "The initial suspicion of malformed TeX in (16) was rejected after checking its nested subscripts. No brace repair remains in the saved source statement.",
+    "Registered-source revalidation restored the printed spelling smallset in auxiliary passage A1 and corrected its prior resolution note. See source-transcription-corrections.json; the theorem inventory and ranked census remain unchanged."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2211.12612v2",
+    "version": "arXiv:2211.12612v2",
+    "pdf_sha256": "a4f4af9a32f0d0d733cc8230f9ee11507196c8bb2284e5532ba8f27e9b37c49f",
+    "pdf_pages": 63,
+    "main_text_last_pdf_page": 20
+  },
+  "recorded_checks": [
+    "The four complete original Theorem statements were visually checked before extraction; their independently validated inventory hash remains unchanged.",
+    "All 31 interfaces, 32 local members and three unranked source passages were reviewed against the main-text PDF and matching-version TeX.",
+    "Algorithms 1 and 2 retain their 24 and 26 numbered steps; Procedures 1 and 2 retain 25 and 21 steps, control nesting, inputs, updates and outputs.",
+    "The finalizer derives canonical dependencies, counts and same-paper paths. A separate validator process accepted the finalized census and its pinned theorem inventory.",
+    "The 15 direct uses and 82 related paths preserve the general/self-similar distinction and the separate known/adaptive algorithm invocations.",
+    "Known-parameter U, tau-star and Algorithm 1 reach only Theorem 1. Estimated-smoothness U-hat, tau-hat and Algorithm 2 reach only Theorem 3. Self-similarity reaches only Theorems 3 and 4.",
+    "Every member has a literal source or source-label highlight. All selectors match their source or a related same-paper theorem. Mathematical fragments have balanced braces.",
+    "Evidence locations were checked against printed PDF pages, including the float order of Algorithm 2 and Procedure 2. Equation (16) includes both indicator factors and its printed number."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "c0f581ebe900bc8164bf3a02e8bbc001971ed53fe382e5d0c9fcd82a7091e6db"
+}

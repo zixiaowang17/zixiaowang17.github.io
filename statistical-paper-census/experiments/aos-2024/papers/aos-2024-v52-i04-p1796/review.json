@@ -1,0 +1,422 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i04-p1796",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-10T02:05:49.803344+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i04-p1796/T1",
+      "aos-2024-v52-i04-p1796/T2"
+    ],
+    "printed_label_check": [
+      [
+        17,
+        1
+      ],
+      [
+        26,
+        2
+      ]
+    ],
+    "method": "Independent actual bold-heading enumeration and visual comparison of both complete multi-page statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 2,
+    "interfaces": 26,
+    "source_members": 26,
+    "direct_theorem_uses": 26,
+    "related_theorem_connections": 28,
+    "unranked_auxiliary_passages": 17
+  },
+  "source_notes": [
+    {
+      "issue_id": "registered-version",
+      "description": "All statements and passages refer to the registered arXiv v4, stamped 8 Jun 2024, not an assumed published-version transcription.",
+      "evidence": [
+        {
+          "page": 1,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "general-algorithm-outside-scope",
+      "description": "The general Algorithm 1 is explicitly placed in the supplement. Only the main-text reference and Theorem 1 input/output references are preserved. Its construction and omitted local dependencies remain unresolved.",
+      "evidence": [
+        {
+          "page": 14,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 17,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 18,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "algorithm-number-collision",
+      "description": "General supplement Algorithm 1, main-text Algorithm 1-dagger on page 15, and Section 4 Algorithm 1 on page 26 are distinct source references. The two latter bodies are retained in full.",
+      "evidence": [
+        {
+          "page": 14,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 15,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 26,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "target-observation-scope",
+      "description": "Section 2 assumes A contains 0 and fully observed target data. Section 3 expressly allows an unobserved target Q. Theorem 1 still writes conditional expectations given A=0 in Delta; that notation requires clarification in the general unobserved-target case.",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 10,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 17,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "target-support-notation",
+      "description": "The prefix setup names the support of history given A=0 even though Q may be unobserved. DS.0 subsequently says support under Q. Preserve both source formulations.",
+      "evidence": [
+        {
+          "page": 10,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "density-ratio-existence",
+      "description": "Theorem 1 discusses failure of DS.0 yet uses lambda_* defined for dominated target/source history laws. The main-text failure discussion emphasizes conditional mismatch and extensions; no unrestricted density-ratio construction under failure of domination is supplied.",
+      "evidence": [
+        {
+          "page": 12,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 17,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 21,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "source-probability-positivity",
+      "description": "DS.0 makes S-prime_k a known nonempty subset but does not separately write positive source probability for every such conditioning event. Conditional laws and denominators need their usual existence conventions.",
+      "evidence": [
+        {
+          "page": 10,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 12,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 13,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "general-standing-variance",
+      "description": "Footnote 2 states finite conditional variance of ell(X,Y) given A=0 throughout, while the generalized setup permits arbitrary Z and unobserved Q. Do not silently change that standing source statement.",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 10,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "fold-conventions",
+      "description": "Fixed V is stated in Section 3.2. Approximately equal fold sizes are specified by Algorithm 1-dagger; the specialized Algorithm 1 states random folds without repeating approximate equality. Empty-fold handling and minimum training class sizes are not fully specified.",
+      "evidence": [
+        {
+          "page": 14,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 15,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 26,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "marginal-fit-prose-conflict",
+      "description": "Page 14 says all preliminary nuisance estimators are out-of-fold. Algorithm 1-dagger explicitly estimates pi in-fold. Remark 2 permits an out-of-fold alternative; preserve the actual recipe and both qualifications.",
+      "evidence": [
+        {
+          "page": 14,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 15,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "theorem1-unhatted-pi",
+      "description": "The last denominator in expansion (19) uses pi_v^a without a hat. Its meaning is not separately defined; it is preserved rather than silently replaced by pi-hat_v^a.",
+      "evidence": [
+        {
+          "page": 18,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "theorem1-threshold-rates",
+      "description": "The threshold on t contains a*b+a+b+n^-1, whereas the normal-tail bound (20) contains a*b+n^-1/2*(a+b)+n^-1. Both are preserved as printed.",
+      "evidence": [
+        {
+          "page": 17,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 18,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "bound-uniformity",
+      "description": "The finite-sample branch quantifies over all n,k,v and refers to the bound on lambda-hat. It does not separately spell out whether one deterministic envelope is uniform in all indices and realizations; the constants are stated to depend only on epsilon, P_* and that bound.",
+      "evidence": [
+        {
+          "page": 17,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 18,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "zero-variance",
+      "description": "Theorem 1 divides by sigma_*,GSC in (20), without explicitly assuming it is positive. The source 0/0=0 convention does not specify nonzero/0.",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 13,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 18,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "theorem1-drift-scope",
+      "description": "ST.1 and ST.2 control r-hat minus Delta. DS.0 is added only in the final clause to make Delta=0. Drift correction must not be discarded or DS.0 added to every branch.",
+      "evidence": [
+        {
+          "page": 17,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 18,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "nonunique-regressions",
+      "description": "Section 3.4 says conditional means can be nonunique even on target supports when DS.0 fails; ST conditions and the influence function may depend on the selected version. No unique canonical regression is substituted.",
+      "evidence": [
+        {
+          "page": 12,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 21,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "illustrative-limits",
+      "description": "Remark 3 allows ST.1/ST.2 without existence of every nuisance limit. The illustrative L2(nu_k) convergence and limiting oracle regressions are not added as theorem assumptions.",
+      "evidence": [
+        {
+          "page": 14,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 16,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 17,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "unintroduced-P0",
+      "description": "The illustration defining nu_k on page 14 uses P^0 without a definition there. That symbol is preserved as an unresolved source convention.",
+      "evidence": [
+        {
+          "page": 14,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "lp-notation",
+      "description": "The stated general Lp norm lacks absolute values and the infinity-endpoint convention, although p ranges through infinity. The actual theorem uses L2. Preserve the printed general definition.",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "regularity-external",
+      "description": "Asymptotic linearity and efficient influence function are described in the main text, but regularity and full model/tangent-space definitions are not provided. Supplementary efficiency exposition remains excluded.",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "efficient-identification-conditions",
+      "description": "The paragraph identifying D_GSC and D_SC as efficient influence functions requires DS.0 plus two-sided ratio bounds or DS.0-dagger plus bounded odds. These conditions qualify that source identification; they must not be silently inserted into all of Theorem 1.",
+      "evidence": [
+        {
+          "page": 13,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 17,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 18,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "binary-feature-shift",
+      "description": "DS.1 is X independent of A under A={0,1}. Neither a multi-source interpretation of 1-a nor Y|X invariance is substituted for it.",
+      "evidence": [
+        {
+          "page": 10,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 25,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 26,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "theorem2-rho-index",
+      "description": "Theorem 2 remainder uses rho-hat^v in its first term but rho-hat^{-v} inside D_Xcon. Algorithm 1 estimates rho in-fold. Remark 6 says out-of-fold rho changes the influence function when conditional risk is inconsistently estimated; preserve the apparent inconsistency.",
+      "evidence": [
+        {
+          "page": 26,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 27,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "theorem2-nuisance-limit",
+      "description": "Theorem 2 assumes one common L2 limit across folds, which need not equal E_*. The extra leading influence-function term is retained. Only the final branch sets E_infinity=E_*.",
+      "evidence": [
+        {
+          "page": 26,
+          "location": "Source scope or notation"
+        },
+        {
+          "page": 27,
+          "location": "Source scope or notation"
+        }
+      ]
+    },
+    {
+      "issue_id": "footnote6-preservation",
+      "description": "Theorem 1 footnote 6 is retained as source_footnotes in the inventory and must survive the full census handoff unchanged. It is not inserted into statement_original.",
+      "evidence": [
+        {
+          "page": 17,
+          "location": "Source scope or notation"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2306.16406v4",
+    "version": "arXiv:2306.16406v4; arXiv stamp 8 Jun 2024",
+    "pdf_sha256": "45ff9682a415f4d28e0ed8ed4017b0b71f5b6972296a3e6115c0d52b696fdf49",
+    "pdf_pages": 96,
+    "main_text_last_pdf_page": 33
+  },
+  "recorded_checks": [
+    "Independent enumeration found exactly two main-text Theorems, beginning on pages 17 and 26. Complete continued statements, all (18)–(22)/(25)–(26) formulas and branches, and footnote 6 are preserved. Propositions, Corollaries, Lemmas and supplement references are excluded.",
+    "Twenty-six entries preserve both target-risk setups, sequential prefixes and conditions, nuisance functions, pseudo-losses, influence functions and variance, the two main-text algorithms, oracle/product-bias terms, ST.1/ST.2 and RAL terminology. Seventeen auxiliary passages preserve standing conventions, source footnotes, binary populations, version-choice qualifications and allowed alternatives.",
+    "Independent numeric reconstruction verifies 26 direct uses and 28 related connections. The general/dagger formulas remain distinguishable. Theorem 2 reaches only its observed-target risk, DS.1, conditional risk, D_Xcon, specialized algorithm and RAL terminology; it does not inherit ST.1/ST.2 or the general algorithm.",
+    "DS.0 is additional in the final Theorem 1 clause, making Delta zero. Earlier branches concern r-hat minus Delta. References to DS.0-dagger in the odds identity and algorithm title do not impose it globally. Theorem 2 permits a common inconsistent nuisance limit, retaining its additional leading term before the separate efficient specialization.",
+    "All names use literal source natural-language terms or condition labels. Separate original source headings distinguish conditions, source passages and algorithms. Every member has meaningful source selectors and every related theorem has a same-paper explanation with its dependency path.",
+    "Visual checks retain pi_v^a without a hat in (19), different t-threshold and Gaussian-tail rates, rho-hat^v versus rho-hat^{-v} in Theorem 2, the two product-bias formulas across the page-14/15 algorithm interruption, in-fold proportions, out-of-fold regressions, the 0/0 and infinite-odds conventions, and the printed P^0 and general Lp formula.",
+    "The general Algorithm 1 is explicitly outside the main text. Its body and omitted dependencies remain unresolved, without reconstruction from the dagger or specialized algorithm. Regularity definitions deferred to supplementary exposition also remain unresolved. Twenty-five source issues document scope and notation; source review is not proof certification.",
+    "All six content artifacts reproduce byte for byte using seven retained scripts. PDF identity, independent heading enumeration, original-claim/footnote handoff, source-specific formulas, local and related graphs, keywords, selectors, TeX fragments and structural validators passed."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "80987fe45e6618fa828461d561d9abb969b1a5f366941ea262fc76fa25e54f36"
+}

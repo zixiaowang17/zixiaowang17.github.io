@@ -1,0 +1,325 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i06-p2583",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-11T00:55:35.991711+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i06-p2583/T1",
+      "aos-2024-v52-i06-p2583/T2",
+      "aos-2024-v52-i06-p2583/T3",
+      "aos-2024-v52-i06-p2583/T4",
+      "aos-2024-v52-i06-p2583/T5",
+      "aos-2024-v52-i06-p2583/T6",
+      "aos-2024-v52-i06-p2583/T7",
+      "aos-2024-v52-i06-p2583/T8",
+      "aos-2024-v52-i06-p2583/T9",
+      "aos-2024-v52-i06-p2583/T10"
+    ],
+    "printed_label_check": [
+      [
+        10,
+        "1"
+      ],
+      [
+        11,
+        "2"
+      ],
+      [
+        12,
+        "3"
+      ],
+      [
+        12,
+        "4"
+      ],
+      [
+        13,
+        "5"
+      ],
+      [
+        14,
+        "6"
+      ],
+      [
+        15,
+        "7"
+      ],
+      [
+        17,
+        "8"
+      ],
+      [
+        18,
+        "9"
+      ],
+      [
+        20,
+        "10"
+      ]
+    ],
+    "method": "Independent bold-heading enumeration and visual comparison of all ten complete statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 10,
+    "interfaces": 30,
+    "source_members": 30,
+    "direct_theorem_uses": 71,
+    "related_theorem_connections": 115,
+    "unranked_auxiliary_passages": 10
+  },
+  "source_notes": [
+    {
+      "issue_id": "registered-version-and-boundary",
+      "evidence": [
+        {
+          "page": 1,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 26,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Registered source is arXiv2206.08756v3 marked15Jan2024,65pages, submitted-to-AoS preprint. Main text ends with acknowledgements on page26 before REFERENCES y328.151; clip322. All supplementary bodies, starting32, are excluded. No assumption of identity with the published version is made."
+    },
+    {
+      "issue_id": "rgn-time-zero-factor",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 15,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorem2 prints2^(-2^t) for all t≥0, even without noise. At t=0 it implies e0≤e0/2 unless e0=0. The corresponding Corollary1 RGN factor has the same issue. Preserve the original; do not repair the exponent or shift the time range."
+    },
+    {
+      "issue_id": "theorem-four-target",
+      "evidence": [
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorem4’s upper expected error uses unstarred X although the surrounding true parameter is X*. Its lower bound deliberately ranges over X. Preserve the difference in the inventory; no silent star insertion."
+    },
+    {
+      "issue_id": "theorem-eight-dimension-index",
+      "evidence": [
+        {
+          "page": 17,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorem8 prints bar-p=max_{k=1,...,d+m} p_i, with mismatched indices. Its df is sum p_i, not the exact rank-one manifold dimension; retain both source expressions."
+    },
+    {
+      "issue_id": "testing-normalization-and-coupling",
+      "evidence": [
+        {
+          "page": 17,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Section5 preceding14 prints ||X*||F+sigma²=1, without a square on the norm. Equation14 instead sets X*=sqrt(1-sigma²) x* tensor-power d with unit-norm Rademacher x*, consistent with squared-norm normalization. Preserve both. A common random planted signal couples samples under H1, so the source iid wording is naturally conditional on that signal; explicit independence of the planted signal, designs and errors is not fully spelled out in14."
+    },
+    {
+      "issue_id": "testing-is-low-degree",
+      "evidence": [
+        {
+          "page": 17,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 18,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorem9 bounds the alternative expectation of null-centered, null-unit-variance polynomials of total degree at mostD. It does not prove an unconditional lower bound for all polynomial-time algorithms. The surrounding runtime equivalence is conjectural and the testing-to-estimation reduction is in an excluded supplement. Preserve the bound n≤(p/(dD))^(d/2)delta/[2(1-sigma²)] and variance of f, not f squared."
+    },
+    {
+      "issue_id": "rank-and-unfolding-conventions",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 8,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 9,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Detailed matricization/mode-product indexing and explicit tangent-space parameterization are deferred to SupplementB. Main-text formulas and dimensions are saved. Admissible nonempty Tucker ranks, singular-value ties and rank-deficient QR choices require conventions beyond the printed definitions; do not silently import an appendix."
+    },
+    {
+      "issue_id": "trip-rank-range",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 10,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Definition1 states1≤r_k≤p_k, whereas later constants use2r and2r+r*. Best-approximation subspaces also use ranks2r. A capping/extension convention may be needed when these exceed ambient sizes; the source does not specify it in these passages."
+    },
+    {
+      "issue_id": "rgd-zero-step-and-rgn-norm",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 10,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 21,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Stepsize6 is0/0 at zero projected gradient unless a stopping or zero-step convention is supplied. Algorithm1 Eq8 prints the2-norm for tensor responses, while the surrounding objective, Lemma2 and Section7 use Frobenius norm. Preserve the print; vectorization equivalence is an interpretation, not a source rewrite."
+    },
+    {
+      "issue_id": "retraction-scope-and-update-order",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 14,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 16,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 20,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "T-HOSVD/ST-HOSVD pseudocode lies in excluded Algorithms6/7. Main Algorithms2–5 consistently print old superscript0 factors both for j<k and j>k; do not change them to sequential updated factors. Matrix P_r is explicitly defined in the main text and does not need the excluded tensor-retraction pseudocode."
+    },
+    {
+      "issue_id": "rank-one-amplitude-and-qr",
+      "evidence": [
+        {
+          "page": 14,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 16,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Section4.4 introduces rank-one factors and amplitude lambda without explicitly restating unit norms for each u_k; the earlier least-nonzero-singular-value lambda convention suggests normalization but does not state each factor norm here. Algorithm3 uses R_A inverse, requiring full column rank, and Algorithm4 uses even n and two sample halves. These requirements remain documented separately from original theorem wording."
+    },
+    {
+      "issue_id": "iteration-count-domain",
+      "evidence": [
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 14,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 15,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 17,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Theorems5–8 print log and loglog iteration thresholds truncated with vee0, using division by sigma and positive signal strength. At sigma=0 or where the inner logarithm is nonpositive, an extended/domain convention is needed; the max with0 does not itself define an undefined log. No corrective convention is inserted."
+    },
+    {
+      "issue_id": "source-references-and-branches",
+      "evidence": [
+        {
+          "page": 10,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 14,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 15,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 17,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 19,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 20,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "T5/T6/T8 reference T1/T2 initialization conditions as guaranteed conclusions; T7 similarly references Corollary1. They do not assume the initializer is already good. T4 references the qualified estimator of T3 only in its upper branch; the minimax lower bound quantifies all estimators. T10 supplies a proof tool for T5/T6, but their theorem statements do not import its perturbation hypothesis."
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2206.08756v3",
+    "version": "arXiv:2206.08756v3, marked 15 Jan 2024; Submitted to the Annals of Statistics",
+    "pdf_sha256": "f7ad5bf237dfb0bf3c414bd18c4d225166a881c6c8c780164369f13a50ef5baa",
+    "pdf_pages": 65,
+    "main_text_last_pdf_page": 26
+  },
+  "recorded_checks": [
+    "Exactly ten complete main-text Theorems1–10, independently enumerated by bold headings and compared visually, including every branch and printed title. Main text ends before references onpage26; supplementary bodies are excluded.",
+    "Thirty source entries and ten auxiliary passages preserve regression/contraction, tensor rank and operations, geometry, TRIP, Gaussian design, separate RGD/RGN branches, initialization Algorithms2–4, testing distributions14 and deterministic OHOOI Algorithm5. Full Algorithm1 remains separately archived.",
+    "Independent reconstruction verifies71 direct uses and115 related connections. RGN-only T2 has no RGD stepsize or additional RGD hypothesis. Matrix T7 uses P_r and does not inherit tensor-only retractions. Testing T9 has only its own hypothesis-test entry. Deterministic T10 has no regression/Gaussian/TRIP dependency.",
+    "T5/T6/T8 initialization references and T7 Corollary1 references are guaranteed output properties, not input assumptions. T4’s qualified-estimator reference applies to its upper branch, not its lower minimax infimum. T10 proof references from T5/T6 and Hermite calculations for T9 do not add statement dependencies.",
+    "Thirteen notes preserve the RGN time-zero factor, unstarred expected-error target, dimension-index mismatch, unsquared testing normalization and conditional coupling, deferred supplement definitions, rank-range and rank-deficient conventions, zero line-search/logarithm domains, tensor2-norm print, update order and missing explicit rank-one factor normalization.",
+    "Every entry has literal author terminology, meaningful source highlights and preserved source kind. All115 related connections have local paths and source-specific explanations. No mathlib availability or proof-correctness claim is made.",
+    "All six contentJSON files reproduce byte for byte in a fresh empty directory. Seven retained scripts cover inventory, extraction, context, finalization, rebuilding and independent review. Rebuilding reproduces saved decisions; it is not a new semantic source review."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "f679faa957abe8edb72446c25a61a38e2a6404e0f9908ec91d8df0350bffc414"
+}

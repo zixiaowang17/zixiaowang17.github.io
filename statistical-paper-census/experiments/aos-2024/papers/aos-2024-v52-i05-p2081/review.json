@@ -1,0 +1,231 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i05-p2081",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-10T16:49:35.540848+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i05-p2081/T3.1",
+      "aos-2024-v52-i05-p2081/T3.4"
+    ],
+    "printed_label_check": [
+      [
+        14,
+        "3.1"
+      ],
+      [
+        18,
+        "3.4"
+      ]
+    ],
+    "method": "Independent bold-heading enumeration and visual comparison of both complete Theorems.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 2,
+    "interfaces": 19,
+    "source_members": 19,
+    "direct_theorem_uses": 19,
+    "related_theorem_connections": 28,
+    "unranked_auxiliary_passages": 14
+  },
+  "source_notes": [
+    {
+      "issue_id": "offset-boundary",
+      "description": "The offset prose says distance less than delta; its display uses distance at most delta. Both originals remain. The census does not choose an open/closed-ball convention to repair the discrepancy.",
+      "evidence": [
+        {
+          "page": 5,
+          "location": "Original main-text statement or convention"
+        }
+      ]
+    },
+    {
+      "issue_id": "appendix-only-geometry",
+      "description": "Reach is named but its definition/properties and the construction of the normal isometries are deferred to Appendix A. Main-text chart and regularity assertions are retained; the appendix construction is not fabricated or imported.",
+      "evidence": [
+        {
+          "page": 7,
+          "location": "Original main-text statement or convention"
+        },
+        {
+          "page": 8,
+          "location": "Original main-text statement or convention"
+        },
+        {
+          "page": 13,
+          "location": "Original main-text statement or convention"
+        }
+      ]
+    },
+    {
+      "issue_id": "weighted-zero-order",
+      "description": "Equation (15) quantifies 0<=<k,alpha><beta, while its first exponent is omega/<k,alpha>. At k=0 this is undefined without a convention. The source also does not specify ratios where fbar=0. These are unresolved source meanings, not reasons to delete the zero order.",
+      "evidence": [
+        {
+          "page": 13,
+          "location": "Original main-text statement or convention"
+        }
+      ]
+    },
+    {
+      "issue_id": "pullback-index-alias",
+      "description": "Equation (15) writes fbar_(x0,delta) in ratios but fbar_(delta,x0) as weight. Definition 2.2 defines only the former. The original indices and omitted differential are preserved, with the correspondence recorded as an apparent source alias.",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Original main-text statement or convention"
+        },
+        {
+          "page": 13,
+          "location": "Original main-text statement or convention"
+        }
+      ]
+    },
+    {
+      "issue_id": "prior-product-domain",
+      "description": "The mixture integrals (7)-(8) are labeled R^D while P includes orientation and sometimes scale variables. Preserve the source display; the surrounding text specifies the intended product-space mixing parameters.",
+      "evidence": [
+        {
+          "page": 10,
+          "location": "Original main-text statement or convention"
+        },
+        {
+          "page": 11,
+          "location": "Original main-text statement or convention"
+        }
+      ]
+    },
+    {
+      "issue_id": "prior-alternatives",
+      "description": "Table 1 combines one weight-family column and one scale-family column. MFM adds (9); DPM does not. Both use (10). Partial scales require (11), hybrid scales (12)-(13). Dependency reach is the union of these conditional branches, not their conjunction.",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Original main-text statement or convention"
+        },
+        {
+          "page": 12,
+          "location": "Original main-text statement or convention"
+        },
+        {
+          "page": 13,
+          "location": "Original main-text statement or convention"
+        },
+        {
+          "page": 14,
+          "location": "Original main-text statement or convention"
+        }
+      ]
+    },
+    {
+      "issue_id": "prior-notation-aliases",
+      "description": "The source switches pi_K/Pi_K for the count law and tilde-Pi_lambda/tilde-Pi_Lambda for the random scale law. These printed aliases remain. Independent location and orientation or inverse-Gamma scale laws are examples, not new theorem conditions.",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Original main-text statement or convention"
+        },
+        {
+          "page": 12,
+          "location": "Original main-text statement or convention"
+        }
+      ]
+    },
+    {
+      "issue_id": "scale-square",
+      "description": "Sigma is O_x^T Delta^2 O_x: Delta contains standard deviations, not eigenvalues. Theorem 3.4 uses Delta_(1,delta)^(-1) in its coordinate formula. No square or inverse is dropped.",
+      "evidence": [
+        {
+          "page": 17,
+          "location": "Original main-text statement or convention"
+        },
+        {
+          "page": 18,
+          "location": "Original main-text statement or convention"
+        }
+      ]
+    },
+    {
+      "issue_id": "partition-locality",
+      "description": "Theorem 3.4 places a packing in M^tau and uses chart centers x_j, although Section 2 charts are indexed by points of M. Its partition is referred to Section D.1; the main-text proof later mentions Lemma B.4. Preserve these references and this location ambiguity without importing appendix constructions.",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Original main-text statement or convention"
+        },
+        {
+          "page": 18,
+          "location": "Original main-text statement or convention"
+        },
+        {
+          "page": 24,
+          "location": "Original main-text statement or convention"
+        }
+      ]
+    },
+    {
+      "issue_id": "approximation-coefficients",
+      "description": "Theorem 3.4 specifies smooth bounded d_(j,k) depending on chi_j and M, but does not give full coefficient formulas or separately describe d_0 in its statement. Retain the existential expansion. It neither asserts that g is nonnegative nor normalizes g to be a density.",
+      "evidence": [
+        {
+          "page": 18,
+          "location": "Original main-text statement or convention"
+        }
+      ]
+    },
+    {
+      "issue_id": "approximation-quantifiers",
+      "description": "Theorem 3.4 prints existence of g before for any H>0, while the packing region includes log(1/sigma) and the asserted bound uses H. Preserve that quantifier order and do not insert hidden dependence or uniformity restrictions. Positive small scales are implicit in preceding constructions; the statement itself prints sigma,delta<=1.",
+      "evidence": [
+        {
+          "page": 17,
+          "location": "Original main-text statement or convention"
+        },
+        {
+          "page": 18,
+          "location": "Original main-text statement or convention"
+        }
+      ]
+    },
+    {
+      "issue_id": "chart-domain-extension",
+      "description": "The main text defines offset charts on tau/2 neighborhoods but Theorem 3.4 invokes a tau-offset packing and arbitrary x. Local inverse-chart terms require a locality/extension convention not fully supplied by its statement. The theorem and appendix reference are preserved without inventing a global inverse.",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Original main-text statement or convention"
+        },
+        {
+          "page": 18,
+          "location": "Original main-text statement or convention"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2205.15717v3",
+    "version": "arXiv:2205.15717v3; 17 Jul 2024",
+    "pdf_sha256": "c0a3de713b451e40884d7bca8d77f7b7056c825a92297c372685e992ff6363eb",
+    "pdf_pages": 73,
+    "main_text_last_pdf_page": 29
+  },
+  "recorded_checks": [
+    "Both complete original main-text Theorems, 3.1 and 3.4, are retained. Independent bold-heading enumeration covers pages 1-28 and the main-text prefix of page 29. Theorem 3.1 keeps the expected posterior probability, both rate terms and all four prior combinations; Theorem 3.4 keeps its explicit expansion and appendix reference.",
+    "Nineteen original entries and fourteen supporting passages preserve weighted mixed-derivative Holder regularity, harmonic-mean anisotropy, local and rescaled charts, normalized manifold pullbacks, Gaussian mixtures, both weight priors, both scale constructions, all conditions (3)-(15) needed by the statements, and the geometric Gaussian operator.",
+    "Independent graph reconstruction confirms 19 direct uses and 28 related connections. The posterior-contraction theorem does not acquire K_Sigma from its proof. The approximation theorem does not acquire priors or the Hellinger correction in Corollary 3.5. Auxiliary (14)-(15), scale matrices and regularity assumptions retain their indexed prerequisite expansions.",
+    "Table 1 is preserved as four explicit combinations. MFM adds (9), DPM does not; (10) is common. Partial scales use (11), including a polynomial upper tail, whereas hybrid scales use (12)-(13), including expected exponential tails. The graph union represents conditional uses, not simultaneous assumptions.",
+    "Twelve source issues are retained separately, including the offset boundary wording, appendix-only reach/chart/partition definitions, zero-order division and swapped pullback indices in (15), mixture integration domains, prior aliases, covariance squares, local chart inverses and coefficient/quantifier scope. No appendix body or invented formula is used.",
+    "Every entry has literal author terminology, faithful source headings, meaning-bearing source selectors and source-specific theorem explanations. Definition 2.1 keeps mixed derivative requirements and Definition 2.2 keeps delta^(D-d) normalization.",
+    "All six JSON content artifacts reproduce byte for byte from the retained per-paper scripts. Independent source-specific checks and frozen hashes protect the reviewed state; this is a source census, not proof certification."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "13c77f3e15d9b08050d8add966ad6cd410f75acc3a2d99ec715a933ba22eba80"
+}

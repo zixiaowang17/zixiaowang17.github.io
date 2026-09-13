@@ -1,0 +1,225 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i05-p2059",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-10T16:40:31.443548+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i05-p2059/T3.3",
+      "aos-2024-v52-i05-p2059/T4.4"
+    ],
+    "printed_label_check": [
+      [
+        9,
+        "3.3"
+      ],
+      [
+        12,
+        "4.4"
+      ]
+    ],
+    "method": "Independent bold-heading enumeration and visual comparison of both complete Theorems.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 2,
+    "interfaces": 11,
+    "source_members": 11,
+    "direct_theorem_uses": 9,
+    "related_theorem_connections": 15,
+    "unranked_auxiliary_passages": 11
+  },
+  "source_notes": [
+    {
+      "issue_id": "standing-exchangeability",
+      "description": "Theorem 3.3 omits an explicit repeat of Assumption 1.1. The section opener specifies exchangeable noise and arbitrary design; this standing premise is linked separately, without rewriting the theorem.",
+      "evidence": [
+        {
+          "page": 2,
+          "location": "Original main-text statement or construction"
+        },
+        {
+          "page": 8,
+          "location": "Original main-text statement or construction"
+        },
+        {
+          "page": 9,
+          "location": "Original main-text statement or construction"
+        }
+      ]
+    },
+    {
+      "issue_id": "sampling-scope",
+      "description": "The theorem says uniformly random permutations, while the main-text proof uses independent uniform draws. The sampling discrepancy is recorded without adding independently to the original statement.",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Original main-text statement or construction"
+        },
+        {
+          "page": 9,
+          "location": "Original main-text statement or construction"
+        },
+        {
+          "page": 14,
+          "location": "Original main-text statement or construction"
+        }
+      ]
+    },
+    {
+      "issue_id": "lemma-corollary-reference",
+      "description": "Theorem 4.4 prints Lemma 4.1. The referenced CI definition is printed as Corollary 4.1. Keep the original theorem and resolve its definition to that actual source passage.",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Original main-text statement or construction"
+        },
+        {
+          "page": 12,
+          "location": "Original main-text statement or construction"
+        }
+      ]
+    },
+    {
+      "issue_id": "inversion-algorithm-reference",
+      "description": "The Section 4 opening directs response replacement to Algorithm 2 when constructing paired statistics. Their construction is actually Algorithm 1 step 4 and equation (3). Preserve the printed reference and resolve the concrete statistic formulas without creating a circular dependency.",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Original main-text statement or construction"
+        },
+        {
+          "page": 11,
+          "location": "Original main-text statement or construction"
+        },
+        {
+          "page": 13,
+          "location": "Original main-text statement or construction"
+        }
+      ]
+    },
+    {
+      "issue_id": "coefficient-four-projection",
+      "description": "Lemma 4.3 prints x_pi in the projection defining c_b4, with pi not indexed by b. The residual pair (3) instead uses x in the corresponding unpermuted-feature projection. This unbound or mismatched permutation is not silently repaired.",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Original main-text statement or construction"
+        },
+        {
+          "page": 11,
+          "location": "Original main-text statement or construction"
+        }
+      ]
+    },
+    {
+      "issue_id": "overlapping-indicators",
+      "description": "For c_b1>0, equation (5) adds half the closed-interval indicator to the open-interval indicator, yielding 1.5 on a nonempty interior. The original comparison weight in Section 4 takes values only 0, 0.5 or 1. The census preserves both formulas.",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Original main-text statement or construction"
+        }
+      ]
+    },
+    {
+      "issue_id": "coincident-root-counts",
+      "description": "Equation (6) cancels completely when s_b=u_b, whereas equation (5) contributes 0.5 at that root. Its nondegenerate interior weight is 1, also differing from printed (5). No replacement formula is supplied.",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Original main-text statement or construction"
+        },
+        {
+          "page": 12,
+          "location": "Original main-text statement or construction"
+        }
+      ]
+    },
+    {
+      "issue_id": "partition-index-and-coverage",
+      "description": "The claimed partition uses {0,...,B}, although the coefficients are calculated only for b=1,...,B. It also omits c_b1=0,c_b3>c_b4. Neither an index-zero coefficient nor an additional set is invented.",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Original main-text statement or construction"
+        },
+        {
+          "page": 13,
+          "location": "Original main-text statement or construction"
+        }
+      ]
+    },
+    {
+      "issue_id": "algorithm-coverage-comment",
+      "description": "Algorithm 2 line 1 prints coverage 1-alpha, but Theorem 4.4 asserts worst-case coverage 1-2alpha. Both originals are retained.",
+      "evidence": [
+        {
+          "page": 12,
+          "location": "Original main-text statement or construction"
+        },
+        {
+          "page": 13,
+          "location": "Original main-text statement or construction"
+        }
+      ]
+    },
+    {
+      "issue_id": "algorithm-boundary-cases",
+      "description": "Algorithm 2 accesses t_1 without a printed M=0 branch and its endpoint formulas refer to t_0^+ or t_M^+ at boundary indices; the loop explicitly records only earlier right-side values. No implicit indexing, empty-set convention or extra computational branch is added.",
+      "evidence": [
+        {
+          "page": 12,
+          "location": "Original main-text statement or construction"
+        },
+        {
+          "page": 13,
+          "location": "Original main-text statement or construction"
+        }
+      ]
+    },
+    {
+      "issue_id": "interval-and-fallback-scope",
+      "description": "Corollary 4.1 defines infimum/supremum of a strict superlevel set. Remark 4.2 takes its interval hull; Remark 4.5 only suggests an optional normal approximation for an empty result. That suggestion is not incorporated into Theorem 4.4 or Algorithm 2.",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Original main-text statement or construction"
+        },
+        {
+          "page": 12,
+          "location": "Original main-text statement or construction"
+        },
+        {
+          "page": 13,
+          "location": "Original main-text statement or construction"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2309.05482v3",
+    "version": "arXiv:2309.05482v3; 27 Dec 2023",
+    "pdf_sha256": "dcfc8fb8000dbbaf89536ce13c4ce35739ef253fa73e5aed1baef4bd6cc5dcbf",
+    "pdf_pages": 36,
+    "main_text_last_pdf_page": 28
+  },
+  "recorded_checks": [
+    "Both complete main-text Theorems, 3.3 and 4.4, are preserved. Independent bold-heading enumeration covers pages 1-27 and the main-text prefix of page 28. The strict error bound and both randomness sources in 3.3 remain unchanged; 4.4 retains the printed Lemma 4.1 reference.",
+    "Eleven indexed original entries and eleven auxiliary passages preserve the linear model, exchangeable errors, row permutations, projections, generic transferability, p-value recipe, concrete PALMRT statistics, test inversion, CI target, critical-value sweep and all Algorithm 2 instructions. Supporting coefficients, roots, partitions and counting formulas are archived in full.",
+    "Independent graph reconstruction confirms 9 direct uses and 15 related connections. Theorem 3.3 replaces the Algorithm 1 statistic step with generic T, so it has no projection or concrete PALMRT dependency. Theorem 4.4 uses the CI target and construction but does not acquire Condition 3.1 through proof reasoning.",
+    "The printed Lemma/Corollary and Algorithm references, c_b4 projection, overlapping interval indicators, coincident-root counts, incomplete partition and index range, coverage comment and critical-index boundary handling are retained separately. No source formula is repaired by the census.",
+    "The standing exchangeability condition is linked using Assumption 1.1 and the Section 3 opener. The uniform-draw theorem wording is not rewritten to add the independence used by its proof. The CI is the interval hull of a strict superlevel set; the optional normal-approximation fallback is outside the theorem guarantee.",
+    "All eleven entries use literal source terms, faithful source headings and meaning-bearing selectors. Every related theorem has a source-specific explanation. Assumptions, conditions, Corollary passages and algorithms are not relabeled as numbered definitions.",
+    "All six JSON content artifacts reproduce byte for byte from retained per-paper scripts. Frozen hashes and source-specific checks protect the reviewed content. Rebuilding is not a new semantic review or a proof of the original mathematical assertions."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "5f204e6561b8e178abc9607eea2564c79898ae405154d056ea44e8e9621bb593"
+}

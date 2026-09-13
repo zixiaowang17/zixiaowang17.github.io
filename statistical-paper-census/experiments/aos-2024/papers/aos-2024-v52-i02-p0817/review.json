@@ -1,0 +1,78 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i02-p0817",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T11:29:13.288219+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i02-p0817/T3.2",
+      "aos-2024-v52-i02-p0817/T3.5",
+      "aos-2024-v52-i02-p0817/T3.9",
+      "aos-2024-v52-i02-p0817/T4.2"
+    ],
+    "method": "Independent inspection of bold NimbusRomNo9L-Medi headings on pages 1-16 finds exactly Theorems 3.2,3.5,3.9,4.2. The title of Theorem 3.2 is part of its heading; decimal numbering is preserved. A regular-font reference on page 5 is excluded. Main discussion ends on page 16 before the Appendix heading on page 17.",
+    "printed_label_check": [
+      [
+        3,
+        "3.2"
+      ],
+      [
+        4,
+        "3.5"
+      ],
+      [
+        6,
+        "3.9"
+      ],
+      [
+        8,
+        "4.2"
+      ]
+    ],
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 4,
+    "interfaces": 13,
+    "source_members": 13,
+    "direct_theorem_uses": 27,
+    "related_theorem_connections": 35,
+    "unranked_auxiliary_passages": 6
+  },
+  "source_notes": [
+    "The audited source is arXiv:2211.11400v3 with margin stamp 21 December 2023 and title-page date 22 December 2023. Equality to the final journal wording has not been established.",
+    "The arbitrary-family minimum in Theorem 3.2 is over an uncountable index family. Its measurability is not automatic from the stated individual-test assumptions. The predictable finite-prefix case is kept separate.",
+    "Almost-sure comparisons across uncountably many subsets need a simultaneous-version interpretation for the closure reduction; the source does not state that convention explicitly.",
+    "The two predictability definitions, adaptedness, marginal p-value validity and intersection-test level control are different requirements. No independence or past-only threshold condition is silently added."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2211.11400v3",
+    "version": "arXiv:2211.11400v3",
+    "pdf_sha256": "48a80ff70f762df42f933aa06b58278e6d061eaba9fb26c2f26eb77af5d1b316",
+    "pdf_pages": 21,
+    "main_text_last_pdf_page": 16
+  },
+  "recorded_checks": [
+    "The title, three authors, arXiv v3 identifier, both printed dates, 21-page count and pinned PDF hash match the source. All cached main-text pages match fresh byte-preserving text extraction.",
+    "Both inventory and final census pass validation; the inventory review hash matches, and all original claim fields survive unchanged.",
+    "All four complete theorem statements were visually checked on pages 3,4,6,8, preserving the arbitrary-family and additional online clauses, maximum representation and equality, and both recursive shortcut constructions.",
+    "The abstract experiment, fixed hypothesis subsets, blackboard-F filtration and almost-sure convention were checked on pages 2-3. Definition 2.1 and the strong all-time FWER definition remain separate concepts.",
+    "Intersection hypotheses, binary tests, the empty-test convention, online measurability and level-alpha validity were checked on page 3. These separate requirements are not conflated.",
+    "Definition 3.1, the inline closure operation, and consonance (2) were checked on pages 3-4. Future-only extensions and subset-restricted consonance witnesses are preserved.",
+    "The p-value setting, current-information thresholds, online sub-adjustments, equation (3) and Definition 4.1 were checked on page 7. Threshold equality under future extensions is kept distinct from rejection persistence.",
+    "Independent graph traversal confirms that the first three Theorems do not acquire p-value/threshold assumptions. Consonance is not imposed on Theorems 3.2 or 3.5. Theorem 3.5 does not acquire an admissibility hypothesis from its section title.",
+    "All 27 direct uses and 35 related connections have source-backed explanations and matching selectors. Source titles, numbered definitions and theorem excerpts retain their original kinds.",
+    "Six auxiliary passages and eighteen source-convention notes preserve weak-versus-strong control, finite-prefix reduction, conditional-validity examples and the two predictability notions. Uncountable-minimum measurability and simultaneous-version issues are recorded explicitly.",
+    "The recursive index sets and rejection inequalities were checked exactly, including strict p_j>alpha_j^{I_j} versus non-strict p_i<=alpha_i^{I_i}. No particular spending or ADDIS rule is imported into the general decision-equivalence theorem.",
+    "No appendix mathematics is used; proof-only propositions, admissibility results and later concrete procedures are not counted as additional Theorems or generic statement prerequisites."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "544501e6300563845a943dc0ce3cd8ff7f1b22a7c74ad3114fa8fdfd61988595"
+}

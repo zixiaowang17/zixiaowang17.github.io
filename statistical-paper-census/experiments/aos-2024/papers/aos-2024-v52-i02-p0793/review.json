@@ -1,0 +1,68 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i02-p0793",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T11:20:11.194914+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i02-p0793/T1",
+      "aos-2024-v52-i02-p0793/T2"
+    ],
+    "method": "Independent inspection of bold SFBX1095 Theorem headings on pages 1-29 finds exactly Theorems 1 and 2. The plain-font line beginning Theorem 2 on page 24 is an explanatory reference. References end on page 29; the Appendix heading on page 30 marks the excluded boundary.",
+    "printed_label_check": [
+      [
+        5,
+        "1"
+      ],
+      [
+        24,
+        "2"
+      ]
+    ],
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 2,
+    "interfaces": 12,
+    "source_members": 12,
+    "direct_theorem_uses": 14,
+    "related_theorem_connections": 16,
+    "unranked_auxiliary_passages": 10
+  },
+  "source_notes": [
+    "The audited source is arXiv:2203.00837v4 dated 23 December 2023. Equality to the final journal wording has not been established.",
+    "The lower bound concerns a broader model than the upper-bound guarantee. The two are not reported as a uniform matching result under only the lower-bound assumptions.",
+    "The Q-hat polynomial argument, transformed-measure normalization, Euclidean-ball versus cube domain, density-ratio lower-bound wording and maximum grouping remain unresolved source conventions; quotations are not repaired.",
+    "Omega’s population Gram interpretation follows the main-text projection formula; a standalone printed Gram definition and a fully specified nuisance-estimation implementation are not supplied in the inspected text."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2203.00837v4",
+    "version": "arXiv:2203.00837v4",
+    "pdf_sha256": "289bc44c78f84f2e70d98a343140bd354318b7788d63408c6921b08092f0249f",
+    "pdf_pages": 48,
+    "main_text_last_pdf_page": 29
+  },
+  "recorded_checks": [
+    "The pinned title, four authors, arXiv v4 date stamp, 48-page count and source hash match the inspected PDF. Fresh extraction of pages 1-29 matches every cached evidence text.",
+    "Theorem inventory and final census pass structural validation; the inventory review hash matches, and every original claim field survives unchanged.",
+    "Both complete theorem statements were checked visually on pages 5 and 24, including all four lower-bound model conditions, A-C and numbered upper-bound conditions, exact strict elbow threshold, both tuning branches and both rates.",
+    "The observed-data model, propensity and regressions, CATE, strict Hölder floor and derivative convention were checked on pages 2 and 4. Causal identifying assumptions remain separate from the statistical regression contrast.",
+    "Definition 2 was checked on pages 15-16: local kernel, shifted Legendre coefficients, total-degree dimension q, correction basis b_hk, independently trained nuisances, estimated Gram integral, all four correction functions and both empirical/U-statistic aggregates.",
+    "The Q-hat correction preserves rho_h(X_1)^T, despite the X_2 argument in the separate main-text bias formula. The treatment first-order correction remains raw A times its residual.",
+    "The population weighted projection Q/R, transformed local measure, approximation property (6), and coordinate projection defining the population Omega convention were checked on pages 16,18-20. No normalization factor, integration-domain change or estimated nuisance requirement was added to the population projection.",
+    "Independent graph traversal confirms that the lower-bound theorem reaches only the observed model, conditional functions, CATE and Hölder class. All estimator, basis, nuisance, transformed-measure and projection requirements belong to the upper bound.",
+    "The theorem’s density-ratio sup-norm wording and ambiguous maximum grouping are preserved. The source’s expectation bound is not replaced by a high-probability claim, and its fixed-factor comparison is not changed to little-o.",
+    "All 14 direct uses and 16 related connections have source-backed explanations and matching highlight selectors. Natural-language titles use exact source keywords and original source kinds.",
+    "Ten auxiliary passages and twenty-three source-convention notes retain norms, ordered-pair normalization, nuisance-estimator caveats, smoothness-ordering prose, the correction mismatch and attainability limits. All math fragments have balanced braces.",
+    "No appendix mathematics is used. The marginal-regression alternative in Appendix A and sufficient submodel conditions in Appendix B remain outside this main-text census."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "bade0a9eedabe8cd09baaf32df9513d2998c709f548e06cadfa5d52eb7ba6bab"
+}

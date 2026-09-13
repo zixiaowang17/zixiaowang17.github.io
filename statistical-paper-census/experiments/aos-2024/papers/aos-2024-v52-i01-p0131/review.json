@@ -1,0 +1,61 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i01-p0131",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T05:54:01.597838+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i01-p0131/T1",
+      "aos-2024-v52-i01-p0131/T2",
+      "aos-2024-v52-i01-p0131/T3",
+      "aos-2024-v52-i01-p0131/T4"
+    ],
+    "method": "Four uncommented theorem environments in the expanded main source before the appendix command; each full statement checked against PDF pages 19-20, 26, 35 and 40. The main text ends after Remark 7 above Appendix A on page 45.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Fact",
+      "Informal Result"
+    ],
+    "supplementary_material_used": false,
+    "boundary_probe_note": "An initial boundary search mistook a wrapped Appendix F reference on page 20 for an endpoint. The corrected boundary is the Appendix A heading below Remark 7 on page 45. During boundary location a heading scan reached pages 46-47 and an initial crop exposed the first appendix sentence. That material was not used for theorem extraction. Final evidence is cropped to the heading, and subsequent extraction is restricted to the main source."
+  },
+  "counts": {
+    "theorems": 4,
+    "interfaces": 14,
+    "source_members": 14,
+    "direct_theorem_uses": 13,
+    "related_theorem_connections": 17
+  },
+  "source_notes": [
+    "The PDF is arXiv:2204.07526v2. Its arXiv stamp is 20 January 2024 and its title-page date is 23 January 2024; no identity with the published layout is assumed.",
+    "Symmetric Tensor PCA estimates a vector of norm sqrt(d). Asymmetric Tensor PCA and CCA estimate a rank-one tensor of norm sqrt(d^k). Their observation laws and parameter spaces remain distinct.",
+    "Theorem 2 uses b as the memory exponent and eta>0. The other three Theorems use mu and eta>=1.",
+    "Theorem 3 imposes lambda asymptotic to d^(-gamma), whereas Theorem 4 imposes lambda squared asymptotic to d^(-gamma). Their gamma restrictions and normalized-overlap thresholds are preserved separately.",
+    "Equation (6) describes N observations but writes X_{1:m}; the source notation is preserved and not converted into an additional model parameter.",
+    "Equation (30b) prints (2/pi)^(k/2)=(E|Z|)^(k/2), inconsistent for a standard Gaussian. Both expressions remain in the original source statement.",
+    "Theorem 4 includes the final promises (31) and (30). Both are recorded; no distinctness requirement for the coordinate indices is invented from the printed set notation.",
+    "The named k-NGCA problem includes the kth-moment difference defining lambda in Section 6.1.1. Assumption 4 repeats that condition, but is not explicitly invoked by Theorem 3; its mathematical content is preserved in the problem definition. Assumption 5 is not added.",
+    "The three explicit NGCA Assumptions remain separate, including the local-domain guard in Assumption 3 and all nonnegative parameter conditions.",
+    "Definition 1 specifies deterministic arbitrary update and output functions. The randomized-protocol discussion is not silently inserted into the definition.",
+    "No upper-bound spectral estimator, mixture model, GLM, parity-learning reduction, Hellinger-information quantity, distributed protocol or proof-only proposition is counted as a statement requirement of these four Theorems."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2204.07526v2",
+    "version": "arXiv:2204.07526v2",
+    "pdf_sha256": "9f5ac87cf7baade850642cc6d947f457466296ede93e3d53840fb97f6432c434",
+    "pdf_pages": 149,
+    "main_text_last_pdf_page": 45
+  },
+  "recorded_checks": [
+    "The complete four-Theorem inventory was independently source-checked and validated before interface extraction.",
+    "All 14 source passages and the six ambient passages were checked against the PDF; matching-version TeX supplied transcription and macros, with printed labels authoritative.",
+    "The finalizer derived the local and canonical dependency graphs; an independent validator process accepted the completed census against its pinned inventory.",
+    "All member highlight selectors have exact source or linked-theorem matches; every member has a source-body or label match.",
+    "All 13 direct uses and 17 related-theorem paths were reviewed for mathematical correspondence. Proof-only information bounds and communication reductions were not added as statement dependencies."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "483f90330935851c18c7b82c50d917a52e931eeca4c00a18b5dd81b042d16331"
+}

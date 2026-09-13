@@ -1,0 +1,61 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i01-p0078",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-09T05:41:56.468102+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i01-p0078/T3.1",
+      "aos-2024-v52-i01-p0078/T3.3",
+      "aos-2024-v52-i01-p0078/T4.2",
+      "aos-2024-v52-i01-p0078/T5.2",
+      "aos-2024-v52-i01-p0078/T6.3"
+    ],
+    "method": "Five uncommented Theorem environments before the appendix command in the matching-version TeX; corroborated by main-section HTML and checked against printed PDF labels and complete statements. The main article and references end on page 25; Supplementary Material begins on page 26.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary"
+    ],
+    "supplementary_material_used": false,
+    "boundary_probe_note": "The acquisition boundary probe initially emitted a short portion of supplementary page 27 after detecting the boundary on page 26. That output was excluded from extraction and was not used to resolve any definition or theorem."
+  },
+  "counts": {
+    "theorems": 5,
+    "interfaces": 24,
+    "source_members": 27,
+    "direct_theorem_uses": 26,
+    "related_theorem_connections": 38
+  },
+  "source_notes": [
+    "The source is arXiv:2108.09904v2 (15 September 2023), pinned independently of the 2024 publisher version. No identity of numbering across versions is asserted.",
+    "Theorem 6.3 prints FDP in both conclusions. Both the PDF and TeX support that transcription; the second occurrence has not been changed to FDR.",
+    "Theorem 3.1 uses the centered Gaussian pair fixed above it; the main-text theorem does not separately state variance lower bounds. The variance dependence discussed in Remark 3.2 is not silently inserted as a new theorem hypothesis.",
+    "Theorem 3.3 locally binds the common disjoint covariance-block partition and its count. That count is not conflated with the connected-component count of the tested graph in Section 5.",
+    "Section 2.1 excludes the diagonal in its degree-testing vector, but Section 5 prints the full row norm in the null-node set. Both original passages are retained.",
+    "Section 4 defines a row-wise response-selection problem and maximum row sparsity, then uses the word columns in a nearby sentence. The source wording is preserved without resolving that inconsistency by rewriting it.",
+    "The source applies Algorithm 2 to a rectangular multitask input, although its printed loop and order statistics use a square-graph index set excluding the diagonal. The adaptation is not expanded into an invented algorithm.",
+    "The uncentered T_E in (2.2) and centered estimation-error T_E in Section 6 are preserved as separate source usages.",
+    "The Gaussian-model dependence set (5.3) and the general influence-covariance set in Section 6 have different predicates. In particular, the general set does not inherit k1!=k2 or the full precision-pattern constraints.",
+    "Assumption 6.2 omits the component-count divisor p used in Assumption 5.1; it also includes zeta2*d^4. Both distinctions are preserved.",
+    "The displayed multiplier statistic (5.2) uses the initial precision estimate, rather than the standardized one-step estimate that is passed to Algorithm 2.",
+    "The complete general approximation assumption retains the nested conditional probability bound, uniform quantification over edge sets, independent normal multipliers, variance lower bound and both psi1 moment bounds."
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2108.09904v2",
+    "version": "arXiv:2108.09904v2",
+    "pdf_sha256": "50dc1b6cd36db1bc1b015e6722efb096eca9f3b5658405e7e9edc4604b1ae923",
+    "pdf_pages": 87,
+    "main_text_last_pdf_page": 25
+  },
+  "recorded_checks": [
+    "The independent five-Theorem inventory was source-checked and validated before interface extraction.",
+    "The finalizer derived canonical dependencies and same-paper paths; a separate validator process accepted the completed census against its hash-pinned inventory.",
+    "All 27 source passages were compared with the main-text PDF, including Algorithm 2 and the four complete numbered Assumptions.",
+    "Every highlight selector was checked for a source-backed literal match, with at least one match in each original source passage or source label.",
+    "Every derived theorem path was reviewed. Gaussian comparison proof tools were not added as statement dependencies of the FDR results; model-specific bootstrap and signal members retained their separate paths."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "5bc8951d94883895fa0219025288aa1b96f724d54bcc3a19a0a68ac30b5d9e43"
+}

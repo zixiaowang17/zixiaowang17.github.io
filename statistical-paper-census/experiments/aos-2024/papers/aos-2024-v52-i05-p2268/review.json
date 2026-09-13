@@ -1,0 +1,283 @@
+{
+  "schema_version": "statistical-paper-audit-v1",
+  "paper_id": "aos-2024-v52-i05-p2268",
+  "status": "complete",
+  "audit_kind": "source_review",
+  "completed_at": "2026-09-10T18:36:22.828657+00:00",
+  "enumeration": {
+    "theorem_ids": [
+      "aos-2024-v52-i05-p2268/T4.2",
+      "aos-2024-v52-i05-p2268/T4.3",
+      "aos-2024-v52-i05-p2268/T4.4",
+      "aos-2024-v52-i05-p2268/T4.5"
+    ],
+    "printed_label_check": [
+      [
+        13,
+        "4.2"
+      ],
+      [
+        14,
+        "4.3"
+      ],
+      [
+        15,
+        "4.4"
+      ],
+      [
+        16,
+        "4.5"
+      ]
+    ],
+    "method": "Independent small-cap heading enumeration and visual comparison of all four complete theorem statements.",
+    "excluded_result_types": [
+      "Lemma",
+      "Proposition",
+      "Corollary",
+      "Remark",
+      "Conjecture"
+    ],
+    "appendix_material_used": false
+  },
+  "counts": {
+    "theorems": 4,
+    "interfaces": 27,
+    "source_members": 27,
+    "direct_theorem_uses": 37,
+    "related_theorem_connections": 85,
+    "unranked_auxiliary_passages": 12
+  },
+  "source_notes": [
+    {
+      "issue_id": "population-loss-typo",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Equation(3.8) prints y^(e)−x^T x^(e) in R(beta;gamma,omega), rather than the beta^T x^(e) of the earlier environment risk (2.5) and empirical risk. Preserve the printed x in the original passage and record the source-backed intended interpretation separately."
+    },
+    {
+      "issue_id": "balanced-sampling",
+      "evidence": [
+        {
+          "page": 10,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "General objective definitions allow unequal counts and positive weights, but all main-text Section4 theorems use equal n and uniform weights. Unequal-weight/count results are deferred to AppendixA and were not read."
+    },
+    {
+      "issue_id": "pooled-whitening",
+      "evidence": [
+        {
+          "page": 8,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Sigma^(e) and its empirical version are raw second moments. Centering is a standing convention. Condition4.3 uses pooled Sigma^-1/2, not environment-specific whitening."
+    },
+    {
+      "issue_id": "focused-support-gate",
+      "evidence": [
+        {
+          "page": 9,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 10,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 19,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The objective gates its moment penalty on beta_j≠0; it is generally nonconvex. T4.2’s lower bound relative to beta* is not a global pairwise convexity claim despite the theorem title. Empirical squared means also differ from means of squared products."
+    },
+    {
+      "issue_id": "global-minimizers",
+      "evidence": [
+        {
+          "page": 11,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 20,
+          "location": "Source scope or notation issue",
+          "before_main_text_end": true
+        }
+      ],
+      "note": "Theorems apply to global minimizers. Gumbel approximations and tuning guidance are deferred to appendices, and Section6.2 states exponential computational complexity for the current global search. No guarantee for generic stationary points is inferred."
+    },
+    {
+      "issue_id": "empty-support-and-empty-g",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 14,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 15,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 16,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Section4.2 explicitly treats G nonempty. The supremum defining gamma*, the minimum defining s_-, beta_min and s_+, and log(|E||S*|) require nonempty families/supports or conventions not given in the main text. Keep these domains explicit without inventing values for empty minima."
+    },
+    {
+      "issue_id": "pooled-spuriousness",
+      "evidence": [
+        {
+          "page": 12,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 14,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "G is defined by a sum of residual correlations across environments, which may cancel. It is not the union of individually endogenous variables. Condition4.5 quantifies over all S meeting G, with the differentiating environment pair allowed to depend on S."
+    },
+    {
+      "issue_id": "screening-versus-exact-selection",
+      "evidence": [
+        {
+          "page": 14,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 15,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 16,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "T4.3 only yields S*⊆supp(beta-hat_Q)⊆G^c and can retain irrelevant exogenous variables. T4.5 yields equality for the l0-penalized estimator. Refitting after selection is separately described and is not the estimator in the theorem."
+    },
+    {
+      "issue_id": "conditional-improved-bound",
+      "evidence": [
+        {
+          "page": 14,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 15,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "T4.4 first gives a p-dimensional bound with probability 1−7e^-t. Only its moreover branch imports the extra T4.3 sample bounds and gives the |G^c| bound with probability 1−14e^-t. Neither branch is silently discarded or made an unconditional conjunction."
+    },
+    {
+      "issue_id": "source-constants-and-stars",
+      "evidence": [
+        {
+          "page": 13,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 15,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 16,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "T4.4 names c1–c4 although c4 does not appear in its formulas. T4.5 prints both s^star and s^* for the same sparsity count in epsilon(n). Preserve these source forms and do not invent another parameter or missing c4 term."
+    },
+    {
+      "issue_id": "penalty-feasibility",
+      "evidence": [
+        {
+          "page": 15,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 16,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "Condition4.6 gives two sample bounds, while T4.5 additionally requires a nonempty lambda interval with a two-term epsilon(n). Preserve all terms and the upper bound c2 kappa_L beta_min²; simplified asymptotic lambda ranges following the theorem are not substitutes."
+    },
+    {
+      "issue_id": "conditional-mean-versus-linear-invariance",
+      "evidence": [
+        {
+          "page": 6,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 7,
+          "location": "Source scope or notation issue"
+        },
+        {
+          "page": 10,
+          "location": "Source scope or notation issue"
+        }
+      ],
+      "note": "The model has common conditional expectation only on S*, allowing residual dependence on other covariates. The focused linear conditions imply LLS-invariance rather than CE-invariance in general. No SCM, full exogeneity, conditional sub-Gaussian tail or residual independence is added."
+    }
+  ],
+  "source": {
+    "source_url": "https://arxiv.org/pdf/2303.03092v3",
+    "version": "arXiv:2303.03092v3; 29 Nov 2024",
+    "pdf_sha256": "41f8bc8d4dd5ddd961858aa2de3b28f08f5f0be294675a557a47cb7c64fa2a19",
+    "pdf_pages": 65,
+    "main_text_last_pdf_page": 20
+  },
+  "recorded_checks": [
+    "Four complete main-text Theorems, 4.2–4.5. Independent bold-heading enumeration excludes citations, Propositions, Conditions, Definitions and Remarks. Preserve all sample-size bounds, both T4.4 branches and the full T4.5 lambda interval.",
+    "Twenty-seven source entries and twelve supporting passages preserve the common conditional-mean model, true residuals, population and empirical risks, focused support gates, EILLS and penalized objectives, balanced sampling, Conditions4.1–4.6, spurious-variable set and threshold/signal formulas.",
+    "Independent graph reconstruction confirms 37 direct uses and 85 related connections. Population and empirical risks are separate. T4.2 has no empirical-risk or sub-Gaussian-tail requirement. Statistical theorems refer to the definition of gamma*, not the population objective or the strong-convexity conclusion.",
+    "T4.4 imports screening sample conditions only in its improved-bound branch. T4.3 provides screening rather than exact support recovery; T4.5 uses the l0-penalized global minimizer and its own high-dimensional sample regime. Balanced observations, uniform weights and cross-environment independence are retained.",
+    "Twelve source notes retain the x-versus-beta typo in (3.8), centered raw-moment covariance convention, pooled whitening, empty support/G conventions, unused c4 and star notation, feasible penalty range and global-minimizer computational limits. Original quotations are not repaired or proof-certified.",
+    "All entries have source-backed names, source kinds, original labels and literal highlight selectors. All 85 theorem connections have source-specific explanations and independently checked same-paper paths.",
+    "The six content JSON artifacts reproduce byte for byte using seven retained per-paper scripts. Frozen hashes, source identity, heading enumeration, formula checks, dependency reconstruction and schema validation pass."
+  ],
+  "export_note": "Public summary of the recorded source review. Local paths, execution metadata and unbundled working-file references are omitted. Original statements and interface relationships are in the aggregate census. A recorded review is not a formal proof certificate.",
+  "original_review_sha256": "27d92d55693bae38be849098c36007e5571228b0b2d42fbc2a5067a8ef1129d0"
+}
