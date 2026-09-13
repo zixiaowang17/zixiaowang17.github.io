@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "title": "Scanning definitions of Annals of Statistics 2024",
+  "previous_report_sha256": "9e1476e899c149c03d6604dc18ff76bfac778199d540ac949443e124d9efdc64",
+  "report_sha256": "4aff2eeb3dd3b640f386d429cf349b148842fd8a798349e4869361e4925a5fbd",
+  "identical_reader_pages": 2599,
+  "search_payload": "Identical after normalizing generation prefixes in reader URLs. Names, statements, ranks, counts, dependencies and work statuses are unchanged.",
+  "browser_verification": {
+    "status": "passed",
+    "widths": [
+      1440,
+      390,
+      320
+    ],
+    "checks": [
+      "heading and browser title",
+      "all three filter counts",
+      "reader navigation",
+      "no horizontal overflow"
+    ]
+  }
+}

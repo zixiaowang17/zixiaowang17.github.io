@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pessimistic Bellman operator</title><style>:root { color-scheme:light; --ink:#22314c; --muted:#607088; --line:#dce3ed; --paper:#fff; --wash:#f5f7fa; --accent:#2056b5; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--paper); color:var(--ink); font:15px/1.5 system-ui,-apple-system,sans-serif; }
+a { color:var(--accent); text-underline-offset:3px; }
+button,input,select { font:inherit; }
+button,a,input,select { -webkit-tap-highlight-color:transparent; }
+:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+button { cursor:pointer; }
+button:disabled { cursor:default; }
+.muted { color:var(--muted); }
+.shell { display:grid; grid-template-columns:minmax(0,1fr); min-height:100vh; }
+.shell.has-reader { grid-template-columns:minmax(310px,var(--catalog-width,38%)) minmax(0,1fr); }
+.catalog { container-type:inline-size; min-width:0; padding:32px clamp(20px,4vw,60px) 60px; }
+.catalog h1 { font-size:26px; line-height:1.25; margin:0 0 20px; font-weight:650; }
+.controls { display:flex; gap:8px; flex-wrap:wrap; }
+.controls input { flex:1 1 200px; min-width:0; }
+.controls input,.controls select { border:1px solid var(--line); border-radius:5px; padding:9px 11px; background:var(--paper); color:var(--ink); }
+.results-toolbar { display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:8px 18px; margin:16px 0 9px; }
+.results { font-size:13px; color:var(--muted); margin:0; }
+.ranking-note { font-size:12px; color:var(--muted); }
+.ranking-note summary { cursor:pointer; }
+.ranking-note[open] { flex-basis:100%; }
+.ranking-note p { max-width:65ch; margin:9px 0; line-height:1.6; }
+[hidden] { display:none !important; }
+.view-tabs { display:flex; gap:24px; border-bottom:1px solid var(--line); margin:0 0 22px; }
+.view-tabs button { padding:12px 1px; background:none; border:0; border-bottom:3px solid transparent; color:var(--muted); font-weight:600; }
+.view-tabs button[aria-selected=true] { color:var(--accent); border-bottom-color:var(--accent); }
+.search-results { border-top:1px solid var(--line); }
+.api-result,.paper-result-button { text-align:left; border:0; background:none; color:var(--ink); width:100%; }
+.api-result { display:grid; grid-template-columns:minmax(30px,max-content) minmax(0,1fr); gap:14px; padding:18px 8px; align-items:start; border-bottom:1px solid var(--line); }
+.api-result:hover,.paper-result-button:hover,.theorem-match:hover { background:var(--wash); }
+[aria-current=true] { background:#edf3fd; box-shadow:inset 3px 0 var(--accent); }
+.rank { font-size:18px; color:var(--muted); font-variant-numeric:tabular-nums; }
+.name { display:block; font-weight:600; line-height:1.45; }
+.count { display:block; font-size:13px; margin-top:7px; color:var(--muted); }
+.api-result .result-content { display:flex; justify-content:space-between; align-items:baseline; gap:18px; min-width:0; }
+.api-result .name { min-width:0; overflow-wrap:anywhere; }
+.theorem-count { flex-shrink:0; color:var(--muted); font-size:12px; font-variant-numeric:tabular-nums; }
+.rank-group { display:block; font-weight:400; font-size:12px; color:var(--muted); margin-top:4px; }
+@container(max-width:480px) { .api-result .result-content{display:block}.theorem-count{display:block;margin-top:4px} }
+.paper-result { border-bottom:1px solid var(--line); }
+.paper-result-button { padding:21px 8px; }
+.paper-result .name { font-size:17px; max-width:68ch; }
+.paper-needs { display:block; color:var(--muted); font-size:13px; margin-top:8px; }
+.theorem-matches { margin:0 8px 18px 20px; border-left:2px solid var(--line); }
+.theorem-match { display:flex; justify-content:space-between; gap:15px; width:100%; background:none; border:0; padding:10px 13px; text-align:left; color:var(--accent); }
+.theorem-match small { color:var(--muted); }
+.shell.has-reader .api-result { grid-template-columns:minmax(25px,max-content) minmax(0,1fr); }
+.scope { font-size:12px; color:var(--muted); margin-top:24px; }
+.reader { position:sticky; top:0; height:100vh; min-width:0; border-left:1px solid var(--line); background:var(--paper); }
+.reader[hidden] { display:none; }
+.reader-toolbar { display:flex; align-items:center; gap:18px; padding:12px 22px; height:55px; border-bottom:1px solid var(--line); font-size:13px; background:var(--wash); }
+.reader-toolbar a { margin-left:auto; }
+.close { border:0; padding:5px 8px; background:transparent; color:var(--ink); }
+iframe { display:block; width:100%; height:calc(100% - 55px); border:0; }
+.reading { max-width:850px; padding:34px clamp(22px,5vw,56px) 64px; margin:auto; }
+.reading h1 { font-size:27px; line-height:1.3; font-weight:650; margin:0 0 12px; }
+.reading .summary { margin:0 0 32px; color:var(--muted); }
+.reading h2 { font-size:19px; line-height:1.45; font-weight:600; margin:30px 0 16px; }
+.paper-title { padding-top:18px; border-top:1px solid var(--line); }
+.theorem { margin:0 0 33px; }
+.theorem h3,.theorem h4 { margin:0 0 6px; font-size:16px; font-weight:650; }
+.relation { font-size:12px; color:var(--muted); margin:0 0 13px; }
+.statement { font:18px/1.75 Georgia,"Times New Roman",serif; max-width:72ch; overflow-wrap:break-word; }
+.statement p { margin:0 0 16px; }
+.statement ol,.statement ul { padding-left:24px; }
+math[display=block] { display:block; overflow-x:auto; padding:12px 2px; margin:12px 0; max-width:100%; }
+math { font-size:1.02em; }
+math[display=inline] { display:inline-block; max-width:100%; overflow-x:auto; overflow-y:hidden; vertical-align:middle; }
+.equation { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:12px; margin:12px 0 20px; }
+.equation math { min-width:0; margin:0; }
+.equation-number { font-size:15px; color:var(--muted); white-space:nowrap; }
+.secondary { border-top:1px solid var(--line); padding-top:2px; margin-top:30px; }
+.library-links { list-style:none; padding:0; }
+.library-links li { margin-bottom:15px; }
+.library-links a { overflow-wrap:anywhere; font-size:14px; }
+.library-links small { display:block; color:var(--muted); margin-top:3px; font-size:13px; }
+p.gap { margin:20px 0 0; padding:16px 18px; background:var(--wash); border-left:3px solid #b6c8e6; line-height:1.7; }
+.empty { color:var(--muted); padding:20px 0; }
+@media(max-width:800px) { .shell.has-reader{display:block}.reader{position:fixed;inset:0;height:100dvh;z-index:2;border:0}.reading{padding:25px 22px 50px}.reading h1{font-size:23px}.statement{font-size:17px}.reader-toolbar{padding:10px 14px}.catalog{padding:25px 20px 45px} }
+
+.theorem-index { margin:24px 0 36px; border-top:1px solid var(--line); }
+.theorem-index a { display:flex; justify-content:space-between; gap:16px; padding:11px 0; border-bottom:1px solid var(--line); text-decoration:none; font-size:14px; }
+.theorem-index small { color:var(--muted); text-align:right; }
+.theorem-needs { font-size:13px; margin:7px 0 17px; }
+.requirements { margin:20px 0 45px; background:var(--wash); padding:14px 16px; scroll-margin-top:20px; }
+.requirements summary { cursor:pointer; font-size:14px; font-weight:600; }
+.requirements summary span { display:block; margin:5px 0 0 17px; font-weight:400; font-size:12px; color:var(--muted); }
+.requirements ul { list-style:none; margin:10px 0 0; padding:0; }
+.requirements li { border-top:1px solid var(--line); padding:15px 0; font-size:14px; }
+.requirements li:last-child { padding-bottom:2px; }
+.requirement-heading { display:flex; align-items:start; justify-content:space-between; gap:12px; }
+.requirements p { margin:7px 0 0; line-height:1.6; }
+.requirements .relation { margin:4px 0 8px; }
+.theorem { scroll-margin-top:22px; }
+@media(max-width:800px) { .api-result{grid-template-columns:minmax(25px,max-content) minmax(0,1fr)}.theorem-index a,.theorem-match,.requirement-heading{flex-direction:column;gap:5px}.theorem-index small{text-align:left}.controls select{max-width:100%}.paper-result .name{font-size:16px} }
+
+.dependency-note { color:var(--muted); font-size:13px; max-width:65ch; }
+
+.connection { font-size:14px; line-height:1.65; color:var(--muted); margin:0 0 16px; }
+.connection p { display:inline; margin:0; }
+.connection > a { margin-left:8px; font-size:12px; white-space:nowrap; }
+
+.original-definition { margin:0 0 32px; padding:20px 22px; background:var(--wash); border-left:3px solid var(--accent); scroll-margin-top:22px; }
+.original-definition h3 { margin:0 0 4px; font-size:16px; font-weight:650; color:var(--accent); }
+.definition-source { margin:0 0 12px; color:var(--muted); font-size:12px; }
+.definition-note { margin:10px 0 0; color:var(--muted); font-size:13px; }
+.symbol-highlight { background-color:#fff1b8; }
+
+.theorems-heading { margin:0 0 24px; padding-bottom:10px; border-bottom:1px solid var(--line); font-size:18px; font-weight:650; }
+.original-definition .statement > :last-child { margin-bottom:0; }
+@media(max-width:800px) { .original-definition{padding:16px} }
+
+mark.symbol-highlight { color:inherit; }
+
+.paper-title a { color:inherit; text-decoration-thickness:1px; text-decoration-color:var(--line); }
+.paper-title a:hover { color:var(--accent); text-decoration-color:currentColor; }
+.work-status { display:inline-block; width:fit-content; max-width:100%; padding:2px 6px; border:1px solid var(--line); border-radius:3px; color:var(--accent); background:var(--wash); font:12px/1.4 system-ui,-apple-system,sans-serif; white-space:nowrap; }
+.work-status[data-work-status=use_mathlib] { color:#166534; background:#edf8f0; border-color:#b6dec2; }
+.work-status[data-work-status=new_infrastructure],.work-status[data-work-status=needs_work] { color:#a52222; background:#fff1f0; border-color:#efc3c0; }
+.work-audit { margin:-16px 0 28px; }
+.work-audit p { margin:8px 0 0; color:var(--muted); font-size:13px; max-width:70ch; }
+.original-definition > h3 + .statement { margin-top:12px; }
+
+/* API counts and audit decisions occupy separate, aligned columns. */
+.api-columns,.api-result,.shell.has-reader .api-result {
+  display:grid; grid-template-columns:44px minmax(0,1fr) 140px 132px; gap:14px;
+}
+.api-columns { padding:11px 8px; color:var(--muted); font-size:12px; border-top:1px solid var(--line); }
+.api-columns > :nth-child(3),.api-counts { text-align:center; }
+.api-result .result-content { display:block; }
+.api-counts,.api-status { min-width:0; align-self:start; }
+.count-value { color:var(--muted); font-size:14px; font-variant-numeric:tabular-nums; }
+.column-label { display:none; }
+@container(max-width:620px) {
+  .api-columns { display:none; }
+  .api-result,.shell.has-reader .api-result { grid-template-columns:44px minmax(0,1fr) minmax(0,1fr); gap:10px 12px; }
+  .api-result .rank { grid-column:1; grid-row:1 / span 2; }
+  .api-result .result-content { grid-column:2 / span 2; }
+  .api-counts { grid-column:2; text-align:left; }
+  .api-status { grid-column:3; }
+  .column-label { display:block; color:var(--muted); font-size:11px; margin-bottom:5px; }
+  .api-status .work-status { white-space:normal; overflow-wrap:anywhere; }
+}
+
+.pane-divider { position:absolute; z-index:3; left:-6px; top:0; width:12px; height:100%; cursor:col-resize; touch-action:none; }
+.pane-divider::after { content:""; position:absolute; top:0; bottom:0; left:5px; width:2px; background:transparent; transition:background .12s; }
+.pane-divider:hover::after,.pane-divider:focus-visible::after,.resizing .pane-divider::after { background:var(--accent); }
+.pane-divider:focus-visible { outline:none; box-shadow:inset 0 0 0 2px var(--accent); }
+body.resizing { cursor:col-resize; user-select:none; }
+.resizing iframe { pointer-events:none; }
+@media(max-width:800px) { .pane-divider { display:none; } }
+
+.work-status[data-work-status=small_adaptation] { color:#854d0e; background:#fff9db; border-color:#e7cf88; }
+.work-filters { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0 18px; }
+.work-filters button { cursor:pointer; padding:6px 10px; white-space:normal; }
+.work-filters button[aria-pressed=true] { outline:2px solid currentColor; outline-offset:2px; font-weight:650; }
+.work-filters button:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+.work-legend { padding-left:20px; }
+.work-legend li { margin:8px 0; }
+</style></head>
+<body><main class="reading"><h1>Pessimistic Bellman operator</h1><p class="summary">1 related theorem statement</p><div class="work-audit"><span class="work-status" data-work-status="use_mathlib">Use mathlib</span><p>The completed comparison explicitly supports direct expression with existing components. Instantiation of its supplied parameters does not require a new foundational API.</p></div><section class="paper-group" data-paper-id="aos-2024-v52-i01-p0233"><h2 class="paper-title"><a href="https://projecteuclid.org/journals/annals-of-statistics/volume-52/issue-1/Settling-the-sample-complexity-of-model-based-offline-reinforcement-learning/10.1214/23-AOS2342.pdf" target="_blank" rel="noopener">Settling the sample complexity of model-based offline reinforcement learning</a></h2><section class="original-definition" data-source-kind="definition" id="variant-456cbf3cb2f31fcd"><h3>Section 2.2 — The pessimistic <mark class="symbol-highlight">Bellman operator</mark>, equations (26)-(27)</h3><div class="statement"><p>Our algorithm is developed based on finding the fixed point of some variant of the classical <mark class="symbol-highlight">Bellman operator</mark>. Let us first introduce this key operator and elucidate how the pessimism principle is enforced. Recall that the <mark class="symbol-highlight">Bellman operator</mark> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒯</mi><mo stretchy="false" form="prefix">(</mo><mi>⋅</mi><mo stretchy="false" form="postfix">)</mo><mo>:</mo><msup><mi>ℝ</mi><mrow><mi>S</mi><mi>A</mi></mrow></msup><mo>→</mo><msup><mi>ℝ</mi><mrow><mi>S</mi><mi>A</mi></mrow></msup></mrow><annotation encoding="application/x-tex">\mathcal T(\cdot):\mathbb R^{SA}\to\mathbb R^{SA}</annotation></semantics></math> w.r.t. the transition kernel <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>P</mi><annotation encoding="application/x-tex">P</annotation></semantics></math> is defined such that for any vector <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo>∈</mo><msup><mi>ℝ</mi><mrow><mi>S</mi><mi>A</mi></mrow></msup></mrow><annotation encoding="application/x-tex">Q\in\mathbb R^{SA}</annotation></semantics></math>, <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝒯</mi><mo stretchy="false" form="prefix">(</mo><mi>Q</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>:=</mo><mi>r</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>γ</mi><msub><mi>P</mi><mrow><mi>s</mi><mo>,</mo><mi>a</mi></mrow></msub><mi>V</mi><mspace width="1.0em"></mspace><mrow><mtext mathvariant="normal">for all </mtext><mspace width="0.333em"></mspace></mrow><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><mi>𝒮</mi><mo>×</mo><mi>𝒜</mi><mo>,</mo></mrow><annotation encoding="application/x-tex">
+\mathcal T(Q)(s,a):=r(s,a)+\gamma P_{s,a}V\quad\text{for all }(s,a)\in\mathcal S\times\mathcal A,</annotation></semantics></math> (26) where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo>=</mo><mo stretchy="false" form="prefix">[</mo><mi>V</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><msub><mo stretchy="false" form="postfix">]</mo><mrow><mi>s</mi><mo>∈</mo><mi>𝒮</mi></mrow></msub></mrow><annotation encoding="application/x-tex">V=[V(s)]_{s\in\mathcal S}</annotation></semantics></math> with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo><mo>:=</mo><msub><mrow><mi mathvariant="normal">max</mi><mo>⁡</mo></mrow><mi>a</mi></msub><mi>Q</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">V(s):=\max_a Q(s,a)</annotation></semantics></math>. We propose to penalize the original <mark class="symbol-highlight">Bellman operator</mark> w.r.t. the empirical kernel <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>P</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\widehat P</annotation></semantics></math> as follows: <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub class="symbol-highlight"><mover><mi>𝒯</mi><mo accent="true">̂</mo></mover><mrow><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>Q</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>:=</mo><mrow><mi mathvariant="normal">max</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">{</mo><mi>r</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>+</mo><mi>γ</mi><msub><mover><mi>P</mi><mo accent="true">̂</mo></mover><mrow><mi>s</mi><mo>,</mo><mi>a</mi></mrow></msub><mi>V</mi><mo>−</mo><mi>b</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo>;</mo><mi>V</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mn>0</mn><mo stretchy="false" form="postfix">}</mo><mspace width="1.0em"></mspace><mrow><mtext mathvariant="normal">for all </mtext><mspace width="0.333em"></mspace></mrow><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo stretchy="false" form="postfix">)</mo><mo>∈</mo><mi>𝒮</mi><mo>×</mo><mi>𝒜</mi><mo>,</mo></mrow><annotation encoding="application/x-tex">
+\widehat{\mathcal T}_{\mathrm{pe}}(Q)(s,a):=\max\{r(s,a)+\gamma\widehat P_{s,a}V-b(s,a;V),0\}\quad\text{for all }(s,a)\in\mathcal S\times\mathcal A,</annotation></semantics></math> (27) where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mo stretchy="false" form="prefix">(</mo><mi>s</mi><mo>,</mo><mi>a</mi><mo>;</mo><mi>V</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">b(s,a;V)</annotation></semantics></math> denotes the penalty term employed to enforce pessimism amid uncertainty.</p>
+</div></section><section class="theorem-group"><h3 class="theorems-heading">Theorems</h3><article class="theorem" id="theorem-a7dfd803d853b6a3"><h4>Theorem 1</h4><div class="connection"><p>The statement explicitly specifies the policy returned by Algorithm 1 and its required iteration count. Step 7 applies the pessimistic Bellman update (27).</p>
+<a href="#variant-456cbf3cb2f31fcd">Section 2.2 — The pessimistic Bellman operator, equations (26)-(27)</a></div><div class="statement"><p>Suppose <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mo>∈</mo><mo stretchy="false" form="prefix">[</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>,</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\gamma\in[\frac12,1)</annotation></semantics></math>, and consider any <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>δ</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0&lt;\delta&lt;1</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ε</mi><mo>∈</mo><mo stretchy="false" form="prefix">(</mo><mn>0</mn><mo>,</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><mi>γ</mi></mrow></mfrac><mo stretchy="false" form="postfix">]</mo></mrow><annotation encoding="application/x-tex">\varepsilon\in(0,\frac{1}{1-\gamma}]</annotation></semantics></math>. Suppose the total number of iterations exceeds <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><mi mathvariant="normal">max</mi></msub><mo>≥</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>−</mo><mi>γ</mi></mrow></mfrac><mrow><mi mathvariant="normal">log</mi><mo>⁡</mo></mrow><mfrac><mi>N</mi><mrow><mn>1</mn><mo>−</mo><mi>γ</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\tau_{\max}\geq\frac{1}{1-\gamma}\log\frac{N}{1-\gamma}</annotation></semantics></math>. With probability at least <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><mn>2</mn><mi>δ</mi></mrow><annotation encoding="application/x-tex">1-2\delta</annotation></semantics></math>, the policy <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>π</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\widehat\pi</annotation></semantics></math> returned by Algorithm 1 obeys <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>V</mi><mo>⋆</mo></msup><mo stretchy="false" form="prefix">(</mo><mi>ρ</mi><mo stretchy="false" form="postfix">)</mo><mo>−</mo><msup><mi>V</mi><mover><mi>π</mi><mo accent="true">̂</mo></mover></msup><mo stretchy="false" form="prefix">(</mo><mi>ρ</mi><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mi>ε</mi><mo>,</mo></mrow><annotation encoding="application/x-tex">
+V^\star(\rho)-V^{\widehat\pi}(\rho)\leq\varepsilon,</annotation></semantics></math> (34) provided that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>c</mi><mi mathvariant="normal">b</mi></msub><annotation encoding="application/x-tex">c_{\mathrm b}</annotation></semantics></math> (cf. the Bernstein-style penalty term in (28)) is some sufficiently large numerical constant and the total sample size exceeds <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>≥</mo><mfrac><mrow><msub><mi>c</mi><mn>1</mn></msub><mi>S</mi><msubsup><mi>C</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow><mo>⋆</mo></msubsup><mrow><mi mathvariant="normal">log</mi><mo>⁡</mo></mrow><mfrac><mrow><mi>N</mi><mi>S</mi></mrow><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>γ</mi><mo stretchy="false" form="postfix">)</mo><mi>δ</mi></mrow></mfrac></mrow><mrow><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>γ</mi><msup><mo stretchy="false" form="postfix">)</mo><mn>3</mn></msup><msup><mi>ε</mi><mn>2</mn></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">
+N\geq\frac{c_1SC^\star_{\mathrm{clipped}}\log\frac{NS}{(1-\gamma)\delta}}{(1-\gamma)^3\varepsilon^2}</annotation></semantics></math> (35) for some large enough numerical constant <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mn>1</mn></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">c_1&gt;0</annotation></semantics></math>, where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>C</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow><mo>⋆</mo></msubsup><annotation encoding="application/x-tex">C^\star_{\mathrm{clipped}}</annotation></semantics></math> is introduced in Definition 2. Also, the above result continues to hold if <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>C</mi><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">d</mi></mrow><mo>⋆</mo></msubsup><annotation encoding="application/x-tex">C^\star_{\mathrm{clipped}}</annotation></semantics></math> is replaced with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>C</mi><mo>⋆</mo></msup><annotation encoding="application/x-tex">C^\star</annotation></semantics></math> (see Definition 1).</p>
+</div></article></section></section><section class="secondary"><h2>Related mathlib</h2><ul class="library-links"><li><a href="https://github.com/leanprover-community/mathlib4/blob/4edb0dbaa3b3cf729d86d1e2f035474d5ae2ac09/Mathlib/Data/Matrix/Mul.lean#L698-L699" target="_blank" rel="noopener">Matrix.mulVec</a><small>Finite matrix-vector multiplication, with each output coordinate equal to the dot product of a matrix row and the input vector.</small></li><li><a href="https://github.com/leanprover-community/mathlib4/blob/4edb0dbaa3b3cf729d86d1e2f035474d5ae2ac09/Mathlib/Data/Finset/Max.lean#L135-L136" target="_blank" rel="noopener">Finset.max&#x27;</a><small>Maximum of a nonempty finite set in the original value type; its nonemptiness proof prevents silently assigning a maximum to an empty hypothesis family.</small></li></ul><p class="gap">With the kernels, reward, discount and penalty function supplied, matrix-vector multiplication and finite maxima directly express both displayed Bellman updates.</p></section></main><script>
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&parent!==window)parent.postMessage({action:'close-theorem-reader'},'*');});
+document.addEventListener('click',function(e){const a=e.target.closest('a');if(!a)return;if(a.dataset.route&&parent!==window&&!e.ctrlKey&&!e.metaKey&&!e.shiftKey&&!e.altKey){e.preventDefault();parent.postMessage({action:'open-census-route',route:a.dataset.route,scroll:window.scrollY,expanded:[...document.querySelectorAll('details[open][id]')].map(d=>d.id)},'*');}else if(/^#(requirements|variant)-/.test(a.getAttribute('href')||'')){const target=document.getElementById(a.hash.slice(1));if(target?.tagName==='DETAILS')target.open=true;}});
+function revealFragment(){const target=document.getElementById(location.hash.slice(1));if(target){if(target.tagName==='DETAILS')target.open=true;target.scrollIntoView();}}
+window.addEventListener('hashchange',revealFragment);revealFragment();
+window.addEventListener('message',function(e){if(e.source===parent&&e.data?.action==='restore-reader-scroll'){for(const id of e.data.expanded||[]){const d=document.getElementById(id);if(d?.tagName==='DETAILS')d.open=true;}window.scrollTo(0,Number(e.data.scroll)||0);}});
+</script></body></html>

@@ -21,7 +21,8 @@ def main():
     renderer = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(renderer)
     arguments = [str(script), str(aggregate / 'audited.json'), str(aggregate / 'report.html'),
-                 '--census', str(aggregate / 'ranked-interfaces.json')]
+                 '--census', str(aggregate / 'ranked-interfaces.json'),
+                 '--title', 'Scanning definitions of Annals of Statistics 2024']
     phase = {'name': 'generation'}
     stopped = threading.Event()
 

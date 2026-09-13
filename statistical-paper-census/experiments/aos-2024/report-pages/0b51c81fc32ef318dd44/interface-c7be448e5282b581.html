@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Number of occurrences</title><style>:root { color-scheme:light; --ink:#22314c; --muted:#607088; --line:#dce3ed; --paper:#fff; --wash:#f5f7fa; --accent:#2056b5; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--paper); color:var(--ink); font:15px/1.5 system-ui,-apple-system,sans-serif; }
+a { color:var(--accent); text-underline-offset:3px; }
+button,input,select { font:inherit; }
+button,a,input,select { -webkit-tap-highlight-color:transparent; }
+:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+button { cursor:pointer; }
+button:disabled { cursor:default; }
+.muted { color:var(--muted); }
+.shell { display:grid; grid-template-columns:minmax(0,1fr); min-height:100vh; }
+.shell.has-reader { grid-template-columns:minmax(310px,var(--catalog-width,38%)) minmax(0,1fr); }
+.catalog { container-type:inline-size; min-width:0; padding:32px clamp(20px,4vw,60px) 60px; }
+.catalog h1 { font-size:26px; line-height:1.25; margin:0 0 20px; font-weight:650; }
+.controls { display:flex; gap:8px; flex-wrap:wrap; }
+.controls input { flex:1 1 200px; min-width:0; }
+.controls input,.controls select { border:1px solid var(--line); border-radius:5px; padding:9px 11px; background:var(--paper); color:var(--ink); }
+.results-toolbar { display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:8px 18px; margin:16px 0 9px; }
+.results { font-size:13px; color:var(--muted); margin:0; }
+.ranking-note { font-size:12px; color:var(--muted); }
+.ranking-note summary { cursor:pointer; }
+.ranking-note[open] { flex-basis:100%; }
+.ranking-note p { max-width:65ch; margin:9px 0; line-height:1.6; }
+[hidden] { display:none !important; }
+.view-tabs { display:flex; gap:24px; border-bottom:1px solid var(--line); margin:0 0 22px; }
+.view-tabs button { padding:12px 1px; background:none; border:0; border-bottom:3px solid transparent; color:var(--muted); font-weight:600; }
+.view-tabs button[aria-selected=true] { color:var(--accent); border-bottom-color:var(--accent); }
+.search-results { border-top:1px solid var(--line); }
+.api-result,.paper-result-button { text-align:left; border:0; background:none; color:var(--ink); width:100%; }
+.api-result { display:grid; grid-template-columns:minmax(30px,max-content) minmax(0,1fr); gap:14px; padding:18px 8px; align-items:start; border-bottom:1px solid var(--line); }
+.api-result:hover,.paper-result-button:hover,.theorem-match:hover { background:var(--wash); }
+[aria-current=true] { background:#edf3fd; box-shadow:inset 3px 0 var(--accent); }
+.rank { font-size:18px; color:var(--muted); font-variant-numeric:tabular-nums; }
+.name { display:block; font-weight:600; line-height:1.45; }
+.count { display:block; font-size:13px; margin-top:7px; color:var(--muted); }
+.api-result .result-content { display:flex; justify-content:space-between; align-items:baseline; gap:18px; min-width:0; }
+.api-result .name { min-width:0; overflow-wrap:anywhere; }
+.theorem-count { flex-shrink:0; color:var(--muted); font-size:12px; font-variant-numeric:tabular-nums; }
+.rank-group { display:block; font-weight:400; font-size:12px; color:var(--muted); margin-top:4px; }
+@container(max-width:480px) { .api-result .result-content{display:block}.theorem-count{display:block;margin-top:4px} }
+.paper-result { border-bottom:1px solid var(--line); }
+.paper-result-button { padding:21px 8px; }
+.paper-result .name { font-size:17px; max-width:68ch; }
+.paper-needs { display:block; color:var(--muted); font-size:13px; margin-top:8px; }
+.theorem-matches { margin:0 8px 18px 20px; border-left:2px solid var(--line); }
+.theorem-match { display:flex; justify-content:space-between; gap:15px; width:100%; background:none; border:0; padding:10px 13px; text-align:left; color:var(--accent); }
+.theorem-match small { color:var(--muted); }
+.shell.has-reader .api-result { grid-template-columns:minmax(25px,max-content) minmax(0,1fr); }
+.scope { font-size:12px; color:var(--muted); margin-top:24px; }
+.reader { position:sticky; top:0; height:100vh; min-width:0; border-left:1px solid var(--line); background:var(--paper); }
+.reader[hidden] { display:none; }
+.reader-toolbar { display:flex; align-items:center; gap:18px; padding:12px 22px; height:55px; border-bottom:1px solid var(--line); font-size:13px; background:var(--wash); }
+.reader-toolbar a { margin-left:auto; }
+.close { border:0; padding:5px 8px; background:transparent; color:var(--ink); }
+iframe { display:block; width:100%; height:calc(100% - 55px); border:0; }
+.reading { max-width:850px; padding:34px clamp(22px,5vw,56px) 64px; margin:auto; }
+.reading h1 { font-size:27px; line-height:1.3; font-weight:650; margin:0 0 12px; }
+.reading .summary { margin:0 0 32px; color:var(--muted); }
+.reading h2 { font-size:19px; line-height:1.45; font-weight:600; margin:30px 0 16px; }
+.paper-title { padding-top:18px; border-top:1px solid var(--line); }
+.theorem { margin:0 0 33px; }
+.theorem h3,.theorem h4 { margin:0 0 6px; font-size:16px; font-weight:650; }
+.relation { font-size:12px; color:var(--muted); margin:0 0 13px; }
+.statement { font:18px/1.75 Georgia,"Times New Roman",serif; max-width:72ch; overflow-wrap:break-word; }
+.statement p { margin:0 0 16px; }
+.statement ol,.statement ul { padding-left:24px; }
+math[display=block] { display:block; overflow-x:auto; padding:12px 2px; margin:12px 0; max-width:100%; }
+math { font-size:1.02em; }
+math[display=inline] { display:inline-block; max-width:100%; overflow-x:auto; overflow-y:hidden; vertical-align:middle; }
+.equation { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:12px; margin:12px 0 20px; }
+.equation math { min-width:0; margin:0; }
+.equation-number { font-size:15px; color:var(--muted); white-space:nowrap; }
+.secondary { border-top:1px solid var(--line); padding-top:2px; margin-top:30px; }
+.library-links { list-style:none; padding:0; }
+.library-links li { margin-bottom:15px; }
+.library-links a { overflow-wrap:anywhere; font-size:14px; }
+.library-links small { display:block; color:var(--muted); margin-top:3px; font-size:13px; }
+p.gap { margin:20px 0 0; padding:16px 18px; background:var(--wash); border-left:3px solid #b6c8e6; line-height:1.7; }
+.empty { color:var(--muted); padding:20px 0; }
+@media(max-width:800px) { .shell.has-reader{display:block}.reader{position:fixed;inset:0;height:100dvh;z-index:2;border:0}.reading{padding:25px 22px 50px}.reading h1{font-size:23px}.statement{font-size:17px}.reader-toolbar{padding:10px 14px}.catalog{padding:25px 20px 45px} }
+
+.theorem-index { margin:24px 0 36px; border-top:1px solid var(--line); }
+.theorem-index a { display:flex; justify-content:space-between; gap:16px; padding:11px 0; border-bottom:1px solid var(--line); text-decoration:none; font-size:14px; }
+.theorem-index small { color:var(--muted); text-align:right; }
+.theorem-needs { font-size:13px; margin:7px 0 17px; }
+.requirements { margin:20px 0 45px; background:var(--wash); padding:14px 16px; scroll-margin-top:20px; }
+.requirements summary { cursor:pointer; font-size:14px; font-weight:600; }
+.requirements summary span { display:block; margin:5px 0 0 17px; font-weight:400; font-size:12px; color:var(--muted); }
+.requirements ul { list-style:none; margin:10px 0 0; padding:0; }
+.requirements li { border-top:1px solid var(--line); padding:15px 0; font-size:14px; }
+.requirements li:last-child { padding-bottom:2px; }
+.requirement-heading { display:flex; align-items:start; justify-content:space-between; gap:12px; }
+.requirements p { margin:7px 0 0; line-height:1.6; }
+.requirements .relation { margin:4px 0 8px; }
+.theorem { scroll-margin-top:22px; }
+@media(max-width:800px) { .api-result{grid-template-columns:minmax(25px,max-content) minmax(0,1fr)}.theorem-index a,.theorem-match,.requirement-heading{flex-direction:column;gap:5px}.theorem-index small{text-align:left}.controls select{max-width:100%}.paper-result .name{font-size:16px} }
+
+.dependency-note { color:var(--muted); font-size:13px; max-width:65ch; }
+
+.connection { font-size:14px; line-height:1.65; color:var(--muted); margin:0 0 16px; }
+.connection p { display:inline; margin:0; }
+.connection > a { margin-left:8px; font-size:12px; white-space:nowrap; }
+
+.original-definition { margin:0 0 32px; padding:20px 22px; background:var(--wash); border-left:3px solid var(--accent); scroll-margin-top:22px; }
+.original-definition h3 { margin:0 0 4px; font-size:16px; font-weight:650; color:var(--accent); }
+.definition-source { margin:0 0 12px; color:var(--muted); font-size:12px; }
+.definition-note { margin:10px 0 0; color:var(--muted); font-size:13px; }
+.symbol-highlight { background-color:#fff1b8; }
+
+.theorems-heading { margin:0 0 24px; padding-bottom:10px; border-bottom:1px solid var(--line); font-size:18px; font-weight:650; }
+.original-definition .statement > :last-child { margin-bottom:0; }
+@media(max-width:800px) { .original-definition{padding:16px} }
+
+mark.symbol-highlight { color:inherit; }
+
+.paper-title a { color:inherit; text-decoration-thickness:1px; text-decoration-color:var(--line); }
+.paper-title a:hover { color:var(--accent); text-decoration-color:currentColor; }
+.work-status { display:inline-block; width:fit-content; max-width:100%; padding:2px 6px; border:1px solid var(--line); border-radius:3px; color:var(--accent); background:var(--wash); font:12px/1.4 system-ui,-apple-system,sans-serif; white-space:nowrap; }
+.work-status[data-work-status=use_mathlib] { color:#166534; background:#edf8f0; border-color:#b6dec2; }
+.work-status[data-work-status=new_infrastructure],.work-status[data-work-status=needs_work] { color:#a52222; background:#fff1f0; border-color:#efc3c0; }
+.work-audit { margin:-16px 0 28px; }
+.work-audit p { margin:8px 0 0; color:var(--muted); font-size:13px; max-width:70ch; }
+.original-definition > h3 + .statement { margin-top:12px; }
+
+/* API counts and audit decisions occupy separate, aligned columns. */
+.api-columns,.api-result,.shell.has-reader .api-result {
+  display:grid; grid-template-columns:44px minmax(0,1fr) 140px 132px; gap:14px;
+}
+.api-columns { padding:11px 8px; color:var(--muted); font-size:12px; border-top:1px solid var(--line); }
+.api-columns > :nth-child(3),.api-counts { text-align:center; }
+.api-result .result-content { display:block; }
+.api-counts,.api-status { min-width:0; align-self:start; }
+.count-value { color:var(--muted); font-size:14px; font-variant-numeric:tabular-nums; }
+.column-label { display:none; }
+@container(max-width:620px) {
+  .api-columns { display:none; }
+  .api-result,.shell.has-reader .api-result { grid-template-columns:44px minmax(0,1fr) minmax(0,1fr); gap:10px 12px; }
+  .api-result .rank { grid-column:1; grid-row:1 / span 2; }
+  .api-result .result-content { grid-column:2 / span 2; }
+  .api-counts { grid-column:2; text-align:left; }
+  .api-status { grid-column:3; }
+  .column-label { display:block; color:var(--muted); font-size:11px; margin-bottom:5px; }
+  .api-status .work-status { white-space:normal; overflow-wrap:anywhere; }
+}
+
+.pane-divider { position:absolute; z-index:3; left:-6px; top:0; width:12px; height:100%; cursor:col-resize; touch-action:none; }
+.pane-divider::after { content:""; position:absolute; top:0; bottom:0; left:5px; width:2px; background:transparent; transition:background .12s; }
+.pane-divider:hover::after,.pane-divider:focus-visible::after,.resizing .pane-divider::after { background:var(--accent); }
+.pane-divider:focus-visible { outline:none; box-shadow:inset 0 0 0 2px var(--accent); }
+body.resizing { cursor:col-resize; user-select:none; }
+.resizing iframe { pointer-events:none; }
+@media(max-width:800px) { .pane-divider { display:none; } }
+
+.work-status[data-work-status=small_adaptation] { color:#854d0e; background:#fff9db; border-color:#e7cf88; }
+.work-filters { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0 18px; }
+.work-filters button { cursor:pointer; padding:6px 10px; white-space:normal; }
+.work-filters button[aria-pressed=true] { outline:2px solid currentColor; outline-offset:2px; font-weight:650; }
+.work-filters button:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+.work-legend { padding-left:20px; }
+.work-legend li { margin:8px 0; }
+</style></head>
+<body><main class="reading"><h1>Number of occurrences</h1><p class="summary">3 related theorem statements</p><div class="work-audit"><span class="work-status" data-work-status="small_adaptation">Small adaptation</span><p>The recorded remaining work is assessed as interface assembly or local compatibility work using the inspected components; no new core construction is identified in this comparison. Recorded obligation: The two-list count is expressible, but its cyclic j-index must retain the source’s inconsistent recalled i-index convention.</p></div><section class="paper-group" data-paper-id="aos-2024-v52-i04-p1334"><h2 class="paper-title"><a href="https://arxiv.org/pdf/2111.13551v1" target="_blank" rel="noopener">Optimal estimation of Schatten norms of a rectangular matrix</a></h2><section class="original-definition" data-source-kind="definition" id="variant-d9fd5f5ec22ac888"><h3>Section 3 — occurrence counts before (9)</h3><div class="statement"><p>Given two sequences <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>i</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>i</mi><mi>k</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">i=(i_1,\ldots,i_k)</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>=</mo><mo stretchy="false" form="prefix">(</mo><msub><mi>j</mi><mn>1</mn></msub><mo>,</mo><mi>…</mi><mo>,</mo><msub><mi>j</mi><mi>k</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">j=(j_1,\ldots,j_k)</annotation></semantics></math>, we denote <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><semantics><mrow class="symbol-highlight"><msub><mi>N</mi><mrow><mi>r</mi><mi>s</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>i</mi><mi>j</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">N_{rs}(ij)</annotation></semantics></math> the number of occurrences of the 2-tuple <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><mi>r</mi><mo>,</mo><mi>s</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(r,s)</annotation></semantics></math> in the sequences <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>i</mi><mi>t</mi></msub><mo>,</mo><msub><mi>j</mi><mi>t</mi></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(i_t,j_t)</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>i</mi><mi>t</mi></msub><mo>,</mo><msub><mi>j</mi><mrow><mi>t</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(i_t,j_{t+1})</annotation></semantics></math> with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><mn>1</mn><mo>,</mo><mi>…</mi><mo>,</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">t=1,\ldots,k</annotation></semantics></math> (recall that, by convention <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>i</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>i</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">i_{k+1}=i_1</annotation></semantics></math>).</p>
+</div></section><section class="theorem-group"><h3 class="theorems-heading">Theorems</h3><article class="theorem" id="theorem-c78031c34fde257f"><h4>Theorem 3.3</h4><div class="connection"><p>The random variable U_k is the polynomial estimator (9). Its degree is the occurrence count of that matrix entry.</p>
+<a href="#variant-d9fd5f5ec22ac888">Section 3 — occurrence counts before (9)</a></div><div class="statement"><p>For any integer <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">k\ge2</annotation></semantics></math>, and any <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>≥</mo><mi>q</mi></mrow><annotation encoding="application/x-tex">p\ge q</annotation></semantics></math>, we have <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">Var</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><msub><mi>U</mi><mi>k</mi></msub><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><msup><mi>c</mi><mi>k</mi></msup><mo minsize="120%" maxsize="120%" stretchy="true" form="prefix">[</mo><mo stretchy="false" form="prefix">(</mo><mi>p</mi><mi>q</mi><msup><mo stretchy="false" form="postfix">)</mo><mi>k</mi></msup><mo>+</mo><mi>p</mi><mo stretchy="false" form="postfix">∥</mo><mi>𝐀</mi><msubsup><mo stretchy="false" form="postfix">∥</mo><mrow><mn>4</mn><mi>k</mi><mo>−</mo><mn>4</mn></mrow><mrow><mn>4</mn><mi>k</mi><mo>−</mo><mn>4</mn></mrow></msubsup><mi>+</mi><mo stretchy="false" form="postfix">∥</mo><mi>𝐀</mi><msubsup><mo stretchy="false" form="postfix">∥</mo><mrow><mn>4</mn><mi>k</mi><mo>−</mo><mn>2</mn></mrow><mrow><mn>4</mn><mi>k</mi><mo>−</mo><mn>2</mn></mrow></msubsup><mo>+</mo><msup><mi>p</mi><mi>k</mi></msup><msup><mi>k</mi><mrow><mn>3</mn><mi>k</mi></mrow></msup><mo>+</mo><msup><mi>k</mi><mrow><mn>6</mn><mi>k</mi></mrow></msup><mo minsize="120%" maxsize="120%" stretchy="true" form="postfix">]</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+\operatorname{Var}(U_k)\le c^k\big[(pq)^k+p\|\mathbf A\|_{4k-4}^{4k-4}+\|\mathbf A\|_{4k-2}^{4k-2}+p^kk^{3k}+k^{6k}\big],
+</annotation></semantics></math> where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math> is a numerical constant.</p>
+</div></article><article class="theorem" id="theorem-60a670a893a281cd"><h4>Theorem 5.2</h4><div class="connection"><p>The estimator defined above is the two-step grid, moment-fitting and rescaled-quantile procedure. The quantiles use the fitted weight vector p-plus from the preceding program. The procedure introduces normalized even-moment estimates immediately before the grid; the proof of Theorem 5.2 uses hat m in the objective. The displayed program instead writes undefined hat U, so their identification is recorded as an unresolved source notation mismatch. Each coordinate rescales the polynomial statistic U_k. Its degree is the occurrence count of that matrix entry.</p>
+<a href="#variant-d9fd5f5ec22ac888">Section 3 — occurrence counts before (9)</a></div><div class="statement"><p>Fix any <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">M&gt;1</annotation></semantics></math> and choose <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>=</mo><mo stretchy="false" form="prefix">⌊</mo><mi>c</mi><mrow><mi mathvariant="normal">log</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>q</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">⌋</mo></mrow><annotation encoding="application/x-tex">K=\lfloor c\log(q)\rfloor</annotation></semantics></math> for a suitable numerical constant <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">M&gt;1</annotation></semantics></math>. If <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mn>1</mn></msub><mo stretchy="false" form="prefix">(</mo><mi>𝐀</mi><mo stretchy="false" form="postfix">)</mo><mo>≤</mo><mi>M</mi><mo stretchy="false" form="prefix">(</mo><mi>p</mi><mi>q</mi><msup><mo stretchy="false" form="postfix">)</mo><mrow><mn>1</mn><mi>/</mi><mn>4</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\sigma_1(\mathbf A)\le M(pq)^{1/4}</annotation></semantics></math>, then the estimator <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mover><mi>σ</mi><mo accent="true">̂</mo></mover><mi>i</mi></msub><annotation encoding="application/x-tex">\widehat\sigma_i</annotation></semantics></math> defined above satisfies <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>μ</mi><mover><mi>σ</mi><mo accent="true">̂</mo></mover></msub><mo>,</mo><msub><mi>μ</mi><mrow><mi>σ</mi><mo stretchy="false" form="prefix">(</mo><mi>𝐀</mi><mo stretchy="false" form="postfix">)</mo></mrow></msub><mo stretchy="false" form="postfix">)</mo><mo>≲</mo><mfrac><mi>M</mi><mrow><mrow><mi mathvariant="normal">log</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>q</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mo stretchy="false" form="prefix">(</mo><mi>p</mi><mi>q</mi><msup><mo stretchy="false" form="postfix">)</mo><mrow><mn>1</mn><mi>/</mi><mn>4</mn></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+W(\mu_{\widehat\sigma},\mu_{\sigma(\mathbf A)})\lesssim\frac{M}{\log(q)}(pq)^{1/4}.</annotation></semantics></math> (25) In particular, this implies that <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝔼</mi><mrow><mo stretchy="true" form="prefix">[</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>q</mi></munderover><mo stretchy="false" form="prefix">|</mo><msub><mover><mi>σ</mi><mo accent="true">̂</mo></mover><mi>i</mi></msub><mo>−</mo><msub><mi>σ</mi><mi>i</mi></msub><mo stretchy="false" form="prefix">(</mo><mi>𝐀</mi><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="prefix">|</mo><mo stretchy="true" form="postfix">]</mo></mrow><mo>≲</mo><mfrac><mi>M</mi><mrow><mrow><mi mathvariant="normal">log</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>q</mi><mo stretchy="false" form="postfix">)</mo></mrow></mfrac><mi>q</mi><mo stretchy="false" form="prefix">(</mo><mi>p</mi><mi>q</mi><msup><mo stretchy="false" form="postfix">)</mo><mrow><mn>1</mn><mi>/</mi><mn>4</mn></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\mathbb E\left[\sum_{i=1}^q|\widehat\sigma_i-\sigma_i(\mathbf A)|\right]\lesssim\frac{M}{\log(q)}q(pq)^{1/4}.
+</annotation></semantics></math></p>
+</div></article><article class="theorem" id="theorem-8392f8ac974b6c4f"><h4>Theorem 6.3</h4><div class="connection"><p>U_k remains the same Hermite polynomial statistic (9), now without a Gaussian unbiasedness assumption. Its degree is the occurrence count of that matrix entry.</p>
+<a href="#variant-d9fd5f5ec22ac888">Section 3 — occurrence counts before (9)</a></div><div class="statement"><p>For any positive integer <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k\ge1</annotation></semantics></math> and any <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>≥</mo><mi>q</mi></mrow><annotation encoding="application/x-tex">p\ge q</annotation></semantics></math>, we have <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>𝔼</mi><mrow><mo stretchy="true" form="prefix">[</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>U</mi><mi>k</mi></msub><mi>−</mi><mo stretchy="false" form="postfix">∥</mo><mi>𝐀</mi><msubsup><mo stretchy="false" form="postfix">∥</mo><mrow><mn>2</mn><mi>k</mi></mrow><mrow><mn>2</mn><mi>k</mi></mrow></msubsup><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><mo stretchy="true" form="postfix">]</mo></mrow><mo>≤</mo><mo stretchy="false" form="prefix">(</mo><mi>c</mi><mo stretchy="false" form="postfix">∥</mo><mi>E</mi><msub><mo stretchy="false" form="postfix">∥</mo><msub><mi>ψ</mi><mn>2</mn></msub></msub><mi>k</mi><msup><mo stretchy="false" form="postfix">)</mo><mrow><msup><mi>c</mi><mo>′</mo></msup><mi>k</mi></mrow></msup><mo minsize="120%" maxsize="120%" stretchy="true" form="prefix">[</mo><mo stretchy="false" form="prefix">(</mo><mi>p</mi><mi>q</mi><msup><mo stretchy="false" form="postfix">)</mo><mi>k</mi></msup><mo>+</mo><mi>p</mi><mi>q</mi><mo stretchy="false" form="postfix">∥</mo><mi>𝐀</mi><msubsup><mo stretchy="false" form="postfix">∥</mo><mi>∞</mi><mrow><mn>4</mn><mi>k</mi><mo>−</mo><mn>4</mn></mrow></msubsup><mo>+</mo><mi>q</mi><mo stretchy="false" form="postfix">∥</mo><mi>𝐀</mi><msubsup><mo stretchy="false" form="postfix">∥</mo><mi>∞</mi><mrow><mn>4</mn><mi>k</mi><mo>−</mo><mn>2</mn></mrow></msubsup><mo minsize="120%" maxsize="120%" stretchy="true" form="postfix">]</mo><mo>,</mo></mrow><annotation encoding="application/x-tex">
+\mathbb E\left[\left(U_k-\|\mathbf A\|_{2k}^{2k}\right)^2\right]\le(c\|E\|_{\psi_2}k)^{c&#x27;k}\big[(pq)^k+pq\|\mathbf A\|_\infty^{4k-4}+q\|\mathbf A\|_\infty^{4k-2}\big],</annotation></semantics></math> (28) where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>c</mi><annotation encoding="application/x-tex">c</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>c</mi><mo>′</mo></msup><annotation encoding="application/x-tex">c&#x27;</annotation></semantics></math> are numerical constants.</p>
+</div></article></section></section><section class="secondary"><h2>Related mathlib</h2><ul class="library-links"><li><a href="https://github.com/leanprover-community/mathlib4/blob/4edb0dbaa3b3cf729d86d1e2f035474d5ae2ac09/Mathlib/Algebra/Notation/Indicator.lean#L51-L54" target="_blank" rel="noopener">Set.indicator</a><small>Returns the supplied function on a set and zero outside; a constant-one function gives a binary indicator with exactly the chosen boundary predicate.</small></li></ul><p class="gap">The two-list count is expressible, but its cyclic j-index must retain the source’s inconsistent recalled i-index convention.</p></section></main><script>
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&parent!==window)parent.postMessage({action:'close-theorem-reader'},'*');});
+document.addEventListener('click',function(e){const a=e.target.closest('a');if(!a)return;if(a.dataset.route&&parent!==window&&!e.ctrlKey&&!e.metaKey&&!e.shiftKey&&!e.altKey){e.preventDefault();parent.postMessage({action:'open-census-route',route:a.dataset.route,scroll:window.scrollY,expanded:[...document.querySelectorAll('details[open][id]')].map(d=>d.id)},'*');}else if(/^#(requirements|variant)-/.test(a.getAttribute('href')||'')){const target=document.getElementById(a.hash.slice(1));if(target?.tagName==='DETAILS')target.open=true;}});
+function revealFragment(){const target=document.getElementById(location.hash.slice(1));if(target){if(target.tagName==='DETAILS')target.open=true;target.scrollIntoView();}}
+window.addEventListener('hashchange',revealFragment);revealFragment();
+window.addEventListener('message',function(e){if(e.source===parent&&e.data?.action==='restore-reader-scroll'){for(const id of e.data.expanded||[]){const d=document.getElementById(id);if(d?.tagName==='DETAILS')d.open=true;}window.scrollTo(0,Number(e.data.scroll)||0);}});
+</script></body></html>

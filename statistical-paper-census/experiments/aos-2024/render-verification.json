@@ -1,6 +1,6 @@
 {
   "status": "passed",
-  "checked_at": "2026-09-13T01:51:48.353941+00:00",
+  "checked_at": "2026-09-13T22:42:09.445817+00:00",
   "command": [
     "python3",
     "skills/statistical-census-html/scripts/build_report.py",
@@ -8,11 +8,13 @@
     "experiments/aos-2024/report.html",
     "--census",
     "experiments/aos-2024/ranked-interfaces.json",
+    "--title",
+    "Scanning definitions of Annals of Statistics 2024",
     "--check"
   ],
   "exit_code": 0,
-  "elapsed_seconds": 91.09,
+  "elapsed_seconds": 47.76,
   "mode": "Eight independent workers prepare source fragments through the maintained render_statement function. The maintained generator main() and complete --check then run sequentially in one interpreter using that standard in-memory cache; every output is regenerated and compared.",
-  "report_sha256": "9e1476e899c149c03d6604dc18ff76bfac778199d540ac949443e124d9efdc64",
-  "generator_sha256": "225fd7bda2aadba7057406ecb385be7f68eb7bc1d4c605cb015ccae892b65815"
+  "report_sha256": "4aff2eeb3dd3b640f386d429cf349b148842fd8a798349e4869361e4925a5fbd",
+  "generator_sha256": "903a0d4532ea52fa2ee54523ed1476e5c7822e6d5b0b9189f07255d6acc95bb4"
 }

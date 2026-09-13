@@ -414,7 +414,7 @@ def build_search_index(data, folder):
     return result
 
 
-def generate(data, output):
+def generate(data, output, title='Search the census'):
     if not shutil.which('pandoc'):
         raise ValueError('Pandoc is required for local MathML rendering; install it before generation.')
     for paper in data['papers']:
@@ -516,7 +516,7 @@ def generate(data, output):
     # Theorems are nested under papers; avoid duplicating their text in the embedded search payload.
     index.pop('theorems')
     payload=json.dumps(index,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')
-    files[output.name]=(assets/'report.html').read_text().replace('__CSS__',css).replace('__SCOPE__',ESC(scope)).replace('__DATA__',payload).replace('__SCRIPT__',(assets/'report.js').read_text())
+    files[output.name]=(assets/'report.html').read_text().replace('__TITLE__',ESC(title)).replace('__CSS__',css).replace('__SCOPE__',ESC(scope)).replace('__DATA__',payload).replace('__SCRIPT__',(assets/'report.js').read_text())
     files[f'{folder}/manifest.json']=json.dumps({'pages':sorted(Path(n).name for n in files if n.startswith(folder+'/'))},indent=2)+'\n'
     return files
 
@@ -525,12 +525,13 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('input',type=Path);parser.add_argument('output',type=Path)
     parser.add_argument('--census',type=Path,required=True);parser.add_argument('--check',action='store_true')
+    parser.add_argument('--title',default='Search the census',help='Report heading and browser-tab title.')
     args=parser.parse_args()
     try:
         data=json.loads(args.input.read_text());errors=validate(data,args.census)
         if errors:
             raise ValueError('\n'.join(errors))
-        files=generate(data,args.output)
+        files=generate(data,args.output,args.title)
         if args.check:
             return int(any(not (args.output.parent/n).is_file() or (args.output.parent/n).read_text()!=s for n,s in files.items()))
         args.output.parent.mkdir(parents=True,exist_ok=True)

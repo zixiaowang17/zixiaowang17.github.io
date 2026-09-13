@@ -117,6 +117,10 @@ python3 scripts/build_report.py audited.json report.html --census ranked-interfa
 python3 scripts/test_workflow.py
 ```
 
+Use `--title "Report title"` to set the report heading and browser-tab title; pass the same
+title to `--check`. Keep corpus-specific titles in the calling build script, so the shared
+skill remains reusable.
+
 The generator validates inputs and all highlight selectors before writing. Unknown TeX,
 incomplete audits, missing annotations and unmatched selectors are errors, never silent
 fallbacks. Validation checks structural/source consistency; mathematical correspondence still

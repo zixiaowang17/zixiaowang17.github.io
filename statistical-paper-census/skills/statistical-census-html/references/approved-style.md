@@ -10,7 +10,8 @@ for subsequent reports and datasets. The canonical implementation is `assets/rep
 - The existing CSS tokens: ink `#22314c`, muted `#607088`, line `#dce3ed`, paper `#fff`,
   wash `#f5f7fa`, accent `#2056b5`.
 - System sans-serif for navigation and metadata; Georgia/Times serif for theorem statements.
-- A left-aligned “Search the census” header followed by underlined view tabs.
+- A left-aligned report heading followed by underlined view tabs. The default is
+  “Search the census”; use `--title` for a user-specified report title.
 - Omit the introductory sentence beneath the title and the explanatory sentence beneath the
   search controls. The user removed both; do not restore them in future reports.
 - By paper and Top APIs as peers in the main search area, with contextual filters.
