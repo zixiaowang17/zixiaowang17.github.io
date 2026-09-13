@@ -1,8 +1,8 @@
 {
   "status": "passed",
-  "files_checked": 5397,
-  "bytes_checked": 297952183,
-  "local_html_links_checked": 32754,
+  "files_checked": 5379,
+  "bytes_checked": 298258954,
+  "local_html_links_checked": 32721,
   "counts": {
     "papers": 113,
     "theorems": 637,

@@ -10,7 +10,7 @@ related mathlib declarations, and builds a searchable HTML report. I developed a
 it in detail on two papers, then ran a larger experiment on 113 Annals of Statistics papers
 from 2024: 637 Theorems and 2,486 grouped interfaces.
 
-I'm sharing the three skills, a small synthetic demo, and the full experiment report with
+I'm sharing the three skills and the full experiment report with
 its census and audit records. PDFs aren't included; the records link to the source versions.
 
 The mathlib matches and green/yellow/red work labels need review. They aren't claims that

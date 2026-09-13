@@ -29,7 +29,7 @@ parser. Source reading, mathematical grouping and library comparisons still requ
 
 The code uses Python 3.9+ and Pandoc. The release was exercised with Python 3.9.6 and Pandoc
 3.8.2.1. The renderer and validators use Python's standard library; no API key is needed to
-run the included demo or rebuild the report. An agent needs its own model and PDF-reading
+rebuild the report. An agent needs its own model and PDF-reading
 capabilities to audit new papers.
 
 ## Install and use
@@ -50,17 +50,6 @@ A starting request for your agent:
 > these local papers. Then use $ranked-mathlib-audit for the library comparisons and
 > $statistical-census-html for the report. Preserve source statements and record unresolved
 > questions. Keep PDFs private and write artifacts in English.
-
-## Try the synthetic demo
-
-```sh
-python3 scripts/build_demo.py
-```
-
-Open [examples/synthetic/report.html](examples/synthetic/report.html). Its papers, review
-records and status assignments are artificial. It demonstrates the data handoff and report
-controls; it is not evidence of mathematical coverage. Source links use example.org and do
-not point to real PDFs.
 
 ## Reproduce the experiment report
 

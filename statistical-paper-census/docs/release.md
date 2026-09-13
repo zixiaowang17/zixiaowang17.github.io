@@ -1,7 +1,7 @@
 # Preparing a public release
 
 The release package is a selected export, not a copy of the research workspace or its Git
-history. It includes reusable skills, the synthetic demo, the full experiment HTML, core
+history. It includes reusable skills, the full experiment HTML, core
 research data, library-link evidence and public per-paper review summaries.
 
 Excluded material includes PDFs, PDF screenshots, local PDF registries, private execution
