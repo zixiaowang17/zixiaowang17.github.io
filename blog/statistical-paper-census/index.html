@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How far are we to formalize Annals of statistics? — Zixiao Jolene Wang</title>
+<style>
+      :root { color-scheme: light; --ink:#333333; --link:#0969da; --rule:#e5e5e5; }
+      * { box-sizing:border-box; }
+      html { scroll-behavior:smooth; scroll-padding-top:44px; }
+      body { margin:0; background:#fff; color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; font-size:16px; line-height:1.6; }
+      a { color:var(--link); text-decoration:none; text-underline-offset:3px; }
+      a:visited { color:#6b5b95; }
+      a:hover { text-decoration:underline; }
+      a:focus-visible { outline:2px solid var(--link); outline-offset:5px; }
+      .site-header { position:fixed; top:70px; bottom:36px; left:max(36px,calc((100vw - 930px)/2)); width:190px; overflow-y:auto; }
+      .header-inner { display:flex; flex-direction:column; align-items:flex-start; }
+
+      nav { display:flex; flex-direction:column; align-items:flex-start; gap:12px; margin-top:22px; padding-left:0; }
+      nav a { position:relative; color:var(--ink); font:inherit; }
+      nav a[aria-current="location"] { color:var(--ink); }
+      nav a[aria-current="location"]::before { content:""; position:absolute; left:-12px; top:5px; width:2px; height:15px; background:var(--ink); }
+      .links { display:flex; flex-direction:column; align-items:flex-start; gap:6px; margin-top:32px; }
+      .links a { color:var(--link); }
+      .separator { display:none; }
+      main { width:calc(100% - 310px); max-width:650px; margin-left:max(260px,calc((100vw - 930px)/2 + 250px)); padding:67px 0 42px; }
+      h1 { color:#222; font-size:2.4rem; line-height:1.2; font-weight:600; letter-spacing:normal; margin:0 0 26px; }
+      .profile-photo { display:block; width:190px; height:245px; object-fit:cover; object-position:50% 40%; border-radius:3px; }
+      .intro-top { display:grid; grid-template-columns:minmax(0,1fr) 190px; gap:30px; align-items:start; }
+      .intro-bio p:last-child { margin-bottom:0; }
+      .about-research { margin-top:20px; }
+      p { margin:0 0 15px; }
+      .phonetic { font:inherit; }
+      .email { margin-top:20px; }
+      section { margin-top:32px; }
+      h2 { color:#222; font-size:20px; line-height:1.6; font-weight:600; margin:0 0 16px; }
+
+      h3 { font-size:inherit; line-height:inherit; font-weight:600; margin:18px 0 5px; }
+
+      ul { list-style:none; margin:0; padding:0; }
+      .news-list, .internship-list, .pub-list { list-style:disc; padding-left:22px; }
+      .news-list li { margin-bottom:12px; }
+      .news-list time { font:inherit; white-space:nowrap; }
+      .pub-list li { margin-bottom:18px; }
+      .pub-list li:last-child { margin-bottom:0; }
+      .pub-title { display:block; font:inherit; color:var(--link); }
+      .pub-title:visited, #talks .presentation-list a:visited, .links a:visited, footer a:visited { color:#6b5b95; }
+      .pub-title:hover { text-decoration:underline; }
+      .pub-authors { margin-top:2px; }
+      .pub-authors strong, .pub-venue em { font:inherit; color:inherit; }
+      .pub-venue { font:inherit; margin-top:2px; }
+      #talks .presentation-year { font-size:inherit; line-height:inherit; font-weight:600; margin:24px 0 12px; }
+      #talks .presentation-list { list-style:disc; padding-left:22px; margin:0; }
+      #talks .presentation-list li { padding-left:2px; margin:0 0 12px; line-height:1.6; }
+      #talks .presentation-list a { color:var(--link); font-weight:400; }
+      footer { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; margin-top:48px; }
+      footer a { color:var(--link); }
+      .skip-link { position:fixed; top:-90px; left:16px; z-index:30; padding:8px 12px; background:white; }
+      .skip-link:focus { top:12px; }
+      @media(min-width:1500px) { .site-header { top:88px; } main { padding-top:85px; } }
+      @media(max-width:760px) {
+        html { scroll-padding-top:82px; }
+        .site-header { position:sticky; top:0; bottom:auto; left:auto; width:100%; overflow:visible; z-index:10; background:white; border-bottom:1px solid var(--rule); }
+        .header-inner { max-width:650px; margin:auto; padding:14px 24px; }
+        .links { display:none; }
+        .intro-top { grid-template-columns:minmax(0,1fr) 140px; gap:24px; }
+        .profile-photo { width:140px; height:180px; }
+        nav { width:100%; flex-direction:row; flex-wrap:wrap; justify-content:space-between; gap:12px; margin:0; padding:0; border:0; }
+        nav a { padding:3px 0; }
+        nav a[aria-current="location"]::before { top:auto; bottom:-5px; left:0; width:100%; height:1px; }
+        main { width:auto; max-width:650px; margin:0 auto; padding:34px 24px; }
+        h1 { font-size:2.4rem; letter-spacing:normal; margin-bottom:23px; }
+              .mobile-links { display:flex; flex-direction:row; flex-wrap:wrap; gap:16px; margin-top:16px; }
+        section { margin-top:32px; }
+        h2 { font-size:20px; }
+        .news-list li { column-gap:14px; }
+        .pub-title { font-size:inherit; }
+      }
+      @media(max-width:560px) {
+        .intro-top { grid-template-columns:minmax(0,1fr) 110px; gap:18px; }
+        .intro-bio { display:contents; }
+        .intro-top h1 { grid-column:1; grid-row:1; align-self:center; margin:0; font-size:2rem; }
+        .intro-top > .profile-photo { grid-column:2; grid-row:1; width:110px; height:142px; }
+        .intro-bio p { grid-column:1 / -1; margin:0; }
+      }
+      @media(min-width:761px) { .mobile-links { display:none; } }
+      @media(max-width:380px) { html { scroll-padding-top:120px; } body { font-size:16px; } h1 { font-size:31px; } main { padding-left:20px; padding-right:20px; } .header-inner { padding-left:20px; padding-right:20px; }  }
+      @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+
+html { scroll-padding-top:24px; }
+.post h1 { font-size:28px; line-height:1.3; margin-bottom:20px; }
+.post h2 { margin-top:26px; margin-bottom:12px; }
+.post article ul { list-style:disc; padding-left:22px; margin-bottom:20px; }
+.post article li { margin-bottom:10px; }
+.post article code { font-size:.9em; overflow-wrap:anywhere; }
+.post article img { display:block; width:100%; height:auto; border:1px solid var(--rule); }
+.dashboard-actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px 18px; margin:18px 0 26px; }
+.dashboard-actions span { color:#555; font-size:15px; }
+.post a.dashboard-cta { display:inline-flex; align-items:center; justify-content:center; padding:12px 20px; border-radius:4px; background:#155da0; color:#fff; font-weight:600; line-height:1.5; text-align:center; text-decoration:none; }
+.post a.dashboard-cta:hover { background:#104b83; }
+.post a.dashboard-cta:focus-visible { outline:3px solid #155da0; outline-offset:4px; }
+@media(min-width:761px) {
+  .site-header { position:absolute; top:40px; bottom:auto; left:clamp(24px,4.4vw,76px); width:160px; overflow:visible; }
+  .site-header nav { margin-top:0; }
+  main.post { width:auto; max-width:none; margin-left:clamp(240px,22vw,376px); margin-right:clamp(24px,5.2vw,90px); padding:38px 0 42px; }
+}
+@media(max-width:760px) {
+  .site-header { position:static; }
+  main.post { width:auto; max-width:none; margin:0; padding:24px 24px 36px; }
+  .post h1 { font-size:26px; }
+  .dashboard-actions { align-items:stretch; flex-direction:column; gap:8px; }
+}
+@media(max-width:380px) { main.post { padding-left:20px; padding-right:20px; } }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#post">Skip to content</a>
+<header class="site-header">
+      <div class="header-inner">
+<nav aria-label="Main navigation">
+          <a href="../../index.html#about">About</a>
+          <a href="../../index.html#internship">Internship</a>
+          <a href="../../index.html#news">News</a>
+          <a href="../../index.html#blog" aria-current="location">Blog</a>
+          <a href="../../index.html#publications">Papers</a>
+          <a href="../../index.html#talks">Talks</a>
+        </nav>
+          <div class="links">
+            <a
+              class="link-item"
+              href="https://scholar.google.com/citations?user=QHao6yQAAAAJ"
+              >Google Scholar</a
+            ><span class="separator">/</span
+            ><a
+              class="link-item"
+              href="https://github.com/zixiaowang17"
+              >GitHub</a
+            ><span class="separator">/</span
+            ><a
+              class="link-item"
+              href="https://www.linkedin.com/in/zixiao-w-3a79811a5"
+              >LinkedIn</a
+            >
+          </div>
+      </div>
+    </header>
+<main class="post" id="post">
+<article>
+<h1 id="how-far-are-we-to-formalize-annals-of-statistics">How far are we
+to formalize Annals of statistics?</h1>
+<p><a
+href="../../statistical-paper-census/experiments/aos-2024/report.html?view=apis"><img
+src="dashboard.png"
+alt="Top APIs view with the holomorphic functional calculus audit and highlighted source statement." /></a></p>
+<div class="dashboard-actions">
+<a class="dashboard-cta" href="../../statistical-paper-census/experiments/aos-2024/report.html?view=apis">Explore the interactive dashboard</a>
+<span>Search 113 papers and 2,486 APIs.</span>
+</div>
+
+<p>I was trying to formalize some my own work recently and found
+definitions missing a lot. This motivated me to do a scan of Annals of
+Statistics (2024, 113 papers)to see how far are we even able to state
+the theorems in annals.</p>
+<p>To make the output stable, I built three reusable agent skills to
+help with this, and calibrated the skill over two two papers: <a
+href="https://arxiv.org/pdf/2212.12848v3">Gromov–Wasserstein distances:
+Entropic regularization, duality and sample complexity</a> and <a
+href="https://arxiv.org/pdf/2309.15300v1">Wasserstein convergence in
+Bayesian and frequentist deconvolution models</a>. The review involved
+checking statements, definitions, and check related mathlib
+declarations, and the HTML reader. Then I used the skill to scan all 113
+papers, which covers <strong>113 papers, 637 main-text Theorems and
+2,486 grouped interfaces</strong>. Lemmas in the main body are not being
+examined and appendix are negalected.</p>
+<h2 id="what-the-ranking-shows">What the ranking shows</h2>
+<p>The report has two filter: papers and APIs. I also highlighted the
+usage of the API back to the paper.</p>
+<p><a
+href="../../statistical-paper-census/experiments/aos-2024/report.html?view=paper"><img
+src="paper-view.png"
+alt="By paper view showing the StarTrek paper, theorem statements and required APIs." /></a></p>
+<p>APIs are ranked by direct paper uses, then direct theorem uses. The
+displayed <strong>Theorems / Papers</strong> counts also include
+indirect dependencies.</p>
+<p>There are three labels:</p>
+<ul>
+<li><strong>Green — Use mathlib:</strong> the interface can be expressed
+directly using mathlib</li>
+<li><strong>Yellow — Small adaptation:</strong> math foundation exist,
+but a representation change or compatibility proof remains.</li>
+<li><strong>Red — New infrastructure:</strong> core result still needs
+to be developed.</li>
+</ul>
+<p>Of the 2,486 audited entries, 21.8% are green (542), 72.0% are yellow
+(1,790), and 6.2% are red (154).</p>
+<h2 id="what-you-can-reuse">What you can reuse</h2>
+<p>The <a href="https://github.com/zixiaowang17/AoS-2024"><!-- GitHub mark from https://github.com/primer/octicons
+MIT License
+
+Copyright (c) 2026 GitHub Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+-->
+<svg aria-hidden="true" focusable="false" style="vertical-align:-0.125em;margin-right:0.3em;fill:currentColor" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="M6.766 11.328c-2.063-.25-3.516-1.734-3.516-3.656 0-.781.281-1.625.75-2.188-.203-.515-.172-1.609.063-2.062.625-.078 1.468.25 1.968.703.594-.187 1.219-.281 1.985-.281.765 0 1.39.094 1.953.265.484-.437 1.344-.765 1.969-.687.218.422.25 1.515.046 2.047.5.593.766 1.39.766 2.203 0 1.922-1.453 3.375-3.547 3.64.531.344.89 1.094.89 1.954v1.625c0 .468.391.734.86.547C13.781 14.359 16 11.53 16 8.03 16 3.61 12.406 0 7.984 0 3.563 0 0 3.61 0 8.031a7.88 7.88 0 0 0 5.172 7.422c.422.156.828-.125.828-.547v-1.25c-.219.094-.5.156-.75.156-1.031 0-1.64-.562-2.078-1.609-.172-.422-.36-.672-.719-.719-.187-.015-.25-.093-.25-.187 0-.188.313-.328.625-.328.453 0 .844.281 1.25.86.313.452.64.655 1.031.655s.641-.14 1-.5c.266-.265.47-.5.657-.656"/></svg>AoS-2024
+repository</a> includes the dashboard, audit records and three reusable
+skills:</p>
+<ul>
+<li><code>statistical-paper-census</code> collects source statements and
+maps their dependencies.</li>
+<li><code>ranked-mathlib-audit</code> searches a pinned mathlib revision
+and records matches and gaps.</li>
+<li><code>statistical-census-html</code> turns those records into the
+searchable report.</li>
+</ul>
+<h2 id="what-still-needs-checking">What still needs checking</h2>
+<p>I didn not finish checking every paper manually, this result is just
+serve as an initial scan for people who are also curious about the
+question - how far are we even to state the results in statistics.</p>
+<p>I hope this helps people choose useful pieces of statistical
+infrastructure to work on. Corrections and comments are welcome!</p>
+<h2 id="next-step">Next step</h2>
+<p>The year I chose is just the year of 2024, multiple years could be
+checked (need a lot token i suspect), I also plan to scan Biometrika
+/JASA /JRSS-B.</p>
+</article>
+<footer><a href="../../index.html#blog">Back to blog</a><a href="#post">Back to top</a></footer>
+</main>
+</body>
+</html>

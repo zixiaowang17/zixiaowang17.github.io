@@ -6,7 +6,7 @@
     <title>Zixiao Jolene Wang</title>
     <meta name="description" content="Zixiao Jolene Wang — research in statistical inference, reinforcement learning, and automated theorem proving. Publications, news, and talks." />
     <style>
-      :root { color-scheme: light; --ink:#333333; --link:#1a6fb5; --rule:#e5e5e5; }
+      :root { color-scheme: light; --ink:#333333; --link:#0969da; --rule:#e5e5e5; }
       * { box-sizing:border-box; }
       html { scroll-behavior:smooth; scroll-padding-top:44px; }
       body { margin:0; background:#fff; color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; font-size:16px; line-height:1.6; }
@@ -85,7 +85,7 @@
         .intro-bio p { grid-column:1 / -1; margin:0; }
       }
       @media(min-width:761px) { .mobile-links { display:none; } }
-      @media(max-width:380px) { body { font-size:16px; } h1 { font-size:31px; } main { padding-left:20px; padding-right:20px; } .header-inner { padding-left:20px; padding-right:20px; }  }
+      @media(max-width:380px) { html { scroll-padding-top:120px; } body { font-size:16px; } h1 { font-size:31px; } main { padding-left:20px; padding-right:20px; } .header-inner { padding-left:20px; padding-right:20px; }  }
       @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
 </style>
   </head>
@@ -97,6 +97,7 @@
           <a href="#about">About</a>
           <a href="#internship">Internship</a>
           <a href="#news">News</a>
+          <a href="#blog">Blog</a>
           <a href="#publications">Papers</a>
           <a href="#talks">Talks</a>
         </nav>
@@ -153,7 +154,6 @@
           <div class="about-research">
             <p>As LLMs write more proofs, I am interested in how statistical communities can build trust and digest these proofs across generations. This motivates my recent work on <a href="https://stat-lib.github.io/">StatLib</a>.</p>
             <p>I study modelling architectures for scientific discovery.</p>
-            <p><a href="statistical-paper-census/experiments/aos-2024/report.html?view=apis">Statistical paper census</a>: a searchable inventory of 113 Annals of Statistics papers, with source statements, theorem dependencies and estimates of the remaining mathlib work. <a href="statistical-paper-census/">Audit material and reusable skills</a>.</p>
           </div>
           <p class="email">zixiaowang [at] fas.harvard.edu</p>
           <div class="links mobile-links">
@@ -201,6 +201,16 @@
           </li>
           <li>
             <time datetime="2024-07">Jul 2024</time> — <span>Presented <a href="https://arxiv.org/abs/2311.09015">Identification and Estimation for Nonignorable Missing Data: A Data Fusion Approach</a> at ICML 2024 in Vienna, Austria.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section id="blog">
+        <h2>Blog</h2>
+        <ul class="pub-list">
+          <li>
+            <a href="blog/statistical-paper-census/" class="pub-title">How far are we to formalize Annals of statistics?</a>
+            <div>Reading 113 statistical papers to map recurring definitions, theorem dependencies and the remaining mathlib work.</div>
           </li>
         </ul>
       </section>

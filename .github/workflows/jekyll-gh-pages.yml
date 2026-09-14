@@ -33,7 +33,7 @@ jobs:
       - name: Stage published files
         run: |
           mkdir _site
-          git archive --format=tar HEAD index.html assets statistical-paper-census | tar -x -C _site
+          git archive --format=tar HEAD index.html assets blog statistical-paper-census | tar -x -C _site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
