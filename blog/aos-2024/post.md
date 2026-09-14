@@ -2,7 +2,6 @@
 
 <div class="dashboard-actions">
 <a class="dashboard-cta" href="../../statistical-paper-census/experiments/aos-2024/report.html?view=apis">Explore the interactive dashboard</a>
-<span>Search 113 papers and 2,486 APIs.</span>
 </div>
 
 

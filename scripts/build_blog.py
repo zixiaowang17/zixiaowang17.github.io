@@ -12,8 +12,8 @@ from threading import Lock
 from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
-POST = ROOT / "blog/statistical-paper-census"
-ROUTE = "/blog/statistical-paper-census/"
+POST = ROOT / "blog/aos-2024"
+ROUTE = "/blog/aos-2024/"
 LOCK = Lock()
 
 
@@ -32,7 +32,7 @@ def build():
     fragment = fragment.replace(repo_link, repo_link + icon)
     homepage = (ROOT / "index.html").read_text()
     updated = re.sub(
-        r'(<a href="blog/statistical-paper-census/" class="pub-title">).*?(</a>)',
+        r'(<a href="blog/aos-2024/" class="pub-title">).*?(</a>)',
         lambda m: m.group(1) + title + m.group(2), homepage,
     )
     if updated != homepage:
@@ -123,7 +123,7 @@ def main():
         finally:
             server.server_close()
     else:
-        print("Built blog/statistical-paper-census/index.html")
+        print("Built blog/aos-2024/index.html")
 
 
 if __name__ == "__main__":
