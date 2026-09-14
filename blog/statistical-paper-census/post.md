@@ -1,7 +1,5 @@
 # How far are we to formalize Annals of statistics?
 
-[![Top APIs view with the holomorphic functional calculus audit and highlighted source statement.](dashboard.png)](../../statistical-paper-census/experiments/aos-2024/report.html?view=apis)
-
 <div class="dashboard-actions">
 <a class="dashboard-cta" href="../../statistical-paper-census/experiments/aos-2024/report.html?view=apis">Explore the interactive dashboard</a>
 <span>Search 113 papers and 2,486 APIs.</span>
@@ -27,6 +25,9 @@ APIs are ranked by direct paper uses, then direct theorem uses. The
 displayed **Theorems / Papers** counts also include indirect dependencies.
 
 There are three labels:
+
+[![Top APIs view with the holomorphic functional calculus audit and highlighted source statement.](dashboard.png)](../../statistical-paper-census/experiments/aos-2024/report.html?view=apis)
+
 - **Green — Use mathlib:** the interface can be expressed directly using mathlib
 - **Yellow — Small adaptation:** math foundation exist, but a representation change or compatibility proof remains.
 - **Red — New infrastructure:**  core result still needs to be developed.
