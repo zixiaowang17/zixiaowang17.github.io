@@ -6,7 +6,7 @@
 
 
 
-I was trying to formalize some my own work recently and found definitions missing a lot. This motivated me to do a scan of Annals of Statistics (2024, 113 papers)to see how far are we even able to state the theorems in annals. 
+I was trying to formalize some my own work recently and found definitions missing a lot. This motivated me to do a scan of Annals of Statistics (2024, 113 papers)to see **how far are we even able to state the theorems in annals.** 
 
 
 To make the output stable, I built three reusable agent skills to help with this, and calibrated the skill over two  two papers:
