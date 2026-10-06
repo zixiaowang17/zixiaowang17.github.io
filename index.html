@@ -26,7 +26,8 @@
       .separator { display:none; }
       main { width:calc(100% - 310px); max-width:650px; margin-left:max(260px,calc((100vw - 930px)/2 + 250px)); padding:67px 0 42px; }
       h1 { color:#222; font-size:2.4rem; line-height:1.2; font-weight:600; letter-spacing:normal; margin:0 0 26px; }
-      .profile-photo { display:block; width:190px; height:245px; object-fit:cover; object-position:50% 40%; border-radius:3px; }
+      .profile-photo-frame { width:190px; height:190px; overflow:hidden; border-radius:50%; }
+      .profile-photo { display:block; width:100%; height:100%; object-fit:cover; object-position:50% 35%; transform:scale(1.25); transform-origin:50% 40%; }
       .intro-top { display:grid; grid-template-columns:minmax(0,1fr) 190px; gap:30px; align-items:start; }
       .intro-bio p:last-child { margin-bottom:0; }
       .about-research { margin-top:20px; }
@@ -65,7 +66,7 @@
         .header-inner { max-width:650px; margin:auto; padding:14px 24px; }
         .links { display:none; }
         .intro-top { grid-template-columns:minmax(0,1fr) 140px; gap:24px; }
-        .profile-photo { width:140px; height:180px; }
+        .profile-photo-frame { width:140px; height:140px; }
         nav { width:100%; flex-direction:row; flex-wrap:wrap; justify-content:space-between; gap:12px; margin:0; padding:0; border:0; }
         nav a { padding:3px 0; }
         nav a[aria-current="location"]::before { top:auto; bottom:-5px; left:0; width:100%; height:1px; }
@@ -81,7 +82,7 @@
         .intro-top { grid-template-columns:minmax(0,1fr) 110px; gap:18px; }
         .intro-bio { display:contents; }
         .intro-top h1 { grid-column:1; grid-row:1; align-self:center; margin:0; font-size:2rem; }
-        .intro-top > .profile-photo { grid-column:2; grid-row:1; width:110px; height:142px; }
+        .intro-top > .profile-photo-frame { grid-column:2; grid-row:1; width:110px; height:110px; }
         .intro-bio p { grid-column:1 / -1; margin:0; }
       }
       @media(min-width:761px) { .mobile-links { display:none; } }
@@ -153,7 +154,9 @@
             <a href="https://ysph.yale.edu/profile/hongyu-zhao/">Hongyu Zhao</a>.
           </p>
             </div>
-            <img class="profile-photo" src="assets/img/prof_pic_color.png" alt="Portrait of Zixiao Jolene Wang" width="190" height="245" />
+            <div class="profile-photo-frame">
+              <img class="profile-photo" src="assets/img/prof_pic_color.png" alt="Portrait of Zixiao Jolene Wang" width="190" height="190" />
+            </div>
           </div>
           <div class="about-research">
             <p>As LLMs write more proofs, I am interested in how statistical communities can build trust and digest these proofs across generations. This motivates my recent work on <a href="https://stat-lib.github.io/">StatLib</a>.</p>
